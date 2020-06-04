@@ -1,0 +1,23 @@
+{
+  "name": "sms-configuration",
+  "version": "1.0.0",
+  "description": "",
+  "license": "BSD-3-Clause",
+  "author": "Jan-Gerke Salomon <jan-gerke@dhis2.org>",
+  "private": true,
+  "scripts": {
+    "build": "d2-app-scripts build",
+    "start": "d2-app-scripts start",
+    "test": "d2-app-scripts test",
+    "cypress:start": "BROWSER=none yarn start",
+    "cy:open": "d2-utils-cypress open --appStart 'yarn cypress:start'",
+    "cy:run": "d2-utils-cypress run --appStart 'yarn cypress:start'"
+  },
+  "devDependencies": {
+    "@dhis2/cli-app-scripts": "^4.0.7",
+    "@dhis2/cli-utils-cypress": "^2.2.1"
+  },
+  "dependencies": {
+    "@dhis2/app-runtime": "^2.2.1"
+  }
+}
