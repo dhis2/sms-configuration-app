@@ -7,13 +7,13 @@ import {
     HOME_PATH,
     HOME_LABEL,
 } from '../views'
-import { SidebarItem } from './SidebarItem'
+import { NavigationItem } from './NavigationItem'
 
-export const Sidebar = () => (
+export const Navigation = () => (
     <Menu>
-        <SidebarItem path={HOME_PATH} label={HOME_LABEL} />
+        <NavigationItem path={HOME_PATH} label={HOME_LABEL} />
 
-        <SidebarItem
+        <NavigationItem
             path={GATEWAY_CONFIG_LIST_PATH}
             label={GATEWAY_CONFIG_LIST_LABEL}
         />

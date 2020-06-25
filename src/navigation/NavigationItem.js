@@ -3,7 +3,7 @@ import { MenuItem } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
 
-export const SidebarItem = ({ label, path }) => {
+export const NavigationItem = ({ label, path }) => {
     const history = useHistory()
     const routeMatch = useRouteMatch(path)
     const active = routeMatch && routeMatch.isExact
@@ -12,7 +12,7 @@ export const SidebarItem = ({ label, path }) => {
     return <MenuItem onClick={navigateToPath} active={active} label={label} />
 }
 
-SidebarItem.propTypes = {
+NavigationItem.propTypes = {
     label: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
 }
