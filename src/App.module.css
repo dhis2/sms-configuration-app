@@ -7,8 +7,10 @@
 
 .sidebar {
     grid-area: sidebar;
+    padding-top: 20px;
 }
 
 .content {
     grid-area: main;
+    padding: 20px;
 }

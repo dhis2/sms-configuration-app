@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"POT-Creation-Date: 2020-06-19T13:31:52.884Z\n"
+"PO-Revision-Date: 2020-06-19T13:31:52.884Z\n"
+
+msgid "Add key value pair"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "User name"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Add BulkSMS gateway"
+msgstr ""
+
+msgid "Auth token"
+msgstr ""
+
+msgid "Url template"
+msgstr ""
+
+msgid "Add Clickatell gateway"
+msgstr ""
+
+msgid "In generic http gateway any number of parameters can be added."
+msgstr ""
+
+msgid "Key"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Is header"
+msgstr ""
+
+msgid "Encode"
+msgstr ""
+
+msgid "Confidential"
+msgstr ""
+
+msgid "Remove key value pair"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Default gateway"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "BulkSMS"
+msgstr ""
+
+msgid "Clickatell"
+msgstr ""
+
+msgid "Generic"
+msgstr ""
+
+msgid "Gateway type"
+msgstr ""
+
+msgid "Generic form"
+msgstr ""
+
+msgid "BulkSMS form"
+msgstr ""
+
+msgid "Clickatell form"
+msgstr ""
+
+msgid ""
+"There are five different types of Gateways supported by SMS Service. SMS "
+"can be sent if any one of the gateway is configured. If more than one "
+"gateways are present, then they will be used in round-robin fashion for "
+"load balancing"
+msgstr ""
+
+msgid "Loading gateway configurations"
+msgstr ""

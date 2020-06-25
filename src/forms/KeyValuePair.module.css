@@ -1,0 +1,23 @@
+.textInputs {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.keyInput,
+.valueInput {
+    flex-grow: 1;
+}
+
+.keyInput {
+    margin-right: 16px;
+}
+
+.checkboxGroup {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 16px;
+}
+
+.checkbox {
+    margin-right: 16px;
+}

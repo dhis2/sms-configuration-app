@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import React from 'react'
 import styles from './App.module.css'
 
-import { Sidebar } from './sidebar'
+import { Navigation } from './navigation'
 import {
     GATEWAY_CONFIG_FORM_EDIT_PATH,
     GATEWAY_CONFIG_FORM_NEW_PATH,
@@ -15,14 +15,11 @@ import {
     NoMatch,
 } from './views'
 
-console.log('GATEWAY_CONFIG_LIST_PATH', GATEWAY_CONFIG_LIST_PATH)
-console.log('GatewayConfigList', GatewayConfigList)
-
 const App = () => (
     <BrowserRouter>
         <div className={styles.container}>
             <div className={styles.sidebar}>
-                <Sidebar />
+                <Navigation />
             </div>
 
             <main className={styles.content}>

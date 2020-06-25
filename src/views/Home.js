@@ -1,8 +1,14 @@
 import React from 'react'
+import { PageHeadline } from '../headline'
 
 export const HOME_PATH = '/'
 export const HOME_LABEL = 'Home'
 
 export const Home = () => {
-    return <h1>Home</h1>
+    return (
+        <>
+            <PageHeadline>Home</PageHeadline>
+            <span>Content?</span>
+        </>
+    )
 }
