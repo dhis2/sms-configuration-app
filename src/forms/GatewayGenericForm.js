@@ -22,7 +22,7 @@ const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
 export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
     return (
         <Form onSubmit={onSubmit} initialValues={initialValues}>
-            {({ handleSubmit, values }) => (
+            {({ handleSubmit, values, submitting }) => (
                 <form onSubmit={handleSubmit}>
                     <FormRow>
                         <Field
@@ -75,7 +75,9 @@ export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
                     </FormRow>
 
                     <Button type="submit">
-                        {i18n.t('Add generic gateway')}
+                        {submitting
+                            ? i18n.t('Submitting...')
+                            : i18n.t('Add generic gateway')}
                     </Button>
                 </form>
             )}

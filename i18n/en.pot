@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-06-19T13:31:52.884Z\n"
-"PO-Revision-Date: 2020-06-19T13:31:52.884Z\n"
+"POT-Creation-Date: 2020-07-09T11:40:20.498Z\n"
+"PO-Revision-Date: 2020-07-09T11:40:20.498Z\n"
 
 msgid "Add key value pair"
 msgstr ""
@@ -26,13 +26,25 @@ msgstr ""
 msgid "Auth token"
 msgstr ""
 
-msgid "Url template"
-msgstr ""
-
 msgid "Add Clickatell gateway"
 msgstr ""
 
+msgid "Message parameter"
+msgstr ""
+
+msgid "Recipient parameter"
+msgstr ""
+
+msgid "Url template"
+msgstr ""
+
 msgid "In generic http gateway any number of parameters can be added."
+msgstr ""
+
+msgid "Submitting..."
+msgstr ""
+
+msgid "Add generic gateway"
 msgstr ""
 
 msgid "Key"
@@ -65,6 +77,12 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+msgid "Make default"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
 msgid "BulkSMS"
 msgstr ""
 
@@ -72,6 +90,9 @@ msgid "Clickatell"
 msgstr ""
 
 msgid "Generic"
+msgstr ""
+
+msgid "Loading..."
 msgstr ""
 
 msgid "Gateway type"

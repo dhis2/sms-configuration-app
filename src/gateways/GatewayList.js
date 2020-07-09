@@ -1,6 +1,8 @@
 import {
     Button,
+    ButtonStrip,
     Checkbox,
+    CircularLoader,
     Table,
     TableHead,
     TableBody,
@@ -10,16 +12,23 @@ import {
     TableCell,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import { useHistory } from 'react-router-dom'
 import React from 'react'
 
 import { getTypeLabelByType } from './getTypeLabelByType'
 import i18n from '../locales'
+import { GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC } from '../views/gateway_configuration/GatewayConfigFormEdit'
+import styles from './GatewayList.module.css'
 
 export const GatewayList = ({
     checkedGateways,
     gateways,
     setCheckedGateways,
+    processing,
 }) => {
+    const history = useHistory()
+    const allGatewaysChecked = checkedGateways.length === gateways.length
+
     const toggleGateway = id => {
         if (checkedGateways.includes(id)) {
             const index = checkedGateways.findIndex(curId => curId === id)
@@ -38,12 +47,34 @@ export const GatewayList = ({
         }
     }
 
+    const toggleAll = () => {
+        if (!allGatewaysChecked) {
+            const allGatewayIds = gateways.map(({ uid }) => uid)
+            setCheckedGateways(allGatewayIds)
+        } else {
+            setCheckedGateways([])
+        }
+    }
+
     return (
-        <div>
+        <div className={styles.container}>
+            {processing && (
+                <div className={styles.processingMessage}>
+                    <div className={styles.loadingContainer}>
+                        <CircularLoader />
+                    </div>
+                </div>
+            )}
+
             <Table>
                 <TableHead>
                     <TableRowHead>
-                        <TableCellHead />
+                        <TableCellHead>
+                            <Checkbox
+                                onChange={toggleAll}
+                                checked={allGatewaysChecked}
+                            />
+                        </TableCellHead>
                         <TableCellHead>{i18n.t('Name')}</TableCellHead>
                         <TableCellHead>{i18n.t('Type')}</TableCellHead>
                         <TableCellHead>
@@ -74,7 +105,29 @@ export const GatewayList = ({
                                     : i18n.t('No')}
                             </TableCell>
                             <TableCell>
-                                <Button>Make default</Button>
+                                <ButtonStrip>
+                                    {!gateway.isDefault && (
+                                        <Button
+                                            onClick={() =>
+                                                alert(
+                                                    '@TODO: Needs implementation'
+                                                )
+                                            }
+                                        >
+                                            {i18n.t('Make default')}
+                                        </Button>
+                                    )}
+
+                                    <Button
+                                        onClick={() => {
+                                            history.push(
+                                                `${GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC}/${gateway.uid}`
+                                            )
+                                        }}
+                                    >
+                                        {i18n.t('Edit')}
+                                    </Button>
+                                </ButtonStrip>
                             </TableCell>
                         </TableRow>
                     ))}
@@ -95,4 +148,5 @@ GatewayList.propTypes = {
         })
     ).isRequired,
     setCheckedGateways: PropTypes.func.isRequired,
+    processing: PropTypes.bool,
 }
