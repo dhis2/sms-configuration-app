@@ -11,6 +11,7 @@ import {
     GatewayGenericForm,
 } from '../../forms'
 import { PageHeadline } from '../../headline'
+import { dataTest } from '../../dataTest'
 import {
     useCreateBulkSMSGatewayMutation,
     useCreateClickatellGatewayMutation,
@@ -48,7 +49,7 @@ export const GatewayConfigFormNew = () => {
     }
 
     return (
-        <div>
+        <div data-test={dataTest('views-gatewayconfigformnew')}>
             <PageHeadline>SMS Gateway Configuration</PageHeadline>
 
             <FormRow>

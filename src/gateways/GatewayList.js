@@ -1,23 +1,9 @@
-import {
-    Button,
-    ButtonStrip,
-    Checkbox,
-    CircularLoader,
-    Table,
-    TableHead,
-    TableBody,
-    TableRowHead,
-    TableCellHead,
-    TableRow,
-    TableCell,
-} from '@dhis2/ui'
+import { CircularLoader } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
-import { useHistory } from 'react-router-dom'
 import React from 'react'
 
-import { getTypeLabelByType } from './getTypeLabelByType'
-import i18n from '../locales'
-import { GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC } from '../views/gateway_configuration/GatewayConfigFormEdit'
+import { GatewaysTable } from './GatewaysTable'
+import { dataTest } from '../dataTest'
 import styles from './GatewayList.module.css'
 
 export const GatewayList = ({
@@ -26,7 +12,6 @@ export const GatewayList = ({
     setCheckedGateways,
     processing,
 }) => {
-    const history = useHistory()
     const allGatewaysChecked = checkedGateways.length === gateways.length
 
     const toggleGateway = id => {
@@ -57,7 +42,10 @@ export const GatewayList = ({
     }
 
     return (
-        <div className={styles.container}>
+        <div
+            className={styles.container}
+            data-test={dataTest('gateways-gatewaylist')}
+        >
             {processing && (
                 <div className={styles.processingMessage}>
                     <div className={styles.loadingContainer}>
@@ -66,73 +54,13 @@ export const GatewayList = ({
                 </div>
             )}
 
-            <Table>
-                <TableHead>
-                    <TableRowHead>
-                        <TableCellHead>
-                            <Checkbox
-                                onChange={toggleAll}
-                                checked={allGatewaysChecked}
-                            />
-                        </TableCellHead>
-                        <TableCellHead>{i18n.t('Name')}</TableCellHead>
-                        <TableCellHead>{i18n.t('Type')}</TableCellHead>
-                        <TableCellHead>
-                            {i18n.t('Default gateway')}
-                        </TableCellHead>
-                        <TableCellHead />
-                    </TableRowHead>
-                </TableHead>
-
-                <TableBody>
-                    {gateways.map(gateway => (
-                        <TableRow key={gateway.uid}>
-                            <TableCell>
-                                <Checkbox
-                                    onChange={() => toggleGateway(gateway.uid)}
-                                    checked={checkedGateways.includes(
-                                        gateway.uid
-                                    )}
-                                />
-                            </TableCell>
-                            <TableCell>{gateway.name}</TableCell>
-                            <TableCell>
-                                {getTypeLabelByType(gateway.type)}
-                            </TableCell>
-                            <TableCell>
-                                {gateway.isDefault
-                                    ? i18n.t('Yes')
-                                    : i18n.t('No')}
-                            </TableCell>
-                            <TableCell>
-                                <ButtonStrip>
-                                    {!gateway.isDefault && (
-                                        <Button
-                                            onClick={() =>
-                                                alert(
-                                                    '@TODO: Needs implementation'
-                                                )
-                                            }
-                                        >
-                                            {i18n.t('Make default')}
-                                        </Button>
-                                    )}
-
-                                    <Button
-                                        onClick={() => {
-                                            history.push(
-                                                `${GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC}/${gateway.uid}`
-                                            )
-                                        }}
-                                    >
-                                        {i18n.t('Edit')}
-                                    </Button>
-                                </ButtonStrip>
-                            </TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
+            <GatewaysTable
+                allGatewaysChecked={allGatewaysChecked}
+                gateways={gateways}
+                checkedGateways={checkedGateways}
+                onGatewayToggle={toggleGateway}
+                onToggleAll={toggleAll}
+            />
         </div>
     )
 }

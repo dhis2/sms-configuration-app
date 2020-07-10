@@ -10,6 +10,7 @@ import {
     useReadGatewaysQuery,
 } from '../../gateways'
 import { PageHeadline } from '../../headline'
+import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
 import styles from './GatewayConfigList.module.css'
 
@@ -48,7 +49,10 @@ export const GatewayConfigList = () => {
             : jsonData
 
     return (
-        <div className={styles.container}>
+        <div
+            className={styles.container}
+            data-test={dataTest('views-gatewayconfiglist')}
+        >
             <PageHeadline>SMS Gateway Configuration</PageHeadline>
 
             <p>

@@ -8,9 +8,10 @@ import {
     HOME_LABEL,
 } from '../views'
 import { NavigationItem } from './NavigationItem'
+import { dataTest } from '../dataTest'
 
 export const Navigation = () => (
-    <Menu>
+    <Menu dataTest={dataTest('navigation-navigation')}>
         <NavigationItem path={HOME_PATH} label={HOME_LABEL} />
 
         <NavigationItem

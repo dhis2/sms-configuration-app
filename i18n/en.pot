@@ -5,37 +5,37 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-07-09T11:40:20.498Z\n"
-"PO-Revision-Date: 2020-07-09T11:40:20.498Z\n"
+"POT-Creation-Date: 2020-07-10T07:00:19.281Z\n"
+"PO-Revision-Date: 2020-07-10T07:00:19.281Z\n"
 
 msgid "Add key value pair"
-msgstr ""
-
-msgid "Name"
-msgstr ""
-
-msgid "User name"
-msgstr ""
-
-msgid "Password"
-msgstr ""
-
-msgid "Add BulkSMS gateway"
 msgstr ""
 
 msgid "Auth token"
 msgstr ""
 
-msgid "Add Clickatell gateway"
+msgid "Message parameter"
 msgstr ""
 
-msgid "Message parameter"
+msgid "Name"
+msgstr ""
+
+msgid "Password"
 msgstr ""
 
 msgid "Recipient parameter"
 msgstr ""
 
 msgid "Url template"
+msgstr ""
+
+msgid "User name"
+msgstr ""
+
+msgid "Add BulkSMS gateway"
+msgstr ""
+
+msgid "Add Clickatell gateway"
 msgstr ""
 
 msgid "In generic http gateway any number of parameters can be added."

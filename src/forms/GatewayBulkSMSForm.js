@@ -1,51 +1,34 @@
-import {
-    Button,
-    InputFieldFF,
-    ReactFinalForm,
-    composeValidators,
-    hasValue,
-    string,
-} from '@dhis2/ui'
+import { Button, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
+import { FieldName } from './FieldName'
+import { FieldUsername } from './FieldUsername'
+import { FieldPassword } from './FieldPassword'
 import { FormRow } from './FormRow'
+import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
-const { Form, Field } = ReactFinalForm
-
-const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
+const { Form } = ReactFinalForm
 
 export const GatewayBulkSMSForm = ({ onSubmit, initilValues }) => {
     return (
         <Form onSubmit={onSubmit} initilValues={initilValues}>
             {({ handleSubmit }) => (
-                <form onSubmit={handleSubmit}>
+                <form
+                    onSubmit={handleSubmit}
+                    data-test={dataTest('forms-gatewaybulksmsform')}
+                >
                     <FormRow>
-                        <Field
-                            name="name"
-                            label={i18n.t('Name')}
-                            component={InputFieldFF}
-                            validate={isStringWithLengthAtLeastOne}
-                        />
+                        <FieldName />
                     </FormRow>
 
                     <FormRow>
-                        <Field
-                            name="username"
-                            label={i18n.t('User name')}
-                            component={InputFieldFF}
-                            validate={isStringWithLengthAtLeastOne}
-                        />
+                        <FieldUsername />
                     </FormRow>
 
                     <FormRow>
-                        <Field
-                            name="password"
-                            label={i18n.t('Password')}
-                            component={InputFieldFF}
-                            validate={isStringWithLengthAtLeastOne}
-                        />
+                        <FieldPassword />
                     </FormRow>
 
                     <Button type="submit">

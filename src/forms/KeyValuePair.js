@@ -11,6 +11,7 @@ import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
 import { FormRow } from './FormRow'
+import { dataTest } from '../dataTest'
 import i18n from '../locales'
 import styles from './KeyValuePair.module.css'
 
@@ -34,55 +35,57 @@ export const KeyValuePair = ({ index }) => {
     }
 
     return (
-        <FormRow>
-            <div className={styles.textInputs}>
-                <Field
-                    className={styles.keyInput}
-                    name={`parameters[${index}].key`}
-                    label={i18n.t('Key')}
-                    component={InputFieldFF}
-                    validate={isStringWithLengthAtLeastOne}
-                />
+        <div data-test={dataTest('form-keyvaluepair')}>
+            <FormRow>
+                <div className={styles.textInputs}>
+                    <Field
+                        className={styles.keyInput}
+                        name={`parameters[${index}].key`}
+                        label={i18n.t('Key')}
+                        component={InputFieldFF}
+                        validate={isStringWithLengthAtLeastOne}
+                    />
 
-                <Field
-                    className={styles.valueInput}
-                    name={`parameters[${index}].value`}
-                    label={i18n.t('Value')}
-                    component={InputFieldFF}
-                    validate={isStringWithLengthAtLeastOne}
-                />
-            </div>
+                    <Field
+                        className={styles.valueInput}
+                        name={`parameters[${index}].value`}
+                        label={i18n.t('Value')}
+                        component={InputFieldFF}
+                        validate={isStringWithLengthAtLeastOne}
+                    />
+                </div>
 
-            <div className={styles.checkboxGroup}>
-                <Field
-                    className={styles.checkbox}
-                    type="checkbox"
-                    name={`parameters[${index}].header`}
-                    label={i18n.t('Is header')}
-                    component={CheckboxFieldFF}
-                />
+                <div className={styles.checkboxGroup}>
+                    <Field
+                        className={styles.checkbox}
+                        type="checkbox"
+                        name={`parameters[${index}].header`}
+                        label={i18n.t('Is header')}
+                        component={CheckboxFieldFF}
+                    />
 
-                <Field
-                    className={styles.checkbox}
-                    type="checkbox"
-                    name={`parameters[${index}].encode`}
-                    label={i18n.t('Encode')}
-                    component={CheckboxFieldFF}
-                />
+                    <Field
+                        className={styles.checkbox}
+                        type="checkbox"
+                        name={`parameters[${index}].encode`}
+                        label={i18n.t('Encode')}
+                        component={CheckboxFieldFF}
+                    />
 
-                <Field
-                    className={styles.checkbox}
-                    type="checkbox"
-                    name={`parameters[${index}].confidential`}
-                    label={i18n.t('Confidential')}
-                    component={CheckboxFieldFF}
-                />
-            </div>
+                    <Field
+                        className={styles.checkbox}
+                        type="checkbox"
+                        name={`parameters[${index}].confidential`}
+                        label={i18n.t('Confidential')}
+                        component={CheckboxFieldFF}
+                    />
+                </div>
 
-            <Button onClick={() => removeKeyValueFromFormState(index)}>
-                {i18n.t('Remove key value pair')}
-            </Button>
-        </FormRow>
+                <Button onClick={() => removeKeyValueFromFormState(index)}>
+                    {i18n.t('Remove key value pair')}
+                </Button>
+            </FormRow>
+        </div>
     )
 }
 

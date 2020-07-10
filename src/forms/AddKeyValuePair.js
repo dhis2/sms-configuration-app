@@ -1,6 +1,7 @@
 import { Button, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../locales'
+import { dataTest } from '../dataTest'
 
 const { useForm } = ReactFinalForm
 
@@ -23,7 +24,10 @@ export const AddKeyValuePair = () => {
     }
 
     return (
-        <Button onClick={addKeyValueToFormState}>
+        <Button
+            onClick={addKeyValueToFormState}
+            dataTest={dataTest('forms-addkeyvaluepair')}
+        >
             {i18n.t('Add key value pair')}
         </Button>
     )
