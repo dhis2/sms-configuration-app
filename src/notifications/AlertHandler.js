@@ -1,7 +1,9 @@
 import { AlertBar, AlertStack } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { PropTypes } from '@dhis2/prop-types'
+
 import { AlertContext } from './AlertContext'
+import { dataTest } from '../dataTest'
 
 export const AlertHandler = ({ children }) => {
     const [alerts, setAlerts] = useState([])
@@ -11,9 +13,13 @@ export const AlertHandler = ({ children }) => {
         <AlertContext.Provider value={{ addAlert }}>
             {children}
 
-            <AlertStack>
+            <AlertStack dataTest={dataTest('notifications-alerthandler')}>
                 {alerts.map(({ message, type }) => (
-                    <AlertBar key={message} {...{ [type]: true }}>
+                    <AlertBar
+                        dataTest={dataTest('notifications-alert')}
+                        key={message}
+                        {...{ [type]: true }}
+                    >
                         {message}
                     </AlertBar>
                 ))}

@@ -15,11 +15,12 @@ import {
     Home,
     NoMatch,
 } from './views'
+import { dataTest } from './dataTest'
 
 const App = () => (
     <AlertHandler>
         <BrowserRouter>
-            <div className={styles.container}>
+            <div className={styles.container} data-test={dataTest('app')}>
                 <div className={styles.sidebar}>
                     <Navigation />
                 </div>

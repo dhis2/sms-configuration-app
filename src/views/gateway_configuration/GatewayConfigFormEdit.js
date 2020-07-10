@@ -1,26 +1,27 @@
-import { useDataQuery } from '@dhis2/app-runtime'
 import { useParams } from 'react-router-dom'
 import React from 'react'
-import i18n from '../../locales'
 
-import { GENERIC_FORM, BULK_SMS_FORM, CLICKATELL_FORM } from '../../gateways'
+import {
+    GENERIC_FORM,
+    BULK_SMS_FORM,
+    CLICKATELL_FORM,
+    useReadGatewayQuery,
+} from '../../gateways'
 import {
     GatewayBulkSMSForm,
     GatewayClickatellForm,
     GatewayGenericForm,
 } from '../../forms'
+import { PageHeadline } from '../../headline'
+import { dataTest } from '../../dataTest'
+import i18n from '../../locales'
 
 export const GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC = '/sms-gateway/edit'
 export const GATEWAY_CONFIG_FORM_EDIT_PATH = `${GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC}/:id`
 
 export const GatewayConfigFormEdit = () => {
     const { id } = useParams()
-    const { loading, error, data: jsonData } = useDataQuery({
-        gateway: {
-            resource: 'gateways',
-            id,
-        },
-    })
+    const { loading, error, data: jsonData } = useReadGatewayQuery(id)
 
     const data =
         /**
@@ -36,13 +37,13 @@ export const GatewayConfigFormEdit = () => {
     const onSubmit = console.log.bind(null, 'onSubmit')
 
     return (
-        <div>
-            <h1>Edit</h1>
+        <div data-test={dataTest('views-gatewayconfigformedit')}>
+            <PageHeadline>Edit</PageHeadline>
 
             {loading && i18n.t('Loading...')}
-            {error && i18n.t('Error: %error%', { error: error.message })}
+            {error && i18n.t('Error: {{error}}', { error: error.message })}
             {data?.gateway && (
-                <code>
+                <>
                     {gatewayType === GENERIC_FORM && (
                         <GatewayGenericForm
                             initialValues={data.gateway}
@@ -63,7 +64,7 @@ export const GatewayConfigFormEdit = () => {
                             initialValues={data.gateway}
                         />
                     )}
-                </code>
+                </>
             )}
         </div>
     )

@@ -1,63 +1,41 @@
-import {
-    Button,
-    InputFieldFF,
-    ReactFinalForm,
-    composeValidators,
-    hasValue,
-    string,
-    url,
-} from '@dhis2/ui'
+import { Button, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
 import { AddKeyValuePair } from './AddKeyValuePair'
+import { FieldMessageParameter } from './FieldMessageParameter'
+import { FieldName } from './FieldName'
+import { FieldRecipientParameter } from './FieldRecipientParameter'
+import { FieldUrlTemplate } from './FieldUrlTemplate'
 import { FormRow } from './FormRow'
 import { KeyValuePair } from './KeyValuePair'
+import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
-const { Form, Field } = ReactFinalForm
-
-const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
+const { Form } = ReactFinalForm
 
 export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
     return (
         <Form onSubmit={onSubmit} initialValues={initialValues}>
             {({ handleSubmit, values, submitting }) => (
-                <form onSubmit={handleSubmit}>
+                <form
+                    onSubmit={handleSubmit}
+                    data-test={dataTest('forms-gatewaygenericform')}
+                >
                     <FormRow>
-                        <Field
-                            name="name"
-                            label={i18n.t('Name')}
-                            component={InputFieldFF}
-                            validate={isStringWithLengthAtLeastOne}
-                        />
+                        <FieldName />
                     </FormRow>
 
                     <FormRow>
-                        <Field
-                            name="messageParameter"
-                            label={i18n.t('Message parameter')}
-                            component={InputFieldFF}
-                            validate={isStringWithLengthAtLeastOne}
-                        />
+                        <FieldMessageParameter />
                     </FormRow>
 
                     <FormRow>
-                        <Field
-                            name="recipientParameter"
-                            label={i18n.t('Recipient parameter')}
-                            component={InputFieldFF}
-                            validate={isStringWithLengthAtLeastOne}
-                        />
+                        <FieldRecipientParameter />
                     </FormRow>
 
                     <FormRow>
-                        <Field
-                            name="urlTemplate"
-                            label={i18n.t('Url template')}
-                            component={InputFieldFF}
-                            validate={composeValidators(url, hasValue)}
-                        />
+                        <FieldUrlTemplate />
                     </FormRow>
 
                     {values.parameters.map((_, index) => (
