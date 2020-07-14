@@ -1,13 +1,14 @@
 import { Button, ButtonStrip } from '@dhis2/ui'
 import { useHistory } from 'react-router-dom'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import { GATEWAY_CONFIG_FORM_NEW_PATH } from './GatewayConfigFormNew'
-import { AlertContext } from '../../notifications'
+import { AlertContext, useCriticalNotification } from '../../notifications'
 import {
     GatewayList,
     useDeleteGatewaysMutation,
     useReadGatewaysQuery,
+    useSetDefaultGatewayMutation,
 } from '../../gateways'
 import { PageHeadline } from '../../headline'
 import { dataTest } from '../../dataTest'
@@ -18,25 +19,40 @@ export const GATEWAY_CONFIG_LIST_PATH = `/sms-gateway/list`
 export const GATEWAY_CONFIG_LIST_LABEL = 'SMS Gateways'
 
 export const GatewayConfigList = () => {
-    const { addAlert } = useContext(AlertContext)
-    const { loading, error, data: jsonData } = useReadGatewaysQuery()
-    const [checkedGateways, setCheckedGateways] = useState([])
     const history = useHistory()
     const onAddGatewayClick = () => history.push(GATEWAY_CONFIG_FORM_NEW_PATH)
+    const [checkedGateways, setCheckedGateways] = useState([])
+    const { addAlert } = useContext(AlertContext)
+
+    const {
+        loading: loadingReadGateways,
+        error: errorReadGateways,
+        data: jsonData,
+        refetch: refetchReadGateways,
+    } = useReadGatewaysQuery()
+
     const [
         deleteCheckedGateways,
         { loading: loadingDelete, error: errorDelete },
     ] = useDeleteGatewaysMutation()
+
+    const [
+        makeGatewayDefault,
+        { loading: loadingSetDefault, error: errorSetDefault },
+    ] = useSetDefaultGatewayMutation()
+
     const onDeleteClick = () => {
         const variables = { ids: checkedGateways }
-        deleteCheckedGateways(variables)
+        deleteCheckedGateways(variables).then(refetchReadGateways)
     }
 
-    useEffect(() => {
-        if (errorDelete) {
-            addAlert({ type: 'critical', message: errorDelete.message })
-        }
-    }, [errorDelete])
+    const onMakeDefaultClick = id => {
+        const variables = { id }
+        makeGatewayDefault(variables).then(refetchReadGateways)
+    }
+
+    useCriticalNotification(addAlert, errorDelete)
+    useCriticalNotification(addAlert, errorSetDefault)
 
     const data =
         /**
@@ -47,6 +63,8 @@ export const GatewayConfigList = () => {
         jsonData && typeof jsonData.gateways === 'string'
             ? { gateways: JSON.parse(jsonData.gateways) }
             : jsonData
+
+    const loading = loadingReadGateways || loadingDelete || loadingSetDefault
 
     return (
         <div
@@ -83,14 +101,16 @@ export const GatewayConfigList = () => {
                 </ButtonStrip>
             </div>
 
-            {loading && i18n.t('Loading gateway configurations')}
-            {error && i18n.t('Something went wrong: %s', error.message)}
+            {loadingReadGateways && i18n.t('Loading gateway configurations')}
+            {errorReadGateways &&
+                i18n.t('Something went wrong: %s', errorReadGateways.message)}
             {data?.gateways?.gateways && (
                 <GatewayList
-                    processing={loadingDelete}
+                    processing={loading}
                     checkedGateways={checkedGateways}
                     setCheckedGateways={setCheckedGateways}
                     gateways={data.gateways.gateways}
+                    onMakeDefaultClick={onMakeDefaultClick}
                 />
             )}
         </div>

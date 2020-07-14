@@ -25,6 +25,7 @@ export const GatewaysTable = ({
     gateways,
     onGatewayToggle,
     onToggleAll,
+    onMakeDefaultClick,
 }) => {
     const history = useHistory()
 
@@ -94,7 +95,7 @@ export const GatewaysTable = ({
                                             'gateways-gatewaystable-makedefault'
                                         )}
                                         onClick={() =>
-                                            alert('@TODO: Needs implementation')
+                                            onMakeDefaultClick(gateway.uid)
                                         }
                                     >
                                         {i18n.t('Make default')}
@@ -133,6 +134,7 @@ GatewaysTable.propTypes = {
         })
     ).isRequired,
     onGatewayToggle: PropTypes.func.isRequired,
+    onMakeDefaultClick: PropTypes.func.isRequired,
     onToggleAll: PropTypes.func.isRequired,
     allGatewaysChecked: PropTypes.bool,
 }
