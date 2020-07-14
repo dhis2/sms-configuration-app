@@ -10,6 +10,7 @@ export const GatewayList = ({
     checkedGateways,
     gateways,
     setCheckedGateways,
+    onMakeDefaultClick,
     processing,
 }) => {
     const allGatewaysChecked = checkedGateways.length === gateways.length
@@ -59,6 +60,7 @@ export const GatewayList = ({
                 gateways={gateways}
                 checkedGateways={checkedGateways}
                 onGatewayToggle={toggleGateway}
+                onMakeDefaultClick={onMakeDefaultClick}
                 onToggleAll={toggleAll}
             />
         </div>
@@ -76,5 +78,6 @@ GatewayList.propTypes = {
         })
     ).isRequired,
     setCheckedGateways: PropTypes.func.isRequired,
+    onMakeDefaultClick: PropTypes.func.isRequired,
     processing: PropTypes.bool,
 }
