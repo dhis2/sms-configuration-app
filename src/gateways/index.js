@@ -1,3 +1,4 @@
+export * from './DeleteConfirmationDialog'
 export * from './GatewayList'
 export * from './gatewayTypes'
 export * from './useCreateBulkSMSGatewayMutation'
