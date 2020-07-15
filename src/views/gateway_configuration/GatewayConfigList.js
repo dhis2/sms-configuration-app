@@ -5,6 +5,7 @@ import React, { useContext, useState } from 'react'
 import { GATEWAY_CONFIG_FORM_NEW_PATH } from './GatewayConfigFormNew'
 import { AlertContext, useCriticalNotification } from '../../notifications'
 import {
+    DeleteConfirmationDialog,
     GatewayList,
     useDeleteGatewaysMutation,
     useReadGatewaysQuery,
@@ -22,12 +23,13 @@ export const GatewayConfigList = () => {
     const history = useHistory()
     const onAddGatewayClick = () => history.push(GATEWAY_CONFIG_FORM_NEW_PATH)
     const [checkedGateways, setCheckedGateways] = useState([])
+    const [showDeleteDialog, setShowDeleteDialog] = useState(false)
     const { addAlert } = useContext(AlertContext)
 
     const {
         loading: loadingReadGateways,
         error: errorReadGateways,
-        data: jsonData,
+        data,
         refetch: refetchReadGateways,
     } = useReadGatewaysQuery()
 
@@ -44,6 +46,7 @@ export const GatewayConfigList = () => {
     const onDeleteClick = () => {
         const variables = { ids: checkedGateways }
         deleteCheckedGateways(variables).then(refetchReadGateways)
+        setShowDeleteDialog(false)
     }
 
     const onMakeDefaultClick = id => {
@@ -53,16 +56,6 @@ export const GatewayConfigList = () => {
 
     useCriticalNotification(addAlert, errorDelete)
     useCriticalNotification(addAlert, errorSetDefault)
-
-    const data =
-        /**
-         * @TODO:
-         *   Create Jira issue for:
-         *   The response does not contain the right content type header
-         */
-        jsonData && typeof jsonData.gateways === 'string'
-            ? { gateways: JSON.parse(jsonData.gateways) }
-            : jsonData
 
     const loading = loadingReadGateways || loadingDelete || loadingSetDefault
 
@@ -80,19 +73,23 @@ export const GatewayConfigList = () => {
             </p>
 
             <div className={styles.actions}>
-                <ButtonStrip>
+                <ButtonStrip
+                    data-test={dataTest('views-gatewayconfiglist-actions')}
+                >
                     <Button
                         primary
                         onClick={onAddGatewayClick}
                         disabled={loadingDelete}
+                        dataTest={dataTest('views-gatewayconfiglist-add')}
                     >
                         Add gateway
                     </Button>
 
                     <Button
                         destructive
-                        onClick={onDeleteClick}
+                        onClick={() => setShowDeleteDialog(true)}
                         disabled={!checkedGateways.length || loadingDelete}
+                        dataTest={dataTest('views-gatewayconfiglist-delete')}
                     >
                         Delete selected gateway configurations
                     </Button>
@@ -111,6 +108,14 @@ export const GatewayConfigList = () => {
                     setCheckedGateways={setCheckedGateways}
                     gateways={data.gateways.gateways}
                     onMakeDefaultClick={onMakeDefaultClick}
+                />
+            )}
+
+            {showDeleteDialog && (
+                <DeleteConfirmationDialog
+                    ids={checkedGateways}
+                    onCancelClick={() => setShowDeleteDialog(false)}
+                    onDeleteClick={onDeleteClick}
                 />
             )}
         </div>

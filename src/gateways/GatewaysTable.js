@@ -33,7 +33,9 @@ export const GatewaysTable = ({
         <Table dataTest={dataTest('gateways-gatewaystable')}>
             <TableHead>
                 <TableRowHead>
-                    <TableCellHead>
+                    <TableCellHead
+                        dataTest={dataTest('gateways-gatewaystable-checkall')}
+                    >
                         <Checkbox
                             onChange={onToggleAll}
                             checked={allGatewaysChecked}

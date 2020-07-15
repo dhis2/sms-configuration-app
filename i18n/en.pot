@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-07-10T07:00:19.281Z\n"
-"PO-Revision-Date: 2020-07-10T07:00:19.281Z\n"
+"POT-Creation-Date: 2020-07-15T11:06:33.595Z\n"
+"PO-Revision-Date: 2020-07-15T11:06:33.595Z\n"
 
 msgid "Add key value pair"
 msgstr ""
@@ -63,6 +63,12 @@ msgid "Confidential"
 msgstr ""
 
 msgid "Remove key value pair"
+msgstr ""
+
+msgid "Delete confirmation"
+msgstr ""
+
+msgid "Is default"
 msgstr ""
 
 msgid "Type"
