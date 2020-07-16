@@ -52,7 +52,10 @@ export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
                         <AddKeyValuePair />
                     </FormRow>
 
-                    <Button type="submit">
+                    <Button
+                        type="submit"
+                        dataTest={dataTest('forms-gatewaygenericform-submit')}
+                    >
                         {submitting
                             ? i18n.t('Submitting...')
                             : i18n.t('Add generic gateway')}

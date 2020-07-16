@@ -44,7 +44,7 @@ export const GatewayConfigFormNew = () => {
 
             history.push(GATEWAY_CONFIG_LIST_PATH)
         } catch (e) {
-            return Promise.reject()
+            return Promise.reject(e)
         }
     }
 
