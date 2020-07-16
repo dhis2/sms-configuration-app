@@ -35,10 +35,11 @@ export const KeyValuePair = ({ index }) => {
     }
 
     return (
-        <div data-test={dataTest('form-keyvaluepair')}>
+        <div data-test={dataTest('forms-keyvaluepair')}>
             <FormRow>
                 <div className={styles.textInputs}>
                     <Field
+                        dataTest={dataTest('forms-keyvaluepair-key')}
                         className={styles.keyInput}
                         name={`parameters[${index}].key`}
                         label={i18n.t('Key')}
@@ -47,6 +48,7 @@ export const KeyValuePair = ({ index }) => {
                     />
 
                     <Field
+                        dataTest={dataTest('forms-keyvaluepair-value')}
                         className={styles.valueInput}
                         name={`parameters[${index}].value`}
                         label={i18n.t('Value')}
@@ -57,6 +59,7 @@ export const KeyValuePair = ({ index }) => {
 
                 <div className={styles.checkboxGroup}>
                     <Field
+                        dataTest={dataTest('forms-keyvaluepair-isheader')}
                         className={styles.checkbox}
                         type="checkbox"
                         name={`parameters[${index}].header`}
@@ -65,6 +68,7 @@ export const KeyValuePair = ({ index }) => {
                     />
 
                     <Field
+                        dataTest={dataTest('forms-keyvaluepair-isencoded')}
                         className={styles.checkbox}
                         type="checkbox"
                         name={`parameters[${index}].encode`}
@@ -73,6 +77,7 @@ export const KeyValuePair = ({ index }) => {
                     />
 
                     <Field
+                        dataTest={dataTest('forms-keyvaluepair-isconfidential')}
                         className={styles.checkbox}
                         type="checkbox"
                         name={`parameters[${index}].confidential`}
@@ -81,7 +86,10 @@ export const KeyValuePair = ({ index }) => {
                     />
                 </div>
 
-                <Button onClick={() => removeKeyValueFromFormState(index)}>
+                <Button
+                    dataTest={dataTest('forms-keyvaluepair-remove')}
+                    onClick={() => removeKeyValueFromFormState(index)}
+                >
                     {i18n.t('Remove key value pair')}
                 </Button>
             </FormRow>

@@ -1,6 +1,7 @@
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import React from 'react'
 
+import { GATEWAY_CONFIG_LIST_PATH } from './GatewayConfigList'
 import {
     GENERIC_FORM,
     BULK_SMS_FORM,
@@ -12,6 +13,7 @@ import {
     GatewayClickatellForm,
     GatewayGenericForm,
 } from '../../forms'
+import { useUpdateGenericGatewayMutation } from '../../gateways'
 import { PageHeadline } from '../../headline'
 import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
@@ -20,8 +22,12 @@ export const GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC = '/sms-gateway/edit'
 export const GATEWAY_CONFIG_FORM_EDIT_PATH = `${GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC}/:id`
 
 export const GatewayConfigFormEdit = () => {
+    const history = useHistory()
     const { id } = useParams()
     const { loading, error, data: jsonData } = useReadGatewayQuery(id)
+    const [saveGenericGateway] = useUpdateGenericGatewayMutation()
+    //const [saveBulkSMSGateway] = useUpdateBulkSMSGatewayMutation()
+    //const [saveClickatellGateway] = useUpdateClickatellGatewayMutation()
 
     const data =
         /**
@@ -34,7 +40,25 @@ export const GatewayConfigFormEdit = () => {
             : jsonData
 
     const gatewayType = data?.gateway?.type
-    const onSubmit = console.log.bind(null, 'onSubmit')
+    const onSubmit = async values => {
+        try {
+            if (values.type === GENERIC_FORM) {
+                await saveGenericGateway(values)
+            }
+
+            //if (values.type === BULK_SMS_FORM) {
+            //    await saveBulkSMSGateway(values)
+            //}
+
+            //if (values.type === CLICKATELL_FORM) {
+            //    await saveClickatellGateway(values)
+            //}
+
+            history.push(GATEWAY_CONFIG_LIST_PATH)
+        } catch (e) {
+            return Promise.reject(e)
+        }
+    }
 
     return (
         <div data-test={dataTest('views-gatewayconfigformedit')}>
