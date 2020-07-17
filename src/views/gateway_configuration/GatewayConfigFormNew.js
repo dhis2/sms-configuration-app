@@ -57,6 +57,9 @@ export const GatewayConfigFormNew = () => {
                     label={i18n.t('Gateway type')}
                     onChange={({ selected }) => setVisibleForm(selected)}
                     selected={visibleForm}
+                    dataTest={dataTest(
+                        'views-gatewayconfigformnew-gatewaytype'
+                    )}
                 >
                     <SingleSelectOption
                         value={GENERIC_FORM}
