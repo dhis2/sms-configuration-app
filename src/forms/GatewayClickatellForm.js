@@ -13,9 +13,13 @@ import i18n from '../locales'
 
 const { Form } = ReactFinalForm
 
-export const GatewayClickatellForm = ({ onSubmit, initilValues }) => {
+export const GatewayClickatellForm = ({
+    onSubmit,
+    initialValues,
+    passwordRequired,
+}) => {
     return (
-        <Form onSubmit={onSubmit} initilValues={initilValues}>
+        <Form onSubmit={onSubmit} initialValues={initialValues}>
             {({ handleSubmit }) => (
                 <form
                     onSubmit={handleSubmit}
@@ -30,7 +34,7 @@ export const GatewayClickatellForm = ({ onSubmit, initilValues }) => {
                     </FormRow>
 
                     <FormRow>
-                        <FieldPassword />
+                        <FieldPassword required={passwordRequired} />
                     </FormRow>
 
                     <FormRow>
@@ -53,9 +57,11 @@ export const GatewayClickatellForm = ({ onSubmit, initilValues }) => {
 
 GatewayClickatellForm.defaultProps = {
     initialValues: {},
+    passwordRequired: false,
 }
 
 GatewayClickatellForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    initilValues: PropTypes.object,
+    initialValues: PropTypes.object,
+    passwordRequired: PropTypes.bool,
 }
