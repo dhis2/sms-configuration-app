@@ -3,13 +3,13 @@ import { useDataMutation } from '@dhis2/app-runtime'
 const SAVE_CLICKATELL_GATEWAY_MUTATION = {
     resource: 'gateways',
     type: 'create',
-    data: {
+    data: ({ name, username, password, authtoken }) => ({
         type: 'clickatell',
-        name: ({ name }) => name,
-        username: ({ username }) => username,
-        authtoken: ({ authtoken }) => authtoken,
-        urlTemplate: ({ urlTemplate }) => urlTemplate,
-    },
+        name,
+        username,
+        password,
+        authtoken,
+    }),
 }
 
 export const useCreateClickatellGatewayMutation = () =>

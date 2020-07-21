@@ -31,7 +31,10 @@ export const GatewayBulkSMSForm = ({ onSubmit, initilValues }) => {
                         <FieldPassword />
                     </FormRow>
 
-                    <Button type="submit">
+                    <Button
+                        type="submit"
+                        dataTest={dataTest('forms-gatewaybulksmsform-submit')}
+                    >
                         {i18n.t('Add BulkSMS gateway')}
                     </Button>
                 </form>
