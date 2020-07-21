@@ -84,11 +84,17 @@ export const GatewayConfigFormNew = () => {
                 )}
 
                 {visibleForm === BULK_SMS_FORM && (
-                    <GatewayBulkSMSForm onSubmit={onSubmit} />
+                    <GatewayBulkSMSForm
+                        onSubmit={onSubmit}
+                        passwordRequired={true}
+                    />
                 )}
 
                 {visibleForm === CLICKATELL_FORM && (
-                    <GatewayClickatellForm onSubmit={onSubmit} />
+                    <GatewayClickatellForm
+                        onSubmit={onSubmit}
+                        passwordRequired={true}
+                    />
                 )}
             </FormRow>
         </div>

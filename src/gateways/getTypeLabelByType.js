@@ -1,5 +1,9 @@
 import i18n from '../locales'
 
+/**
+ * @param {string} type
+ * @returns {string}
+ */
 export const getTypeLabelByType = type => {
     if (type === 'bulksms') {
         return i18n.t('BulkSMS')
@@ -9,7 +13,7 @@ export const getTypeLabelByType = type => {
         return i18n.t('Clickatell')
     }
 
-    if (type === 'generic' || !type) {
+    if (type === 'http' || !type) {
         return i18n.t('Generic')
     }
 

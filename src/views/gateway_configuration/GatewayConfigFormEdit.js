@@ -7,13 +7,15 @@ import {
     BULK_SMS_FORM,
     CLICKATELL_FORM,
     useReadGatewayQuery,
+    useUpdateGenericGatewayMutation,
+    useUpdateBulkSMSGatewayMutation,
+    useUpdateClickatellGatewayMutation,
 } from '../../gateways'
 import {
     GatewayBulkSMSForm,
     GatewayClickatellForm,
     GatewayGenericForm,
 } from '../../forms'
-import { useUpdateGenericGatewayMutation } from '../../gateways'
 import { PageHeadline } from '../../headline'
 import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
@@ -26,8 +28,8 @@ export const GatewayConfigFormEdit = () => {
     const { id } = useParams()
     const { loading, error, data: jsonData } = useReadGatewayQuery(id)
     const [saveGenericGateway] = useUpdateGenericGatewayMutation()
-    //const [saveBulkSMSGateway] = useUpdateBulkSMSGatewayMutation()
-    //const [saveClickatellGateway] = useUpdateClickatellGatewayMutation()
+    const [saveBulkSMSGateway] = useUpdateBulkSMSGatewayMutation()
+    const [saveClickatellGateway] = useUpdateClickatellGatewayMutation()
 
     const data =
         /**
@@ -46,13 +48,13 @@ export const GatewayConfigFormEdit = () => {
                 await saveGenericGateway(values)
             }
 
-            //if (values.type === BULK_SMS_FORM) {
-            //    await saveBulkSMSGateway(values)
-            //}
+            if (values.type === BULK_SMS_FORM) {
+                await saveBulkSMSGateway(values)
+            }
 
-            //if (values.type === CLICKATELL_FORM) {
-            //    await saveClickatellGateway(values)
-            //}
+            if (values.type === CLICKATELL_FORM) {
+                await saveClickatellGateway(values)
+            }
 
             history.push(GATEWAY_CONFIG_LIST_PATH)
         } catch (e) {
@@ -77,15 +79,15 @@ export const GatewayConfigFormEdit = () => {
 
                     {gatewayType === BULK_SMS_FORM && (
                         <GatewayBulkSMSForm
-                            onSubmit={onSubmit}
                             initialValues={data.gateway}
+                            onSubmit={onSubmit}
                         />
                     )}
 
                     {gatewayType === CLICKATELL_FORM && (
                         <GatewayClickatellForm
-                            onSubmit={onSubmit}
                             initialValues={data.gateway}
+                            onSubmit={onSubmit}
                         />
                     )}
                 </>

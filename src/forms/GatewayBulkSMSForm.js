@@ -11,9 +11,13 @@ import i18n from '../locales'
 
 const { Form } = ReactFinalForm
 
-export const GatewayBulkSMSForm = ({ onSubmit, initilValues }) => {
+export const GatewayBulkSMSForm = ({
+    onSubmit,
+    initialValues,
+    passwordRequired,
+}) => {
     return (
-        <Form onSubmit={onSubmit} initilValues={initilValues}>
+        <Form onSubmit={onSubmit} initialValues={initialValues}>
             {({ handleSubmit }) => (
                 <form
                     onSubmit={handleSubmit}
@@ -28,7 +32,7 @@ export const GatewayBulkSMSForm = ({ onSubmit, initilValues }) => {
                     </FormRow>
 
                     <FormRow>
-                        <FieldPassword />
+                        <FieldPassword required={passwordRequired} />
                     </FormRow>
 
                     <Button
@@ -45,9 +49,11 @@ export const GatewayBulkSMSForm = ({ onSubmit, initilValues }) => {
 
 GatewayBulkSMSForm.defaultProps = {
     initialValues: {},
+    passwordRequired: false,
 }
 
 GatewayBulkSMSForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    initilValues: PropTypes.object,
+    initialValues: PropTypes.object,
+    passwordRequired: PropTypes.bool,
 }
