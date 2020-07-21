@@ -3,12 +3,12 @@ import { useDataMutation } from '@dhis2/app-runtime'
 const SAVE_BULK_SMS_GATEWAY_MUTATION = {
     resource: 'gateways',
     type: 'create',
-    data: {
+    data: ({ name, username, password }) => ({
         type: 'bulksms',
-        name: ({ name }) => name,
-        username: ({ username }) => username,
-        password: ({ password }) => password,
-    },
+        name,
+        username,
+        password,
+    }),
 }
 
 export const useCreateBulkSMSGatewayMutation = () =>

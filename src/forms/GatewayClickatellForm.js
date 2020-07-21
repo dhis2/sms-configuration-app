@@ -37,7 +37,12 @@ export const GatewayClickatellForm = ({ onSubmit, initilValues }) => {
                         <FieldAuthToken />
                     </FormRow>
 
-                    <Button type="submit">
+                    <Button
+                        type="submit"
+                        dataTest={dataTest(
+                            'forms-gatewayclickatellform-submit'
+                        )}
+                    >
                         {i18n.t('Add Clickatell gateway')}
                     </Button>
                 </form>
