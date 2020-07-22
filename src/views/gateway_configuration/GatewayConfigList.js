@@ -1,9 +1,9 @@
 import { Button, ButtonStrip } from '@dhis2/ui'
 import { useHistory } from 'react-router-dom'
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 
 import { GATEWAY_CONFIG_FORM_NEW_PATH } from './GatewayConfigFormNew'
-import { AlertContext, useCriticalNotification } from '../../notifications'
+import { useCriticalNotification } from '../../notifications'
 import {
     DeleteConfirmationDialog,
     GatewayList,
@@ -24,7 +24,6 @@ export const GatewayConfigList = () => {
     const onAddGatewayClick = () => history.push(GATEWAY_CONFIG_FORM_NEW_PATH)
     const [checkedGateways, setCheckedGateways] = useState([])
     const [showDeleteDialog, setShowDeleteDialog] = useState(false)
-    const { addAlert } = useContext(AlertContext)
 
     const {
         loading: loadingReadGateways,
@@ -54,8 +53,8 @@ export const GatewayConfigList = () => {
         makeGatewayDefault(variables).then(refetchReadGateways)
     }
 
-    useCriticalNotification(addAlert, errorDelete)
-    useCriticalNotification(addAlert, errorSetDefault)
+    useCriticalNotification(errorDelete)
+    useCriticalNotification(errorSetDefault)
 
     const loading = loadingReadGateways || loadingDelete || loadingSetDefault
 
