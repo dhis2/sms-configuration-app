@@ -1,6 +1,6 @@
 import { useDataMutation } from '@dhis2/app-runtime'
 
-const SET_DEFAULT_GATEWAY_MUTATION = {
+export const SET_DEFAULT_GATEWAY_MUTATION = {
     resource: 'gateways/default',
     type: 'replace',
     id: ({ id }) => id,

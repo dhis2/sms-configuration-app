@@ -42,11 +42,11 @@ const createDataFromVariables = ({
     parameters,
 })
 
-const SAVE_GENERIC_GATEWAY_MUTATION = {
+export const CREATE_GENERIC_GATEWAY_MUTATION = {
     resource: 'gateways',
     type: 'create',
     data: createDataFromVariables,
 }
 
 export const useCreateGenericGatewayMutation = () =>
-    useDataMutation(SAVE_GENERIC_GATEWAY_MUTATION)
+    useDataMutation(CREATE_GENERIC_GATEWAY_MUTATION)

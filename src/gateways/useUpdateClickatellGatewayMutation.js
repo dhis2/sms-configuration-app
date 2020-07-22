@@ -1,6 +1,6 @@
 import { useDataMutation } from '@dhis2/app-runtime'
 
-const SAVE_CLICKATELL_GATEWAY_MUTATION = {
+export const UPDATE_CLICKATELL_GATEWAY_MUTATION = {
     resource: 'gateways',
     type: 'update',
     data: ({ name, username, password, authtoken }) => {
@@ -21,4 +21,4 @@ const SAVE_CLICKATELL_GATEWAY_MUTATION = {
 }
 
 export const useUpdateClickatellGatewayMutation = () =>
-    useDataMutation(SAVE_CLICKATELL_GATEWAY_MUTATION)
+    useDataMutation(UPDATE_CLICKATELL_GATEWAY_MUTATION)

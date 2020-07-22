@@ -42,11 +42,11 @@ const updateDataFromVariables = ({
     parameters,
 })
 
-const SAVE_GENERIC_GATEWAY_MUTATION = {
+export const UPDATE_GENERIC_GATEWAY_MUTATION = {
     resource: 'gateways',
     type: 'replace',
     data: updateDataFromVariables,
 }
 
 export const useUpdateGenericGatewayMutation = () =>
-    useDataMutation(SAVE_GENERIC_GATEWAY_MUTATION)
+    useDataMutation(UPDATE_GENERIC_GATEWAY_MUTATION)
