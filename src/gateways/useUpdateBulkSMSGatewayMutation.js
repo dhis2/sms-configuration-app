@@ -1,6 +1,6 @@
 import { useDataMutation } from '@dhis2/app-runtime'
 
-const SAVE_BULK_SMS_GATEWAY_MUTATION = {
+export const UPDATE_BULK_SMS_GATEWAY_MUTATION = {
     resource: 'gateways',
     type: 'update',
     data: ({ name, username, password }) => {
@@ -20,4 +20,4 @@ const SAVE_BULK_SMS_GATEWAY_MUTATION = {
 }
 
 export const useUpdateBulkSMSGatewayMutation = () =>
-    useDataMutation(SAVE_BULK_SMS_GATEWAY_MUTATION)
+    useDataMutation(UPDATE_BULK_SMS_GATEWAY_MUTATION)

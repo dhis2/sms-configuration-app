@@ -6,7 +6,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
  *   * The "fields" param does not work
  *   * id field is not present, only uid
  */
-const GATEWAYS_QUERY = {
+export const GATEWAY_QUERY = {
     gateway: {
         resource: 'gateways',
         id: ({ id }) => id,
@@ -14,4 +14,4 @@ const GATEWAYS_QUERY = {
 }
 
 export const useReadGatewayQuery = id =>
-    useDataQuery(GATEWAYS_QUERY, { variables: { id } })
+    useDataQuery(GATEWAY_QUERY, { variables: { id } })
