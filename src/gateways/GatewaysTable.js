@@ -60,8 +60,10 @@ export const GatewaysTable = ({
                             )}
                         >
                             <Checkbox
+                                value={gateway.uid}
                                 onChange={() => onGatewayToggle(gateway.uid)}
                                 checked={checkedGateways.includes(gateway.uid)}
+                                dataTest={dataTest('gateways-gatewaystable-id')}
                             />
                         </TableCell>
 
