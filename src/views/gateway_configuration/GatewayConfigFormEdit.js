@@ -42,7 +42,9 @@ export const GatewayConfigFormEdit = () => {
             : jsonData
 
     const gatewayType = data?.gateway?.type
-    const onSubmit = async values => {
+    const onSubmit = async formValues => {
+        const values = { ...formValues, id: data.gateway.uid }
+
         try {
             if (values.type === GENERIC_FORM) {
                 await saveGenericGateway(values)

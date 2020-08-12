@@ -2,8 +2,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 
 /**
  * @TODO:
- *   Create Jira issues for:
- *   * The "fields" param does not work
+ *   * The "fields" param does not work (https://jira.dhis2.org/browse/DHIS2-9241)
  *   * id field is not present, only uid
  */
 export const GATEWAY_QUERY = {
