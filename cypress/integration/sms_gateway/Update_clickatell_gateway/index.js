@@ -40,17 +40,20 @@ Given('the user navigated to the gateway configuration page', () => {
         response: { gateways },
     })
 
-    cy.route({
-        url: /.*\/gateways$/,
-        method: 'PUT',
-        response: {},
-    }).as('updateGatewayConfigurationXHR')
-
     gateways.forEach(gateway => {
+        const { uid } = gateway
+        const url = new RegExp(`.*/gateways/${uid}`)
+
         cy.route({
-            url: new RegExp(`.*/gateways/${gateway.uid}`),
+            url,
             response: gateway,
         })
+
+        cy.route({
+            url,
+            method: 'PUT',
+            response: {},
+        }).as(`updateGatewayConfiguration${uid}XHR`)
     })
 
     cy.visit('/')
@@ -102,16 +105,16 @@ When(
 )
 
 When(
-    "the user changes the password field's value to another valid value",
+    "the user changes the urlTemplate field's value to another valid value",
     () => {
-        cy.get('{forms-fieldpassword} input')
+        cy.get('{forms-fieldurltemplate} input')
             .clear()
-            .type('New password value')
+            .type('http://another.domain.tld')
 
         cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
             cy.wrap({
                 ...finalGatewayConfiguration,
-                password: 'New password value',
+                urlTemplate: 'http://another.domain.tld',
             }).as('finalGatewayConfiguration')
         })
     }
@@ -164,6 +167,17 @@ When(
     }
 )
 
+When(
+    "the user changes the urlTemplate field's value to another invalid value",
+    () => {
+        cy.get('{forms-fieldurltemplate}')
+            .as('invalidField')
+            .find('input')
+            .clear()
+            .type("I'm not a valid url")
+    }
+)
+
 When('the user changes some fields to valid values', () => {
     cy.get('{forms-fieldname} input')
         .clear()
@@ -172,6 +186,9 @@ When('the user changes some fields to valid values', () => {
 
 Then('the app should navigate to the update form', () => {
     cy.get('{views-gatewayconfigformedit}').should('exist')
+    cy.get('{views-gatewayconfigformedit-formcontainer}')
+        .invoke('attr', 'data-gateway-id')
+        .as('gatewayId')
 })
 
 Then(
@@ -200,27 +217,26 @@ Then(
 )
 
 Then('the updates should be sent to the correct endpoint', () => {
-    cy.all(
-        () => cy.wait('@updateGatewayConfigurationXHR'),
-        () => cy.get('@finalGatewayConfiguration')
-    ).then(([xhr, finalGatewayConfiguration]) => {
-        expect(xhr.status).to.equal(200)
+    cy.get('@gatewayId').then(id => {
+        cy.all(
+            () => cy.wait(`@updateGatewayConfiguration${id}XHR`),
+            () => cy.get('@finalGatewayConfiguration')
+        ).then(([xhr, finalGatewayConfiguration]) => {
+            expect(xhr.status).to.equal(200)
 
-        const sentData = xhr.request.body
-        const {
-            name,
-            username,
-            password,
-            authtoken,
-        } = finalGatewayConfiguration
+            const sentData = xhr.request.body
+            const {
+                name,
+                username,
+                urlTemplate,
+                authtoken,
+            } = finalGatewayConfiguration
 
-        expect(sentData.name).to.equal(name)
-        expect(sentData.username).to.equal(username)
-        expect(sentData.authtoken).to.equal(authtoken)
-
-        if (password) {
-            expect(sentData.password).to.equal(password)
-        }
+            expect(sentData.name).to.equal(name)
+            expect(sentData.username).to.equal(username)
+            expect(sentData.authtoken).to.equal(authtoken)
+            expect(sentData.urlTemplate).to.equal(urlTemplate)
+        })
     })
 })
 

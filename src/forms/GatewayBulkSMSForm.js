@@ -11,14 +11,14 @@ import i18n from '../locales'
 
 const { Form } = ReactFinalForm
 
-export const GatewayBulkSMSForm = ({
-    onSubmit,
-    initialValues,
-    passwordRequired,
-}) => {
+export const GatewayBulkSMSForm = ({ onSubmit, initialValues }) => {
+    const submitText = initialValues
+        ? i18n.t('Save BulkSMS gateway')
+        : i18n.t('Add BulkSMS gateway')
+
     return (
         <Form onSubmit={onSubmit} initialValues={initialValues}>
-            {({ handleSubmit }) => (
+            {({ handleSubmit, submitting }) => (
                 <form
                     onSubmit={handleSubmit}
                     data-test={dataTest('forms-gatewaybulksmsform')}
@@ -32,14 +32,14 @@ export const GatewayBulkSMSForm = ({
                     </FormRow>
 
                     <FormRow>
-                        <FieldPassword required={passwordRequired} />
+                        <FieldPassword />
                     </FormRow>
 
                     <Button
                         type="submit"
                         dataTest={dataTest('forms-gatewaybulksmsform-submit')}
                     >
-                        {i18n.t('Add BulkSMS gateway')}
+                        {submitting ? i18n.t('Submitting...') : submitText}
                     </Button>
                 </form>
             )}
@@ -49,11 +49,9 @@ export const GatewayBulkSMSForm = ({
 
 GatewayBulkSMSForm.defaultProps = {
     initialValues: {},
-    passwordRequired: false,
 }
 
 GatewayBulkSMSForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object,
-    passwordRequired: PropTypes.bool,
 }

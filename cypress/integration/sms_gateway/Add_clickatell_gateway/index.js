@@ -26,30 +26,30 @@ Given('the user is adding a new gateway with type Clickatell', () => {
 When('the user fills in complete form data', () => {
     const name = 'Name'
     const username = 'Username'
-    const password = 'Password'
+    const urlTemplate = 'http://domain.tld'
     const authtoken = 'Auth token'
 
     cy.get('{forms-fieldname}').type(name)
     cy.get('{forms-fieldusername}').type(username)
-    cy.get('{forms-fieldpassword}').type(password)
+    cy.get('{forms-fieldurltemplate}').type(urlTemplate)
     cy.get('{forms-fieldauthtoken}').type(authtoken)
 
     cy.wrap({
         type: 'clickatell',
         name,
         username,
-        password,
+        urlTemplate,
         authtoken,
     }).as('gatewayData')
 })
 
 When('the user fills in incomplete form data', () => {
     const name = 'Name'
-    const password = 'Password'
+    const urlTemplate = 'http://domain.tld'
     const authtoken = 'Auth token'
 
     cy.get('{forms-fieldname}').type(name)
-    cy.get('{forms-fieldpassword}').type(password)
+    cy.get('{forms-fieldurltemplate}').type(urlTemplate)
     cy.get('{forms-fieldauthtoken}').type(authtoken)
 
     cy.get('{forms-fieldusername}').as('missingFields')
@@ -57,7 +57,7 @@ When('the user fills in incomplete form data', () => {
         type: 'clickatell',
         username: '',
         name,
-        password,
+        urlTemplate,
         authtoken,
     }).as('gatewayData')
 })

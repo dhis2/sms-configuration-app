@@ -1,24 +1,17 @@
-import { useDataMutation } from '@dhis2/app-runtime'
+import { useUpdateGatewayMutation } from './useUpdateGatewayMutation'
 
 export const UPDATE_CLICKATELL_GATEWAY_MUTATION = {
     resource: 'gateways',
+    id: ({ id }) => id,
     type: 'update',
-    data: ({ name, username, password, authtoken }) => {
-        const data = {
-            type: 'clickatell',
-            name,
-            username,
-            authtoken,
-        }
-
-        // @TODO(clickatell password): should the password be re-entered?
-        if (password) {
-            data.password = password
-        }
-
-        return data
-    },
+    data: ({ name, username, authtoken, urlTemplate }) => ({
+        type: 'clickatell',
+        name,
+        username,
+        authtoken,
+        urlTemplate,
+    }),
 }
 
 export const useUpdateClickatellGatewayMutation = () =>
-    useDataMutation(UPDATE_CLICKATELL_GATEWAY_MUTATION)
+    useUpdateGatewayMutation(UPDATE_CLICKATELL_GATEWAY_MUTATION)

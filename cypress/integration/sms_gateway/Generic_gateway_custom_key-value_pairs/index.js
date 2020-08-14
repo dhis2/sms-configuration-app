@@ -54,11 +54,13 @@ Given('the user navigated to the gateway configuration page', () => {
         response: {},
     }).as('createGatewayConfigurationXHR')
 
-    cy.route({
-        url: /.*\/gateways$/,
-        method: 'PUT',
-        response: {},
-    }).as('updateGatewayConfigurationXHR')
+    gateways.forEach(({ uid }) => {
+        cy.route({
+            url: new RegExp(`.*/gateways/${uid}`),
+            method: 'PUT',
+            response: {},
+        }).as(`updateGatewayConfiguration${uid}XHR`)
+    })
 
     cy.wrap(defaultParameter).as('newParameter')
 
@@ -85,17 +87,9 @@ Given('the user is editing a generic gateway configuration', () => {
     ).click()
 
     cy.get('{views-gatewayconfigformedit}').should('exist')
-
-    // @TODO(api): Add Jira issue for persisting these two values
-    // Need to provide the required values,
-    // otherwise the form can't be submitted
-    cy.get('{forms-fieldmessageparameter}').type('Field message parameter', {
-        delay: 0,
-    })
-    cy.get('{forms-fieldrecipientparameter}').type(
-        'Field recipient parameter',
-        { delay: 0 }
-    )
+    cy.get('{views-gatewayconfigformedit-formcontainer}')
+        .invoke('attr', 'data-gateway-id')
+        .as('gatewayId')
 })
 
 Given('the user is adding a generic gateway configuration', () => {
@@ -106,13 +100,6 @@ Given('the user is adding a generic gateway configuration', () => {
     // Need to provide the required values,
     // otherwise the form can't be submitted
     cy.get('{forms-fieldname}').type('Field name', { delay: 0 })
-    cy.get('{forms-fieldmessageparameter}').type('Field message parameter', {
-        delay: 0,
-    })
-    cy.get('{forms-fieldrecipientparameter}').type(
-        'Field recipient parameter',
-        { delay: 0 }
-    )
     cy.get('{forms-fieldurltemplate}').type('http://domain.tld', { delay: 0 })
 })
 
@@ -138,12 +125,13 @@ Given('the user has added multiple key value pairs', () => {
             .type(value)
     })
 
-    cy.wrap(
-        keyValuePairs.map(keyValuePair => ({
-            ...defaultParameter,
-            ...keyValuePair,
-        }))
-    ).as('newParameters')
+    const newParameters = keyValuePairs.map(keyValuePair => ({
+        ...defaultParameter,
+        ...keyValuePair,
+    }))
+
+    console.log('set newParameters', newParameters)
+    cy.wrap(newParameters).as('newParameters')
 })
 
 When('the user clicks on the "add more" button', () => {
@@ -205,34 +193,54 @@ Then('the additional key-value pair should be sent to the endpoint', () => {
     cy.all(
         () => cy.get('@operation'),
         () => cy.get('@newParameter')
-    ).then(([operation, newParameter]) => {
-        cy.wait(
-            operation === 'editing'
-                ? '@updateGatewayConfigurationXHR'
-                : '@createGatewayConfigurationXHR'
-        ).then(xhr => {
-            const { parameters } = xhr.request.body
-            expect(parameters).to.have.lengthOf(1)
+    )
+        .then(([operation, newParameter]) => {
+            if (operation === 'editing') {
+                return cy
+                    .get('@gatewayId')
+                    .then(gatewayId => [operation, newParameter, gatewayId])
+            }
 
-            const [parameter] = parameters
-            expect(parameter).to.eql(newParameter)
+            return [operation, newParameter]
         })
-    })
+        .then(([operation, newParameter, gatewayId]) => {
+            cy.wait(
+                operation === 'editing'
+                    ? `@updateGatewayConfiguration${gatewayId}XHR`
+                    : '@createGatewayConfigurationXHR'
+            ).then(xhr => {
+                const { parameters } = xhr.request.body
+                expect(parameters).to.have.lengthOf(1)
+
+                const [parameter] = parameters
+                expect(parameter).to.eql(newParameter)
+            })
+        })
 })
 
 Then('all provided key value pairs should be sent to the endpoint', () => {
     cy.all(
         () => cy.get('@operation'),
         () => cy.get('@newParameters')
-    ).then(([operation, newParameters]) => {
-        cy.wait(
-            operation === 'editing'
-                ? '@updateGatewayConfigurationXHR'
-                : '@createGatewayConfigurationXHR'
-        ).then(xhr => {
-            const { parameters } = xhr.request.body
-            expect(parameters).to.have.lengthOf(newParameters.length)
-            expect(parameters).to.eql(newParameters)
+    )
+        .then(([operation, newParameters]) => {
+            if (operation === 'editing') {
+                return cy
+                    .get('@gatewayId')
+                    .then(gatewayId => [operation, newParameters, gatewayId])
+            }
+
+            return [operation, newParameters]
         })
-    })
+        .then(([operation, newParameters, gatewayId]) => {
+            cy.wait(
+                operation === 'editing'
+                    ? `@updateGatewayConfiguration${gatewayId}XHR`
+                    : '@createGatewayConfigurationXHR'
+            ).then(xhr => {
+                const { parameters } = xhr.request.body
+                expect(parameters).to.have.lengthOf(newParameters.length)
+                expect(parameters).to.eql(newParameters)
+            })
+        })
 })

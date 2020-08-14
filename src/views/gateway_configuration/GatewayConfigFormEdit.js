@@ -34,8 +34,8 @@ export const GatewayConfigFormEdit = () => {
     const data =
         /**
          * @TODO:
-         *   Create Jira issue for:
-         *   The response does not contain the right content type header
+         *   * The response does not contain the right content type header
+         *     -> https://jira.dhis2.org/browse/DHIS2-9252
          */
         jsonData && typeof jsonData.gateway === 'string'
             ? { gateway: JSON.parse(jsonData.gateway) }
@@ -71,7 +71,12 @@ export const GatewayConfigFormEdit = () => {
             {loading && i18n.t('Loading...')}
             {error && i18n.t('Error: {{error}}', { error: error.message })}
             {data?.gateway && (
-                <>
+                <div
+                    data-test={dataTest(
+                        'views-gatewayconfigformedit-formcontainer'
+                    )}
+                    data-gateway-id={data.gateway.uid}
+                >
                     {gatewayType === GENERIC_FORM && (
                         <GatewayGenericForm
                             initialValues={data.gateway}
@@ -92,7 +97,7 @@ export const GatewayConfigFormEdit = () => {
                             onSubmit={onSubmit}
                         />
                     )}
-                </>
+                </div>
             )}
         </div>
     )

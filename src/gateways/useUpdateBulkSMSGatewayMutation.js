@@ -1,23 +1,16 @@
-import { useDataMutation } from '@dhis2/app-runtime'
+import { useUpdateGatewayMutation } from './useUpdateGatewayMutation'
 
 export const UPDATE_BULK_SMS_GATEWAY_MUTATION = {
     resource: 'gateways',
+    id: ({ id }) => id,
     type: 'update',
-    data: ({ name, username, password }) => {
-        const data = {
-            type: 'bulksms',
-            name,
-            username,
-        }
-
-        // @TODO(bulksms password): should the password be re-entered?
-        if (password) {
-            data.password = password
-        }
-
-        return data
-    },
+    data: ({ name, username, password }) => ({
+        type: 'bulksms',
+        name,
+        username,
+        password,
+    }),
 }
 
 export const useUpdateBulkSMSGatewayMutation = () =>
-    useDataMutation(UPDATE_BULK_SMS_GATEWAY_MUTATION)
+    useUpdateGatewayMutation(UPDATE_BULK_SMS_GATEWAY_MUTATION)

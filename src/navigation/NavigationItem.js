@@ -4,10 +4,17 @@ import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
 import { dataTest } from '../dataTest'
 
-export const NavigationItem = ({ label, path }) => {
-    const history = useHistory()
+const useIsItemActive = (path, exactMatch) => {
     const routeMatch = useRouteMatch(path)
-    const active = routeMatch && routeMatch.isExact
+
+    if (!routeMatch) return false
+    if (exactMatch) return routeMatch.isExact
+    return true
+}
+
+export const NavigationItem = ({ label, path, exactMatch }) => {
+    const history = useHistory()
+    const active = useIsItemActive(path, exactMatch)
     const navigateToPath = () => history.push(path)
 
     return (
@@ -20,7 +27,12 @@ export const NavigationItem = ({ label, path }) => {
     )
 }
 
+NavigationItem.defualtProps = {
+    exactMatch: false,
+}
+
 NavigationItem.propTypes = {
     label: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
+    exactMatch: PropTypes.bool,
 }

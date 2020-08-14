@@ -29,28 +29,30 @@ const App = () => (
                     <Switch>
                         <Route exact path={HOME_PATH} component={Home} />
 
-                        <Route
-                            exact
-                            path={GATEWAY_CONFIG_FORM_EDIT_PATH}
-                            component={GatewayConfigFormEdit}
-                        />
+                        <Route path="/sms-gateway">
+                            <Route
+                                exact
+                                path={GATEWAY_CONFIG_FORM_EDIT_PATH}
+                                component={GatewayConfigFormEdit}
+                            />
 
-                        <Route
-                            exact
-                            path={GATEWAY_CONFIG_FORM_NEW_PATH}
-                            component={GatewayConfigFormNew}
-                        />
+                            <Route
+                                exact
+                                path={GATEWAY_CONFIG_FORM_NEW_PATH}
+                                component={GatewayConfigFormNew}
+                            />
 
-                        <Route
-                            exact
-                            path={GATEWAY_CONFIG_LIST_PATH}
-                            component={GatewayConfigList}
-                        />
+                            <Route
+                                exact
+                                path={GATEWAY_CONFIG_LIST_PATH}
+                                component={GatewayConfigList}
+                            />
 
-                        <Redirect
-                            from="/sms-gateway"
-                            to={GATEWAY_CONFIG_LIST_PATH}
-                        />
+                            <Redirect
+                                from="/sms-gateway"
+                                to={GATEWAY_CONFIG_LIST_PATH}
+                            />
+                        </Route>
 
                         <Route component={NoMatch} />
                     </Switch>

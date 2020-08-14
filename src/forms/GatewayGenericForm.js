@@ -3,9 +3,7 @@ import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
 import { AddKeyValuePair } from './AddKeyValuePair'
-import { FieldMessageParameter } from './FieldMessageParameter'
 import { FieldName } from './FieldName'
-import { FieldRecipientParameter } from './FieldRecipientParameter'
 import { FieldUrlTemplate } from './FieldUrlTemplate'
 import { FormRow } from './FormRow'
 import { KeyValuePair } from './KeyValuePair'
@@ -15,6 +13,10 @@ import i18n from '../locales'
 const { Form } = ReactFinalForm
 
 export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
+    const submitText = initialValues
+        ? i18n.t('Save generic gateway')
+        : i18n.t('Add generic gateway')
+
     return (
         <Form onSubmit={onSubmit} initialValues={initialValues}>
             {({ handleSubmit, values, submitting }) => (
@@ -24,14 +26,6 @@ export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
                 >
                     <FormRow>
                         <FieldName />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldMessageParameter />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldRecipientParameter />
                     </FormRow>
 
                     <FormRow>
@@ -56,9 +50,7 @@ export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
                         type="submit"
                         dataTest={dataTest('forms-gatewaygenericform-submit')}
                     >
-                        {submitting
-                            ? i18n.t('Submitting...')
-                            : i18n.t('Add generic gateway')}
+                        {submitting ? i18n.t('Submitting...') : submitText}
                     </Button>
                 </form>
             )}
