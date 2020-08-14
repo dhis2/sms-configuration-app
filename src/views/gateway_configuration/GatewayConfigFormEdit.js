@@ -18,6 +18,7 @@ import {
 } from '../../forms'
 import { PageHeadline } from '../../headline'
 import { dataTest } from '../../dataTest'
+import { useCriticalNotification } from '../../notifications'
 import i18n from '../../locales'
 
 export const GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC = '/sms-gateway/edit'
@@ -26,10 +27,27 @@ export const GATEWAY_CONFIG_FORM_EDIT_PATH = `${GATEWAY_CONFIG_FORM_EDIT_PATH_ST
 export const GatewayConfigFormEdit = () => {
     const history = useHistory()
     const { id } = useParams()
+
     const { loading, error, data: jsonData } = useReadGatewayQuery(id)
-    const [saveGenericGateway] = useUpdateGenericGatewayMutation()
-    const [saveBulkSMSGateway] = useUpdateBulkSMSGatewayMutation()
-    const [saveClickatellGateway] = useUpdateClickatellGatewayMutation()
+    useCriticalNotification(error)
+
+    const [
+        saveGenericGateway,
+        { error: saveGenericGatewayError },
+    ] = useUpdateGenericGatewayMutation()
+    useCriticalNotification(saveGenericGatewayError)
+
+    const [
+        saveBulkSMSGateway,
+        { error: saveBulkSMSGatewayError },
+    ] = useUpdateBulkSMSGatewayMutation()
+    useCriticalNotification(saveBulkSMSGatewayError)
+
+    const [
+        saveClickatellGateway,
+        { error: saveClickatellGatewayError },
+    ] = useUpdateClickatellGatewayMutation()
+    useCriticalNotification(saveClickatellGatewayError)
 
     const data =
         /**

@@ -17,6 +17,7 @@ import {
     useCreateClickatellGatewayMutation,
     useCreateGenericGatewayMutation,
 } from '../../gateways'
+import { useCriticalNotification } from '../../notifications'
 import i18n from '../../locales'
 
 export const GATEWAY_CONFIG_FORM_NEW_PATH = '/sms-gateway/new'
@@ -24,9 +25,24 @@ export const GATEWAY_CONFIG_FORM_NEW_PATH = '/sms-gateway/new'
 export const GatewayConfigFormNew = () => {
     const history = useHistory()
     const [visibleForm, setVisibleForm] = useState(GENERIC_FORM)
-    const [saveGenericGateway] = useCreateGenericGatewayMutation()
-    const [saveBulkSMSGateway] = useCreateBulkSMSGatewayMutation()
-    const [saveClickatellGateway] = useCreateClickatellGatewayMutation()
+
+    const [
+        saveGenericGateway,
+        { error: saveGenericGatewayError },
+    ] = useCreateGenericGatewayMutation()
+    useCriticalNotification(saveGenericGatewayError)
+
+    const [
+        saveBulkSMSGateway,
+        { error: saveBulkSMSGatewayError },
+    ] = useCreateBulkSMSGatewayMutation()
+    useCriticalNotification(saveBulkSMSGatewayError)
+
+    const [
+        saveClickatellGateway,
+        { error: saveClickatellGatewayError },
+    ] = useCreateClickatellGatewayMutation()
+    useCriticalNotification(saveClickatellGatewayError)
 
     const onSubmit = async values => {
         try {
