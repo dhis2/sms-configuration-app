@@ -134,7 +134,7 @@ Then("each row displays the gateway configuration's data", () => {
                 .then($typeCell => {
                     const typeText =
                         gateway.type === 'http'
-                            ? 'http'
+                            ? 'Generic'
                             : gateway.type === 'bulksms'
                             ? 'BulkSMS'
                             : gateway.type === 'clickatell'

@@ -40,17 +40,19 @@ Given('the user navigated to the gateway configuration page', () => {
         response: { gateways },
     })
 
-    cy.route({
-        url: /.*\/gateways$/,
-        method: 'PUT',
-        response: {},
-    }).as('updateGatewayConfigurationXHR')
-
     gateways.forEach(gateway => {
+        const { uid } = gateway
+
         cy.route({
-            url: new RegExp(`.*/gateways/${gateway.uid}`),
+            url: new RegExp(`.*/gateways/${uid}`),
             response: gateway,
         })
+
+        cy.route({
+            url: new RegExp(`.*/gateways/${uid}`),
+            method: 'PUT',
+            response: {},
+        }).as(`updateGatewayConfiguration${uid}XHR`)
     })
 
     cy.visit('/')
@@ -62,15 +64,7 @@ When('the user clicks on the update button in the first row', () => {
         '{gateways-gatewaystable-row}:first-child {gateways-gatewaystable-edit}'
     ).click()
 
-    // @TODO(missing gateway configuration props): replace once implemented
-    cy.get('{forms-fieldmessageparameter} input').type('Placeholder value')
-    cy.get('{forms-fieldrecipientparameter} input').type('Placeholder value')
-
-    cy.wrap({
-        ...gateways[0],
-        messageParameter: 'Placeholder value',
-        recipientParameter: 'Placeholder value',
-    })
+    cy.wrap(gateways[0])
         .as('editedGatewayConfiguration')
         .as('finalGatewayConfiguration')
 })
@@ -87,38 +81,6 @@ When("the user changes the name field's value to another valid value", () => {
         }).as('finalGatewayConfiguration')
     })
 })
-
-When(
-    "the user changes the messageParameter field's value to another valid value",
-    () => {
-        cy.get('{forms-fieldmessageparameter} input')
-            .clear()
-            .type('New message parameter value')
-
-        cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
-            cy.wrap({
-                ...finalGatewayConfiguration,
-                messageParameter: 'New message parameter value',
-            }).as('finalGatewayConfiguration')
-        })
-    }
-)
-
-When(
-    "the user changes the recipientParameter field's value to another valid value",
-    () => {
-        cy.get('{forms-fieldrecipientparameter} input')
-            .clear()
-            .type('New recipient parameter value')
-
-        cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
-            cy.wrap({
-                ...finalGatewayConfiguration,
-                recipientParameter: 'New recipient parameter value',
-            }).as('finalGatewayConfiguration')
-        })
-    }
-)
 
 When(
     "the user changes the urlTemplate field's value to another valid value",
@@ -221,26 +183,6 @@ When("the user changes the name field's value to another invalid value", () => {
 })
 
 When(
-    "the user changes the messageParameter field's value to another invalid value",
-    () => {
-        cy.get('{forms-fieldmessageparameter}')
-            .as('invalidField')
-            .find('input')
-            .clear()
-    }
-)
-
-When(
-    "the user changes the recipientParameter field's value to another invalid value",
-    () => {
-        cy.get('{forms-fieldrecipientparameter}')
-            .as('invalidField')
-            .find('input')
-            .clear()
-    }
-)
-
-When(
     "the user changes the urlTemplate field's value to another invalid value",
     () => {
         cy.get('{forms-fieldurltemplate}')
@@ -259,6 +201,9 @@ When('the user changes some fields to valid values', () => {
 
 Then('the app should navigate to the update form', () => {
     cy.get('{views-gatewayconfigformedit}').should('exist')
+    cy.get('{views-gatewayconfigformedit-formcontainer}')
+        .invoke('attr', 'data-gateway-id')
+        .as('gatewayId')
 })
 
 Then(
@@ -267,34 +212,11 @@ Then(
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
             () => cy.get('{forms-fieldname} input'),
-            () => cy.get('{forms-fieldmessageparameter} input'),
-            () => cy.get('{forms-fieldrecipientparameter} input'),
             () => cy.get('{forms-fieldurltemplate} input')
         ).then(
-            ([
-                editedGatewayConfiguration,
-                $nameInput,
-                $messageParameterInput,
-                $recipientParameterInput,
-                $urlTemplateInput,
-            ]) => {
-                const {
-                    name,
-                    messageParameter,
-                    recipientParameter,
-                    urlTemplate,
-                } = editedGatewayConfiguration
-
+            ([editedGatewayConfiguration, $nameInput, $urlTemplateInput]) => {
+                const { name, urlTemplate } = editedGatewayConfiguration
                 expect($nameInput.val()).to.eql(name)
-
-                // @TODO(gatway configuration props): mP and rP not existing
-                expect($messageParameterInput.val()).to.eql(
-                    messageParameter || ''
-                )
-                expect($recipientParameterInput.val()).to.eql(
-                    recipientParameter || ''
-                )
-
                 expect($urlTemplateInput.val()).to.eql(urlTemplate)
             }
         )
@@ -313,26 +235,20 @@ Then(
 )
 
 Then('the updates should be sent to the correct endpoint', () => {
-    cy.all(
-        () => cy.wait('@updateGatewayConfigurationXHR'),
-        () => cy.get('@finalGatewayConfiguration')
-    ).then(([xhr, finalGatewayConfiguration]) => {
-        expect(xhr.status).to.equal(200)
+    cy.get('@gatewayId').then(id => {
+        cy.all(
+            () => cy.wait(`@updateGatewayConfiguration${id}XHR`),
+            () => cy.get('@finalGatewayConfiguration')
+        ).then(([xhr, finalGatewayConfiguration]) => {
+            expect(xhr.status).to.equal(200)
 
-        const sentData = xhr.request.body
-        const {
-            name,
-            messageParameter,
-            recipientParameter,
-            urlTemplate,
-            parameters,
-        } = finalGatewayConfiguration
+            const sentData = xhr.request.body
+            const { name, urlTemplate, parameters } = finalGatewayConfiguration
 
-        expect(sentData.name).to.equal(name)
-        expect(sentData.messageParameter).to.equal(messageParameter)
-        expect(sentData.recipientParameter).to.equal(recipientParameter)
-        expect(sentData.urlTemplate).to.equal(urlTemplate)
-        expect(sentData.parameters).to.eql(parameters)
+            expect(sentData.name).to.equal(name)
+            expect(sentData.urlTemplate).to.equal(urlTemplate)
+            expect(sentData.parameters).to.eql(parameters)
+        })
     })
 })
 

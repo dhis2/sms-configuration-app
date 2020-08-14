@@ -7,20 +7,20 @@ import { dataTest } from '../dataTest'
 
 import { FieldAuthToken } from './FieldAuthToken'
 import { FieldName } from './FieldName'
-import { FieldPassword } from './FieldPassword'
+import { FieldUrlTemplate } from './FieldUrlTemplate'
 import { FieldUsername } from './FieldUsername'
 import i18n from '../locales'
 
 const { Form } = ReactFinalForm
 
-export const GatewayClickatellForm = ({
-    onSubmit,
-    initialValues,
-    passwordRequired,
-}) => {
+export const GatewayClickatellForm = ({ onSubmit, initialValues }) => {
+    const submitText = initialValues
+        ? i18n.t('Save Clickatell gateway')
+        : i18n.t('Add Clickatell gateway')
+
     return (
         <Form onSubmit={onSubmit} initialValues={initialValues}>
-            {({ handleSubmit }) => (
+            {({ handleSubmit, submitting }) => (
                 <form
                     onSubmit={handleSubmit}
                     data-test={dataTest('forms-gatewayclickatellform')}
@@ -34,11 +34,11 @@ export const GatewayClickatellForm = ({
                     </FormRow>
 
                     <FormRow>
-                        <FieldPassword required={passwordRequired} />
+                        <FieldAuthToken />
                     </FormRow>
 
                     <FormRow>
-                        <FieldAuthToken />
+                        <FieldUrlTemplate />
                     </FormRow>
 
                     <Button
@@ -47,7 +47,7 @@ export const GatewayClickatellForm = ({
                             'forms-gatewayclickatellform-submit'
                         )}
                     >
-                        {i18n.t('Add Clickatell gateway')}
+                        {submitting ? i18n.t('Submitting...') : submitText}
                     </Button>
                 </form>
             )}
@@ -57,11 +57,9 @@ export const GatewayClickatellForm = ({
 
 GatewayClickatellForm.defaultProps = {
     initialValues: {},
-    passwordRequired: false,
 }
 
 GatewayClickatellForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object,
-    passwordRequired: PropTypes.bool,
 }

@@ -39,17 +39,20 @@ Given('the user navigated to the gateway configuration page', () => {
         response: { gateways },
     })
 
-    cy.route({
-        url: /.*\/gateways$/,
-        method: 'PUT',
-        response: {},
-    }).as('updateGatewayConfigurationXHR')
-
     gateways.forEach(gateway => {
+        const { uid } = gateway
+        const url = new RegExp(`.*/gateways/${uid}`)
+
         cy.route({
-            url: new RegExp(`.*/gateways/${gateway.uid}`),
+            url,
             response: gateway,
         })
+
+        cy.route({
+            url,
+            method: 'PUT',
+            response: {},
+        }).as(`updateGatewayConfiguration${uid}XHR`)
     })
 
     cy.visit('/')
@@ -155,6 +158,12 @@ When('the user changes some fields to valid values', () => {
 
 Then('the app should navigate to the update form', () => {
     cy.get('{views-gatewayconfigformedit}').should('exist')
+    cy.get('{views-gatewayconfigformedit-formcontainer}')
+        .invoke('attr', 'data-gateway-id')
+        .as('gatewayId')
+
+    // @TODO: Remove once api responds with password
+    cy.get('{forms-fieldpassword} input').type('Password')
 })
 
 Then(
@@ -174,21 +183,23 @@ Then(
 )
 
 Then('the updates should be sent to the correct endpoint', () => {
-    cy.all(
-        () => cy.wait('@updateGatewayConfigurationXHR'),
-        () => cy.get('@finalGatewayConfiguration')
-    ).then(([xhr, finalGatewayConfiguration]) => {
-        expect(xhr.status).to.equal(200)
+    cy.get('@gatewayId').then(id => {
+        cy.all(
+            () => cy.wait(`@updateGatewayConfiguration${id}XHR`),
+            () => cy.get('@finalGatewayConfiguration')
+        ).then(([xhr, finalGatewayConfiguration]) => {
+            expect(xhr.status).to.equal(200)
 
-        const sentData = xhr.request.body
-        const { name, username, password } = finalGatewayConfiguration
+            const sentData = xhr.request.body
+            const { name, username, password } = finalGatewayConfiguration
 
-        expect(sentData.name).to.equal(name)
-        expect(sentData.username).to.equal(username)
+            expect(sentData.name).to.equal(name)
+            expect(sentData.username).to.equal(username)
 
-        if (password) {
-            expect(sentData.password).to.equal(password)
-        }
+            if (password) {
+                expect(sentData.password).to.equal(password)
+            }
+        })
     })
 })
 
