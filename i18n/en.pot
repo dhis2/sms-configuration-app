@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-17T08:07:47.938Z\n"
-"PO-Revision-Date: 2020-08-17T08:07:47.938Z\n"
+"POT-Creation-Date: 2020-08-17T12:12:58.569Z\n"
+"PO-Revision-Date: 2020-08-17T12:12:58.569Z\n"
 
 msgid "Save generic gateway"
 msgstr ""
@@ -21,6 +21,9 @@ msgid "Parser"
 msgstr ""
 
 msgid "Completeness method"
+msgstr ""
+
+msgid "Use current period for reporting"
 msgstr ""
 
 msgid "Key value parser"
