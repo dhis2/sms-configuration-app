@@ -11,12 +11,14 @@ import {
     SMS_COMMAND_LIST_PATH,
     SMS_COMMAND_FORM_EDIT_PATH,
     SMS_COMMAND_FORM_NEW_PATH,
+    SENT_SMS_LIST_PATH,
     GatewayConfigFormEdit,
     GatewayConfigFormNew,
     GatewayConfigList,
     SmsCommandList,
     SmsCommandFormEdit,
     SmsCommandFormNew,
+    SentSmsList,
     HOME_PATH,
     Home,
     NoMatch,
@@ -71,6 +73,13 @@ const App = () => (
                             exact
                             path={SMS_COMMAND_FORM_NEW_PATH}
                             component={SmsCommandFormNew}
+                        />
+
+                        {/* View sent sms */ ''}
+                        <Route
+                            exact
+                            path={SENT_SMS_LIST_PATH}
+                            component={SentSmsList}
                         />
 
                         <Route component={NoMatch} />

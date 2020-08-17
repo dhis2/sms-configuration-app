@@ -6,6 +6,8 @@ import {
     GATEWAY_CONFIG_LIST_PATH,
     SMS_COMMAND_LIST_LABEL,
     SMS_COMMAND_LIST_PATH,
+    SENT_SMS_LIST_LABEL,
+    SENT_SMS_LIST_PATH,
     HOME_PATH,
     HOME_LABEL,
 } from '../views'
@@ -25,5 +27,7 @@ export const Navigation = () => (
             path={SMS_COMMAND_LIST_PATH}
             label={SMS_COMMAND_LIST_LABEL}
         />
+
+        <NavigationItem path={SENT_SMS_LIST_PATH} label={SENT_SMS_LIST_LABEL} />
     </Menu>
 )
