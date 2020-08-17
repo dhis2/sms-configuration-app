@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-17T12:12:58.569Z\n"
-"PO-Revision-Date: 2020-08-17T12:12:58.569Z\n"
+"POT-Creation-Date: 2020-08-17T13:31:12.218Z\n"
+"PO-Revision-Date: 2020-08-17T13:31:12.218Z\n"
 
 msgid "Save generic gateway"
 msgstr ""
@@ -160,6 +160,9 @@ msgid "Delete selected gateway configurations"
 msgstr ""
 
 msgid "Loading gateway configurations"
+msgstr ""
+
+msgid "Sent sms"
 msgstr ""
 
 msgid "SMS Command"
