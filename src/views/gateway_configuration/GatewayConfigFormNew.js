@@ -4,15 +4,13 @@ import React, { useState } from 'react'
 
 import { GATEWAY_CONFIG_LIST_PATH } from './GatewayConfigList'
 import { GENERIC_FORM, BULK_SMS_FORM, CLICKATELL_FORM } from '../../gateways'
-import {
-    FormRow,
-    GatewayBulkSMSForm,
-    GatewayClickatellForm,
-    GatewayGenericForm,
-} from '../../forms'
+import { FormRow } from '../../forms'
 import { PageHeadline } from '../../headline'
 import { dataTest } from '../../dataTest'
 import {
+    GatewayBulkSMSForm,
+    GatewayClickatellForm,
+    GatewayGenericForm,
     useCreateBulkSMSGatewayMutation,
     useCreateClickatellGatewayMutation,
     useCreateGenericGatewayMutation,

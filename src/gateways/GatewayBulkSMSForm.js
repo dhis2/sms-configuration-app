@@ -2,28 +2,23 @@ import { Button, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
-import { FormRow } from './FormRow'
+import { FieldName, FieldUsername, FieldPassword, FormRow } from '../forms'
 import { dataTest } from '../dataTest'
-
-import { FieldAuthToken } from './FieldAuthToken'
-import { FieldName } from './FieldName'
-import { FieldUrlTemplate } from './FieldUrlTemplate'
-import { FieldUsername } from './FieldUsername'
 import i18n from '../locales'
 
 const { Form } = ReactFinalForm
 
-export const GatewayClickatellForm = ({ onSubmit, initialValues }) => {
+export const GatewayBulkSMSForm = ({ onSubmit, initialValues }) => {
     const submitText = initialValues
-        ? i18n.t('Save Clickatell gateway')
-        : i18n.t('Add Clickatell gateway')
+        ? i18n.t('Save BulkSMS gateway')
+        : i18n.t('Add BulkSMS gateway')
 
     return (
         <Form onSubmit={onSubmit} initialValues={initialValues}>
             {({ handleSubmit, submitting }) => (
                 <form
                     onSubmit={handleSubmit}
-                    data-test={dataTest('forms-gatewayclickatellform')}
+                    data-test={dataTest('forms-gatewaybulksmsform')}
                 >
                     <FormRow>
                         <FieldName />
@@ -34,18 +29,12 @@ export const GatewayClickatellForm = ({ onSubmit, initialValues }) => {
                     </FormRow>
 
                     <FormRow>
-                        <FieldAuthToken />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldUrlTemplate />
+                        <FieldPassword />
                     </FormRow>
 
                     <Button
                         type="submit"
-                        dataTest={dataTest(
-                            'forms-gatewayclickatellform-submit'
-                        )}
+                        dataTest={dataTest('forms-gatewaybulksmsform-submit')}
                     >
                         {submitting ? i18n.t('Submitting...') : submitText}
                     </Button>
@@ -55,11 +44,11 @@ export const GatewayClickatellForm = ({ onSubmit, initialValues }) => {
     )
 }
 
-GatewayClickatellForm.defaultProps = {
+GatewayBulkSMSForm.defaultProps = {
     initialValues: {},
 }
 
-GatewayClickatellForm.propTypes = {
+GatewayBulkSMSForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object,
 }
