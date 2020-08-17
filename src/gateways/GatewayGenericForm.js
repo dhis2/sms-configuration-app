@@ -2,11 +2,13 @@ import { Button, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
-import { AddKeyValuePair } from './AddKeyValuePair'
-import { FieldName } from './FieldName'
-import { FieldUrlTemplate } from './FieldUrlTemplate'
-import { FormRow } from './FormRow'
-import { KeyValuePair } from './KeyValuePair'
+import {
+    AddKeyValuePair,
+    FieldName,
+    FieldUrlTemplate,
+    FormRow,
+    KeyValuePair,
+} from '../forms'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 

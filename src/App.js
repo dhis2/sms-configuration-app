@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import React from 'react'
 import styles from './App.module.css'
 
@@ -8,9 +8,15 @@ import {
     GATEWAY_CONFIG_FORM_EDIT_PATH,
     GATEWAY_CONFIG_FORM_NEW_PATH,
     GATEWAY_CONFIG_LIST_PATH,
+    SMS_COMMAND_LIST_PATH,
+    SMS_COMMAND_FORM_EDIT_PATH,
+    SMS_COMMAND_FORM_NEW_PATH,
     GatewayConfigFormEdit,
     GatewayConfigFormNew,
     GatewayConfigList,
+    SmsCommandList,
+    SmsCommandFormEdit,
+    SmsCommandFormNew,
     HOME_PATH,
     Home,
     NoMatch,
@@ -29,30 +35,43 @@ const App = () => (
                     <Switch>
                         <Route exact path={HOME_PATH} component={Home} />
 
-                        <Route path="/sms-gateway">
-                            <Route
-                                exact
-                                path={GATEWAY_CONFIG_FORM_EDIT_PATH}
-                                component={GatewayConfigFormEdit}
-                            />
+                        {/* Gateway configuration */ ''}
+                        <Route
+                            exact
+                            path={GATEWAY_CONFIG_LIST_PATH}
+                            component={GatewayConfigList}
+                        />
 
-                            <Route
-                                exact
-                                path={GATEWAY_CONFIG_FORM_NEW_PATH}
-                                component={GatewayConfigFormNew}
-                            />
+                        <Route
+                            exact
+                            path={GATEWAY_CONFIG_FORM_EDIT_PATH}
+                            component={GatewayConfigFormEdit}
+                        />
 
-                            <Route
-                                exact
-                                path={GATEWAY_CONFIG_LIST_PATH}
-                                component={GatewayConfigList}
-                            />
+                        <Route
+                            exact
+                            path={GATEWAY_CONFIG_FORM_NEW_PATH}
+                            component={GatewayConfigFormNew}
+                        />
 
-                            <Redirect
-                                from="/sms-gateway"
-                                to={GATEWAY_CONFIG_LIST_PATH}
-                            />
-                        </Route>
+                        {/* Sms command */ ''}
+                        <Route
+                            exact
+                            path={SMS_COMMAND_LIST_PATH}
+                            component={SmsCommandList}
+                        />
+
+                        <Route
+                            exact
+                            path={SMS_COMMAND_FORM_EDIT_PATH}
+                            component={SmsCommandFormEdit}
+                        />
+
+                        <Route
+                            exact
+                            path={SMS_COMMAND_FORM_NEW_PATH}
+                            component={SmsCommandFormNew}
+                        />
 
                         <Route component={NoMatch} />
                     </Switch>

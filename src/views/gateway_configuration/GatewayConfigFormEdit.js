@@ -6,16 +6,14 @@ import {
     GENERIC_FORM,
     BULK_SMS_FORM,
     CLICKATELL_FORM,
+    GatewayBulkSMSForm,
+    GatewayClickatellForm,
+    GatewayGenericForm,
     useReadGatewayQuery,
     useUpdateGenericGatewayMutation,
     useUpdateBulkSMSGatewayMutation,
     useUpdateClickatellGatewayMutation,
 } from '../../gateways'
-import {
-    GatewayBulkSMSForm,
-    GatewayClickatellForm,
-    GatewayGenericForm,
-} from '../../forms'
 import { PageHeadline } from '../../headline'
 import { dataTest } from '../../dataTest'
 import { useCriticalNotification } from '../../notifications'

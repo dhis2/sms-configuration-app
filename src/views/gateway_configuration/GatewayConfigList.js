@@ -1,4 +1,3 @@
-import { Button, ButtonStrip } from '@dhis2/ui'
 import { useHistory } from 'react-router-dom'
 import React, { useState } from 'react'
 
@@ -11,13 +10,14 @@ import {
     useReadGatewaysQuery,
     useSetDefaultGatewayMutation,
 } from '../../gateways'
+import { ListActions } from '../../dataList'
 import { PageHeadline } from '../../headline'
 import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
 import styles from './GatewayConfigList.module.css'
 
-export const GATEWAY_CONFIG_LIST_PATH = `/sms-gateway/list`
-export const GATEWAY_CONFIG_LIST_LABEL = 'SMS Gateways'
+export const GATEWAY_CONFIG_LIST_PATH = '/sms-gateway'
+export const GATEWAY_CONFIG_LIST_LABEL = 'Gateway configuration'
 
 export const GatewayConfigList = () => {
     const history = useHistory()
@@ -63,7 +63,7 @@ export const GatewayConfigList = () => {
             className={styles.container}
             data-test={dataTest('views-gatewayconfiglist')}
         >
-            <PageHeadline>SMS Gateway Configuration</PageHeadline>
+            <PageHeadline>{GATEWAY_CONFIG_LIST_LABEL}</PageHeadline>
 
             <p>
                 {i18n.t(
@@ -71,31 +71,15 @@ export const GatewayConfigList = () => {
                 )}
             </p>
 
-            <div className={styles.actions}>
-                <ButtonStrip
-                    data-test={dataTest('views-gatewayconfiglist-actions')}
-                >
-                    <Button
-                        primary
-                        onClick={onAddGatewayClick}
-                        disabled={loadingDelete}
-                        dataTest={dataTest('views-gatewayconfiglist-add')}
-                    >
-                        Add gateway
-                    </Button>
-
-                    <Button
-                        destructive
-                        onClick={() => setShowDeleteDialog(true)}
-                        disabled={!checkedGateways.length || loadingDelete}
-                        dataTest={dataTest('views-gatewayconfiglist-delete')}
-                    >
-                        Delete selected gateway configurations
-                    </Button>
-
-                    <React.Fragment />
-                </ButtonStrip>
-            </div>
+            <ListActions
+                addLabel={i18n.t('Add gateway')}
+                deleteLabel={i18n.t('Delete selected gateway configurations')}
+                dataTest="views-gatewayconfiglist"
+                onAddClick={onAddGatewayClick}
+                onDeleteClick={() => setShowDeleteDialog(true)}
+                disableAdd={loadingDelete}
+                disableDelete={!checkedGateways.length || loadingDelete}
+            />
 
             {loadingReadGateways && i18n.t('Loading gateway configurations')}
             {errorReadGateways &&

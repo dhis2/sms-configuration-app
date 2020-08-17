@@ -1,4 +1,7 @@
 export * from './DeleteConfirmationDialog'
+export * from './GatewayBulkSMSForm'
+export * from './GatewayClickatellForm'
+export * from './GatewayGenericForm'
 export * from './GatewayList'
 export * from './gatewayTypes'
 export * from './useCreateBulkSMSGatewayMutation'
