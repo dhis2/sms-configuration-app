@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '../../locales'
+import { PageHeadline } from '../../headline'
 import data from './data'
 import SentSmsTable from './SentSmsTable'
 
@@ -27,7 +28,12 @@ export const SentSmsList = () => {
 
     return (
         <React.Fragment>
+            <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
+            <p>Filter by status: [SingleSelect]</p>
+            <p>Total number of results: {data.length}</p>
+            <p>[Delete checked options button]</p>
             <SentSmsTable messages={data} />
+            <p>Pagination</p>
         </React.Fragment>
     )
 }
