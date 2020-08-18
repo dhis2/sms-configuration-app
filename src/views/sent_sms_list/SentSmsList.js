@@ -81,7 +81,6 @@ export const SentSmsList = () => {
                     ))}
                 </SingleSelectField>
             </p>
-            <p>Total number of results: {data.length}</p>
             <p>
                 <Button
                     small
