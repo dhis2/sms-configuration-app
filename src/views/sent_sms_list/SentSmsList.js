@@ -8,6 +8,7 @@ import SentSmsTable from './SentSmsTable'
 import SmsFilter from './SmsFilter'
 import { getAllIds, getAllSelected } from './selectors'
 import { createToggleAllHandler, createToggleHandler } from './handlers'
+import s from './SentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('List of sent sms')
 export const SENT_SMS_LIST_PATH = '/sent'
@@ -49,18 +50,18 @@ export const SentSmsList = () => {
     return (
         <React.Fragment>
             <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
-            <div>
+            <div className={s.header}>
                 <SmsFilter filter={filter} setFilter={setFilter} />
-            </div>
-            <div>
-                <Button
-                    small
-                    destructive
-                    disabled={selected.length === 0}
-                    onClick={deleteSelected}
-                >
-                    Delete selected messages
-                </Button>
+                <div className={s.headerRight}>
+                    <Button
+                        small
+                        destructive
+                        disabled={selected.length === 0}
+                        onClick={deleteSelected}
+                    >
+                        Delete selected messages
+                    </Button>
+                </div>
             </div>
             <SentSmsTable
                 messages={data}
