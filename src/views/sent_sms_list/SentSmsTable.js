@@ -29,10 +29,8 @@ const SentSmsTable = ({
                         checked={isAllSelected}
                     />
                 </TableCellHead>
-                <TableCellHead>{i18n.t('No.')}</TableCellHead>
                 <TableCellHead>{i18n.t('Message')}</TableCellHead>
-                <TableCellHead>{i18n.t('Phone number')}</TableCellHead>
-                <TableCellHead>{i18n.t('Recipient')}</TableCellHead>
+                <TableCellHead>{i18n.t('Recipients')}</TableCellHead>
                 <TableCellHead>{i18n.t('Status')}</TableCellHead>
                 <TableCellHead>{i18n.t('Date')}</TableCellHead>
                 <TableCellHead>{i18n.t('Delete')}</TableCellHead>

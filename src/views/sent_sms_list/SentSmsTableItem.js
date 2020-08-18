@@ -4,15 +4,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import i18n from '../../locales'
 
 const SentSmsTableItem = ({ message, toggleSelected, isSelected }) => {
-    const {
-        number,
-        message: text,
-        phone,
-        recipient,
-        status,
-        date,
-        id,
-    } = message
+    const { message: text, recipients, status, date, id } = message
     const onClick = () => {
         console.log(`Delete message ${id}`)
     }
@@ -25,10 +17,8 @@ const SentSmsTableItem = ({ message, toggleSelected, isSelected }) => {
                     checked={isSelected}
                 />
             </TableCell>
-            <TableCell>{number}</TableCell>
             <TableCell>{text}</TableCell>
-            <TableCell>{phone}</TableCell>
-            <TableCell>{recipient}</TableCell>
+            <TableCell>{recipients.join(', ')}</TableCell>
             <TableCell>{status}</TableCell>
             <TableCell>{date}</TableCell>
             <TableCell>
@@ -46,9 +36,7 @@ SentSmsTableItem.propTypes = {
         date: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
         message: PropTypes.string.isRequired,
-        number: PropTypes.string.isRequired,
-        phone: PropTypes.string.isRequired,
-        recipient: PropTypes.string.isRequired,
+        recipients: PropTypes.arrayOf(PropTypes.string).isRequired,
         status: PropTypes.string.isRequired,
     }).isRequired,
     toggleSelected: PropTypes.func.isRequired,
