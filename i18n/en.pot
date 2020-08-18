@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-20T12:33:18.734Z\n"
-"PO-Revision-Date: 2020-08-20T12:33:18.734Z\n"
+"POT-Creation-Date: 2020-08-25T14:54:26.169Z\n"
+"PO-Revision-Date: 2020-08-25T14:54:26.169Z\n"
 
 msgid "Save generic gateway"
 msgstr ""
@@ -162,13 +162,25 @@ msgstr ""
 msgid "Loading gateway configurations"
 msgstr ""
 
+msgid "Delete checked messages"
+msgstr ""
+
 msgid "Delete"
 msgstr ""
 
-msgid "Delete selected SMSes"
+msgid "Filter by status"
 msgstr ""
 
-msgid "SMSes per page"
+msgid "Filter by phone number"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "per page"
 msgstr ""
 
 msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
@@ -186,40 +198,79 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+msgid "List of received SMS"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Phone number"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Sender"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "No received SMSs to display"
+msgstr ""
+
+msgid "Unknown"
+msgstr ""
+
+msgid "Could not load list of received SMSs"
+msgstr ""
+
+msgid "Received sms"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Incoming"
+msgstr ""
+
+msgid "Processing"
+msgstr ""
+
+msgid "Unhandled"
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "Processed"
+msgstr ""
+
+msgid "Sent"
+msgstr ""
+
+msgid "Delete selected SMSes"
+msgstr ""
+
+msgid "SMSes per page"
+msgstr ""
+
 msgid "List of sent SMSes"
 msgstr ""
 
 msgid "Something went wrong whilst loading sent SMSes"
 msgstr ""
 
-msgid "Message"
-msgstr ""
-
 msgid "Recipients"
 msgstr ""
 
-msgid "Status"
-msgstr ""
-
-msgid "Date"
-msgstr ""
-
 msgid "No SMSes to display"
-msgstr ""
-
-msgid "All"
-msgstr ""
-
-msgid "Filter by status"
 msgstr ""
 
 msgid "Delivered"
 msgstr ""
 
 msgid "Error"
-msgstr ""
-
-msgid "Failed"
 msgstr ""
 
 msgid "Outbound"
@@ -229,9 +280,6 @@ msgid "Pending"
 msgstr ""
 
 msgid "Scheduled"
-msgstr ""
-
-msgid "Sent"
 msgstr ""
 
 msgid "SMS Command"

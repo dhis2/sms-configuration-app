@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    color: var(--colors-grey700);
+}
+.verticalAlign {
+    display: flex;
+    align-items: center;
+}
+.container .select {
+    width: 60px;
+    margin-left: 6px;
+    margin-right: 2px;
+}
+.container .buttonPrevious {
+    height: 32px;
+    margin: 0 var(--spacers-dp8);
+}
+.container .buttonNext {
+    height: 32px;
+    margin-left: var(--spacers-dp8);
+}
+.summary {
+    margin-right: var(--spacers-dp8);
+}
