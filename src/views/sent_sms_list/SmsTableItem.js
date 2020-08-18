@@ -5,7 +5,7 @@ import moment from 'moment'
 import i18n from '../../locales'
 import { statusMap } from './translations'
 
-const SentSmsTableItem = ({ message, toggleSelected, isSelected }) => {
+const SmsTableItem = ({ message, toggleSelected, isSelected }) => {
     const { message: text, recipients, status, date, id } = message
     const onClick = () => {
         console.log(`Delete message ${id}`)
@@ -34,7 +34,7 @@ const SentSmsTableItem = ({ message, toggleSelected, isSelected }) => {
     )
 }
 
-SentSmsTableItem.propTypes = {
+SmsTableItem.propTypes = {
     isSelected: PropTypes.bool.isRequired,
     message: PropTypes.shape({
         date: PropTypes.string.isRequired,
@@ -46,4 +46,4 @@ SentSmsTableItem.propTypes = {
     toggleSelected: PropTypes.func.isRequired,
 }
 
-export default SentSmsTableItem
+export default SmsTableItem
