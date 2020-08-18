@@ -1,4 +1,4 @@
 export const getAllIds = messages => messages.map(message => message.id)
 
-export const getIsEverythingSelected = (allIds, selected) =>
+export const getAllSelected = (allIds, selected) =>
     allIds.every(id => selected.includes(id))

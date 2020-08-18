@@ -16,18 +16,15 @@ import SentSmsTableItem from './SentSmsTableItem'
 const SentSmsTable = ({
     messages,
     toggleSelected,
-    toggleAllSelected,
-    isEverythingSelected,
+    toggleAll,
+    allSelected,
     selected,
 }) => (
     <Table>
         <TableHead>
             <TableRowHead>
                 <TableCellHead>
-                    <Checkbox
-                        onChange={toggleAllSelected}
-                        checked={isEverythingSelected}
-                    />
+                    <Checkbox onChange={toggleAll} checked={allSelected} />
                 </TableCellHead>
                 <TableCellHead>{i18n.t('Message')}</TableCellHead>
                 <TableCellHead>{i18n.t('Recipients')}</TableCellHead>
@@ -57,10 +54,10 @@ const SentSmsTable = ({
 )
 
 SentSmsTable.propTypes = {
-    isEverythingSelected: PropTypes.bool.isRequired,
+    allSelected: PropTypes.bool.isRequired,
     messages: PropTypes.arrayOf(PropTypes.object).isRequired,
     selected: PropTypes.arrayOf(PropTypes.string).isRequired,
-    toggleAllSelected: PropTypes.func.isRequired,
+    toggleAll: PropTypes.func.isRequired,
     toggleSelected: PropTypes.func.isRequired,
 }
 
