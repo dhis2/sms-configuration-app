@@ -66,10 +66,10 @@ export const SentSmsList = () => {
     return (
         <React.Fragment>
             <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
-            <p>
+            <div>
                 <SmsFilter filter={filter} setFilter={setFilter} />
-            </p>
-            <p>
+            </div>
+            <div>
                 <Button
                     small
                     destructive
@@ -78,7 +78,7 @@ export const SentSmsList = () => {
                 >
                     Delete selected messages
                 </Button>
-            </p>
+            </div>
             <SentSmsTable
                 messages={data}
                 isEverythingSelected={isEverythingSelected}
@@ -86,7 +86,7 @@ export const SentSmsList = () => {
                 toggleSelected={toggleSelected}
                 toggleAllSelected={toggleAllSelected}
             />
-            <p>Pagination</p>
+            <div>Pagination</div>
         </React.Fragment>
     )
 }
