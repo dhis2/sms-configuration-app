@@ -1,6 +1,7 @@
 import React from 'react'
 import { TableRow, TableCell, Checkbox, Button } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import moment from 'moment'
 import i18n from '../../locales'
 import { statusMap } from './translations'
 
@@ -21,7 +22,9 @@ const SentSmsTableItem = ({ message, toggleSelected, isSelected }) => {
             <TableCell>{text}</TableCell>
             <TableCell>{recipients.join(', ')}</TableCell>
             <TableCell>{statusMap[status]}</TableCell>
-            <TableCell>{date}</TableCell>
+            <TableCell>
+                {moment(date).format('MMMM Do YYYY, h:mm:ss a')}
+            </TableCell>
             <TableCell>
                 <Button small destructive onClick={onClick}>
                     {i18n.t('Delete')}
