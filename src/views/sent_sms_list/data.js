@@ -1,6 +1,6 @@
 const data = [
     {
-        id: 1,
+        id: '1',
         translations: [],
         externalAccess: false,
         userGroupAccesses: [],
@@ -15,7 +15,7 @@ const data = [
         status: 'SENT',
     },
     {
-        id: 2,
+        id: '2',
         translations: [],
         externalAccess: false,
         userGroupAccesses: [],
@@ -30,7 +30,7 @@ const data = [
         status: 'SENT',
     },
     {
-        id: 3,
+        id: '3',
         translations: [],
         externalAccess: false,
         userGroupAccesses: [],
@@ -45,7 +45,7 @@ const data = [
         status: 'SENT',
     },
     {
-        id: 4,
+        id: '4',
         translations: [],
         externalAccess: false,
         userGroupAccesses: [],
