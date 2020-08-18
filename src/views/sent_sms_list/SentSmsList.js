@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
@@ -17,6 +17,28 @@ const query = {
 
 export const SentSmsList = () => {
     const { loading, error } = useDataQuery(query)
+    const [selected, setSelected] = useState([])
+    const allIds = data.map(({ id }) => id)
+    const isAllSelected = allIds.every(id => selected.includes(id))
+
+    const toggleAllSelected = () => {
+        if (isAllSelected) {
+            return setSelected([])
+        }
+
+        return setSelected(allIds)
+    }
+    const toggleSelected = id => {
+        const isSelected = selected.includes(id)
+
+        if (isSelected) {
+            const filtered = selected.filter(currentId => currentId !== id)
+
+            return setSelected(filtered)
+        }
+
+        return setSelected([...selected, id])
+    }
 
     if (loading) {
         return 'Loading'
@@ -32,7 +54,13 @@ export const SentSmsList = () => {
             <p>Filter by status: [SingleSelect]</p>
             <p>Total number of results: {data.length}</p>
             <p>[Delete checked options button]</p>
-            <SentSmsTable messages={data} />
+            <SentSmsTable
+                messages={data}
+                isAllSelected={isAllSelected}
+                selected={selected}
+                toggleSelected={toggleSelected}
+                toggleAllSelected={toggleAllSelected}
+            />
             <p>Pagination</p>
         </React.Fragment>
     )
