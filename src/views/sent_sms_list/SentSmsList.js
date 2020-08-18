@@ -26,7 +26,12 @@ export const SentSmsList = () => {
     const { loading, error } = useDataQuery(query)
 
     if (loading) {
-        return 'Loading'
+        return (
+            <React.Fragment>
+                <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
+                <p>{i18n.t('Loading sent sms')}</p>
+            </React.Fragment>
+        )
     }
 
     if (error) {
@@ -59,7 +64,7 @@ export const SentSmsList = () => {
                         disabled={selected.length === 0}
                         onClick={deleteSelected}
                     >
-                        Delete selected messages
+                        {i18n.t('Delete selected sms')}
                     </Button>
                 </div>
             </div>
