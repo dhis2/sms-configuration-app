@@ -1,6 +1,7 @@
 import React from 'react'
-import { TableRow, TableCell, Checkbox } from '@dhis2/ui'
+import { TableRow, TableCell, Checkbox, Button } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import i18n from '../../locales'
 
 const SentSmsTableItem = ({ message, toggleSelected, isSelected }) => {
     const {
@@ -12,6 +13,9 @@ const SentSmsTableItem = ({ message, toggleSelected, isSelected }) => {
         date,
         id,
     } = message
+    const onClick = () => {
+        console.log(`Delete message ${id}`)
+    }
 
     return (
         <TableRow>
@@ -27,7 +31,11 @@ const SentSmsTableItem = ({ message, toggleSelected, isSelected }) => {
             <TableCell>{recipient}</TableCell>
             <TableCell>{status}</TableCell>
             <TableCell>{date}</TableCell>
-            <TableCell>delete button</TableCell>
+            <TableCell>
+                <Button small destructive onClick={onClick}>
+                    {i18n.t('Delete')}
+                </Button>
+            </TableCell>
         </TableRow>
     )
 }
