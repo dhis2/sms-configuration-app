@@ -11,14 +11,23 @@ export const SENT_SMS_LIST_PATH = '/sent'
 
 // FIXME: should be replaced with the actual resource for messages
 const query = {
-    me: {
-        resource: 'me',
+    messages: {
+        resource: 'sms/outbound/messages',
     },
 }
 
 export const SentSmsList = () => {
-    const { loading, error } = useDataQuery(query)
     const [selected, setSelected] = useState([])
+    const { loading, error } = useDataQuery(query)
+
+    if (loading) {
+        return 'Loading'
+    }
+
+    if (error) {
+        return error.message
+    }
+
     const allIds = data.map(({ id }) => id)
     const isAllSelected = allIds.every(id => selected.includes(id))
 
@@ -40,16 +49,9 @@ export const SentSmsList = () => {
 
         return setSelected([...selected, id])
     }
+
     const onClick = () => {
         console.log('Delete selected messages')
-    }
-
-    if (loading) {
-        return 'Loading'
-    }
-
-    if (error) {
-        return error.message
     }
 
     return (
