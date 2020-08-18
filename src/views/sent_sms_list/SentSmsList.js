@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useDataQuery } from '@dhis2/app-runtime'
-import { Button } from '@dhis2/ui'
 import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
 import data from './data'
@@ -8,6 +7,7 @@ import SmsTable from './SmsTable'
 import StatusFilter from './StatusFilter'
 import { getAllIds, getAllSelected } from './selectors'
 import { createToggleAllHandler, createToggleHandler } from './handlers'
+import DeleteSelectedButton from './DeleteSelectedButton'
 import s from './SentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('List of sent sms')
@@ -58,14 +58,10 @@ export const SentSmsList = () => {
             <div className={s.header}>
                 <StatusFilter filter={filter} setFilter={setFilter} />
                 <div className={s.headerRight}>
-                    <Button
-                        small
-                        destructive
+                    <DeleteSelectedButton
                         disabled={selected.length === 0}
                         onClick={deleteSelected}
-                    >
-                        {i18n.t('Delete selected sms')}
-                    </Button>
+                    />
                 </div>
             </div>
             <SmsTable

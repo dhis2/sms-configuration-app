@@ -1,15 +1,12 @@
 import React from 'react'
-import { TableRow, TableCell, Checkbox, Button } from '@dhis2/ui'
+import { TableRow, TableCell, Checkbox } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import moment from 'moment'
-import i18n from '../../locales'
 import { statusMap } from './translations'
+import DeleteButton from './DeleteButton'
 
 const SmsTableItem = ({ message, toggleSelected, isSelected }) => {
     const { message: text, recipients, status, date, id } = message
-    const onClick = () => {
-        console.log(`Delete message ${id}`)
-    }
 
     return (
         <TableRow>
@@ -26,9 +23,7 @@ const SmsTableItem = ({ message, toggleSelected, isSelected }) => {
                 {moment(date).format('MMMM Do YYYY, h:mm:ss a')}
             </TableCell>
             <TableCell>
-                <Button small destructive onClick={onClick}>
-                    {i18n.t('Delete')}
-                </Button>
+                <DeleteButton id={id} />
             </TableCell>
         </TableRow>
     )
