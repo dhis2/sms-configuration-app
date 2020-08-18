@@ -1,4 +1,5 @@
 import React from 'react'
+import { Checkbox } from '@dhis2/ui'
 import i18n from '../../locales'
 import {
     Table,
@@ -12,11 +13,22 @@ import {
 import { PropTypes } from '@dhis2/prop-types'
 import SentSmsTableItem from './SentSmsTableItem'
 
-const SentSmsTable = ({ messages }) => (
+const SentSmsTable = ({
+    messages,
+    toggleSelected,
+    toggleAllSelected,
+    isAllSelected,
+    selected,
+}) => (
     <Table>
         <TableHead>
             <TableRowHead>
-                <TableCellHead>[Checkbox]</TableCellHead>
+                <TableCellHead>
+                    <Checkbox
+                        onChange={toggleAllSelected}
+                        checked={isAllSelected}
+                    />
+                </TableCellHead>
                 <TableCellHead>{i18n.t('No.')}</TableCellHead>
                 <TableCellHead>{i18n.t('Message')}</TableCellHead>
                 <TableCellHead>{i18n.t('Phone number')}</TableCellHead>
@@ -34,7 +46,12 @@ const SentSmsTable = ({ messages }) => (
                 </TableRow>
             ) : (
                 messages.map(message => (
-                    <SentSmsTableItem key={message.id} message={message} />
+                    <SentSmsTableItem
+                        key={message.id}
+                        message={message}
+                        isSelected={selected.includes(message.id)}
+                        toggleSelected={toggleSelected}
+                    />
                 ))
             )}
         </TableBody>
@@ -42,7 +59,11 @@ const SentSmsTable = ({ messages }) => (
 )
 
 SentSmsTable.propTypes = {
-    messages: PropTypes.arrayOf(PropTypes.object),
+    isAllSelected: PropTypes.bool.isRequired,
+    messages: PropTypes.arrayOf(PropTypes.object).isRequired,
+    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+    toggleAllSelected: PropTypes.func.isRequired,
+    toggleSelected: PropTypes.func.isRequired,
 }
 
 export default SentSmsTable
