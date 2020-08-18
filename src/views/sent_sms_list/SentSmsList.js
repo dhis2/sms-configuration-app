@@ -4,7 +4,7 @@ import { Button } from '@dhis2/ui'
 import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
 import data from './data'
-import SentSmsTable from './SentSmsTable'
+import SmsTable from './SmsTable'
 import StatusFilter from './StatusFilter'
 import { getAllIds, getAllSelected } from './selectors'
 import { createToggleAllHandler, createToggleHandler } from './handlers'
@@ -68,7 +68,7 @@ export const SentSmsList = () => {
                     </Button>
                 </div>
             </div>
-            <SentSmsTable
+            <SmsTable
                 messages={data}
                 allSelected={allSelected}
                 selected={selected}

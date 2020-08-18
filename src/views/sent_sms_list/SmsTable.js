@@ -11,9 +11,9 @@ import {
     TableBody,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
-import SentSmsTableItem from './SentSmsTableItem'
+import SmsTableItem from './SmsTableItem'
 
-const SentSmsTable = ({
+const SmsTable = ({
     messages,
     toggleSelected,
     toggleAll,
@@ -41,7 +41,7 @@ const SentSmsTable = ({
                 </TableRow>
             ) : (
                 messages.map(message => (
-                    <SentSmsTableItem
+                    <SmsTableItem
                         key={message.id}
                         message={message}
                         isSelected={selected.includes(message.id)}
@@ -53,7 +53,7 @@ const SentSmsTable = ({
     </Table>
 )
 
-SentSmsTable.propTypes = {
+SmsTable.propTypes = {
     allSelected: PropTypes.bool.isRequired,
     messages: PropTypes.arrayOf(PropTypes.object).isRequired,
     selected: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -61,4 +61,4 @@ SentSmsTable.propTypes = {
     toggleSelected: PropTypes.func.isRequired,
 }
 
-export default SentSmsTable
+export default SmsTable
