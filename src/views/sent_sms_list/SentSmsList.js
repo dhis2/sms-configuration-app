@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useDataQuery } from '@dhis2/app-runtime'
-import { Button, SingleSelectField, SingleSelectOption } from '@dhis2/ui'
+import { Button } from '@dhis2/ui'
 import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
 import data from './data'
 import SentSmsTable from './SentSmsTable'
+import SmsFilter from './SmsFilter'
+import * as selectors from './selectors'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('List of sent sms')
 export const SENT_SMS_LIST_PATH = '/sent'
@@ -29,11 +31,18 @@ export const SentSmsList = () => {
         return error.message
     }
 
-    const allIds = data.map(({ id }) => id)
-    const isAllSelected = allIds.every(id => selected.includes(id))
+    const allIds = selectors.getAllIds(data)
+    const isEverythingSelected = selectors.getIsEverythingSelected(
+        allIds,
+        selected
+    )
+
+    /**
+     * Handlers
+     */
 
     const toggleAllSelected = () => {
-        if (isAllSelected) {
+        if (isEverythingSelected) {
             return setSelected([])
         }
 
@@ -44,7 +53,6 @@ export const SentSmsList = () => {
 
         if (isSelected) {
             const filtered = selected.filter(currentId => currentId !== id)
-
             return setSelected(filtered)
         }
 
@@ -55,31 +63,11 @@ export const SentSmsList = () => {
         console.log('Delete selected messages')
     }
 
-    const filterOptions = [
-        { label: i18n.t('Sent'), value: 'SENT' },
-        // Using ALL instead of a more sensible empty string due to a bug in the Select
-        // https://github.com/dhis2/ui/issues/245
-        { label: i18n.t('All'), value: 'ALL' },
-    ]
-
     return (
         <React.Fragment>
             <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
             <p>
-                <SingleSelectField
-                    label={i18n.t('Filter by status')}
-                    inputWidth="200px"
-                    onChange={({ selected }) => setFilter(selected)}
-                    selected={filter}
-                >
-                    {filterOptions.map(({ label, value }) => (
-                        <SingleSelectOption
-                            key={label}
-                            label={label}
-                            value={value}
-                        />
-                    ))}
-                </SingleSelectField>
+                <SmsFilter filter={filter} setFilter={setFilter} />
             </p>
             <p>
                 <Button
@@ -93,7 +81,7 @@ export const SentSmsList = () => {
             </p>
             <SentSmsTable
                 messages={data}
-                isAllSelected={isAllSelected}
+                isEverythingSelected={isEverythingSelected}
                 selected={selected}
                 toggleSelected={toggleSelected}
                 toggleAllSelected={toggleAllSelected}

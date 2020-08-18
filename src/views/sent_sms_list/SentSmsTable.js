@@ -17,7 +17,7 @@ const SentSmsTable = ({
     messages,
     toggleSelected,
     toggleAllSelected,
-    isAllSelected,
+    isEverythingSelected,
     selected,
 }) => (
     <Table>
@@ -26,7 +26,7 @@ const SentSmsTable = ({
                 <TableCellHead>
                     <Checkbox
                         onChange={toggleAllSelected}
-                        checked={isAllSelected}
+                        checked={isEverythingSelected}
                     />
                 </TableCellHead>
                 <TableCellHead>{i18n.t('Message')}</TableCellHead>
@@ -57,7 +57,7 @@ const SentSmsTable = ({
 )
 
 SentSmsTable.propTypes = {
-    isAllSelected: PropTypes.bool.isRequired,
+    isEverythingSelected: PropTypes.bool.isRequired,
     messages: PropTypes.arrayOf(PropTypes.object).isRequired,
     selected: PropTypes.arrayOf(PropTypes.string).isRequired,
     toggleAllSelected: PropTypes.func.isRequired,
