@@ -58,7 +58,12 @@ export const SentSmsList = () => {
             <p>Filter by status: [SingleSelect]</p>
             <p>Total number of results: {data.length}</p>
             <p>
-                <Button small destructive onClick={onClick}>
+                <Button
+                    small
+                    destructive
+                    disabled={selected.length === 0}
+                    onClick={onClick}
+                >
                     Delete selected messages
                 </Button>
             </p>
