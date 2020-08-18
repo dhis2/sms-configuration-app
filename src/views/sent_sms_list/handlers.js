@@ -1,3 +1,4 @@
+// Creates a handler for toggling a single checkbox
 export const createToggleHandler = ({ selected, setSelected }) => id => {
     const isSelected = selected.includes(id)
 
@@ -9,6 +10,7 @@ export const createToggleHandler = ({ selected, setSelected }) => id => {
     return setSelected([...selected, id])
 }
 
+// Create a handler for toggling all checkboxes
 export const createToggleAllHandler = ({
     allSelected,
     setSelected,
