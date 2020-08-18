@@ -6,7 +6,8 @@ import { PageHeadline } from '../../headline'
 import data from './data'
 import SentSmsTable from './SentSmsTable'
 import SmsFilter from './SmsFilter'
-import * as selectors from './selectors'
+import { getAllIds, getAllSelected } from './selectors'
+import { createToggleAllHandler, createToggleHandler } from './handlers'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('List of sent sms')
 export const SENT_SMS_LIST_PATH = '/sent'
@@ -31,35 +32,17 @@ export const SentSmsList = () => {
         return error.message
     }
 
-    const allIds = selectors.getAllIds(data)
-    const isEverythingSelected = selectors.getIsEverythingSelected(
+    const allIds = getAllIds(data)
+    const allSelected = getAllSelected(allIds, selected)
+
+    // Handlers
+    const toggleAll = createToggleAllHandler({
+        allSelected,
+        setSelected,
         allIds,
-        selected
-    )
-
-    /**
-     * Handlers
-     */
-
-    const toggleAllSelected = () => {
-        if (isEverythingSelected) {
-            return setSelected([])
-        }
-
-        return setSelected(allIds)
-    }
-    const toggleSelected = id => {
-        const isSelected = selected.includes(id)
-
-        if (isSelected) {
-            const filtered = selected.filter(currentId => currentId !== id)
-            return setSelected(filtered)
-        }
-
-        return setSelected([...selected, id])
-    }
-
-    const onClick = () => {
+    })
+    const toggleSelected = createToggleHandler({ selected, setSelected })
+    const deleteSelected = () => {
         console.log('Delete selected messages')
     }
 
@@ -74,17 +57,17 @@ export const SentSmsList = () => {
                     small
                     destructive
                     disabled={selected.length === 0}
-                    onClick={onClick}
+                    onClick={deleteSelected}
                 >
                     Delete selected messages
                 </Button>
             </div>
             <SentSmsTable
                 messages={data}
-                isEverythingSelected={isEverythingSelected}
+                allSelected={allSelected}
                 selected={selected}
                 toggleSelected={toggleSelected}
-                toggleAllSelected={toggleAllSelected}
+                toggleAll={toggleAll}
             />
             <div>Pagination</div>
         </React.Fragment>
