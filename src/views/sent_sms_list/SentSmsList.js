@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDataQuery } from '@dhis2/app-runtime'
+import { Button } from '@dhis2/ui'
 import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
 import data from './data'
@@ -39,6 +40,9 @@ export const SentSmsList = () => {
 
         return setSelected([...selected, id])
     }
+    const onClick = () => {
+        console.log('Delete selected messages')
+    }
 
     if (loading) {
         return 'Loading'
@@ -53,7 +57,11 @@ export const SentSmsList = () => {
             <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
             <p>Filter by status: [SingleSelect]</p>
             <p>Total number of results: {data.length}</p>
-            <p>[Delete checked options button]</p>
+            <p>
+                <Button small destructive onClick={onClick}>
+                    Delete selected messages
+                </Button>
+            </p>
             <SentSmsTable
                 messages={data}
                 isAllSelected={isAllSelected}
