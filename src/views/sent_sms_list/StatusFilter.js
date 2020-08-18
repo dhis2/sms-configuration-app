@@ -13,7 +13,7 @@ const filterOptions = [
     { label: i18n.t('All'), value: 'ALL' },
 ]
 
-const SmsFilter = ({ filter, setFilter }) => (
+const StatusFilter = ({ filter, setFilter }) => (
     <SingleSelectField
         label={i18n.t('Filter by status')}
         inputWidth="200px"
@@ -26,9 +26,9 @@ const SmsFilter = ({ filter, setFilter }) => (
     </SingleSelectField>
 )
 
-SmsFilter.propTypes = {
+StatusFilter.propTypes = {
     filter: PropTypes.string.isRequired,
     setFilter: PropTypes.func.isRequired,
 }
 
-export default SmsFilter
+export default StatusFilter

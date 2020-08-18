@@ -37,7 +37,7 @@ const SentSmsTable = ({
         <TableBody>
             {messages.length === 0 ? (
                 <TableRow>
-                    <TableCell>{i18n.t('No messages to display')}</TableCell>
+                    <TableCell>{i18n.t('No sms to display')}</TableCell>
                 </TableRow>
             ) : (
                 messages.map(message => (

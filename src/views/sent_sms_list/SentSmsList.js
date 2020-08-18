@@ -5,7 +5,7 @@ import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
 import data from './data'
 import SentSmsTable from './SentSmsTable'
-import SmsFilter from './SmsFilter'
+import StatusFilter from './StatusFilter'
 import { getAllIds, getAllSelected } from './selectors'
 import { createToggleAllHandler, createToggleHandler } from './handlers'
 import s from './SentSmsList.module.css'
@@ -56,7 +56,7 @@ export const SentSmsList = () => {
         <React.Fragment>
             <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
             <div className={s.header}>
-                <SmsFilter filter={filter} setFilter={setFilter} />
+                <StatusFilter filter={filter} setFilter={setFilter} />
                 <div className={s.headerRight}>
                     <Button
                         small
