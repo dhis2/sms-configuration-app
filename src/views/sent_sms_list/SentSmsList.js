@@ -47,9 +47,6 @@ export const SentSmsList = () => {
         allIds,
     })
     const toggleSelected = createToggleHandler({ selected, setSelected })
-    const deleteSelected = () => {
-        console.log('Delete selected messages')
-    }
 
     return (
         <RefetchSms.Provider value={refetch}>
@@ -57,10 +54,7 @@ export const SentSmsList = () => {
             <div className={s.header}>
                 <StatusFilter filter={filter} setFilter={setFilter} />
                 <div className={s.headerRight}>
-                    <DeleteSelectedButton
-                        disabled={selected.length === 0}
-                        onClick={deleteSelected}
-                    />
+                    <DeleteSelectedButton selected={selected} />
                 </div>
             </div>
             <SmsTable
