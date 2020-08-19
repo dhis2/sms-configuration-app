@@ -3,7 +3,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
 import SmsTable from './SmsTable'
-import StatusFilter from './StatusFilter'
+import StatusFilter, { parseFilter } from './StatusFilter'
 import { getAllIds, getAllSelected } from './selectors'
 import { createToggleAllHandler, createToggleHandler } from './handlers'
 import DeleteSelectedButton from './DeleteSelectedButton'
@@ -16,13 +16,18 @@ export const SENT_SMS_LIST_PATH = '/sent'
 const query = {
     messages: {
         resource: 'sms/outbound/messages',
+        params: ({ status }) => ({ status }),
     },
 }
 
 export const SentSmsList = () => {
     const [selected, setSelected] = useState([])
     const [filter, setFilter] = useState('ALL')
-    const { loading, error, data, refetch } = useDataQuery(query)
+    const { loading, error, data, refetch } = useDataQuery(query, {
+        variables: {
+            status: parseFilter(filter),
+        },
+    })
 
     if (loading) {
         return (
