@@ -3,6 +3,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import i18n from '../../locales'
 import RefetchSms from './RefetchSms'
+import { statusMap } from './translations'
 
 /**
  * Using ALL instead of a more sensible empty string due to a bug in the Select,
@@ -18,11 +19,20 @@ export const parseFilter = filter => {
     return filter
 }
 
+// From https://github.com/dhis2/dhis2-core/blob/master/dhis-2/dhis-api/src/main/java/org/hisp/dhis/sms/outbound/OutboundSmsStatus.java
+const statuses = [
+    'DELIVERED',
+    'ERROR',
+    'FAILED',
+    'OUTBOUND',
+    'PENDING',
+    'SCHEDULED',
+    'SENT',
+]
 const filterOptions = [
     { label: i18n.t('All'), value: 'ALL' },
-    { label: i18n.t('Sent'), value: 'SENT' },
-    { label: i18n.t('Error'), value: 'ERROR' },
-    { label: i18n.t('Outbound'), value: 'OUTBOUND' },
+    // Using the translations from statusmap as labels
+    ...statuses.map(status => ({ label: statusMap[status], value: status })),
 ]
 
 const StatusFilter = ({ filter, setFilter }) => {
