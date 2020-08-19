@@ -24,7 +24,11 @@ const SmsTable = ({
         <TableHead>
             <TableRowHead>
                 <TableCellHead>
-                    <Checkbox onChange={toggleAll} checked={allSelected} />
+                    <Checkbox
+                        disabled={messages.length === 0}
+                        onChange={toggleAll}
+                        checked={allSelected}
+                    />
                 </TableCellHead>
                 <TableCellHead>{i18n.t('Message')}</TableCellHead>
                 <TableCellHead>{i18n.t('Recipients')}</TableCellHead>
