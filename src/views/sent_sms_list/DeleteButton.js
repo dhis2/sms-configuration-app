@@ -3,9 +3,11 @@ import { Button } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '../../locales'
+import { AlertContext } from '../../notifications'
 import RefetchSms from './RefetchSms'
 
 const DeleteButton = ({ id }) => {
+    const { addAlert } = useContext(AlertContext)
     const refetch = useContext(RefetchSms)
     const [loading, setLoading] = useState(false)
 
@@ -32,9 +34,9 @@ const DeleteButton = ({ id }) => {
                 setLoading(false)
                 refetch()
             })
-            .catch(() => {
+            .catch(error => {
                 setLoading(false)
-                console.log('should handle error')
+                addAlert({ type: 'critical', message: error.message })
             })
     }
 
