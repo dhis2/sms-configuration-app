@@ -6,13 +6,13 @@ import { statusMap } from './translations'
 import DeleteButton from './DeleteButton'
 
 const SmsTableItem = ({ message, toggleSelected, isSelected }) => {
-    const { message: text, recipients, status, date, id } = message
+    const { message: text, recipients, status, date, messageId } = message
 
     return (
         <TableRow>
             <TableCell>
                 <Checkbox
-                    onChange={() => toggleSelected(id)}
+                    onChange={() => toggleSelected(messageId)}
                     checked={isSelected}
                 />
             </TableCell>
@@ -23,7 +23,7 @@ const SmsTableItem = ({ message, toggleSelected, isSelected }) => {
                 {moment(date).format('MMMM Do YYYY, h:mm:ss a')}
             </TableCell>
             <TableCell>
-                <DeleteButton id={id} />
+                <DeleteButton id={messageId} />
             </TableCell>
         </TableRow>
     )
@@ -33,8 +33,8 @@ SmsTableItem.propTypes = {
     isSelected: PropTypes.bool.isRequired,
     message: PropTypes.shape({
         date: PropTypes.string.isRequired,
-        id: PropTypes.string.isRequired,
         message: PropTypes.string.isRequired,
+        messageId: PropTypes.number.isRequired,
         recipients: PropTypes.arrayOf(PropTypes.string).isRequired,
         status: PropTypes.string.isRequired,
     }).isRequired,
