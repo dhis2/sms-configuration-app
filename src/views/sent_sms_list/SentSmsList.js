@@ -7,6 +7,7 @@ import StatusFilter from './StatusFilter'
 import { getAllIds, getAllSelected } from './selectors'
 import { createToggleAllHandler, createToggleHandler } from './handlers'
 import DeleteSelectedButton from './DeleteSelectedButton'
+import RefetchSms from './RefetchSms'
 import s from './SentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('List of sent sms')
@@ -21,7 +22,7 @@ const query = {
 export const SentSmsList = () => {
     const [selected, setSelected] = useState([])
     const [filter, setFilter] = useState('ALL')
-    const { loading, error, data } = useDataQuery(query)
+    const { loading, error, data, refetch } = useDataQuery(query)
 
     if (loading) {
         return (
@@ -51,7 +52,7 @@ export const SentSmsList = () => {
     }
 
     return (
-        <React.Fragment>
+        <RefetchSms.Provider value={refetch}>
             <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
             <div className={s.header}>
                 <StatusFilter filter={filter} setFilter={setFilter} />
@@ -70,6 +71,6 @@ export const SentSmsList = () => {
                 toggleAll={toggleAll}
             />
             <div>Pagination</div>
-        </React.Fragment>
+        </RefetchSms.Provider>
     )
 }
