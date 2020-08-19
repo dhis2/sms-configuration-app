@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDataQuery } from '@dhis2/app-runtime'
+import { NoticeBox } from '@dhis2/ui'
 import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
 import SmsTable from './SmsTable'
@@ -10,7 +11,7 @@ import DeleteSelectedButton from './DeleteSelectedButton'
 import RefetchSms from './RefetchSms'
 import s from './SentSmsList.module.css'
 
-export const SENT_SMS_LIST_LABEL = i18n.t('List of sent sms')
+export const SENT_SMS_LIST_LABEL = i18n.t('List of sent SMSes')
 export const SENT_SMS_LIST_PATH = '/sent'
 
 const query = {
@@ -33,13 +34,22 @@ export const SentSmsList = () => {
         return (
             <React.Fragment>
                 <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
-                <p>{i18n.t('Loading sent sms')}</p>
+                <p>{i18n.t('Loading sent SMSes')}</p>
             </React.Fragment>
         )
     }
 
     if (error) {
-        return error.message
+        const msg = i18n.t('Something went wrong whilst loading sent SMSes')
+
+        return (
+            <React.Fragment>
+                <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
+                <NoticeBox error title={msg}>
+                    {error.message}
+                </NoticeBox>
+            </React.Fragment>
+        )
     }
 
     const allIds = getAllIds(data.messages)
