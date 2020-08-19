@@ -6,7 +6,14 @@ import { statusMap } from './translations'
 import DeleteButton from './DeleteButton'
 
 const SmsTableItem = ({ message, toggleSelected, isSelected }) => {
-    const { message: text, recipients, status, date, messageId } = message
+    const { message: text, status, date, messageId } = message
+
+    /**
+     *FIXME: after a deletion, for a short while the backend returns null for
+     * recipients. We can't catch that with a default value since it's not
+     * undefined, so we're doing it this way.
+     */
+    const recipients = message.recipients === null ? [] : message.recipients
 
     return (
         <TableRow>
@@ -35,8 +42,8 @@ SmsTableItem.propTypes = {
         date: PropTypes.string.isRequired,
         message: PropTypes.string.isRequired,
         messageId: PropTypes.number.isRequired,
-        recipients: PropTypes.arrayOf(PropTypes.string).isRequired,
         status: PropTypes.string.isRequired,
+        recipients: PropTypes.arrayOf(PropTypes.string),
     }).isRequired,
     toggleSelected: PropTypes.func.isRequired,
 }
