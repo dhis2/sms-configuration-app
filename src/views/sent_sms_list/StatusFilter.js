@@ -9,8 +9,10 @@ import i18n from '../../locales'
  */
 
 const filterOptions = [
-    { label: i18n.t('Sent'), value: 'SENT' },
     { label: i18n.t('All'), value: 'ALL' },
+    { label: i18n.t('Sent'), value: 'SENT' },
+    { label: i18n.t('Error'), value: 'ERROR' },
+    { label: i18n.t('Outbound'), value: 'OUTBOUND' },
 ]
 
 const StatusFilter = ({ filter, setFilter }) => (
