@@ -42,9 +42,9 @@ const SmsTable = ({
             ) : (
                 messages.map(message => (
                     <SmsTableItem
-                        key={message.id}
+                        key={message.messageId}
                         message={message}
-                        isSelected={selected.includes(message.id)}
+                        isSelected={selected.includes(message.messageId)}
                         toggleSelected={toggleSelected}
                     />
                 ))
@@ -56,7 +56,7 @@ const SmsTable = ({
 SmsTable.propTypes = {
     allSelected: PropTypes.bool.isRequired,
     messages: PropTypes.arrayOf(PropTypes.object).isRequired,
-    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+    selected: PropTypes.arrayOf(PropTypes.number).isRequired,
     toggleAll: PropTypes.func.isRequired,
     toggleSelected: PropTypes.func.isRequired,
 }

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
-import data from './data'
 import SmsTable from './SmsTable'
 import StatusFilter from './StatusFilter'
 import { getAllIds, getAllSelected } from './selectors'
@@ -13,7 +12,6 @@ import s from './SentSmsList.module.css'
 export const SENT_SMS_LIST_LABEL = i18n.t('List of sent sms')
 export const SENT_SMS_LIST_PATH = '/sent'
 
-// FIXME: should be replaced with the actual resource for messages
 const query = {
     messages: {
         resource: 'sms/outbound/messages',
@@ -23,7 +21,7 @@ const query = {
 export const SentSmsList = () => {
     const [selected, setSelected] = useState([])
     const [filter, setFilter] = useState('ALL')
-    const { loading, error } = useDataQuery(query)
+    const { loading, error, data } = useDataQuery(query)
 
     if (loading) {
         return (
@@ -38,7 +36,7 @@ export const SentSmsList = () => {
         return error.message
     }
 
-    const allIds = getAllIds(data)
+    const allIds = getAllIds(data.messages)
     const allSelected = getAllSelected(allIds, selected)
 
     // Handlers
@@ -65,7 +63,7 @@ export const SentSmsList = () => {
                 </div>
             </div>
             <SmsTable
-                messages={data}
+                messages={data.messages}
                 allSelected={allSelected}
                 selected={selected}
                 toggleSelected={toggleSelected}
