@@ -26,7 +26,7 @@ const Pagination = ({ pager }) => {
     return (
         <div className={s.container}>
             <div className={s.left}>
-                <div>{i18n.t('Show')}</div>
+                <div>{i18n.t('Messages per page')}</div>
                 <SingleSelect
                     dense
                     selected={pageSize.toString()}
@@ -40,7 +40,6 @@ const Pagination = ({ pager }) => {
                         />
                     ))}
                 </SingleSelect>
-                <div>{i18n.t('per page')}</div>
             </div>
             <div className={s.right}>
                 <div className={s.amount}>
