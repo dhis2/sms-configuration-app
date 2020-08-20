@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    padding: 16px;
+    padding: 24px 0;
     font-size: 14px;
 }
 
@@ -26,7 +26,8 @@
 .pageselection {
     display: flex;
     align-items: center;
-    margin: 0 12px;
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 .pageselection > * {

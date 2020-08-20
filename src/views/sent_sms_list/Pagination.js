@@ -9,11 +9,11 @@ const pageSizes = ['10', '20', '30', '40', '50', '100']
 
 const Pagination = ({ pager }) => {
     const refetch = useContext(RefetchSms)
-    const changePage = page => {
-        refetch({ page })
+    const changePage = newPage => {
+        refetch({ page: newPage })
     }
-    const changePageSize = pageSize => {
-        refetch({ pageSize, page: 1 })
+    const changePageSize = newSize => {
+        refetch({ pageSize: newSize, page: 1 })
     }
 
     const { page, pageCount, pageSize, total } = pager
@@ -22,6 +22,7 @@ const Pagination = ({ pager }) => {
     const availablePages = Array.from({ length: pageCount }, (_x, i) =>
         (i + 1).toString()
     )
+
     return (
         <div className={s.container}>
             <div className={s.left}>
