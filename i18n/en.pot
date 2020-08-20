@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-19T07:27:39.045Z\n"
-"PO-Revision-Date: 2020-08-19T07:27:39.045Z\n"
+"POT-Creation-Date: 2020-08-20T07:03:04.950Z\n"
+"PO-Revision-Date: 2020-08-20T07:03:04.950Z\n"
 
 msgid "Save generic gateway"
 msgstr ""
@@ -165,13 +165,16 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-msgid "Delete selected sms"
+msgid "Delete selected SMSes"
 msgstr ""
 
-msgid "List of sent sms"
+msgid "List of sent SMSes"
 msgstr ""
 
-msgid "Loading sent sms"
+msgid "Loading sent SMSes"
+msgstr ""
+
+msgid "Something went wrong whilst loading sent SMSes"
 msgstr ""
 
 msgid "Message"
@@ -186,16 +189,34 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-msgid "No sms to display"
-msgstr ""
-
-msgid "Sent"
+msgid "No SMSes to display"
 msgstr ""
 
 msgid "All"
 msgstr ""
 
 msgid "Filter by status"
+msgstr ""
+
+msgid "Delivered"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Failed"
+msgstr ""
+
+msgid "Outbound"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid "Scheduled"
+msgstr ""
+
+msgid "Sent"
 msgstr ""
 
 msgid "SMS Command"
