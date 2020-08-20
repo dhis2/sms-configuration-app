@@ -5,10 +5,15 @@ import i18n from '../../locales'
 import RefetchSms from './RefetchSms'
 import s from './Pagination.module.css'
 
+const pageSizes = ['10', '20', '30', '40', '50', '100']
+
 const Pagination = ({ pager }) => {
     const refetch = useContext(RefetchSms)
-    const changePage = pageNumber => {
-        refetch({ page: pageNumber })
+    const changePage = page => {
+        refetch({ page })
+    }
+    const changePageSize = pageSize => {
+        refetch({ pageSize, page: 1 })
     }
 
     const { page, pageCount, pageSize, total } = pager
@@ -19,8 +24,22 @@ const Pagination = ({ pager }) => {
     )
     return (
         <div className={s.container}>
-            <div>
-                {i18n.t('Show')} {pageSize} {i18n.t('per page')}
+            <div className={s.left}>
+                <div>{i18n.t('Show')}</div>
+                <SingleSelect
+                    dense
+                    selected={pageSize.toString()}
+                    onChange={({ selected }) => changePageSize(selected)}
+                >
+                    {pageSizes.map(size => (
+                        <SingleSelectOption
+                            key={size}
+                            value={size}
+                            label={size}
+                        />
+                    ))}
+                </SingleSelect>
+                <div>{i18n.t('per page')}</div>
             </div>
             <div className={s.right}>
                 <div className={s.amount}>

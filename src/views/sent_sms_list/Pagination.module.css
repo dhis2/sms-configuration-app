@@ -4,6 +4,15 @@
     font-size: 14px;
 }
 
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.left > * {
+    margin-right: 4px;
+}
+
 .right {
     margin-left: auto;
     display: flex;

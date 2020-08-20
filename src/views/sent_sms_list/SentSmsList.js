@@ -19,8 +19,8 @@ export const SENT_SMS_LIST_PATH = '/sent'
 const query = {
     messages: {
         resource: 'sms/outbound/messages',
-        params: ({ status, page }) => ({
-            pageSize: 10,
+        params: ({ status, page, pageSize }) => ({
+            pageSize,
             status,
             page,
         }),
@@ -34,6 +34,7 @@ export const SentSmsList = () => {
         variables: {
             // The defaults for this route, can be modified by refetches
             status: parseFilter(filter),
+            pageSize: 10,
             page: 1,
         },
     })
