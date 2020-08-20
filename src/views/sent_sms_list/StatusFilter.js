@@ -41,6 +41,8 @@ const StatusFilter = ({ filter, setFilter }) => {
         setFilter(selected)
         refetch({
             status: parseFilter(selected),
+            // Reset to the first page after filtering
+            page: 1,
         })
     }
 

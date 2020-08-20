@@ -3,12 +3,14 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
+import data from './mock-data'
 import SmsTable from './SmsTable'
 import StatusFilter, { parseFilter } from './StatusFilter'
 import { getAllIds, getAllSelected } from './selectors'
 import { createToggleAllHandler, createToggleHandler } from './handlers'
 import DeleteSelectedButton from './DeleteSelectedButton'
 import RefetchSms from './RefetchSms'
+import Pagination from './Pagination'
 import s from './SentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('List of sent SMSes')
@@ -17,16 +19,22 @@ export const SENT_SMS_LIST_PATH = '/sent'
 const query = {
     messages: {
         resource: 'sms/outbound/messages',
-        params: ({ status }) => ({ status }),
+        params: ({ status, page }) => ({
+            pageSize: 10,
+            status,
+            page,
+        }),
     },
 }
 
 export const SentSmsList = () => {
     const [selected, setSelected] = useState([])
     const [filter, setFilter] = useState('ALL')
-    const { loading, error, data, refetch } = useDataQuery(query, {
+    const { loading, error, refetch } = useDataQuery(query, {
         variables: {
+            // The defaults for this route, can be modified by refetches
             status: parseFilter(filter),
+            page: 1,
         },
     })
 
@@ -81,7 +89,7 @@ export const SentSmsList = () => {
                 toggleSelected={toggleSelected}
                 toggleAll={toggleAll}
             />
-            <div>Pagination</div>
+            <Pagination pager={data.pager} />
         </RefetchSms.Provider>
     )
 }
