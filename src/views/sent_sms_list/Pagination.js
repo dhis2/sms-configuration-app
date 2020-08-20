@@ -1,36 +1,69 @@
 import React, { useContext } from 'react'
+import { Button, SingleSelect, SingleSelectOption } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import i18n from '../../locales'
 import RefetchSms from './RefetchSms'
-
-// Generates a range for the paging controls
-const range = (start, end) =>
-    Array(end - start + 1)
-        .fill()
-        .map((_, idx) => start + idx)
+import s from './Pagination.module.css'
 
 const Pagination = ({ pager }) => {
     const refetch = useContext(RefetchSms)
-    const { page, pageCount, pageSize, total } = pager
-    const pageNumbers = range(1, pageCount)
-    const onClick = targetPage => {
-        refetch({ page: targetPage })
+    const changePage = pageNumber => {
+        refetch({ page: pageNumber })
     }
 
+    const { page, pageCount, pageSize, total } = pager
+    const firstItem = (page - 1) * pageCount + 1
+    const lastItem = firstItem + pageSize - 1
+    const availablePages = Array.from({ length: pageCount }, (_x, i) =>
+        (i + 1).toString()
+    )
     return (
-        <div>
-            page: {page}
-            <br />
-            pageCount: {pageCount}
-            <br />
-            pageSize: {pageSize}
-            <br />
-            total: {total}
-            <br />
-            {pageNumbers.map(number => (
-                <button key={number} onClick={() => onClick(number)}>
-                    {number}
-                </button>
-            ))}
+        <div className={s.container}>
+            <div>
+                {i18n.t('Show')} {pageSize} {i18n.t('per page')}
+            </div>
+            <div className={s.right}>
+                <div className={s.amount}>
+                    {i18n.t('Viewing {{firstItem}}-{{lastItem}} of {{total}}', {
+                        firstItem,
+                        lastItem,
+                        total,
+                    })}
+                </div>
+                <Button
+                    small
+                    disabled={page === 1}
+                    onClick={() => changePage(page - 1)}
+                >
+                    {i18n.t('Previous')}
+                </Button>
+                <div className={s.pageselection}>
+                    <div>{i18n.t('Page')}</div>
+                    <SingleSelect
+                        dense
+                        selected={page.toString()}
+                        onChange={({ selected }) => {
+                            changePage(selected)
+                        }}
+                    >
+                        {availablePages.map(page => (
+                            <SingleSelectOption
+                                key={page}
+                                value={page}
+                                label={page}
+                            />
+                        ))}
+                    </SingleSelect>
+                    <div>{i18n.t('of {{pageCount}}', { pageCount })}</div>
+                </div>
+                <Button
+                    small
+                    disabled={page === pageCount}
+                    onClick={() => changePage(page + 1)}
+                >
+                    {i18n.t('Next')}
+                </Button>
+            </div>
         </div>
     )
 }

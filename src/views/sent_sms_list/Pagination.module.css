@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    padding: 16px;
+    font-size: 14px;
+}
+
+.right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.amount {
+    margin-right: 24px;
+}
+
+.pageselection {
+    display: flex;
+    align-items: center;
+    margin: 0 12px;
+}
+
+.pageselection > * {
+    margin-right: 4px;
+}
