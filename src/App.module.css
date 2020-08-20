@@ -11,6 +11,7 @@
 }
 
 .content {
+    position: relative;
     grid-area: main;
     padding: 20px;
 }
