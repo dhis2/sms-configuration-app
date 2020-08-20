@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDataQuery } from '@dhis2/app-runtime'
-import { NoticeBox } from '@dhis2/ui'
+import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
 import SmsTable from './SmsTable'
@@ -34,7 +34,9 @@ export const SentSmsList = () => {
         return (
             <React.Fragment>
                 <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
-                <p>{i18n.t('Loading sent SMSes')}</p>
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
             </React.Fragment>
         )
     }
