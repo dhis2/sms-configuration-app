@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-20T08:43:35.285Z\n"
-"PO-Revision-Date: 2020-08-20T08:43:35.285Z\n"
+"POT-Creation-Date: 2020-08-20T12:30:19.253Z\n"
+"PO-Revision-Date: 2020-08-20T12:30:19.253Z\n"
 
 msgid "Save generic gateway"
 msgstr ""
@@ -166,6 +166,24 @@ msgid "Delete"
 msgstr ""
 
 msgid "Delete selected SMSes"
+msgstr ""
+
+msgid "Messages per page"
+msgstr ""
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr ""
+
+msgid "Previous"
+msgstr ""
+
+msgid "Page"
+msgstr ""
+
+msgid "of {{pageCount}}"
+msgstr ""
+
+msgid "Next"
 msgstr ""
 
 msgid "List of sent SMSes"
