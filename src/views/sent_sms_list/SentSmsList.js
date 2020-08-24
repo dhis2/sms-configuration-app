@@ -66,6 +66,14 @@ export const SentSmsList = () => {
     const allIds = getAllIds(data.messages)
     const allSelected = getAllSelected(allIds, selected)
 
+    // Remove an id from selected, for after deletion
+    const cleanSelected = id => {
+        if (selected.includes(id)) {
+            const filtered = selected.filter(current => current != id)
+            setSelected(filtered)
+        }
+    }
+
     // Handlers
     const toggleAll = createToggleAllHandler({
         allSelected,
@@ -80,11 +88,15 @@ export const SentSmsList = () => {
             <div className={s.header}>
                 <StatusFilter filter={filter} setFilter={setFilter} />
                 <div className={s.headerRight}>
-                    <DeleteSelectedButton selected={selected} />
+                    <DeleteSelectedButton
+                        selected={selected}
+                        clearSelected={() => setSelected([])}
+                    />
                 </div>
             </div>
             <SmsTable
                 messages={data.messages}
+                cleanSelected={cleanSelected}
                 allSelected={allSelected}
                 selected={selected}
                 toggleSelected={toggleSelected}
