@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import i18n from '../../locales'
-import RefetchSms from './RefetchSms'
 import { statusMap } from './translations'
+import useSetQueryParams from './useSetQueryParams'
 
 /**
  * Using ALL instead of a more sensible empty string due to a bug in the Select,
@@ -36,14 +36,10 @@ const filterOptions = [
 ]
 
 const StatusFilter = ({ filter, setFilter }) => {
-    const refetch = useContext(RefetchSms)
+    const setParams = useSetQueryParams()
     const onChange = ({ selected }) => {
         setFilter(selected)
-        refetch({
-            status: parseFilter(selected),
-            // Reset to the first page after filtering
-            page: 1,
-        })
+        setParams({ status: selected })
     }
 
     return (

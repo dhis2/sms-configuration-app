@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDataQuery } from '@dhis2/app-runtime'
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import i18n from '../../locales'
@@ -11,6 +11,7 @@ import { createToggleAllHandler, createToggleHandler } from './handlers'
 import DeleteSelectedButton from './DeleteSelectedButton'
 import RefetchSms from './RefetchSms'
 import Pagination from './Pagination'
+import useGetQueryParams from './useGetQueryParams'
 import s from './SentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('List of sent SMSes')
@@ -28,18 +29,22 @@ const query = {
 }
 
 export const SentSmsList = () => {
+    const { status, page, pageSize } = useGetQueryParams()
     const [selected, setSelected] = useState([])
     const [filter, setFilter] = useState('ALL')
-    const { loading, error, refetch } = useDataQuery(query, {
-        variables: {
-            // The defaults for this route, can be modified by refetches
-            status: parseFilter(filter),
-            pageSize: 10,
-            page: 1,
-        },
+    const { called, loading, error, refetch } = useDataQuery(query, {
+        lazy: true,
     })
 
-    if (loading) {
+    useEffect(() => {
+        refetch({
+            status: parseFilter(status),
+            pageSize,
+            page,
+        })
+    }, [status, page, pageSize])
+
+    if (!called || loading) {
         return (
             <React.Fragment>
                 <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>

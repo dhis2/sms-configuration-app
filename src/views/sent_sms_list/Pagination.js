@@ -1,19 +1,19 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Button, SingleSelect, SingleSelectOption } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import i18n from '../../locales'
-import RefetchSms from './RefetchSms'
+import useSetQueryParams from './useSetQueryParams'
 import s from './Pagination.module.css'
 
 const pageSizes = ['10', '20', '30', '40', '50', '100']
 
 const Pagination = ({ pager }) => {
-    const refetch = useContext(RefetchSms)
+    const setParams = useSetQueryParams()
     const changePage = newPage => {
-        refetch({ page: newPage })
+        setParams({ page: newPage })
     }
     const changePageSize = newSize => {
-        refetch({ pageSize: newSize, page: 1 })
+        setParams({ pageSize: newSize, page: 1 })
     }
 
     const { page, pageCount, pageSize, total } = pager
