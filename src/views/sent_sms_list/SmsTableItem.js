@@ -5,7 +5,12 @@ import moment from 'moment'
 import { statusMap } from './translations'
 import DeleteButton from './DeleteButton'
 
-const SmsTableItem = ({ message, toggleSelected, isSelected }) => {
+const SmsTableItem = ({
+    message,
+    toggleSelected,
+    isSelected,
+    cleanSelected,
+}) => {
     const { message: text, status, date, messageId } = message
 
     /**
@@ -30,13 +35,14 @@ const SmsTableItem = ({ message, toggleSelected, isSelected }) => {
                 {moment(date).format('MMMM Do YYYY, h:mm:ss a')}
             </TableCell>
             <TableCell>
-                <DeleteButton id={messageId} />
+                <DeleteButton id={messageId} cleanSelected={cleanSelected} />
             </TableCell>
         </TableRow>
     )
 }
 
 SmsTableItem.propTypes = {
+    cleanSelected: PropTypes.func.isRequired,
     isSelected: PropTypes.bool.isRequired,
     message: PropTypes.shape({
         date: PropTypes.string.isRequired,

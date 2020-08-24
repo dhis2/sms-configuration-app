@@ -15,6 +15,7 @@ import SmsTableItem from './SmsTableItem'
 
 const SmsTable = ({
     messages,
+    cleanSelected,
     toggleSelected,
     toggleAll,
     allSelected,
@@ -50,6 +51,7 @@ const SmsTable = ({
                         message={message}
                         isSelected={selected.includes(message.messageId)}
                         toggleSelected={toggleSelected}
+                        cleanSelected={cleanSelected}
                     />
                 ))
             )}
@@ -59,6 +61,7 @@ const SmsTable = ({
 
 SmsTable.propTypes = {
     allSelected: PropTypes.bool.isRequired,
+    cleanSelected: PropTypes.func.isRequired,
     messages: PropTypes.arrayOf(PropTypes.object).isRequired,
     selected: PropTypes.arrayOf(PropTypes.number).isRequired,
     toggleAll: PropTypes.func.isRequired,

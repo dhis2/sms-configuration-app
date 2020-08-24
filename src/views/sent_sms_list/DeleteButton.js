@@ -6,7 +6,7 @@ import i18n from '../../locales'
 import { AlertContext } from '../../notifications'
 import RefetchSms from './RefetchSms'
 
-const DeleteButton = ({ id }) => {
+const DeleteButton = ({ id, cleanSelected }) => {
     const { addAlert } = useContext(AlertContext)
     const refetch = useContext(RefetchSms)
     const [loading, setLoading] = useState(false)
@@ -32,6 +32,7 @@ const DeleteButton = ({ id }) => {
             .mutate(mutation)
             .then(() => {
                 setLoading(false)
+                cleanSelected(id)
                 refetch()
             })
             .catch(error => {
@@ -52,6 +53,7 @@ const DeleteButton = ({ id }) => {
 }
 
 DeleteButton.propTypes = {
+    cleanSelected: PropTypes.func.isRequired,
     id: PropTypes.number.isRequired,
 }
 
