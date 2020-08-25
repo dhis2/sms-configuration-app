@@ -1,0 +1,5 @@
+.noResults {
+    color: var(--colors-grey700);
+    text-align: center;
+    font-style: italic;
+}

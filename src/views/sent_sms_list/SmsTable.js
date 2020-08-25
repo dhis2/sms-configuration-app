@@ -9,9 +9,12 @@ import {
     TableCell,
     TableCellHead,
     TableBody,
+    TableFoot,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import SmsTableItem from './SmsTableItem'
+import Pagination from './Pagination'
+import s from './SmsTable.module.css'
 
 const SmsTable = ({
     smses,
@@ -20,6 +23,7 @@ const SmsTable = ({
     toggleAll,
     allSelected,
     selected,
+    pager,
 }) => (
     <Table>
         <TableHead>
@@ -41,7 +45,9 @@ const SmsTable = ({
         <TableBody>
             {smses.length === 0 ? (
                 <TableRow>
-                    <TableCell>{i18n.t('No SMSes to display')}</TableCell>
+                    <TableCell colSpan="7" className={s.noResults}>
+                        {i18n.t('No SMSes to display')}
+                    </TableCell>
                 </TableRow>
             ) : (
                 smses.map(sms => (
@@ -55,12 +61,20 @@ const SmsTable = ({
                 ))
             )}
         </TableBody>
+        <TableFoot>
+            <TableRow>
+                <TableCell colSpan="7">
+                    <Pagination pager={pager} />
+                </TableCell>
+            </TableRow>
+        </TableFoot>
     </Table>
 )
 
 SmsTable.propTypes = {
     allSelected: PropTypes.bool.isRequired,
     cleanSelected: PropTypes.func.isRequired,
+    pager: PropTypes.object.isRequired,
     selected: PropTypes.arrayOf(PropTypes.string).isRequired,
     smses: PropTypes.arrayOf(PropTypes.object).isRequired,
     toggleAll: PropTypes.func.isRequired,
