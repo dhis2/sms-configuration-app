@@ -3,9 +3,8 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import i18n from '../../locales'
 import { PageHeadline } from '../../headline'
-import data from './mock-data'
 import SmsTable from './SmsTable'
-import StatusFilter, { parseFilter } from './StatusFilter'
+import StatusFilter, { parseStatus } from './StatusFilter'
 import { getAllIds, getAllSelected } from './selectors'
 import { createToggleAllHandler, createToggleHandler } from './handlers'
 import DeleteSelectedButton from './DeleteSelectedButton'
@@ -16,24 +15,36 @@ import s from './SentSmsList.module.css'
 export const SENT_SMS_LIST_LABEL = i18n.t('List of sent SMSes')
 export const SENT_SMS_LIST_PATH = '/sent'
 
+const parseParams = ({ status, page, pageSize }) => {
+    const base = {
+        pageSize,
+        page,
+        fields: ['id', 'message', 'status', 'date', 'recipients'],
+    }
+
+    if (!status) {
+        return base
+    }
+
+    return {
+        ...base,
+        filter: `status:eq:${status}`,
+    }
+}
+
 const query = {
-    messages: {
-        resource: 'sms/outbound/messages',
-        params: ({ status, page, pageSize }) => ({
-            pageSize,
-            status,
-            page,
-        }),
+    sms: {
+        resource: 'sms/outbound',
+        params: parseParams,
     },
 }
 
 export const SentSmsList = () => {
     const [selected, setSelected] = useState([])
-    const [filter, setFilter] = useState('ALL')
-    const { loading, error, refetch } = useDataQuery(query, {
+    const [status, setStatus] = useState('ALL')
+    const { loading, error, data, refetch } = useDataQuery(query, {
         variables: {
-            // The defaults for this route, can be modified by refetches
-            status: parseFilter(filter),
+            status: parseStatus(status),
             pageSize: 10,
             page: 1,
         },
@@ -63,7 +74,7 @@ export const SentSmsList = () => {
         )
     }
 
-    const allIds = getAllIds(data.messages)
+    const allIds = getAllIds(data.sms.outboundsmss)
     const allSelected = getAllSelected(allIds, selected)
 
     // Remove an id from selected, for after deletion
@@ -86,7 +97,7 @@ export const SentSmsList = () => {
         <RefetchSms.Provider value={refetch}>
             <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
             <div className={s.header}>
-                <StatusFilter filter={filter} setFilter={setFilter} />
+                <StatusFilter status={status} setStatus={setStatus} />
                 <div className={s.headerRight}>
                     <DeleteSelectedButton
                         selected={selected}
@@ -95,14 +106,14 @@ export const SentSmsList = () => {
                 </div>
             </div>
             <SmsTable
-                messages={data.messages}
+                smses={data.sms.outboundsmss}
                 cleanSelected={cleanSelected}
                 allSelected={allSelected}
                 selected={selected}
                 toggleSelected={toggleSelected}
                 toggleAll={toggleAll}
             />
-            <Pagination pager={data.pager} />
+            <Pagination pager={data.sms.pager} />
         </RefetchSms.Provider>
     )
 }

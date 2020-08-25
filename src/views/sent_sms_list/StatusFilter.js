@@ -11,12 +11,12 @@ import { statusMap } from './translations'
  * https://github.com/dhis2/ui/issues/245
  */
 
-export const parseFilter = filter => {
-    if (filter === 'ALL') {
+export const parseStatus = status => {
+    if (status === 'ALL') {
         return ''
     }
 
-    return filter
+    return status
 }
 
 // From https://github.com/dhis2/dhis2-core/blob/master/dhis-2/dhis-api/src/main/java/org/hisp/dhis/sms/outbound/OutboundSmsStatus.java
@@ -35,12 +35,12 @@ const filterOptions = [
     ...statuses.map(status => ({ label: statusMap[status], value: status })),
 ]
 
-const StatusFilter = ({ filter, setFilter }) => {
+const StatusFilter = ({ status, setStatus }) => {
     const refetch = useContext(RefetchSms)
     const onChange = ({ selected }) => {
-        setFilter(selected)
+        setStatus(selected)
         refetch({
-            status: parseFilter(selected),
+            status: parseStatus(selected),
             // Reset to the first page after filtering
             page: 1,
         })
@@ -51,7 +51,7 @@ const StatusFilter = ({ filter, setFilter }) => {
             label={i18n.t('Filter by status')}
             inputWidth="200px"
             onChange={onChange}
-            selected={filter}
+            selected={status}
         >
             {filterOptions.map(({ label, value }) => (
                 <SingleSelectOption key={label} label={label} value={value} />
@@ -61,8 +61,8 @@ const StatusFilter = ({ filter, setFilter }) => {
 }
 
 StatusFilter.propTypes = {
-    filter: PropTypes.string.isRequired,
-    setFilter: PropTypes.func.isRequired,
+    setStatus: PropTypes.func.isRequired,
+    status: PropTypes.string.isRequired,
 }
 
 export default StatusFilter
