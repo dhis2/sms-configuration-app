@@ -7,6 +7,25 @@ import s from './Pagination.module.css'
 
 const pageSizes = ['10', '20', '30', '40', '50', '100']
 
+const getFirstItem = ({ page, pageSize, total }) => {
+    if (total === 0) {
+        return 0
+    }
+
+    return (page - 1) * pageSize + 1
+}
+
+const getLastItem = ({ pager, firstItem }) => {
+    const { pageSize, total } = pager
+    const lastItem = firstItem + pageSize - 1
+
+    if (total < lastItem) {
+        return total
+    }
+
+    return lastItem
+}
+
 const Pagination = ({ pager }) => {
     const refetch = useContext(RefetchSms)
     const changePage = newPage => {
@@ -17,8 +36,9 @@ const Pagination = ({ pager }) => {
     }
 
     const { page, pageCount, pageSize, total } = pager
-    const firstItem = (page - 1) * pageCount + 1
-    const lastItem = firstItem + pageSize - 1
+    const firstItem = getFirstItem(pager)
+    const lastItem = getLastItem({ pager, firstItem })
+
     const availablePages = Array.from({ length: pageCount }, (_x, i) =>
         (i + 1).toString()
     )
