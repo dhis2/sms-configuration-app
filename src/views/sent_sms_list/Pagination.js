@@ -19,7 +19,6 @@ const Pagination = ({ pager }) => {
     const { page, pageCount, pageSize, total } = pager
     const firstItem = Math.min((page - 1) * pageSize + 1, total)
     const lastItem = Math.min(firstItem + pageSize - 1, total)
-
     const availablePages = Array.from({ length: pageCount }, (_x, i) =>
         (i + 1).toString()
     )

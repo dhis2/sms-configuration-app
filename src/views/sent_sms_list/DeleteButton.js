@@ -21,8 +21,7 @@ const DeleteButton = ({ id, cleanSelected }) => {
         resource: 'sms/outbound',
         type: 'delete',
         params: {
-            // We get the ids as numbers from the backend
-            ids: id.toString(),
+            ids: id,
         },
     }
 
