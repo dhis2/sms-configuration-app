@@ -8,12 +8,12 @@ import s from './Pagination.module.css'
 const pageSizes = ['10', '20', '30', '40', '50', '100']
 
 const Pagination = ({ pager }) => {
-    const refetch = useContext(RefetchSms)
+    const { refetchAndClear } = useContext(RefetchSms)
     const changePage = newPage => {
-        refetch({ page: newPage })
+        refetchAndClear({ page: newPage })
     }
     const changePageSize = newSize => {
-        refetch({ pageSize: newSize, page: 1 })
+        refetchAndClear({ pageSize: newSize, page: 1 })
     }
 
     const { page, pageCount, pageSize, total } = pager

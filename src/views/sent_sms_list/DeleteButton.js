@@ -8,7 +8,7 @@ import RefetchSms from './RefetchSms'
 
 const DeleteButton = ({ id, cleanSelected }) => {
     const { addAlert } = useContext(AlertContext)
-    const refetch = useContext(RefetchSms)
+    const { refetch } = useContext(RefetchSms)
     const [loading, setLoading] = useState(false)
 
     /**

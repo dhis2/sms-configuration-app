@@ -78,6 +78,7 @@ export const SentSmsList = () => {
         )
     }
 
+    // Selectors
     const allIds = getAllIds(data.sms.outboundsmss)
     const allSelected = getAllSelected(allIds, selected)
 
@@ -90,16 +91,22 @@ export const SentSmsList = () => {
     })
     const toggleSelected = createToggleHandler({ selected, setSelected })
 
+    // Context
+    const context = {
+        refetch,
+        refetchAndClear: params => {
+            setSelected([])
+            refetch(params)
+        },
+    }
+
     return (
-        <RefetchSms.Provider value={refetch}>
+        <RefetchSms.Provider value={context}>
             <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
             <div className={s.header}>
                 <StatusFilter status={status} setStatus={setStatus} />
                 <div className={s.headerRight}>
-                    <DeleteSelectedButton
-                        selected={selected}
-                        clearSelected={() => setSelected([])}
-                    />
+                    <DeleteSelectedButton selected={selected} />
                 </div>
             </div>
             <SmsTable
