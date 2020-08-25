@@ -36,7 +36,6 @@ const SmsTable = ({
                 <TableCellHead>{i18n.t('Status')}</TableCellHead>
                 <TableCellHead>{i18n.t('Date')}</TableCellHead>
                 <TableCellHead>{i18n.t('Delete')}</TableCellHead>
-                <TableCellHead />
             </TableRowHead>
         </TableHead>
         <TableBody>
