@@ -6,7 +6,11 @@ import { PageHeadline } from '../../headline'
 import SmsTable from './SmsTable'
 import StatusFilter, { parseStatus } from './StatusFilter'
 import { getAllIds, getAllSelected } from './selectors'
-import { createToggleAllHandler, createToggleHandler } from './handlers'
+import {
+    createToggleAllHandler,
+    createToggleHandler,
+    createCleanSelectedHandler,
+} from './handlers'
 import DeleteSelectedButton from './DeleteSelectedButton'
 import RefetchSms from './RefetchSms'
 import Pagination from './Pagination'
@@ -77,15 +81,8 @@ export const SentSmsList = () => {
     const allIds = getAllIds(data.sms.outboundsmss)
     const allSelected = getAllSelected(allIds, selected)
 
-    // Remove an id from selected, for after deletion
-    const cleanSelected = id => {
-        if (selected.includes(id)) {
-            const filtered = selected.filter(current => current != id)
-            setSelected(filtered)
-        }
-    }
-
     // Handlers
+    const cleanSelected = createCleanSelectedHandler({ selected, setSelected })
     const toggleAll = createToggleAllHandler({
         allSelected,
         setSelected,
