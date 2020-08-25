@@ -22,3 +22,11 @@ export const createToggleAllHandler = ({
 
     return setSelected(allIds)
 }
+
+// Create a handler to remove an id from selected, for after deletion
+export const createCleanSelectedHandler = ({ selected, setSelected }) => id => {
+    if (selected.includes(id)) {
+        const filtered = selected.filter(current => current != id)
+        setSelected(filtered)
+    }
+}
