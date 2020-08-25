@@ -36,10 +36,10 @@ const filterOptions = [
 ]
 
 const StatusFilter = ({ status, setStatus }) => {
-    const refetch = useContext(RefetchSms)
+    const { refetchAndClear } = useContext(RefetchSms)
     const onChange = ({ selected }) => {
         setStatus(selected)
-        refetch({
+        refetchAndClear({
             status: parseStatus(selected),
             // Reset to the first page after filtering
             page: 1,
