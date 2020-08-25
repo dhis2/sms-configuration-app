@@ -13,7 +13,6 @@ import {
 } from './handlers'
 import DeleteSelectedButton from './DeleteSelectedButton'
 import RefetchSms from './RefetchSms'
-import Pagination from './Pagination'
 import s from './SentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('List of sent SMSes')
@@ -116,8 +115,8 @@ export const SentSmsList = () => {
                 selected={selected}
                 toggleSelected={toggleSelected}
                 toggleAll={toggleAll}
+                pager={data.sms.pager}
             />
-            <Pagination pager={data.sms.pager} />
         </RefetchSms.Provider>
     )
 }
