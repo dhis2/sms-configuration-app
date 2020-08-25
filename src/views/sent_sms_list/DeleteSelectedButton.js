@@ -11,9 +11,7 @@ const DeleteSelectedButton = ({ selected, clearSelected }) => {
     const refetch = useContext(RefetchSms)
     const [loading, setLoading] = useState(false)
     const disabled = selected.length === 0
-
-    // We get the ids as numbers from the backend
-    const ids = selected.map(id => id.toString()).join(',')
+    const ids = selected.join(',')
 
     /**
      * FIXME: Using the data engine directly since the data mutation doesn't seem to
