@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import React from 'react'
+import { CssVariables } from '@dhis2/ui'
 import styles from './App.module.css'
 
 import { AlertHandler } from './notifications'
@@ -8,6 +9,7 @@ import {
     GATEWAY_CONFIG_FORM_EDIT_PATH,
     GATEWAY_CONFIG_FORM_NEW_PATH,
     GATEWAY_CONFIG_LIST_PATH,
+    RECEIVED_SMS_LIST_PATH,
     SMS_COMMAND_LIST_PATH,
     SMS_COMMAND_FORM_EDIT_PATH,
     SMS_COMMAND_FORM_NEW_PATH,
@@ -15,6 +17,7 @@ import {
     GatewayConfigFormEdit,
     GatewayConfigFormNew,
     GatewayConfigList,
+    ReceivedSmsList,
     SmsCommandList,
     SmsCommandFormEdit,
     SmsCommandFormNew,
@@ -27,6 +30,7 @@ import { dataTest } from './dataTest'
 
 const App = () => (
     <AlertHandler>
+        <CssVariables spacers colors />
         <BrowserRouter>
             <div className={styles.container} data-test={dataTest('app')}>
                 <div className={styles.sidebar}>
@@ -80,6 +84,13 @@ const App = () => (
                             exact
                             path={SENT_SMS_LIST_PATH}
                             component={SentSmsList}
+                        />
+
+                        {/* View received sms */ ''}
+                        <Route
+                            exact
+                            path={RECEIVED_SMS_LIST_PATH}
+                            component={ReceivedSmsList}
                         />
 
                         <Route component={NoMatch} />

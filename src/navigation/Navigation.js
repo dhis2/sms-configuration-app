@@ -10,6 +10,8 @@ import {
     SENT_SMS_LIST_PATH,
     HOME_PATH,
     HOME_LABEL,
+    RECEIVED_SMS_LIST_PATH,
+    RECEIVED_SMS_LIST_LABEL,
 } from '../views'
 import { NavigationItem } from './NavigationItem'
 import { dataTest } from '../dataTest'
@@ -29,5 +31,10 @@ export const Navigation = () => (
         />
 
         <NavigationItem path={SENT_SMS_LIST_PATH} label={SENT_SMS_LIST_LABEL} />
+
+        <NavigationItem
+            path={RECEIVED_SMS_LIST_PATH}
+            label={RECEIVED_SMS_LIST_LABEL}
+        />
     </Menu>
 )

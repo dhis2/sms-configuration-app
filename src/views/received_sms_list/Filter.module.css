@@ -1,0 +1,11 @@
+.container {
+    flex-grow: 1;
+    flex-shrink: 0;
+    align-content: stretch;
+}
+
+.inputStrip {
+    display: flex;
+    align-items: flex-end;
+    margin-right: var(--spacers-dp16);
+}
