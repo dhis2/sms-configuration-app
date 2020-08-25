@@ -14,7 +14,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import SmsTableItem from './SmsTableItem'
 
 const SmsTable = ({
-    messages,
+    smses,
     cleanSelected,
     toggleSelected,
     toggleAll,
@@ -26,7 +26,7 @@ const SmsTable = ({
             <TableRowHead>
                 <TableCellHead>
                     <Checkbox
-                        disabled={messages.length === 0}
+                        disabled={smses.length === 0}
                         onChange={toggleAll}
                         checked={allSelected}
                     />
@@ -40,16 +40,16 @@ const SmsTable = ({
             </TableRowHead>
         </TableHead>
         <TableBody>
-            {messages.length === 0 ? (
+            {smses.length === 0 ? (
                 <TableRow>
                     <TableCell>{i18n.t('No SMSes to display')}</TableCell>
                 </TableRow>
             ) : (
-                messages.map(message => (
+                smses.map(sms => (
                     <SmsTableItem
-                        key={message.messageId}
-                        message={message}
-                        isSelected={selected.includes(message.messageId)}
+                        key={sms.id}
+                        sms={sms}
+                        isSelected={selected.includes(sms.id)}
                         toggleSelected={toggleSelected}
                         cleanSelected={cleanSelected}
                     />
@@ -62,8 +62,8 @@ const SmsTable = ({
 SmsTable.propTypes = {
     allSelected: PropTypes.bool.isRequired,
     cleanSelected: PropTypes.func.isRequired,
-    messages: PropTypes.arrayOf(PropTypes.object).isRequired,
-    selected: PropTypes.arrayOf(PropTypes.number).isRequired,
+    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+    smses: PropTypes.arrayOf(PropTypes.object).isRequired,
     toggleAll: PropTypes.func.isRequired,
     toggleSelected: PropTypes.func.isRequired,
 }

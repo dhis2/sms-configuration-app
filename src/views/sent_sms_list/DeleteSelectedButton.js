@@ -22,7 +22,7 @@ const DeleteSelectedButton = ({ selected, clearSelected }) => {
      */
     const engine = useDataEngine()
     const mutation = {
-        resource: 'sms/outbound/message',
+        resource: 'sms/outbound',
         type: 'delete',
         params: {
             ids,
@@ -58,7 +58,7 @@ const DeleteSelectedButton = ({ selected, clearSelected }) => {
 
 DeleteSelectedButton.propTypes = {
     clearSelected: PropTypes.func.isRequired,
-    selected: PropTypes.arrayOf(PropTypes.number).isRequired,
+    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default DeleteSelectedButton

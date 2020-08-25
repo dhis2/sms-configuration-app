@@ -18,7 +18,7 @@ const DeleteButton = ({ id, cleanSelected }) => {
      */
     const engine = useDataEngine()
     const mutation = {
-        resource: 'sms/outbound/message',
+        resource: 'sms/outbound',
         type: 'delete',
         params: {
             // We get the ids as numbers from the backend
@@ -54,7 +54,7 @@ const DeleteButton = ({ id, cleanSelected }) => {
 
 DeleteButton.propTypes = {
     cleanSelected: PropTypes.func.isRequired,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
 }
 
 export default DeleteButton
