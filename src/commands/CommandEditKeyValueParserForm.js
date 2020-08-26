@@ -6,12 +6,10 @@ import { ALL_DATAVALUE, AT_LEAST_ONE_DATAVALUE } from './completenessMethods'
 import {
     FIELD_COMMAND_COMPLETENESS_METHOD_NAME,
     FIELD_COMMAND_DEFAULT_MESSAGE_NAME,
-    FIELD_COMMAND_ID_NAME,
     FIELD_COMMAND_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME,
     FIELD_COMMAND_NAME_NAME,
     FIELD_COMMAND_NO_USER_MESSAGE_NAME,
     FIELD_COMMAND_PARSER_NAME,
-    FIELD_COMMAND_SEPARATOR_NAME,
     FIELD_COMMAND_SMS_CODES_NAME,
     FIELD_COMMAND_SPECIAL_CHARS_NAME,
     FIELD_COMMAND_SUCCESS_MESSAGE_NAME,
@@ -36,6 +34,7 @@ import { FIELD_DATA_SET_NAME, FieldDataSet } from '../dataSet'
 import { FormRow } from '../forms'
 import { dataTest } from '../dataTest'
 import { useReadDataElementsWithCategoryOptionComboQuery } from './useReadDataElementsWithCategoryOptionComboQuery'
+import { useReadSmsCommandKeyValueParserQuery } from './useReadSmsCommandKeyValueParserQuery'
 import { useUpdateSmsCommandMutation } from './useUpdateSmsCommandMutation'
 import i18n from '../locales'
 
@@ -89,13 +88,6 @@ const getInitialFormState = command => {
         smsCodes,
         specialCharacters,
     }
-}
-
-const useLoadingChange = (onLoadingChange, loadingStates) => {
-    useEffect(() => {
-        const isLoading = loadingStates.some(value => !!value)
-        onLoadingChange({ loading: isLoading })
-    }, loadingStates)
 }
 
 const globalValidate = DE_COC_combination_data => values => {
@@ -209,25 +201,51 @@ const onSubmitFactory = ({
     })
 }
 
-export const CommandEditKeyValueParserForm = ({
-    command,
-    onLoadingChange,
-    onAfterChange,
-}) => {
+export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
+    const {
+        loading: loadingCommand,
+        error: loadingCommandError,
+        data: commandData,
+    } = useReadSmsCommandKeyValueParserQuery(commandId)
+
+    const command = commandData?.smsCommand
+
     /* required for validation
      * DE  = Data Element
      * COC = Category Option Combo
      */
     const {
         loading: loading_DE_COC_combinations,
+        error: loading_DE_COC_combinationsError,
         data: DE_COC_combination_data,
-    } = useReadDataElementsWithCategoryOptionComboQuery(
-        command[FIELD_DATA_SET_NAME].id
-    )
+        refetch: fetchDataElementsWithCategoryOptionCombo,
+    } = useReadDataElementsWithCategoryOptionComboQuery({ lazy: true })
+
+    useEffect(() => {
+        const dataSetId = command?.dataset.id
+
+        if (dataSetId) {
+            fetchDataElementsWithCategoryOptionCombo({ dataSetId })
+        }
+    }, [command?.id])
 
     const [updateSmsCommand] = useUpdateSmsCommandMutation()
 
-    useLoadingChange(onLoadingChange, [loading_DE_COC_combinations])
+    if (loadingCommandError) {
+        return i18n.t('Error: {{error}}', {
+            error: loadingCommandError.message,
+        })
+    }
+
+    if (loading_DE_COC_combinationsError) {
+        return i18n.t('Error: {{error}}', {
+            error: loading_DE_COC_combinationsError.message,
+        })
+    }
+
+    if (loadingCommand || loading_DE_COC_combinations) {
+        return 'Loading...'
+    }
 
     const selectedDataSetOption = {
         value: command[FIELD_DATA_SET_NAME].id,
@@ -347,37 +365,37 @@ export const CommandEditKeyValueParserForm = ({
 }
 
 CommandEditKeyValueParserForm.propTypes = {
-    command: PropTypes.shape({
-        [FIELD_COMMAND_ID_NAME]: PropTypes.string.isRequired,
-        [FIELD_COMMAND_NAME_NAME]: PropTypes.string.isRequired,
-        [FIELD_COMMAND_SMS_CODES_NAME]: PropTypes.arrayOf(
-            PropTypes.shape({
-                code: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-                    .isRequired,
-                dataElement: PropTypes.shape({
-                    id: PropTypes.string.isRequired,
-                }).isRequired,
-                optionId: PropTypes.oneOfType([
-                    PropTypes.number,
-                    PropTypes.string,
-                ]).isRequired,
-            })
-        ).isRequired,
-        [FIELD_COMMAND_USE_CURRENT_PERIOD_FOR_REPORTING_NAME]:
-            PropTypes.bool.isRequired,
-        [FIELD_DATA_SET_NAME]: PropTypes.shape({
-            id: PropTypes.string.isRequired,
-        }).isRequired,
-        id: PropTypes.string.isRequired,
+    //command: PropTypes.shape({
+    //    [FIELD_COMMAND_ID_NAME]: PropTypes.string.isRequired,
+    //    [FIELD_COMMAND_NAME_NAME]: PropTypes.string.isRequired,
+    //    [FIELD_COMMAND_SMS_CODES_NAME]: PropTypes.arrayOf(
+    //        PropTypes.shape({
+    //            code: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    //                .isRequired,
+    //            dataElement: PropTypes.shape({
+    //                id: PropTypes.string.isRequired,
+    //            }).isRequired,
+    //            optionId: PropTypes.oneOfType([
+    //                PropTypes.number,
+    //                PropTypes.string,
+    //            ]).isRequired,
+    //        })
+    //    ).isRequired,
+    //    [FIELD_COMMAND_USE_CURRENT_PERIOD_FOR_REPORTING_NAME]:
+    //        PropTypes.bool.isRequired,
+    //    [FIELD_DATA_SET_NAME]: PropTypes.shape({
+    //        id: PropTypes.string.isRequired,
+    //    }).isRequired,
+    //    id: PropTypes.string.isRequired,
 
-        [FIELD_COMMAND_SEPARATOR_NAME]: PropTypes.string,
-        [FIELD_COMMAND_SPECIAL_CHARS_NAME]: PropTypes.arrayOf(
-            PropTypes.shape({
-                name: PropTypes.string.isRequired,
-                value: PropTypes.string.isRequired,
-            })
-        ),
-    }).isRequired,
+    //    [FIELD_COMMAND_SEPARATOR_NAME]: PropTypes.string,
+    //    [FIELD_COMMAND_SPECIAL_CHARS_NAME]: PropTypes.arrayOf(
+    //        PropTypes.shape({
+    //            name: PropTypes.string.isRequired,
+    //            value: PropTypes.string.isRequired,
+    //        })
+    //    ),
+    //}).isRequired,
+    commandId: PropTypes.string.isRequired,
     onAfterChange: PropTypes.func.isRequired,
-    onLoadingChange: PropTypes.func.isRequired,
 }

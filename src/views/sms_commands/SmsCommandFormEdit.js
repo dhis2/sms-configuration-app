@@ -1,11 +1,11 @@
 import { useHistory, useParams } from 'react-router-dom'
-import React, { useState } from 'react'
+import React from 'react'
 
 import {
     FIELD_COMMAND_PARSER_NAME,
     KEY_VALUE_PARSER,
     isParserType,
-    useReadSmsCommandQuery,
+    useReadSmsCommandParserTypeQuery,
     CommandEditKeyValueParserForm,
 } from '../../commands'
 import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
@@ -17,13 +17,7 @@ export const SMS_COMMAND_FORM_EDIT_PATH = `${SMS_COMMAND_FORM_EDIT_PATH_STATIC}/
 export const SmsCommandFormEdit = () => {
     const history = useHistory()
     const { id } = useParams()
-
-    // as the individual parts have to load data as well
-    // a general loading indicator is shown until all relevant
-    // data has been loaded
-    const [isLoading, setIsLoading] = useState(true)
-
-    const { loading, error, data } = useReadSmsCommandQuery(id)
+    const { loading, error, data } = useReadSmsCommandParserTypeQuery(id)
 
     if (error) return i18n.t('Error: {{error}}', { error: error.message })
 
@@ -32,15 +26,12 @@ export const SmsCommandFormEdit = () => {
 
     return (
         <div>
-            {isLoading && 'Loading...'}
+            {loading && 'Loading...'}
 
-            {data && isParser(KEY_VALUE_PARSER) && (
+            {parserType && isParser(KEY_VALUE_PARSER) && (
                 <CommandEditKeyValueParserForm
-                    command={data.smsCommand}
+                    commandId={id}
                     onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
-                    onLoadingChange={payload =>
-                        setIsLoading(payload.loading || loading)
-                    }
                 />
             )}
         </div>
