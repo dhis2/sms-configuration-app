@@ -9,6 +9,7 @@ export const KEY_VALUE_PARSER = {
 //        but it's listed in the original source code
 //   -> docs: https://docs.dhis2.org/master/en/dhis2_developer_manual/web-api.html#sms-command-values
 //   -> code: https://github.com/dhis2/dhis2-core/blob/79bd77ecf52051b00e3ba96eb1aca4d0a6063ed1/dhis-2/dhis-web/dhis-web-maintenance/dhis-web-maintenance-mobile/src/main/webapp/dhis-web-maintenance-mobile/smscommand/edit-sms-command.vm#L188
+
 export const J2ME_PARSER = {
     value: 'J2ME_PARSER',
     label: i18n.t('J2ME parser'),
