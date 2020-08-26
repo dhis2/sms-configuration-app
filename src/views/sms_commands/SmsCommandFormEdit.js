@@ -41,6 +41,8 @@ export const SmsCommandFormEdit = () => {
     const parserType = data?.smsCommand[FIELD_COMMAND_PARSER_NAME]
     const isParser = isParserType.bind(null, parserType)
 
+    // If it's possible to not have data we should handle that as well
+
     return (
         <div>
             {parserType && isParser(KEY_VALUE_PARSER) && (
