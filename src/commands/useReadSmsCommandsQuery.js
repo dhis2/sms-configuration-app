@@ -4,10 +4,12 @@ export const SMS_COMMANDS_QUERY = {
     smsCommands: {
         resource: 'smsCommands',
         pager: false,
-        params: {
+        params: ({ ids } = {}) => ({
             // @TODO: Why is `paging: false` not working?
             paging: 'false',
-        },
+            fields: '*',
+            filter: ids ? `ids:in:[${ids.join(',')}]` : undefined,
+        }),
     },
 }
 

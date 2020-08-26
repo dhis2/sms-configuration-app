@@ -1,5 +1,6 @@
 import {
     Button,
+    ButtonStrip,
     Modal,
     ModalActions,
     ModalContent,
@@ -19,7 +20,7 @@ import { dataTest } from '../dataTest'
 import { useReadGatewaysQuery } from './useReadGatewaysQuery'
 import i18n from '../locales'
 
-export const DeleteConfirmationDialog = ({
+export const DeleteGatewaysConfirmationDialog = ({
     ids,
     onCancelClick,
     onDeleteClick,
@@ -61,31 +62,33 @@ export const DeleteConfirmationDialog = ({
                 )}
             </ModalContent>
             <ModalActions>
-                <Button
-                    secondary
-                    onClick={onCancelClick}
-                    dataTest={dataTest(
-                        'gateways-deleteconfirmationdialog-cancel'
-                    )}
-                >
-                    Cancel
-                </Button>
+                <ButtonStrip>
+                    <Button
+                        secondary
+                        onClick={onCancelClick}
+                        dataTest={dataTest(
+                            'gateways-deleteconfirmationdialog-cancel'
+                        )}
+                    >
+                        Cancel
+                    </Button>
 
-                <Button
-                    primary
-                    onClick={onDeleteClick}
-                    dataTest={dataTest(
-                        'gateways-deleteconfirmationdialog-confirm'
-                    )}
-                >
-                    Delete gateway configurations
-                </Button>
+                    <Button
+                        primary
+                        onClick={onDeleteClick}
+                        dataTest={dataTest(
+                            'gateways-deleteconfirmationdialog-confirm'
+                        )}
+                    >
+                        Delete gateway configurations
+                    </Button>
+                </ButtonStrip>
             </ModalActions>
         </Modal>
     )
 }
 
-DeleteConfirmationDialog.propTypes = {
+DeleteGatewaysConfirmationDialog.propTypes = {
     ids: PropTypes.arrayOf(PropTypes.string).isRequired,
     onCancelClick: PropTypes.func.isRequired,
     onDeleteClick: PropTypes.func.isRequired,

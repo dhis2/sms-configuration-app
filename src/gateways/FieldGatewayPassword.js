@@ -3,7 +3,7 @@ import {
     ReactFinalForm,
     composeValidators,
     hasValue,
-    url,
+    string,
 } from '@dhis2/ui'
 import React from 'react'
 import { dataTest } from '../dataTest'
@@ -11,13 +11,13 @@ import i18n from '../locales'
 
 const { Field } = ReactFinalForm
 
-export const FieldUrlTemplate = () => (
+export const FieldGatewayPassword = () => (
     <Field
         required
-        dataTest={dataTest('forms-fieldurltemplate')}
-        name="urlTemplate"
-        label={i18n.t('Url template')}
+        dataTest={dataTest('gateways-fieldgatewaypassword')}
+        name="password"
+        label={i18n.t('Password')}
         component={InputFieldFF}
-        validate={composeValidators(url, hasValue)}
+        validate={composeValidators(string, hasValue)}
     />
 )

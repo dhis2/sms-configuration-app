@@ -3,12 +3,12 @@ import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
 import {
-    AddKeyValuePair,
-    FieldName,
-    FieldUrlTemplate,
-    FormRow,
-    KeyValuePair,
-} from '../forms'
+    FieldGatewayName,
+    FieldGatewayUrlTemplate,
+    GatewayAddKeyValuePair,
+    GatewayKeyValuePair,
+} from '../gateways'
+import { FormRow } from '../forms'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
@@ -24,18 +24,18 @@ export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
             {({ handleSubmit, values, submitting }) => (
                 <form
                     onSubmit={handleSubmit}
-                    data-test={dataTest('forms-gatewaygenericform')}
+                    data-test={dataTest('gateways-gatewaygenericform')}
                 >
                     <FormRow>
-                        <FieldName />
+                        <FieldGatewayName />
                     </FormRow>
 
                     <FormRow>
-                        <FieldUrlTemplate />
+                        <FieldGatewayUrlTemplate />
                     </FormRow>
 
                     {values.parameters.map((_, index) => (
-                        <KeyValuePair index={index} key={index} />
+                        <GatewayKeyValuePair index={index} key={index} />
                     ))}
 
                     <FormRow>
@@ -45,7 +45,7 @@ export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
                             )}
                         </p>
 
-                        <AddKeyValuePair />
+                        <GatewayAddKeyValuePair />
                     </FormRow>
 
                     <Button

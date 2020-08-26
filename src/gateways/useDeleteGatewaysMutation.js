@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useDataEngine } from '@dhis2/app-runtime'
 
 export const DELETE_GATEWAY_MUTATION = {
-    resource: 'gateway',
+    resource: 'gateways',
     type: 'delete',
     id: ({ id }) => id,
 }

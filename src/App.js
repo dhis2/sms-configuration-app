@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import React from 'react'
 import { CssVariables } from '@dhis2/ui'
+import React from 'react'
 import styles from './App.module.css'
 
 import { AlertHandler } from './notifications'
@@ -32,6 +32,17 @@ const App = () => (
     <AlertHandler>
         <CssVariables spacers colors />
         <BrowserRouter>
+            <CssVariables colors />
+
+            {
+                // Use this notice if we really want display the message
+                // Discuss with Phil and Joe first!
+                //
+                // import { ModuleNotice } from './moduleNotice'
+                // <ModuleNotice />
+                ''
+            }
+
             <div className={styles.container} data-test={dataTest('app')}>
                 <div className={styles.sidebar}>
                     <Navigation />

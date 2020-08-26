@@ -10,15 +10,15 @@ import {
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
-import { FormRow } from './FormRow'
+import { FormRow } from '../forms'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
-import styles from './KeyValuePair.module.css'
+import styles from './GatewayKeyValuePair.module.css'
 
 const { Field, useForm } = ReactFinalForm
 const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
 
-export const KeyValuePair = ({ index }) => {
+export const GatewayKeyValuePair = ({ index }) => {
     const { change, getState } = useForm()
 
     const removeKeyValueFromFormState = index => {
@@ -35,11 +35,11 @@ export const KeyValuePair = ({ index }) => {
     }
 
     return (
-        <div data-test={dataTest('forms-keyvaluepair')}>
+        <div data-test={dataTest('gateways-gatewaykeyvaluepair')}>
             <FormRow>
                 <div className={styles.textInputs}>
                     <Field
-                        dataTest={dataTest('forms-keyvaluepair-key')}
+                        dataTest={dataTest('gateways-gatewaykeyvaluepair-key')}
                         className={styles.keyInput}
                         name={`parameters[${index}].key`}
                         label={i18n.t('Key')}
@@ -48,7 +48,9 @@ export const KeyValuePair = ({ index }) => {
                     />
 
                     <Field
-                        dataTest={dataTest('forms-keyvaluepair-value')}
+                        dataTest={dataTest(
+                            'gateways-gatewaykeyvaluepair-value'
+                        )}
                         className={styles.valueInput}
                         name={`parameters[${index}].value`}
                         label={i18n.t('Value')}
@@ -59,7 +61,9 @@ export const KeyValuePair = ({ index }) => {
 
                 <div className={styles.checkboxGroup}>
                     <Field
-                        dataTest={dataTest('forms-keyvaluepair-isheader')}
+                        dataTest={dataTest(
+                            'gateways-gatewaykeyvaluepair-isheader'
+                        )}
                         className={styles.checkbox}
                         type="checkbox"
                         name={`parameters[${index}].header`}
@@ -68,7 +72,9 @@ export const KeyValuePair = ({ index }) => {
                     />
 
                     <Field
-                        dataTest={dataTest('forms-keyvaluepair-isencoded')}
+                        dataTest={dataTest(
+                            'gateways-gatewaykeyvaluepair-isencoded'
+                        )}
                         className={styles.checkbox}
                         type="checkbox"
                         name={`parameters[${index}].encode`}
@@ -77,7 +83,9 @@ export const KeyValuePair = ({ index }) => {
                     />
 
                     <Field
-                        dataTest={dataTest('forms-keyvaluepair-isconfidential')}
+                        dataTest={dataTest(
+                            'gateways-gatewaykeyvaluepair-isconfidential'
+                        )}
                         className={styles.checkbox}
                         type="checkbox"
                         name={`parameters[${index}].confidential`}
@@ -87,7 +95,7 @@ export const KeyValuePair = ({ index }) => {
                 </div>
 
                 <Button
-                    dataTest={dataTest('forms-keyvaluepair-remove')}
+                    dataTest={dataTest('gateways-gatewaykeyvaluepair-remove')}
                     onClick={() => removeKeyValueFromFormState(index)}
                 >
                     {i18n.t('Remove key value pair')}
@@ -97,6 +105,6 @@ export const KeyValuePair = ({ index }) => {
     )
 }
 
-KeyValuePair.propTypes = {
+GatewayKeyValuePair.propTypes = {
     index: PropTypes.number.isRequired,
 }

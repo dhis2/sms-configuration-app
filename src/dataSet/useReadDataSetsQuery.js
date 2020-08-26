@@ -4,7 +4,8 @@ export const DATA_SETS_QUERY = {
     dataSets: {
         resource: 'dataSets',
         params: {
-            paging: false,
+            fields: ['id', 'displayName'],
+            paging: 'false',
         },
     },
 }
