@@ -36,135 +36,132 @@ const CATEGORY_OPTION_COMBO_QUERY = {
     },
 }
 
-export const useReadDataElementsWithCategoryOptionComboQuery = dataSetId => {
+export const useReadDataElementsWithCategoryOptionComboQuery = ({
+    dataSetId: nonLazyDataSetId,
+    lazy,
+}) => {
     const engine = useDataEngine()
-    const [fetchCount, setFetchCount] = useState(0)
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(!lazy)
     const [error, setError] = useState(null)
     const [data, setData] = useState(null)
 
-    const refetch = () => setFetchCount(fetchCount + 1)
+    const doFetch = async ({ dataSetId }) => {
+        const setSuccessfulStates = data => {
+            setLoading(false)
+            setError(null)
+            setData(data)
+        }
 
-    useEffect(() => {
-        const doFetch = async () => {
-            const setSuccessfulStates = data => {
-                setLoading(false)
-                setError(null)
-                setData(data)
-            }
+        setLoading(true)
+        setError(null)
 
+        try {
             setLoading(true)
             setError(null)
 
-            try {
-                setLoading(true)
-                setError(null)
+            const dataSetResponse = await engine.query(DATA_SET_QUERY, {
+                variables: { id: dataSetId },
+            })
+            const dataSets = dataSetResponse.dataSets
+            const { dataSetElements } = dataSets
 
-                const dataSetResponse = await engine.query(DATA_SET_QUERY, {
-                    variables: { id: dataSetId },
-                })
-                const dataSets = dataSetResponse.dataSets
-                const { dataSetElements } = dataSets
+            if (!dataSetElements.length) {
+                setSuccessfulStates([])
+                return
+            }
 
-                if (!dataSetElements.length) {
-                    setSuccessfulStates([])
-                    return
+            const dataElementIds = dataSetElements.map(
+                ({ dataElement }) => dataElement.id
+            )
+
+            const response = await queryDataElements(engine, {
+                ids: dataElementIds,
+            })
+            const dataElements = response.dataElements.dataElements
+
+            if (!dataElements.length) {
+                setSuccessfulStates([])
+                return
+            }
+
+            const categoryComboIds = dataElements
+                .map(({ categoryCombo }) => categoryCombo.id)
+                // make ids unique to avoid duplicate fetching
+                .filter((value, index, self) => self.indexOf(value) === index)
+
+            const categoryCombosResponse = await engine.query(
+                CATEGORY_COMBO_QUERY,
+                {
+                    variables: { ids: categoryComboIds },
                 }
+            )
+            const categoryCombos =
+                categoryCombosResponse.categoryCombos.categoryCombos
 
-                const dataElementIds = dataSetElements.map(
-                    ({ dataElement }) => dataElement.id
-                )
-
-                const response = await queryDataElements(engine, {
-                    ids: dataElementIds,
-                })
-                const dataElements = response.dataElements.dataElements
-
-                if (!dataElements.length) {
-                    setSuccessfulStates([])
-                    return
-                }
-
-                const categoryComboIds = dataElements
-                    .map(({ categoryCombo }) => categoryCombo.id)
-                    // make ids unique to avoid duplicate fetching
-                    .filter(
-                        (value, index, self) => self.indexOf(value) === index
+            const categoryOptionComboIds = categoryCombos.reduce(
+                (acc, { categoryOptionCombos }) => {
+                    const categoryOptionCombosIds = categoryOptionCombos.map(
+                        ({ id }) => id
                     )
 
-                const categoryCombosResponse = await engine.query(
-                    CATEGORY_COMBO_QUERY,
-                    {
-                        variables: { ids: categoryComboIds },
+                    return [...acc, ...categoryOptionCombosIds]
+                },
+                []
+            )
+            const categoryOptionCombosResponse = await engine.query(
+                CATEGORY_OPTION_COMBO_QUERY,
+                {
+                    variables: { ids: categoryOptionComboIds },
+                }
+            )
+
+            const categoryOptionCombosRaw =
+                categoryOptionCombosResponse.categoryOptionCombos
+                    .categoryOptionCombos
+            const categoryOptionCombos = categoryOptionCombosRaw.map(
+                ({ code, ...rest }) => ({
+                    ...rest,
+                    // only the number is needed
+                    code: code.replace('COC_', ''),
+                })
+            )
+
+            const newData = dataElements.reduce((acc, dataElement) => {
+                const categoryComboId = dataElement.categoryCombo.id
+                const categoryOptionCombosForDataElement = categoryOptionCombos.filter(
+                    ({ categoryCombo }) => categoryCombo.id === categoryComboId
+                )
+
+                if (!categoryOptionCombosForDataElement.length) {
+                    const dataElementWithDefault = {
+                        dataElement,
+                        categoryOptionCombo: null,
                     }
-                )
-                const categoryCombos =
-                    categoryCombosResponse.categoryCombos.categoryCombos
 
-                const categoryOptionComboIds = categoryCombos.reduce(
-                    (acc, { categoryOptionCombos }) => {
-                        const categoryOptionCombosIds = categoryOptionCombos.map(
-                            ({ id }) => id
-                        )
+                    return [...acc, dataElementWithDefault]
+                }
 
-                        return [...acc, ...categoryOptionCombosIds]
-                    },
-                    []
-                )
-                const categoryOptionCombosResponse = await engine.query(
-                    CATEGORY_OPTION_COMBO_QUERY,
-                    {
-                        variables: { ids: categoryOptionComboIds },
-                    }
-                )
-
-                const categoryOptionCombosRaw =
-                    categoryOptionCombosResponse.categoryOptionCombos
-                        .categoryOptionCombos
-                const categoryOptionCombos = categoryOptionCombosRaw.map(
-                    ({ code, ...rest }) => ({
-                        ...rest,
-                        // only the number is needed
-                        code: code.replace('COC_', ''),
+                const curDataElementCombinations = categoryOptionCombosForDataElement.map(
+                    categoryOptionComboForDataElement => ({
+                        dataElement,
+                        categoryOptionCombo: categoryOptionComboForDataElement,
                     })
                 )
 
-                const newData = dataElements.reduce((acc, dataElement) => {
-                    const categoryComboId = dataElement.categoryCombo.id
-                    const categoryOptionCombosForDataElement = categoryOptionCombos.filter(
-                        ({ categoryCombo }) =>
-                            categoryCombo.id === categoryComboId
-                    )
+                return [...acc, ...curDataElementCombinations]
+            }, [])
 
-                    if (!categoryOptionCombosForDataElement.length) {
-                        const dataElementWithDefault = {
-                            dataElement,
-                            categoryOptionCombo: null,
-                        }
-
-                        return [...acc, dataElementWithDefault]
-                    }
-
-                    const curDataElementCombinations = categoryOptionCombosForDataElement.map(
-                        categoryOptionComboForDataElement => ({
-                            dataElement,
-                            categoryOptionCombo: categoryOptionComboForDataElement,
-                        })
-                    )
-
-                    return [...acc, ...curDataElementCombinations]
-                }, [])
-
-                setSuccessfulStates(newData)
-            } catch (e) {
-                setError(e)
-                setLoading(false)
-                console.error(e)
-            }
+            setSuccessfulStates(newData)
+        } catch (e) {
+            setError(e)
+            setLoading(false)
+            console.error(e)
         }
+    }
 
-        doFetch()
-    }, [fetchCount])
+    useEffect(() => {
+        !lazy && doFetch({ dataSetId: nonLazyDataSetId })
+    }, [])
 
-    return { loading, error, data, refetch }
+    return { loading, error, data, refetch: doFetch }
 }
