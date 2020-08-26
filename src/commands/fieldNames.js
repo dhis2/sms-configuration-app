@@ -13,3 +13,4 @@ export const FIELD_COMMAND_SUCCESS_MESSAGE_NAME = 'successMessage'
 export const FIELD_COMMAND_USE_CURRENT_PERIOD_FOR_REPORTING_NAME =
     'currentPeriodUsedForReporting'
 export const FIELD_COMMAND_WRONG_FORMAT_MESSAGE_NAME = 'wrongFormatMessage'
+export const FIELD_COMMAND_CONFIRM_MESSAGE_NAME = 'receivedMessage'
