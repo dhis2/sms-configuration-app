@@ -1,8 +1,9 @@
 import {
     Button,
-    ReactFinalForm,
     CenteredContent,
     CircularLoader,
+    NoticeBox,
+    ReactFinalForm,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useEffect } from 'react'
@@ -208,7 +209,6 @@ const onSubmitFactory = ({
 
 export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
     const {
-        loading: loadingCommand,
         error: loadingCommandError,
         data: commandData,
     } = useReadSmsCommandKeyValueParserQuery(commandId)
@@ -220,7 +220,6 @@ export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
      * COC = Category Option Combo
      */
     const {
-        loading: loading_DE_COC_combinations,
         error: loading_DE_COC_combinationsError,
         data: DE_COC_combination_data,
         refetch: fetchDataElementsWithCategoryOptionCombo,
@@ -237,18 +236,30 @@ export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
     const [updateSmsCommand] = useUpdateSmsCommandMutation()
 
     if (loadingCommandError) {
-        return i18n.t('Error: {{error}}', {
-            error: loadingCommandError.message,
-        })
+        const msg = i18n.t(
+            "Something went wrong whilst loading the command's details"
+        )
+
+        return (
+            <NoticeBox error title={msg}>
+                {loadingCommandError.message}
+            </NoticeBox>
+        )
     }
 
     if (loading_DE_COC_combinationsError) {
-        return i18n.t('Error: {{error}}', {
-            error: loading_DE_COC_combinationsError.message,
-        })
+        const msg = i18n.t(
+            'Something went wrong whilst loading the data element category combos'
+        )
+
+        return (
+            <NoticeBox error title={msg}>
+                {loading_DE_COC_combinationsError.message}
+            </NoticeBox>
+        )
     }
 
-    if (loadingCommand || loading_DE_COC_combinations) {
+    if (!command || !DE_COC_combination_data) {
         return (
             <CenteredContent>
                 <CircularLoader />
