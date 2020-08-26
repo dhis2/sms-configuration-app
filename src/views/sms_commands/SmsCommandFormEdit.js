@@ -1,3 +1,4 @@
+import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import { useHistory, useParams } from 'react-router-dom'
 import React from 'react'
 
@@ -19,15 +20,29 @@ export const SmsCommandFormEdit = () => {
     const { id } = useParams()
     const { loading, error, data } = useReadSmsCommandParserTypeQuery(id)
 
-    if (error) return i18n.t('Error: {{error}}', { error: error.message })
+    if (loading) {
+        return (
+            <CenteredContent>
+                <CircularLoader />
+            </CenteredContent>
+        )
+    }
+
+    if (error) {
+        const msg = i18n.t('Something went wrong whilst loading commands')
+
+        return (
+            <NoticeBox error title={msg}>
+                {error.message}
+            </NoticeBox>
+        )
+    }
 
     const parserType = data?.smsCommand[FIELD_COMMAND_PARSER_NAME]
     const isParser = isParserType.bind(null, parserType)
 
     return (
         <div>
-            {loading && 'Loading...'}
-
             {parserType && isParser(KEY_VALUE_PARSER) && (
                 <CommandEditKeyValueParserForm
                     commandId={id}
