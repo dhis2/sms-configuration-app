@@ -5,16 +5,31 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-26T11:49:23.001Z\n"
-"PO-Revision-Date: 2020-08-26T11:49:23.001Z\n"
+"POT-Creation-Date: 2020-08-27T08:16:14.692Z\n"
+"PO-Revision-Date: 2020-08-27T08:16:14.692Z\n"
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr ""
+
+msgid "Something went wrong whilst submitting the form"
+msgstr ""
+
+msgid "Save sms command"
+msgstr ""
+
+msgid "You either have to provide all values or none"
+msgstr ""
 
 msgid "Duplicate value!"
 msgstr ""
 
-msgid "Submitting..."
+msgid "Something went wrong whilst loading the command's details"
 msgstr ""
 
-msgid "Save sms command"
+msgid "Something went wrong whilst loading the data element category combos"
+msgstr ""
+
+msgid "Submitting..."
 msgstr ""
 
 msgid "Add special character"
@@ -39,6 +54,9 @@ msgid "Delete command configurations"
 msgstr ""
 
 msgid "Completeness method"
+msgstr ""
+
+msgid "Confirm Message"
 msgstr ""
 
 msgid "Reply message if no codes are sent (only the command)"
