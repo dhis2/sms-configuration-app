@@ -56,7 +56,7 @@ export const SmsCommandFormEdit = () => {
 
             {data && isParser(J2ME_PARSER) && (
                 <CommandEditJ2MEParserForm
-                    command={data.smsCommand}
+                    commandId={id}
                     onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
                 />
             )}

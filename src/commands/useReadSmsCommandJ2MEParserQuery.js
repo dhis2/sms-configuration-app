@@ -5,7 +5,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 //   does contain the information for "Data element category combination".
 //   But it does not contain the id of the category option combo,
 //   only the data element and a code.
-export const REACT_SMS_COMMAND_QUERY = {
+export const READ_SMS_COMMAND_J2ME_PARSER_QUERY = {
     smsCommand: {
         resource: 'smsCommands',
         id: ({ id }) => id,
@@ -16,5 +16,5 @@ export const REACT_SMS_COMMAND_QUERY = {
     },
 }
 
-export const useReadSmsCommandQuery = id =>
-    useDataQuery(REACT_SMS_COMMAND_QUERY, { variables: { id } })
+export const useReadSmsCommandJ2MEParserQuery = id =>
+    useDataQuery(READ_SMS_COMMAND_J2ME_PARSER_QUERY, { variables: { id } })
