@@ -5,8 +5,10 @@ import React from 'react'
 import {
     FIELD_COMMAND_PARSER_NAME,
     KEY_VALUE_PARSER,
+    J2ME_PARSER,
     isParserType,
     useReadSmsCommandParserTypeQuery,
+    CommandEditJ2MEParserForm,
     CommandEditKeyValueParserForm,
 } from '../../commands'
 import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
@@ -48,6 +50,13 @@ export const SmsCommandFormEdit = () => {
             {parserType && isParser(KEY_VALUE_PARSER) && (
                 <CommandEditKeyValueParserForm
                     commandId={id}
+                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                />
+            )}
+
+            {data && isParser(J2ME_PARSER) && (
+                <CommandEditJ2MEParserForm
+                    command={data.smsCommand}
                     onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
                 />
             )}

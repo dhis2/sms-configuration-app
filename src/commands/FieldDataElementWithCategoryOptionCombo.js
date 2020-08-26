@@ -2,8 +2,6 @@ import { Button, InputFieldFF, ReactFinalForm, hasValue } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useState } from 'react'
 
-import { ALL_DATAVALUE } from './completenessMethods'
-import { FIELD_COMMAND_COMPLETENESS_METHOD_NAME } from './fieldNames'
 import { DE_COC_toFormName } from './DE_COC_toFormName'
 import { FieldDataElementWithCategoryOptionComboFormula } from './FieldDataElementWithCategoryOptionComboFormula'
 import { FormRow } from '../forms'
@@ -17,6 +15,7 @@ export const FieldDataElementWithCategoryOptionCombo = ({
     allCombos,
     dataElement,
     categoryOptionCombo,
+    required,
 }) => {
     const [showFormula, setShowFormula] = useState(false)
 
@@ -33,9 +32,6 @@ export const FieldDataElementWithCategoryOptionCombo = ({
             {({ values }) => {
                 const code = get(name, values)
                 const formula = get(formulaName, values)
-                const completenessMethod =
-                    values[FIELD_COMMAND_COMPLETENESS_METHOD_NAME]
-                const required = completenessMethod === ALL_DATAVALUE.value
 
                 return (
                     <div className={styles.container}>
@@ -77,6 +73,7 @@ export const FieldDataElementWithCategoryOptionCombo = ({
 FieldDataElementWithCategoryOptionCombo.defaultProps = {
     categoryOptionCombo: null,
     formula: '',
+    required: false,
 }
 
 FieldDataElementWithCategoryOptionCombo.propTypes = {
@@ -108,4 +105,5 @@ FieldDataElementWithCategoryOptionCombo.propTypes = {
         displayName: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
     }),
+    required: PropTypes.bool,
 }
