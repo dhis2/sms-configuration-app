@@ -1,4 +1,9 @@
-import { Button, ReactFinalForm } from '@dhis2/ui'
+import {
+    Button,
+    ReactFinalForm,
+    CenteredContent,
+    CircularLoader,
+} from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useEffect } from 'react'
 
@@ -244,7 +249,11 @@ export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
     }
 
     if (loadingCommand || loading_DE_COC_combinations) {
-        return 'Loading...'
+        return (
+            <CenteredContent>
+                <CircularLoader />
+            </CenteredContent>
+        )
     }
 
     const selectedDataSetOption = {
@@ -365,37 +374,6 @@ export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
 }
 
 CommandEditKeyValueParserForm.propTypes = {
-    //command: PropTypes.shape({
-    //    [FIELD_COMMAND_ID_NAME]: PropTypes.string.isRequired,
-    //    [FIELD_COMMAND_NAME_NAME]: PropTypes.string.isRequired,
-    //    [FIELD_COMMAND_SMS_CODES_NAME]: PropTypes.arrayOf(
-    //        PropTypes.shape({
-    //            code: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    //                .isRequired,
-    //            dataElement: PropTypes.shape({
-    //                id: PropTypes.string.isRequired,
-    //            }).isRequired,
-    //            optionId: PropTypes.oneOfType([
-    //                PropTypes.number,
-    //                PropTypes.string,
-    //            ]).isRequired,
-    //        })
-    //    ).isRequired,
-    //    [FIELD_COMMAND_USE_CURRENT_PERIOD_FOR_REPORTING_NAME]:
-    //        PropTypes.bool.isRequired,
-    //    [FIELD_DATA_SET_NAME]: PropTypes.shape({
-    //        id: PropTypes.string.isRequired,
-    //    }).isRequired,
-    //    id: PropTypes.string.isRequired,
-
-    //    [FIELD_COMMAND_SEPARATOR_NAME]: PropTypes.string,
-    //    [FIELD_COMMAND_SPECIAL_CHARS_NAME]: PropTypes.arrayOf(
-    //        PropTypes.shape({
-    //            name: PropTypes.string.isRequired,
-    //            value: PropTypes.string.isRequired,
-    //        })
-    //    ),
-    //}).isRequired,
     commandId: PropTypes.string.isRequired,
     onAfterChange: PropTypes.func.isRequired,
 }
