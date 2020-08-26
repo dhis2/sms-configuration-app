@@ -5,25 +5,100 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-25T14:54:26.169Z\n"
-"PO-Revision-Date: 2020-08-25T14:54:26.169Z\n"
+"POT-Creation-Date: 2020-08-26T06:44:54.664Z\n"
+"PO-Revision-Date: 2020-08-26T06:44:54.664Z\n"
 
-msgid "Save generic gateway"
-msgstr ""
-
-msgid "Add generic gateway"
+msgid "Duplicate value!"
 msgstr ""
 
 msgid "Submitting..."
 msgstr ""
 
-msgid "Parser"
+msgid "Save sms command"
+msgstr ""
+
+msgid "Add special character"
+msgstr ""
+
+msgid "Data element category combination"
+msgstr ""
+
+msgid "Data element category combination validation error"
+msgstr ""
+
+msgid "Delete confirmation"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Delete command configurations"
 msgstr ""
 
 msgid "Completeness method"
 msgstr ""
 
+msgid "Reply message if no codes are sent (only the command)"
+msgstr ""
+
+msgid "More than one OrgUnit message"
+msgstr ""
+
+msgid "No user message"
+msgstr ""
+
+msgid "Parser"
+msgstr ""
+
+msgid "Field separator"
+msgstr ""
+
+msgid "Special character name"
+msgstr ""
+
+msgid "Special character value"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Success message"
+msgstr ""
+
 msgid "Use current period for reporting"
+msgstr ""
+
+msgid "Wrong format message"
+msgstr ""
+
+msgid "default"
+msgstr ""
+
+msgid "Change formula"
+msgstr ""
+
+msgid "Add formula"
+msgstr ""
+
+msgid "Data element"
+msgstr ""
+
+msgid "formula operator"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Receive all data value"
+msgstr ""
+
+msgid "Receive at least one data value"
+msgstr ""
+
+msgid "Do not mark as complete"
 msgstr ""
 
 msgid "Key value parser"
@@ -47,13 +122,13 @@ msgstr ""
 msgid "Event registration parser"
 msgstr ""
 
-msgid "Add key value pair"
+msgid "Data set"
+msgstr ""
+
+msgid "Is default"
 msgstr ""
 
 msgid "Auth token"
-msgstr ""
-
-msgid "Name"
 msgstr ""
 
 msgid "Password"
@@ -63,6 +138,30 @@ msgid "Url template"
 msgstr ""
 
 msgid "User name"
+msgstr ""
+
+msgid "Add key value pair"
+msgstr ""
+
+msgid "Save BulkSMS gateway"
+msgstr ""
+
+msgid "Add BulkSMS gateway"
+msgstr ""
+
+msgid "Save Clickatell gateway"
+msgstr ""
+
+msgid "Add Clickatell gateway"
+msgstr ""
+
+msgid "Save generic gateway"
+msgstr ""
+
+msgid "Add generic gateway"
+msgstr ""
+
+msgid "In generic http gateway any number of parameters can be added."
 msgstr ""
 
 msgid "Key"
@@ -81,27 +180,6 @@ msgid "Confidential"
 msgstr ""
 
 msgid "Remove key value pair"
-msgstr ""
-
-msgid "Delete confirmation"
-msgstr ""
-
-msgid "Is default"
-msgstr ""
-
-msgid "Save BulkSMS gateway"
-msgstr ""
-
-msgid "Add BulkSMS gateway"
-msgstr ""
-
-msgid "Save Clickatell gateway"
-msgstr ""
-
-msgid "Add Clickatell gateway"
-msgstr ""
-
-msgid "In generic http gateway any number of parameters can be added."
 msgstr ""
 
 msgid "Type"
@@ -129,6 +207,27 @@ msgid "Clickatell"
 msgstr ""
 
 msgid "Generic"
+msgstr ""
+
+msgid "This app is not stable yet"
+msgstr ""
+
+msgid "Loading link..."
+msgstr ""
+
+msgid "Go to mobile configuration app"
+msgstr ""
+
+msgid "Hide this message"
+msgstr ""
+
+msgid "Program"
+msgstr ""
+
+msgid "ProgramStage"
+msgstr ""
+
+msgid "UserGroup"
 msgstr ""
 
 msgid "Loading..."
@@ -282,6 +381,9 @@ msgstr ""
 msgid "Scheduled"
 msgstr ""
 
+msgid "Add sms command"
+msgstr ""
+
 msgid "SMS Command"
 msgstr ""
 
@@ -296,4 +398,7 @@ msgid "Add command"
 msgstr ""
 
 msgid "Delete selected gateway commands"
+msgstr ""
+
+msgid "Sms command"
 msgstr ""

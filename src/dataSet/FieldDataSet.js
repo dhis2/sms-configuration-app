@@ -1,4 +1,4 @@
-import { SingleSelectFieldFF, ReactFinalForm } from '@dhis2/ui'
+import { SingleSelectFieldFF, ReactFinalForm, hasValue } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
 
@@ -7,16 +7,34 @@ import i18n from '../locales'
 
 const { Field } = ReactFinalForm
 
-export const FieldDataSet = ({ dataSets }) => (
+// The "s" from "set" is not capitalized
+// as the property on the java-model
+// does not have a capitalized "s" either
+//
+// @TODO: Create issue to make it consistent
+export const FIELD_DATA_SET_NAME = 'dataset'
+
+export const FieldDataSet = ({ dataSets, loading, required, disabled }) => (
     <Field
-        required
+        disabled={disabled}
+        required={required}
+        loading={loading}
         dataTest={dataTest('forms-fielddataset')}
-        name="selectedDataSetID"
-        label={i18n.t('Parser')}
+        name={FIELD_DATA_SET_NAME}
+        label={i18n.t('Data set')}
         component={SingleSelectFieldFF}
         options={dataSets}
+        validate={hasValue}
+        format={value => value?.id || null}
+        parse={id => ({ id })}
     />
 )
+
+FieldDataSet.defaultProps = {
+    disabled: false,
+    loading: false,
+    required: false,
+}
 
 FieldDataSet.propTypes = {
     dataSets: PropTypes.arrayOf(
@@ -25,4 +43,7 @@ FieldDataSet.propTypes = {
             value: PropTypes.string.isRequired,
         })
     ).isRequired,
+    disabled: PropTypes.bool,
+    loading: PropTypes.bool,
+    required: PropTypes.bool,
 }

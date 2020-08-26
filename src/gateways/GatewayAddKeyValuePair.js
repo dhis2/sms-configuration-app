@@ -5,7 +5,7 @@ import { dataTest } from '../dataTest'
 
 const { useForm } = ReactFinalForm
 
-export const AddKeyValuePair = () => {
+export const GatewayAddKeyValuePair = () => {
     const { change, getState } = useForm()
 
     const addKeyValueToFormState = () => {
@@ -26,7 +26,7 @@ export const AddKeyValuePair = () => {
     return (
         <Button
             onClick={addKeyValueToFormState}
-            dataTest={dataTest('forms-addkeyvaluepair')}
+            dataTest={dataTest('gateways-gatewayaddkeyvaluepair')}
         >
             {i18n.t('Add key value pair')}
         </Button>

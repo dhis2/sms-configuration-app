@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+}
+
+.field {
+    flex-grow: 1;
+}
+
+.field:first-child {
+    margin-right: 8px;
+}
+
+.button {
+    flex-shrink: 1;
+    margin-left: 8px;
+}

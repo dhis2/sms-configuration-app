@@ -2,13 +2,13 @@ import { Button, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
+import { FormRow } from '../forms'
 import {
-    FormRow,
-    FieldAuthToken,
-    FieldName,
-    FieldUrlTemplate,
-    FieldUsername,
-} from '../forms'
+    FieldGatewayAuthToken,
+    FieldGatewayName,
+    FieldGatewayUrlTemplate,
+    FieldGatewayUsername,
+} from '../gateways'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
@@ -24,22 +24,22 @@ export const GatewayClickatellForm = ({ onSubmit, initialValues }) => {
             {({ handleSubmit, submitting }) => (
                 <form
                     onSubmit={handleSubmit}
-                    data-test={dataTest('forms-gatewayclickatellform')}
+                    data-test={dataTest('gateways-gatewayclickatellform')}
                 >
                     <FormRow>
-                        <FieldName />
+                        <FieldGatewayName />
                     </FormRow>
 
                     <FormRow>
-                        <FieldUsername />
+                        <FieldGatewayUsername />
                     </FormRow>
 
                     <FormRow>
-                        <FieldAuthToken />
+                        <FieldGatewayAuthToken />
                     </FormRow>
 
                     <FormRow>
-                        <FieldUrlTemplate />
+                        <FieldGatewayUrlTemplate />
                     </FormRow>
 
                     <Button

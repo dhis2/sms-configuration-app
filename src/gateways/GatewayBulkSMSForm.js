@@ -2,7 +2,12 @@ import { Button, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
-import { FieldName, FieldUsername, FieldPassword, FormRow } from '../forms'
+import { FormRow } from '../forms'
+import {
+    FieldGatewayName,
+    FieldGatewayUsername,
+    FieldGatewayPassword,
+} from '../gateways'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
@@ -18,18 +23,18 @@ export const GatewayBulkSMSForm = ({ onSubmit, initialValues }) => {
             {({ handleSubmit, submitting }) => (
                 <form
                     onSubmit={handleSubmit}
-                    data-test={dataTest('forms-gatewaybulksmsform')}
+                    data-test={dataTest('gateways-gatewaybulksmsform')}
                 >
                     <FormRow>
-                        <FieldName />
+                        <FieldGatewayName />
                     </FormRow>
 
                     <FormRow>
-                        <FieldUsername />
+                        <FieldGatewayUsername />
                     </FormRow>
 
                     <FormRow>
-                        <FieldPassword />
+                        <FieldGatewayPassword />
                     </FormRow>
 
                     <Button

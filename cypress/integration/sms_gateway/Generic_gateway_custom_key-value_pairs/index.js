@@ -130,7 +130,6 @@ Given('the user has added multiple key value pairs', () => {
         ...keyValuePair,
     }))
 
-    console.log('set newParameters', newParameters)
     cy.wrap(newParameters).as('newParameters')
 })
 

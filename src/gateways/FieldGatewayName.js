@@ -11,12 +11,12 @@ import i18n from '../locales'
 
 const { Field } = ReactFinalForm
 
-export const FieldPassword = () => (
+export const FieldGatewayName = () => (
     <Field
         required
-        dataTest={dataTest('forms-fieldpassword')}
-        name="password"
-        label={i18n.t('Password')}
+        dataTest={dataTest('gateways-fieldgatewayname')}
+        name="name"
+        label={i18n.t('Name')}
         component={InputFieldFF}
         validate={composeValidators(string, hasValue)}
     />

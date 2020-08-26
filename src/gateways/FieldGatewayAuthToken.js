@@ -11,10 +11,10 @@ import i18n from '../locales'
 
 const { Field } = ReactFinalForm
 
-export const FieldAuthToken = () => (
+export const FieldGatewayAuthToken = () => (
     <Field
         required
-        dataTest={dataTest('forms-fieldauthtoken')}
+        dataTest={dataTest('gateways-fieldgatewayauthtoken')}
         name="authtoken"
         label={i18n.t('Auth token')}
         component={InputFieldFF}

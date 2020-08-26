@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { GATEWAY_CONFIG_FORM_NEW_PATH } from './GatewayConfigFormNew'
 import { useCriticalNotification } from '../../notifications'
 import {
-    DeleteConfirmationDialog,
+    DeleteGatewaysConfirmationDialog,
     GatewayList,
     useDeleteGatewaysMutation,
     useReadGatewaysQuery,
@@ -95,7 +95,7 @@ export const GatewayConfigList = () => {
             )}
 
             {showDeleteDialog && (
-                <DeleteConfirmationDialog
+                <DeleteGatewaysConfirmationDialog
                     ids={checkedGateways}
                     onCancelClick={() => setShowDeleteDialog(false)}
                     onDeleteClick={onDeleteClick}

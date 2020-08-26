@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useDataEngine } from '@dhis2/app-runtime'
 
 export const DELETE_SMS_COMMAND_MUTATION = {
-    resource: 'smsCommand',
+    resource: 'smsCommands',
     type: 'delete',
     id: ({ id }) => id,
 }
