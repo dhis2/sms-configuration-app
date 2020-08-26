@@ -12,6 +12,7 @@ const { FormSpy } = ReactFinalForm
 
 export const DataElementTimesCategoryOptionCombos = ({
     DE_COC_combinations,
+    allRequired,
 }) => (
     <div>
         <h2>{i18n.t('Data element category combination')}</h2>
@@ -47,6 +48,7 @@ export const DataElementTimesCategoryOptionCombos = ({
                     key={dataElement.id + categoryOptionCombo?.id}
                 >
                     <FieldDataElementWithCategoryOptionCombo
+                        required={allRequired}
                         allCombos={DE_COC_combinations}
                         dataElement={dataElement}
                         categoryOptionCombo={categoryOptionCombo}
@@ -56,6 +58,10 @@ export const DataElementTimesCategoryOptionCombos = ({
         </div>
     </div>
 )
+
+DataElementTimesCategoryOptionCombos.defaultProps = {
+    allRequired: false,
+}
 
 DataElementTimesCategoryOptionCombos.propTypes = {
     DE_COC_combinations: PropTypes.arrayOf(
@@ -74,4 +80,5 @@ DataElementTimesCategoryOptionCombos.propTypes = {
             }),
         })
     ).isRequired,
+    allRequired: PropTypes.bool,
 }

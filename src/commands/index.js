@@ -1,4 +1,5 @@
 export * from './CommandEditKeyValueParserForm'
+export * from './CommandEditJ2MEParserForm'
 export * from './CommandsAddSpecialCharacters'
 export * from './DataElementTimesCategoryOptionCombos'
 export * from './DE_COC_toFormName'
