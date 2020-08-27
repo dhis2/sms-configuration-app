@@ -9,12 +9,14 @@ import {
     CommandEditJ2MEParserForm,
     CommandEditKeyValueParserForm,
     CommandEditProgramStageDataEntryParserForm,
+    CommandEditTrackedEntityRegistrationParserForm,
     CommandEditUnregisteredParserForm,
     EVENT_REGISTRATION_PARSER,
     FIELD_COMMAND_PARSER_NAME,
     J2ME_PARSER,
     KEY_VALUE_PARSER,
     PROGRAM_STAGE_DATAENTRY_PARSER,
+    TRACKED_ENTITY_REGISTRATION_PARSER,
     UNREGISTERED_PARSER,
     isParserType,
     useReadSmsCommandParserTypeQuery,
@@ -92,6 +94,13 @@ export const SmsCommandFormEdit = () => {
 
             {parserType && isParser(EVENT_REGISTRATION_PARSER) && (
                 <CommandEditEventRegistrationParserForm
+                    commandId={id}
+                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                />
+            )}
+
+            {parserType && isParser(TRACKED_ENTITY_REGISTRATION_PARSER) && (
+                <CommandEditTrackedEntityRegistrationParserForm
                     commandId={id}
                     onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
                 />
