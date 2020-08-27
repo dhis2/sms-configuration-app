@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-27T08:16:14.692Z\n"
-"PO-Revision-Date: 2020-08-27T08:16:14.692Z\n"
+"POT-Creation-Date: 2020-08-27T09:08:01.877Z\n"
+"PO-Revision-Date: 2020-08-27T09:08:01.877Z\n"
 
 msgid "Something went wrong whilst loading the sms command"
 msgstr ""
@@ -30,6 +30,12 @@ msgid "Something went wrong whilst loading the data element category combos"
 msgstr ""
 
 msgid "Submitting..."
+msgstr ""
+
+msgid "Something went wrong whilst loading the program stage data elements"
+msgstr ""
+
+msgid "Program Stage Data Elements"
 msgstr ""
 
 msgid "Add special character"

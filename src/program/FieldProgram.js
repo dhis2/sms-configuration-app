@@ -9,8 +9,9 @@ const { Field } = ReactFinalForm
 
 export const FIELD_PROGRAM_NAME = 'program'
 
-export const FieldProgram = ({ programs, loading, required }) => (
+export const FieldProgram = ({ programs, loading, required, disabled }) => (
     <Field
+        disabled={disabled}
         required={required}
         loading={loading}
         dataTest={dataTest('forms-fieldprogram')}
@@ -19,10 +20,13 @@ export const FieldProgram = ({ programs, loading, required }) => (
         component={SingleSelectFieldFF}
         options={programs}
         validate={required && hasValue}
+        format={value => value?.id || null}
+        parse={id => ({ id })}
     />
 )
 
 FieldProgram.defaultProps = {
+    disabled: false,
     loading: false,
     required: false,
 }
@@ -34,6 +38,7 @@ FieldProgram.propTypes = {
             value: PropTypes.string.isRequired,
         })
     ).isRequired,
+    disabled: PropTypes.bool,
     loading: PropTypes.bool,
     required: PropTypes.bool,
 }

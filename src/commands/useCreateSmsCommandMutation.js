@@ -52,7 +52,7 @@ export const CREATE_SMS_COMMAND_MUTATION = {
             return {
                 parserType,
                 name,
-                program: { id: program },
+                program,
             }
         }
 
@@ -60,8 +60,8 @@ export const CREATE_SMS_COMMAND_MUTATION = {
             return {
                 parserType,
                 name,
-                program: { id: program },
-                programStage: { id: programStage },
+                program,
+                programStage,
             }
         }
 
