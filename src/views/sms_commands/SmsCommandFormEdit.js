@@ -64,7 +64,10 @@ export const SmsCommandFormEdit = () => {
             )}
 
             {parserType && isParser(ALERT_PARSER) && (
-                <CommandEditAlertParserForm id={id} />
+                <CommandEditAlertParserForm
+                    commandId={id}
+                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                />
             )}
         </div>
     )

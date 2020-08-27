@@ -9,9 +9,7 @@ import {
     CircularLoader,
 } from '@dhis2/ui'
 import { useDataQuery, useDataEngine } from '@dhis2/app-runtime'
-import { useHistory } from 'react-router'
 
-import { SMS_COMMAND_LIST_PATH } from '../views'
 import { AlertContext } from '../notifications'
 import i18n from '../locales'
 import { FormRow } from '../forms'
@@ -26,7 +24,7 @@ const { FORM_ERROR } = FinalForm
 const query = {
     smsCommand: {
         resource: 'smsCommands',
-        id: ({ id }) => id,
+        id: ({ commandId }) => commandId,
         params: {
             fields: [
                 'name',
@@ -42,20 +40,17 @@ const mutation = {
     resource: 'smsCommands',
     type: 'update',
     partial: true,
-    id: ({ id }) => id,
+    id: ({ commandId }) => commandId,
     data: ({ command }) => command,
 }
 
-export const CommandEditAlertParserForm = ({ id }) => {
+export const CommandEditAlertParserForm = ({ commandId, onAfterChange }) => {
     const { addAlert } = useContext(AlertContext)
-    const history = useHistory()
     const engine = useDataEngine()
     const updateCommand = command =>
         engine
-            .mutate(mutation, { variables: { command, id } })
-            .then(() => {
-                history.push(SMS_COMMAND_LIST_PATH)
-            })
+            .mutate(mutation, { variables: { command, commandId } })
+            .then(onAfterChange)
             .catch(error => {
                 const isValidationError = error.type === 'access'
 
@@ -73,7 +68,9 @@ export const CommandEditAlertParserForm = ({ id }) => {
                 addAlert({ type: 'critical', message: error.message })
             })
 
-    const { loading, error, data } = useDataQuery(query, { variables: { id } })
+    const { loading, error, data } = useDataQuery(query, {
+        variables: { commandId },
+    })
 
     if (loading) {
         return (
@@ -157,5 +154,6 @@ export const CommandEditAlertParserForm = ({ id }) => {
 }
 
 CommandEditAlertParserForm.propTypes = {
-    id: PropTypes.string.isRequired,
+    commandId: PropTypes.string.isRequired,
+    onAfterChange: PropTypes.func.isRequired,
 }
