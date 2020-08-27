@@ -210,10 +210,12 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
                     <h2>{i18n.t('Tracked entity attribute')}</h2>
                     {dynamicFields.map(dynamicField => {
                         // I assume this should switch field types based on `valueType`
-                        // Currently it renders a regular input for everything
+                        // which can be 'TEXT', 'NUMBER', etc. Currently this renders
+                        // a regular input for everything.
                         return (
                             <FormRow key={dynamicField.id}>
                                 <FieldCommandSmsCode
+                                    id={dynamicField.id}
                                     displayName={dynamicField.displayName}
                                     initialValue={dynamicField.initialValue}
                                 />
