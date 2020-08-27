@@ -14,7 +14,13 @@ import { AlertContext } from '../notifications'
 import i18n from '../locales'
 import { FormRow } from '../forms'
 import { FieldCommandName } from './FieldCommandName'
+import { FieldCommandSeparator } from './FieldCommandSeparator'
 import { FieldCommandParser } from './FieldCommandParser'
+import { FieldCommandDefaultMessage } from './FieldCommandDefaultMessage'
+import { FieldCommandWrongFormatMessage } from './FieldCommandWrongFormatMessage'
+import { FieldCommandNoUserMessage } from './FieldCommandNoUserMessage'
+import { FieldCommandMoreThanOneOrgUnitMessage } from './FieldCommandMoreThanOneOrgUnitMessage'
+import { FieldCommandSuccessMessage } from './FieldCommandSuccessMessage'
 import { FieldProgram } from '../program'
 
 const { Form } = ReactFinalForm
@@ -29,21 +35,20 @@ const query = {
                 'name',
                 'parserType',
                 'separator',
-                // Reply message if no codes are sent
                 'defaultMessage',
                 'wrongFormatMessage',
                 'noUserMessage',
                 'moreThanOneOrgUnitMessage',
-                // Success message
-                'receivedMessage',
+                'successMessage',
+                'program[id,displayName,programTrackedEntityAttributes[trackedEntityAttribute[id,displayName]]]',
                 // I'm pretty sure this is where the values for these attribute fields go
                 // You can also get the trackedEntityAttributes here, but as you can see
                 // the order is all wrong... So I'm not sure if you want to perhaps get
                 // rid of the `displayName` here...
-                'smsCodes[:all,trackedEntityAttribute[id,displayName]]',
+                // 'smsCodes[:all,trackedEntityAttribute[:all,id,displayName]]',
                 // Here you can get the program name, and the trackedEntityAttributes in
                 // the correct order
-                'program[id,displayName,programTrackedEntityAttributes[trackedEntityAttribute[id,displayName]]]',
+                // 'program[id,displayName,programTrackedEntityAttributes[trackedEntityAttribute[id,displayName]]]',
             ],
         },
     },
@@ -108,12 +113,27 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
         )
     }
 
-    console.log(data)
-    const { name, parserType, program } = data.smsCommand
+    const {
+        name,
+        parserType,
+        program,
+        separator,
+        defaultMessage,
+        wrongFormatMessage,
+        noUserMessage,
+        moreThanOneOrgUnitMessage,
+        successMessage,
+    } = data.smsCommand
     const initialValues = {
         name,
         parserType,
         program,
+        separator,
+        defaultMessage,
+        wrongFormatMessage,
+        noUserMessage,
+        moreThanOneOrgUnitMessage,
+        successMessage,
     }
     const selectedProgramOption = {
         value: program.id,
@@ -142,7 +162,25 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
                             programs={[selectedProgramOption]}
                         />
                     </FormRow>
-
+                    <FormRow>
+                        <FieldCommandSeparator />
+                    </FormRow>
+                    <FormRow>
+                        <FieldCommandDefaultMessage />
+                    </FormRow>
+                    <FormRow>
+                        <FieldCommandWrongFormatMessage />
+                    </FormRow>
+                    <FormRow>
+                        <FieldCommandNoUserMessage />
+                    </FormRow>
+                    <FormRow>
+                        <FieldCommandMoreThanOneOrgUnitMessage />
+                    </FormRow>
+                    <FormRow>
+                        <FieldCommandSuccessMessage />
+                    </FormRow>
+                    <h2>{i18n.t('Tracked entity attribute')}</h2>
                     {hasSubmitErrors && (
                         <FormRow>
                             <NoticeBox
