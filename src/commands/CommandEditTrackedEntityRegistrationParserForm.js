@@ -21,10 +21,17 @@ import { FieldCommandWrongFormatMessage } from './FieldCommandWrongFormatMessage
 import { FieldCommandNoUserMessage } from './FieldCommandNoUserMessage'
 import { FieldCommandMoreThanOneOrgUnitMessage } from './FieldCommandMoreThanOneOrgUnitMessage'
 import { FieldCommandSuccessMessage } from './FieldCommandSuccessMessage'
+import { FieldCommandSmsCode } from './FieldCommandSmsCode'
 import { FieldProgram } from '../program'
 
 const { Form } = ReactFinalForm
 const { FORM_ERROR } = FinalForm
+
+// selector
+const getSmsCodeById = ({ id, smsCodes }) =>
+    smsCodes.find(
+        ({ trackedEntityAttribute }) => id === trackedEntityAttribute.id
+    )
 
 const query = {
     smsCommand: {
@@ -40,15 +47,9 @@ const query = {
                 'noUserMessage',
                 'moreThanOneOrgUnitMessage',
                 'successMessage',
-                'program[id,displayName,programTrackedEntityAttributes[trackedEntityAttribute[id,displayName]]]',
-                // I'm pretty sure this is where the values for these attribute fields go
-                // You can also get the trackedEntityAttributes here, but as you can see
-                // the order is all wrong... So I'm not sure if you want to perhaps get
-                // rid of the `displayName` here...
-                // 'smsCodes[:all,trackedEntityAttribute[:all,id,displayName]]',
-                // Here you can get the program name, and the trackedEntityAttributes in
-                // the correct order
-                // 'program[id,displayName,programTrackedEntityAttributes[trackedEntityAttribute[id,displayName]]]',
+                // The queries below should be reduced to only the data we need
+                'program[id,displayName,programTrackedEntityAttributes[trackedEntityAttribute[:all,id,displayName]]]',
+                'smsCodes[:all,trackedEntityAttribute[:all,id,displayName]]',
             ],
         },
     },
@@ -123,6 +124,7 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
         noUserMessage,
         moreThanOneOrgUnitMessage,
         successMessage,
+        smsCodes,
     } = data.smsCommand
     const initialValues = {
         name,
@@ -139,6 +141,31 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
         value: program.id,
         label: program.displayName,
     }
+
+    /**
+     * Create usable data for the dynamic fields
+     */
+
+    // The tracked entity attributes here have the right order for the fields
+    const trackedEntityAttributes = program.programTrackedEntityAttributes.map(
+        ({ trackedEntityAttribute }) => trackedEntityAttribute
+    )
+
+    // Creating an array with only the data we need to render our dynamic form fields
+    const dynamicFields = trackedEntityAttributes.map(
+        trackedEntityAttribute => {
+            const { id, displayName, valueType } = trackedEntityAttribute
+            const merged = { id, displayName, valueType }
+            const smsCode = getSmsCodeById({ id, smsCodes })
+
+            if (smsCode) {
+                // This contains the actual value of the field
+                merged.initialValue = smsCode.code
+            }
+
+            return merged
+        }
+    )
 
     return (
         <Form onSubmit={updateCommand} initialValues={initialValues}>
@@ -181,6 +208,18 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
                         <FieldCommandSuccessMessage />
                     </FormRow>
                     <h2>{i18n.t('Tracked entity attribute')}</h2>
+                    {dynamicFields.map(dynamicField => {
+                        // I assume this should switch field types based on `valueType`
+                        // Currently it renders a regular input for everything
+                        return (
+                            <FormRow key={dynamicField.id}>
+                                <FieldCommandSmsCode
+                                    displayName={dynamicField.displayName}
+                                    initialValue={dynamicField.initialValue}
+                                />
+                            </FormRow>
+                        )
+                    })}
                     {hasSubmitErrors && (
                         <FormRow>
                             <NoticeBox

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-28T11:25:13.892Z\n"
-"PO-Revision-Date: 2020-08-28T11:25:13.892Z\n"
+"POT-Creation-Date: 2020-08-28T11:33:49.940Z\n"
+"PO-Revision-Date: 2020-08-28T11:33:49.940Z\n"
 
 msgid "Something went wrong whilst loading the sms command"
 msgstr ""
@@ -27,6 +27,12 @@ msgid "Duplicate value!"
 msgstr ""
 
 msgid "Something went wrong whilst loading the data element category combos"
+msgstr ""
+
+msgid "Tracked entity attribute"
+msgstr ""
+
+msgid "Something went wrong whilst submitting the form"
 msgstr ""
 
 msgid "Add special character"
@@ -108,9 +114,6 @@ msgid "Save"
 msgstr ""
 
 msgid "Submitting..."
-msgstr ""
-
-msgid "Something went wrong whilst submitting the form"
 msgstr ""
 
 msgid "Receive all data value"
