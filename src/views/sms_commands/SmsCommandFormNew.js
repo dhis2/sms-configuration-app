@@ -95,6 +95,10 @@ const ActualForm = ({ handleSubmit, submitting }) => {
     const showProgramStageField =
         parserType === PROGRAM_STAGE_DATAENTRY_PARSER.value
 
+    const registration =
+        // undefined = all, false = program.programType --> WITHOUT_REGISTRATION
+        parserType === EVENT_REGISTRATION_PARSER.value ? false : undefined
+
     return (
         <form onSubmit={handleSubmit}>
             <FormRow>
@@ -119,7 +123,7 @@ const ActualForm = ({ handleSubmit, submitting }) => {
 
             {showProgramField && (
                 <FormRow>
-                    <FieldProgramWithAutoLoad />
+                    <FieldProgramWithAutoLoad registration={registration} />
                 </FormRow>
             )}
 
