@@ -3,19 +3,21 @@ import { useHistory, useParams } from 'react-router-dom'
 import React from 'react'
 
 import {
-    FIELD_COMMAND_PARSER_NAME,
-    KEY_VALUE_PARSER,
-    J2ME_PARSER,
     ALERT_PARSER,
-    UNREGISTERED_PARSER,
-    PROGRAM_STAGE_DATAENTRY_PARSER,
-    isParserType,
-    useReadSmsCommandParserTypeQuery,
+    CommandEditAlertParserForm,
+    CommandEditEventRegistrationParserForm,
     CommandEditJ2MEParserForm,
     CommandEditKeyValueParserForm,
-    CommandEditAlertParserForm,
-    CommandEditUnregisteredParserForm,
     CommandEditProgramStageDataEntryParserForm,
+    CommandEditUnregisteredParserForm,
+    EVENT_REGISTRATION_PARSER,
+    FIELD_COMMAND_PARSER_NAME,
+    J2ME_PARSER,
+    KEY_VALUE_PARSER,
+    PROGRAM_STAGE_DATAENTRY_PARSER,
+    UNREGISTERED_PARSER,
+    isParserType,
+    useReadSmsCommandParserTypeQuery,
 } from '../../commands'
 import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
 import i18n from '../../locales'
@@ -83,6 +85,13 @@ export const SmsCommandFormEdit = () => {
 
             {parserType && isParser(UNREGISTERED_PARSER) && (
                 <CommandEditUnregisteredParserForm
+                    commandId={id}
+                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                />
+            )}
+
+            {parserType && isParser(EVENT_REGISTRATION_PARSER) && (
+                <CommandEditEventRegistrationParserForm
                     commandId={id}
                     onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
                 />

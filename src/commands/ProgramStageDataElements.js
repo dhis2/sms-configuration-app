@@ -24,7 +24,7 @@ export const ProgramStageDataElements = ({
 
                         const newValue = {
                             ...currentValue,
-                            code,
+                            code: code || '',
                             dataElement,
                         }
 
@@ -47,10 +47,10 @@ ProgramStageDataElements.propTypes = {
     ).isRequired,
     smsCodes: PropTypes.objectOf(
         PropTypes.shape({
-            code: PropTypes.string.isRequired,
             dataElement: PropTypes.shape({
                 id: PropTypes.string.isRequired,
             }).isRequired,
+            code: PropTypes.string,
             compulsory: PropTypes.bool,
             optionId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         })

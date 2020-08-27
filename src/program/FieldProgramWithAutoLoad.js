@@ -5,11 +5,8 @@ import { FieldProgram } from './FieldProgram'
 import { useReadProgramsQuery } from './useReadProgramsQuery'
 import { useCriticalNotification } from '../notifications/useCriticalNotification'
 
-export const FieldProgramWithAutoLoad = ({
-    required,
-    onlyWithRegistration,
-}) => {
-    const variables = { registration: onlyWithRegistration }
+export const FieldProgramWithAutoLoad = ({ required, registration }) => {
+    const variables = { registration }
     const { loading, error, data } = useReadProgramsQuery({ variables })
     useCriticalNotification(error)
 
@@ -39,10 +36,12 @@ export const FieldProgramWithAutoLoad = ({
 
 FieldProgramWithAutoLoad.defaultProps = {
     required: false,
-    onlyWithRegistration: true,
+
+    // undefined = both
+    registration: undefined,
 }
 
 FieldProgramWithAutoLoad.propTypes = {
-    onlyWithRegistration: PropTypes.bool,
+    registration: PropTypes.bool,
     required: PropTypes.bool,
 }
