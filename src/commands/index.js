@@ -1,6 +1,7 @@
 export * from './CommandEditKeyValueParserForm'
 export * from './CommandEditJ2MEParserForm'
 export * from './CommandEditAlertParserForm'
+export * from './CommandEditUnregisteredParserForm'
 export * from './CommandEditProgramStageDataEntryParserForm'
 export * from './CommandsAddSpecialCharacters'
 export * from './DataElementTimesCategoryOptionCombos'
