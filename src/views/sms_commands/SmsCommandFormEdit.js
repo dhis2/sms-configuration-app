@@ -7,11 +7,13 @@ import {
     KEY_VALUE_PARSER,
     J2ME_PARSER,
     ALERT_PARSER,
+    PROGRAM_STAGE_DATAENTRY_PARSER,
     isParserType,
     useReadSmsCommandParserTypeQuery,
     CommandEditJ2MEParserForm,
     CommandEditKeyValueParserForm,
     CommandEditAlertParserForm,
+    CommandEditProgramStageDataEntryParserForm,
 } from '../../commands'
 import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
 import i18n from '../../locales'
@@ -65,6 +67,13 @@ export const SmsCommandFormEdit = () => {
 
             {parserType && isParser(ALERT_PARSER) && (
                 <CommandEditAlertParserForm id={id} />
+            )}
+
+            {parserType && isParser(PROGRAM_STAGE_DATAENTRY_PARSER) && (
+                <CommandEditProgramStageDataEntryParserForm
+                    commandId={id}
+                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                />
             )}
         </div>
     )
