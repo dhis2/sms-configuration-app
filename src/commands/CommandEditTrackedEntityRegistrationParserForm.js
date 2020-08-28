@@ -1,17 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 import {
-    Button,
     ReactFinalForm,
-    FinalForm,
     NoticeBox,
     CenteredContent,
     CircularLoader,
 } from '@dhis2/ui'
-import { useDataQuery, useDataEngine } from '@dhis2/app-runtime'
+import { useDataQuery } from '@dhis2/app-runtime'
 
-import { AlertContext } from '../notifications'
-import i18n from '../locales'
+import { FIELD_COMMAND_SMS_CODES_NAME } from './fieldNames'
 import { FormRow } from '../forms'
 import { FieldCommandName } from './FieldCommandName'
 import { FieldCommandSeparator } from './FieldCommandSeparator'
@@ -23,15 +20,19 @@ import { FieldCommandMoreThanOneOrgUnitMessage } from './FieldCommandMoreThanOne
 import { FieldCommandSuccessMessage } from './FieldCommandSuccessMessage'
 import { FieldCommandSmsCode } from './FieldCommandSmsCode'
 import { FieldProgram } from '../program'
+import { SaveCommandButton } from './SaveCommandButton'
+import { SubmitErrors } from './SubmitErrors'
+import { useUpdateCommand } from './useUpdateCommand'
+import i18n from '../locales'
 
 const { Form } = ReactFinalForm
-const { FORM_ERROR } = FinalForm
 
-// selector
-const getSmsCodeById = ({ id, smsCodes }) =>
-    smsCodes.find(
-        ({ trackedEntityAttribute }) => id === trackedEntityAttribute.id
-    )
+const formatSmsCodes = updates => ({
+    ...updates,
+    [FIELD_COMMAND_SMS_CODES_NAME]: Object.values(
+        updates[FIELD_COMMAND_SMS_CODES_NAME]
+    ),
+})
 
 const query = {
     smsCommand: {
@@ -49,46 +50,22 @@ const query = {
                 'successMessage',
                 // The queries below should be reduced to only the data we need
                 'program[id,displayName,programTrackedEntityAttributes[trackedEntityAttribute[:all,id,displayName]]]',
-                'smsCodes[:all,trackedEntityAttribute[:all,id,displayName]]',
+                'smsCodes[:all,trackedEntityAttribute[id,displayName,valueType]]',
             ],
         },
     },
-}
-
-const mutation = {
-    resource: 'smsCommands',
-    type: 'update',
-    partial: true,
-    id: ({ commandId }) => commandId,
-    data: ({ command }) => command,
 }
 
 export const CommandEditTrackedEntityRegistrationParserForm = ({
     commandId,
     onAfterChange,
 }) => {
-    const { addAlert } = useContext(AlertContext)
-    const engine = useDataEngine()
-    const updateCommand = command =>
-        engine
-            .mutate(mutation, { variables: { command, commandId } })
-            .then(onAfterChange)
-            .catch(error => {
-                const isValidationError = error.type === 'access'
-
-                // Potential validation error, return it in a format final-form can handle
-                if (isValidationError) {
-                    const fallback = 'No error message was provided'
-                    const message = error.message || i18n.t(fallback)
-
-                    return {
-                        [FORM_ERROR]: message,
-                    }
-                }
-
-                // Notify on unexpected errors
-                addAlert({ type: 'critical', message: error.message })
-            })
+    const updateCommand = useUpdateCommand({
+        commandId,
+        onAfterChange,
+        formatCommand: formatSmsCodes,
+        //partial: true,
+    })
 
     const { loading, error, data } = useDataQuery(query, {
         variables: { commandId },
@@ -124,8 +101,17 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
         noUserMessage,
         moreThanOneOrgUnitMessage,
         successMessage,
-        smsCodes,
+        smsCodes: smsCodesOriginal,
     } = data.smsCommand
+
+    const smsCodes = smsCodesOriginal.reduce(
+        (curSmsCodes, smsCode) => ({
+            ...curSmsCodes,
+            [smsCode.trackedEntityAttribute.id]: smsCode,
+        }),
+        {}
+    )
+
     const initialValues = {
         name,
         parserType,
@@ -136,6 +122,7 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
         noUserMessage,
         moreThanOneOrgUnitMessage,
         successMessage,
+        smsCodes,
     }
     const selectedProgramOption = {
         value: program.id,
@@ -156,7 +143,7 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
         trackedEntityAttribute => {
             const { id, displayName, valueType } = trackedEntityAttribute
             const merged = { id, displayName, valueType }
-            const smsCode = getSmsCodeById({ id, smsCodes })
+            const smsCode = smsCodes[id]
 
             if (smsCode) {
                 // This contains the actual value of the field
@@ -169,45 +156,49 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
 
     return (
         <Form onSubmit={updateCommand} initialValues={initialValues}>
-            {({
-                handleSubmit,
-                submitting,
-                pristine,
-                submitError,
-                hasSubmitErrors,
-            }) => (
+            {({ handleSubmit }) => (
                 <form onSubmit={handleSubmit}>
                     <FormRow>
                         <FieldCommandName />
                     </FormRow>
+
                     <FormRow>
                         <FieldCommandParser disabled />
                     </FormRow>
+
                     <FormRow>
                         <FieldProgram
                             disabled
                             programs={[selectedProgramOption]}
                         />
                     </FormRow>
+
                     <FormRow>
                         <FieldCommandSeparator />
                     </FormRow>
+
                     <FormRow>
                         <FieldCommandDefaultMessage />
                     </FormRow>
+
                     <FormRow>
                         <FieldCommandWrongFormatMessage />
                     </FormRow>
+
                     <FormRow>
                         <FieldCommandNoUserMessage />
                     </FormRow>
+
                     <FormRow>
                         <FieldCommandMoreThanOneOrgUnitMessage />
                     </FormRow>
+
                     <FormRow>
                         <FieldCommandSuccessMessage />
                     </FormRow>
+
                     <h2>{i18n.t('Tracked entity attribute')}</h2>
+
                     {dynamicFields.map(dynamicField => {
                         // I assume this should switch field types based on `valueType`
                         // which can be 'TEXT', 'NUMBER', etc. Currently this renders
@@ -217,30 +208,14 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
                                 <FieldCommandSmsCode
                                     id={dynamicField.id}
                                     displayName={dynamicField.displayName}
-                                    initialValue={dynamicField.initialValue}
+                                    valueType={dynamicField.valueType}
                                 />
                             </FormRow>
                         )
                     })}
-                    {hasSubmitErrors && (
-                        <FormRow>
-                            <NoticeBox
-                                error
-                                title={i18n.t(
-                                    'Something went wrong whilst submitting the form'
-                                )}
-                            >
-                                {submitError}
-                            </NoticeBox>
-                        </FormRow>
-                    )}
-                    <Button
-                        type="submit"
-                        disabled={pristine || submitting}
-                        icon={submitting ? <CircularLoader small /> : null}
-                    >
-                        {i18n.t('Save sms command')}
-                    </Button>
+
+                    <SubmitErrors />
+                    <SaveCommandButton />
                 </form>
             )}
         </Form>
