@@ -19,25 +19,27 @@ import {
     FIELD_COMMAND_SMS_CODES_NAME,
     FIELD_COMMAND_SUCCESS_MESSAGE_NAME,
     FIELD_COMMAND_WRONG_FORMAT_MESSAGE_NAME,
-} from './fieldNames'
-import { PROGRAM_STAGE_DATAENTRY_PARSER } from './types'
-import { FieldCommandDefaultMessage } from './FieldCommandDefaultMessage'
-import { FieldCommandMoreThanOneOrgUnitMessage } from './FieldCommandMoreThanOneOrgUnitMessage'
-import { FieldCommandName } from './FieldCommandName'
-import { FieldCommandNoUserMessage } from './FieldCommandNoUserMessage'
-import { FieldCommandParser } from './FieldCommandParser'
-import { FieldCommandSeparator } from './FieldCommandSeparator'
-import { FieldCommandSuccessMessage } from './FieldCommandSuccessMessage'
-import { FieldCommandWrongFormatMessage } from './FieldCommandWrongFormatMessage'
+    FieldCommandDefaultMessage,
+    FieldCommandMoreThanOneOrgUnitMessage,
+    FieldCommandName,
+    FieldCommandNoUserMessage,
+    FieldCommandParser,
+    FieldCommandSeparator,
+    FieldCommandSuccessMessage,
+    FieldCommandWrongFormatMessage,
+    PROGRAM_STAGE_DATAENTRY_PARSER,
+    ProgramStageDataElements,
+} from '../smsCommandFields'
+import {
+    SaveCommandButton,
+    SubmitErrors,
+    useUpdateCommand,
+} from '../smsCommand'
 import { FieldProgram } from '../program'
 import { FieldProgramStage } from '../programStage'
 import { FormRow } from '../forms'
-import { ProgramStageDataElements } from './ProgramStageDataElements'
-import { SaveCommandButton } from './SaveCommandButton'
-import { SubmitErrors } from './SubmitErrors'
 import { dataTest } from '../dataTest'
 import { useReadSmsCommandProgramStageDataEntryParserQuery } from './useReadSmsCommandProgramStageDataEntryParserQuery'
-import { useUpdateCommand } from './useUpdateCommand'
 import i18n from '../locales'
 
 const { Form } = ReactFinalForm

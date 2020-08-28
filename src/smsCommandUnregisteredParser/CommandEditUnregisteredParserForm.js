@@ -8,16 +8,20 @@ import {
 } from '@dhis2/ui'
 import { useDataQuery } from '@dhis2/app-runtime'
 
-import i18n from '../locales'
-import { FormRow } from '../forms'
-import { FieldCommandName } from './FieldCommandName'
-import { FieldCommandParser } from './FieldCommandParser'
-import { FieldCommandConfirmMessage } from './FieldCommandConfirmMessage'
+import {
+    FieldCommandConfirmMessage,
+    FieldCommandName,
+    FieldCommandParser,
+} from '../smsCommandFields'
+import {
+    SaveCommandButton,
+    SubmitErrors,
+    useUpdateCommand,
+} from '../smsCommand'
 import { FieldUserGroup } from '../userGroup'
-import { SaveCommandButton } from './SaveCommandButton'
-import { SubmitErrors } from './SubmitErrors'
+import { FormRow } from '../forms'
 import { dataTest } from '../dataTest'
-import { useUpdateCommand } from './useUpdateCommand'
+import i18n from '../locales'
 
 const { Form } = ReactFinalForm
 
@@ -36,7 +40,10 @@ const query = {
     },
 }
 
-export const CommandEditAlertParserForm = ({ commandId, onAfterChange }) => {
+export const CommandEditUnregisteredParserForm = ({
+    commandId,
+    onAfterChange,
+}) => {
     const updateCommand = useUpdateCommand({
         commandId,
         onAfterChange,
@@ -86,7 +93,9 @@ export const CommandEditAlertParserForm = ({ commandId, onAfterChange }) => {
             {({ handleSubmit }) => (
                 <form
                     onSubmit={handleSubmit}
-                    data-test={dataTest('commands-commandeditalertparserform')}
+                    data-test={dataTest(
+                        'commands-commandunregisteredparserform'
+                    )}
                 >
                     <FormRow>
                         <FieldCommandName />
@@ -112,7 +121,7 @@ export const CommandEditAlertParserForm = ({ commandId, onAfterChange }) => {
     )
 }
 
-CommandEditAlertParserForm.propTypes = {
+CommandEditUnregisteredParserForm.propTypes = {
     commandId: PropTypes.string.isRequired,
     onAfterChange: PropTypes.func.isRequired,
 }

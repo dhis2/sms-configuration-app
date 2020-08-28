@@ -5,9 +5,14 @@ import {
     ReactFinalForm,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import {
+    ALL_DATAVALUE,
+    AT_LEAST_ONE_DATAVALUE,
+    CommandsAddSpecialCharacters,
+    DataElementTimesCategoryOptionCombos,
+    FIELD_COMMAND_COMPLETENESS_METHOD_NAME,
     FIELD_COMMAND_DEFAULT_MESSAGE_NAME,
     FIELD_COMMAND_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME,
     FIELD_COMMAND_NAME_NAME,
@@ -17,38 +22,44 @@ import {
     FIELD_COMMAND_SMS_CODES_NAME,
     FIELD_COMMAND_SPECIAL_CHARS_NAME,
     FIELD_COMMAND_SUCCESS_MESSAGE_NAME,
+    FIELD_COMMAND_USE_CURRENT_PERIOD_FOR_REPORTING_NAME,
     FIELD_COMMAND_WRONG_FORMAT_MESSAGE_NAME,
-} from './fieldNames'
-import { J2ME_PARSER } from './types'
-import { CommandsAddSpecialCharacters } from './CommandsAddSpecialCharacters'
-import { DataElementTimesCategoryOptionCombos } from './DataElementTimesCategoryOptionCombos'
-import { FieldCommandDefaultMessage } from './FieldCommandDefaultMessage'
-import { FieldCommandMoreThanOneOrgUnitMessage } from './FieldCommandMoreThanOneOrgUnitMessage'
-import { FieldCommandName } from './FieldCommandName'
-import { FieldCommandNoUserMessage } from './FieldCommandNoUserMessage'
-import { FieldCommandParser } from './FieldCommandParser'
-import { FieldCommandSeparator } from './FieldCommandSeparator'
-import { FieldCommandSpecialCharacter } from './FieldCommandSpecialCharacter'
-import { FieldCommandSuccessMessage } from './FieldCommandSuccessMessage'
-import { FieldCommandWrongFormatMessage } from './FieldCommandWrongFormatMessage'
+    FieldCommandCompletenessMethod,
+    FieldCommandDefaultMessage,
+    FieldCommandMoreThanOneOrgUnitMessage,
+    FieldCommandName,
+    FieldCommandNoUserMessage,
+    FieldCommandParser,
+    FieldCommandSeparator,
+    FieldCommandSpecialCharacter,
+    FieldCommandSuccessMessage,
+    FieldCommandUseCurrentPeriodForReporting,
+    FieldCommandWrongFormatMessage,
+    KEY_VALUE_PARSER,
+} from '../smsCommandFields'
+import {
+    SaveCommandButton,
+    SubmitErrors,
+    getSmsCodeDuplicates,
+    useUpdateCommand,
+} from '../smsCommand'
 import { FIELD_DATA_SET_NAME, FieldDataSet } from '../dataSet'
 import { FormRow } from '../forms'
-import { SaveCommandButton } from './SaveCommandButton'
-import { SubmitErrors } from './SubmitErrors'
 import { dataTest } from '../dataTest'
-import { getSmsCodeDuplicates } from './getSmsCodeDuplicates'
-import { useReadDataElementsWithCategoryOptionComboQuery } from './useReadDataElementsWithCategoryOptionComboQuery'
-import { useReadSmsCommandJ2MEParserQuery } from './useReadSmsCommandJ2MEParserQuery'
-import { useUpdateCommand } from './useUpdateCommand'
+import { useReadSmsCommandKeyValueParserQuery } from './useReadSmsCommandKeyValueParserQuery'
 import i18n from '../locales'
 
 const { Form, FormSpy } = ReactFinalForm
 
 const getInitialFormState = command => {
     const name = command[FIELD_COMMAND_NAME_NAME]
-    const parserType = J2ME_PARSER.value
+    const parserType = KEY_VALUE_PARSER.value
     const dataSetId = { id: command[FIELD_DATA_SET_NAME].id }
     const separator = command[FIELD_COMMAND_SEPARATOR_NAME]
+    const completenessMethod =
+        command[FIELD_COMMAND_COMPLETENESS_METHOD_NAME] || ALL_DATAVALUE.value
+    const useCurrentPeriodForReporting =
+        command[FIELD_COMMAND_USE_CURRENT_PERIOD_FOR_REPORTING_NAME]
     const defaultMessage = command[FIELD_COMMAND_DEFAULT_MESSAGE_NAME]
     const wrongFormatMessage = command[FIELD_COMMAND_WRONG_FORMAT_MESSAGE_NAME]
     const noUserMessage = command[FIELD_COMMAND_NO_USER_MESSAGE_NAME]
@@ -80,6 +91,8 @@ const getInitialFormState = command => {
         [FIELD_COMMAND_PARSER_NAME]: parserType,
         [FIELD_DATA_SET_NAME]: dataSetId,
         [FIELD_COMMAND_SEPARATOR_NAME]: separator,
+        [FIELD_COMMAND_COMPLETENESS_METHOD_NAME]: completenessMethod,
+        [FIELD_COMMAND_USE_CURRENT_PERIOD_FOR_REPORTING_NAME]: useCurrentPeriodForReporting,
         [FIELD_COMMAND_DEFAULT_MESSAGE_NAME]: defaultMessage,
         [FIELD_COMMAND_WRONG_FORMAT_MESSAGE_NAME]: wrongFormatMessage,
         [FIELD_COMMAND_NO_USER_MESSAGE_NAME]: noUserMessage,
@@ -93,23 +106,39 @@ const getInitialFormState = command => {
 const globalValidate = DE_COC_combination_data => values => {
     const errors = {}
 
+    const completenessMethod = values[FIELD_COMMAND_COMPLETENESS_METHOD_NAME]
     const smsCodesFormState = values[FIELD_COMMAND_SMS_CODES_NAME]
     const smsCodes = smsCodesFormState ? Object.entries(smsCodesFormState) : []
+    const smsCodesWithValue = smsCodes.filter(([_, { code }]) => code) //eslint-disable-line no-unused-vars
 
     if (
-        smsCodes.length > 0 &&
-        smsCodes.length !== DE_COC_combination_data?.length
+        completenessMethod === ALL_DATAVALUE.value &&
+        smsCodesWithValue.length !== DE_COC_combination_data?.length
+    ) {
+        errors[FIELD_COMMAND_SMS_CODES_NAME] =
+            errors[FIELD_COMMAND_SMS_CODES_NAME] || {}
+
+        errors[FIELD_COMMAND_SMS_CODES_NAME] = {
+            global: i18n.t(
+                `With completeness method "${ALL_DATAVALUE.label}", all sms codes need to have a value`
+            ),
+        }
+    } else if (
+        completenessMethod === AT_LEAST_ONE_DATAVALUE.value &&
+        !smsCodesWithValue.length
     ) {
         errors[FIELD_COMMAND_SMS_CODES_NAME] =
             errors[FIELD_COMMAND_SMS_CODES_NAME] || {}
 
         Object.assign(errors[FIELD_COMMAND_SMS_CODES_NAME], {
-            global: i18n.t('You either have to provide all values or none'),
+            global: i18n.t(
+                `With completeness method "${AT_LEAST_ONE_DATAVALUE.label}", you need to provide at least one value`
+            ),
         })
     }
 
-    if (smsCodes.length) {
-        const duplicates = getSmsCodeDuplicates(smsCodes)
+    if (smsCodesWithValue.length) {
+        const duplicates = getSmsCodeDuplicates(smsCodesWithValue)
 
         if (duplicates.length) {
             const duplicateErrors = {}
@@ -159,31 +188,13 @@ const formatSmsCodes = updates => {
     }
 }
 
-export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
+export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
     const {
         error: loadingCommandError,
         data: commandData,
-    } = useReadSmsCommandJ2MEParserQuery(commandId)
+    } = useReadSmsCommandKeyValueParserQuery(commandId)
 
     const command = commandData?.smsCommand
-
-    /* required for validation
-     * DE  = Data Element
-     * COC = Category Option Combo
-     */
-    const {
-        error: loading_DE_COC_combinationsError,
-        data: DE_COC_combination_data,
-        refetch: fetchDataElementsWithCategoryOptionCombo,
-    } = useReadDataElementsWithCategoryOptionComboQuery({ lazy: true })
-
-    useEffect(() => {
-        const dataSetId = command?.dataset.id
-
-        if (dataSetId) {
-            fetchDataElementsWithCategoryOptionCombo({ dataSetId })
-        }
-    }, [command?.id])
 
     const updateCommand = useUpdateCommand({
         commandId,
@@ -203,19 +214,7 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
         )
     }
 
-    if (loading_DE_COC_combinationsError) {
-        const msg = i18n.t(
-            'Something went wrong whilst loading the data element category combos'
-        )
-
-        return (
-            <NoticeBox error title={msg}>
-                {loading_DE_COC_combinationsError.message}
-            </NoticeBox>
-        )
-    }
-
-    if (!command || !DE_COC_combination_data) {
+    if (!command) {
         return (
             <CenteredContent>
                 <CircularLoader />
@@ -229,6 +228,24 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
     }
 
     const initialValues = getInitialFormState(command)
+    const DE_COC_combination_data = command.dataset.dataSetElements.reduce(
+        (curCombinations, { dataElement }) => {
+            const categoryOptionCombo =
+                dataElement.categoryCombo?.categoryOptionCombo
+
+            if (!categoryOptionCombo) {
+                return [...curCombinations, { dataElement }]
+            }
+
+            const combos = categoryOptionCombo.map(COC => ({
+                dataElement,
+                categoryOptionCombo: COC,
+            }))
+
+            return [...curCombinations, ...combos]
+        },
+        []
+    )
 
     return (
         <Form
@@ -240,7 +257,9 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
             {({ handleSubmit, submitting, form }) => (
                 <form
                     onSubmit={handleSubmit}
-                    data-test={dataTest('commands-commandj2meparserform')}
+                    data-test={dataTest(
+                        'commands-commandeditkeyvalueparserform'
+                    )}
                 >
                     {submitting && <p>SUBMITTING....</p>}
 
@@ -257,6 +276,14 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
                             disabled
                             dataSets={[selectedDataSetOption]}
                         />
+                    </FormRow>
+
+                    <FormRow>
+                        <FieldCommandCompletenessMethod />
+                    </FormRow>
+
+                    <FormRow>
+                        <FieldCommandUseCurrentPeriodForReporting />
                     </FormRow>
 
                     <FormRow>
@@ -284,9 +311,25 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
                     </FormRow>
 
                     {DE_COC_combination_data && (
-                        <DataElementTimesCategoryOptionCombos
-                            DE_COC_combinations={DE_COC_combination_data}
-                        />
+                        <FormSpy subscription={{ values: true }}>
+                            {({ values }) => {
+                                const completenessMethod =
+                                    values[
+                                        FIELD_COMMAND_COMPLETENESS_METHOD_NAME
+                                    ]
+                                const allRequired =
+                                    completenessMethod === ALL_DATAVALUE.value
+
+                                return (
+                                    <DataElementTimesCategoryOptionCombos
+                                        allRequired={allRequired}
+                                        DE_COC_combinations={
+                                            DE_COC_combination_data
+                                        }
+                                    />
+                                )
+                            }}
+                        </FormSpy>
                     )}
 
                     <div>
@@ -323,7 +366,7 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
     )
 }
 
-CommandEditJ2MEParserForm.propTypes = {
+CommandEditKeyValueParserForm.propTypes = {
     commandId: PropTypes.string.isRequired,
     onAfterChange: PropTypes.func.isRequired,
 }

@@ -21,7 +21,7 @@ import {
     getLabelByParserTypes,
     useDeleteSmsCommandMutation,
     useReadSmsCommandsQuery,
-} from '../../commands'
+} from '../../smsCommand'
 import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
 import styles from './SmsCommandList.module.css'

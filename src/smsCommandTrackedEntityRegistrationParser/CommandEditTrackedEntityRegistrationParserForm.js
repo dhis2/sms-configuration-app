@@ -8,21 +8,25 @@ import {
 } from '@dhis2/ui'
 import { useDataQuery } from '@dhis2/app-runtime'
 
-import { FIELD_COMMAND_SMS_CODES_NAME } from './fieldNames'
+import {
+    FIELD_COMMAND_SMS_CODES_NAME,
+    FieldCommandName,
+    FieldCommandSeparator,
+    FieldCommandParser,
+    FieldCommandDefaultMessage,
+    FieldCommandWrongFormatMessage,
+    FieldCommandNoUserMessage,
+    FieldCommandMoreThanOneOrgUnitMessage,
+    FieldCommandSuccessMessage,
+    FieldCommandSmsCode,
+} from '../smsCommandFields'
+import {
+    SaveCommandButton,
+    SubmitErrors,
+    useUpdateCommand,
+} from '../smsCommand'
 import { FormRow } from '../forms'
-import { FieldCommandName } from './FieldCommandName'
-import { FieldCommandSeparator } from './FieldCommandSeparator'
-import { FieldCommandParser } from './FieldCommandParser'
-import { FieldCommandDefaultMessage } from './FieldCommandDefaultMessage'
-import { FieldCommandWrongFormatMessage } from './FieldCommandWrongFormatMessage'
-import { FieldCommandNoUserMessage } from './FieldCommandNoUserMessage'
-import { FieldCommandMoreThanOneOrgUnitMessage } from './FieldCommandMoreThanOneOrgUnitMessage'
-import { FieldCommandSuccessMessage } from './FieldCommandSuccessMessage'
-import { FieldCommandSmsCode } from './FieldCommandSmsCode'
 import { FieldProgram } from '../program'
-import { SaveCommandButton } from './SaveCommandButton'
-import { SubmitErrors } from './SubmitErrors'
-import { useUpdateCommand } from './useUpdateCommand'
 import i18n from '../locales'
 
 const { Form } = ReactFinalForm

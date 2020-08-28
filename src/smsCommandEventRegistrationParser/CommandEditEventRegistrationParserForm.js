@@ -1,5 +1,4 @@
 import {
-    Button,
     CenteredContent,
     CircularLoader,
     NoticeBox,
@@ -8,10 +7,9 @@ import {
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
 
-import { EVENT_REGISTRATION_PARSER } from './types'
 import {
+    EVENT_REGISTRATION_PARSER,
     FIELD_COMMAND_DEFAULT_MESSAGE_NAME,
-    FIELD_COMMAND_ID_NAME,
     FIELD_COMMAND_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME,
     FIELD_COMMAND_NAME_NAME,
     FIELD_COMMAND_NO_USER_MESSAGE_NAME,
@@ -22,21 +20,25 @@ import {
     FIELD_COMMAND_SMS_CODES_NAME,
     FIELD_COMMAND_SUCCESS_MESSAGE_NAME,
     FIELD_COMMAND_WRONG_FORMAT_MESSAGE_NAME,
-} from './fieldNames'
+    FieldCommandDefaultMessage,
+    FieldCommandMoreThanOneOrgUnitMessage,
+    FieldCommandName,
+    FieldCommandNoUserMessage,
+    FieldCommandParser,
+    FieldCommandSeparator,
+    FieldCommandSuccessMessage,
+    FieldCommandWrongFormatMessage,
+    ProgramStageDataElements,
+} from '../smsCommandFields'
+import {
+    SaveCommandButton,
+    SubmitErrors,
+    useUpdateCommand,
+} from '../smsCommand'
 import { FormRow } from '../forms'
-import { FieldCommandDefaultMessage } from './FieldCommandDefaultMessage'
-import { FieldCommandMoreThanOneOrgUnitMessage } from './FieldCommandMoreThanOneOrgUnitMessage'
-import { FieldCommandName } from './FieldCommandName'
-import { FieldCommandNoUserMessage } from './FieldCommandNoUserMessage'
-import { FieldCommandParser } from './FieldCommandParser'
-import { FieldCommandSeparator } from './FieldCommandSeparator'
-import { FieldCommandSuccessMessage } from './FieldCommandSuccessMessage'
-import { FieldCommandWrongFormatMessage } from './FieldCommandWrongFormatMessage'
 import { FieldProgram } from '../program'
 import { FieldProgramStage } from '../programStage'
-import { ProgramStageDataElements } from './ProgramStageDataElements'
 import { useReadSmsCommandEventRegistrationParserQuery } from './useReadSmsCommandEventRegistrationParserQuery'
-import { useUpdateSmsCommandMutation } from './useUpdateSmsCommandMutation'
 import i18n from '../locales'
 
 const { Form } = ReactFinalForm
@@ -75,28 +77,12 @@ const getInitialFormState = command => {
     }
 }
 
-const onSubmitFactory = ({
-    commandId,
-    updateSmsCommand,
-    onAfterChange,
-}) => values => {
-    const formSmsCodes = values[FIELD_COMMAND_SMS_CODES_NAME]
-    const smsCodes = Object.values(formSmsCodes)
-
-    const endpointPayload = {
-        ...values,
-        [FIELD_COMMAND_SMS_CODES_NAME]: smsCodes,
-        [FIELD_COMMAND_ID_NAME]: commandId,
-    }
-
-    return updateSmsCommand(endpointPayload).then(response => {
-        if (response.status !== 'OK') {
-            throw new Error()
-        }
-
-        onAfterChange()
-    })
-}
+const formatSmsCodes = updates => ({
+    ...updates,
+    [FIELD_COMMAND_SMS_CODES_NAME]: Object.values(
+        updates[FIELD_COMMAND_SMS_CODES_NAME]
+    ),
+})
 
 export const CommandEditEventRegistrationParserForm = ({
     commandId,
@@ -107,7 +93,11 @@ export const CommandEditEventRegistrationParserForm = ({
         data: { smsCommand: command } = {},
     } = useReadSmsCommandEventRegistrationParserQuery(commandId)
 
-    const [updateSmsCommand] = useUpdateSmsCommandMutation()
+    const updateCommand = useUpdateCommand({
+        commandId,
+        onAfterChange,
+        formatCommand: formatSmsCodes,
+    })
 
     if (error) {
         const msg = i18n.t(
@@ -145,15 +135,8 @@ export const CommandEditEventRegistrationParserForm = ({
     const initialValues = getInitialFormState(command)
 
     return (
-        <Form
-            initialValues={initialValues}
-            onSubmit={onSubmitFactory({
-                onAfterChange,
-                updateSmsCommand,
-                commandId,
-            })}
-        >
-            {({ handleSubmit, pristine, submitting, values }) => {
+        <Form initialValues={initialValues} onSubmit={updateCommand}>
+            {({ handleSubmit, values }) => {
                 return (
                     <form onSubmit={handleSubmit}>
                         <FormRow>
@@ -217,13 +200,8 @@ export const CommandEditEventRegistrationParserForm = ({
                             </FormRow>
                         )}
 
-                        <Button
-                            type="submit"
-                            disabled={pristine || submitting}
-                            icon={submitting ? <CircularLoader small /> : null}
-                        >
-                            {i18n.t('Save sms command')}
-                        </Button>
+                        <SubmitErrors />
+                        <SaveCommandButton />
                     </form>
                 )
             }}

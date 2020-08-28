@@ -1,4 +1,4 @@
-import * as parserTypes from './types'
+import * as parserTypes from '../smsCommandFields'
 
 export const getLabelByParserTypes = parserType => {
     const type = Object.values(parserTypes).find(

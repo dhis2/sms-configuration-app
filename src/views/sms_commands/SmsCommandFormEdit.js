@@ -3,24 +3,26 @@ import { useHistory, useParams } from 'react-router-dom'
 import React from 'react'
 
 import {
+    isParserType,
+    useReadSmsCommandParserTypeQuery,
+} from '../../smsCommand'
+import {
     ALERT_PARSER,
-    CommandEditAlertParserForm,
-    CommandEditEventRegistrationParserForm,
-    CommandEditJ2MEParserForm,
-    CommandEditKeyValueParserForm,
-    CommandEditProgramStageDataEntryParserForm,
-    CommandEditTrackedEntityRegistrationParserForm,
-    CommandEditUnregisteredParserForm,
     EVENT_REGISTRATION_PARSER,
-    FIELD_COMMAND_PARSER_NAME,
     J2ME_PARSER,
     KEY_VALUE_PARSER,
     PROGRAM_STAGE_DATAENTRY_PARSER,
     TRACKED_ENTITY_REGISTRATION_PARSER,
     UNREGISTERED_PARSER,
-    isParserType,
-    useReadSmsCommandParserTypeQuery,
-} from '../../commands'
+    FIELD_COMMAND_PARSER_NAME,
+} from '../../smsCommandFields'
+import { CommandEditUnregisteredParserForm } from '../../smsCommandUnregisteredParser'
+import { CommandEditTrackedEntityRegistrationParserForm } from '../../smsCommandTrackedEntityRegistrationParser'
+import { CommandEditProgramStageDataEntryParserForm } from '../../smsCommandProgramStageDataEntryParser'
+import { CommandEditKeyValueParserForm } from '../../smsCommandKeyValueParser'
+import { CommandEditJ2MEParserForm } from '../../smsCommandJ2MEParser'
+import { CommandEditEventRegistrationParserForm } from '../../smsCommandEventRegistrationParser'
+import { CommandEditAlertParserForm } from '../../smsCommandAlertParser'
 import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
 import i18n from '../../locales'
 

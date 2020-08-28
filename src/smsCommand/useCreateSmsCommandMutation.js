@@ -7,7 +7,7 @@ import {
     PROGRAM_STAGE_DATAENTRY_PARSER,
     TRACKED_ENTITY_REGISTRATION_PARSER,
     UNREGISTERED_PARSER,
-} from './types'
+} from '../smsCommandFields'
 
 export const CREATE_SMS_COMMAND_MUTATION = {
     resource: 'smsCommands',

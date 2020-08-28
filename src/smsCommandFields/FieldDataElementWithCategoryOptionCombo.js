@@ -2,7 +2,7 @@ import { Button, InputFieldFF, ReactFinalForm, hasValue } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useState } from 'react'
 
-import { DE_COC_toFormName } from './DE_COC_toFormName'
+import { DE_COC_toFormName } from '../smsCommand'
 import { FieldDataElementWithCategoryOptionComboFormula } from './FieldDataElementWithCategoryOptionComboFormula'
 import { FormRow } from '../forms'
 import { get } from '../utils'
