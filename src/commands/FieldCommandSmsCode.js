@@ -1,10 +1,18 @@
 import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
-import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
+import React from 'react'
 
-const { Field } = ReactFinalForm
+import { FIELD_COMMAND_SMS_CODES_NAME } from './fieldNames'
 
-export const FieldCommandSmsCode = ({ id, displayName, initialValue }) => {
+const { Field, useFormState } = ReactFinalForm
+const subscription = {
+    values: true,
+}
+
+export const FieldCommandSmsCode = ({ id, displayName, valueType }) => {
+    const { values } = useFormState({ subscription })
+    const smsCode = values[FIELD_COMMAND_SMS_CODES_NAME][id]
+
     /**
      * This uses a dynamic, nested name for storing the field value in the
      * form state. You can't submit the data as is though, since the backend
@@ -15,10 +23,25 @@ export const FieldCommandSmsCode = ({ id, displayName, initialValue }) => {
     return (
         <Field
             required
-            name={`smsCodes.${id}`}
+            name={`${FIELD_COMMAND_SMS_CODES_NAME}.${id}`}
             label={displayName}
             component={InputFieldFF}
-            initialValue={initialValue}
+            format={code => code?.code || ''}
+            parse={nextCode =>
+                !smsCode
+                    ? {
+                          code: nextCode,
+                          trackedEntityAttribute: {
+                              id,
+                              displayName,
+                              valueType,
+                          },
+                      }
+                    : {
+                          ...smsCode,
+                          code: nextCode,
+                      }
+            }
         />
     )
 }
@@ -26,5 +49,5 @@ export const FieldCommandSmsCode = ({ id, displayName, initialValue }) => {
 FieldCommandSmsCode.propTypes = {
     displayName: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    initialValue: PropTypes.string.isRequired,
+    valueType: PropTypes.string.isRequired,
 }
