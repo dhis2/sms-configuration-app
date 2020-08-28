@@ -10,7 +10,10 @@ export const READ_SMS_COMMAND_J2ME_PARSER_QUERY = {
         resource: 'smsCommands',
         id: ({ id }) => id,
         params: {
-            fields: '*,dataset[id,displayName]',
+            fields: [
+                '*',
+                'dataset[id,displayName,dataSetElements[dataElement[id,displayName,categoryCombo[categoryOptionCombos[id,displayName,code]]]]',
+            ],
             paging: 'false',
         },
     },

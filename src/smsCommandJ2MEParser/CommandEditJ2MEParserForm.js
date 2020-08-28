@@ -5,7 +5,7 @@ import {
     ReactFinalForm,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import {
     CommandsAddSpecialCharacters,
@@ -35,7 +35,6 @@ import {
     SaveCommandButton,
     SubmitErrors,
     getSmsCodeDuplicates,
-    useReadDataElementsWithCategoryOptionComboQuery,
     useUpdateCommand,
 } from '../smsCommand'
 import { FIELD_DATA_SET_NAME, FieldDataSet } from '../dataSet'
@@ -169,24 +168,6 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
 
     const command = commandData?.smsCommand
 
-    /* required for validation
-     * DE  = Data Element
-     * COC = Category Option Combo
-     */
-    const {
-        error: loading_DE_COC_combinationsError,
-        data: DE_COC_combination_data,
-        refetch: fetchDataElementsWithCategoryOptionCombo,
-    } = useReadDataElementsWithCategoryOptionComboQuery({ lazy: true })
-
-    useEffect(() => {
-        const dataSetId = command?.dataset.id
-
-        if (dataSetId) {
-            fetchDataElementsWithCategoryOptionCombo({ dataSetId })
-        }
-    }, [command?.id])
-
     const updateCommand = useUpdateCommand({
         commandId,
         onAfterChange,
@@ -205,19 +186,7 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
         )
     }
 
-    if (loading_DE_COC_combinationsError) {
-        const msg = i18n.t(
-            'Something went wrong whilst loading the data element category combos'
-        )
-
-        return (
-            <NoticeBox error title={msg}>
-                {loading_DE_COC_combinationsError.message}
-            </NoticeBox>
-        )
-    }
-
-    if (!command || !DE_COC_combination_data) {
+    if (!command) {
         return (
             <CenteredContent>
                 <CircularLoader />
@@ -231,6 +200,24 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
     }
 
     const initialValues = getInitialFormState(command)
+    const DE_COC_combination_data = command.dataset.dataSetElements.reduce(
+        (curCombinations, { dataElement }) => {
+            const categoryOptionCombo =
+                dataElement.categoryCombo?.categoryOptionCombo
+
+            if (!categoryOptionCombo) {
+                return [...curCombinations, { dataElement }]
+            }
+
+            const combos = categoryOptionCombo.map(COC => ({
+                dataElement,
+                categoryOptionCombo: COC,
+            }))
+
+            return [...curCombinations, ...combos]
+        },
+        []
+    )
 
     return (
         <Form
