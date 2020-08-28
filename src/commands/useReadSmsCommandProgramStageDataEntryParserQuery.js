@@ -8,7 +8,7 @@ const READ_SMS_COMMAND_PROGRAM_STAGE_DATA_ENTRY_PARSER_QUERY = {
             fields: [
                 '*',
                 'program[id,displayName]',
-                'programStage[id,displayName]',
+                'programStage[id,displayName,programStageDataElements[dataElement[id,displayName]]]',
             ],
             paging: 'false',
         },

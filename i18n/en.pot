@@ -5,22 +5,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-27T14:22:33.983Z\n"
-"PO-Revision-Date: 2020-08-27T14:22:33.983Z\n"
+"POT-Creation-Date: 2020-08-28T11:25:13.892Z\n"
+"PO-Revision-Date: 2020-08-28T11:25:13.892Z\n"
 
 msgid "Something went wrong whilst loading the sms command"
-msgstr ""
-
-msgid "Something went wrong whilst submitting the form"
-msgstr ""
-
-msgid "Save sms command"
 msgstr ""
 
 msgid "Something went wrong whilst loading the command's details"
 msgstr ""
 
 msgid "Program Stage Data Elements"
+msgstr ""
+
+msgid "Save sms command"
 msgstr ""
 
 msgid "You either have to provide all values or none"
@@ -30,12 +27,6 @@ msgid "Duplicate value!"
 msgstr ""
 
 msgid "Something went wrong whilst loading the data element category combos"
-msgstr ""
-
-msgid "Submitting..."
-msgstr ""
-
-msgid "Something went wrong whilst loading the program stage data elements"
 msgstr ""
 
 msgid "Add special character"
@@ -114,6 +105,12 @@ msgid "formula operator"
 msgstr ""
 
 msgid "Save"
+msgstr ""
+
+msgid "Submitting..."
+msgstr ""
+
+msgid "Something went wrong whilst submitting the form"
 msgstr ""
 
 msgid "Receive all data value"

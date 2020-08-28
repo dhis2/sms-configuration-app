@@ -12,7 +12,6 @@ import styles from './FieldDataElementWithCategoryOptionCombo.module.css'
 const { Field, FormSpy } = ReactFinalForm
 
 export const FieldDataElementWithCategoryOptionCombo = ({
-    allCombos,
     dataElement,
     categoryOptionCombo,
     required,
@@ -56,7 +55,6 @@ export const FieldDataElementWithCategoryOptionCombo = ({
 
                                 {showFormula && (
                                     <FieldDataElementWithCategoryOptionComboFormula
-                                        allCombos={allCombos}
                                         targetFieldName={`${baseName}.formula`}
                                         onClose={() => setShowFormula(false)}
                                     />
@@ -77,28 +75,9 @@ FieldDataElementWithCategoryOptionCombo.defaultProps = {
 }
 
 FieldDataElementWithCategoryOptionCombo.propTypes = {
-    allCombos: PropTypes.arrayOf(
-        PropTypes.shape({
-            dataElement: PropTypes.shape({
-                displayName: PropTypes.string.isRequired,
-                id: PropTypes.string.isRequired,
-                categoryCombo: PropTypes.shape({
-                    id: PropTypes.string.isRequired,
-                }),
-            }).isRequired,
-            categoryOptionCombo: PropTypes.shape({
-                code: PropTypes.string.isRequired,
-                displayName: PropTypes.string.isRequired,
-                id: PropTypes.string.isRequired,
-            }),
-        })
-    ).isRequired,
     dataElement: PropTypes.shape({
         displayName: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
-        categoryCombo: PropTypes.shape({
-            id: PropTypes.string.isRequired,
-        }),
     }).isRequired,
     categoryOptionCombo: PropTypes.shape({
         code: PropTypes.string.isRequired,

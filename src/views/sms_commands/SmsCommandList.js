@@ -18,6 +18,7 @@ import { ListActions } from '../../dataList'
 import { PageHeadline } from '../../headline'
 import {
     DeleteCommandsConfirmationDialog,
+    getLabelByParserTypes,
     useDeleteSmsCommandMutation,
     useReadSmsCommandsQuery,
 } from '../../commands'
@@ -139,12 +140,13 @@ export const SmsCommandList = () => {
                             />
                         </TableCellHead>
                         <TableCellHead>{i18n.t('Sms command')}</TableCellHead>
+                        <TableCellHead>{i18n.t('Parser')}</TableCellHead>
                         <TableCellHead />
                     </TableRowHead>
                 </TableHead>
                 <TableBody>
                     {data?.smsCommands?.smsCommands?.map(
-                        ({ id, displayName }) => (
+                        ({ id, displayName, parserType }) => (
                             <TableRow key={id}>
                                 <TableCell className={styles.checkbox}>
                                     <Checkbox
@@ -164,6 +166,10 @@ export const SmsCommandList = () => {
                                 </TableCell>
 
                                 <TableCell>{displayName}</TableCell>
+
+                                <TableCell>
+                                    {getLabelByParserTypes(parserType)}
+                                </TableCell>
 
                                 <TableCell className={styles.editButtonCell}>
                                     <Button
