@@ -1,5 +1,4 @@
 import {
-    Button,
     CenteredContent,
     CircularLoader,
     NoticeBox,
@@ -14,6 +13,7 @@ import {
     FIELD_COMMAND_NAME_NAME,
     FIELD_COMMAND_NO_USER_MESSAGE_NAME,
     FIELD_COMMAND_PARSER_NAME,
+    FIELD_COMMAND_SEPARATOR_NAME,
     FIELD_COMMAND_SMS_CODES_NAME,
     FIELD_COMMAND_SPECIAL_CHARS_NAME,
     FIELD_COMMAND_SUCCESS_MESSAGE_NAME,
@@ -33,11 +33,13 @@ import { FieldCommandSuccessMessage } from './FieldCommandSuccessMessage'
 import { FieldCommandWrongFormatMessage } from './FieldCommandWrongFormatMessage'
 import { FIELD_DATA_SET_NAME, FieldDataSet } from '../dataSet'
 import { FormRow } from '../forms'
+import { SaveCommandButton } from './SaveCommandButton'
+import { SubmitErrors } from './SubmitErrors'
 import { dataTest } from '../dataTest'
 import { getSmsCodeDuplicates } from './getSmsCodeDuplicates'
 import { useReadDataElementsWithCategoryOptionComboQuery } from './useReadDataElementsWithCategoryOptionComboQuery'
 import { useReadSmsCommandJ2MEParserQuery } from './useReadSmsCommandJ2MEParserQuery'
-import { useUpdateSmsCommandMutation } from './useUpdateSmsCommandMutation'
+import { useUpdateCommand } from './useUpdateCommand'
 import i18n from '../locales'
 
 const { Form, FormSpy } = ReactFinalForm
@@ -46,6 +48,7 @@ const getInitialFormState = command => {
     const name = command[FIELD_COMMAND_NAME_NAME]
     const parserType = J2ME_PARSER.value
     const dataSetId = { id: command[FIELD_DATA_SET_NAME].id }
+    const separator = command[FIELD_COMMAND_SEPARATOR_NAME]
     const defaultMessage = command[FIELD_COMMAND_DEFAULT_MESSAGE_NAME]
     const wrongFormatMessage = command[FIELD_COMMAND_WRONG_FORMAT_MESSAGE_NAME]
     const noUserMessage = command[FIELD_COMMAND_NO_USER_MESSAGE_NAME]
@@ -76,6 +79,7 @@ const getInitialFormState = command => {
         [FIELD_COMMAND_NAME_NAME]: name,
         [FIELD_COMMAND_PARSER_NAME]: parserType,
         [FIELD_DATA_SET_NAME]: dataSetId,
+        [FIELD_COMMAND_SEPARATOR_NAME]: separator,
         [FIELD_COMMAND_DEFAULT_MESSAGE_NAME]: defaultMessage,
         [FIELD_COMMAND_WRONG_FORMAT_MESSAGE_NAME]: wrongFormatMessage,
         [FIELD_COMMAND_NO_USER_MESSAGE_NAME]: noUserMessage,
@@ -126,12 +130,8 @@ const globalValidate = DE_COC_combination_data => values => {
     return errors
 }
 
-const onSubmitFactory = ({
-    commandId,
-    updateSmsCommand,
-    onAfterChange,
-}) => values => {
-    const smsCodes = values[FIELD_COMMAND_SMS_CODES_NAME]
+const formatSmsCodes = updates => {
+    const smsCodes = updates[FIELD_COMMAND_SMS_CODES_NAME]
     const formattedSmsCodes = Object.entries(smsCodes).map(
         ([id, { code, formula, compulsory, optionId }]) => {
             const [dataElementId] = id.split('-')
@@ -153,19 +153,10 @@ const onSubmitFactory = ({
         }
     )
 
-    const endpointPayload = {
-        ...values,
-        id: commandId,
+    return {
+        ...updates,
         [FIELD_COMMAND_SMS_CODES_NAME]: formattedSmsCodes,
     }
-
-    return updateSmsCommand(endpointPayload).then(response => {
-        if (response.status !== 'OK') {
-            throw new Error()
-        }
-
-        onAfterChange()
-    })
 }
 
 export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
@@ -194,7 +185,11 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
         }
     }, [command?.id])
 
-    const [updateSmsCommand] = useUpdateSmsCommandMutation()
+    const updateCommand = useUpdateCommand({
+        commandId,
+        onAfterChange,
+        formatCommand: formatSmsCodes,
+    })
 
     if (loadingCommandError) {
         const msg = i18n.t(
@@ -235,21 +230,18 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
 
     const initialValues = getInitialFormState(command)
 
-    const onSubmit = onSubmitFactory({
-        commandId: command.id,
-        updateSmsCommand,
-        onAfterChange,
-    })
-
     return (
         <Form
-            onSubmit={onSubmit}
+            onSubmit={updateCommand}
             initialValues={initialValues}
             subscription={{ submitting: true, pristine: true }}
             validate={globalValidate(DE_COC_combination_data)}
         >
             {({ handleSubmit, submitting, form }) => (
-                <form onSubmit={handleSubmit}>
+                <form
+                    onSubmit={handleSubmit}
+                    data-test={dataTest('commands-commandj2meparserform')}
+                >
                     {submitting && <p>SUBMITTING....</p>}
 
                     <FormRow>
@@ -323,14 +315,8 @@ export const CommandEditJ2MEParserForm = ({ commandId, onAfterChange }) => {
                         </FormRow>
                     </div>
 
-                    <Button
-                        type="submit"
-                        dataTest={dataTest('forms-gatewaygenericform-submit')}
-                    >
-                        {submitting
-                            ? i18n.t('Submitting...')
-                            : i18n.t('Save sms command')}
-                    </Button>
+                    <SubmitErrors />
+                    <SaveCommandButton />
                 </form>
             )}
         </Form>

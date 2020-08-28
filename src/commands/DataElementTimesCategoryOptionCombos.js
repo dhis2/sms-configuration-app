@@ -42,19 +42,20 @@ export const DataElementTimesCategoryOptionCombos = ({
         </FormSpy>
 
         <div>
-            {DE_COC_combinations.map(({ dataElement, categoryOptionCombo }) => (
-                <FormRow
-                    className={styles.formRow}
-                    key={dataElement.id + categoryOptionCombo?.id}
-                >
-                    <FieldDataElementWithCategoryOptionCombo
-                        required={allRequired}
-                        allCombos={DE_COC_combinations}
-                        dataElement={dataElement}
-                        categoryOptionCombo={categoryOptionCombo}
-                    />
-                </FormRow>
-            ))}
+            {DE_COC_combinations.map(({ dataElement, categoryOptionCombo }) => {
+                return (
+                    <FormRow
+                        className={styles.formRow}
+                        key={dataElement.id + categoryOptionCombo?.id}
+                    >
+                        <FieldDataElementWithCategoryOptionCombo
+                            required={allRequired}
+                            dataElement={dataElement}
+                            categoryOptionCombo={categoryOptionCombo}
+                        />
+                    </FormRow>
+                )
+            })}
         </div>
     </div>
 )
@@ -69,9 +70,6 @@ DataElementTimesCategoryOptionCombos.propTypes = {
             dataElement: PropTypes.shape({
                 displayName: PropTypes.string.isRequired,
                 id: PropTypes.string.isRequired,
-                categoryCombo: PropTypes.shape({
-                    id: PropTypes.string.isRequired,
-                }),
             }).isRequired,
             categoryOptionCombo: PropTypes.shape({
                 code: PropTypes.string.isRequired,

@@ -1,12 +1,11 @@
 import {
-    Button,
     CenteredContent,
     CircularLoader,
     NoticeBox,
     ReactFinalForm,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import { ALL_DATAVALUE, AT_LEAST_ONE_DATAVALUE } from './completenessMethods'
 import {
@@ -16,6 +15,7 @@ import {
     FIELD_COMMAND_NAME_NAME,
     FIELD_COMMAND_NO_USER_MESSAGE_NAME,
     FIELD_COMMAND_PARSER_NAME,
+    FIELD_COMMAND_SEPARATOR_NAME,
     FIELD_COMMAND_SMS_CODES_NAME,
     FIELD_COMMAND_SPECIAL_CHARS_NAME,
     FIELD_COMMAND_SUCCESS_MESSAGE_NAME,
@@ -38,11 +38,12 @@ import { FieldCommandUseCurrentPeriodForReporting } from './FieldCommandUseCurre
 import { FieldCommandWrongFormatMessage } from './FieldCommandWrongFormatMessage'
 import { FIELD_DATA_SET_NAME, FieldDataSet } from '../dataSet'
 import { FormRow } from '../forms'
+import { SaveCommandButton } from './SaveCommandButton'
+import { SubmitErrors } from './SubmitErrors'
 import { dataTest } from '../dataTest'
 import { getSmsCodeDuplicates } from './getSmsCodeDuplicates'
-import { useReadDataElementsWithCategoryOptionComboQuery } from './useReadDataElementsWithCategoryOptionComboQuery'
 import { useReadSmsCommandKeyValueParserQuery } from './useReadSmsCommandKeyValueParserQuery'
-import { useUpdateSmsCommandMutation } from './useUpdateSmsCommandMutation'
+import { useUpdateCommand } from './useUpdateCommand'
 import i18n from '../locales'
 
 const { Form, FormSpy } = ReactFinalForm
@@ -51,6 +52,7 @@ const getInitialFormState = command => {
     const name = command[FIELD_COMMAND_NAME_NAME]
     const parserType = KEY_VALUE_PARSER.value
     const dataSetId = { id: command[FIELD_DATA_SET_NAME].id }
+    const separator = command[FIELD_COMMAND_SEPARATOR_NAME]
     const completenessMethod =
         command[FIELD_COMMAND_COMPLETENESS_METHOD_NAME] || ALL_DATAVALUE.value
     const useCurrentPeriodForReporting =
@@ -85,6 +87,7 @@ const getInitialFormState = command => {
         [FIELD_COMMAND_NAME_NAME]: name,
         [FIELD_COMMAND_PARSER_NAME]: parserType,
         [FIELD_DATA_SET_NAME]: dataSetId,
+        [FIELD_COMMAND_SEPARATOR_NAME]: separator,
         [FIELD_COMMAND_COMPLETENESS_METHOD_NAME]: completenessMethod,
         [FIELD_COMMAND_USE_CURRENT_PERIOD_FOR_REPORTING_NAME]: useCurrentPeriodForReporting,
         [FIELD_COMMAND_DEFAULT_MESSAGE_NAME]: defaultMessage,
@@ -103,10 +106,11 @@ const globalValidate = DE_COC_combination_data => values => {
     const completenessMethod = values[FIELD_COMMAND_COMPLETENESS_METHOD_NAME]
     const smsCodesFormState = values[FIELD_COMMAND_SMS_CODES_NAME]
     const smsCodes = smsCodesFormState ? Object.entries(smsCodesFormState) : []
+    const smsCodesWithValue = smsCodes.filter(([_, { code }]) => code) //eslint-disable-line no-unused-vars
 
     if (
         completenessMethod === ALL_DATAVALUE.value &&
-        smsCodes.length !== DE_COC_combination_data?.length
+        smsCodesWithValue.length !== DE_COC_combination_data?.length
     ) {
         errors[FIELD_COMMAND_SMS_CODES_NAME] =
             errors[FIELD_COMMAND_SMS_CODES_NAME] || {}
@@ -118,7 +122,7 @@ const globalValidate = DE_COC_combination_data => values => {
         }
     } else if (
         completenessMethod === AT_LEAST_ONE_DATAVALUE.value &&
-        !smsCodes.length
+        !smsCodesWithValue.length
     ) {
         errors[FIELD_COMMAND_SMS_CODES_NAME] =
             errors[FIELD_COMMAND_SMS_CODES_NAME] || {}
@@ -130,8 +134,8 @@ const globalValidate = DE_COC_combination_data => values => {
         })
     }
 
-    if (smsCodes.length) {
-        const duplicates = getSmsCodeDuplicates(smsCodes)
+    if (smsCodesWithValue.length) {
+        const duplicates = getSmsCodeDuplicates(smsCodesWithValue)
 
         if (duplicates.length) {
             const duplicateErrors = {}
@@ -152,12 +156,8 @@ const globalValidate = DE_COC_combination_data => values => {
     return errors
 }
 
-const onSubmitFactory = ({
-    commandId,
-    updateSmsCommand,
-    onAfterChange,
-}) => values => {
-    const smsCodes = values[FIELD_COMMAND_SMS_CODES_NAME]
+const formatSmsCodes = updates => {
+    const smsCodes = updates[FIELD_COMMAND_SMS_CODES_NAME]
     const formattedSmsCodes = Object.entries(smsCodes).map(
         ([id, { code, formula, compulsory, optionId }]) => {
             const [dataElementId] = id.split('-')
@@ -179,19 +179,10 @@ const onSubmitFactory = ({
         }
     )
 
-    const endpointPayload = {
-        ...values,
-        id: commandId,
+    return {
+        ...updates,
         [FIELD_COMMAND_SMS_CODES_NAME]: formattedSmsCodes,
     }
-
-    return updateSmsCommand(endpointPayload).then(response => {
-        if (response.status !== 'OK') {
-            throw new Error()
-        }
-
-        onAfterChange()
-    })
 }
 
 export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
@@ -202,25 +193,11 @@ export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
 
     const command = commandData?.smsCommand
 
-    /* required for validation
-     * DE  = Data Element
-     * COC = Category Option Combo
-     */
-    const {
-        error: loading_DE_COC_combinationsError,
-        data: DE_COC_combination_data,
-        refetch: fetchDataElementsWithCategoryOptionCombo,
-    } = useReadDataElementsWithCategoryOptionComboQuery({ lazy: true })
-
-    useEffect(() => {
-        const dataSetId = command?.dataset.id
-
-        if (dataSetId) {
-            fetchDataElementsWithCategoryOptionCombo({ dataSetId })
-        }
-    }, [command?.id])
-
-    const [updateSmsCommand] = useUpdateSmsCommandMutation()
+    const updateCommand = useUpdateCommand({
+        commandId,
+        onAfterChange,
+        formatCommand: formatSmsCodes,
+    })
 
     if (loadingCommandError) {
         const msg = i18n.t(
@@ -234,19 +211,7 @@ export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
         )
     }
 
-    if (loading_DE_COC_combinationsError) {
-        const msg = i18n.t(
-            'Something went wrong whilst loading the data element category combos'
-        )
-
-        return (
-            <NoticeBox error title={msg}>
-                {loading_DE_COC_combinationsError.message}
-            </NoticeBox>
-        )
-    }
-
-    if (!command || !DE_COC_combination_data) {
+    if (!command) {
         return (
             <CenteredContent>
                 <CircularLoader />
@@ -260,22 +225,39 @@ export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
     }
 
     const initialValues = getInitialFormState(command)
+    const DE_COC_combination_data = command.dataset.dataSetElements.reduce(
+        (curCombinations, { dataElement }) => {
+            const categoryOptionCombo =
+                dataElement.categoryCombo?.categoryOptionCombo
 
-    const onSubmit = onSubmitFactory({
-        commandId: command.id,
-        updateSmsCommand,
-        onAfterChange,
-    })
+            if (!categoryOptionCombo) {
+                return [...curCombinations, { dataElement }]
+            }
+
+            const combos = categoryOptionCombo.map(COC => ({
+                dataElement,
+                categoryOptionCombo: COC,
+            }))
+
+            return [...curCombinations, ...combos]
+        },
+        []
+    )
 
     return (
         <Form
-            onSubmit={onSubmit}
+            onSubmit={updateCommand}
             initialValues={initialValues}
             subscription={{ submitting: true, pristine: true }}
             validate={globalValidate(DE_COC_combination_data)}
         >
             {({ handleSubmit, submitting, form }) => (
-                <form onSubmit={handleSubmit}>
+                <form
+                    onSubmit={handleSubmit}
+                    data-test={dataTest(
+                        'commands-commandeditkeyvalueparserform'
+                    )}
+                >
                     {submitting && <p>SUBMITTING....</p>}
 
                     <FormRow>
@@ -373,14 +355,8 @@ export const CommandEditKeyValueParserForm = ({ commandId, onAfterChange }) => {
                         </FormRow>
                     </div>
 
-                    <Button
-                        type="submit"
-                        dataTest={dataTest('forms-gatewaygenericform-submit')}
-                    >
-                        {submitting
-                            ? i18n.t('Submitting...')
-                            : i18n.t('Save sms command')}
-                    </Button>
+                    <SubmitErrors />
+                    <SaveCommandButton />
                 </form>
             )}
         </Form>

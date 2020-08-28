@@ -1,16 +1,14 @@
 import {
-    Button,
     CenteredContent,
     CircularLoader,
     NoticeBox,
     ReactFinalForm,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import {
     FIELD_COMMAND_DEFAULT_MESSAGE_NAME,
-    FIELD_COMMAND_ID_NAME,
     FIELD_COMMAND_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME,
     FIELD_COMMAND_NAME_NAME,
     FIELD_COMMAND_NO_USER_MESSAGE_NAME,
@@ -35,10 +33,11 @@ import { FieldProgram } from '../program'
 import { FieldProgramStage } from '../programStage'
 import { FormRow } from '../forms'
 import { ProgramStageDataElements } from './ProgramStageDataElements'
+import { SaveCommandButton } from './SaveCommandButton'
+import { SubmitErrors } from './SubmitErrors'
 import { dataTest } from '../dataTest'
-import { useReadProgramStageDataElementsQuery } from './useReadProgramStageDataElementsQuery'
 import { useReadSmsCommandProgramStageDataEntryParserQuery } from './useReadSmsCommandProgramStageDataEntryParserQuery'
-import { useUpdateSmsCommandMutation } from './useUpdateSmsCommandMutation'
+import { useUpdateCommand } from './useUpdateCommand'
 import i18n from '../locales'
 
 const { Form } = ReactFinalForm
@@ -77,28 +76,12 @@ const getInitialFormState = command => {
     }
 }
 
-const onSubmitFactory = ({
-    commandId,
-    updateSmsCommand,
-    onAfterChange,
-}) => values => {
-    const formSmsCodes = values[FIELD_COMMAND_SMS_CODES_NAME]
-    const smsCodes = Object.values(formSmsCodes)
-
-    const endpointPayload = {
-        ...values,
-        [FIELD_COMMAND_SMS_CODES_NAME]: smsCodes,
-        [FIELD_COMMAND_ID_NAME]: commandId,
-    }
-
-    return updateSmsCommand(endpointPayload).then(response => {
-        if (response.status !== 'OK') {
-            throw new Error()
-        }
-
-        onAfterChange()
-    })
-}
+const formatSmsCodes = updates => ({
+    ...updates,
+    [FIELD_COMMAND_SMS_CODES_NAME]: Object.values(
+        updates[FIELD_COMMAND_SMS_CODES_NAME]
+    ),
+})
 
 export const CommandEditProgramStageDataEntryParserForm = ({
     commandId,
@@ -110,30 +93,14 @@ export const CommandEditProgramStageDataEntryParserForm = ({
     } = useReadSmsCommandProgramStageDataEntryParserQuery(commandId)
 
     const command = commandData?.smsCommand
-
-    /* required for validation
-     * DE  = Data Element
-     * COC = Category Option Combo
-     */
-    const {
-        error: loadingProgramStageDataElementsError,
-        data: programStageDataElementsData,
-        refetch: fetchProgramStageDataElements,
-    } = useReadProgramStageDataElementsQuery({ lazy: true })
-
-    useEffect(() => {
-        const programStageId = command?.programStage.id
-
-        if (programStageId) {
-            fetchProgramStageDataElements({ id: programStageId })
-        }
-    }, [command?.id])
-
     const programStageDataElements =
-        programStageDataElementsData?.programStageDataElements
-            .programStageDataElements
+        command?.programStage.programStageDataElements
 
-    const [updateSmsCommand] = useUpdateSmsCommandMutation()
+    const updateCommand = useUpdateCommand({
+        commandId,
+        onAfterChange,
+        formatCommand: formatSmsCodes,
+    })
 
     if (loadingCommandError) {
         const msg = i18n.t(
@@ -147,31 +114,13 @@ export const CommandEditProgramStageDataEntryParserForm = ({
         )
     }
 
-    if (loadingProgramStageDataElementsError) {
-        const msg = i18n.t(
-            'Something went wrong whilst loading the program stage data elements'
-        )
-
-        return (
-            <NoticeBox error title={msg}>
-                {loadingProgramStageDataElementsError.message}
-            </NoticeBox>
-        )
-    }
-
-    if (!command || !programStageDataElementsData) {
+    if (!command) {
         return (
             <CenteredContent>
                 <CircularLoader />
             </CenteredContent>
         )
     }
-
-    const onSubmit = onSubmitFactory({
-        commandId,
-        updateSmsCommand,
-        onAfterChange,
-    })
 
     const initialValues = getInitialFormState(command)
 
@@ -186,9 +135,14 @@ export const CommandEditProgramStageDataEntryParserForm = ({
     }
 
     return (
-        <Form onSubmit={onSubmit} initialValues={initialValues}>
-            {({ handleSubmit, values, submitting }) => (
-                <form onSubmit={handleSubmit}>
+        <Form onSubmit={updateCommand} initialValues={initialValues}>
+            {({ handleSubmit, values }) => (
+                <form
+                    onSubmit={handleSubmit}
+                    data-test={dataTest(
+                        'commands-commandeditprogramstagedataentryparserform'
+                    )}
+                >
                     <FormRow>
                         <FieldCommandName />
                     </FormRow>
@@ -248,14 +202,8 @@ export const CommandEditProgramStageDataEntryParserForm = ({
                         </FormRow>
                     )}
 
-                    <Button
-                        type="submit"
-                        dataTest={dataTest('forms-gatewaygenericform-submit')}
-                    >
-                        {submitting
-                            ? i18n.t('Submitting...')
-                            : i18n.t('Save sms command')}
-                    </Button>
+                    <SubmitErrors />
+                    <SaveCommandButton />
                 </form>
             )}
         </Form>

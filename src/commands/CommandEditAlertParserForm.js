@@ -1,25 +1,25 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 import {
-    Button,
     ReactFinalForm,
-    FinalForm,
     NoticeBox,
     CenteredContent,
     CircularLoader,
 } from '@dhis2/ui'
-import { useDataQuery, useDataEngine } from '@dhis2/app-runtime'
+import { useDataQuery } from '@dhis2/app-runtime'
 
-import { AlertContext } from '../notifications'
 import i18n from '../locales'
 import { FormRow } from '../forms'
 import { FieldCommandName } from './FieldCommandName'
 import { FieldCommandParser } from './FieldCommandParser'
 import { FieldCommandConfirmMessage } from './FieldCommandConfirmMessage'
 import { FieldUserGroup } from '../userGroup'
+import { SaveCommandButton } from './SaveCommandButton'
+import { SubmitErrors } from './SubmitErrors'
+import { dataTest } from '../dataTest'
+import { useUpdateCommand } from './useUpdateCommand'
 
 const { Form } = ReactFinalForm
-const { FORM_ERROR } = FinalForm
 
 const query = {
     smsCommand: {
@@ -36,37 +36,12 @@ const query = {
     },
 }
 
-const mutation = {
-    resource: 'smsCommands',
-    type: 'update',
-    partial: true,
-    id: ({ commandId }) => commandId,
-    data: ({ command }) => command,
-}
-
 export const CommandEditAlertParserForm = ({ commandId, onAfterChange }) => {
-    const { addAlert } = useContext(AlertContext)
-    const engine = useDataEngine()
-    const updateCommand = command =>
-        engine
-            .mutate(mutation, { variables: { command, commandId } })
-            .then(onAfterChange)
-            .catch(error => {
-                const isValidationError = error.type === 'access'
-
-                // Potential validation error, return it in a format final-form can handle
-                if (isValidationError) {
-                    const fallback = 'No error message was provided'
-                    const message = error.message || i18n.t(fallback)
-
-                    return {
-                        [FORM_ERROR]: message,
-                    }
-                }
-
-                // Notify on unexpected errors
-                addAlert({ type: 'critical', message: error.message })
-            })
+    const updateCommand = useUpdateCommand({
+        commandId,
+        onAfterChange,
+        replace: true,
+    })
 
     const { loading, error, data } = useDataQuery(query, {
         variables: { commandId },
@@ -108,45 +83,29 @@ export const CommandEditAlertParserForm = ({ commandId, onAfterChange }) => {
 
     return (
         <Form onSubmit={updateCommand} initialValues={initialValues}>
-            {({
-                handleSubmit,
-                submitting,
-                pristine,
-                submitError,
-                hasSubmitErrors,
-            }) => (
-                <form onSubmit={handleSubmit}>
+            {({ handleSubmit }) => (
+                <form
+                    onSubmit={handleSubmit}
+                    data-test={dataTest('commands-commandeditalertparserform')}
+                >
                     <FormRow>
                         <FieldCommandName />
                     </FormRow>
+
                     <FormRow>
                         <FieldCommandParser disabled />
                     </FormRow>
+
                     <FormRow>
                         <FieldUserGroup disabled userGroups={userGroups} />
                     </FormRow>
+
                     <FormRow>
                         <FieldCommandConfirmMessage />
                     </FormRow>
-                    {hasSubmitErrors && (
-                        <FormRow>
-                            <NoticeBox
-                                error
-                                title={i18n.t(
-                                    'Something went wrong whilst submitting the form'
-                                )}
-                            >
-                                {submitError}
-                            </NoticeBox>
-                        </FormRow>
-                    )}
-                    <Button
-                        type="submit"
-                        disabled={pristine || submitting}
-                        icon={submitting ? <CircularLoader small /> : null}
-                    >
-                        {i18n.t('Save sms command')}
-                    </Button>
+
+                    <SubmitErrors />
+                    <SaveCommandButton />
                 </form>
             )}
         </Form>
