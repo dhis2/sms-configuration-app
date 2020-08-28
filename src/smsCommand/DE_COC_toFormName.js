@@ -1,4 +1,4 @@
-import { FIELD_COMMAND_SMS_CODES_NAME } from './fieldNames'
+import { FIELD_COMMAND_SMS_CODES_NAME } from '../smsCommandFields'
 
 export const DE_COC_toFormName = (dataElement, categoryOptionCombo) => {
     const dataElementId = dataElement.id

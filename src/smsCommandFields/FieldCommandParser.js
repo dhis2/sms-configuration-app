@@ -3,7 +3,7 @@ import { SingleSelectFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 
 import { FIELD_COMMAND_PARSER_NAME } from './fieldNames'
-import * as commandTypes from './types'
+import * as commandTypes from './parserTypes'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 

@@ -6,7 +6,7 @@ import { FIELD_COMMAND_SMS_CODES_NAME } from './fieldNames'
 import { FieldDataElementWithCategoryOptionCombo } from './FieldDataElementWithCategoryOptionCombo'
 import { FormRow } from '../forms'
 import i18n from '../locales'
-import styles from './DataElementTimesCategoryOptionCombo.module.css'
+import styles from './DataElementTimesCategoryOptionCombos.module.css'
 
 const { FormSpy } = ReactFinalForm
 

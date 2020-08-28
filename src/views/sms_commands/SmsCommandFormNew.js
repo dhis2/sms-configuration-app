@@ -13,8 +13,8 @@ import {
     UNREGISTERED_PARSER,
     FieldCommandName,
     FieldCommandParser,
-    useCreateSmsCommandMutation,
-} from '../../commands'
+} from '../../smsCommandFields'
+import { useCreateSmsCommandMutation } from '../../smsCommand'
 import { FieldDataSetWithAutoLoad } from '../../dataSet'
 import { FIELD_PROGRAM_NAME, FieldProgramWithAutoLoad } from '../../program'
 import {
