@@ -1,5 +1,6 @@
 import { useHistory, useParams } from 'react-router-dom'
 import React from 'react'
+import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 
 import { GATEWAY_CONFIG_LIST_PATH } from './GatewayConfigList'
 import {
@@ -16,7 +17,6 @@ import {
 } from '../../gateways'
 import { PageHeadline } from '../../headline'
 import { dataTest } from '../../dataTest'
-import { useCriticalNotification } from '../../notifications'
 import i18n from '../../locales'
 
 export const GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC = '/sms-gateway/edit'
@@ -26,26 +26,53 @@ export const GatewayConfigFormEdit = () => {
     const history = useHistory()
     const { id } = useParams()
 
-    const { loading, error, data: jsonData } = useReadGatewayQuery(id)
-    useCriticalNotification(error)
+    const { loading, error: loadError, data: jsonData } = useReadGatewayQuery(
+        id
+    )
 
     const [
         saveGenericGateway,
         { error: saveGenericGatewayError },
     ] = useUpdateGenericGatewayMutation()
-    useCriticalNotification(saveGenericGatewayError)
 
     const [
         saveBulkSMSGateway,
         { error: saveBulkSMSGatewayError },
     ] = useUpdateBulkSMSGatewayMutation()
-    useCriticalNotification(saveBulkSMSGatewayError)
 
     const [
         saveClickatellGateway,
         { error: saveClickatellGatewayError },
     ] = useUpdateClickatellGatewayMutation()
-    useCriticalNotification(saveClickatellGatewayError)
+
+    const saveError =
+        saveGenericGatewayError ||
+        saveBulkSMSGatewayError ||
+        saveClickatellGatewayError
+
+    if (loading) {
+        return (
+            <React.Fragment>
+                <PageHeadline>{i18n.t('Edit')}</PageHeadline>
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            </React.Fragment>
+        )
+    }
+
+    if (loadError) {
+        const msg = i18n.t('Something went wrong whilst loading gateways')
+
+        return (
+            <React.Fragment>
+                <PageHeadline>{i18n.t('Edit')}</PageHeadline>
+                <NoticeBox error title={msg}>
+                    {loadError.message}
+                </NoticeBox>
+            </React.Fragment>
+        )
+    }
 
     const data =
         /**
@@ -83,9 +110,6 @@ export const GatewayConfigFormEdit = () => {
     return (
         <div data-test={dataTest('views-gatewayconfigformedit')}>
             <PageHeadline>Edit</PageHeadline>
-
-            {loading && i18n.t('Loading...')}
-            {error && i18n.t('Error: {{error}}', { error: error.message })}
             {data?.gateway && (
                 <div
                     data-test={dataTest(
@@ -93,6 +117,17 @@ export const GatewayConfigFormEdit = () => {
                     )}
                     data-gateway-id={data.gateway.uid}
                 >
+                    {saveError && (
+                        <NoticeBox
+                            error
+                            title={i18n.t(
+                                'Something went wrong whilst saving gateways'
+                            )}
+                        >
+                            {saveError.message}
+                        </NoticeBox>
+                    )}
+
                     {gatewayType === GENERIC_FORM && (
                         <GatewayGenericForm
                             initialValues={data.gateway}
