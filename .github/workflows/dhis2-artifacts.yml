@@ -20,3 +20,4 @@ jobs:
             - uses: dhis2/deploy-build@master
               with:
                   github-token: ${{ env.GH_TOKEN }}
+                  build-dir: build/app
