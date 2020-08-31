@@ -1,4 +1,5 @@
 # sms-configuration-app
+
 New DHIS2 SMS web app
 
 This project was bootstrapped with [DHIS2 Application Platform](https://github.com/dhis2/app-platform).
