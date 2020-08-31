@@ -96,7 +96,6 @@ export const GatewayConfigList = () => {
 
             {showDeleteDialog && (
                 <DeleteGatewaysConfirmationDialog
-                    ids={checkedGateways}
                     onCancelClick={() => setShowDeleteDialog(false)}
                     onDeleteClick={onDeleteClick}
                 />
