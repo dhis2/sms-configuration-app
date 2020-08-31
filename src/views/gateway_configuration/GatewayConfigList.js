@@ -1,8 +1,8 @@
 import { useHistory } from 'react-router-dom'
 import React, { useState } from 'react'
+import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 
 import { GATEWAY_CONFIG_FORM_NEW_PATH } from './GatewayConfigFormNew'
-import { useCriticalNotification } from '../../notifications'
 import {
     DeleteGatewaysConfirmationDialog,
     GatewayList,
@@ -53,10 +53,35 @@ export const GatewayConfigList = () => {
         makeGatewayDefault(variables).then(refetchReadGateways)
     }
 
-    useCriticalNotification(errorDelete)
-    useCriticalNotification(errorSetDefault)
-
     const loading = loadingReadGateways || loadingDelete || loadingSetDefault
+
+    if (loading) {
+        return (
+            <React.Fragment>
+                <PageHeadline>{GATEWAY_CONFIG_LIST_LABEL}</PageHeadline>
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            </React.Fragment>
+        )
+    }
+
+    const error = errorReadGateways || errorDelete || errorSetDefault
+
+    if (error) {
+        const msg = i18n.t(
+            'Something went wrong whilst performing the requested operation'
+        )
+
+        return (
+            <React.Fragment>
+                <PageHeadline>{GATEWAY_CONFIG_LIST_LABEL}</PageHeadline>
+                <NoticeBox error title={msg}>
+                    {error.message}
+                </NoticeBox>
+            </React.Fragment>
+        )
+    }
 
     return (
         <div
@@ -67,7 +92,7 @@ export const GatewayConfigList = () => {
 
             <p>
                 {i18n.t(
-                    'There are five different types of Gateways supported by SMS Service. SMS can be sent if any one of the gateway is configured. If more than one gateways are present, then they will be used in round-robin fashion for load balancing'
+                    'There are five different types of Gateways supported by the SMS Service. SMSes can be sent if at least one of the gateway types is configured. If more than one gateway has been configured they will all be used in a round-robin fashion for load balancing'
                 )}
             </p>
 
@@ -81,9 +106,6 @@ export const GatewayConfigList = () => {
                 disableDelete={!checkedGateways.length || loadingDelete}
             />
 
-            {loadingReadGateways && i18n.t('Loading gateway configurations')}
-            {errorReadGateways &&
-                i18n.t('Something went wrong: %s', errorReadGateways.message)}
             {data?.gateways?.gateways && (
                 <GatewayList
                     processing={loading}
