@@ -5,148 +5,16 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-08-28T11:33:49.940Z\n"
-"PO-Revision-Date: 2020-08-28T11:33:49.940Z\n"
+"POT-Creation-Date: 2020-08-31T15:33:00.740Z\n"
+"PO-Revision-Date: 2020-08-31T15:33:00.740Z\n"
 
-msgid "Something went wrong whilst loading the sms command"
-msgstr ""
-
-msgid "Something went wrong whilst loading the command's details"
-msgstr ""
-
-msgid "Program Stage Data Elements"
-msgstr ""
-
-msgid "Save sms command"
-msgstr ""
-
-msgid "You either have to provide all values or none"
-msgstr ""
-
-msgid "Duplicate value!"
-msgstr ""
-
-msgid "Something went wrong whilst loading the data element category combos"
-msgstr ""
-
-msgid "Tracked entity attribute"
-msgstr ""
-
-msgid "Something went wrong whilst submitting the form"
-msgstr ""
-
-msgid "Add special character"
-msgstr ""
-
-msgid "Data element category combination"
-msgstr ""
-
-msgid "Data element category combination validation error"
+msgid "Data set"
 msgstr ""
 
 msgid "Delete confirmation"
 msgstr ""
 
 msgid "Name"
-msgstr ""
-
-msgid "Cancel"
-msgstr ""
-
-msgid "Delete command configurations"
-msgstr ""
-
-msgid "Completeness method"
-msgstr ""
-
-msgid "Confirm Message"
-msgstr ""
-
-msgid "Reply message if no codes are sent (only the command)"
-msgstr ""
-
-msgid "More than one OrgUnit message"
-msgstr ""
-
-msgid "No user message"
-msgstr ""
-
-msgid "Parser"
-msgstr ""
-
-msgid "Field separator"
-msgstr ""
-
-msgid "Special character name"
-msgstr ""
-
-msgid "Special character value"
-msgstr ""
-
-msgid "Remove"
-msgstr ""
-
-msgid "Success message"
-msgstr ""
-
-msgid "Use current period for reporting"
-msgstr ""
-
-msgid "Wrong format message"
-msgstr ""
-
-msgid "default"
-msgstr ""
-
-msgid "Change formula"
-msgstr ""
-
-msgid "Add formula"
-msgstr ""
-
-msgid "Data element"
-msgstr ""
-
-msgid "formula operator"
-msgstr ""
-
-msgid "Save"
-msgstr ""
-
-msgid "Submitting..."
-msgstr ""
-
-msgid "Receive all data value"
-msgstr ""
-
-msgid "Receive at least one data value"
-msgstr ""
-
-msgid "Do not mark as complete"
-msgstr ""
-
-msgid "Key value parser"
-msgstr ""
-
-msgid "J2ME parser"
-msgstr ""
-
-msgid "Alert parser"
-msgstr ""
-
-msgid "Unregistered parser"
-msgstr ""
-
-msgid "Tracked entity registration parser"
-msgstr ""
-
-msgid "Program stage data entry parser"
-msgstr ""
-
-msgid "Event registration parser"
-msgstr ""
-
-msgid "Data set"
 msgstr ""
 
 msgid "Is default"
@@ -171,6 +39,9 @@ msgid "Save BulkSMS gateway"
 msgstr ""
 
 msgid "Add BulkSMS gateway"
+msgstr ""
+
+msgid "Submitting..."
 msgstr ""
 
 msgid "Save Clickatell gateway"
@@ -249,6 +120,132 @@ msgid "Program"
 msgstr ""
 
 msgid "ProgramStage"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Delete command configurations"
+msgstr ""
+
+msgid "Save sms command"
+msgstr ""
+
+msgid "Something went wrong whilst submitting the form"
+msgstr ""
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr ""
+
+msgid "Something went wrong whilst loading the command's details"
+msgstr ""
+
+msgid "Program Stage Data Elements"
+msgstr ""
+
+msgid "Add special character"
+msgstr ""
+
+msgid "Data element category combination"
+msgstr ""
+
+msgid "Data element category combination validation error"
+msgstr ""
+
+msgid "Completeness method"
+msgstr ""
+
+msgid "Confirm Message"
+msgstr ""
+
+msgid "Reply message if no codes are sent (only the command)"
+msgstr ""
+
+msgid "More than one OrgUnit message"
+msgstr ""
+
+msgid "No user message"
+msgstr ""
+
+msgid "Parser"
+msgstr ""
+
+msgid "Field separator"
+msgstr ""
+
+msgid "Special character name"
+msgstr ""
+
+msgid "Special character value"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Success message"
+msgstr ""
+
+msgid "Use current period for reporting"
+msgstr ""
+
+msgid "Wrong format message"
+msgstr ""
+
+msgid "default"
+msgstr ""
+
+msgid "Change formula"
+msgstr ""
+
+msgid "Add formula"
+msgstr ""
+
+msgid "Data element"
+msgstr ""
+
+msgid "formula operator"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Receive all data value"
+msgstr ""
+
+msgid "Receive at least one data value"
+msgstr ""
+
+msgid "Do not mark as complete"
+msgstr ""
+
+msgid "Key value parser"
+msgstr ""
+
+msgid "J2ME parser"
+msgstr ""
+
+msgid "Alert parser"
+msgstr ""
+
+msgid "Unregistered parser"
+msgstr ""
+
+msgid "Tracked entity registration parser"
+msgstr ""
+
+msgid "Program stage data entry parser"
+msgstr ""
+
+msgid "Event registration parser"
+msgstr ""
+
+msgid "You either have to provide all values or none"
+msgstr ""
+
+msgid "Duplicate value!"
+msgstr ""
+
+msgid "Tracked entity attribute"
 msgstr ""
 
 msgid "UserGroup"

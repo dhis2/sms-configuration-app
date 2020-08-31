@@ -9,7 +9,7 @@
 }
 
 .left > * {
-    margin-right: 4px;
+    margin-right: var(--spacers-dp4);
 }
 
 .right {
@@ -19,16 +19,16 @@
 }
 
 .amount {
-    margin-right: 24px;
+    margin-right: var(--spacers-dp24);
 }
 
 .pageselection {
     display: flex;
     align-items: center;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: var(--spacers-dp12);
+    margin-right: var(--spacers-dp12);
 }
 
 .pageselection > * {
-    margin-right: 4px;
+    margin-right: var(--spacers-dp4);
 }
