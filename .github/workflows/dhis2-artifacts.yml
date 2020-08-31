@@ -17,6 +17,18 @@ jobs:
               with:
                   node-version: 12.x
 
+            - name: Install
+              run: yarn install --frozen-lockfile
+
+            - name: Lint
+              run: yarn lint
+
+            - name: Build
+              run: yarn build
+
+            - name: Test
+              run: yarn test
+
             - uses: dhis2/deploy-build@master
               with:
                   github-token: ${{ env.GH_TOKEN }}
