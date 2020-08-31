@@ -33,16 +33,6 @@ const App = () => (
         <CssVariables spacers colors />
         <BrowserRouter>
             <CssVariables colors />
-
-            {
-                // Use this notice if we really want display the message
-                // Discuss with Phil and Joe first!
-                //
-                // import { ModuleNotice } from './moduleNotice'
-                // <ModuleNotice />
-                ''
-            }
-
             <div className={styles.container} data-test={dataTest('app')}>
                 <div className={styles.sidebar}>
                     <Navigation />
