@@ -8,6 +8,9 @@ import {
     TableRowHead,
     TableCell,
     TableCellHead,
+    NoticeBox,
+    CenteredContent,
+    CircularLoader,
 } from '@dhis2/ui'
 import { useHistory } from 'react-router-dom'
 import React, { useState } from 'react'
@@ -47,8 +50,36 @@ export const SmsCommandList = () => {
 
     const [
         deleteSmsCommands,
-        { loading: loadingDelete /*, error: errorDelete */ },
+        { loading: loadingDelete, error: errorDelete },
     ] = useDeleteSmsCommandMutation()
+
+    if (loadingReadSmsCommands) {
+        return (
+            <div data-test={dataTest('views-smscommandlist')}>
+                <PageHeadline>{SMS_COMMAND_LIST_LABEL}</PageHeadline>
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            </div>
+        )
+    }
+
+    const error = errorReadSmsCommands || errorDelete
+
+    if (error) {
+        const msg = i18n.t(
+            'Something went wrong whilst performing the requested operation'
+        )
+
+        return (
+            <div data-test={dataTest('views-smscommandlist')}>
+                <PageHeadline>{SMS_COMMAND_LIST_LABEL}</PageHeadline>
+                <NoticeBox error title={msg}>
+                    {error.message}
+                </NoticeBox>
+            </div>
+        )
+    }
 
     const onToggleCallChange = () => {
         const smsCommands = data?.smsCommands?.smsCommands
@@ -122,13 +153,6 @@ export const SmsCommandList = () => {
                     onDeleteClick={onDeleteClick}
                 />
             )}
-
-            {loadingReadSmsCommands && i18n.t('Loading gateway configurations')}
-            {errorReadSmsCommands &&
-                i18n.t(
-                    'Something went wrong: %s',
-                    errorReadSmsCommands.message
-                )}
 
             <Table>
                 <TableHead>
