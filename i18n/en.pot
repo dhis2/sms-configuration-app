@@ -5,22 +5,22 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-01T09:07:30.938Z\n"
-"PO-Revision-Date: 2020-09-01T09:07:30.938Z\n"
+"POT-Creation-Date: 2020-09-01T09:08:03.945Z\n"
+"PO-Revision-Date: 2020-09-01T09:08:03.945Z\n"
 
 msgid "Data set"
 msgstr ""
 
-msgid "Delete confirmation"
+msgid "Confirm deletion"
 msgstr ""
 
-msgid "Name"
-msgstr ""
-
-msgid "Is default"
+msgid "Are you sure you want to delete the selected gateways?"
 msgstr ""
 
 msgid "Auth token"
+msgstr ""
+
+msgid "Name"
 msgstr ""
 
 msgid "Password"
@@ -104,22 +104,13 @@ msgstr ""
 msgid "Generic"
 msgstr ""
 
-msgid "This app is not stable yet"
-msgstr ""
-
-msgid "Loading link..."
-msgstr ""
-
-msgid "Go to mobile configuration app"
-msgstr ""
-
-msgid "Hide this message"
-msgstr ""
-
 msgid "Program"
 msgstr ""
 
 msgid "ProgramStage"
+msgstr ""
+
+msgid "Delete confirmation"
 msgstr ""
 
 msgid "Cancel"
@@ -251,7 +242,10 @@ msgstr ""
 msgid "UserGroup"
 msgstr ""
 
-msgid "Loading..."
+msgid "Something went wrong whilst loading gateways"
+msgstr ""
+
+msgid "Something went wrong whilst saving gateways"
 msgstr ""
 
 msgid "Gateway type"
