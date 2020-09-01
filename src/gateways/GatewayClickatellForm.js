@@ -16,8 +16,8 @@ const { Form } = ReactFinalForm
 
 export const GatewayClickatellForm = ({ onSubmit, initialValues }) => {
     const submitText = initialValues
-        ? i18n.t('Save Clickatell gateway')
-        : i18n.t('Add Clickatell gateway')
+        ? i18n.t('Save gateway')
+        : i18n.t('Add gateway')
 
     return (
         <Form onSubmit={onSubmit} initialValues={initialValues}>

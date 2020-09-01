@@ -109,7 +109,7 @@ export const GatewayConfigFormEdit = () => {
 
     return (
         <div data-test={dataTest('views-gatewayconfigformedit')}>
-            <PageHeadline>Edit</PageHeadline>
+            <PageHeadline>{i18n.t('Edit gateway')}</PageHeadline>
             {data?.gateway && (
                 <div
                     data-test={dataTest(
