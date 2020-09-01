@@ -8,7 +8,15 @@ import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
 const { Field } = ReactFinalForm
-const options = Object.values(commandTypes)
+const options = Object.values(commandTypes).sort((a, b) => {
+    if (a.label < b.label) {
+        return -1
+    }
+    if (a.label > b.label) {
+        return 1
+    }
+    return 0
+})
 
 export const FieldCommandParser = ({ disabled }) => (
     <Field
