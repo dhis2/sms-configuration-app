@@ -15,7 +15,7 @@ import DeleteSelectedButton from './DeleteSelectedButton'
 import RefetchSms from './RefetchSms'
 import s from './SentSmsList.module.css'
 
-export const SENT_SMS_LIST_LABEL = i18n.t('List of sent SMSes')
+export const SENT_SMS_LIST_LABEL = i18n.t('Sent')
 export const SENT_SMS_LIST_PATH = '/sent'
 
 const parseParams = ({ status, page, pageSize }) => {
