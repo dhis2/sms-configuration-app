@@ -92,7 +92,7 @@ export const GatewayConfigList = () => {
 
             <p>
                 {i18n.t(
-                    'There are five different types of Gateways supported by the SMS Service. SMSes can be sent if at least one of the gateway types is configured. If more than one gateway has been configured they will all be used in a round-robin fashion for load balancing'
+                    'There are five different types of gateways supported by the SMS service. SMSes can be sent if at least one of the gateway types has been configured. If more than one gateway has been configured they will all be used in a round-robin fashion for load balancing'
                 )}
             </p>
 

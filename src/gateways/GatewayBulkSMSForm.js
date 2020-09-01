@@ -15,8 +15,8 @@ const { Form } = ReactFinalForm
 
 export const GatewayBulkSMSForm = ({ onSubmit, initialValues }) => {
     const submitText = initialValues
-        ? i18n.t('Save BulkSMS gateway')
-        : i18n.t('Add BulkSMS gateway')
+        ? i18n.t('Save gateway')
+        : i18n.t('Add gateway')
 
     return (
         <Form onSubmit={onSubmit} initialValues={initialValues}>

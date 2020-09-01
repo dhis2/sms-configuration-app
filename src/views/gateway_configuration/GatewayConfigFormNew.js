@@ -64,11 +64,11 @@ export const GatewayConfigFormNew = () => {
 
     return (
         <div data-test={dataTest('views-gatewayconfigformnew')}>
-            <PageHeadline>SMS Gateway Configuration</PageHeadline>
+            <PageHeadline>{i18n.t('Add gateway')}</PageHeadline>
 
             <FormRow>
                 <SingleSelectField
-                    label={i18n.t('Gateway type')}
+                    label={i18n.t('Type')}
                     onChange={({ selected }) => setVisibleForm(selected)}
                     selected={visibleForm}
                     dataTest={dataTest(
@@ -77,17 +77,17 @@ export const GatewayConfigFormNew = () => {
                 >
                     <SingleSelectOption
                         value={GENERIC_FORM}
-                        label={i18n.t('Generic form')}
+                        label={i18n.t('Generic')}
                     />
 
                     <SingleSelectOption
                         value={BULK_SMS_FORM}
-                        label={i18n.t('BulkSMS form')}
+                        label={i18n.t('BulkSMS')}
                     />
 
                     <SingleSelectOption
                         value={CLICKATELL_FORM}
-                        label={i18n.t('Clickatell form')}
+                        label={i18n.t('Clickatell')}
                     />
                 </SingleSelectField>
             </FormRow>

@@ -1,4 +1,4 @@
-import { Button, ReactFinalForm } from '@dhis2/ui'
+import { Button, ReactFinalForm, NoticeBox } from '@dhis2/ui'
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
@@ -16,8 +16,8 @@ const { Form } = ReactFinalForm
 
 export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
     const submitText = initialValues
-        ? i18n.t('Save generic gateway')
-        : i18n.t('Add generic gateway')
+        ? i18n.t('Save gateway')
+        : i18n.t('Add gateway')
 
     return (
         <Form onSubmit={onSubmit} initialValues={initialValues}>
@@ -39,12 +39,14 @@ export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
                     ))}
 
                     <FormRow>
-                        <p style={{ margin: '0 0 8px' }}>
+                        <NoticeBox>
                             {i18n.t(
-                                'In generic http gateway any number of parameters can be added.'
+                                'With a generic http gateway any number of parameters can be added with key value pairs'
                             )}
-                        </p>
+                        </NoticeBox>
+                    </FormRow>
 
+                    <FormRow>
                         <GatewayAddKeyValuePair />
                     </FormRow>
 
