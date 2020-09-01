@@ -67,7 +67,7 @@ export const GatewayKeyValuePair = ({ index }) => {
                         className={styles.checkbox}
                         type="checkbox"
                         name={`parameters[${index}].header`}
-                        label={i18n.t('Is header')}
+                        label={i18n.t('Send as header')}
                         component={CheckboxFieldFF}
                     />
 
