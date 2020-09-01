@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useDataQuery } from '@dhis2/app-service-data'
-import i18n from '@dhis2/d2-i18n'
 import { dataTest } from '../../dataTest'
 import { Filter } from './Filter'
 import { DeleteSelectedButton } from './DeleteSelectedButton'
@@ -49,7 +48,7 @@ const ReceivedSmsList = () => {
 
     return (
         <div data-test={dataTest('views-receivedsmslist')}>
-            <PageHeadline>{i18n.t('List of received SMS')}</PageHeadline>
+            <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
             <div className={styles.topBar}>
                 <Filter loading={loading} />
                 <DeleteSelectedButton

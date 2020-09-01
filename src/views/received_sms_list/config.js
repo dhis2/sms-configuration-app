@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 
-export const RECEIVED_SMS_LIST_LABEL = i18n.t('Received sms')
+export const RECEIVED_SMS_LIST_LABEL = i18n.t('Received')
 export const RECEIVED_SMS_LIST_PATH = '/received'
 
 export const STATUS_ALL = 'ALL'
