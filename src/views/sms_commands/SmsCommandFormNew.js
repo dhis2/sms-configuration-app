@@ -1,4 +1,4 @@
-import { ButtonStrip, Button, ReactFinalForm } from '@dhis2/ui'
+import { Button, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useEffect, useState } from 'react'
 
@@ -23,7 +23,7 @@ import {
 } from '../../programStage'
 import { FieldUserGroupWithAutoLoad } from '../../userGroup'
 import { FormRow } from '../../forms'
-import { dataTest } from '../../dataTest'
+import { PageHeadline } from '../../headline'
 import i18n from '../../locales'
 
 const { Form, useForm } = ReactFinalForm
@@ -100,51 +100,50 @@ const ActualForm = ({ handleSubmit, submitting }) => {
         parserType === EVENT_REGISTRATION_PARSER.value ? false : undefined
 
     return (
-        <form onSubmit={handleSubmit}>
-            <FormRow>
-                <FieldCommandName />
-            </FormRow>
-
-            <FormRow>
-                <FieldCommandParser />
-            </FormRow>
-
-            {showDataSetField && (
+        <div>
+            <PageHeadline>{i18n.t('Add command')}</PageHeadline>
+            <form onSubmit={handleSubmit}>
                 <FormRow>
-                    <FieldDataSetWithAutoLoad />
+                    <FieldCommandName />
                 </FormRow>
-            )}
 
-            {showUserGroupField && (
                 <FormRow>
-                    <FieldUserGroupWithAutoLoad />
+                    <FieldCommandParser />
                 </FormRow>
-            )}
 
-            {showProgramField && (
-                <FormRow>
-                    <FieldProgramWithAutoLoad registration={registration} />
-                </FormRow>
-            )}
+                {showDataSetField && (
+                    <FormRow>
+                        <FieldDataSetWithAutoLoad />
+                    </FormRow>
+                )}
 
-            {showProgramStageField && (
-                <FormRow>
-                    <FieldProgramStageWithAutoLoad programId={program || ''} />
-                </FormRow>
-            )}
+                {showUserGroupField && (
+                    <FormRow>
+                        <FieldUserGroupWithAutoLoad />
+                    </FormRow>
+                )}
 
-            <ButtonStrip dataTest={dataTest('@TODO')}>
-                <Button onClick={() => console.log('@TODO')} secondary>
-                    {i18n.t('Cancel')}
-                </Button>
+                {showProgramField && (
+                    <FormRow>
+                        <FieldProgramWithAutoLoad registration={registration} />
+                    </FormRow>
+                )}
+
+                {showProgramStageField && (
+                    <FormRow>
+                        <FieldProgramStageWithAutoLoad
+                            programId={program || ''}
+                        />
+                    </FormRow>
+                )}
 
                 <Button primary type="submit">
                     {submitting
                         ? i18n.t('Submitting...')
-                        : i18n.t('Add sms command')}
+                        : i18n.t('Add command')}
                 </Button>
-            </ButtonStrip>
-        </form>
+            </form>
+        </div>
     )
 }
 

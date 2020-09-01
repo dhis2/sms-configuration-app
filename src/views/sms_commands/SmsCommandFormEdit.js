@@ -2,6 +2,7 @@ import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import { useHistory, useParams } from 'react-router-dom'
 import React from 'react'
 
+import { PageHeadline } from '../../headline'
 import {
     isParserType,
     useReadSmsCommandParserTypeQuery,
@@ -59,6 +60,8 @@ export const SmsCommandFormEdit = () => {
 
     return (
         <div>
+            <PageHeadline>{i18n.t('Edit command')}</PageHeadline>
+
             {parserType && isParser(KEY_VALUE_PARSER) && (
                 <CommandEditKeyValueParserForm
                     commandId={id}

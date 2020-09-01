@@ -14,11 +14,12 @@ export const SaveCommandButton = () => {
 
     return (
         <Button
+            primary
             type="submit"
             disabled={pristine || submitting}
             icon={submitting ? <CircularLoader small /> : null}
         >
-            {submitting ? i18n.t('Submitting...') : i18n.t('Save sms command')}
+            {submitting ? i18n.t('Submitting...') : i18n.t('Save command')}
         </Button>
     )
 }
