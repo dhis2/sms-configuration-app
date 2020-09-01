@@ -55,12 +55,12 @@ export const SentSmsList = () => {
 
     if (loading) {
         return (
-            <React.Fragment>
+            <>
                 <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
                 <CenteredContent>
                     <CircularLoader />
                 </CenteredContent>
-            </React.Fragment>
+            </>
         )
     }
 
@@ -68,12 +68,12 @@ export const SentSmsList = () => {
         const msg = i18n.t('Something went wrong whilst loading sent SMSes')
 
         return (
-            <React.Fragment>
+            <>
                 <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
                 <NoticeBox error title={msg}>
                     {error.message}
                 </NoticeBox>
-            </React.Fragment>
+            </>
         )
     }
 

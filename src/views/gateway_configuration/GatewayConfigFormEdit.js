@@ -52,12 +52,12 @@ export const GatewayConfigFormEdit = () => {
 
     if (loading) {
         return (
-            <React.Fragment>
+            <>
                 <PageHeadline>{i18n.t('Edit')}</PageHeadline>
                 <CenteredContent>
                     <CircularLoader />
                 </CenteredContent>
-            </React.Fragment>
+            </>
         )
     }
 
@@ -65,12 +65,12 @@ export const GatewayConfigFormEdit = () => {
         const msg = i18n.t('Something went wrong whilst loading gateways')
 
         return (
-            <React.Fragment>
+            <>
                 <PageHeadline>{i18n.t('Edit')}</PageHeadline>
                 <NoticeBox error title={msg}>
                     {loadError.message}
                 </NoticeBox>
-            </React.Fragment>
+            </>
         )
     }
 
