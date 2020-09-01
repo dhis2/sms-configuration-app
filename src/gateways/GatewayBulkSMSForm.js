@@ -38,6 +38,7 @@ export const GatewayBulkSMSForm = ({ onSubmit, initialValues }) => {
                     </FormRow>
 
                     <Button
+                        primary
                         type="submit"
                         dataTest={dataTest('forms-gatewaybulksmsform-submit')}
                     >

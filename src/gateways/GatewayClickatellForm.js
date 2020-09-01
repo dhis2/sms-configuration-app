@@ -43,6 +43,7 @@ export const GatewayClickatellForm = ({ onSubmit, initialValues }) => {
                     </FormRow>
 
                     <Button
+                        primary
                         type="submit"
                         dataTest={dataTest(
                             'forms-gatewayclickatellform-submit'
