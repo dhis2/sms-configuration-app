@@ -4,7 +4,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import { NoticeBox } from '@dhis2/ui'
 
 const SmsTableError = ({ message }) => (
-    <NoticeBox error title={i18n.t('Could not load list of received SMSs')}>
+    <NoticeBox error title={i18n.t('Could not load list of received SMSes')}>
         {message}
     </NoticeBox>
 )

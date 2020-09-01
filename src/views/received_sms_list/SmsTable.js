@@ -63,7 +63,7 @@ const SmsTable = ({
                 {messages.length === 0 ? (
                     <TableRow>
                         <TableCell colSpan="7" className={styles.noResults}>
-                            {i18n.t('No received SMSs to display')}
+                            {i18n.t('No SMSes to display')}
                         </TableCell>
                     </TableRow>
                 ) : (
