@@ -5,10 +5,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-01T09:08:32.091Z\n"
-"PO-Revision-Date: 2020-09-01T09:08:32.091Z\n"
+"POT-Creation-Date: 2020-09-01T12:00:39.575Z\n"
+"PO-Revision-Date: 2020-09-01T12:00:39.575Z\n"
 
-msgid "Data set"
+msgid "Dataset"
 msgstr ""
 
 msgid "Confirm deletion"
@@ -35,28 +35,18 @@ msgstr ""
 msgid "Add key value pair"
 msgstr ""
 
-msgid "Save BulkSMS gateway"
+msgid "Save gateway"
 msgstr ""
 
-msgid "Add BulkSMS gateway"
+msgid "Add gateway"
 msgstr ""
 
 msgid "Submitting..."
 msgstr ""
 
-msgid "Save Clickatell gateway"
-msgstr ""
-
-msgid "Add Clickatell gateway"
-msgstr ""
-
-msgid "Save generic gateway"
-msgstr ""
-
-msgid "Add generic gateway"
-msgstr ""
-
-msgid "In generic http gateway any number of parameters can be added."
+msgid ""
+"With a generic http gateway any number of parameters can be added with key "
+"value pairs"
 msgstr ""
 
 msgid "Key"
@@ -107,7 +97,7 @@ msgstr ""
 msgid "Program"
 msgstr ""
 
-msgid "ProgramStage"
+msgid "Program stage"
 msgstr ""
 
 msgid "Delete confirmation"
@@ -119,7 +109,7 @@ msgstr ""
 msgid "Delete command configurations"
 msgstr ""
 
-msgid "Save sms command"
+msgid "Save command"
 msgstr ""
 
 msgid "Something went wrong whilst submitting the form"
@@ -131,7 +121,7 @@ msgstr ""
 msgid "Something went wrong whilst loading the command's details"
 msgstr ""
 
-msgid "Program Stage Data Elements"
+msgid "Program stage data elements"
 msgstr ""
 
 msgid "Add special character"
@@ -146,13 +136,13 @@ msgstr ""
 msgid "Completeness method"
 msgstr ""
 
-msgid "Confirm Message"
+msgid "Confirm message"
 msgstr ""
 
 msgid "Reply message if no codes are sent (only the command)"
 msgstr ""
 
-msgid "More than one OrgUnit message"
+msgid "More than one orgunit message"
 msgstr ""
 
 msgid "No user message"
@@ -239,44 +229,29 @@ msgstr ""
 msgid "Tracked entity attribute"
 msgstr ""
 
-msgid "UserGroup"
+msgid "Usergroup"
 msgstr ""
 
 msgid "Something went wrong whilst loading gateways"
 msgstr ""
 
+msgid "Edit gateway"
+msgstr ""
+
 msgid "Something went wrong whilst saving gateways"
-msgstr ""
-
-msgid "Gateway type"
-msgstr ""
-
-msgid "Generic form"
-msgstr ""
-
-msgid "BulkSMS form"
-msgstr ""
-
-msgid "Clickatell form"
 msgstr ""
 
 msgid "Something went wrong whilst performing the requested operation"
 msgstr ""
 
 msgid ""
-"There are five different types of Gateways supported by the SMS Service. "
-"SMSes can be sent if at least one of the gateway types is configured. If "
-"more than one gateway has been configured they will all be used in a "
+"There are five different types of gateways supported by the SMS service. "
+"SMSes can be sent if at least one of the gateway types has been configured. "
+"If more than one gateway has been configured they will all be used in a "
 "round-robin fashion for load balancing"
 msgstr ""
 
-msgid "Add gateway"
-msgstr ""
-
-msgid "Delete selected gateway configurations"
-msgstr ""
-
-msgid "Delete checked messages"
+msgid "Delete selected"
 msgstr ""
 
 msgid "Delete"
@@ -312,9 +287,6 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-msgid "List of received SMS"
-msgstr ""
-
 msgid "Message"
 msgstr ""
 
@@ -330,55 +302,43 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-msgid "No received SMSs to display"
+msgid "No SMSes to display"
 msgstr ""
 
 msgid "Unknown"
 msgstr ""
 
-msgid "Could not load list of received SMSs"
+msgid "Could not load list of received SMSes"
 msgstr ""
 
-msgid "Received sms"
+msgid "Received"
 msgstr ""
 
 msgid "All"
 msgstr ""
 
-msgid "Incoming"
-msgstr ""
-
-msgid "Processing"
-msgstr ""
-
-msgid "Unhandled"
-msgstr ""
-
 msgid "Failed"
+msgstr ""
+
+msgid "Incoming"
 msgstr ""
 
 msgid "Processed"
 msgstr ""
 
+msgid "Processing"
+msgstr ""
+
 msgid "Sent"
 msgstr ""
 
-msgid "Delete selected SMSes"
-msgstr ""
-
-msgid "SMSes per page"
-msgstr ""
-
-msgid "List of sent SMSes"
+msgid "Unhandled"
 msgstr ""
 
 msgid "Something went wrong whilst loading sent SMSes"
 msgstr ""
 
 msgid "Recipients"
-msgstr ""
-
-msgid "No SMSes to display"
 msgstr ""
 
 msgid "Delivered"
@@ -399,23 +359,13 @@ msgstr ""
 msgid "Something went wrong whilst loading commands"
 msgstr ""
 
-msgid "Add sms command"
-msgstr ""
-
-msgid "SMS Command"
-msgstr ""
-
-msgid ""
-"There are five different types of SmsCommands supported by SMS Service. SMS "
-"can be sent if any one of the gateway is configured. If more than one "
-"gateways are present, then they will be used in round-robin fashion for "
-"load balancing"
+msgid "Edit command"
 msgstr ""
 
 msgid "Add command"
 msgstr ""
 
-msgid "Delete selected gateway commands"
+msgid "Commands"
 msgstr ""
 
 msgid "Sms command"

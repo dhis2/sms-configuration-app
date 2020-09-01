@@ -16,7 +16,7 @@ export const FieldUserGroup = ({ userGroups, loading, required, disabled }) => (
         loading={loading}
         dataTest={dataTest('forms-fielduserGroup')}
         name={FIELD_USER_GROUP_NAME}
-        label={i18n.t('UserGroup')}
+        label={i18n.t('Usergroup')}
         component={SingleSelectFieldFF}
         options={userGroups}
         validate={required && hasValue}

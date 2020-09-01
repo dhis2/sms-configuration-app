@@ -21,7 +21,7 @@ export const FieldDataSet = ({ dataSets, loading, required, disabled }) => (
         loading={loading}
         dataTest={dataTest('forms-fielddataset')}
         name={FIELD_DATA_SET_NAME}
-        label={i18n.t('Data set')}
+        label={i18n.t('Dataset')}
         component={SingleSelectFieldFF}
         options={dataSets}
         validate={hasValue}

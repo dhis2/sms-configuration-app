@@ -187,7 +187,7 @@ export const CommandEditEventRegistrationParserForm = ({
 
                         {programStageDataElements && (
                             <FormRow>
-                                <h2>{i18n.t('Program Stage Data Elements')}</h2>
+                                <h2>{i18n.t('Program stage data elements')}</h2>
 
                                 <ProgramStageDataElements
                                     programStageDataElements={
