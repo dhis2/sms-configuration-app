@@ -1,4 +1,4 @@
-import { Button, ReactFinalForm } from '@dhis2/ui'
+import { Button, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
@@ -45,11 +45,13 @@ export const GatewayClickatellForm = ({ onSubmit, initialValues }) => {
                     <Button
                         primary
                         type="submit"
+                        icon={submitting ? <CircularLoader small /> : null}
+                        disabled={submitting}
                         dataTest={dataTest(
                             'forms-gatewayclickatellform-submit'
                         )}
                     >
-                        {submitting ? i18n.t('Submitting...') : submitText}
+                        {submitText}
                     </Button>
                 </form>
             )}
