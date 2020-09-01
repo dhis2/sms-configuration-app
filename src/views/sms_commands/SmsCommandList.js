@@ -29,7 +29,7 @@ import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
 import styles from './SmsCommandList.module.css'
 
-export const SMS_COMMAND_LIST_LABEL = i18n.t('SMS Command')
+export const SMS_COMMAND_LIST_LABEL = i18n.t('Commands')
 export const SMS_COMMAND_LIST_PATH = '/sms-config'
 
 export const SmsCommandList = () => {
