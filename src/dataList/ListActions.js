@@ -34,8 +34,6 @@ export const ListActions = ({
                 >
                     {deleteLabel}
                 </Button>
-
-                <React.Fragment />
             </ButtonStrip>
         </div>
     )

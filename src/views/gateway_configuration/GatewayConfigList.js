@@ -57,12 +57,12 @@ export const GatewayConfigList = () => {
 
     if (loading) {
         return (
-            <React.Fragment>
+            <>
                 <PageHeadline>{GATEWAY_CONFIG_LIST_LABEL}</PageHeadline>
                 <CenteredContent>
                     <CircularLoader />
                 </CenteredContent>
-            </React.Fragment>
+            </>
         )
     }
 
@@ -74,12 +74,12 @@ export const GatewayConfigList = () => {
         )
 
         return (
-            <React.Fragment>
+            <>
                 <PageHeadline>{GATEWAY_CONFIG_LIST_LABEL}</PageHeadline>
                 <NoticeBox error title={msg}>
                     {error.message}
                 </NoticeBox>
-            </React.Fragment>
+            </>
         )
     }
 
