@@ -130,12 +130,6 @@ export const SmsCommandList = () => {
         <div data-test={dataTest('views-smscommandlist')}>
             <PageHeadline>{SMS_COMMAND_LIST_LABEL}</PageHeadline>
 
-            <p>
-                {i18n.t(
-                    'There are five different types of SmsCommands supported by SMS Service. SMS can be sent if any one of the gateway is configured. If more than one gateways are present, then they will be used in round-robin fashion for load balancing'
-                )}
-            </p>
-
             <ListActions
                 addLabel={i18n.t('Add command')}
                 deleteLabel={i18n.t('Delete selected')}
