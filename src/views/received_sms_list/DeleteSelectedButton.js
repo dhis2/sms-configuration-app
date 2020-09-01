@@ -22,12 +22,11 @@ const DeleteSelectedButton = ({ selectedIds, onComplete }) => {
 
     return (
         <Button
-            large
             destructive
             onClick={() => mutate({ ids: selectedIds.join() })}
             disabled={selectedIds.length === 0}
         >
-            {i18n.t('Delete checked messages')}
+            {i18n.t('Delete selected')}
         </Button>
     )
 }
