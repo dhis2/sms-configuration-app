@@ -98,7 +98,7 @@ export const GatewayConfigList = () => {
 
             <ListActions
                 addLabel={i18n.t('Add gateway')}
-                deleteLabel={i18n.t('Delete selected gateway configurations')}
+                deleteLabel={i18n.t('Delete selected')}
                 dataTest="views-gatewayconfiglist"
                 onAddClick={onAddGatewayClick}
                 onDeleteClick={() => setShowDeleteDialog(true)}
