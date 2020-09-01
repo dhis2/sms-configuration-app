@@ -19,7 +19,7 @@ export const SaveCommandButton = () => {
             disabled={pristine || submitting}
             icon={submitting ? <CircularLoader small /> : null}
         >
-            {submitting ? i18n.t('Submitting...') : i18n.t('Save command')}
+            {i18n.t('Save command')}
         </Button>
     )
 }

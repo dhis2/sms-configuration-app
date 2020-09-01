@@ -1,4 +1,4 @@
-import { Button, ReactFinalForm } from '@dhis2/ui'
+import { Button, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useEffect, useState } from 'react'
 
@@ -137,10 +137,13 @@ const ActualForm = ({ handleSubmit, submitting }) => {
                     </FormRow>
                 )}
 
-                <Button primary type="submit">
-                    {submitting
-                        ? i18n.t('Submitting...')
-                        : i18n.t('Add command')}
+                <Button
+                    primary
+                    type="submit"
+                    icon={submitting ? <CircularLoader small /> : null}
+                    disabled={submitting}
+                >
+                    {i18n.t('Add command')}
                 </Button>
             </form>
         </div>
