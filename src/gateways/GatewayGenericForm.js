@@ -51,6 +51,7 @@ export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
                     </FormRow>
 
                     <Button
+                        primary
                         type="submit"
                         dataTest={dataTest('forms-gatewaygenericform-submit')}
                     >
