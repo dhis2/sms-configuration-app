@@ -1,20 +1,18 @@
-import { Button, InputFieldFF, ReactFinalForm, hasValue } from '@dhis2/ui'
+import { Button, InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useState } from 'react'
 
 import { DE_COC_toFormName } from '../smsCommand'
 import { FieldDataElementWithCategoryOptionComboFormula } from './FieldDataElementWithCategoryOptionComboFormula'
 import { FormRow } from '../forms'
-import { get } from '../utils'
 import i18n from '../locales'
 import styles from './FieldDataElementWithCategoryOptionCombo.module.css'
 
-const { Field, FormSpy } = ReactFinalForm
+const { Field } = ReactFinalForm
 
 export const FieldDataElementWithCategoryOptionCombo = ({
     dataElement,
     categoryOptionCombo,
-    required,
 }) => {
     const [showFormula, setShowFormula] = useState(false)
 
@@ -27,51 +25,61 @@ export const FieldDataElementWithCategoryOptionCombo = ({
     const formulaName = `${baseName}.formula`
 
     return (
-        <FormSpy subscription={{ values: true }}>
-            {({ values }) => {
-                const code = get(name, values)
-                const formula = get(formulaName, values)
+        <div className={styles.container}>
+            <Field
+                className={styles.field}
+                label={label}
+                name={name}
+                subscription={{
+                    value: true,
+                    error: true,
+                    invalid: true,
+                    touched: true,
+                }}
+            >
+                {({ input, meta, ...rest }) => {
+                    const code = input.value
 
-                return (
-                    <div className={styles.container}>
-                        <FormRow>
-                            <Field
-                                required={required}
-                                className={styles.field}
-                                label={label}
-                                name={name}
-                                component={InputFieldFF}
-                                validate={required ? hasValue : undefined}
-                            />
-                        </FormRow>
+                    return (
+                        <>
+                            <FormRow>
+                                <InputFieldFF
+                                    {...rest}
+                                    input={input}
+                                    meta={meta}
+                                    error={!!meta.error}
+                                />
+                            </FormRow>
 
-                        {code && (
-                            <>
-                                <Button onClick={() => setShowFormula(true)}>
-                                    {formula
-                                        ? i18n.t('Change formula')
-                                        : i18n.t('Add formula')}
-                                </Button>
+                            {code && (
+                                <>
+                                    <Button
+                                        onClick={() => setShowFormula(true)}
+                                    >
+                                        {i18n.t('Change formula')}
+                                    </Button>
 
-                                {showFormula && (
-                                    <FieldDataElementWithCategoryOptionComboFormula
-                                        targetFieldName={`${baseName}.formula`}
-                                        onClose={() => setShowFormula(false)}
-                                    />
-                                )}
-                            </>
-                        )}
-                    </div>
-                )
-            }}
-        </FormSpy>
+                                    {showFormula && (
+                                        <FieldDataElementWithCategoryOptionComboFormula
+                                            targetFieldName={formulaName}
+                                            onClose={() =>
+                                                setShowFormula(false)
+                                            }
+                                        />
+                                    )}
+                                </>
+                            )}
+                        </>
+                    )
+                }}
+            </Field>
+        </div>
     )
 }
 
 FieldDataElementWithCategoryOptionCombo.defaultProps = {
     categoryOptionCombo: null,
     formula: '',
-    required: false,
 }
 
 FieldDataElementWithCategoryOptionCombo.propTypes = {
@@ -84,5 +92,4 @@ FieldDataElementWithCategoryOptionCombo.propTypes = {
         displayName: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
     }),
-    required: PropTypes.bool,
 }

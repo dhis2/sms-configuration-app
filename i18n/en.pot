@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-01T13:53:22.395Z\n"
-"PO-Revision-Date: 2020-09-01T13:53:22.395Z\n"
+"POT-Creation-Date: 2020-09-01T14:14:28.099Z\n"
+"PO-Revision-Date: 2020-09-01T14:14:28.099Z\n"
 
 msgid "Dataset"
 msgstr ""
@@ -178,9 +178,6 @@ msgstr ""
 msgid "Change formula"
 msgstr ""
 
-msgid "Add formula"
-msgstr ""
-
 msgid "Data element"
 msgstr ""
 
@@ -220,13 +217,10 @@ msgstr ""
 msgid "Event registration parser"
 msgstr ""
 
-msgid "You either have to provide all values or none"
+msgid "Tracked entity attribute"
 msgstr ""
 
 msgid "Duplicate value!"
-msgstr ""
-
-msgid "Tracked entity attribute"
 msgstr ""
 
 msgid "Usergroup"

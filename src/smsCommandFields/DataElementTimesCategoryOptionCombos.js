@@ -12,13 +12,14 @@ const { FormSpy } = ReactFinalForm
 
 export const DataElementTimesCategoryOptionCombos = ({
     DE_COC_combinations,
-    allRequired,
 }) => (
     <div>
         <h2>{i18n.t('Data element category combination')}</h2>
 
-        <FormSpy subscription={{ errors: true }}>
-            {({ errors }) => {
+        <FormSpy subscription={{ errors: true, pristine: true }}>
+            {({ errors, pristine }) => {
+                if (pristine) return <span />
+
                 const smsCodeErrors = errors[FIELD_COMMAND_SMS_CODES_NAME]
                 const globalError = smsCodeErrors?.global
 
@@ -49,7 +50,6 @@ export const DataElementTimesCategoryOptionCombos = ({
                         key={dataElement.id + categoryOptionCombo?.id}
                     >
                         <FieldDataElementWithCategoryOptionCombo
-                            required={allRequired}
                             dataElement={dataElement}
                             categoryOptionCombo={categoryOptionCombo}
                         />
@@ -78,5 +78,4 @@ DataElementTimesCategoryOptionCombos.propTypes = {
             }),
         })
     ).isRequired,
-    allRequired: PropTypes.bool,
 }
