@@ -29,12 +29,11 @@ const DeleteSelectedButton = ({ selected }) => {
 
     return (
         <Button
-            small
             destructive
             disabled={disabled || loading}
             onClick={() => mutate({ ids })}
         >
-            {i18n.t('Delete selected SMSes')}
+            {i18n.t('Delete selected')}
         </Button>
     )
 }

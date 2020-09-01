@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    align-items: center;
+    align-items: end;
     margin-bottom: var(--spacers-dp16);
 }
 
