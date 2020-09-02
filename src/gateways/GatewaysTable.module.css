@@ -1,0 +1,30 @@
+.rowActions {
+    justify-content: flex-end;
+}
+
+.checkboxCell {
+    width: 1px;
+}
+
+.typeCell {
+    width: 1px;
+}
+
+.editCell {
+    width: 1px;
+}
+
+.defaultCell {
+    width: 1px;
+    justify-content: center;
+}
+
+.makeDefaultButton {
+    width: 100%;
+}
+
+.isDefaultText {
+    line-height: 36px;
+    white-space: nowrap;
+    padding: 0 13px;
+}
