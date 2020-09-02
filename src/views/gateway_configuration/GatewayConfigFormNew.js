@@ -16,6 +16,7 @@ import {
     useCreateGenericGatewayMutation,
 } from '../../gateways'
 import i18n from '../../locales'
+import styles from './GatewayConfigFormNew.module.css'
 
 export const GATEWAY_CONFIG_FORM_NEW_PATH = '/sms-gateway/new'
 
@@ -77,7 +78,10 @@ export const GatewayConfigFormNew = () => {
     }
 
     return (
-        <div data-test={dataTest('views-gatewayconfigformnew')}>
+        <div
+            data-test={dataTest('views-gatewayconfigformnew')}
+            className={styles.container}
+        >
             <PageHeadline>{i18n.t('Add gateway')}</PageHeadline>
 
             <FormRow>

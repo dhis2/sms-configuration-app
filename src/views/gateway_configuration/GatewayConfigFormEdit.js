@@ -18,6 +18,7 @@ import {
 import { PageHeadline } from '../../headline'
 import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import styles from './GatewayConfigFormEdit.module.css'
 
 export const GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC = '/sms-gateway/edit'
 export const GATEWAY_CONFIG_FORM_EDIT_PATH = `${GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC}/:id`
@@ -110,7 +111,10 @@ export const GatewayConfigFormEdit = () => {
     const hasGateway = data?.gateway
 
     return (
-        <div data-test={dataTest('views-gatewayconfigformedit')}>
+        <div
+            data-test={dataTest('views-gatewayconfigformedit')}
+            className={styles.container}
+        >
             <PageHeadline>{i18n.t('Edit gateway')}</PageHeadline>
             {hasGateway ? (
                 <div

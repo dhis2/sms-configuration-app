@@ -128,7 +128,10 @@ export const SmsCommandList = () => {
     const hasCommands = data?.smsCommands?.smsCommands?.length > 0
 
     return (
-        <div data-test={dataTest('views-smscommandlist')}>
+        <div
+            data-test={dataTest('views-smscommandlist')}
+            className={styles.container}
+        >
             <PageHeadline>{SMS_COMMAND_LIST_LABEL}</PageHeadline>
 
             <ListActions
