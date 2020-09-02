@@ -89,7 +89,6 @@ const ReceivedSmsList = () => {
                         pager={data.inboundSms.pager}
                         selectedIds={selectedIds}
                         setSelectedIds={setSelectedIds}
-                        refetchList={refetch}
                     />
                 }
             </div>

@@ -15,15 +15,8 @@ import {
 } from '@dhis2/ui'
 import { Pagination } from './Pagination'
 import styles from './SmsTable.module.css'
-import { DeleteSmsButton } from './DeleteSmsButton'
 
-const SmsTable = ({
-    messages,
-    pager,
-    refetchList,
-    selectedIds,
-    setSelectedIds,
-}) => {
+const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
     const selectedIdSet = new Set(selectedIds)
     const allSelected =
         messages.length > 0 && selectedIds.length === messages.length
@@ -56,7 +49,6 @@ const SmsTable = ({
                     <TableCellHead>{i18n.t('Status')}</TableCellHead>
                     <TableCellHead>{i18n.t('Sender')}</TableCellHead>
                     <TableCellHead>{i18n.t('Date')}</TableCellHead>
-                    <TableCellHead>{i18n.t('Delete')}</TableCellHead>
                 </TableRowHead>
             </TableHead>
             <TableBody>
@@ -88,16 +80,6 @@ const SmsTable = ({
                                     'MMMM Do YYYY, h:mm:ss a'
                                 )}
                             </TableCell>
-                            <TableCell>
-                                <DeleteSmsButton
-                                    destructive
-                                    small
-                                    onComplete={refetchList}
-                                    id={message.id}
-                                >
-                                    Delete
-                                </DeleteSmsButton>
-                            </TableCell>
                         </TableRow>
                     ))
                 )}
@@ -116,7 +98,6 @@ const SmsTable = ({
 SmsTable.propTypes = {
     messages: PropTypes.arrayOf(PropTypes.object).isRequired,
     pager: PropTypes.PropTypes.object.isRequired,
-    refetchList: PropTypes.func.isRequired,
     selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
     setSelectedIds: PropTypes.func.isRequired,
 }
