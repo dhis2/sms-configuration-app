@@ -14,9 +14,17 @@ const { Field } = ReactFinalForm
 // @TODO: Create issue to make it consistent
 export const FIELD_DATA_SET_NAME = 'dataset'
 
-export const FieldDataSet = ({ dataSets, loading, required, disabled }) => (
+export const FieldDataSet = ({
+    dataSets,
+    loading,
+    required,
+    disabled,
+    errorText,
+}) => (
     <Field
         disabled={disabled}
+        error={!!errorText}
+        validationText={errorText}
         required={required}
         loading={loading}
         dataTest={dataTest('forms-fielddataset')}
@@ -34,6 +42,7 @@ FieldDataSet.defaultProps = {
     disabled: false,
     loading: false,
     required: false,
+    errorText: '',
 }
 
 FieldDataSet.propTypes = {
@@ -44,6 +53,7 @@ FieldDataSet.propTypes = {
         })
     ).isRequired,
     disabled: PropTypes.bool,
+    errorText: PropTypes.string,
     loading: PropTypes.bool,
     required: PropTypes.bool,
 }

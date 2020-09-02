@@ -3,11 +3,9 @@ import React from 'react'
 
 import { FieldDataSet } from './FieldDataSet'
 import { useReadDataSetsQuery } from './useReadDataSetsQuery'
-import { useCriticalNotification } from '../notifications/useCriticalNotification'
 
 export const FieldDataSetWithAutoLoad = ({ required }) => {
     const { loading, error, data } = useReadDataSetsQuery()
-    useCriticalNotification(error)
 
     if (loading) {
         return (
@@ -21,7 +19,14 @@ export const FieldDataSetWithAutoLoad = ({ required }) => {
     }
 
     if (error) {
-        return <FieldDataSet required={required} disabled dataSets={[]} />
+        return (
+            <FieldDataSet
+                required={required}
+                disabled
+                programs={[]}
+                errorText={error.message}
+            />
+        )
     }
 
     const { dataSets } = data.dataSets
