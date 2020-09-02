@@ -1,4 +1,4 @@
-import { Button, ReactFinalForm, CircularLoader } from '@dhis2/ui'
+import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
@@ -14,14 +14,22 @@ import i18n from '../locales'
 
 const { Form } = ReactFinalForm
 
-export const GatewayClickatellForm = ({ onSubmit, initialValues }) => {
+export const GatewayClickatellForm = ({
+    onCancelClick,
+    onSubmit,
+    initialValues,
+}) => {
     const submitText = initialValues
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
 
     return (
-        <Form onSubmit={onSubmit} initialValues={initialValues}>
-            {({ handleSubmit, submitting }) => (
+        <Form
+            keepDirtyOnReinitialize
+            onSubmit={onSubmit}
+            initialValues={initialValues}
+        >
+            {({ handleSubmit, submitting, pristine }) => (
                 <form
                     onSubmit={handleSubmit}
                     data-test={dataTest('gateways-gatewayclickatellform')}
@@ -42,17 +50,23 @@ export const GatewayClickatellForm = ({ onSubmit, initialValues }) => {
                         <FieldGatewayUrlTemplate />
                     </FormRow>
 
-                    <Button
-                        primary
-                        type="submit"
-                        icon={submitting ? <CircularLoader small /> : null}
-                        disabled={submitting}
-                        dataTest={dataTest(
-                            'forms-gatewayclickatellform-submit'
-                        )}
-                    >
-                        {submitText}
-                    </Button>
+                    <ButtonStrip>
+                        <Button onClick={() => onCancelClick(pristine)}>
+                            {i18n.t('Cancel')}
+                        </Button>
+
+                        <Button
+                            primary
+                            type="submit"
+                            icon={submitting ? <CircularLoader small /> : null}
+                            disabled={submitting}
+                            dataTest={dataTest(
+                                'forms-gatewayclickatellform-submit'
+                            )}
+                        >
+                            {submitText}
+                        </Button>
+                    </ButtonStrip>
                 </form>
             )}
         </Form>
@@ -64,6 +78,7 @@ GatewayClickatellForm.defaultProps = {
 }
 
 GatewayClickatellForm.propTypes = {
+    onCancelClick: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object,
 }
