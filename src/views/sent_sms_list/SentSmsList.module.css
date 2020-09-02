@@ -1,3 +1,7 @@
+.container {
+    max-width: 800px;
+}
+
 .header {
     display: flex;
     align-items: end;
