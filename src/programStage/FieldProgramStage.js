@@ -14,9 +14,12 @@ export const FieldProgramStage = ({
     disabled,
     loading,
     required,
+    errorText,
 }) => (
     <Field
         disabled={disabled}
+        error={!!errorText}
+        validationText={errorText}
         required={required}
         loading={loading}
         dataTest={dataTest('forms-fieldprogramStage')}
@@ -34,6 +37,7 @@ FieldProgramStage.defaultProps = {
     disabled: false,
     loading: false,
     required: false,
+    errorText: '',
 }
 
 FieldProgramStage.propTypes = {
@@ -44,6 +48,7 @@ FieldProgramStage.propTypes = {
         })
     ).isRequired,
     disabled: PropTypes.bool,
+    errorText: PropTypes.string,
     loading: PropTypes.bool,
     required: PropTypes.bool,
 }
