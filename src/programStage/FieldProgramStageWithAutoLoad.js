@@ -3,14 +3,11 @@ import React, { useEffect } from 'react'
 
 import { FieldProgramStage } from './FieldProgramStage'
 import { useReadProgramStagesQuery } from './useReadProgramStagesQuery'
-import { useCriticalNotification } from '../notifications/useCriticalNotification'
 
 export const FieldProgramStageWithAutoLoad = ({ required, programId }) => {
     const { loading, error, data, refetch } = useReadProgramStagesQuery({
         lazy: true,
     })
-
-    useCriticalNotification(error)
 
     useEffect(() => {
         if (programId) refetch({ programId })
@@ -26,6 +23,7 @@ export const FieldProgramStageWithAutoLoad = ({ required, programId }) => {
         return (
             <FieldProgramStage
                 disabled
+                errorText={error.message}
                 required={required}
                 programStages={[]}
             />
