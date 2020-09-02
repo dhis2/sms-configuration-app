@@ -208,7 +208,7 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
                         <FieldCommandSuccessMessage />
                     </FormRow>
 
-                    <h2>{i18n.t('Tracked entity attribute')}</h2>
+                    <h2>{i18n.t('SMS short codes')}</h2>
 
                     {dynamicFields.map(dynamicField => {
                         // I assume this should switch field types based on `valueType`
