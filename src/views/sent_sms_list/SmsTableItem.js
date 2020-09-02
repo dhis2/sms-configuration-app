@@ -4,6 +4,7 @@ import React from 'react'
 import moment from 'moment'
 
 import { statusMap } from './translations'
+import styles from './SmsTableItem.module.css'
 
 const SmsTableItem = ({ sms, toggleSelected, isSelected }) => {
     const { message, status, date, id } = sms
@@ -24,7 +25,14 @@ const SmsTableItem = ({ sms, toggleSelected, isSelected }) => {
                 />
             </TableCell>
             <TableCell>{message}</TableCell>
-            <TableCell>{recipients.join(', ')}</TableCell>
+            <TableCell>
+                {recipients.map((recipient, index, all) => (
+                    <span key={recipient + index} className={styles.recipient}>
+                        {recipient}
+                        {index !== all.length - 1 && ', '}
+                    </span>
+                ))}
+            </TableCell>
             <TableCell>{statusMap[status]}</TableCell>
             <TableCell>
                 {moment(date).format('MMMM Do YYYY, h:mm:ss a')}

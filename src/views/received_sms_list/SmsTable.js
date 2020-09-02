@@ -68,7 +68,11 @@ const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
                                 />
                             </TableCell>
                             <TableCell>{message.text}</TableCell>
-                            <TableCell>{message.originator}</TableCell>
+                            <TableCell>
+                                <span className={styles.originator}>
+                                    {message.originator}
+                                </span>
+                            </TableCell>
                             <TableCell>{message.smsstatus}</TableCell>
                             <TableCell>
                                 {message.user
