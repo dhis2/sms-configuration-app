@@ -9,9 +9,17 @@ const { Field } = ReactFinalForm
 
 export const FIELD_USER_GROUP_NAME = 'userGroup'
 
-export const FieldUserGroup = ({ userGroups, loading, required, disabled }) => (
+export const FieldUserGroup = ({
+    userGroups,
+    loading,
+    required,
+    disabled,
+    errorText,
+}) => (
     <Field
         disabled={disabled}
+        error={!!errorText}
+        validationText={errorText}
         required={required}
         loading={loading}
         dataTest={dataTest('forms-fielduserGroup')}
@@ -27,6 +35,7 @@ FieldUserGroup.defaultProps = {
     disabled: false,
     loading: false,
     required: false,
+    errorText: '',
 }
 
 FieldUserGroup.propTypes = {
@@ -37,6 +46,7 @@ FieldUserGroup.propTypes = {
         })
     ).isRequired,
     disabled: PropTypes.bool,
+    errorText: PropTypes.string,
     loading: PropTypes.bool,
     required: PropTypes.bool,
 }

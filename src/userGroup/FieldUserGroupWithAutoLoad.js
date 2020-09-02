@@ -3,11 +3,9 @@ import React from 'react'
 
 import { FieldUserGroup } from './FieldUserGroup'
 import { useReadUserGroupsQuery } from './useReadUserGroupsQuery'
-import { useCriticalNotification } from '../notifications/useCriticalNotification'
 
 export const FieldUserGroupWithAutoLoad = ({ required }) => {
     const { loading, error, data } = useReadUserGroupsQuery()
-    useCriticalNotification(error)
 
     if (loading) {
         return (
@@ -21,7 +19,14 @@ export const FieldUserGroupWithAutoLoad = ({ required }) => {
     }
 
     if (error) {
-        return <FieldUserGroup required={required} disabled userGroups={[]} />
+        return (
+            <FieldUserGroup
+                required={required}
+                disabled
+                userGroups={[]}
+                errorText={error.message}
+            />
+        )
     }
 
     const { userGroups } = data.userGroups
