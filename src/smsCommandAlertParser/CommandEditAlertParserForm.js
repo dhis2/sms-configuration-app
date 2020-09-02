@@ -1,6 +1,8 @@
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 import {
+    Button,
+    ButtonStrip,
     ReactFinalForm,
     NoticeBox,
     CenteredContent,
@@ -40,7 +42,11 @@ const query = {
     },
 }
 
-export const CommandEditAlertParserForm = ({ commandId, onAfterChange }) => {
+export const CommandEditAlertParserForm = ({
+    commandId,
+    onAfterChange,
+    onCancel,
+}) => {
     const updateCommand = useUpdateCommand({
         commandId,
         onAfterChange,
@@ -109,7 +115,12 @@ export const CommandEditAlertParserForm = ({ commandId, onAfterChange }) => {
                     </FormRow>
 
                     <SubmitErrors />
-                    <SaveCommandButton />
+
+                    <ButtonStrip>
+                        <Button onClick={onCancel}>{i18n.t('Cancel')}</Button>
+
+                        <SaveCommandButton />
+                    </ButtonStrip>
                 </form>
             )}
         </Form>
@@ -119,4 +130,5 @@ export const CommandEditAlertParserForm = ({ commandId, onAfterChange }) => {
 CommandEditAlertParserForm.propTypes = {
     commandId: PropTypes.string.isRequired,
     onAfterChange: PropTypes.func.isRequired,
+    onCancel: PropTypes.func.isRequired,
 }

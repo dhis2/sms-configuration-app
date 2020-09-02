@@ -1,6 +1,8 @@
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 import {
+    Button,
+    ButtonStrip,
     ReactFinalForm,
     NoticeBox,
     CenteredContent,
@@ -63,6 +65,7 @@ const query = {
 export const CommandEditTrackedEntityRegistrationParserForm = ({
     commandId,
     onAfterChange,
+    onCancel,
 }) => {
     const updateCommand = useUpdateCommand({
         commandId,
@@ -219,7 +222,12 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
                     })}
 
                     <SubmitErrors />
-                    <SaveCommandButton />
+
+                    <ButtonStrip>
+                        <Button onClick={onCancel}>{i18n.t('Cancel')}</Button>
+
+                        <SaveCommandButton />
+                    </ButtonStrip>
                 </form>
             )}
         </Form>
@@ -229,4 +237,5 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
 CommandEditTrackedEntityRegistrationParserForm.propTypes = {
     commandId: PropTypes.string.isRequired,
     onAfterChange: PropTypes.func.isRequired,
+    onCancel: PropTypes.func.isRequired,
 }
