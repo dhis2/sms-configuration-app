@@ -18,7 +18,7 @@ export const FieldProgram = ({
 }) => (
     <Field
         error={!!errorText}
-        errorText={errorText}
+        validationText={errorText}
         disabled={disabled}
         required={required}
         loading={loading}
