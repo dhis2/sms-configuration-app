@@ -5,13 +5,6 @@ import {
     ModalActions,
     ModalContent,
     ModalTitle,
-    Table,
-    TableBody,
-    TableCell,
-    TableCellHead,
-    TableHead,
-    TableRow,
-    TableRowHead,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
@@ -20,30 +13,15 @@ import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
 export const DeleteCommandsConfirmationDialog = ({
-    commands,
     onCancelClick,
     onDeleteClick,
 }) => {
     return (
         <Modal dataTest={dataTest('commands-deleteconfirmationdialog')}>
-            <ModalTitle>{i18n.t('Delete confirmation')}</ModalTitle>
+            <ModalTitle>{i18n.t('Confirm deletion')}</ModalTitle>
             <ModalContent>
-                {commands && (
-                    <Table>
-                        <TableHead>
-                            <TableRowHead>
-                                <TableCellHead>{i18n.t('Name')}</TableCellHead>
-                            </TableRowHead>
-                        </TableHead>
-
-                        <TableBody>
-                            {commands.map(command => (
-                                <TableRow key={command.id}>
-                                    <TableCell>{command.displayName}</TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
+                {i18n.t(
+                    'Are you sure you want to delete the selected commands?'
                 )}
             </ModalContent>
             <ModalActions>
@@ -65,7 +43,7 @@ export const DeleteCommandsConfirmationDialog = ({
                             'commands-deleteconfirmationdialog-confirm'
                         )}
                     >
-                        {i18n.t('Delete command configurations')}
+                        {i18n.t('Delete')}
                     </Button>
                 </ButtonStrip>
             </ModalActions>
@@ -74,12 +52,6 @@ export const DeleteCommandsConfirmationDialog = ({
 }
 
 DeleteCommandsConfirmationDialog.propTypes = {
-    commands: PropTypes.arrayOf(
-        PropTypes.shape({
-            displayName: PropTypes.string.isRequired,
-            id: PropTypes.string.isRequired,
-        })
-    ).isRequired,
     onCancelClick: PropTypes.func.isRequired,
     onDeleteClick: PropTypes.func.isRequired,
 }

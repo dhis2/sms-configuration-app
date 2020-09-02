@@ -142,7 +142,6 @@ export const SmsCommandList = () => {
 
             {showDeleteConfirmationDialog && (
                 <DeleteCommandsConfirmationDialog
-                    commands={checkedSmsCommands}
                     onCancelClick={() => setShowDeleteConfirmationDialog(false)}
                     onDeleteClick={onDeleteClick}
                 />
