@@ -8,6 +8,7 @@ import {
     SingleSelectFieldFF,
     ReactFinalForm,
     hasValue,
+    NoticeBox,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useMemo } from 'react'
@@ -15,7 +16,6 @@ import React, { useMemo } from 'react'
 import { FIELD_DATA_SET_NAME } from '../dataSet'
 import { FormRow } from '../forms'
 import { get } from '../utils'
-import { useCriticalNotification } from '../notifications'
 import { useReadDataElementsOfDataSetQuery } from '../dataElement'
 import i18n from '../locales'
 
@@ -32,8 +32,6 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
     const { loading, error, data } = useReadDataElementsOfDataSetQuery(
         dataSetId
     )
-
-    useCriticalNotification(error)
 
     // Using memo so changing the form does not change the "initialValues"
     // which would cause the form to update unnecessarily
@@ -58,10 +56,6 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
                 <CircularLoader />
             </Modal>
         )
-    }
-
-    if (error) {
-        onClose()
     }
 
     const options = data.dataElements.dataElements.map(dataElement => {
@@ -127,6 +121,19 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
                                     ]}
                                 />
                             </FormRow>
+
+                            {error && (
+                                <FormRow>
+                                    <NoticeBox
+                                        error
+                                        title={i18n.t(
+                                            'Something went wrong whilst saving'
+                                        )}
+                                    >
+                                        {error.message}
+                                    </NoticeBox>
+                                </FormRow>
+                            )}
 
                             <FormRow>
                                 <ButtonStrip>
