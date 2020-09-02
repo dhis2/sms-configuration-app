@@ -1,6 +1,6 @@
 import { useHistory, useParams } from 'react-router-dom'
-import React from 'react'
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
+import React, { useState } from 'react'
 
 import { GATEWAY_CONFIG_LIST_PATH } from './GatewayConfigList'
 import {
@@ -15,6 +15,7 @@ import {
     useUpdateBulkSMSGatewayMutation,
     useUpdateClickatellGatewayMutation,
 } from '../../gateways'
+import { CancelDialog } from '../../cancelDialog'
 import { PageHeadline } from '../../headline'
 import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
@@ -23,9 +24,26 @@ import styles from './GatewayConfigFormEdit.module.css'
 export const GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC = '/sms-gateway/edit'
 export const GATEWAY_CONFIG_FORM_EDIT_PATH = `${GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC}/:id`
 
+const getFormComponent = gatewayType => {
+    if (gatewayType === GENERIC_FORM) {
+        return GatewayGenericForm
+    }
+
+    if (gatewayType === BULK_SMS_FORM) {
+        return GatewayBulkSMSForm
+    }
+
+    if (gatewayType === CLICKATELL_FORM) {
+        return GatewayClickatellForm
+    }
+
+    throw new Error(`The gateway type does not exist, got "${gatewayType}"`)
+}
+
 export const GatewayConfigFormEdit = () => {
     const history = useHistory()
     const { id } = useParams()
+    const [showCancelDialog, setShowCancelDialog] = useState(false)
 
     const { loading, error: loadError, data: jsonData } = useReadGatewayQuery(
         id
@@ -109,6 +127,7 @@ export const GatewayConfigFormEdit = () => {
     }
 
     const hasGateway = data?.gateway
+    const FormComponent = getFormComponent(gatewayType)
 
     return (
         <div
@@ -116,6 +135,7 @@ export const GatewayConfigFormEdit = () => {
             className={styles.container}
         >
             <PageHeadline>{i18n.t('Edit gateway')}</PageHeadline>
+
             {hasGateway ? (
                 <div
                     data-test={dataTest(
@@ -134,31 +154,29 @@ export const GatewayConfigFormEdit = () => {
                         </NoticeBox>
                     )}
 
-                    {gatewayType === GENERIC_FORM && (
-                        <GatewayGenericForm
-                            initialValues={data.gateway}
-                            onSubmit={onSubmit}
-                        />
-                    )}
-
-                    {gatewayType === BULK_SMS_FORM && (
-                        <GatewayBulkSMSForm
-                            initialValues={data.gateway}
-                            onSubmit={onSubmit}
-                        />
-                    )}
-
-                    {gatewayType === CLICKATELL_FORM && (
-                        <GatewayClickatellForm
-                            initialValues={data.gateway}
-                            onSubmit={onSubmit}
-                        />
-                    )}
+                    <FormComponent
+                        initialValues={data.gateway}
+                        onSubmit={onSubmit}
+                        onCancelClick={pristine =>
+                            pristine
+                                ? history.push(GATEWAY_CONFIG_LIST_PATH)
+                                : setShowCancelDialog(true)
+                        }
+                    />
                 </div>
             ) : (
                 <NoticeBox error title={i18n.t('Gateway not found')}>
                     {i18n.t('The requested gateway could not be loaded')}
                 </NoticeBox>
+            )}
+
+            {showCancelDialog && (
+                <CancelDialog
+                    onConfirmCancel={() =>
+                        history.push(GATEWAY_CONFIG_LIST_PATH)
+                    }
+                    onAbortCancel={() => setShowCancelDialog(false)}
+                />
             )}
         </div>
     )

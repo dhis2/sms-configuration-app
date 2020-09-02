@@ -1,4 +1,10 @@
-import { Button, ReactFinalForm, NoticeBox, CircularLoader } from '@dhis2/ui'
+import {
+    Button,
+    ButtonStrip,
+    ReactFinalForm,
+    NoticeBox,
+    CircularLoader,
+} from '@dhis2/ui'
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
@@ -14,14 +20,22 @@ import i18n from '../locales'
 
 const { Form } = ReactFinalForm
 
-export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
+export const GatewayGenericForm = ({
+    onCancelClick,
+    onSubmit,
+    initialValues,
+}) => {
     const submitText = initialValues
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
 
     return (
-        <Form onSubmit={onSubmit} initialValues={initialValues}>
-            {({ handleSubmit, values, submitting }) => (
+        <Form
+            keepDirtyOnReinitialize
+            onSubmit={onSubmit}
+            initialValues={initialValues}
+        >
+            {({ handleSubmit, values, submitting, pristine }) => (
                 <form
                     onSubmit={handleSubmit}
                     data-test={dataTest('gateways-gatewaygenericform')}
@@ -50,15 +64,23 @@ export const GatewayGenericForm = ({ onSubmit, initialValues }) => {
                         <GatewayAddKeyValuePair />
                     </FormRow>
 
-                    <Button
-                        primary
-                        type="submit"
-                        dataTest={dataTest('forms-gatewaygenericform-submit')}
-                        disabled={submitting}
-                        icon={submitting ? <CircularLoader small /> : null}
-                    >
-                        {submitText}
-                    </Button>
+                    <ButtonStrip>
+                        <Button onClick={() => onCancelClick(pristine)}>
+                            {i18n.t('Cancel')}
+                        </Button>
+
+                        <Button
+                            primary
+                            type="submit"
+                            dataTest={dataTest(
+                                'forms-gatewaygenericform-submit'
+                            )}
+                            disabled={submitting}
+                            icon={submitting ? <CircularLoader small /> : null}
+                        >
+                            {submitText}
+                        </Button>
+                    </ButtonStrip>
                 </form>
             )}
         </Form>
@@ -72,6 +94,7 @@ GatewayGenericForm.defaultProps = {
 }
 
 GatewayGenericForm.propTypes = {
+    onCancelClick: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
     initialValues: PropTypes.object,
 }
