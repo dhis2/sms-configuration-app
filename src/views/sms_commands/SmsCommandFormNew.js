@@ -1,5 +1,6 @@
-import { Button, ReactFinalForm, CircularLoader } from '@dhis2/ui'
+import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import { useHistory } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 
@@ -77,6 +78,7 @@ const ActualForm = ({ handleSubmit, submitting }) => {
     // on the selected value of a previous field
     useResetFormFields()
 
+    const history = useHistory()
     const form = useForm()
     const { values } = form.getState()
     const parserType = values[FIELD_COMMAND_PARSER_NAME]
@@ -140,14 +142,19 @@ const ActualForm = ({ handleSubmit, submitting }) => {
                     </FormRow>
                 )}
 
-                <Button
-                    primary
-                    type="submit"
-                    icon={submitting ? <CircularLoader small /> : null}
-                    disabled={submitting}
-                >
-                    {i18n.t('Add command')}
-                </Button>
+                <ButtonStrip>
+                    <Button onClick={() => history.goBack()}>
+                        {i18n.t('Cancel')}
+                    </Button>
+                    <Button
+                        primary
+                        type="submit"
+                        icon={submitting ? <CircularLoader small /> : null}
+                        disabled={submitting}
+                    >
+                        {i18n.t('Add command')}
+                    </Button>
+                </ButtonStrip>
             </form>
         </div>
     )

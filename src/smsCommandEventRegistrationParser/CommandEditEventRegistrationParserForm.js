@@ -1,4 +1,6 @@
 import {
+    Button,
+    ButtonStrip,
     CenteredContent,
     CircularLoader,
     NoticeBox,
@@ -87,6 +89,7 @@ const formatSmsCodes = updates => ({
 export const CommandEditEventRegistrationParserForm = ({
     commandId,
     onAfterChange,
+    onCancel,
 }) => {
     const {
         error,
@@ -201,7 +204,14 @@ export const CommandEditEventRegistrationParserForm = ({
                         )}
 
                         <SubmitErrors />
-                        <SaveCommandButton />
+
+                        <ButtonStrip>
+                            <Button onClick={onCancel}>
+                                {i18n.t('Cancel')}
+                            </Button>
+
+                            <SaveCommandButton />
+                        </ButtonStrip>
                     </form>
                 )
             }}
@@ -212,4 +222,5 @@ export const CommandEditEventRegistrationParserForm = ({
 CommandEditEventRegistrationParserForm.propTypes = {
     commandId: PropTypes.string.isRequired,
     onAfterChange: PropTypes.func.isRequired,
+    onCancel: PropTypes.func.isRequired,
 }

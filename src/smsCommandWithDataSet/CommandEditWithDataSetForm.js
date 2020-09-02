@@ -1,4 +1,6 @@
 import {
+    Button,
+    ButtonStrip,
     CenteredContent,
     CircularLoader,
     NoticeBox,
@@ -201,6 +203,7 @@ export const CommandEditWithDataSetForm = ({
     onAfterChange,
     dataTest,
     initialCompletenessMethod,
+    onCancel,
 }) => {
     const {
         error: loadingCommandError,
@@ -352,7 +355,12 @@ export const CommandEditWithDataSetForm = ({
                     </div>
 
                     <SubmitErrors />
-                    <SaveCommandButton />
+
+                    <ButtonStrip>
+                        <Button onClick={onCancel}>{i18n.t('Cancel')}</Button>
+
+                        <SaveCommandButton />
+                    </ButtonStrip>
                 </form>
             )}
         </Form>
@@ -362,6 +370,7 @@ export const CommandEditWithDataSetForm = ({
 CommandEditWithDataSetForm.propTypes = {
     commandId: PropTypes.string.isRequired,
     onAfterChange: PropTypes.func.isRequired,
+    onCancel: PropTypes.func.isRequired,
     dataTest: PropTypes.string,
     initialCompletenessMethod: PropTypes.string,
 }

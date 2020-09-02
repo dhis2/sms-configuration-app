@@ -1,4 +1,6 @@
 import {
+    Button,
+    ButtonStrip,
     CenteredContent,
     CircularLoader,
     NoticeBox,
@@ -88,6 +90,7 @@ const formatSmsCodes = updates => ({
 export const CommandEditProgramStageDataEntryParserForm = ({
     commandId,
     onAfterChange,
+    onCancel,
 }) => {
     const {
         error: loadingCommandError,
@@ -205,7 +208,12 @@ export const CommandEditProgramStageDataEntryParserForm = ({
                     )}
 
                     <SubmitErrors />
-                    <SaveCommandButton />
+
+                    <ButtonStrip>
+                        <Button onClick={onCancel}>{i18n.t('Cancel')}</Button>
+
+                        <SaveCommandButton />
+                    </ButtonStrip>
                 </form>
             )}
         </Form>
@@ -215,4 +223,5 @@ export const CommandEditProgramStageDataEntryParserForm = ({
 CommandEditProgramStageDataEntryParserForm.propTypes = {
     commandId: PropTypes.string.isRequired,
     onAfterChange: PropTypes.func.isRequired,
+    onCancel: PropTypes.func.isRequired,
 }

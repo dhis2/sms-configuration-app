@@ -35,6 +35,8 @@ export const SmsCommandFormEdit = () => {
     const history = useHistory()
     const { id } = useParams()
     const { loading, error, data } = useReadSmsCommandParserTypeQuery(id)
+    const onAfterChange = () => history.push(SMS_COMMAND_LIST_PATH)
+    const onCancel = () => history.goBack()
 
     if (loading) {
         return (
@@ -64,49 +66,56 @@ export const SmsCommandFormEdit = () => {
             {parserType && isParser(KEY_VALUE_PARSER) && (
                 <CommandEditKeyValueParserForm
                     commandId={id}
-                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                    onCancel={onCancel}
+                    onAfterChange={onAfterChange}
                 />
             )}
 
             {parserType && isParser(J2ME_PARSER) && (
                 <CommandEditJ2MEParserForm
                     commandId={id}
-                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                    onCancel={onCancel}
+                    onAfterChange={onAfterChange}
                 />
             )}
 
             {parserType && isParser(ALERT_PARSER) && (
                 <CommandEditAlertParserForm
                     commandId={id}
-                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                    onCancel={onCancel}
+                    onAfterChange={onAfterChange}
                 />
             )}
 
             {parserType && isParser(PROGRAM_STAGE_DATAENTRY_PARSER) && (
                 <CommandEditProgramStageDataEntryParserForm
                     commandId={id}
-                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                    onCancel={onCancel}
+                    onAfterChange={onAfterChange}
                 />
             )}
 
             {parserType && isParser(UNREGISTERED_PARSER) && (
                 <CommandEditUnregisteredParserForm
                     commandId={id}
-                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                    onCancel={onCancel}
+                    onAfterChange={onAfterChange}
                 />
             )}
 
             {parserType && isParser(EVENT_REGISTRATION_PARSER) && (
                 <CommandEditEventRegistrationParserForm
                     commandId={id}
-                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                    onCancel={onCancel}
+                    onAfterChange={onAfterChange}
                 />
             )}
 
             {parserType && isParser(TRACKED_ENTITY_REGISTRATION_PARSER) && (
                 <CommandEditTrackedEntityRegistrationParserForm
                     commandId={id}
-                    onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
+                    onCancel={onCancel}
+                    onAfterChange={onAfterChange}
                 />
             )}
 
