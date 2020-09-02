@@ -18,6 +18,7 @@ import { GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC } from '../views/gateway_configura
 import { dataTest } from '../dataTest'
 import { getTypeLabelByType } from './getTypeLabelByType'
 import i18n from '../locales'
+import styles from './GatewaysTable.module.css'
 
 export const GatewaysTable = ({
     allGatewaysChecked,
@@ -43,7 +44,7 @@ export const GatewaysTable = ({
                     </TableCellHead>
                     <TableCellHead>{i18n.t('Name')}</TableCellHead>
                     <TableCellHead>{i18n.t('Type')}</TableCellHead>
-                    <TableCellHead>{i18n.t('Default gateway')}</TableCellHead>
+                    <TableCellHead />
                     <TableCellHead />
                 </TableRowHead>
             </TableHead>
@@ -55,6 +56,7 @@ export const GatewaysTable = ({
                         dataTest={dataTest('gateways-gatewaystable-row')}
                     >
                         <TableCell
+                            className={styles.checkboxCell}
                             dataTest={dataTest(
                                 'gateways-gatewaystable-checkbox'
                             )}
@@ -74,38 +76,39 @@ export const GatewaysTable = ({
                         </TableCell>
 
                         <TableCell
+                            className={styles.typeCell}
                             dataTest={dataTest('gateways-gatewaystable-type')}
                         >
                             {getTypeLabelByType(gateway.type)}
                         </TableCell>
 
-                        <TableCell
-                            dataTest={dataTest(
-                                'gateways-gatewaystable-isdefault'
+                        <TableCell className={styles.defaultCell}>
+                            {!gateway.isDefault ? (
+                                <Button
+                                    dataTest={dataTest(
+                                        'gateways-gatewaystable-makedefault'
+                                    )}
+                                    onClick={() =>
+                                        onMakeDefaultClick(gateway.uid)
+                                    }
+                                    className={styles.makeDefaultButton}
+                                >
+                                    {i18n.t('Make default')}
+                                </Button>
+                            ) : (
+                                <span className={styles.isDefaultText}>
+                                    {i18n.t('Default gateway')}
+                                </span>
                             )}
-                        >
-                            {gateway.isDefault ? i18n.t('Yes') : i18n.t('No')}
                         </TableCell>
 
                         <TableCell
                             dataTest={dataTest(
                                 'gateways-gatewaystable-actions'
                             )}
+                            className={styles.editCell}
                         >
-                            <ButtonStrip>
-                                {!gateway.isDefault && (
-                                    <Button
-                                        dataTest={dataTest(
-                                            'gateways-gatewaystable-makedefault'
-                                        )}
-                                        onClick={() =>
-                                            onMakeDefaultClick(gateway.uid)
-                                        }
-                                    >
-                                        {i18n.t('Make default')}
-                                    </Button>
-                                )}
-
+                            <ButtonStrip className={styles.rowActions}>
                                 <Button
                                     dataTest={dataTest(
                                         'gateways-gatewaystable-edit'
