@@ -140,8 +140,12 @@ export const CommandEditProgramStageDataEntryParserForm = ({
     }
 
     return (
-        <Form onSubmit={updateCommand} initialValues={initialValues}>
-            {({ handleSubmit, values }) => (
+        <Form
+            keepDirtyOnReinitialize
+            onSubmit={updateCommand}
+            initialValues={initialValues}
+        >
+            {({ handleSubmit, values, pristine }) => (
                 <form
                     onSubmit={handleSubmit}
                     data-test={dataTest(
@@ -210,7 +214,9 @@ export const CommandEditProgramStageDataEntryParserForm = ({
                     <SubmitErrors />
 
                     <ButtonStrip>
-                        <Button onClick={onCancel}>{i18n.t('Cancel')}</Button>
+                        <Button onClick={() => onCancel(pristine)}>
+                            {i18n.t('Cancel')}
+                        </Button>
 
                         <SaveCommandButton />
                     </ButtonStrip>

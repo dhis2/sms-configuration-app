@@ -1,12 +1,7 @@
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import { useHistory, useParams } from 'react-router-dom'
-import React from 'react'
+import React, { useState } from 'react'
 
-import { PageHeadline } from '../../headline'
-import {
-    isParserType,
-    useReadSmsCommandParserTypeQuery,
-} from '../../smsCommand'
 import {
     ALERT_PARSER,
     EVENT_REGISTRATION_PARSER,
@@ -17,6 +12,8 @@ import {
     UNREGISTERED_PARSER,
     FIELD_COMMAND_PARSER_NAME,
 } from '../../smsCommandFields'
+import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
+import { CancelDialog } from '../../cancelDialog'
 import { CommandEditUnregisteredParserForm } from '../../smsCommandUnregisteredParser'
 import { CommandEditTrackedEntityRegistrationParserForm } from '../../smsCommandTrackedEntityRegistrationParser'
 import { CommandEditProgramStageDataEntryParserForm } from '../../smsCommandProgramStageDataEntryParser'
@@ -24,19 +21,59 @@ import { CommandEditKeyValueParserForm } from '../../smsCommandKeyValueParser'
 import { CommandEditJ2MEParserForm } from '../../smsCommandJ2MEParser'
 import { CommandEditEventRegistrationParserForm } from '../../smsCommandEventRegistrationParser'
 import { CommandEditAlertParserForm } from '../../smsCommandAlertParser'
-import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
+import { PageHeadline } from '../../headline'
+import {
+    isParserType,
+    useReadSmsCommandParserTypeQuery,
+} from '../../smsCommand'
 import i18n from '../../locales'
 import styles from './SmsCommandFormEdit.module.css'
 
 export const SMS_COMMAND_FORM_EDIT_PATH_STATIC = '/sms-config/edit'
 export const SMS_COMMAND_FORM_EDIT_PATH = `${SMS_COMMAND_FORM_EDIT_PATH_STATIC}/:id`
 
+const getSmsCommandEditFormComponent = parserType => {
+    const isParser = isParserType.bind(null, parserType)
+
+    if (parserType && isParser(KEY_VALUE_PARSER)) {
+        return CommandEditKeyValueParserForm
+    }
+
+    if (parserType && isParser(J2ME_PARSER)) {
+        return CommandEditJ2MEParserForm
+    }
+
+    if (parserType && isParser(ALERT_PARSER)) {
+        return CommandEditAlertParserForm
+    }
+
+    if (parserType && isParser(PROGRAM_STAGE_DATAENTRY_PARSER)) {
+        return CommandEditProgramStageDataEntryParserForm
+    }
+
+    if (parserType && isParser(UNREGISTERED_PARSER)) {
+        return CommandEditUnregisteredParserForm
+    }
+
+    if (parserType && isParser(EVENT_REGISTRATION_PARSER)) {
+        return CommandEditEventRegistrationParserForm
+    }
+
+    if (parserType && isParser(TRACKED_ENTITY_REGISTRATION_PARSER)) {
+        return CommandEditTrackedEntityRegistrationParserForm
+    }
+
+    return null
+}
+
 export const SmsCommandFormEdit = () => {
     const history = useHistory()
     const { id } = useParams()
     const { loading, error, data } = useReadSmsCommandParserTypeQuery(id)
+    const [showCancelDialog, setShowCancelDialog] = useState(false)
     const onAfterChange = () => history.push(SMS_COMMAND_LIST_PATH)
-    const onCancel = () => history.goBack()
+    const onCancel = pristine =>
+        pristine ? history.goBack() : setShowCancelDialog(true)
 
     if (loading) {
         return (
@@ -57,65 +94,24 @@ export const SmsCommandFormEdit = () => {
     }
 
     const parserType = data?.smsCommand[FIELD_COMMAND_PARSER_NAME]
-    const isParser = isParserType.bind(null, parserType)
+    const FormComponent = getSmsCommandEditFormComponent(parserType)
 
     return (
         <div className={styles.container}>
             <PageHeadline>{i18n.t('Edit command')}</PageHeadline>
 
-            {parserType && isParser(KEY_VALUE_PARSER) && (
-                <CommandEditKeyValueParserForm
+            {FormComponent && (
+                <FormComponent
                     commandId={id}
                     onCancel={onCancel}
                     onAfterChange={onAfterChange}
                 />
             )}
 
-            {parserType && isParser(J2ME_PARSER) && (
-                <CommandEditJ2MEParserForm
-                    commandId={id}
-                    onCancel={onCancel}
-                    onAfterChange={onAfterChange}
-                />
-            )}
-
-            {parserType && isParser(ALERT_PARSER) && (
-                <CommandEditAlertParserForm
-                    commandId={id}
-                    onCancel={onCancel}
-                    onAfterChange={onAfterChange}
-                />
-            )}
-
-            {parserType && isParser(PROGRAM_STAGE_DATAENTRY_PARSER) && (
-                <CommandEditProgramStageDataEntryParserForm
-                    commandId={id}
-                    onCancel={onCancel}
-                    onAfterChange={onAfterChange}
-                />
-            )}
-
-            {parserType && isParser(UNREGISTERED_PARSER) && (
-                <CommandEditUnregisteredParserForm
-                    commandId={id}
-                    onCancel={onCancel}
-                    onAfterChange={onAfterChange}
-                />
-            )}
-
-            {parserType && isParser(EVENT_REGISTRATION_PARSER) && (
-                <CommandEditEventRegistrationParserForm
-                    commandId={id}
-                    onCancel={onCancel}
-                    onAfterChange={onAfterChange}
-                />
-            )}
-
-            {parserType && isParser(TRACKED_ENTITY_REGISTRATION_PARSER) && (
-                <CommandEditTrackedEntityRegistrationParserForm
-                    commandId={id}
-                    onCancel={onCancel}
-                    onAfterChange={onAfterChange}
+            {showCancelDialog && (
+                <CancelDialog
+                    onConfirmCancel={() => history.push(SMS_COMMAND_LIST_PATH)}
+                    onAbortCancel={() => setShowCancelDialog(false)}
                 />
             )}
 
