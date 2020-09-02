@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useDataQuery } from '@dhis2/app-service-data'
+import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
+import i18n from '../../locales'
 import { dataTest } from '../../dataTest'
 import { Filter } from './Filter'
 import { DeleteSelectedButton } from './DeleteSelectedButton'
 import { SmsTable } from './SmsTable'
 import { RECEIVED_SMS_LIST_LABEL, RECEIVED_SMS_LIST_PATH } from './config'
-import { SmsTableLoader } from './SmsTableLoader'
-import { SmsTableError } from './SmsTableError'
 import { useQueryParams } from './useQueryParams'
 import styles from './ReceivedSmsList.module.css'
 import { PageHeadline } from '../../headline'
@@ -46,6 +46,30 @@ const ReceivedSmsList = () => {
         refetch({ page, pageSize, phoneNumber, status })
     }, [page, pageSize, phoneNumber, status])
 
+    if (loading || !called) {
+        return (
+            <>
+                <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            </>
+        )
+    }
+
+    if (error) {
+        const msg = i18n.t('Something went wrong whilst loading received SMSes')
+
+        return (
+            <>
+                <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
+                <NoticeBox error title={msg}>
+                    {error.message}
+                </NoticeBox>
+            </>
+        )
+    }
+
     return (
         <div data-test={dataTest('views-receivedsmslist')}>
             <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
@@ -57,8 +81,6 @@ const ReceivedSmsList = () => {
                 />
             </div>
             <div>
-                {(loading || !called) && <SmsTableLoader />}
-                {error && !loading && <SmsTableError message={error.message} />}
                 {data && (
                     <SmsTable
                         messages={data.inboundSms.inboundsmss}
