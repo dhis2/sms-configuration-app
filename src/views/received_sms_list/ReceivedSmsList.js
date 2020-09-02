@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react'
 import { useDataQuery } from '@dhis2/app-service-data'
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
-import i18n from '../../locales'
-import { dataTest } from '../../dataTest'
-import { Filter } from './Filter'
-import { DeleteSelectedButton } from './DeleteSelectedButton'
-import { SmsTable } from './SmsTable'
+import React, { useState, useEffect } from 'react'
+
 import { RECEIVED_SMS_LIST_LABEL, RECEIVED_SMS_LIST_PATH } from './config'
-import { useQueryParams } from './useQueryParams'
-import styles from './ReceivedSmsList.module.css'
+import { DeleteSelectedButton } from './DeleteSelectedButton'
+import { Filter } from './Filter'
 import { PageHeadline } from '../../headline'
+import { SmsTable } from './SmsTable'
+import { dataTest } from '../../dataTest'
+import { useQueryParams } from './useQueryParams'
+import i18n from '../../locales'
+import styles from './ReceivedSmsList.module.css'
 
 const query = {
     inboundSms: {
@@ -73,8 +74,12 @@ const ReceivedSmsList = () => {
     const messages = data?.inboundSms?.inboundsmss || []
 
     return (
-        <div data-test={dataTest('views-receivedsmslist')}>
+        <div
+            data-test={dataTest('views-receivedsmslist')}
+            className={styles.container}
+        >
             <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
+
             <div className={styles.topBar}>
                 <Filter loading={loading} />
                 <DeleteSelectedButton
@@ -82,6 +87,7 @@ const ReceivedSmsList = () => {
                     selectedIds={selectedIds}
                 />
             </div>
+
             <div>
                 {
                     <SmsTable

@@ -1,7 +1,8 @@
-import React from 'react'
 import { TableRow, TableCell, Checkbox } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import React from 'react'
 import moment from 'moment'
+
 import { statusMap } from './translations'
 
 const SmsTableItem = ({ sms, toggleSelected, isSelected }) => {

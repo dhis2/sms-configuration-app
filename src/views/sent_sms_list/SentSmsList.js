@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { useDataQuery } from '@dhis2/app-runtime'
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
-import i18n from '../../locales'
+import { useDataQuery } from '@dhis2/app-runtime'
+import React, { useState } from 'react'
+
 import { PageHeadline } from '../../headline'
 import SmsTable from './SmsTable'
 import StatusFilter, { parseStatus } from './StatusFilter'
@@ -13,7 +13,8 @@ import {
 } from './handlers'
 import DeleteSelectedButton from './DeleteSelectedButton'
 import RefetchSms from './RefetchSms'
-import s from './SentSmsList.module.css'
+import i18n from '../../locales'
+import styles from './SentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('Sent')
 export const SENT_SMS_LIST_PATH = '/sent'
@@ -102,23 +103,25 @@ export const SentSmsList = () => {
     const smses = data?.sms?.outboundsmss || []
 
     return (
-        <RefetchSms.Provider value={context}>
-            <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
-            <div className={s.header}>
-                <StatusFilter status={status} setStatus={setStatus} />
-                <div className={s.headerRight}>
-                    <DeleteSelectedButton selected={selected} />
+        <div className={styles.container}>
+            <RefetchSms.Provider value={context}>
+                <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
+                <div className={styles.header}>
+                    <StatusFilter status={status} setStatus={setStatus} />
+                    <div className={styles.headerRight}>
+                        <DeleteSelectedButton selected={selected} />
+                    </div>
                 </div>
-            </div>
-            <SmsTable
-                smses={smses}
-                cleanSelected={cleanSelected}
-                allSelected={allSelected}
-                selected={selected}
-                toggleSelected={toggleSelected}
-                toggleAll={toggleAll}
-                pager={data.sms.pager}
-            />
-        </RefetchSms.Provider>
+                <SmsTable
+                    smses={smses}
+                    cleanSelected={cleanSelected}
+                    allSelected={allSelected}
+                    selected={selected}
+                    toggleSelected={toggleSelected}
+                    toggleAll={toggleAll}
+                    pager={data.sms.pager}
+                />
+            </RefetchSms.Provider>
+        </div>
     )
 }
