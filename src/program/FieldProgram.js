@@ -9,8 +9,16 @@ const { Field } = ReactFinalForm
 
 export const FIELD_PROGRAM_NAME = 'program'
 
-export const FieldProgram = ({ programs, loading, required, disabled }) => (
+export const FieldProgram = ({
+    programs,
+    loading,
+    required,
+    disabled,
+    errorText,
+}) => (
     <Field
+        error={!!errorText}
+        errorText={errorText}
         disabled={disabled}
         required={required}
         loading={loading}
@@ -27,6 +35,7 @@ export const FieldProgram = ({ programs, loading, required, disabled }) => (
 
 FieldProgram.defaultProps = {
     disabled: false,
+    errorText: '',
     loading: false,
     required: false,
 }
@@ -39,6 +48,7 @@ FieldProgram.propTypes = {
         })
     ).isRequired,
     disabled: PropTypes.bool,
+    errorText: PropTypes.string,
     loading: PropTypes.bool,
     required: PropTypes.bool,
 }

@@ -3,12 +3,10 @@ import React from 'react'
 
 import { FieldProgram } from './FieldProgram'
 import { useReadProgramsQuery } from './useReadProgramsQuery'
-import { useCriticalNotification } from '../notifications/useCriticalNotification'
 
 export const FieldProgramWithAutoLoad = ({ required, registration }) => {
     const variables = { registration }
     const { loading, error, data } = useReadProgramsQuery({ variables })
-    useCriticalNotification(error)
 
     if (loading) {
         return (
@@ -22,7 +20,14 @@ export const FieldProgramWithAutoLoad = ({ required, registration }) => {
     }
 
     if (error) {
-        return <FieldProgram required={required} disabled programs={[]} />
+        return (
+            <FieldProgram
+                required={required}
+                disabled
+                programs={[]}
+                errorText={error.message}
+            />
+        )
     }
 
     const { programs } = data.programs
