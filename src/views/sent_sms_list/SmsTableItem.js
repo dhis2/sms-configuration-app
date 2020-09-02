@@ -3,9 +3,8 @@ import { TableRow, TableCell, Checkbox } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import moment from 'moment'
 import { statusMap } from './translations'
-import DeleteButton from './DeleteButton'
 
-const SmsTableItem = ({ sms, toggleSelected, isSelected, cleanSelected }) => {
+const SmsTableItem = ({ sms, toggleSelected, isSelected }) => {
     const { message, status, date, id } = sms
 
     /**
@@ -29,15 +28,11 @@ const SmsTableItem = ({ sms, toggleSelected, isSelected, cleanSelected }) => {
             <TableCell>
                 {moment(date).format('MMMM Do YYYY, h:mm:ss a')}
             </TableCell>
-            <TableCell>
-                <DeleteButton id={id} cleanSelected={cleanSelected} />
-            </TableCell>
         </TableRow>
     )
 }
 
 SmsTableItem.propTypes = {
-    cleanSelected: PropTypes.func.isRequired,
     isSelected: PropTypes.bool.isRequired,
     sms: PropTypes.shape({
         date: PropTypes.string.isRequired,

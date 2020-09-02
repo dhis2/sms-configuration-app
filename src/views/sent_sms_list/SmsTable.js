@@ -18,7 +18,6 @@ import s from './SmsTable.module.css'
 
 const SmsTable = ({
     smses,
-    cleanSelected,
     toggleSelected,
     toggleAll,
     allSelected,
@@ -39,7 +38,6 @@ const SmsTable = ({
                 <TableCellHead>{i18n.t('Recipients')}</TableCellHead>
                 <TableCellHead>{i18n.t('Status')}</TableCellHead>
                 <TableCellHead>{i18n.t('Date')}</TableCellHead>
-                <TableCellHead>{i18n.t('Delete')}</TableCellHead>
             </TableRowHead>
         </TableHead>
         <TableBody>
@@ -56,7 +54,6 @@ const SmsTable = ({
                         sms={sms}
                         isSelected={selected.includes(sms.id)}
                         toggleSelected={toggleSelected}
-                        cleanSelected={cleanSelected}
                     />
                 ))
             )}
@@ -73,7 +70,6 @@ const SmsTable = ({
 
 SmsTable.propTypes = {
     allSelected: PropTypes.bool.isRequired,
-    cleanSelected: PropTypes.func.isRequired,
     pager: PropTypes.object.isRequired,
     selected: PropTypes.arrayOf(PropTypes.string).isRequired,
     smses: PropTypes.arrayOf(PropTypes.object).isRequired,
