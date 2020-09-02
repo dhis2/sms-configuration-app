@@ -3,3 +3,7 @@
     text-align: center;
     font-style: italic;
 }
+
+.originator {
+    white-space: nowrap;
+}
