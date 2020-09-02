@@ -268,12 +268,13 @@ export const CommandEditWithDataSetForm = ({
 
     return (
         <Form
+            keepDirtyOnReinitialize
             onSubmit={updateCommand}
             initialValues={initialValues}
             validate={globalValidate(DE_COC_combination_data)}
-            subscription={{}}
+            subscription={{ pristine: true }}
         >
-            {({ handleSubmit, form }) => (
+            {({ handleSubmit, form, pristine }) => (
                 <form onSubmit={handleSubmit} data-test={dataTest}>
                     <FormRow>
                         <FieldCommandName />
@@ -357,7 +358,9 @@ export const CommandEditWithDataSetForm = ({
                     <SubmitErrors />
 
                     <ButtonStrip>
-                        <Button onClick={onCancel}>{i18n.t('Cancel')}</Button>
+                        <Button onClick={() => onCancel(pristine)}>
+                            {i18n.t('Cancel')}
+                        </Button>
 
                         <SaveCommandButton />
                     </ButtonStrip>

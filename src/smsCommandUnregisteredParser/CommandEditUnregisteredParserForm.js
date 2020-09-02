@@ -92,8 +92,12 @@ export const CommandEditUnregisteredParserForm = ({
     ]
 
     return (
-        <Form onSubmit={updateCommand} initialValues={initialValues}>
-            {({ handleSubmit }) => (
+        <Form
+            keepDirtyOnReinitialize
+            onSubmit={updateCommand}
+            initialValues={initialValues}
+        >
+            {({ handleSubmit, pristine }) => (
                 <form
                     onSubmit={handleSubmit}
                     data-test={dataTest(
@@ -119,7 +123,9 @@ export const CommandEditUnregisteredParserForm = ({
                     <SubmitErrors />
 
                     <ButtonStrip>
-                        <Button onClick={onCancel}>{i18n.t('Cancel')}</Button>
+                        <Button onClick={() => onCancel(pristine)}>
+                            {i18n.t('Cancel')}
+                        </Button>
 
                         <SaveCommandButton />
                     </ButtonStrip>

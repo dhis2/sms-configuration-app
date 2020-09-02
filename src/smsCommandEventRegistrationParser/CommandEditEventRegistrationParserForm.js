@@ -138,8 +138,12 @@ export const CommandEditEventRegistrationParserForm = ({
     const initialValues = getInitialFormState(command)
 
     return (
-        <Form initialValues={initialValues} onSubmit={updateCommand}>
-            {({ handleSubmit, values }) => {
+        <Form
+            keepDirtyOnReinitialize
+            initialValues={initialValues}
+            onSubmit={updateCommand}
+        >
+            {({ handleSubmit, values, pristine }) => {
                 return (
                     <form onSubmit={handleSubmit}>
                         <FormRow>
@@ -206,7 +210,7 @@ export const CommandEditEventRegistrationParserForm = ({
                         <SubmitErrors />
 
                         <ButtonStrip>
-                            <Button onClick={onCancel}>
+                            <Button onClick={() => onCancel(pristine)}>
                                 {i18n.t('Cancel')}
                             </Button>
 

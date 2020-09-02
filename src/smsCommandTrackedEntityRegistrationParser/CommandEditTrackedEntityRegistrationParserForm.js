@@ -162,8 +162,12 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
     )
 
     return (
-        <Form onSubmit={updateCommand} initialValues={initialValues}>
-            {({ handleSubmit }) => (
+        <Form
+            keepDirtyOnReinitialize
+            onSubmit={updateCommand}
+            initialValues={initialValues}
+        >
+            {({ handleSubmit, pristine }) => (
                 <form onSubmit={handleSubmit}>
                     <FormRow>
                         <FieldCommandName />
@@ -224,7 +228,9 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
                     <SubmitErrors />
 
                     <ButtonStrip>
-                        <Button onClick={onCancel}>{i18n.t('Cancel')}</Button>
+                        <Button onClick={() => onCancel(pristine)}>
+                            {i18n.t('Cancel')}
+                        </Button>
 
                         <SaveCommandButton />
                     </ButtonStrip>
