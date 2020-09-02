@@ -14,7 +14,7 @@ export const DataElementTimesCategoryOptionCombos = ({
     DE_COC_combinations,
 }) => (
     <div>
-        <h2>{i18n.t('Data element category combination')}</h2>
+        <h2>{i18n.t('SMS short codes')}</h2>
 
         <FormSpy subscription={{ errors: true, pristine: true }}>
             {({ errors, pristine }) => {
