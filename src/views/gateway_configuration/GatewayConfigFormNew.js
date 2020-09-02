@@ -1,4 +1,4 @@
-import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
+import { SingleSelectField, SingleSelectOption, NoticeBox } from '@dhis2/ui'
 import { useHistory } from 'react-router-dom'
 import React, { useState } from 'react'
 
@@ -15,7 +15,6 @@ import {
     useCreateClickatellGatewayMutation,
     useCreateGenericGatewayMutation,
 } from '../../gateways'
-import { useCriticalNotification } from '../../notifications'
 import i18n from '../../locales'
 
 export const GATEWAY_CONFIG_FORM_NEW_PATH = '/sms-gateway/new'
@@ -28,19 +27,34 @@ export const GatewayConfigFormNew = () => {
         saveGenericGateway,
         { error: saveGenericGatewayError },
     ] = useCreateGenericGatewayMutation()
-    useCriticalNotification(saveGenericGatewayError)
 
     const [
         saveBulkSMSGateway,
         { error: saveBulkSMSGatewayError },
     ] = useCreateBulkSMSGatewayMutation()
-    useCriticalNotification(saveBulkSMSGatewayError)
 
     const [
         saveClickatellGateway,
         { error: saveClickatellGatewayError },
     ] = useCreateClickatellGatewayMutation()
-    useCriticalNotification(saveClickatellGatewayError)
+
+    const error =
+        saveGenericGatewayError ||
+        saveBulkSMSGatewayError ||
+        saveClickatellGatewayError
+
+    if (error) {
+        const msg = i18n.t('Something went wrong whilst loading sent SMSes')
+
+        return (
+            <div data-test={dataTest('views-gatewayconfigformnew')}>
+                <PageHeadline>{i18n.t('Add gateway')}</PageHeadline>
+                <NoticeBox error title={msg}>
+                    {error.message}
+                </NoticeBox>
+            </div>
+        )
+    }
 
     const onSubmit = async values => {
         try {
