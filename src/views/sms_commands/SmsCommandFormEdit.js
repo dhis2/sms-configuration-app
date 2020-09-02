@@ -26,6 +26,7 @@ import { CommandEditEventRegistrationParserForm } from '../../smsCommandEventReg
 import { CommandEditAlertParserForm } from '../../smsCommandAlertParser'
 import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
 import i18n from '../../locales'
+import styles from './SmsCommandFormEdit.module.css'
 
 export const SMS_COMMAND_FORM_EDIT_PATH_STATIC = '/sms-config/edit'
 export const SMS_COMMAND_FORM_EDIT_PATH = `${SMS_COMMAND_FORM_EDIT_PATH_STATIC}/:id`
@@ -57,7 +58,7 @@ export const SmsCommandFormEdit = () => {
     const isParser = isParserType.bind(null, parserType)
 
     return (
-        <div>
+        <div className={styles.container}>
             <PageHeadline>{i18n.t('Edit command')}</PageHeadline>
 
             {parserType && isParser(KEY_VALUE_PARSER) && (

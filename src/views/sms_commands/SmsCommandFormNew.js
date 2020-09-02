@@ -27,6 +27,7 @@ import { FormRow } from '../../forms'
 import { PageHeadline } from '../../headline'
 import i18n from '../../locales'
 import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
+import styles from './SmsCommandFormNew.module.css'
 
 const { Form, useForm } = ReactFinalForm
 
@@ -102,7 +103,7 @@ const ActualForm = ({ handleSubmit, submitting }) => {
         parserType === EVENT_REGISTRATION_PARSER.value ? false : undefined
 
     return (
-        <div>
+        <div className={styles.container}>
             <PageHeadline>{i18n.t('Add command')}</PageHeadline>
             <form onSubmit={handleSubmit}>
                 <FormRow>
