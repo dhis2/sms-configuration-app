@@ -55,12 +55,14 @@ export const FieldDataElementWithCategoryOptionCombo = ({
                             {code && (
                                 <>
                                     <FieldDataElementWithCategoryOptionComboAddFormulaButton
+                                        baseName={baseName}
                                         formulaFieldName={formulaName}
                                         onClick={() => setShowFormula(true)}
                                     />
 
                                     {showFormula && (
                                         <FieldDataElementWithCategoryOptionComboFormula
+                                            baseName={baseName}
                                             combo={label}
                                             targetFieldName={formulaName}
                                             onClose={() =>

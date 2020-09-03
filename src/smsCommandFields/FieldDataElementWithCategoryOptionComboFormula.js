@@ -15,28 +15,34 @@ import React, { useMemo } from 'react'
 
 import { FIELD_DATA_SET_NAME } from '../dataSet'
 import { FormRow } from '../forms'
-import { get } from '../utils'
 import { useReadDataElementsOfDataSetQuery } from '../dataElement'
 import i18n from '../locales'
 
-const { Field, Form, useForm, useFormState } = ReactFinalForm
+const { Field, Form, useForm, useField } = ReactFinalForm
 
 export const FieldDataElementWithCategoryOptionComboFormula = ({
+    baseName,
     combo,
     targetFieldName,
     onClose,
 }) => {
     const form = useForm()
-    const { values } = useFormState()
 
-    const { id: dataSetId } = values[FIELD_DATA_SET_NAME]
+    const smsCode = useField(baseName, {
+        subscription: { value: true },
+    }).input.value
+
+    const dataSetId = useField(FIELD_DATA_SET_NAME, {
+        subscription: { value: true },
+    }).input.value.id
+
     const { loading, error, data } = useReadDataElementsOfDataSetQuery(
         dataSetId
     )
 
     // Using memo so changing the form does not change the "initialValues"
     // which would cause the form to update unnecessarily
-    const initialFormula = get(targetFieldName, values)
+    const initialFormula = smsCode.formula
     const initialOperator = useMemo(
         () => (initialFormula ? initialFormula[0] : '+'),
         []
@@ -59,7 +65,7 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
         )
     }
 
-    const options = data.dataElements.dataElements.map(dataElement => {
+    const options = data.map(dataElement => {
         const { code, displayName } = dataElement
 
         return {
@@ -162,6 +168,7 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
 }
 
 FieldDataElementWithCategoryOptionComboFormula.propTypes = {
+    baseName: PropTypes.string.isRequired,
     combo: PropTypes.string.isRequired,
     targetFieldName: PropTypes.string.isRequired,
     onClose: PropTypes.func.isRequired,

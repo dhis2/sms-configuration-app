@@ -1,31 +1,26 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import { useEffect, useState } from 'react'
 
-import { queryDataElements } from '../dataElement'
-import { queryDataSet } from '../dataSet'
-
-export const queryDataElementsOfDataSet = (engine, variables) => {
-    const nextVariables = { ...variables, fields: 'dataSetElements' }
-
-    return queryDataSet(engine, nextVariables)
-        .then(response => {
-            const dataSets = response.dataSet
-            const { dataSetElements } = dataSets
-            const dataElementIds = dataSetElements.map(
-                ({ dataElement }) => dataElement.id
-            )
-
-            return dataElementIds
-        })
-        .then(dataElementIds => {
-            if (!dataElementIds.length) return []
-
-            const dataElementVariables = { ids: dataElementIds }
-            return queryDataElements(engine, dataElementVariables)
-        })
+export const DATA_ELEMENTS_QUERY = {
+    dataSet: {
+        resource: 'dataSets',
+        id: ({ id }) => id,
+        params: ({ filter }) => ({
+            filter,
+            fields: 'dataSetElements[dataElement[id,code,displayName]]',
+        }),
+    },
 }
 
-export const useReadDataElementsOfDataSetQuery = dataSetId => {
+export const queryDataElementsOfDataSet = (engine, variables) =>
+    engine.query(DATA_ELEMENTS_QUERY, { variables }).then(data => {
+        const { dataSet } = data
+        const { dataSetElements } = dataSet
+        const formatted = dataSetElements.map(({ dataElement }) => dataElement)
+        return formatted
+    })
+
+export const useReadDataElementsOfDataSetQuery = (dataSetId, filter) => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [data, setData] = useState(null)
@@ -43,7 +38,7 @@ export const useReadDataElementsOfDataSetQuery = dataSetId => {
 
     // initial request
     useEffect(() => {
-        refetch({ id: dataSetId })
+        refetch({ id: dataSetId, filter })
     }, [])
 
     return { loading, error, data, refetch }
