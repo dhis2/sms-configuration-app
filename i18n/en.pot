@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-07T08:17:52.093Z\n"
-"PO-Revision-Date: 2020-09-07T08:17:52.093Z\n"
+"POT-Creation-Date: 2020-09-07T13:25:20.599Z\n"
+"PO-Revision-Date: 2020-09-07T13:25:20.599Z\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -282,6 +282,52 @@ msgstr ""
 msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
+msgstr ""
+
+msgid "Overview: SMS Configuration"
+msgstr ""
+
+msgid ""
+"Configure settings for SMS sending, receiving, data reporting, alerts, "
+"registration and more."
+msgstr ""
+
+msgid "Gateway Configuration"
+msgstr ""
+
+msgid "Add and manage gateways for sending and receiving SMS messages in DHIS2."
+msgstr ""
+
+msgid "Set up gateways"
+msgstr ""
+
+msgid "SMS Commands"
+msgstr ""
+
+msgid ""
+"Add and manage commands triggered by incoming SMS messages to register, "
+"alert and more."
+msgstr ""
+
+msgid "Set up SMS commands"
+msgstr ""
+
+msgid "Sent SMS messages"
+msgstr ""
+
+msgid "Open logs of all SMS messages sent from DHIS2."
+msgstr ""
+
+msgid "View all sent SMS"
+msgstr ""
+
+msgid "Received SMS messages"
+msgstr ""
+
+msgid "Open logs of all SMS messages received by DHIS2."
+msgstr ""
+
+msgid "View all received SMS"
 msgstr ""
 
 msgid "Filter by status"
