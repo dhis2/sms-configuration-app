@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-03T08:01:29.787Z\n"
-"PO-Revision-Date: 2020-09-03T08:01:29.787Z\n"
+"POT-Creation-Date: 2020-09-03T12:51:22.604Z\n"
+"PO-Revision-Date: 2020-09-03T12:51:22.604Z\n"
 
 msgid "Dataset"
 msgstr ""
@@ -235,6 +235,12 @@ msgstr ""
 msgid "Something went wrong whilst saving gateways"
 msgstr ""
 
+msgid "Gateway not found"
+msgstr ""
+
+msgid "The requested gateway could not be loaded"
+msgstr ""
+
 msgid "Something went wrong whilst saving the gateway"
 msgstr ""
 
@@ -249,6 +255,14 @@ msgid ""
 msgstr ""
 
 msgid "Delete selected"
+msgstr ""
+
+msgid "No gateways found"
+msgstr ""
+
+msgid ""
+"It looks like there aren't any configured gateways, or they couldn't be "
+"loaded."
 msgstr ""
 
 msgid "Filter by status"
@@ -356,6 +370,12 @@ msgstr ""
 msgid "Edit command"
 msgstr ""
 
+msgid "Unrecognised parser type"
+msgstr ""
+
+msgid "Could not find the requested parser type"
+msgstr ""
+
 msgid "Add command"
 msgstr ""
 
@@ -363,4 +383,7 @@ msgid "Commands"
 msgstr ""
 
 msgid "Sms command"
+msgstr ""
+
+msgid "No commands to display"
 msgstr ""
