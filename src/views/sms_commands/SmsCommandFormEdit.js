@@ -56,8 +56,6 @@ export const SmsCommandFormEdit = () => {
     const parserType = data?.smsCommand[FIELD_COMMAND_PARSER_NAME]
     const isParser = isParserType.bind(null, parserType)
 
-    // If it's possible to not have data we should handle that as well
-
     return (
         <div>
             <PageHeadline>{i18n.t('Edit command')}</PageHeadline>
@@ -109,6 +107,12 @@ export const SmsCommandFormEdit = () => {
                     commandId={id}
                     onAfterChange={() => history.push(SMS_COMMAND_LIST_PATH)}
                 />
+            )}
+
+            {!parserType && (
+                <NoticeBox error title={i18n.t('Unrecognised parser type')}>
+                    {i18n.t('Could not find the requested parser type')}
+                </NoticeBox>
             )}
         </div>
     )

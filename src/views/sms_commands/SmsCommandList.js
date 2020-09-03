@@ -125,6 +125,7 @@ export const SmsCommandList = () => {
 
     const allChecked =
         checkedSmsCommands.length === data?.smsCommands?.smsCommands?.length
+    const hasCommands = data?.smsCommands?.smsCommands?.length > 0
 
     return (
         <div data-test={dataTest('views-smscommandlist')}>
@@ -162,45 +163,55 @@ export const SmsCommandList = () => {
                     </TableRowHead>
                 </TableHead>
                 <TableBody>
-                    {data?.smsCommands?.smsCommands?.map(
-                        ({ id, displayName, parserType }) => (
-                            <TableRow key={id}>
-                                <TableCell className={styles.checkbox}>
-                                    <Checkbox
-                                        checked={
-                                            !!checkedSmsCommands.find(
-                                                ({ id: checkedId }) =>
-                                                    id === checkedId
-                                            )
-                                        }
-                                        onChange={() =>
-                                            toggleSmsCommand({
-                                                id,
-                                                displayName,
-                                            })
-                                        }
-                                    />
-                                </TableCell>
+                    {hasCommands ? (
+                        data?.smsCommands?.smsCommands?.map(
+                            ({ id, displayName, parserType }) => (
+                                <TableRow key={id}>
+                                    <TableCell className={styles.checkbox}>
+                                        <Checkbox
+                                            checked={
+                                                !!checkedSmsCommands.find(
+                                                    ({ id: checkedId }) =>
+                                                        id === checkedId
+                                                )
+                                            }
+                                            onChange={() =>
+                                                toggleSmsCommand({
+                                                    id,
+                                                    displayName,
+                                                })
+                                            }
+                                        />
+                                    </TableCell>
 
-                                <TableCell>{displayName}</TableCell>
+                                    <TableCell>{displayName}</TableCell>
 
-                                <TableCell>
-                                    {getLabelByParserTypes(parserType)}
-                                </TableCell>
+                                    <TableCell>
+                                        {getLabelByParserTypes(parserType)}
+                                    </TableCell>
 
-                                <TableCell className={styles.editButtonCell}>
-                                    <Button
-                                        onClick={() =>
-                                            history.push(
-                                                `${SMS_COMMAND_FORM_EDIT_PATH_STATIC}/${id}`
-                                            )
-                                        }
+                                    <TableCell
+                                        className={styles.editButtonCell}
                                     >
-                                        {i18n.t('Edit')}
-                                    </Button>
-                                </TableCell>
-                            </TableRow>
+                                        <Button
+                                            onClick={() =>
+                                                history.push(
+                                                    `${SMS_COMMAND_FORM_EDIT_PATH_STATIC}/${id}`
+                                                )
+                                            }
+                                        >
+                                            {i18n.t('Edit')}
+                                        </Button>
+                                    </TableCell>
+                                </TableRow>
+                            )
                         )
+                    ) : (
+                        <TableRow>
+                            <TableCell colSpan="4" className={styles.noResults}>
+                                {i18n.t('No commands to display')}
+                            </TableCell>
+                        </TableRow>
                     )}
                 </TableBody>
             </Table>
