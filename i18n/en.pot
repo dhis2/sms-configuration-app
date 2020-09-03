@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-01T15:40:26.979Z\n"
-"PO-Revision-Date: 2020-09-01T15:40:26.979Z\n"
+"POT-Creation-Date: 2020-09-03T08:01:29.787Z\n"
+"PO-Revision-Date: 2020-09-03T08:01:29.787Z\n"
 
 msgid "Dataset"
 msgstr ""
@@ -97,13 +97,13 @@ msgstr ""
 msgid "Program stage"
 msgstr ""
 
-msgid "Delete confirmation"
+msgid "Are you sure you want to delete the selected commands?"
 msgstr ""
 
 msgid "Cancel"
 msgstr ""
 
-msgid "Delete command configurations"
+msgid "Delete"
 msgstr ""
 
 msgid "Save command"
@@ -181,6 +181,9 @@ msgstr ""
 msgid "formula operator"
 msgstr ""
 
+msgid "Something went wrong whilst saving"
+msgstr ""
+
 msgid "Save"
 msgstr ""
 
@@ -232,6 +235,9 @@ msgstr ""
 msgid "Something went wrong whilst saving gateways"
 msgstr ""
 
+msgid "Something went wrong whilst saving the gateway"
+msgstr ""
+
 msgid "Something went wrong whilst performing the requested operation"
 msgstr ""
 
@@ -243,9 +249,6 @@ msgid ""
 msgstr ""
 
 msgid "Delete selected"
-msgstr ""
-
-msgid "Delete"
 msgstr ""
 
 msgid "Filter by status"
@@ -278,6 +281,9 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+msgid "Something went wrong whilst loading received SMSes"
+msgstr ""
+
 msgid "Message"
 msgstr ""
 
@@ -297,9 +303,6 @@ msgid "No SMSes to display"
 msgstr ""
 
 msgid "Unknown"
-msgstr ""
-
-msgid "Could not load list of received SMSes"
 msgstr ""
 
 msgid "Received"

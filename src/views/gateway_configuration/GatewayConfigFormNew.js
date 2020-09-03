@@ -44,7 +44,7 @@ export const GatewayConfigFormNew = () => {
         saveClickatellGatewayError
 
     if (error) {
-        const msg = i18n.t('Something went wrong whilst loading sent SMSes')
+        const msg = i18n.t('Something went wrong whilst saving the gateway')
 
         return (
             <div data-test={dataTest('views-gatewayconfigformnew')}>
