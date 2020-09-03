@@ -32,7 +32,6 @@ const App = () => (
     <AlertHandler>
         <CssVariables spacers colors />
         <BrowserRouter>
-            <CssVariables colors />
             <div className={styles.container} data-test={dataTest('app')}>
                 <div className={styles.sidebar}>
                     <Navigation />
