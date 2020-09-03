@@ -107,10 +107,12 @@ export const GatewayConfigFormEdit = () => {
         }
     }
 
+    const hasGateway = data?.gateway
+
     return (
         <div data-test={dataTest('views-gatewayconfigformedit')}>
             <PageHeadline>{i18n.t('Edit gateway')}</PageHeadline>
-            {data?.gateway && (
+            {hasGateway ? (
                 <div
                     data-test={dataTest(
                         'views-gatewayconfigformedit-formcontainer'
@@ -149,6 +151,10 @@ export const GatewayConfigFormEdit = () => {
                         />
                     )}
                 </div>
+            ) : (
+                <NoticeBox error title={i18n.t('Gateway not found')}>
+                    {i18n.t('The requested gateway could not be loaded')}
+                </NoticeBox>
             )}
         </div>
     )
