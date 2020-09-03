@@ -83,7 +83,7 @@ export const GatewayConfigList = () => {
         )
     }
 
-    const hasGateways = data?.gateways?.gateways
+    const hasGateways = !!data?.gateways?.gateways?.length
 
     return (
         <div
