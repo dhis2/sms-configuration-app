@@ -5,8 +5,17 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-03T12:51:22.604Z\n"
-"PO-Revision-Date: 2020-09-03T12:51:22.604Z\n"
+"POT-Creation-Date: 2020-09-04T08:24:25.740Z\n"
+"PO-Revision-Date: 2020-09-04T08:24:25.740Z\n"
+
+msgid "Are you sure you want to cancel? Unsaved changes will be lost"
+msgstr ""
+
+msgid "Yes, cancel"
+msgstr ""
+
+msgid "No, stay on page"
+msgstr ""
 
 msgid "Dataset"
 msgstr ""
@@ -41,6 +50,9 @@ msgstr ""
 msgid "Add gateway"
 msgstr ""
 
+msgid "Cancel"
+msgstr ""
+
 msgid ""
 "With a generic http gateway any number of parameters can be added with key "
 "value pairs"
@@ -67,16 +79,10 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-msgid "Default gateway"
-msgstr ""
-
-msgid "Yes"
-msgstr ""
-
-msgid "No"
-msgstr ""
-
 msgid "Make default"
+msgstr ""
+
+msgid "Default gateway"
 msgstr ""
 
 msgid "Edit"
@@ -100,9 +106,6 @@ msgstr ""
 msgid "Are you sure you want to delete the selected commands?"
 msgstr ""
 
-msgid "Cancel"
-msgstr ""
-
 msgid "Delete"
 msgstr ""
 
@@ -118,13 +121,10 @@ msgstr ""
 msgid "Something went wrong whilst loading the command's details"
 msgstr ""
 
-msgid "Program stage data elements"
+msgid "SMS short codes"
 msgstr ""
 
 msgid "Add special character"
-msgstr ""
-
-msgid "Data element category combination"
 msgstr ""
 
 msgid "Data element category combination validation error"
@@ -172,7 +172,13 @@ msgstr ""
 msgid "default"
 msgstr ""
 
-msgid "Change formula"
+msgid "Edit formula"
+msgstr ""
+
+msgid "Add formula"
+msgstr ""
+
+msgid "Formula for {{combo}}"
 msgstr ""
 
 msgid "Data element"
@@ -215,9 +221,6 @@ msgid "Program stage data entry parser"
 msgstr ""
 
 msgid "Event registration parser"
-msgstr ""
-
-msgid "Tracked entity attribute"
 msgstr ""
 
 msgid "Duplicate value!"

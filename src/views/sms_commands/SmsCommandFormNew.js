@@ -2,7 +2,6 @@ import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import { useHistory } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router'
 
 import {
     ALERT_PARSER,

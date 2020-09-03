@@ -22,6 +22,7 @@ import i18n from '../locales'
 const { Field, Form, useForm, useFormState } = ReactFinalForm
 
 export const FieldDataElementWithCategoryOptionComboFormula = ({
+    combo,
     targetFieldName,
     onClose,
 }) => {
@@ -82,7 +83,9 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
         <Form onSubmit={onSubmit} initialValues={initialValues}>
             {({ handleSubmit }) => (
                 <Modal>
-                    <ModalTitle>{i18n.t('')}</ModalTitle>
+                    <ModalTitle>
+                        {i18n.t('Formula for {{combo}}', { combo })}
+                    </ModalTitle>
 
                     <ModalContent>
                         <form
@@ -159,6 +162,7 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
 }
 
 FieldDataElementWithCategoryOptionComboFormula.propTypes = {
+    combo: PropTypes.string.isRequired,
     targetFieldName: PropTypes.string.isRequired,
     onClose: PropTypes.func.isRequired,
 }

@@ -1,9 +1,10 @@
-import { Button, InputFieldFF, ReactFinalForm } from '@dhis2/ui'
+import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useState } from 'react'
 
 import { DE_COC_toFormName } from '../smsCommand'
 import { FieldDataElementWithCategoryOptionComboFormula } from './FieldDataElementWithCategoryOptionComboFormula'
+import { FieldDataElementWithCategoryOptionComboAddFormulaButton } from './FieldDataElementWithCategoryOptionComboAddFormulaButton'
 import { FormRow } from '../forms'
 import i18n from '../locales'
 import styles from './FieldDataElementWithCategoryOptionCombo.module.css'
@@ -53,14 +54,14 @@ export const FieldDataElementWithCategoryOptionCombo = ({
 
                             {code && (
                                 <>
-                                    <Button
+                                    <FieldDataElementWithCategoryOptionComboAddFormulaButton
+                                        formulaFieldName={formulaName}
                                         onClick={() => setShowFormula(true)}
-                                    >
-                                        {i18n.t('Change formula')}
-                                    </Button>
+                                    />
 
                                     {showFormula && (
                                         <FieldDataElementWithCategoryOptionComboFormula
+                                            combo={label}
                                             targetFieldName={formulaName}
                                             onClose={() =>
                                                 setShowFormula(false)
