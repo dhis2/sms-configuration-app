@@ -1,6 +1,7 @@
 import { Button, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router'
 
 import {
     ALERT_PARSER,
@@ -25,6 +26,7 @@ import { FieldUserGroupWithAutoLoad } from '../../userGroup'
 import { FormRow } from '../../forms'
 import { PageHeadline } from '../../headline'
 import i18n from '../../locales'
+import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
 
 const { Form, useForm } = ReactFinalForm
 
@@ -156,7 +158,10 @@ ActualForm.propTypes = {
 }
 
 export const SmsCommandFormNew = () => {
-    const [createSmsCommand] = useCreateSmsCommandMutation()
+    const history = useHistory()
+    const [createSmsCommand] = useCreateSmsCommandMutation({
+        onComplete: () => history.push(SMS_COMMAND_LIST_PATH),
+    })
     const onSubmit = values => createSmsCommand(values)
 
     return (

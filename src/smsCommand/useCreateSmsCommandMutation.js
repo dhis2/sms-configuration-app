@@ -71,5 +71,8 @@ export const CREATE_SMS_COMMAND_MUTATION = {
     },
 }
 
-export const useCreateSmsCommandMutation = () =>
-    useDataMutation(CREATE_SMS_COMMAND_MUTATION)
+export const useCreateSmsCommandMutation = ({ onComplete, onError }) =>
+    useDataMutation(CREATE_SMS_COMMAND_MUTATION, {
+        onComplete,
+        onError,
+    })
