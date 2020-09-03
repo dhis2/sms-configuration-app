@@ -1,14 +1,11 @@
-import { NoticeBox, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
 
-import { FIELD_COMMAND_SMS_CODES_NAME } from './fieldNames'
 import { FieldDataElementWithCategoryOptionCombo } from './FieldDataElementWithCategoryOptionCombo'
+import { DataElementTimesCategoryOptionCombosCompletenessMessage } from './DataElementTimesCategoryOptionCombosCompletenessMessage'
 import { FormRow } from '../forms'
 import i18n from '../locales'
 import styles from './DataElementTimesCategoryOptionCombos.module.css'
-
-const { FormSpy } = ReactFinalForm
 
 export const DataElementTimesCategoryOptionCombos = ({
     DE_COC_combinations,
@@ -16,31 +13,7 @@ export const DataElementTimesCategoryOptionCombos = ({
     <div>
         <h2>{i18n.t('SMS short codes')}</h2>
 
-        <FormSpy subscription={{ errors: true, pristine: true }}>
-            {({ errors, pristine }) => {
-                if (pristine) return <span />
-
-                const smsCodeErrors = errors[FIELD_COMMAND_SMS_CODES_NAME]
-                const globalError = smsCodeErrors?.global
-
-                return (
-                    <>
-                        {globalError && (
-                            <FormRow>
-                                <NoticeBox
-                                    error
-                                    title={i18n.t(
-                                        'Data element category combination validation error'
-                                    )}
-                                >
-                                    {globalError}
-                                </NoticeBox>
-                            </FormRow>
-                        )}
-                    </>
-                )
-            }}
-        </FormSpy>
+        <DataElementTimesCategoryOptionCombosCompletenessMessage />
 
         <div>
             {DE_COC_combinations.map(({ dataElement, categoryOptionCombo }) => {

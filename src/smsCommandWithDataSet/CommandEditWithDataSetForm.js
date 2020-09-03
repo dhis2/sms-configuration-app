@@ -11,7 +11,6 @@ import React from 'react'
 
 import {
     ALL_DATAVALUE,
-    AT_LEAST_ONE_DATAVALUE,
     CommandsAddSpecialCharacters,
     DataElementTimesCategoryOptionCombos,
     FIELD_COMMAND_COMPLETENESS_METHOD_NAME,
@@ -106,44 +105,13 @@ const getInitialFormState = (command, initialCompletenessMethod) => {
     }
 }
 
-const globalValidate = DE_COC_combination_data => values => {
+const globalValidate = values => {
     let hasErrors = false
     const errors = {}
 
-    const completenessMethod = values[FIELD_COMMAND_COMPLETENESS_METHOD_NAME]
     const smsCodesFormState = values[FIELD_COMMAND_SMS_CODES_NAME]
     const smsCodes = smsCodesFormState ? Object.entries(smsCodesFormState) : []
     const smsCodesWithValue = smsCodes.filter(([_, { code }]) => code) //eslint-disable-line no-unused-vars
-
-    if (
-        completenessMethod === ALL_DATAVALUE.value &&
-        smsCodesWithValue.length !== DE_COC_combination_data?.length
-    ) {
-        hasErrors = true
-
-        errors[FIELD_COMMAND_SMS_CODES_NAME] =
-            errors[FIELD_COMMAND_SMS_CODES_NAME] || {}
-
-        errors[FIELD_COMMAND_SMS_CODES_NAME] = {
-            global: i18n.t(
-                `With completeness method "${ALL_DATAVALUE.label}", all sms codes need to have a value`
-            ),
-        }
-    } else if (
-        completenessMethod === AT_LEAST_ONE_DATAVALUE.value &&
-        !smsCodesWithValue.length
-    ) {
-        hasErrors = true
-
-        errors[FIELD_COMMAND_SMS_CODES_NAME] =
-            errors[FIELD_COMMAND_SMS_CODES_NAME] || {}
-
-        Object.assign(errors[FIELD_COMMAND_SMS_CODES_NAME], {
-            global: i18n.t(
-                `With completeness method "${AT_LEAST_ONE_DATAVALUE.label}", you need to provide at least one value`
-            ),
-        })
-    }
 
     if (smsCodesWithValue.length) {
         const duplicates = getSmsCodeDuplicates(smsCodesWithValue)
@@ -271,7 +239,7 @@ export const CommandEditWithDataSetForm = ({
             keepDirtyOnReinitialize
             onSubmit={updateCommand}
             initialValues={initialValues}
-            validate={globalValidate(DE_COC_combination_data)}
+            validate={globalValidate}
             subscription={{ pristine: true }}
         >
             {({ handleSubmit, form, pristine }) => (
