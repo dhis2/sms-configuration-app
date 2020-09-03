@@ -1,5 +1,5 @@
-export * from './Home'
 export * from './NoMatch'
+export * from './home/Home'
 export * from './gateway_configuration/GatewayConfigList'
 export * from './gateway_configuration/GatewayConfigFormEdit'
 export * from './gateway_configuration/GatewayConfigFormNew'
