@@ -99,6 +99,8 @@ export const SentSmsList = () => {
         },
     }
 
+    const smses = data?.sms?.outboundsmss || []
+
     return (
         <RefetchSms.Provider value={context}>
             <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
@@ -109,7 +111,7 @@ export const SentSmsList = () => {
                 </div>
             </div>
             <SmsTable
-                smses={data.sms.outboundsmss}
+                smses={smses}
                 cleanSelected={cleanSelected}
                 allSelected={allSelected}
                 selected={selected}
