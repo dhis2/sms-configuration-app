@@ -1,4 +1,5 @@
 .headline {
+    color: var(--colors-grey800);
     margin: 0 0 16px;
     line-height: 28px;
     font-size: 24px;
