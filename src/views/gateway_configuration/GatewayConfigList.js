@@ -83,6 +83,8 @@ export const GatewayConfigList = () => {
         )
     }
 
+    const hasGateways = data?.gateways?.gateways
+
     return (
         <div
             className={styles.container}
@@ -106,7 +108,7 @@ export const GatewayConfigList = () => {
                 disableDelete={!checkedGateways.length || loadingDelete}
             />
 
-            {data?.gateways?.gateways && (
+            {hasGateways ? (
                 <GatewayList
                     processing={loading}
                     checkedGateways={checkedGateways}
@@ -114,6 +116,12 @@ export const GatewayConfigList = () => {
                     gateways={data.gateways.gateways}
                     onMakeDefaultClick={onMakeDefaultClick}
                 />
+            ) : (
+                <NoticeBox info title={i18n.t('No gateways found')}>
+                    {i18n.t(
+                        "It looks like there aren't any configured gateways, or they couldn't be loaded."
+                    )}
+                </NoticeBox>
             )}
 
             {showDeleteDialog && (
