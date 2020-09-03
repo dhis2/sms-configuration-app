@@ -70,6 +70,8 @@ const ReceivedSmsList = () => {
         )
     }
 
+    const messages = data?.inboundSms?.inboundsmss || []
+
     return (
         <div data-test={dataTest('views-receivedsmslist')}>
             <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
@@ -81,15 +83,15 @@ const ReceivedSmsList = () => {
                 />
             </div>
             <div>
-                {data && (
+                {
                     <SmsTable
-                        messages={data.inboundSms.inboundsmss}
+                        messages={messages}
                         pager={data.inboundSms.pager}
                         selectedIds={selectedIds}
                         setSelectedIds={setSelectedIds}
                         refetchList={refetch}
                     />
-                )}
+                }
             </div>
         </div>
     )
