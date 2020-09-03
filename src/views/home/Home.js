@@ -28,51 +28,87 @@ export const Home = () => {
                     'Configure settings for SMS sending, receiving, data reporting, alerts, registration and more.'
                 )}
             </p>
-            <div>
-                <Card>
-                    <h2>{i18n.t('Gateway Configuration')}</h2>
-                    <p>
-                        {i18n.t(
-                            'Add and manage gateways for sending and receiving SMS messages in DHIS2.'
-                        )}
-                    </p>
-                    <Link to={GATEWAY_CONFIG_LIST_PATH}>
-                        {i18n.t('Set up gateways')}
-                    </Link>
-                </Card>
-                <Card>
-                    <h2>{i18n.t('SMS Commands')}</h2>
-                    <p>
-                        {i18n.t(
-                            'Add and manage commands triggered by incoming SMS messages to register, alert and more.'
-                        )}
-                    </p>
-                    <Link to={SMS_COMMAND_LIST_PATH}>
-                        {i18n.t('Set up SMS commands')}
-                    </Link>
-                </Card>
-                <Card>
-                    <h2>{i18n.t('Sent SMS messages')}</h2>
-                    <p>
-                        {i18n.t(
-                            'Open logs of all SMS messages sent from DHIS2.'
-                        )}
-                    </p>
-                    <Link to={SENT_SMS_LIST_PATH}>
-                        {i18n.t('View all sent SMS')}
-                    </Link>
-                </Card>
-                <Card>
-                    <h2>{i18n.t('Received SMS messages')}</h2>
-                    <p>
-                        {i18n.t(
-                            'Open logs of all SMS messages received by DHIS2.'
-                        )}
-                    </p>
-                    <Link to={RECEIVED_SMS_LIST_PATH}>
-                        {i18n.t('View all received SMS')}
-                    </Link>
-                </Card>
+            <div className={s.grid}>
+                <div className={s.gridItem}>
+                    <Card>
+                        <h2 className={s.cardTitle}>
+                            {i18n.t('Gateway Configuration')}
+                        </h2>
+                        <p className={s.cardText}>
+                            {i18n.t(
+                                'Add and manage gateways for sending and receiving SMS messages in DHIS2.'
+                            )}
+                        </p>
+                        <div className={s.cardLinkWrapper}>
+                            <Link
+                                className={s.cardLink}
+                                to={GATEWAY_CONFIG_LIST_PATH}
+                            >
+                                {i18n.t('Set up gateways')}
+                            </Link>
+                        </div>
+                    </Card>
+                </div>
+                <div className={s.gridItem}>
+                    <Card>
+                        <h2 className={s.cardTitle}>
+                            {i18n.t('SMS Commands')}
+                        </h2>
+                        <p className={s.cardText}>
+                            {i18n.t(
+                                'Add and manage commands triggered by incoming SMS messages to register, alert and more.'
+                            )}
+                        </p>
+                        <div className={s.cardLinkWrapper}>
+                            <Link
+                                className={s.cardLink}
+                                to={SMS_COMMAND_LIST_PATH}
+                            >
+                                {i18n.t('Set up SMS commands')}
+                            </Link>
+                        </div>
+                    </Card>
+                </div>
+                <div className={s.gridItem}>
+                    <Card>
+                        <h2 className={s.cardTitle}>
+                            {i18n.t('Sent SMS messages')}
+                        </h2>
+                        <p className={s.cardText}>
+                            {i18n.t(
+                                'Open logs of all SMS messages sent from DHIS2.'
+                            )}
+                        </p>
+                        <div className={s.cardLinkWrapper}>
+                            <Link
+                                className={s.cardLink}
+                                to={SENT_SMS_LIST_PATH}
+                            >
+                                {i18n.t('View all sent SMS')}
+                            </Link>
+                        </div>
+                    </Card>
+                </div>
+                <div className={s.gridItem}>
+                    <Card>
+                        <h2 className={s.cardTitle}>
+                            {i18n.t('Received SMS messages')}
+                        </h2>
+                        <p className={s.cardText}>
+                            {i18n.t(
+                                'Open logs of all SMS messages received by DHIS2.'
+                            )}
+                        </p>
+                        <div className={s.cardLinkWrapper}>
+                            <Link
+                                className={s.cardLink}
+                                to={RECEIVED_SMS_LIST_PATH}
+                            >
+                                {i18n.t('View all received SMS')}
+                            </Link>
+                        </div>
+                    </Card>
+                </div>
             </div>
         </div>
     )

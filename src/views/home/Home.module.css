@@ -2,4 +2,49 @@
     color: var(--colors-grey800);
     line-height: 20px;
     font-size: 14px;
+    margin-bottom: var(--spacers-dp24);
+}
+
+.cardTitle {
+    margin: var(--spacers-dp16);
+    color: var(--colors-grey800);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.cardText {
+    margin: var(--spacers-dp16);
+    color: var(--colors-grey800);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.cardLinkWrapper {
+    padding-top: var(--spacers-dp16);
+    border-top: 1px solid var(--colors-grey300);
+    margin: var(--spacers-dp16);
+}
+
+.cardLink {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--colors-blue700);
+    text-decoration: none;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(-1 * var(--spacers-dp8));
+}
+
+.gridItem {
+    flex: 1 0 100%;
+    padding: var(--spacers-dp8);
+}
+
+@media (min-width: 800px) {
+    .gridItem {
+        flex: 1 0 50%;
+    }
 }
