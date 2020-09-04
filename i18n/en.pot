@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-04T08:24:25.740Z\n"
-"PO-Revision-Date: 2020-09-04T08:24:25.740Z\n"
+"POT-Creation-Date: 2020-09-04T15:17:15.096Z\n"
+"PO-Revision-Date: 2020-09-04T15:17:15.096Z\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -53,9 +53,15 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+msgid "Gateway setup"
+msgstr ""
+
+msgid "Key value pairs"
+msgstr ""
+
 msgid ""
-"With a generic http gateway any number of parameters can be added with key "
-"value pairs"
+"Key value pairs can be included in the URL. This is some helper text which "
+"provides an intro to what the key value pairs actually do."
 msgstr ""
 
 msgid "Key"
@@ -127,7 +133,7 @@ msgstr ""
 msgid "Add special character"
 msgstr ""
 
-msgid "Data element category combination validation error"
+msgid "Required values notice"
 msgstr ""
 
 msgid "Completeness method"
@@ -170,6 +176,12 @@ msgid "Wrong format message"
 msgstr ""
 
 msgid "default"
+msgstr ""
+
+msgid "Loading formula"
+msgstr ""
+
+msgid "Formula"
 msgstr ""
 
 msgid "Edit formula"
@@ -226,6 +238,9 @@ msgstr ""
 msgid "Duplicate value!"
 msgstr ""
 
+msgid "Special characters"
+msgstr ""
+
 msgid "Usergroup"
 msgstr ""
 
@@ -251,10 +266,11 @@ msgid "Something went wrong whilst performing the requested operation"
 msgstr ""
 
 msgid ""
-"There are five different types of gateways supported by the SMS service. "
-"SMSes can be sent if at least one of the gateway types has been configured. "
-"If more than one gateway has been configured they will all be used in a "
-"round-robin fashion for load balancing"
+"An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
+"Different gateway types can be added and configured below. At least one "
+"gateway is needed to send and receive SMS messages. Load balancing will use "
+"all gateways if there are multiple available. Read about gateway "
+"configuration in the DHIS2 documentation."
 msgstr ""
 
 msgid "Delete selected"
@@ -383,6 +399,14 @@ msgid "Add command"
 msgstr ""
 
 msgid "Commands"
+msgstr ""
+
+msgid ""
+"SMS commands process SMS messages received by a DHIS2 instance, taking "
+"certain actions depending on the command and message content. Multiple SMS "
+"commands can be set up to process and handle data in multiple ways. Add and "
+"configure SMS commands below. Read about SMS commands in the DHIS2 "
+"documentation."
 msgstr ""
 
 msgid "Sms command"
