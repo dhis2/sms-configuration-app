@@ -24,7 +24,7 @@ export const DataElementTimesCategoryOptionCombosCompletenessMessage = () => {
             <FormRow>
                 <NoticeBox warning title={title}>
                     {i18n.t(
-                        `All SMS short codes have to be provided for this sms command to work correctly when you have the completeness method "${ALL_DATAVALUE.label}" selected`
+                        `Make sure all SMS short codes are provided when completeness method "${ALL_DATAVALUE.label}" is chosen, otherwise received messages will not be processed.`
                     )}
                 </NoticeBox>
             </FormRow>
@@ -36,7 +36,7 @@ export const DataElementTimesCategoryOptionCombosCompletenessMessage = () => {
             <FormRow>
                 <NoticeBox warning title={title}>
                     {i18n.t(
-                        `At least one SMS short code has to be provided for this sms command to work correctly when you have the completeness method "${AT_LEAST_ONE_DATAVALUE.label}" selected`
+                        `Make sure at least one SMS short code is provided when completeness method "${AT_LEAST_ONE_DATAVALUE.label}", otherwise received messages will not be processed.`
                     )}
                 </NoticeBox>
             </FormRow>
