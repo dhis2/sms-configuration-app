@@ -93,6 +93,7 @@ export const GatewayKeyValuePair = ({ index }) => {
 
             <Button
                 small
+                secondary
                 dataTest={dataTest('gateways-gatewaykeyvaluepair-remove')}
                 onClick={() => removeKeyValueFromFormState(index)}
             >
