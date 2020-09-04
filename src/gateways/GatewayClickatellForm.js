@@ -51,10 +51,6 @@ export const GatewayClickatellForm = ({
                     </FormRow>
 
                     <ButtonStrip>
-                        <Button onClick={() => onCancelClick(pristine)}>
-                            {i18n.t('Cancel')}
-                        </Button>
-
                         <Button
                             primary
                             type="submit"
@@ -65,6 +61,10 @@ export const GatewayClickatellForm = ({
                             )}
                         >
                             {submitText}
+                        </Button>
+
+                        <Button onClick={() => onCancelClick(pristine)}>
+                            {i18n.t('Cancel')}
                         </Button>
                     </ButtonStrip>
                 </form>
