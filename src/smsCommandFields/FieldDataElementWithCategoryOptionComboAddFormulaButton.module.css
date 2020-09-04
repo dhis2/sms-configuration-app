@@ -2,4 +2,14 @@
     display: block;
     font-size: 14px;
     line-height: 20px;
+    margin-bottom: var(--spacers-dp8);
+    color: var(--colors-grey900);
+}
+
+.formulaInWordsLabel {
+    color: var(--colors-grey700);
+}
+
+.formulaInWordsLabel:after {
+    content: ' ';
 }
