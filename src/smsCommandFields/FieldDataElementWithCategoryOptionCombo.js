@@ -5,7 +5,6 @@ import React, { useState } from 'react'
 import { DE_COC_toFormName } from '../smsCommand'
 import { FieldDataElementWithCategoryOptionComboFormula } from './FieldDataElementWithCategoryOptionComboFormula'
 import { FieldDataElementWithCategoryOptionComboAddFormulaButton } from './FieldDataElementWithCategoryOptionComboAddFormulaButton'
-import { FormRow } from '../forms'
 import i18n from '../locales'
 import styles from './FieldDataElementWithCategoryOptionCombo.module.css'
 
@@ -43,14 +42,13 @@ export const FieldDataElementWithCategoryOptionCombo = ({
 
                     return (
                         <>
-                            <FormRow>
-                                <InputFieldFF
-                                    {...rest}
-                                    input={input}
-                                    meta={meta}
-                                    error={!!meta.error}
-                                />
-                            </FormRow>
+                            <InputFieldFF
+                                {...rest}
+                                className={styles.codeField}
+                                input={input}
+                                meta={meta}
+                                error={!!meta.error}
+                            />
 
                             <FieldDataElementWithCategoryOptionComboAddFormulaButton
                                 disabled={!code}

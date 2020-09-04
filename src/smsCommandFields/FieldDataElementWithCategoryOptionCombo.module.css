@@ -3,5 +3,9 @@
 }
 
 .field {
-    margin-right: 8px;
+    margin-right: var(--spacers-dp8);
+}
+
+.codeField {
+    margin-bottom: var(--spacers-dp8);
 }

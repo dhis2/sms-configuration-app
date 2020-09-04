@@ -26,13 +26,13 @@ export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
     const engine = useDataEngine()
     const [called, setCalled] = useState(false)
     const [loading, setLoading] = useState(false)
-    const [formulaInWords, setFormulaInWords] = useState(null)
+    const [formulaDataElementName, setFormulaDataElementName] = useState('')
 
     const smsCode = useField(baseName, {
         subscription: { value: true },
     }).input.value
 
-    const { formula } = smsCode
+    const { formula, code } = smsCode
     const operator = formula && formula[0]
     const dataElementCode = formula && formula.slice(1)
 
@@ -47,14 +47,7 @@ export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
                 })
                 .then(response => {
                     const [{ displayName }] = response.dataElement.dataElements
-
-                    setFormulaInWords(
-                        operator === '-'
-                            ? i18n.t('Subtract {{displayName}}', {
-                                  displayName,
-                              })
-                            : i18n.t('Add {{displayName}}', { displayName })
-                    )
+                    setFormulaDataElementName(displayName)
                 })
                 .finally(() => setLoading(false))
         }
@@ -63,10 +56,15 @@ export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
     return (
         <>
             {loading && i18n.t('Loading formula')}
-            {formulaInWords && (
+            {code && formulaDataElementName && (
                 <span className={styles.formulaInWords}>
-                    <b>{i18n.t('Currently selected formula: ')}</b>
-                    {formulaInWords}
+                    <span className={styles.formulaInWordsLabel}>
+                        {i18n.t('Formula')}:
+                    </span>
+
+                    {code}
+                    {` ${operator} `}
+                    {formulaDataElementName}
                 </span>
             )}
 
