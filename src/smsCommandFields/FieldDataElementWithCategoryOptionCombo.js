@@ -52,25 +52,20 @@ export const FieldDataElementWithCategoryOptionCombo = ({
                                 />
                             </FormRow>
 
-                            {code && (
-                                <>
-                                    <FieldDataElementWithCategoryOptionComboAddFormulaButton
-                                        baseName={baseName}
-                                        formulaFieldName={formulaName}
-                                        onClick={() => setShowFormula(true)}
-                                    />
+                            <FieldDataElementWithCategoryOptionComboAddFormulaButton
+                                disabled={!code}
+                                baseName={baseName}
+                                formulaFieldName={formulaName}
+                                onClick={() => setShowFormula(true)}
+                            />
 
-                                    {showFormula && (
-                                        <FieldDataElementWithCategoryOptionComboFormula
-                                            baseName={baseName}
-                                            combo={label}
-                                            targetFieldName={formulaName}
-                                            onClose={() =>
-                                                setShowFormula(false)
-                                            }
-                                        />
-                                    )}
-                                </>
+                            {showFormula && (
+                                <FieldDataElementWithCategoryOptionComboFormula
+                                    baseName={baseName}
+                                    combo={label}
+                                    targetFieldName={formulaName}
+                                    onClose={() => setShowFormula(false)}
+                                />
                             )}
                         </>
                     )

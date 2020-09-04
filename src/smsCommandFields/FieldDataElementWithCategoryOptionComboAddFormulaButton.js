@@ -21,6 +21,7 @@ const DATA_ELEMENTS_QUERY = {
 export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
     baseName,
     onClick,
+    disabled,
 }) => {
     const engine = useDataEngine()
     const [called, setCalled] = useState(false)
@@ -69,7 +70,7 @@ export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
                 </span>
             )}
 
-            <Button onClick={onClick}>
+            <Button small onClick={onClick} disabled={disabled}>
                 {formula ? i18n.t('Edit formula') : i18n.t('Add formula')}
             </Button>
         </>
@@ -79,4 +80,5 @@ export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
 FieldDataElementWithCategoryOptionComboAddFormulaButton.propTypes = {
     baseName: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 }
