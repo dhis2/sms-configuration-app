@@ -1,0 +1,5 @@
+.paragraph {
+    line-height: 16px;
+    font-size: 14px;
+    margin: 0 0 var(--spacers-dp16);
+}
