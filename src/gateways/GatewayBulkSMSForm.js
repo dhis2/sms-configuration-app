@@ -46,10 +46,6 @@ export const GatewayBulkSMSForm = ({
                     </FormRow>
 
                     <ButtonStrip>
-                        <Button onClick={() => onCancelClick(pristine)}>
-                            {i18n.t('Cancel')}
-                        </Button>
-
                         <Button
                             primary
                             type="submit"
@@ -60,6 +56,10 @@ export const GatewayBulkSMSForm = ({
                             )}
                         >
                             {submitText}
+                        </Button>
+
+                        <Button onClick={() => onCancelClick(pristine)}>
+                            {i18n.t('Cancel')}
                         </Button>
                     </ButtonStrip>
                 </form>
