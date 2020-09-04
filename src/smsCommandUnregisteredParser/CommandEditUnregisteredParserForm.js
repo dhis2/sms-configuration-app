@@ -1,8 +1,6 @@
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 import {
-    Button,
-    ButtonStrip,
     ReactFinalForm,
     NoticeBox,
     CenteredContent,
@@ -15,11 +13,7 @@ import {
     FieldCommandName,
     FieldCommandParser,
 } from '../smsCommandFields'
-import {
-    SaveCommandButton,
-    SubmitErrors,
-    useUpdateCommand,
-} from '../smsCommand'
+import { CommandFormActions, useUpdateCommand } from '../smsCommand'
 import { FieldUserGroup } from '../userGroup'
 import { FormRow } from '../forms'
 import { dataTest } from '../dataTest'
@@ -120,15 +114,7 @@ export const CommandEditUnregisteredParserForm = ({
                         <FieldCommandConfirmMessage />
                     </FormRow>
 
-                    <SubmitErrors />
-
-                    <ButtonStrip>
-                        <Button onClick={() => onCancel(pristine)}>
-                            {i18n.t('Cancel')}
-                        </Button>
-
-                        <SaveCommandButton />
-                    </ButtonStrip>
+                    <CommandFormActions onCancel={() => onCancel(pristine)} />
                 </form>
             )}
         </Form>

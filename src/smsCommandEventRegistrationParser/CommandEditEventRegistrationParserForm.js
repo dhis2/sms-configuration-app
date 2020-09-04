@@ -1,6 +1,4 @@
 import {
-    Button,
-    ButtonStrip,
     CenteredContent,
     CircularLoader,
     NoticeBox,
@@ -32,11 +30,7 @@ import {
     FieldCommandWrongFormatMessage,
     ProgramStageDataElements,
 } from '../smsCommandFields'
-import {
-    SaveCommandButton,
-    SubmitErrors,
-    useUpdateCommand,
-} from '../smsCommand'
+import { CommandFormActions, useUpdateCommand } from '../smsCommand'
 import { FormRow } from '../forms'
 import { FieldProgram } from '../program'
 import { FieldProgramStage } from '../programStage'
@@ -210,15 +204,9 @@ export const CommandEditEventRegistrationParserForm = ({
                             </FormRow>
                         )}
 
-                        <SubmitErrors />
-
-                        <ButtonStrip>
-                            <Button onClick={() => onCancel(pristine)}>
-                                {i18n.t('Cancel')}
-                            </Button>
-
-                            <SaveCommandButton />
-                        </ButtonStrip>
+                        <CommandFormActions
+                            onCancel={() => onCancel(pristine)}
+                        />
                     </form>
                 )
             }}
