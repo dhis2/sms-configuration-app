@@ -1,3 +1,11 @@
+.container {
+    background: white;
+    border-radius: 3px;
+    padding: 8px;
+    border-left: 4px solid var(--colors-grey500);
+    margin-bottom: 16px;
+}
+
 .textInputs {
     display: flex;
     margin-bottom: 16px;
@@ -9,7 +17,7 @@
 }
 
 .keyInput {
-    margin-right: 16px;
+    margin-right: var(--spacers-dp8);
 }
 
 .checkboxGroup {

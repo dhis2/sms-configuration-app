@@ -10,7 +10,6 @@ import {
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
-import { FormRow } from '../forms'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 import styles from './GatewayKeyValuePair.module.css'
@@ -35,72 +34,70 @@ export const GatewayKeyValuePair = ({ index }) => {
     }
 
     return (
-        <div data-test={dataTest('gateways-gatewaykeyvaluepair')}>
-            <FormRow>
-                <div className={styles.textInputs}>
-                    <Field
-                        dataTest={dataTest('gateways-gatewaykeyvaluepair-key')}
-                        className={styles.keyInput}
-                        name={`parameters[${index}].key`}
-                        label={i18n.t('Key')}
-                        component={InputFieldFF}
-                        validate={isStringWithLengthAtLeastOne}
-                    />
+        <div
+            className={styles.container}
+            data-test={dataTest('gateways-gatewaykeyvaluepair')}
+        >
+            <div className={styles.textInputs}>
+                <Field
+                    dataTest={dataTest('gateways-gatewaykeyvaluepair-key')}
+                    className={styles.keyInput}
+                    name={`parameters[${index}].key`}
+                    label={i18n.t('Key')}
+                    component={InputFieldFF}
+                    validate={isStringWithLengthAtLeastOne}
+                />
 
-                    <Field
-                        dataTest={dataTest(
-                            'gateways-gatewaykeyvaluepair-value'
-                        )}
-                        className={styles.valueInput}
-                        name={`parameters[${index}].value`}
-                        label={i18n.t('Value')}
-                        component={InputFieldFF}
-                        validate={isStringWithLengthAtLeastOne}
-                    />
-                </div>
+                <Field
+                    dataTest={dataTest('gateways-gatewaykeyvaluepair-value')}
+                    className={styles.valueInput}
+                    name={`parameters[${index}].value`}
+                    label={i18n.t('Value')}
+                    component={InputFieldFF}
+                    validate={isStringWithLengthAtLeastOne}
+                />
+            </div>
 
-                <div className={styles.checkboxGroup}>
-                    <Field
-                        dataTest={dataTest(
-                            'gateways-gatewaykeyvaluepair-isheader'
-                        )}
-                        className={styles.checkbox}
-                        type="checkbox"
-                        name={`parameters[${index}].header`}
-                        label={i18n.t('Send as header')}
-                        component={CheckboxFieldFF}
-                    />
+            <div className={styles.checkboxGroup}>
+                <Field
+                    dataTest={dataTest('gateways-gatewaykeyvaluepair-isheader')}
+                    className={styles.checkbox}
+                    type="checkbox"
+                    name={`parameters[${index}].header`}
+                    label={i18n.t('Send as header')}
+                    component={CheckboxFieldFF}
+                />
 
-                    <Field
-                        dataTest={dataTest(
-                            'gateways-gatewaykeyvaluepair-isencoded'
-                        )}
-                        className={styles.checkbox}
-                        type="checkbox"
-                        name={`parameters[${index}].encode`}
-                        label={i18n.t('Encode')}
-                        component={CheckboxFieldFF}
-                    />
+                <Field
+                    dataTest={dataTest(
+                        'gateways-gatewaykeyvaluepair-isencoded'
+                    )}
+                    className={styles.checkbox}
+                    type="checkbox"
+                    name={`parameters[${index}].encode`}
+                    label={i18n.t('Encode')}
+                    component={CheckboxFieldFF}
+                />
 
-                    <Field
-                        dataTest={dataTest(
-                            'gateways-gatewaykeyvaluepair-isconfidential'
-                        )}
-                        className={styles.checkbox}
-                        type="checkbox"
-                        name={`parameters[${index}].confidential`}
-                        label={i18n.t('Confidential')}
-                        component={CheckboxFieldFF}
-                    />
-                </div>
+                <Field
+                    dataTest={dataTest(
+                        'gateways-gatewaykeyvaluepair-isconfidential'
+                    )}
+                    className={styles.checkbox}
+                    type="checkbox"
+                    name={`parameters[${index}].confidential`}
+                    label={i18n.t('Confidential')}
+                    component={CheckboxFieldFF}
+                />
+            </div>
 
-                <Button
-                    dataTest={dataTest('gateways-gatewaykeyvaluepair-remove')}
-                    onClick={() => removeKeyValueFromFormState(index)}
-                >
-                    {i18n.t('Remove key value pair')}
-                </Button>
-            </FormRow>
+            <Button
+                small
+                dataTest={dataTest('gateways-gatewaykeyvaluepair-remove')}
+                onClick={() => removeKeyValueFromFormState(index)}
+            >
+                {i18n.t('Remove key value pair')}
+            </Button>
         </div>
     )
 }

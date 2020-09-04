@@ -63,10 +63,6 @@ export const GatewayGenericForm = ({
                     <GatewayAddKeyValuePair />
 
                     <ButtonStrip>
-                        <Button onClick={() => onCancelClick(pristine)}>
-                            {i18n.t('Cancel')}
-                        </Button>
-
                         <Button
                             primary
                             type="submit"
@@ -77,6 +73,10 @@ export const GatewayGenericForm = ({
                             icon={submitting ? <CircularLoader small /> : null}
                         >
                             {submitText}
+                        </Button>
+
+                        <Button onClick={() => onCancelClick(pristine)}>
+                            {i18n.t('Cancel')}
                         </Button>
                     </ButtonStrip>
                 </form>
