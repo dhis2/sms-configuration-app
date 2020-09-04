@@ -295,33 +295,27 @@ export const CommandEditWithDataSetForm = ({
                         />
                     )}
 
-                    <div>
                     <PageSubHeadline>
                         {i18n.t('Special characters')}
                     </PageSubHeadline>
 
-                        <FormSpy subscription={{ values: true }}>
-                            {({ values }) => (
-                                <>
-                                    {values[
-                                        FIELD_COMMAND_SPECIAL_CHARS_NAME
-                                    ].map((_, index) => (
+                    <FormSpy subscription={{ values: true }}>
+                        {({ values }) => (
+                            <>
+                                {values[FIELD_COMMAND_SPECIAL_CHARS_NAME].map(
+                                    (_, index) => (
                                         <FormRow key={index}>
                                             <FieldCommandSpecialCharacter
                                                 index={index}
                                             />
                                         </FormRow>
-                                    ))}
-                                </>
-                            )}
-                        </FormSpy>
+                                    )
+                                )}
+                            </>
+                        )}
+                    </FormSpy>
 
-                        <CommandsAddSpecialCharacters />
-
-                        <FormRow>
-                            <hr />
-                        </FormRow>
-                    </div>
+                    <CommandsAddSpecialCharacters />
 
                     <CommandFormActions onCancel={() => onCancel(pristine)} />
                 </form>

@@ -12,6 +12,7 @@ import {
 } from '../../gateways'
 import { ListActions } from '../../dataList'
 import { PageHeadline } from '../../headline'
+import { Paragraph } from '../../text'
 import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
 import styles from './GatewayConfigList.module.css'
@@ -92,11 +93,11 @@ export const GatewayConfigList = () => {
         >
             <PageHeadline>{GATEWAY_CONFIG_LIST_LABEL}</PageHeadline>
 
-            <p>
+            <Paragraph>
                 {i18n.t(
-                    'There are five different types of gateways supported by the SMS service. SMSes can be sent if at least one of the gateway types has been configured. If more than one gateway has been configured they will all be used in a round-robin fashion for load balancing'
+                    'An SMS gateway lets a DHIS2 instance send and receive SMS messages. Different gateway types can be added and configured below. At least one gateway is needed to send and receive SMS messages. Load balancing will use all gateways if there are multiple available. Read about gateway configuration in the DHIS2 documentation.'
                 )}
-            </p>
+            </Paragraph>
 
             <ListActions
                 addLabel={i18n.t('Add gateway')}
