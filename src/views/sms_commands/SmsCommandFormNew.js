@@ -142,9 +142,6 @@ const ActualForm = ({ handleSubmit, submitting }) => {
                 )}
 
                 <ButtonStrip>
-                    <Button onClick={() => history.goBack()}>
-                        {i18n.t('Cancel')}
-                    </Button>
                     <Button
                         primary
                         type="submit"
@@ -152,6 +149,10 @@ const ActualForm = ({ handleSubmit, submitting }) => {
                         disabled={submitting}
                     >
                         {i18n.t('Add command')}
+                    </Button>
+
+                    <Button onClick={() => history.goBack()}>
+                        {i18n.t('Cancel')}
                     </Button>
                 </ButtonStrip>
             </form>
