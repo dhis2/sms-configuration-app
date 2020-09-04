@@ -1,6 +1,4 @@
 import {
-    Button,
-    ButtonStrip,
     CenteredContent,
     CircularLoader,
     NoticeBox,
@@ -39,8 +37,7 @@ import {
     KEY_VALUE_PARSER,
 } from '../smsCommandFields'
 import {
-    SaveCommandButton,
-    SubmitErrors,
+    CommandFormActions,
     getSmsCodeDuplicates,
     useUpdateCommand,
 } from '../smsCommand'
@@ -326,15 +323,7 @@ export const CommandEditWithDataSetForm = ({
                         </FormRow>
                     </div>
 
-                    <SubmitErrors />
-
-                    <ButtonStrip>
-                        <Button onClick={() => onCancel(pristine)}>
-                            {i18n.t('Cancel')}
-                        </Button>
-
-                        <SaveCommandButton />
-                    </ButtonStrip>
+                    <CommandFormActions onCancel={() => onCancel(pristine)} />
                 </form>
             )}
         </Form>

@@ -1,8 +1,6 @@
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 import {
-    Button,
-    ButtonStrip,
     ReactFinalForm,
     NoticeBox,
     CenteredContent,
@@ -22,11 +20,7 @@ import {
     FieldCommandSuccessMessage,
     FieldCommandSmsCode,
 } from '../smsCommandFields'
-import {
-    SaveCommandButton,
-    SubmitErrors,
-    useUpdateCommand,
-} from '../smsCommand'
+import { CommandFormActions, useUpdateCommand } from '../smsCommand'
 import { FormRow } from '../forms'
 import { FieldProgram } from '../program'
 import { PageSubHeadline } from '../headline'
@@ -228,15 +222,7 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
                         )
                     })}
 
-                    <SubmitErrors />
-
-                    <ButtonStrip>
-                        <Button onClick={() => onCancel(pristine)}>
-                            {i18n.t('Cancel')}
-                        </Button>
-
-                        <SaveCommandButton />
-                    </ButtonStrip>
+                    <CommandFormActions onCancel={() => onCancel(pristine)} />
                 </form>
             )}
         </Form>
