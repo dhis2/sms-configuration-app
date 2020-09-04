@@ -14,11 +14,12 @@ export const CancelDialog = ({ onConfirmCancel, onAbortCancel }) => (
 
         <ModalActions>
             <ButtonStrip>
-                <Button primary onClick={onConfirmCancel}>
-                    {i18n.t('Yes, cancel')}
-                </Button>
                 <Button onClick={onAbortCancel}>
                     {i18n.t('No, stay on page')}
+                </Button>
+
+                <Button primary onClick={onConfirmCancel}>
+                    {i18n.t('Yes, cancel')}
                 </Button>
             </ButtonStrip>
         </ModalActions>
