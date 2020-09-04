@@ -46,6 +46,7 @@ import {
 } from '../smsCommand'
 import { FIELD_DATA_SET_NAME, FieldDataSet } from '../dataSet'
 import { FormRow } from '../forms'
+import { PageSubHeadline } from '../headline'
 import { useReadSmsCommandWithDataSetQuery } from './useReadSmsCommandWithDataSetQuery'
 import i18n from '../locales'
 
@@ -298,7 +299,9 @@ export const CommandEditWithDataSetForm = ({
                     )}
 
                     <div>
-                        <h2>Special characters</h2>
+                    <PageSubHeadline>
+                        {i18n.t('Special characters')}
+                    </PageSubHeadline>
 
                         <FormSpy subscription={{ values: true }}>
                             {({ values }) => (

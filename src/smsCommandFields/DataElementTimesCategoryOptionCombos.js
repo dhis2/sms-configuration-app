@@ -4,6 +4,7 @@ import React from 'react'
 import { FieldDataElementWithCategoryOptionCombo } from './FieldDataElementWithCategoryOptionCombo'
 import { DataElementTimesCategoryOptionCombosCompletenessMessage } from './DataElementTimesCategoryOptionCombosCompletenessMessage'
 import { FormRow } from '../forms'
+import { PageSubHeadline } from '../headline'
 import i18n from '../locales'
 import styles from './DataElementTimesCategoryOptionCombos.module.css'
 
@@ -11,7 +12,7 @@ export const DataElementTimesCategoryOptionCombos = ({
     DE_COC_combinations,
 }) => (
     <div>
-        <h2>{i18n.t('SMS short codes')}</h2>
+        <PageSubHeadline>{i18n.t('SMS short codes')}</PageSubHeadline>
 
         <DataElementTimesCategoryOptionCombosCompletenessMessage />
 

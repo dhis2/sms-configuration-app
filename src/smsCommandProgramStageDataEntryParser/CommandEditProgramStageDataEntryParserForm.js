@@ -40,6 +40,7 @@ import {
 import { FieldProgram } from '../program'
 import { FieldProgramStage } from '../programStage'
 import { FormRow } from '../forms'
+import { PageSubHeadline } from '../headline'
 import { dataTest } from '../dataTest'
 import { useReadSmsCommandProgramStageDataEntryParserQuery } from './useReadSmsCommandProgramStageDataEntryParserQuery'
 import i18n from '../locales'
@@ -198,10 +199,12 @@ export const CommandEditProgramStageDataEntryParserForm = ({
                         <FieldCommandSuccessMessage />
                     </FormRow>
 
+                    <PageSubHeadline>
+                        {i18n.t('SMS short codes')}
+                    </PageSubHeadline>
+
                     {programStageDataElements && (
                         <FormRow>
-                            <h2>{i18n.t('SMS short codes')}</h2>
-
                             <ProgramStageDataElements
                                 programStageDataElements={
                                     programStageDataElements
