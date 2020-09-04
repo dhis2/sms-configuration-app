@@ -77,6 +77,8 @@ export const GatewayConfigFormNew = () => {
         }
     }
 
+    const onCancelClick = () => history.push(GATEWAY_CONFIG_LIST_PATH)
+
     return (
         <div
             data-test={dataTest('views-gatewayconfigformnew')}
@@ -112,13 +114,17 @@ export const GatewayConfigFormNew = () => {
 
             <FormRow>
                 {visibleForm === GENERIC_FORM && (
-                    <GatewayGenericForm onSubmit={onSubmit} />
+                    <GatewayGenericForm
+                        onSubmit={onSubmit}
+                        onCancelClick={onCancelClick}
+                    />
                 )}
 
                 {visibleForm === BULK_SMS_FORM && (
                     <GatewayBulkSMSForm
                         onSubmit={onSubmit}
                         passwordRequired={true}
+                        onCancelClick={onCancelClick}
                     />
                 )}
 
@@ -126,6 +132,7 @@ export const GatewayConfigFormNew = () => {
                     <GatewayClickatellForm
                         onSubmit={onSubmit}
                         passwordRequired={true}
+                        onCancelClick={onCancelClick}
                     />
                 )}
             </FormRow>
