@@ -19,6 +19,7 @@ import { SMS_COMMAND_FORM_EDIT_PATH_STATIC } from './SmsCommandFormEdit'
 import { SMS_COMMAND_FORM_NEW_PATH } from './SmsCommandFormNew'
 import { ListActions } from '../../dataList'
 import { PageHeadline } from '../../headline'
+import { Paragraph } from '../../text'
 import {
     DeleteCommandsConfirmationDialog,
     getLabelByParserTypes,
@@ -133,6 +134,12 @@ export const SmsCommandList = () => {
             className={styles.container}
         >
             <PageHeadline>{SMS_COMMAND_LIST_LABEL}</PageHeadline>
+
+            <Paragraph>
+                {i18n.t(
+                    'SMS commands process SMS messages received by a DHIS2 instance, taking certain actions depending on the command and message content. Multiple SMS commands can be set up to process and handle data in multiple ways. Add and configure SMS commands below. Read about SMS commands in the DHIS2 documentation.'
+                )}
+            </Paragraph>
 
             <ListActions
                 addLabel={i18n.t('Add command')}
