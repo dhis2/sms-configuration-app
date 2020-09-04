@@ -1,5 +1,5 @@
 .container {
-    background: white;
+    background: var(--colors-white);
     border-radius: 3px;
     padding: 8px;
     border-left: 4px solid var(--colors-grey500);
