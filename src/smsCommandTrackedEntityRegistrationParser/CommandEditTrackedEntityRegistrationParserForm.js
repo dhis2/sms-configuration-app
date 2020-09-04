@@ -29,6 +29,7 @@ import {
 } from '../smsCommand'
 import { FormRow } from '../forms'
 import { FieldProgram } from '../program'
+import { PageSubHeadline } from '../headline'
 import i18n from '../locales'
 
 const { Form } = ReactFinalForm
@@ -208,7 +209,9 @@ export const CommandEditTrackedEntityRegistrationParserForm = ({
                         <FieldCommandSuccessMessage />
                     </FormRow>
 
-                    <h2>{i18n.t('SMS short codes')}</h2>
+                    <PageSubHeadline>
+                        {i18n.t('SMS short codes')}
+                    </PageSubHeadline>
 
                     {dynamicFields.map(dynamicField => {
                         // I assume this should switch field types based on `valueType`

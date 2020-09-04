@@ -1,10 +1,4 @@
-import {
-    Button,
-    ButtonStrip,
-    ReactFinalForm,
-    NoticeBox,
-    CircularLoader,
-} from '@dhis2/ui'
+import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
@@ -15,6 +9,8 @@ import {
     GatewayKeyValuePair,
 } from '../gateways'
 import { FormRow } from '../forms'
+import { PageSubHeadline } from '../headline'
+import { Paragraph } from '../text'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
@@ -40,6 +36,8 @@ export const GatewayGenericForm = ({
                     onSubmit={handleSubmit}
                     data-test={dataTest('gateways-gatewaygenericform')}
                 >
+                    <PageSubHeadline>{i18n.t('Gateway setup')}</PageSubHeadline>
+
                     <FormRow>
                         <FieldGatewayName />
                     </FormRow>
@@ -48,21 +46,21 @@ export const GatewayGenericForm = ({
                         <FieldGatewayUrlTemplate />
                     </FormRow>
 
+                    <PageSubHeadline>
+                        {i18n.t('Key value pairs')}
+                    </PageSubHeadline>
+
+                    <Paragraph>
+                        {i18n.t(
+                            'Key value pairs can be included in the URL. This is some helper text which provides an intro to what the key value pairs actually do.'
+                        )}
+                    </Paragraph>
+
                     {values.parameters.map((_, index) => (
                         <GatewayKeyValuePair index={index} key={index} />
                     ))}
 
-                    <FormRow>
-                        <NoticeBox>
-                            {i18n.t(
-                                'With a generic http gateway any number of parameters can be added with key value pairs'
-                            )}
-                        </NoticeBox>
-                    </FormRow>
-
-                    <FormRow>
-                        <GatewayAddKeyValuePair />
-                    </FormRow>
+                    <GatewayAddKeyValuePair />
 
                     <ButtonStrip>
                         <Button onClick={() => onCancelClick(pristine)}>
