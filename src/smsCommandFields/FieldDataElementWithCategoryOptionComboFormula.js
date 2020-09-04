@@ -3,12 +3,13 @@ import {
     ButtonStrip,
     CircularLoader,
     Modal,
-    ModalTitle,
+    ModalActions,
     ModalContent,
-    SingleSelectFieldFF,
-    ReactFinalForm,
-    hasValue,
+    ModalTitle,
     NoticeBox,
+    ReactFinalForm,
+    SingleSelectFieldFF,
+    hasValue,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useMemo } from 'react'
@@ -143,24 +144,24 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
                                     </NoticeBox>
                                 </FormRow>
                             )}
-
-                            <FormRow>
-                                <ButtonStrip>
-                                    <Button type="submit" primary>
-                                        {i18n.t('Save')}
-                                    </Button>
-
-                                    <Button onClick={onClose}>
-                                        {i18n.t('Cancel')}
-                                    </Button>
-
-                                    <Button onClick={onRemove}>
-                                        {i18n.t('Remove')}
-                                    </Button>
-                                </ButtonStrip>
-                            </FormRow>
                         </form>
                     </ModalContent>
+
+                    <ModalActions>
+                        <ButtonStrip>
+                            <Button type="submit" primary>
+                                {i18n.t('Save')}
+                            </Button>
+
+                            <Button onClick={onClose}>
+                                {i18n.t('Cancel')}
+                            </Button>
+
+                            <Button onClick={onRemove}>
+                                {i18n.t('Remove')}
+                            </Button>
+                        </ButtonStrip>
+                    </ModalActions>
                 </Modal>
             )}
         </Form>
