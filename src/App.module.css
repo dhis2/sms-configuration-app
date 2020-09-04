@@ -8,10 +8,13 @@
 .sidebar {
     grid-area: sidebar;
     padding-top: 20px;
+    height: 100%;
+    background: var(--colors-grey200);
 }
 
 .content {
     position: relative;
     grid-area: main;
     padding: 20px;
+    background: var(--colors-grey100);
 }
