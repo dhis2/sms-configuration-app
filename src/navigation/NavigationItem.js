@@ -2,7 +2,9 @@ import { useHistory, useRouteMatch } from 'react-router-dom'
 import { MenuItem } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
+
 import { dataTest } from '../dataTest'
+import styles from './NavigationItem.module.css'
 
 const useIsItemActive = (path, exactMatch) => {
     const routeMatch = useRouteMatch(path)
@@ -19,6 +21,7 @@ export const NavigationItem = ({ label, path, exactMatch }) => {
 
     return (
         <MenuItem
+            className={styles.item}
             onClick={navigateToPath}
             active={active}
             label={label}
