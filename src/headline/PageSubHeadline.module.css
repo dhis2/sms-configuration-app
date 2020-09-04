@@ -1,0 +1,12 @@
+.subHeadline {
+    margin: var(--spacers-dp48) 0 var(--spacers-dp16);
+    line-height: 21px;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: var(--spacers-dp8);
+    border-bottom: 1px solid var(--colors-grey400);
+}
+
+:global(h1) + .subHeadline {
+    margin-top: 0;
+}
