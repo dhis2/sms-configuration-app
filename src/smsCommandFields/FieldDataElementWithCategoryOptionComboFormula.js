@@ -149,16 +149,16 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
 
                     <ModalActions>
                         <ButtonStrip>
-                            <Button type="submit" primary>
-                                {i18n.t('Save')}
+                            <Button onClick={onRemove}>
+                                {i18n.t('Remove')}
                             </Button>
 
                             <Button onClick={onClose}>
                                 {i18n.t('Cancel')}
                             </Button>
 
-                            <Button onClick={onRemove}>
-                                {i18n.t('Remove')}
+                            <Button type="submit" primary>
+                                {i18n.t('Save')}
                             </Button>
                         </ButtonStrip>
                     </ModalActions>
