@@ -5,16 +5,16 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-04T15:17:15.096Z\n"
-"PO-Revision-Date: 2020-09-04T15:17:15.096Z\n"
+"POT-Creation-Date: 2020-09-07T08:17:52.093Z\n"
+"PO-Revision-Date: 2020-09-07T08:17:52.093Z\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
 
-msgid "Yes, cancel"
+msgid "No, stay on page"
 msgstr ""
 
-msgid "No, stay on page"
+msgid "Yes, cancel"
 msgstr ""
 
 msgid "Dataset"
@@ -205,7 +205,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-msgid "Receive all data value"
+msgid "Receive all data values"
 msgstr ""
 
 msgid "Receive at least one data value"
