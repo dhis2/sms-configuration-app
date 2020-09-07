@@ -1,3 +1,7 @@
+.container {
+    max-width: 800px;
+}
+
 .explanation {
     color: var(--colors-grey800);
     line-height: 20px;

@@ -16,7 +16,7 @@ export const HOME_LABEL = 'Overview'
 
 export const Home = () => {
     return (
-        <div data-test={dataTest('views-home')}>
+        <div data-test={dataTest('views-home')} className={s.container}>
             <PageHeadline>
                 {i18n.t('Overview: SMS Configuration', {
                     nsSeparator: '>',
