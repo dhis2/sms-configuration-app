@@ -90,17 +90,16 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
         <Form onSubmit={onSubmit} initialValues={initialValues}>
             {({ handleSubmit }) => (
                 <Modal>
-                    <ModalTitle>
-                        {i18n.t('Formula for {{combo}}', { combo })}
-                    </ModalTitle>
-
-                    <ModalContent>
-                        <form
-                            onSubmit={event => {
-                                event.stopPropagation()
-                                handleSubmit(event)
-                            }}
-                        >
+                    <form
+                        onSubmit={event => {
+                            event.stopPropagation()
+                            handleSubmit(event)
+                        }}
+                    >
+                        <ModalTitle>
+                            {i18n.t('Formula for {{combo}}', { combo })}
+                        </ModalTitle>
+                        <ModalContent>
                             <FormRow>
                                 <Field
                                     required
@@ -144,24 +143,23 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
                                     </NoticeBox>
                                 </FormRow>
                             )}
-                        </form>
-                    </ModalContent>
+                        </ModalContent>
+                        <ModalActions>
+                            <ButtonStrip>
+                                <Button onClick={onRemove}>
+                                    {i18n.t('Remove')}
+                                </Button>
 
-                    <ModalActions>
-                        <ButtonStrip>
-                            <Button onClick={onRemove}>
-                                {i18n.t('Remove')}
-                            </Button>
+                                <Button onClick={onClose}>
+                                    {i18n.t('Cancel')}
+                                </Button>
 
-                            <Button onClick={onClose}>
-                                {i18n.t('Cancel')}
-                            </Button>
-
-                            <Button type="submit" primary>
-                                {i18n.t('Save')}
-                            </Button>
-                        </ButtonStrip>
-                    </ModalActions>
+                                <Button type="submit" primary>
+                                    {i18n.t('Save')}
+                                </Button>
+                            </ButtonStrip>
+                        </ModalActions>
+                    </form>
                 </Modal>
             )}
         </Form>
