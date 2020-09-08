@@ -1,0 +1,471 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-09-07T13:25:20.599Z\n"
+"PO-Revision-Date: 2020-09-08 10:27+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Are you sure you want to cancel? Unsaved changes will be lost"
+msgstr ""
+
+msgid "No, stay on page"
+msgstr ""
+
+msgid "Yes, cancel"
+msgstr ""
+
+msgid "Dataset"
+msgstr ""
+
+msgid "Confirm deletion"
+msgstr "Подтвердить удаление"
+
+msgid "Are you sure you want to delete the selected gateways?"
+msgstr ""
+
+msgid "Auth token"
+msgstr ""
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Url template"
+msgstr ""
+
+msgid "User name"
+msgstr "Имя пользователя"
+
+msgid "Add key value pair"
+msgstr ""
+
+msgid "Save gateway"
+msgstr ""
+
+msgid "Add gateway"
+msgstr "Добавить шлюз"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Gateway setup"
+msgstr ""
+
+msgid "Key value pairs"
+msgstr ""
+
+msgid ""
+"Key value pairs can be included in the URL. This is some helper text which "
+"provides an intro to what the key value pairs actually do."
+msgstr ""
+
+msgid "Key"
+msgstr ""
+
+msgid "Value"
+msgstr "Значение"
+
+msgid "Send as header"
+msgstr ""
+
+msgid "Encode"
+msgstr ""
+
+msgid "Confidential"
+msgstr "Конфиденциально"
+
+msgid "Remove key value pair"
+msgstr ""
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Make default"
+msgstr ""
+
+msgid "Default gateway"
+msgstr ""
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "BulkSMS"
+msgstr ""
+
+msgid "Clickatell"
+msgstr ""
+
+msgid "Generic"
+msgstr ""
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Program stage"
+msgstr "Этап программы"
+
+msgid "Are you sure you want to delete the selected commands?"
+msgstr ""
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Save command"
+msgstr ""
+
+msgid "Something went wrong whilst submitting the form"
+msgstr ""
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr ""
+
+msgid "Something went wrong whilst loading the command's details"
+msgstr ""
+
+msgid "SMS short codes"
+msgstr ""
+
+msgid "Add special character"
+msgstr ""
+
+msgid "Required values notice"
+msgstr ""
+
+msgid "Completeness method"
+msgstr "Метод проверки целостности"
+
+msgid "Confirm message"
+msgstr ""
+
+msgid "Reply message if no codes are sent (only the command)"
+msgstr "Ответить на сообщение если не отправлен код (только команда)\\:"
+
+msgid "More than one orgunit message"
+msgstr ""
+
+msgid "No user message"
+msgstr "Нет сообщения пользователя"
+
+msgid "Parser"
+msgstr "Персер/анализатор\\:"
+
+msgid "Field separator"
+msgstr ""
+
+msgid "Special character name"
+msgstr ""
+
+msgid "Special character value"
+msgstr ""
+
+msgid "Remove"
+msgstr "Убрать"
+
+msgid "Success message"
+msgstr ""
+
+msgid "Use current period for reporting"
+msgstr ""
+
+msgid "Wrong format message"
+msgstr "Неправильный формат сообщения"
+
+msgid "default"
+msgstr ""
+
+msgid "Loading formula"
+msgstr ""
+
+msgid "Formula"
+msgstr "Формула"
+
+msgid "Edit formula"
+msgstr ""
+
+msgid "Add formula"
+msgstr ""
+
+msgid "Formula for {{combo}}"
+msgstr ""
+
+msgid "Data element"
+msgstr "Элемент данных"
+
+msgid "formula operator"
+msgstr ""
+
+msgid "Something went wrong whilst saving"
+msgstr ""
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Receive all data values"
+msgstr ""
+
+msgid "Receive at least one data value"
+msgstr "Получить хотя бы одно значение данных"
+
+msgid "Do not mark as complete"
+msgstr "Не отмечать как завершенный"
+
+msgid "Key value parser"
+msgstr ""
+
+msgid "J2ME parser"
+msgstr ""
+
+msgid "Alert parser"
+msgstr ""
+
+msgid "Unregistered parser"
+msgstr ""
+
+msgid "Tracked entity registration parser"
+msgstr "Анализатор регистрации отслеживаемого объекта"
+
+msgid "Program stage data entry parser"
+msgstr ""
+
+msgid "Event registration parser"
+msgstr ""
+
+msgid "Duplicate value!"
+msgstr ""
+
+msgid "Special characters"
+msgstr ""
+
+msgid "Usergroup"
+msgstr ""
+
+msgid "Something went wrong whilst loading gateways"
+msgstr ""
+
+msgid "Edit gateway"
+msgstr ""
+
+msgid "Something went wrong whilst saving gateways"
+msgstr ""
+
+msgid "Gateway not found"
+msgstr ""
+
+msgid "The requested gateway could not be loaded"
+msgstr ""
+
+msgid "Something went wrong whilst saving the gateway"
+msgstr ""
+
+msgid "Something went wrong whilst performing the requested operation"
+msgstr ""
+
+msgid ""
+"An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
+"Different gateway types can be added and configured below. At least one "
+"gateway is needed to send and receive SMS messages. Load balancing will use "
+"all gateways if there are multiple available. Read about gateway "
+"configuration in the DHIS2 documentation."
+msgstr ""
+
+msgid "Delete selected"
+msgstr ""
+
+msgid "No gateways found"
+msgstr ""
+
+msgid ""
+"It looks like there aren't any configured gateways, or they couldn't be "
+"loaded."
+msgstr ""
+
+msgid "Overview: SMS Configuration"
+msgstr ""
+
+msgid ""
+"Configure settings for SMS sending, receiving, data reporting, alerts, "
+"registration and more."
+msgstr ""
+
+msgid "Gateway Configuration"
+msgstr "Конфигурация шлюза"
+
+msgid ""
+"Add and manage gateways for sending and receiving SMS messages in DHIS2."
+msgstr ""
+
+msgid "Set up gateways"
+msgstr ""
+
+msgid "SMS Commands"
+msgstr "Команды СМС"
+
+msgid ""
+"Add and manage commands triggered by incoming SMS messages to register, "
+"alert and more."
+msgstr ""
+
+msgid "Set up SMS commands"
+msgstr ""
+
+msgid "Sent SMS messages"
+msgstr ""
+
+msgid "Open logs of all SMS messages sent from DHIS2."
+msgstr ""
+
+msgid "View all sent SMS"
+msgstr ""
+
+msgid "Received SMS messages"
+msgstr ""
+
+msgid "Open logs of all SMS messages received by DHIS2."
+msgstr ""
+
+msgid "View all received SMS"
+msgstr ""
+
+msgid "Filter by status"
+msgstr ""
+
+msgid "Filter by phone number"
+msgstr ""
+
+msgid "Filter"
+msgstr "Фильтр"
+
+msgid "Show"
+msgstr "Показать"
+
+msgid "per page"
+msgstr ""
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr ""
+
+msgid "Previous"
+msgstr "Предыдущая"
+
+msgid "Page"
+msgstr "Страница"
+
+msgid "of {{pageCount}}"
+msgstr ""
+
+msgid "Next"
+msgstr "Следующая"
+
+msgid "Something went wrong whilst loading received SMSes"
+msgstr ""
+
+msgid "Message"
+msgstr "Сообщение"
+
+msgid "Phone number"
+msgstr "Номер телефона"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Sender"
+msgstr ""
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "No SMSes to display"
+msgstr ""
+
+msgid "Unknown"
+msgstr "Неизвестный"
+
+msgid "Received"
+msgstr ""
+
+msgid "All"
+msgstr "Все"
+
+msgid "Failed"
+msgstr "Сбой"
+
+msgid "Incoming"
+msgstr "Входящий"
+
+msgid "Processed"
+msgstr "Обработан"
+
+msgid "Processing"
+msgstr "Обработка"
+
+msgid "Sent"
+msgstr "Отправлено"
+
+msgid "Unhandled"
+msgstr "Не обработан"
+
+msgid "Something went wrong whilst loading sent SMSes"
+msgstr ""
+
+msgid "Recipients"
+msgstr "Получатели"
+
+msgid "Delivered"
+msgstr ""
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Outbound"
+msgstr "Исходящие"
+
+msgid "Pending"
+msgstr ""
+
+msgid "Scheduled"
+msgstr "Запланировано"
+
+msgid "Something went wrong whilst loading commands"
+msgstr ""
+
+msgid "Edit command"
+msgstr ""
+
+msgid "Unrecognised parser type"
+msgstr ""
+
+msgid "Could not find the requested parser type"
+msgstr ""
+
+msgid "Add command"
+msgstr "Добавить комманду"
+
+msgid "Commands"
+msgstr ""
+
+msgid ""
+"SMS commands process SMS messages received by a DHIS2 instance, taking "
+"certain actions depending on the command and message content. Multiple SMS "
+"commands can be set up to process and handle data in multiple ways. Add and "
+"configure SMS commands below. Read about SMS commands in the DHIS2 "
+"documentation."
+msgstr ""
+
+msgid "Sms command"
+msgstr ""
+
+msgid "No commands to display"
+msgstr ""

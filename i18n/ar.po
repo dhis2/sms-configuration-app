@@ -1,0 +1,472 @@
+# 
+# Translators:
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
+# Hamza Assada <7amza.it@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2020-09-07T13:25:20.599Z\n"
+"PO-Revision-Date: 2020-09-08 10:27+0000\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
+"Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid "Are you sure you want to cancel? Unsaved changes will be lost"
+msgstr ""
+
+msgid "No, stay on page"
+msgstr ""
+
+msgid "Yes, cancel"
+msgstr ""
+
+msgid "Dataset"
+msgstr ""
+
+msgid "Confirm deletion"
+msgstr "تأكيد الحذف"
+
+msgid "Are you sure you want to delete the selected gateways?"
+msgstr ""
+
+msgid "Auth token"
+msgstr ""
+
+msgid "Name"
+msgstr "الإسم"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Url template"
+msgstr ""
+
+msgid "User name"
+msgstr "اسم المستخدم"
+
+msgid "Add key value pair"
+msgstr ""
+
+msgid "Save gateway"
+msgstr ""
+
+msgid "Add gateway"
+msgstr "إضافة بوابة"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Gateway setup"
+msgstr ""
+
+msgid "Key value pairs"
+msgstr ""
+
+msgid ""
+"Key value pairs can be included in the URL. This is some helper text which "
+"provides an intro to what the key value pairs actually do."
+msgstr ""
+
+msgid "Key"
+msgstr ""
+
+msgid "Value"
+msgstr "القيمة"
+
+msgid "Send as header"
+msgstr ""
+
+msgid "Encode"
+msgstr ""
+
+msgid "Confidential"
+msgstr "سري"
+
+msgid "Remove key value pair"
+msgstr ""
+
+msgid "Type"
+msgstr "النوع"
+
+msgid "Make default"
+msgstr ""
+
+msgid "Default gateway"
+msgstr ""
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "BulkSMS"
+msgstr ""
+
+msgid "Clickatell"
+msgstr ""
+
+msgid "Generic"
+msgstr ""
+
+msgid "Program"
+msgstr "البرنامج"
+
+msgid "Program stage"
+msgstr "مرحلة البرنامج"
+
+msgid "Are you sure you want to delete the selected commands?"
+msgstr ""
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Save command"
+msgstr ""
+
+msgid "Something went wrong whilst submitting the form"
+msgstr ""
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr ""
+
+msgid "Something went wrong whilst loading the command's details"
+msgstr ""
+
+msgid "SMS short codes"
+msgstr ""
+
+msgid "Add special character"
+msgstr ""
+
+msgid "Required values notice"
+msgstr ""
+
+msgid "Completeness method"
+msgstr "طريقة الاكتمال"
+
+msgid "Confirm message"
+msgstr ""
+
+msgid "Reply message if no codes are sent (only the command)"
+msgstr "رد على الرسالة إذا لم يتم إرسال أية رموز (الأمر فقط)"
+
+msgid "More than one orgunit message"
+msgstr ""
+
+msgid "No user message"
+msgstr "لا توجد رسالة مستخدم"
+
+msgid "Parser"
+msgstr "المحلل"
+
+msgid "Field separator"
+msgstr ""
+
+msgid "Special character name"
+msgstr ""
+
+msgid "Special character value"
+msgstr ""
+
+msgid "Remove"
+msgstr "إزلة"
+
+msgid "Success message"
+msgstr ""
+
+msgid "Use current period for reporting"
+msgstr ""
+
+msgid "Wrong format message"
+msgstr "رسالة الصيغة غير صحيحة"
+
+msgid "default"
+msgstr ""
+
+msgid "Loading formula"
+msgstr ""
+
+msgid "Formula"
+msgstr "الصيغة"
+
+msgid "Edit formula"
+msgstr ""
+
+msgid "Add formula"
+msgstr ""
+
+msgid "Formula for {{combo}}"
+msgstr ""
+
+msgid "Data element"
+msgstr "عنصر البيانات"
+
+msgid "formula operator"
+msgstr ""
+
+msgid "Something went wrong whilst saving"
+msgstr ""
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Receive all data values"
+msgstr ""
+
+msgid "Receive at least one data value"
+msgstr "استقبال قيمة بيانات واحدة على الأقل"
+
+msgid "Do not mark as complete"
+msgstr "لا تضع علامة اكتمال"
+
+msgid "Key value parser"
+msgstr ""
+
+msgid "J2ME parser"
+msgstr ""
+
+msgid "Alert parser"
+msgstr ""
+
+msgid "Unregistered parser"
+msgstr ""
+
+msgid "Tracked entity registration parser"
+msgstr "محلل تسجيل الكيان المتتبع"
+
+msgid "Program stage data entry parser"
+msgstr ""
+
+msgid "Event registration parser"
+msgstr ""
+
+msgid "Duplicate value!"
+msgstr ""
+
+msgid "Special characters"
+msgstr ""
+
+msgid "Usergroup"
+msgstr ""
+
+msgid "Something went wrong whilst loading gateways"
+msgstr ""
+
+msgid "Edit gateway"
+msgstr ""
+
+msgid "Something went wrong whilst saving gateways"
+msgstr ""
+
+msgid "Gateway not found"
+msgstr ""
+
+msgid "The requested gateway could not be loaded"
+msgstr ""
+
+msgid "Something went wrong whilst saving the gateway"
+msgstr ""
+
+msgid "Something went wrong whilst performing the requested operation"
+msgstr ""
+
+msgid ""
+"An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
+"Different gateway types can be added and configured below. At least one "
+"gateway is needed to send and receive SMS messages. Load balancing will use "
+"all gateways if there are multiple available. Read about gateway "
+"configuration in the DHIS2 documentation."
+msgstr ""
+
+msgid "Delete selected"
+msgstr "حذف المحدد"
+
+msgid "No gateways found"
+msgstr ""
+
+msgid ""
+"It looks like there aren't any configured gateways, or they couldn't be "
+"loaded."
+msgstr ""
+
+msgid "Overview: SMS Configuration"
+msgstr ""
+
+msgid ""
+"Configure settings for SMS sending, receiving, data reporting, alerts, "
+"registration and more."
+msgstr ""
+
+msgid "Gateway Configuration"
+msgstr "تهيئة البوابة"
+
+msgid ""
+"Add and manage gateways for sending and receiving SMS messages in DHIS2."
+msgstr ""
+
+msgid "Set up gateways"
+msgstr ""
+
+msgid "SMS Commands"
+msgstr "أوامر رسائل الجوال القصيرة"
+
+msgid ""
+"Add and manage commands triggered by incoming SMS messages to register, "
+"alert and more."
+msgstr ""
+
+msgid "Set up SMS commands"
+msgstr ""
+
+msgid "Sent SMS messages"
+msgstr ""
+
+msgid "Open logs of all SMS messages sent from DHIS2."
+msgstr ""
+
+msgid "View all sent SMS"
+msgstr ""
+
+msgid "Received SMS messages"
+msgstr ""
+
+msgid "Open logs of all SMS messages received by DHIS2."
+msgstr ""
+
+msgid "View all received SMS"
+msgstr ""
+
+msgid "Filter by status"
+msgstr ""
+
+msgid "Filter by phone number"
+msgstr ""
+
+msgid "Filter"
+msgstr "عامل التصفية"
+
+msgid "Show"
+msgstr "إظهار"
+
+msgid "per page"
+msgstr ""
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr ""
+
+msgid "Previous"
+msgstr "السابق"
+
+msgid "Page"
+msgstr "الصفحة"
+
+msgid "of {{pageCount}}"
+msgstr ""
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "Something went wrong whilst loading received SMSes"
+msgstr ""
+
+msgid "Message"
+msgstr "الرسالة"
+
+msgid "Phone number"
+msgstr "رقم الهاتف"
+
+msgid "Status"
+msgstr "الحالة"
+
+msgid "Sender"
+msgstr "المرسل"
+
+msgid "Date"
+msgstr "التاريخ"
+
+msgid "No SMSes to display"
+msgstr ""
+
+msgid "Unknown"
+msgstr "غير معروف"
+
+msgid "Received"
+msgstr ""
+
+msgid "All"
+msgstr "الجميع"
+
+msgid "Failed"
+msgstr "فشل"
+
+msgid "Incoming"
+msgstr "الوارد"
+
+msgid "Processed"
+msgstr "تمت معالجته"
+
+msgid "Processing"
+msgstr "جار المعالجة"
+
+msgid "Sent"
+msgstr "تم الإرسال"
+
+msgid "Unhandled"
+msgstr "غير معالج"
+
+msgid "Something went wrong whilst loading sent SMSes"
+msgstr ""
+
+msgid "Recipients"
+msgstr "المستلمون"
+
+msgid "Delivered"
+msgstr ""
+
+msgid "Error"
+msgstr "خطأ"
+
+msgid "Outbound"
+msgstr "الصادر"
+
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+msgid "Scheduled"
+msgstr "تمت جدولته"
+
+msgid "Something went wrong whilst loading commands"
+msgstr ""
+
+msgid "Edit command"
+msgstr ""
+
+msgid "Unrecognised parser type"
+msgstr ""
+
+msgid "Could not find the requested parser type"
+msgstr ""
+
+msgid "Add command"
+msgstr "إضافة أمر"
+
+msgid "Commands"
+msgstr ""
+
+msgid ""
+"SMS commands process SMS messages received by a DHIS2 instance, taking "
+"certain actions depending on the command and message content. Multiple SMS "
+"commands can be set up to process and handle data in multiple ways. Add and "
+"configure SMS commands below. Read about SMS commands in the DHIS2 "
+"documentation."
+msgstr ""
+
+msgid "Sms command"
+msgstr ""
+
+msgid "No commands to display"
+msgstr ""
