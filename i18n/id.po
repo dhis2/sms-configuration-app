@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2020
-# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Carwoto Sa'an <carwoto@gmail.com>, 2020
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-09-07T13:25:20.599Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Carwoto Sa'an <carwoto@gmail.com>, 2020\n"
+"Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,24 +21,26 @@ msgstr ""
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
+"Apakah Anda yakin ingin membatalkan? Perubahan yang belum disimpan akan "
+"hilang"
 
 msgid "No, stay on page"
-msgstr ""
+msgstr "Tidak, tetap di halaman ini"
 
 msgid "Yes, cancel"
-msgstr ""
+msgstr "Ya, batalkan"
 
 msgid "Dataset"
-msgstr ""
+msgstr "Dataset"
 
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Konfirmasi penghapusan"
 
 msgid "Are you sure you want to delete the selected gateways?"
-msgstr ""
+msgstr "Apakah Anda yakin ingin menghapus gateway yang terpilih?"
 
 msgid "Auth token"
-msgstr ""
+msgstr "Token otorisasi"
 
 msgid "Name"
 msgstr "Nama"
@@ -47,72 +49,74 @@ msgid "Password"
 msgstr "Sandi"
 
 msgid "Url template"
-msgstr ""
+msgstr "Template URL"
 
 msgid "User name"
-msgstr ""
+msgstr "Nama pengguna"
 
 msgid "Add key value pair"
-msgstr ""
+msgstr "Tambahkan pasangan nilai kunci"
 
 msgid "Save gateway"
-msgstr ""
+msgstr "Simpan gateway"
 
 msgid "Add gateway"
-msgstr ""
+msgstr "Tambahkan gateway"
 
 msgid "Cancel"
 msgstr "Batal"
 
 msgid "Gateway setup"
-msgstr ""
+msgstr "Setup gateway"
 
 msgid "Key value pairs"
-msgstr ""
+msgstr "Key value pairs"
 
 msgid ""
 "Key value pairs can be included in the URL. This is some helper text which "
 "provides an intro to what the key value pairs actually do."
 msgstr ""
+"Key value pairs dapat dimasukkan dalam URL. Ini adalah teks penolong yang "
+"memberikan pendahuluan fungsi key value pairs."
 
 msgid "Key"
-msgstr ""
+msgstr "Kunci"
 
 msgid "Value"
 msgstr "Nilai"
 
 msgid "Send as header"
-msgstr ""
+msgstr "Kirim sebagai header"
 
 msgid "Encode"
-msgstr ""
+msgstr "Sandikan"
 
 msgid "Confidential"
 msgstr "Rahasia"
 
 msgid "Remove key value pair"
-msgstr ""
+msgstr "Hapus key value pair"
 
 msgid "Type"
 msgstr "Tipe"
 
 msgid "Make default"
-msgstr ""
+msgstr "Jadikan default"
 
 msgid "Default gateway"
-msgstr ""
+msgstr "Gateway default"
 
 msgid "Edit"
 msgstr "Sunting"
 
 msgid "BulkSMS"
-msgstr ""
+msgstr "BulkSMS"
 
 msgid "Clickatell"
-msgstr ""
+msgstr "Clickatell"
 
 msgid "Generic"
-msgstr ""
+msgstr "Generik"
 
 msgid "Program"
 msgstr "Program"
@@ -121,115 +125,115 @@ msgid "Program stage"
 msgstr "Tahapan program"
 
 msgid "Are you sure you want to delete the selected commands?"
-msgstr ""
+msgstr "Apakah Anda yakin ingin menghapus perintah yang terpilih?"
 
 msgid "Delete"
 msgstr "Hapus"
 
 msgid "Save command"
-msgstr ""
+msgstr "Simpan perintah"
 
 msgid "Something went wrong whilst submitting the form"
-msgstr ""
+msgstr "Terjadi kesalahan saat mengirimkan borang"
 
 msgid "Something went wrong whilst loading the sms command"
-msgstr ""
+msgstr "Terjadi kesalahan saat memuat perintah sms"
 
 msgid "Something went wrong whilst loading the command's details"
-msgstr ""
+msgstr "Terjadi kesalahan saat memuat rincian perintah"
 
 msgid "SMS short codes"
-msgstr ""
+msgstr "Kode pendek SMS"
 
 msgid "Add special character"
-msgstr ""
+msgstr "Tambahkan karakter khusus"
 
 msgid "Required values notice"
-msgstr ""
+msgstr "Pemberitahuan nilai yang diperlukan"
 
 msgid "Completeness method"
-msgstr ""
+msgstr "Metode kelengkapan"
 
 msgid "Confirm message"
-msgstr ""
+msgstr "Konfirmasi pesan"
 
 msgid "Reply message if no codes are sent (only the command)"
-msgstr ""
+msgstr "Balas pesan jika tidak ada kode terkirim (hanya perintahnya)"
 
 msgid "More than one orgunit message"
-msgstr ""
+msgstr "Lebih dari satu pesan orgunit"
 
 msgid "No user message"
-msgstr ""
+msgstr "Tidak ada pesan pengguna"
 
 msgid "Parser"
-msgstr ""
+msgstr "Parser"
 
 msgid "Field separator"
-msgstr ""
+msgstr "Field separator"
 
 msgid "Special character name"
-msgstr ""
+msgstr "Nama karakter khusus"
 
 msgid "Special character value"
-msgstr ""
+msgstr "Nilai karakter khusus"
 
 msgid "Remove"
 msgstr "Hapus"
 
 msgid "Success message"
-msgstr ""
+msgstr "Pesan berhasil"
 
 msgid "Use current period for reporting"
-msgstr ""
+msgstr "Gunakan periode sekarang untuk pelaporan"
 
 msgid "Wrong format message"
-msgstr ""
+msgstr "Pesan format salah"
 
 msgid "default"
-msgstr ""
+msgstr "default"
 
 msgid "Loading formula"
-msgstr ""
+msgstr "Memuat formula"
 
 msgid "Formula"
-msgstr ""
+msgstr "Formula"
 
 msgid "Edit formula"
-msgstr ""
+msgstr "Edit formula"
 
 msgid "Add formula"
-msgstr ""
+msgstr "Tambahkan formula"
 
 msgid "Formula for {{combo}}"
-msgstr ""
+msgstr "Formula untuk {{combo}}"
 
 msgid "Data element"
 msgstr "Elemen data"
 
 msgid "formula operator"
-msgstr ""
+msgstr "operator formula"
 
 msgid "Something went wrong whilst saving"
-msgstr ""
+msgstr "Terjadi kesalahan saat menyimpan"
 
 msgid "Save"
 msgstr "Simpan"
 
 msgid "Receive all data values"
-msgstr ""
+msgstr "Terima semua nilai data"
 
 msgid "Receive at least one data value"
-msgstr ""
+msgstr "Terima setidaknya satu nilai data"
 
 msgid "Do not mark as complete"
-msgstr ""
+msgstr "Jangan tandai sebagai lengkap"
 
 msgid "Key value parser"
-msgstr ""
+msgstr "Parser key value"
 
 msgid "J2ME parser"
-msgstr ""
+msgstr "Parser J2ME"
 
 msgid "Alert parser"
 msgstr ""

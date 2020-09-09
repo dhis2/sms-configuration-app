@@ -1,17 +1,17 @@
 # 
 # Translators:
 # phil_dhis2, 2020
-# Edem Kossi <ekossi@hispwca.org>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
+# Edem Kossi <ekossi@hispwca.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-09-07T13:25:20.599Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
+"Last-Translator: Edem Kossi <ekossi@hispwca.org>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,21 +21,23 @@ msgstr ""
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
+"Voulez-vous vraiment annuler? Toutes les modifications non enregistrées "
+"seront perdues."
 
 msgid "No, stay on page"
-msgstr ""
+msgstr "Non, rester sur la page"
 
 msgid "Yes, cancel"
-msgstr ""
+msgstr "Oui, annuler"
 
 msgid "Dataset"
-msgstr ""
+msgstr "Ensemble de données"
 
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Confirmer la suppression"
 
 msgid "Are you sure you want to delete the selected gateways?"
-msgstr ""
+msgstr "Vous êtes sûre de vouloir supprimer la passerelle sélectionnée?"
 
 msgid "Auth token"
 msgstr ""
@@ -53,10 +55,10 @@ msgid "User name"
 msgstr "Nom d'utilisateur"
 
 msgid "Add key value pair"
-msgstr ""
+msgstr "Ajouter une paire clé valeur"
 
 msgid "Save gateway"
-msgstr ""
+msgstr "Enregistrer la passerelle"
 
 msgid "Add gateway"
 msgstr "Ajouter passerelle"
@@ -65,10 +67,10 @@ msgid "Cancel"
 msgstr "Annuler"
 
 msgid "Gateway setup"
-msgstr ""
+msgstr "Configuration de passerelle"
 
 msgid "Key value pairs"
-msgstr ""
+msgstr "Paires clé valeur"
 
 msgid ""
 "Key value pairs can be included in the URL. This is some helper text which "
@@ -76,22 +78,22 @@ msgid ""
 msgstr ""
 
 msgid "Key"
-msgstr ""
+msgstr "Clé"
 
 msgid "Value"
 msgstr "Valeur"
 
 msgid "Send as header"
-msgstr ""
+msgstr "Envoyer comme entête"
 
 msgid "Encode"
 msgstr ""
 
 msgid "Confidential"
-msgstr ""
+msgstr "Confidentiel"
 
 msgid "Remove key value pair"
-msgstr ""
+msgstr "Supprimer la paire clé valeur"
 
 msgid "Type"
 msgstr "Type"
@@ -100,7 +102,7 @@ msgid "Make default"
 msgstr ""
 
 msgid "Default gateway"
-msgstr ""
+msgstr "Passerelle par défaut"
 
 msgid "Edit"
 msgstr "Modifier"
@@ -121,34 +123,34 @@ msgid "Program stage"
 msgstr "Étape du programme"
 
 msgid "Are you sure you want to delete the selected commands?"
-msgstr ""
+msgstr "Voulez-vous vraiment supprimer les commandes sélectionnées?"
 
 msgid "Delete"
 msgstr "Supprimer"
 
 msgid "Save command"
-msgstr ""
+msgstr "Enregistrer la commande"
 
 msgid "Something went wrong whilst submitting the form"
-msgstr ""
+msgstr "Une erreur s'est produite lors de l'envoi du formulaire"
 
 msgid "Something went wrong whilst loading the sms command"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement de la commande sms"
 
 msgid "Something went wrong whilst loading the command's details"
 msgstr ""
 
 msgid "SMS short codes"
-msgstr ""
+msgstr "Codes courts SMS"
 
 msgid "Add special character"
-msgstr ""
+msgstr "Ajouter un caractère spécial"
 
 msgid "Required values notice"
-msgstr ""
+msgstr "Notification pour les valeurs requises"
 
 msgid "Completeness method"
-msgstr ""
+msgstr "Méthode de complétude"
 
 msgid "Confirm message"
 msgstr ""
@@ -166,13 +168,13 @@ msgid "Parser"
 msgstr "Analyseur syntaxique"
 
 msgid "Field separator"
-msgstr ""
+msgstr "Séparateur de champs"
 
 msgid "Special character name"
-msgstr ""
+msgstr "Nom du caractère spécial"
 
 msgid "Special character value"
-msgstr ""
+msgstr "Valeur du caractère spécial"
 
 msgid "Remove"
 msgstr "Supprimer"
@@ -184,31 +186,31 @@ msgid "Use current period for reporting"
 msgstr ""
 
 msgid "Wrong format message"
-msgstr ""
+msgstr "Message de mauvais format"
 
 msgid "default"
-msgstr ""
+msgstr "par défaut"
 
 msgid "Loading formula"
-msgstr ""
+msgstr "Chargement de formule"
 
 msgid "Formula"
 msgstr "Formule"
 
 msgid "Edit formula"
-msgstr ""
+msgstr "Editer la formule"
 
 msgid "Add formula"
-msgstr ""
+msgstr "Ajouter une formule"
 
 msgid "Formula for {{combo}}"
-msgstr ""
+msgstr "Formule pour  {{combo}}"
 
 msgid "Data element"
 msgstr "Élément de données"
 
 msgid "formula operator"
-msgstr ""
+msgstr "opérateur de formule"
 
 msgid "Something went wrong whilst saving"
 msgstr ""
@@ -436,28 +438,28 @@ msgid "Outbound"
 msgstr "Sortant"
 
 msgid "Pending"
-msgstr ""
+msgstr "En attente"
 
 msgid "Scheduled"
 msgstr "Programmé"
 
 msgid "Something went wrong whilst loading commands"
-msgstr ""
+msgstr "Une erreur s'est produite lors du chargement des commandes"
 
 msgid "Edit command"
-msgstr ""
+msgstr "Editer la commande"
 
 msgid "Unrecognised parser type"
-msgstr ""
+msgstr "Type de parseur demandé non reconnu"
 
 msgid "Could not find the requested parser type"
-msgstr ""
+msgstr "Impossible de trouver le type de parseur demandé"
 
 msgid "Add command"
 msgstr "Ajouter commande"
 
 msgid "Commands"
-msgstr ""
+msgstr "Commande"
 
 msgid ""
 "SMS commands process SMS messages received by a DHIS2 instance, taking "
@@ -468,7 +470,7 @@ msgid ""
 msgstr ""
 
 msgid "Sms command"
-msgstr ""
+msgstr "Commande SMS"
 
 msgid "No commands to display"
-msgstr ""
+msgstr "Aucune commande à afficher"
