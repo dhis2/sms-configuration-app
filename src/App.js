@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { CssVariables } from '@dhis2/ui'
 import React from 'react'
 import styles from './App.module.css'
@@ -24,14 +24,13 @@ import {
     SentSmsList,
     HOME_PATH,
     Home,
-    NoMatch,
 } from './views'
 import { dataTest } from './dataTest'
 
 const App = () => (
     <AlertHandler>
         <CssVariables spacers colors />
-        <BrowserRouter>
+        <HashRouter>
             <div className={styles.container} data-test={dataTest('app')}>
                 <div className={styles.sidebar}>
                     <Navigation />
@@ -93,11 +92,11 @@ const App = () => (
                             component={ReceivedSmsList}
                         />
 
-                        <Route component={NoMatch} />
+                        <Redirect from="*" to={HOME_PATH} />
                     </Switch>
                 </main>
             </div>
-        </BrowserRouter>
+        </HashRouter>
     </AlertHandler>
 )
 
