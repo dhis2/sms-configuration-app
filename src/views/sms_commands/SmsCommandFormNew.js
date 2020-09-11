@@ -97,6 +97,7 @@ const ActualForm = ({ handleSubmit, submitting }) => {
         parserType === EVENT_REGISTRATION_PARSER.value
 
     const showProgramStageField =
+        parserType === EVENT_REGISTRATION_PARSER.value ||
         parserType === PROGRAM_STAGE_DATAENTRY_PARSER.value
 
     const registration =
@@ -136,7 +137,7 @@ const ActualForm = ({ handleSubmit, submitting }) => {
                 {showProgramStageField && (
                     <FormRow>
                         <FieldProgramStageWithAutoLoad
-                            programId={program || ''}
+                            programId={program?.id || ''}
                         />
                     </FormRow>
                 )}

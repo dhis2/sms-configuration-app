@@ -45,10 +45,7 @@ export const CREATE_SMS_COMMAND_MUTATION = {
             }
         }
 
-        if (
-            parserType === TRACKED_ENTITY_REGISTRATION_PARSER.value ||
-            parserType === EVENT_REGISTRATION_PARSER.value
-        ) {
+        if (parserType === TRACKED_ENTITY_REGISTRATION_PARSER.value) {
             return {
                 parserType,
                 name,
@@ -56,7 +53,10 @@ export const CREATE_SMS_COMMAND_MUTATION = {
             }
         }
 
-        if (parserType === PROGRAM_STAGE_DATAENTRY_PARSER.value) {
+        if (
+            parserType === PROGRAM_STAGE_DATAENTRY_PARSER.value ||
+            parserType === EVENT_REGISTRATION_PARSER.value
+        ) {
             return {
                 parserType,
                 name,
