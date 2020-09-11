@@ -1,3 +1,4 @@
+import { hasValue } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
 
@@ -7,6 +8,7 @@ import { useReadProgramsQuery } from './useReadProgramsQuery'
 export const FieldProgramWithAutoLoad = ({ required, registration }) => {
     const variables = { registration }
     const { loading, error, data } = useReadProgramsQuery({ variables })
+    const validate = required ? hasValue : undefined
 
     if (loading) {
         return (
@@ -15,6 +17,7 @@ export const FieldProgramWithAutoLoad = ({ required, registration }) => {
                 loading
                 showLoadingStatus
                 programs={[]}
+                validate={validate}
             />
         )
     }
@@ -26,6 +29,7 @@ export const FieldProgramWithAutoLoad = ({ required, registration }) => {
                 disabled
                 programs={[]}
                 errorText={error.message}
+                validate={validate}
             />
         )
     }
@@ -36,7 +40,13 @@ export const FieldProgramWithAutoLoad = ({ required, registration }) => {
         value: id,
     }))
 
-    return <FieldProgram required={required} programs={options} />
+    return (
+        <FieldProgram
+            required={required}
+            programs={options}
+            validate={validate}
+        />
+    )
 }
 
 FieldProgramWithAutoLoad.defaultProps = {
