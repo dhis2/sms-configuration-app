@@ -1,3 +1,4 @@
+import { hasValue } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
 
@@ -6,6 +7,7 @@ import { useReadUserGroupsQuery } from './useReadUserGroupsQuery'
 
 export const FieldUserGroupWithAutoLoad = ({ required }) => {
     const { loading, error, data } = useReadUserGroupsQuery()
+    const validate = required ? hasValue : undefined
 
     if (loading) {
         return (
@@ -14,6 +16,7 @@ export const FieldUserGroupWithAutoLoad = ({ required }) => {
                 loading
                 showLoadingStatus
                 userGroups={[]}
+                validate={validate}
             />
         )
     }
@@ -25,6 +28,7 @@ export const FieldUserGroupWithAutoLoad = ({ required }) => {
                 disabled
                 userGroups={[]}
                 errorText={error.message}
+                validate={validate}
             />
         )
     }
@@ -35,7 +39,13 @@ export const FieldUserGroupWithAutoLoad = ({ required }) => {
         value: id,
     }))
 
-    return <FieldUserGroup required={required} userGroups={options} />
+    return (
+        <FieldUserGroup
+            required={required}
+            userGroups={options}
+            validate={validate}
+        />
+    )
 }
 
 FieldUserGroupWithAutoLoad.defaultProps = {

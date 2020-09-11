@@ -1,3 +1,4 @@
+import { hasValue } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import { SingleSelectFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
@@ -20,12 +21,14 @@ const options = Object.values(commandTypes).sort((a, b) => {
 
 export const FieldCommandParser = ({ disabled }) => (
     <Field
+        required
         disabled={disabled}
         dataTest={dataTest('forms-fieldcommandparser')}
         name={FIELD_COMMAND_PARSER_NAME}
         label={i18n.t('Parser')}
         component={SingleSelectFieldFF}
         options={options}
+        validate={hasValue}
     />
 )
 
