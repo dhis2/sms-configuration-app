@@ -1,3 +1,4 @@
+import { hasValue } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useEffect } from 'react'
 
@@ -8,6 +9,7 @@ export const FieldProgramStageWithAutoLoad = ({ required, programId }) => {
     const { loading, error, data, refetch } = useReadProgramStagesQuery({
         lazy: true,
     })
+    const validate = required ? hasValue : undefined
 
     useEffect(() => {
         if (programId) refetch({ programId })
@@ -15,7 +17,12 @@ export const FieldProgramStageWithAutoLoad = ({ required, programId }) => {
 
     if (loading) {
         return (
-            <FieldProgramStage loading required={required} programStages={[]} />
+            <FieldProgramStage
+                loading
+                required={required}
+                programStages={[]}
+                validate={validate}
+            />
         )
     }
 
@@ -26,6 +33,7 @@ export const FieldProgramStageWithAutoLoad = ({ required, programId }) => {
                 errorText={error.message}
                 required={required}
                 programStages={[]}
+                validate={validate}
             />
         )
     }
@@ -36,6 +44,7 @@ export const FieldProgramStageWithAutoLoad = ({ required, programId }) => {
                 disabled
                 required={required}
                 programStages={[]}
+                validate={validate}
             />
         )
     }
