@@ -1,3 +1,4 @@
+import { hasValue } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
 
@@ -6,6 +7,7 @@ import { useReadDataSetsQuery } from './useReadDataSetsQuery'
 
 export const FieldDataSetWithAutoLoad = ({ required }) => {
     const { loading, error, data } = useReadDataSetsQuery()
+    const validate = required ? hasValue : undefined
 
     if (loading) {
         return (
@@ -14,6 +16,7 @@ export const FieldDataSetWithAutoLoad = ({ required }) => {
                 showLoadingStatus
                 required={required}
                 dataSets={[]}
+                validate={validate}
             />
         )
     }
@@ -25,6 +28,7 @@ export const FieldDataSetWithAutoLoad = ({ required }) => {
                 disabled
                 programs={[]}
                 errorText={error.message}
+                validate={validate}
             />
         )
     }
@@ -35,7 +39,13 @@ export const FieldDataSetWithAutoLoad = ({ required }) => {
         value: id,
     }))
 
-    return <FieldDataSet required={required} dataSets={options} />
+    return (
+        <FieldDataSet
+            required={required}
+            dataSets={options}
+            validate={validate}
+        />
+    )
 }
 
 FieldDataSetWithAutoLoad.defaultProps = {

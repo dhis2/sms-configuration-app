@@ -118,25 +118,29 @@ const ActualForm = ({ handleSubmit, submitting }) => {
 
                 {showDataSetField && (
                     <FormRow>
-                        <FieldDataSetWithAutoLoad />
+                        <FieldDataSetWithAutoLoad required />
                     </FormRow>
                 )}
 
                 {showUserGroupField && (
                     <FormRow>
-                        <FieldUserGroupWithAutoLoad />
+                        <FieldUserGroupWithAutoLoad required />
                     </FormRow>
                 )}
 
                 {showProgramField && (
                     <FormRow>
-                        <FieldProgramWithAutoLoad registration={registration} />
+                        <FieldProgramWithAutoLoad
+                            required
+                            registration={registration}
+                        />
                     </FormRow>
                 )}
 
                 {showProgramStageField && (
                     <FormRow>
                         <FieldProgramStageWithAutoLoad
+                            required
                             programId={program?.id || ''}
                         />
                     </FormRow>
