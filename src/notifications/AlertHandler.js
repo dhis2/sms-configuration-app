@@ -7,17 +7,26 @@ import { dataTest } from '../dataTest'
 
 export const AlertHandler = ({ children }) => {
     const [alerts, setAlerts] = useState([])
-    const addAlert = alert => setAlerts([...alerts, alert])
+    const addAlert = ({ message, type }) => {
+        const alert = {
+            message,
+            type,
+            // Ensure that identical messages can be distinguished
+            timestamp: Date.now(),
+        }
+
+        setAlerts([...alerts, alert])
+    }
 
     return (
         <AlertContext.Provider value={{ addAlert }}>
             {children}
 
             <AlertStack dataTest={dataTest('notifications-alerthandler')}>
-                {alerts.map(({ message, type }) => (
+                {alerts.map(({ message, type, timestamp }) => (
                     <AlertBar
                         dataTest={dataTest('notifications-alert')}
-                        key={message}
+                        key={`${message}${timestamp}`}
                         {...{ [type]: true }}
                     >
                         {message}
