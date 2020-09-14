@@ -33,7 +33,7 @@
         "@dhis2/prop-types": "^2.0.0",
         "@dhis2/ui": "^5.5.0",
         "classnames": "^2.2.6",
-        "moment": "^2.27.0",
+        "moment": "^2.28.0",
         "react-router-dom": "^5.2.0"
     }
 }
