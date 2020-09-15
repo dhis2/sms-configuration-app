@@ -1,3 +1,3 @@
 export * from './FieldProgramStage'
-export * from './FieldProgramStageWithAutoLoad'
+export * from './FieldProgramStageWithLoadingStates'
 export * from './useReadProgramStagesQuery'
