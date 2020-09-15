@@ -1,14 +1,24 @@
-import { hasValue } from '@dhis2/ui'
+import { hasValue, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
-import React from 'react'
+import React, { useEffect } from 'react'
 
-import { FieldProgram } from './FieldProgram'
-import { useReadProgramsQuery } from './useReadProgramsQuery'
+import { FIELD_PROGRAM_NAME, FieldProgram } from './FieldProgram'
+import { ALL_PROGRAMS, useReadProgramsQuery } from './useReadProgramsQuery'
+
+const { useForm } = ReactFinalForm
 
 export const FieldProgramWithAutoLoad = ({ required, registration }) => {
-    const variables = { registration }
-    const { loading, error, data } = useReadProgramsQuery({ variables })
+    const form = useForm()
     const validate = required ? hasValue : undefined
+    const { loading, error, data, refetch } = useReadProgramsQuery({
+        lazy: true,
+    })
+
+    useEffect(() => {
+        const variables = { registration }
+        form.change(FIELD_PROGRAM_NAME, null)
+        refetch(variables)
+    }, [registration])
 
     if (loading) {
         return (
@@ -51,12 +61,10 @@ export const FieldProgramWithAutoLoad = ({ required, registration }) => {
 
 FieldProgramWithAutoLoad.defaultProps = {
     required: false,
-
-    // undefined = both
-    registration: undefined,
+    registration: ALL_PROGRAMS,
 }
 
 FieldProgramWithAutoLoad.propTypes = {
-    registration: PropTypes.bool,
+    registration: PropTypes.string,
     required: PropTypes.bool,
 }
