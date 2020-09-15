@@ -1,11 +1,23 @@
-import { hasValue } from '@dhis2/ui'
+import { hasValue, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React, { useEffect } from 'react'
 
-import { FieldProgramStage } from './FieldProgramStage'
+import { EVENT_REGISTRATION_PARSER } from '../smsCommandFields'
+import {
+    FIELD_PROGRAM_STAGE_NAME,
+    FieldProgramStage,
+} from './FieldProgramStage'
 import { useReadProgramStagesQuery } from './useReadProgramStagesQuery'
 
-export const FieldProgramStageWithAutoLoad = ({ required, programId }) => {
+const { useForm } = ReactFinalForm
+
+export const FieldProgramStageWithLoadingStates = ({
+    parserType,
+    programId,
+    disabled,
+    required,
+}) => {
+    const form = useForm()
     const { loading, error, data, refetch } = useReadProgramStagesQuery({
         lazy: true,
     })
@@ -15,10 +27,26 @@ export const FieldProgramStageWithAutoLoad = ({ required, programId }) => {
         if (programId) refetch({ programId })
     }, [programId])
 
+    useEffect(() => {
+        const isEventRegistrationParser =
+            parserType === EVENT_REGISTRATION_PARSER.value
+
+        const programStageValueForEventRegistration = {
+            id: data?.programStages?.programStages[0]?.id,
+        }
+
+        const initialValue = isEventRegistrationParser
+            ? programStageValueForEventRegistration
+            : undefined
+
+        form.change(FIELD_PROGRAM_STAGE_NAME, initialValue)
+    }, [parserType, data?.programStages?.programStages])
+
     if (loading) {
         return (
             <FieldProgramStage
                 loading
+                disabled={disabled}
                 required={required}
                 programStages={[]}
                 validate={validate}
@@ -55,14 +83,23 @@ export const FieldProgramStageWithAutoLoad = ({ required, programId }) => {
         value: id,
     }))
 
-    return <FieldProgramStage required={required} programStages={options} />
+    return (
+        <FieldProgramStage
+            disabled={disabled}
+            required={required}
+            programStages={options}
+        />
+    )
 }
 
-FieldProgramStageWithAutoLoad.defaultProps = {
+FieldProgramStageWithLoadingStates.defaultProps = {
+    disabled: false,
     required: false,
 }
 
-FieldProgramStageWithAutoLoad.propTypes = {
+FieldProgramStageWithLoadingStates.propTypes = {
+    parserType: PropTypes.string.isRequired,
     programId: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
     required: PropTypes.bool,
 }

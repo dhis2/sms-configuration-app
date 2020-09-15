@@ -17,10 +17,16 @@ import {
 } from '../../smsCommandFields'
 import { useCreateSmsCommandMutation } from '../../smsCommand'
 import { FieldDataSetWithAutoLoad } from '../../dataSet'
-import { FIELD_PROGRAM_NAME, FieldProgramWithAutoLoad } from '../../program'
+import {
+    ALL_PROGRAMS,
+    FIELD_PROGRAM_NAME,
+    PROGRAMS_WITH_REGISTRATION,
+    PROGRAMS_WITHOUT_REGISTRATION,
+    FieldProgramWithAutoLoad,
+} from '../../program'
 import {
     FIELD_PROGRAM_STAGE_NAME,
-    FieldProgramStageWithAutoLoad,
+    FieldProgramStageWithLoadingStates,
 } from '../../programStage'
 import { FieldUserGroupWithAutoLoad } from '../../userGroup'
 import { FormRow } from '../../forms'
@@ -72,6 +78,23 @@ const useResetFormFields = () => {
     )
 }
 
+// undefined = all, false = program.programType --> WITHOUT_REGISTRATION
+const shouldProgramsBeWithRegistration = parserType => {
+    // EVENT_REGISTRATION uses event programs
+    if (parserType === EVENT_REGISTRATION_PARSER.value) {
+        return PROGRAMS_WITHOUT_REGISTRATION
+    }
+
+    // This is for programs of type tracker,
+    // which can have multiple program stages
+    if (parserType === PROGRAM_STAGE_DATAENTRY_PARSER.value) {
+        return PROGRAMS_WITH_REGISTRATION
+    }
+
+    // Unrelated yet, but in case all program stages are need in the future
+    return ALL_PROGRAMS
+}
+
 const ActualForm = ({ handleSubmit, submitting }) => {
     // This is required to unset form fields that depend
     // on the selected value of a previous field
@@ -100,9 +123,8 @@ const ActualForm = ({ handleSubmit, submitting }) => {
         parserType === EVENT_REGISTRATION_PARSER.value ||
         parserType === PROGRAM_STAGE_DATAENTRY_PARSER.value
 
-    const registration =
-        // undefined = all, false = program.programType --> WITHOUT_REGISTRATION
-        parserType === EVENT_REGISTRATION_PARSER.value ? false : undefined
+    const registration = shouldProgramsBeWithRegistration(parserType)
+    const disableProgramStage = parserType === EVENT_REGISTRATION_PARSER.value
 
     return (
         <div className={styles.container}>
@@ -139,9 +161,18 @@ const ActualForm = ({ handleSubmit, submitting }) => {
 
                 {showProgramStageField && (
                     <FormRow>
-                        <FieldProgramStageWithAutoLoad
+                        <FieldProgramStageWithLoadingStates
+                            disabled={disableProgramStage}
                             required
                             programId={program?.id || ''}
+                            parserType={parserType}
+                            helpText={
+                                disableProgramStage
+                                    ? i18n.t(
+                                          'Automatically selected by selecting a program'
+                                      )
+                                    : undefined
+                            }
                         />
                     </FormRow>
                 )}
@@ -178,7 +209,7 @@ export const SmsCommandFormNew = () => {
     const onSubmit = values => createSmsCommand(values)
 
     return (
-        <Form onSubmit={onSubmit}>
+        <Form destroyOnUnregister onSubmit={onSubmit}>
             {({ handleSubmit, submitting }) => (
                 <ActualForm
                     handleSubmit={handleSubmit}
