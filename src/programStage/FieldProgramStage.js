@@ -13,23 +13,25 @@ export const FieldProgramStage = ({
     programStages,
     disabled,
     loading,
+    initialValue,
     required,
     errorText,
 }) => (
     <Field
+        component={SingleSelectFieldFF}
+        dataTest={dataTest('forms-fieldprogramStage')}
         disabled={disabled}
         error={!!errorText}
-        validationText={errorText}
-        required={required}
-        loading={loading}
-        dataTest={dataTest('forms-fieldprogramStage')}
-        name={FIELD_PROGRAM_STAGE_NAME}
-        label={i18n.t('Program stage')}
-        component={SingleSelectFieldFF}
-        options={programStages}
-        validate={required && hasValue}
         format={value => value?.id || null}
+        iinitialValue={initialValue}
+        label={i18n.t('Program stage')}
+        loading={loading}
+        name={FIELD_PROGRAM_STAGE_NAME}
+        options={programStages}
         parse={id => ({ id })}
+        required={required}
+        validate={required && hasValue}
+        validationText={errorText}
     />
 )
 
@@ -49,6 +51,7 @@ FieldProgramStage.propTypes = {
     ).isRequired,
     disabled: PropTypes.bool,
     errorText: PropTypes.string,
+    initialValue: PropTypes.string,
     loading: PropTypes.bool,
     required: PropTypes.bool,
 }
