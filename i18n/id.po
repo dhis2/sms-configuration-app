@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-07T13:25:20.599Z\n"
+"POT-Creation-Date: 2020-09-16T13:26:09.507Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -458,6 +458,9 @@ msgid "Could not find the requested parser type"
 msgstr ""
 
 msgid "Add command"
+msgstr ""
+
+msgid "Automatically selected by selecting a program"
 msgstr ""
 
 msgid "Commands"
