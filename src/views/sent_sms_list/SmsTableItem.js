@@ -1,8 +1,8 @@
 import { TableRow, TableCell, Checkbox } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-import moment from 'moment'
 
+import { Date, Time } from '../../time'
 import { statusMap } from './translations'
 import styles from './SmsTableItem.module.css'
 
@@ -35,7 +35,9 @@ const SmsTableItem = ({ sms, toggleSelected, isSelected }) => {
             </TableCell>
             <TableCell>{statusMap[status]}</TableCell>
             <TableCell>
-                {moment(date).format('MMMM Do YYYY, h:mm:ss a')}
+                <Date date={date} />
+                {', '}
+                <Time time={date} />
             </TableCell>
         </TableRow>
     )
