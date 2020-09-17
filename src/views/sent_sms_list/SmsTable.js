@@ -37,7 +37,7 @@ const SmsTable = ({
                 <TableCellHead>{i18n.t('Message')}</TableCellHead>
                 <TableCellHead>{i18n.t('Recipients')}</TableCellHead>
                 <TableCellHead>{i18n.t('Status')}</TableCellHead>
-                <TableCellHead>{i18n.t('Date')}</TableCellHead>
+                <TableCellHead>{i18n.t('Sent')}</TableCellHead>
             </TableRowHead>
         </TableHead>
         <TableBody>
