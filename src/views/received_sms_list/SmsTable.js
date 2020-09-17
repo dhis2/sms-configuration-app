@@ -1,7 +1,7 @@
-import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
+import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-import moment from 'moment'
+
 import {
     Checkbox,
     Table,
@@ -13,6 +13,7 @@ import {
     TableRow,
     TableRowHead,
 } from '@dhis2/ui'
+import { Date, Time } from '../../time'
 import { Pagination } from './Pagination'
 import styles from './SmsTable.module.css'
 
@@ -48,7 +49,7 @@ const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
                     <TableCellHead>{i18n.t('Phone number')}</TableCellHead>
                     <TableCellHead>{i18n.t('Status')}</TableCellHead>
                     <TableCellHead>{i18n.t('Sender')}</TableCellHead>
-                    <TableCellHead>{i18n.t('Date')}</TableCellHead>
+                    <TableCellHead>{i18n.t('Received')}</TableCellHead>
                 </TableRowHead>
             </TableHead>
             <TableBody>
@@ -80,9 +81,10 @@ const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
                                     : i18n.t('Unknown')}
                             </TableCell>
                             <TableCell>
-                                {moment(message.receivedDate).format(
-                                    'MMMM Do YYYY, h:mm:ss a'
-                                )}
+                                <Date date={message.receivedDate} />
+                                {', '}
+                                <br />
+                                <Time date={message.receivedDate} />
                             </TableCell>
                         </TableRow>
                     ))
