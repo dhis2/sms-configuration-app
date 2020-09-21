@@ -378,7 +378,7 @@ msgid "Message"
 msgstr "Хабар"
 
 msgid "Phone number"
-msgstr ""
+msgstr "Телефон рақами"
 
 msgid "Status"
 msgstr ""
@@ -387,7 +387,7 @@ msgid "Sender"
 msgstr ""
 
 msgid "Date"
-msgstr ""
+msgstr "Сана"
 
 msgid "No SMSes to display"
 msgstr ""
