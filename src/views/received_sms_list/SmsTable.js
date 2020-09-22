@@ -83,7 +83,7 @@ const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
                                 <Date date={message.receiveddate} />
                                 {', '}
                                 <br />
-                                <Time date={message.receiveddate} />
+                                <Time time={message.receiveddate} />
                             </TableCell>
                         </TableRow>
                     ))
