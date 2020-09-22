@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-16T13:26:09.507Z\n"
+"POT-Creation-Date: 2020-09-22T13:59:54.870Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -66,11 +66,6 @@ msgid "Gateway setup"
 msgstr ""
 
 msgid "Key value pairs"
-msgstr ""
-
-msgid ""
-"Key value pairs can be included in the URL. This is some helper text which "
-"provides an intro to what the key value pairs actually do."
 msgstr ""
 
 msgid "Key"
@@ -385,17 +380,14 @@ msgstr "状态"
 msgid "Sender"
 msgstr "发送者"
 
-msgid "Date"
-msgstr "日期"
+msgid "Received"
+msgstr ""
 
 msgid "No SMSes to display"
 msgstr ""
 
 msgid "Unknown"
 msgstr "未知"
-
-msgid "Received"
-msgstr ""
 
 msgid "All"
 msgstr "全部"
