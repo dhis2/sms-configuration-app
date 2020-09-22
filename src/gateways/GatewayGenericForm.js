@@ -10,7 +10,6 @@ import {
 } from '../gateways'
 import { FormRow } from '../forms'
 import { PageSubHeadline } from '../headline'
-import { Paragraph } from '../text'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
@@ -49,12 +48,6 @@ export const GatewayGenericForm = ({
                     <PageSubHeadline>
                         {i18n.t('Key value pairs')}
                     </PageSubHeadline>
-
-                    <Paragraph>
-                        {i18n.t(
-                            'Key value pairs can be included in the URL. This is some helper text which provides an intro to what the key value pairs actually do.'
-                        )}
-                    </Paragraph>
 
                     {values.parameters.map((_, index) => (
                         <GatewayKeyValuePair index={index} key={index} />
