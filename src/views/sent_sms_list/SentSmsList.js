@@ -24,6 +24,7 @@ const parseParams = ({ status, page, pageSize }) => {
         pageSize,
         page,
         fields: ['id', 'message', 'status', 'date', 'recipients'],
+        order: 'date:desc',
     }
 
     if (!status) {
