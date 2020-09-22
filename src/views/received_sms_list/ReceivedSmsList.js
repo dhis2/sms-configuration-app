@@ -2,7 +2,11 @@ import { useDataQuery } from '@dhis2/app-service-data'
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
 
-import { RECEIVED_SMS_LIST_LABEL, RECEIVED_SMS_LIST_PATH } from './config'
+import {
+    RECEIVED_SMS_LIST_LABEL,
+    RECEIVED_SMS_LIST_PATH,
+    STATUS_ALL,
+} from './config'
 import { DeleteSelectedButton } from './DeleteSelectedButton'
 import { Filter } from './Filter'
 import { PageHeadline } from '../../headline'
@@ -15,20 +19,35 @@ import styles from './ReceivedSmsList.module.css'
 const query = {
     inboundSms: {
         resource: 'sms/inbound',
-        params: ({ page, pageSize, phoneNumber, status }) => ({
-            page,
-            pageSize,
-            phoneNumber,
-            status,
-            fields: [
-                'id',
-                'text',
-                'originator',
-                'smsstatus',
-                'user[userCredentials[username]]', // sender
-                'receiveddate',
-            ],
-        }),
+        params: ({ page, pageSize, phoneNumber, status }) => {
+            const params = {
+                page,
+                pageSize,
+                fields: [
+                    'id',
+                    'text',
+                    'originator',
+                    'smsstatus',
+                    'user[userCredentials[username]]', // sender
+                    'receiveddate',
+                ],
+            }
+
+            const filters = []
+            if (phoneNumber) {
+                filters.push(`originator:ilike:${phoneNumber}`)
+            }
+            if (status && status !== STATUS_ALL) {
+                filters.push(`smsstatus:eq:${status}`)
+            }
+            const filterParams = filters.join('&')
+
+            if (filterParams) {
+                params.filter = filterParams
+            }
+
+            return params
+        },
     },
 }
 
