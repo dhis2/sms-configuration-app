@@ -76,9 +76,8 @@ const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
                             </TableCell>
                             <TableCell>{message.smsstatus}</TableCell>
                             <TableCell>
-                                {message.user
-                                    ? message.user.userCredentials.username
-                                    : i18n.t('Unknown')}
+                                {message.user?.userCredentials?.username ||
+                                    i18n.t('Unknown')}
                             </TableCell>
                             <TableCell>
                                 <Date date={message.receivedDate} />
