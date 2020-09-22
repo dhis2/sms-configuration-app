@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-16T13:26:09.507Z\n"
-"PO-Revision-Date: 2020-09-16T13:26:09.507Z\n"
+"POT-Creation-Date: 2020-09-22T08:45:58.641Z\n"
+"PO-Revision-Date: 2020-09-22T08:45:58.641Z\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -375,16 +375,13 @@ msgstr ""
 msgid "Sender"
 msgstr ""
 
-msgid "Date"
+msgid "Received"
 msgstr ""
 
 msgid "No SMSes to display"
 msgstr ""
 
 msgid "Unknown"
-msgstr ""
-
-msgid "Received"
 msgstr ""
 
 msgid "All"
