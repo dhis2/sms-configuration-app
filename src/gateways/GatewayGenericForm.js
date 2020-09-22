@@ -56,8 +56,16 @@ export const GatewayGenericForm = ({
                         )}
                     </Paragraph>
 
-                    {values.parameters.map((_, index) => (
-                        <GatewayKeyValuePair index={index} key={index} />
+                    {values.parameters.map((param, index) => (
+                        <GatewayKeyValuePair
+                            index={index}
+                            key={index}
+                            isExistingConfidentialKey={initialValues.parameters.some(
+                                initialParam =>
+                                    initialParam.confidential &&
+                                    initialParam.key === param.key
+                            )}
+                        />
                     ))}
 
                     <GatewayAddKeyValuePair />

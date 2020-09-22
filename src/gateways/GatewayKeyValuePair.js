@@ -17,7 +17,7 @@ import styles from './GatewayKeyValuePair.module.css'
 const { Field, useForm } = ReactFinalForm
 const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
 
-export const GatewayKeyValuePair = ({ index }) => {
+export const GatewayKeyValuePair = ({ index, isExistingConfidentialKey }) => {
     const { change, getState } = useForm()
 
     const removeKeyValueFromFormState = index => {
@@ -54,7 +54,23 @@ export const GatewayKeyValuePair = ({ index }) => {
                     name={`parameters[${index}].value`}
                     label={i18n.t('Value')}
                     component={InputFieldFF}
-                    validate={isStringWithLengthAtLeastOne}
+                    validate={
+                        isExistingConfidentialKey
+                            ? string
+                            : isStringWithLengthAtLeastOne
+                    }
+                    placeholder={
+                        isExistingConfidentialKey
+                            ? i18n.t('Confidential')
+                            : undefined
+                    }
+                    helpText={
+                        isExistingConfidentialKey
+                            ? i18n.t(
+                                  'Current value is not displayed, but you can set a new one'
+                              )
+                            : undefined
+                    }
                 />
             </div>
 
@@ -105,4 +121,5 @@ export const GatewayKeyValuePair = ({ index }) => {
 
 GatewayKeyValuePair.propTypes = {
     index: PropTypes.number.isRequired,
+    isExistingConfidentialKey: PropTypes.bool.isRequired,
 }
