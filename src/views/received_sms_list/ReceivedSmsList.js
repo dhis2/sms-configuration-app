@@ -31,6 +31,7 @@ const query = {
                     'user[userCredentials[username]]', // sender
                     'receiveddate',
                 ],
+                order: 'receiveddate:desc',
             }
 
             const filters = []
