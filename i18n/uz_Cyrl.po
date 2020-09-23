@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-22T13:59:54.870Z\n"
+"POT-Creation-Date: 2020-09-23T12:12:54.689Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -41,6 +41,9 @@ msgstr "Исми"
 
 msgid "Password"
 msgstr "Парол"
+
+msgid "Confirm password"
+msgstr ""
 
 msgid "Url template"
 msgstr "URL шаблони"
@@ -343,10 +346,10 @@ msgid "Filter by phone number"
 msgstr ""
 
 msgid "Filter"
-msgstr ""
+msgstr "Фильтр"
 
 msgid "Show"
-msgstr ""
+msgstr "Кўрсатинг"
 
 msgid "per page"
 msgstr ""
@@ -364,7 +367,7 @@ msgid "of {{pageCount}}"
 msgstr ""
 
 msgid "Next"
-msgstr ""
+msgstr "Кейинги"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr ""
@@ -376,7 +379,7 @@ msgid "Phone number"
 msgstr "Телефон рақами"
 
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 msgid "Sender"
 msgstr ""

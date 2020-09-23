@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-22T13:59:54.870Z\n"
+"POT-Creation-Date: 2020-09-23T12:12:54.689Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -47,6 +47,9 @@ msgstr "Nama"
 
 msgid "Password"
 msgstr "Sandi"
+
+msgid "Confirm password"
+msgstr ""
 
 msgid "Url template"
 msgstr "Template URL"
