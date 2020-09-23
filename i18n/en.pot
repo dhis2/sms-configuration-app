@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-09-22T13:59:54.870Z\n"
-"PO-Revision-Date: 2020-09-22T13:59:54.870Z\n"
+"POT-Creation-Date: 2020-09-23T12:12:54.689Z\n"
+"PO-Revision-Date: 2020-09-23T12:12:54.689Z\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -33,6 +33,9 @@ msgid "Name"
 msgstr ""
 
 msgid "Password"
+msgstr ""
+
+msgid "Confirm password"
 msgstr ""
 
 msgid "Url template"
