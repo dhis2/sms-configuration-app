@@ -7,6 +7,7 @@ import {
     FieldGatewayName,
     FieldGatewayUsername,
     FieldGatewayPassword,
+    FieldGatewayPasswordConfirmation,
 } from '../gateways'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
@@ -43,6 +44,10 @@ export const GatewayBulkSMSForm = ({
 
                     <FormRow>
                         <FieldGatewayPassword />
+                    </FormRow>
+
+                    <FormRow>
+                        <FieldGatewayPasswordConfirmation />
                     </FormRow>
 
                     <ButtonStrip>
