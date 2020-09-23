@@ -5,7 +5,7 @@ import {
     ReactFinalForm,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 
 import {
     ALL_DATAVALUE,
@@ -164,6 +164,127 @@ const formatSmsCodes = updates => {
     }
 }
 
+const FormComponent = ({
+    DE_COC_combination_data,
+    dataTest,
+    handleSubmit,
+    hasSpecialChars,
+    onCancel,
+    pristine,
+    selectedDataSetOption,
+}) => {
+    const [specialKeyRemoved, setSpecialKeyRemoved] = useState(false)
+    const onSpecialKeyRemoved = () => setSpecialKeyRemoved(true)
+    const enableSubmit = specialKeyRemoved && hasSpecialChars
+
+    return (
+        <form onSubmit={handleSubmit} data-test={dataTest}>
+            <FormRow>
+                <FieldCommandName />
+            </FormRow>
+
+            <FormRow>
+                <FieldCommandParser disabled />
+            </FormRow>
+
+            <FormRow>
+                <FieldDataSet disabled dataSets={[selectedDataSetOption]} />
+            </FormRow>
+
+            <FormRow>
+                <FieldCommandCompletenessMethod />
+            </FormRow>
+
+            <FormRow>
+                <FieldCommandUseCurrentPeriodForReporting />
+            </FormRow>
+
+            <FormRow>
+                <FieldCommandSeparator />
+            </FormRow>
+
+            <FormRow>
+                <FieldCommandDefaultMessage />
+            </FormRow>
+
+            <FormRow>
+                <FieldCommandWrongFormatMessage />
+            </FormRow>
+
+            <FormRow>
+                <FieldCommandNoUserMessage />
+            </FormRow>
+
+            <FormRow>
+                <FieldCommandMoreThanOneOrgUnitMessage />
+            </FormRow>
+
+            <FormRow>
+                <FieldCommandSuccessMessage />
+            </FormRow>
+
+            {DE_COC_combination_data && (
+                <DataElementTimesCategoryOptionCombos
+                    DE_COC_combinations={DE_COC_combination_data}
+                />
+            )}
+
+            <PageSubHeadline>{i18n.t('Special characters')}</PageSubHeadline>
+
+            <FormSpy subscription={{ values: true }}>
+                {({ values }) => (
+                    <>
+                        {values[FIELD_COMMAND_SPECIAL_CHARS_NAME].map(
+                            (_, index) => (
+                                <FormRow key={index}>
+                                    <FieldCommandSpecialCharacter
+                                        index={index}
+                                        onSpecialKeyRemoved={
+                                            onSpecialKeyRemoved
+                                        }
+                                    />
+                                </FormRow>
+                            )
+                        )}
+                    </>
+                )}
+            </FormSpy>
+
+            <CommandsAddSpecialCharacters />
+
+            <CommandFormActions
+                enableSubmit={enableSubmit}
+                onCancel={() => onCancel(pristine)}
+            />
+        </form>
+    )
+}
+
+FormComponent.propTypes = {
+    dataTest: PropTypes.string.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    hasSpecialChars: PropTypes.bool.isRequired,
+    pristine: PropTypes.bool.isRequired,
+    onCancel: PropTypes.func.isRequired,
+    DE_COC_combination_data: PropTypes.arrayOf(
+        PropTypes.shape({
+            dataElement: PropTypes.shape({
+                displayName: PropTypes.string.isRequired,
+                id: PropTypes.string.isRequired,
+            }).isRequired,
+            categoryOptionCombo: PropTypes.shape({
+                code: PropTypes.string.isRequired,
+                displayName: PropTypes.string.isRequired,
+                id: PropTypes.string.isRequired,
+            }),
+        })
+    ),
+    selectedDataSetOption: PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+    }),
+}
+
 export const CommandEditWithDataSetForm = ({
     commandId,
     onAfterChange,
@@ -232,6 +353,9 @@ export const CommandEditWithDataSetForm = ({
         []
     )
 
+    const specialChars = initialValues[FIELD_COMMAND_SPECIAL_CHARS_NAME]
+    const hasSpecialChars = !!specialChars?.length
+
     return (
         <Form
             keepDirtyOnReinitialize
@@ -240,85 +364,17 @@ export const CommandEditWithDataSetForm = ({
             validate={globalValidate}
             subscription={{ pristine: true }}
         >
-            {({ handleSubmit, form, pristine }) => (
-                <form onSubmit={handleSubmit} data-test={dataTest}>
-                    <FormRow>
-                        <FieldCommandName />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldCommandParser disabled />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldDataSet
-                            disabled
-                            dataSets={[selectedDataSetOption]}
-                        />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldCommandCompletenessMethod />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldCommandUseCurrentPeriodForReporting />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldCommandSeparator />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldCommandDefaultMessage />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldCommandWrongFormatMessage />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldCommandNoUserMessage />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldCommandMoreThanOneOrgUnitMessage />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldCommandSuccessMessage />
-                    </FormRow>
-
-                    {DE_COC_combination_data && (
-                        <DataElementTimesCategoryOptionCombos
-                            DE_COC_combinations={DE_COC_combination_data}
-                        />
-                    )}
-
-                    <PageSubHeadline>
-                        {i18n.t('Special characters')}
-                    </PageSubHeadline>
-
-                    <FormSpy subscription={{ values: true }}>
-                        {({ values }) => (
-                            <>
-                                {values[FIELD_COMMAND_SPECIAL_CHARS_NAME].map(
-                                    (_, index) => (
-                                        <FormRow key={index}>
-                                            <FieldCommandSpecialCharacter
-                                                index={index}
-                                            />
-                                        </FormRow>
-                                    )
-                                )}
-                            </>
-                        )}
-                    </FormSpy>
-
-                    <CommandsAddSpecialCharacters />
-
-                    <CommandFormActions onCancel={() => onCancel(pristine)} />
-                </form>
+            {({ handleSubmit, pristine, dirty }) => (
+                <FormComponent
+                    DE_COC_combination_data={DE_COC_combination_data}
+                    dataTest={dataTest}
+                    dirty={dirty}
+                    handleSubmit={handleSubmit}
+                    pristine={pristine}
+                    hasSpecialChars={hasSpecialChars}
+                    selectedDataSetOption={selectedDataSetOption}
+                    onCancel={onCancel}
+                />
             )}
         </Form>
     )

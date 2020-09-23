@@ -7,12 +7,12 @@ import { SubmitErrors } from './SubmitErrors'
 import i18n from '../locales'
 import styles from './CommandFormActions.module.css'
 
-export const CommandFormActions = ({ onCancel }) => (
+export const CommandFormActions = ({ enableSubmit, onCancel }) => (
     <div className={styles.container}>
         <SubmitErrors />
 
         <ButtonStrip>
-            <SaveCommandButton />
+            <SaveCommandButton enabled={enableSubmit} />
             <Button onClick={onCancel}>{i18n.t('Cancel')}</Button>
         </ButtonStrip>
     </div>
@@ -20,4 +20,5 @@ export const CommandFormActions = ({ onCancel }) => (
 
 CommandFormActions.propTypes = {
     onCancel: PropTypes.func.isRequired,
+    enableSubmit: PropTypes.bool,
 }
