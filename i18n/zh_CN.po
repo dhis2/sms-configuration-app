@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-22T13:59:54.870Z\n"
+"POT-Creation-Date: 2020-09-23T12:12:54.689Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -42,6 +42,9 @@ msgstr "名称"
 
 msgid "Password"
 msgstr "口令"
+
+msgid "Confirm password"
+msgstr ""
 
 msgid "Url template"
 msgstr ""
