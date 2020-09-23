@@ -15,7 +15,10 @@ import styles from './FieldCommandSpecialCharacter.module.css'
 
 const { Field, useForm } = ReactFinalForm
 
-export const FieldCommandSpecialCharacter = ({ index }) => {
+export const FieldCommandSpecialCharacter = ({
+    index,
+    onSpecialKeyRemoved,
+}) => {
     const { change, getState } = useForm()
 
     const removeSpecialKeyFieldsFromFormState = () => {
@@ -26,6 +29,7 @@ export const FieldCommandSpecialCharacter = ({ index }) => {
         ]
 
         change(FIELD_COMMAND_SPECIAL_CHARS_NAME, newSpecialChars)
+        onSpecialKeyRemoved()
     }
 
     return (
@@ -64,4 +68,5 @@ export const FieldCommandSpecialCharacter = ({ index }) => {
 
 FieldCommandSpecialCharacter.propTypes = {
     index: PropTypes.number.isRequired,
+    onSpecialKeyRemoved: PropTypes.func.isRequired,
 }
