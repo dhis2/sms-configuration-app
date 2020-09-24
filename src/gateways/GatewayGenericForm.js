@@ -8,6 +8,10 @@ import {
     GatewayAddKeyValuePair,
     GatewayKeyValuePair,
 } from '../gateways'
+import { FieldGatewayConfigurationTemplate } from './FieldGatewayConfigurationTemplate'
+import { FieldGatewayUseGet } from './FieldGatewayUseGet'
+import { FieldGatewaySendUrlParameters } from './FieldGatewaySendUrlParameters'
+import { FieldGatewayContentType } from './FieldGatewayContentType'
 import { FormRow } from '../forms'
 import { PageSubHeadline } from '../headline'
 import { dataTest } from '../dataTest'
@@ -43,6 +47,22 @@ export const GatewayGenericForm = ({
 
                     <FormRow>
                         <FieldGatewayUrlTemplate />
+                    </FormRow>
+
+                    <FormRow>
+                        <FieldGatewayConfigurationTemplate />
+                    </FormRow>
+
+                    <FormRow>
+                        <FieldGatewayContentType />
+                    </FormRow>
+
+                    <FormRow>
+                        <FieldGatewayUseGet />
+                    </FormRow>
+
+                    <FormRow>
+                        <FieldGatewaySendUrlParameters />
                     </FormRow>
 
                     <PageSubHeadline>
