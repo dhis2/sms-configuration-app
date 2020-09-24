@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-23T12:12:54.689Z\n"
+"POT-Creation-Date: 2020-09-24T12:57:20.633Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -27,6 +27,11 @@ msgid "Yes, cancel"
 msgstr ""
 
 msgid "Dataset"
+msgstr ""
+
+msgid ""
+"Please make sure the value of this input matches the value in "
+"\"{{otherField}}\"."
 msgstr ""
 
 msgid "Confirm deletion"
@@ -74,9 +79,6 @@ msgstr ""
 msgid "Key"
 msgstr "键值"
 
-msgid "Value"
-msgstr "值"
-
 msgid "Send as header"
 msgstr ""
 
@@ -88,6 +90,12 @@ msgstr "保密"
 
 msgid "Remove key value pair"
 msgstr ""
+
+msgid "Confirm confidential value"
+msgstr ""
+
+msgid "Value"
+msgstr "值"
 
 msgid "Type"
 msgstr "类型"
