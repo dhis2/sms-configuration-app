@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-23T12:12:54.689Z\n"
+"POT-Creation-Date: 2020-09-24T12:57:20.633Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -32,6 +32,11 @@ msgstr "Ya, batalkan"
 
 msgid "Dataset"
 msgstr "Dataset"
+
+msgid ""
+"Please make sure the value of this input matches the value in "
+"\"{{otherField}}\"."
+msgstr ""
 
 msgid "Confirm deletion"
 msgstr "Konfirmasi penghapusan"
@@ -78,9 +83,6 @@ msgstr "Key value pairs"
 msgid "Key"
 msgstr "Kunci"
 
-msgid "Value"
-msgstr "Nilai"
-
 msgid "Send as header"
 msgstr "Kirim sebagai header"
 
@@ -92,6 +94,12 @@ msgstr "Rahasia"
 
 msgid "Remove key value pair"
 msgstr "Hapus key value pair"
+
+msgid "Confirm confidential value"
+msgstr ""
+
+msgid "Value"
+msgstr "Nilai"
 
 msgid "Type"
 msgstr "Tipe"

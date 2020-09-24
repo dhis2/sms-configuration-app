@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-23T12:12:54.689Z\n"
+"POT-Creation-Date: 2020-09-24T12:57:20.633Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -26,6 +26,11 @@ msgstr "Ҳа, бекор қилиш"
 
 msgid "Dataset"
 msgstr "Маълумотлар тўплами"
+
+msgid ""
+"Please make sure the value of this input matches the value in "
+"\"{{otherField}}\"."
+msgstr ""
 
 msgid "Confirm deletion"
 msgstr "Ўчиришни тасдиқлаш"
@@ -55,10 +60,10 @@ msgid "Add key value pair"
 msgstr "\"Калит-қиймат\" жуфтлигини қўшиш"
 
 msgid "Save gateway"
-msgstr "Йўналиш сақлансин"
+msgstr "Йўлакни сақланг"
 
 msgid "Add gateway"
-msgstr "Йўналишни қўшиш"
+msgstr "Йўлакни қўшинг"
 
 msgid "Cancel"
 msgstr "Бекор қилиш"
@@ -72,9 +77,6 @@ msgstr "Жуфтликлар калит-қиймат"
 msgid "Key"
 msgstr "Калит"
 
-msgid "Value"
-msgstr "Қиймат"
-
 msgid "Send as header"
 msgstr "Сарлавҳа сифатида юбориш"
 
@@ -87,6 +89,12 @@ msgstr "Махфий"
 msgid "Remove key value pair"
 msgstr "\"Калит-қиймат\" жуфтлигини олиб ташлаш"
 
+msgid "Confirm confidential value"
+msgstr ""
+
+msgid "Value"
+msgstr "Қиймат"
+
 msgid "Type"
 msgstr "Тури"
 
@@ -94,7 +102,7 @@ msgid "Make default"
 msgstr "Стандарт сифатида белгилаш"
 
 msgid "Default gateway"
-msgstr "Стандарт йўналиш"
+msgstr "Стандарт йўлак"
 
 msgid "Edit"
 msgstr "Таҳрирлаш"
@@ -279,7 +287,7 @@ msgid ""
 msgstr ""
 
 msgid "Delete selected"
-msgstr ""
+msgstr "Танланган ўчирилчин"
 
 msgid "No gateways found"
 msgstr ""
@@ -382,7 +390,7 @@ msgid "Status"
 msgstr "Статус"
 
 msgid "Sender"
-msgstr ""
+msgstr "Юборувчи"
 
 msgid "Received"
 msgstr ""
@@ -394,7 +402,7 @@ msgid "Unknown"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Барчаси"
 
 msgid "Failed"
 msgstr ""
@@ -424,16 +432,16 @@ msgid "Delivered"
 msgstr ""
 
 msgid "Error"
-msgstr ""
+msgstr "Хато"
 
 msgid "Outbound"
 msgstr ""
 
 msgid "Pending"
-msgstr ""
+msgstr "Кутилмоқда"
 
 msgid "Scheduled"
-msgstr ""
+msgstr "Режа бўйича"
 
 msgid "Something went wrong whilst loading commands"
 msgstr ""
