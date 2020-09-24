@@ -12,9 +12,9 @@
     margin-bottom: 16px;
 }
 
-.keyInput,
-.valueInput {
+.keyInput, .valueInput {
     flex-grow: 1;
+    width: calc(50% - var(--spacers-dp4));
 }
 
 .keyInput {
