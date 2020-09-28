@@ -12,6 +12,6 @@ export const FieldGatewayUseGet = () => (
         name="useGet"
         label={i18n.t('Use GET')}
         component={CheckboxFieldFF}
-        helpText={i18n.t('Not using get results in using POST')}
+        helpText={i18n.t('Use GET instead of POST to send data to gateway')}
     />
 )
