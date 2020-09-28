@@ -41,6 +41,27 @@ msgstr "Танланган йўналишни ўчиришни тасдиқла�
 msgid "Auth token"
 msgstr "Калит аутентификацияси"
 
+msgid "Configuration template"
+msgstr ""
+
+msgid "Please refer to the documentation for possible values"
+msgstr ""
+
+msgid "Application/json"
+msgstr ""
+
+msgid "Application/xml"
+msgstr ""
+
+msgid "Form url encoded"
+msgstr ""
+
+msgid "Plain text"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
 msgid "Name"
 msgstr "Исми"
 
@@ -50,8 +71,17 @@ msgstr "Парол"
 msgid "Confirm password"
 msgstr ""
 
+msgid "Send url parameters"
+msgstr ""
+
 msgid "Url template"
 msgstr "URL шаблони"
+
+msgid "Use GET"
+msgstr ""
+
+msgid "Not using get results in using POST"
+msgstr ""
 
 msgid "User name"
 msgstr "Фойдаланувчи Исми"
