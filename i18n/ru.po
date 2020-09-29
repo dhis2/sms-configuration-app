@@ -42,6 +42,27 @@ msgstr ""
 msgid "Auth token"
 msgstr ""
 
+msgid "Configuration template"
+msgstr ""
+
+msgid "Please refer to the documentation for possible values"
+msgstr ""
+
+msgid "Application/json"
+msgstr ""
+
+msgid "Application/xml"
+msgstr ""
+
+msgid "Form url encoded"
+msgstr ""
+
+msgid "Plain text"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
 msgid "Name"
 msgstr "Название"
 
@@ -51,7 +72,16 @@ msgstr "Пароль"
 msgid "Confirm password"
 msgstr "Подтвердить пароль"
 
+msgid "Send url parameters"
+msgstr ""
+
 msgid "Url template"
+msgstr ""
+
+msgid "Use GET"
+msgstr ""
+
+msgid "Not using get results in using POST"
 msgstr ""
 
 msgid "User name"
