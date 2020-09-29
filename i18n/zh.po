@@ -3,13 +3,14 @@
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-09-24T12:57:20.633Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,51 +19,51 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
-msgstr ""
+msgstr "你确定要取消？未保存的更改将丢失"
 
 msgid "No, stay on page"
-msgstr ""
+msgstr "不，留在页面上"
 
 msgid "Yes, cancel"
-msgstr ""
+msgstr "是的，取消"
 
 msgid "Dataset"
-msgstr ""
+msgstr "数据集"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
 "\"{{otherField}}\"."
-msgstr ""
+msgstr "请确保此输入的值与“ {{otherField}}”中的值匹配。"
 
 msgid "Confirm deletion"
 msgstr "确认删除"
 
 msgid "Are you sure you want to delete the selected gateways?"
-msgstr ""
+msgstr "您确定要删除所选网关吗？"
 
 msgid "Auth token"
-msgstr ""
+msgstr "验证令牌"
 
 msgid "Configuration template"
-msgstr ""
+msgstr "配置模板"
 
 msgid "Please refer to the documentation for possible values"
-msgstr ""
+msgstr "请参考文档以获取可能的值"
 
 msgid "Application/json"
-msgstr ""
+msgstr "Application/json"
 
 msgid "Application/xml"
-msgstr ""
+msgstr "Application/xml"
 
 msgid "Form url encoded"
-msgstr ""
+msgstr "表单编码网址"
 
 msgid "Plain text"
-msgstr ""
+msgstr "纯文本"
 
 msgid "Content type"
-msgstr ""
+msgstr "内容类型"
 
 msgid "Name"
 msgstr "名称"
@@ -74,25 +75,25 @@ msgid "Confirm password"
 msgstr "确认口令"
 
 msgid "Send url parameters"
-msgstr ""
+msgstr "发送网址参数"
 
 msgid "Url template"
-msgstr ""
+msgstr "网址模板"
 
 msgid "Use GET"
-msgstr ""
+msgstr "使用GET"
 
 msgid "Not using get results in using POST"
-msgstr ""
+msgstr "在使用POST时不使用GET的结果"
 
 msgid "User name"
 msgstr "用户名"
 
 msgid "Add key value pair"
-msgstr ""
+msgstr "添加键值对"
 
 msgid "Save gateway"
-msgstr ""
+msgstr "保存网关"
 
 msgid "Add gateway"
 msgstr "添加网关"
@@ -101,28 +102,28 @@ msgid "Cancel"
 msgstr "取消"
 
 msgid "Gateway setup"
-msgstr ""
+msgstr "网关设置"
 
 msgid "Key value pairs"
-msgstr ""
+msgstr "键值对"
 
 msgid "Key"
 msgstr "键值"
 
 msgid "Send as header"
-msgstr ""
+msgstr "作为标题发送"
 
 msgid "Encode"
-msgstr ""
+msgstr "编码"
 
 msgid "Confidential"
 msgstr "保密"
 
 msgid "Remove key value pair"
-msgstr ""
+msgstr "删除键值对"
 
 msgid "Confirm confidential value"
-msgstr ""
+msgstr "确认机密值"
 
 msgid "Value"
 msgstr "值"
@@ -131,22 +132,22 @@ msgid "Type"
 msgstr "类型"
 
 msgid "Make default"
-msgstr ""
+msgstr "作为默认"
 
 msgid "Default gateway"
-msgstr ""
+msgstr "默认网关"
 
 msgid "Edit"
 msgstr "编辑<br>"
 
 msgid "BulkSMS"
-msgstr ""
+msgstr "批量短信"
 
 msgid "Clickatell"
-msgstr ""
+msgstr "Clickatell"
 
 msgid "Generic"
-msgstr ""
+msgstr "普通"
 
 msgid "Program"
 msgstr "项目"
@@ -155,43 +156,43 @@ msgid "Program stage"
 msgstr "项目阶段"
 
 msgid "Are you sure you want to delete the selected commands?"
-msgstr ""
+msgstr "您确定要删除所选命令吗？"
 
 msgid "Delete"
 msgstr "删除"
 
 msgid "Save command"
-msgstr ""
+msgstr "保存命令"
 
 msgid "Something went wrong whilst submitting the form"
-msgstr ""
+msgstr "提交表格时出了点问题"
 
 msgid "Something went wrong whilst loading the sms command"
-msgstr ""
+msgstr "加载sms命令时出了点问题"
 
 msgid "Something went wrong whilst loading the command's details"
-msgstr ""
+msgstr "加载命令详细信息时出了点问题"
 
 msgid "SMS short codes"
-msgstr ""
+msgstr "短信短代码"
 
 msgid "Add special character"
-msgstr ""
+msgstr "添加特殊字符"
 
 msgid "Required values notice"
-msgstr ""
+msgstr "强制值通知"
 
 msgid "Completeness method"
 msgstr "Completeness method"
 
 msgid "Confirm message"
-msgstr ""
+msgstr "确认讯息"
 
 msgid "Reply message if no codes are sent (only the command)"
 msgstr "没有代码发送时的应答消息"
 
 msgid "More than one orgunit message"
-msgstr ""
+msgstr "一个以上机构的信息"
 
 msgid "No user message"
 msgstr "No user message"
@@ -200,58 +201,58 @@ msgid "Parser"
 msgstr "Parser"
 
 msgid "Field separator"
-msgstr ""
+msgstr "字段分隔符"
 
 msgid "Special character name"
-msgstr ""
+msgstr "特殊字符名称"
 
 msgid "Special character value"
-msgstr ""
+msgstr "特殊字符值"
 
 msgid "Remove"
 msgstr "移除"
 
 msgid "Success message"
-msgstr ""
+msgstr "成功讯息"
 
 msgid "Use current period for reporting"
-msgstr ""
+msgstr "使用当前期间进行报告"
 
 msgid "Wrong format message"
 msgstr "Wrong format message"
 
 msgid "default"
-msgstr ""
+msgstr "默认"
 
 msgid "Loading formula"
-msgstr ""
+msgstr "加载公式"
 
 msgid "Formula"
 msgstr "公式"
 
 msgid "Edit formula"
-msgstr ""
+msgstr "编辑公式"
 
 msgid "Add formula"
-msgstr ""
+msgstr "添加公式"
 
 msgid "Formula for {{combo}}"
-msgstr ""
+msgstr "{{combo}}的公式"
 
 msgid "Data element"
 msgstr "数据元"
 
 msgid "formula operator"
-msgstr ""
+msgstr "公式运算符"
 
 msgid "Something went wrong whilst saving"
-msgstr ""
+msgstr "保存时出了点问题"
 
 msgid "Save"
 msgstr "保存"
 
 msgid "Receive all data values"
-msgstr ""
+msgstr "接收所有数据值"
 
 msgid "Receive at least one data value"
 msgstr "Receive at least one data value"
@@ -260,55 +261,55 @@ msgid "Do not mark as complete"
 msgstr "Do not mark as complete"
 
 msgid "Key value parser"
-msgstr ""
+msgstr "键值解析器"
 
 msgid "J2ME parser"
-msgstr ""
+msgstr "J2ME解析器"
 
 msgid "Alert parser"
-msgstr ""
+msgstr "警报解析器"
 
 msgid "Unregistered parser"
-msgstr ""
+msgstr "未注册的解析器"
 
 msgid "Tracked entity registration parser"
 msgstr "Tracked entity registration parser"
 
 msgid "Program stage data entry parser"
-msgstr ""
+msgstr "项目阶段数据输入解析器"
 
 msgid "Event registration parser"
-msgstr ""
+msgstr "事件注册解析器"
 
 msgid "Duplicate value!"
-msgstr ""
+msgstr "值重复！"
 
 msgid "Special characters"
-msgstr ""
+msgstr "特殊字符"
 
 msgid "Usergroup"
-msgstr ""
+msgstr "用户组"
 
 msgid "Something went wrong whilst loading gateways"
-msgstr ""
+msgstr "加载网关时出了点问题"
 
 msgid "Edit gateway"
-msgstr ""
+msgstr "编辑网关"
 
 msgid "Something went wrong whilst saving gateways"
-msgstr ""
+msgstr "保存网关时出了点问题"
 
 msgid "Gateway not found"
-msgstr ""
+msgstr "找不到网关"
 
 msgid "The requested gateway could not be loaded"
-msgstr ""
+msgstr "请求的网关无法加载"
 
 msgid "Something went wrong whilst saving the gateway"
-msgstr ""
+msgstr "保存网关时出了点问题"
 
 msgid "Something went wrong whilst performing the requested operation"
-msgstr ""
+msgstr "执行请求的操作时出了点问题"
 
 msgid ""
 "An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
@@ -317,35 +318,36 @@ msgid ""
 "all gateways if there are multiple available. Read about gateway "
 "configuration in the DHIS2 documentation."
 msgstr ""
+"SMS网关使DHIS2实例可以发送和接收SMS消息。可以在下面添加和配置不同的网关类型。至少需要一个网关来发送和接收SMS消息。如果有多个可用网关，则负载平衡将使用所有网关。在DHIS2文档中阅读有关网关配置的信息。"
 
 msgid "Delete selected"
 msgstr "删除选择的"
 
 msgid "No gateways found"
-msgstr ""
+msgstr "找不到网关"
 
 msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
-msgstr ""
+msgstr "似乎没有任何已配置的网关，或者它们无法加载。"
 
 msgid "Overview: SMS Configuration"
-msgstr ""
+msgstr "概述：SMS配置"
 
 msgid ""
 "Configure settings for SMS sending, receiving, data reporting, alerts, "
 "registration and more."
-msgstr ""
+msgstr "配置SMS发送，接收，数据报告，警报，注册等设置。"
 
 msgid "Gateway Configuration"
 msgstr "网关配置"
 
 msgid ""
 "Add and manage gateways for sending and receiving SMS messages in DHIS2."
-msgstr ""
+msgstr "添加和管理用于在DHIS2中发送和接收SMS消息的网关。"
 
 msgid "Set up gateways"
-msgstr ""
+msgstr "设置网关"
 
 msgid "SMS Commands"
 msgstr "SMS命令"
@@ -353,34 +355,34 @@ msgstr "SMS命令"
 msgid ""
 "Add and manage commands triggered by incoming SMS messages to register, "
 "alert and more."
-msgstr ""
+msgstr "添加和管理由收到的SMS消息触发的命令以进行注册，警报等。"
 
 msgid "Set up SMS commands"
-msgstr ""
+msgstr "设置短信命令"
 
 msgid "Sent SMS messages"
-msgstr ""
+msgstr "已发送短信"
 
 msgid "Open logs of all SMS messages sent from DHIS2."
-msgstr ""
+msgstr "打开从DHIS2发送的所有SMS消息的日志。"
 
 msgid "View all sent SMS"
-msgstr ""
+msgstr "查看所有发送的短信"
 
 msgid "Received SMS messages"
-msgstr ""
+msgstr "收到的短信"
 
 msgid "Open logs of all SMS messages received by DHIS2."
-msgstr ""
+msgstr "打开DHIS2收到的所有SMS消息的日志。"
 
 msgid "View all received SMS"
-msgstr ""
+msgstr "查看所有收到的短信"
 
 msgid "Filter by status"
-msgstr ""
+msgstr "按状态过滤"
 
 msgid "Filter by phone number"
-msgstr ""
+msgstr "按电话号码过滤"
 
 msgid "Filter"
 msgstr "过滤器"
@@ -389,10 +391,10 @@ msgid "Show"
 msgstr "显示"
 
 msgid "per page"
-msgstr ""
+msgstr "每页"
 
 msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr ""
+msgstr "正在查看{{total}}中的{{firstItem}}-{{lastItem}} "
 
 msgid "Previous"
 msgstr "前一"
@@ -401,13 +403,13 @@ msgid "Page"
 msgstr "页"
 
 msgid "of {{pageCount}}"
-msgstr ""
+msgstr "的{{pageCount}}"
 
 msgid "Next"
 msgstr "下一个"
 
 msgid "Something went wrong whilst loading received SMSes"
-msgstr ""
+msgstr "加载收到的SMS时出了点问题"
 
 msgid "Message"
 msgstr "消息"
@@ -422,10 +424,10 @@ msgid "Sender"
 msgstr "发送者"
 
 msgid "Received"
-msgstr ""
+msgstr "已收到"
 
 msgid "No SMSes to display"
-msgstr ""
+msgstr "没有短信显示"
 
 msgid "Unknown"
 msgstr "未知"
@@ -452,13 +454,13 @@ msgid "Unhandled"
 msgstr "Unhandled"
 
 msgid "Something went wrong whilst loading sent SMSes"
-msgstr ""
+msgstr "加载发送的SMS时出了点问题"
 
 msgid "Recipients"
 msgstr "收件人"
 
 msgid "Delivered"
-msgstr ""
+msgstr "已交付"
 
 msgid "Error"
 msgstr "错误"
@@ -473,25 +475,25 @@ msgid "Scheduled"
 msgstr "已经调度"
 
 msgid "Something went wrong whilst loading commands"
-msgstr ""
+msgstr "加载命令时出了点问题"
 
 msgid "Edit command"
-msgstr ""
+msgstr "编辑指令"
 
 msgid "Unrecognised parser type"
-msgstr ""
+msgstr "无法识别的解析器类型"
 
 msgid "Could not find the requested parser type"
-msgstr ""
+msgstr "找不到请求的解析器类型"
 
 msgid "Add command"
 msgstr "添加命令"
 
 msgid "Automatically selected by selecting a program"
-msgstr ""
+msgstr "通过选择项目自动选择"
 
 msgid "Commands"
-msgstr ""
+msgstr "指令"
 
 msgid ""
 "SMS commands process SMS messages received by a DHIS2 instance, taking "
@@ -500,9 +502,10 @@ msgid ""
 "configure SMS commands below. Read about SMS commands in the DHIS2 "
 "documentation."
 msgstr ""
+"SMS命令处理DHIS2实例接收到的SMS消息，并根据命令和消息内容采取某些措施。可以设置多个SMS命令以多种方式处理和处理数据。在下面添加和配置SMS命令。在DHIS2文档中阅读有关SMS命令的信息。"
 
 msgid "Sms command"
-msgstr ""
+msgstr "短信命令"
 
 msgid "No commands to display"
-msgstr ""
+msgstr "无命令显示"
