@@ -73,7 +73,7 @@ msgstr ""
 msgid "Use GET"
 msgstr ""
 
-msgid "Not using get results in using POST"
+msgid "Use GET instead of POST to send data to gateway"
 msgstr ""
 
 msgid "User name"
@@ -110,9 +110,6 @@ msgid "Confidential"
 msgstr ""
 
 msgid "Remove key value pair"
-msgstr ""
-
-msgid "Confirm confidential value"
 msgstr ""
 
 msgid "Value"
