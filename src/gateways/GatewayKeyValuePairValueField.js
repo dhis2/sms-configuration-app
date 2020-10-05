@@ -11,30 +11,28 @@ import React from 'react'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
-const { Field } = ReactFinalForm
+const { Field, useField } = ReactFinalForm
 const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
 
 export const createFieldGatewayKeyValuePairValueName = index =>
     `parameters[${index}].value`
 
-export const FIELD_GATEWAY_KEY_VALUE_PAIR_VALUE_LABEL = i18n.t('Value')
+export const GatewayKeyValuePairValueField = ({ index }) => {
+    const { input } = useField(`parameters[${index}]`)
+    const { confidential } = input.value
 
-export const GatewayKeyValuePairValueField = ({ index, isConfidential }) => (
-    <Field
-        type={isConfidential ? 'password' : 'text'}
-        dataTest={dataTest('gateways-gatewaykeyvaluepair-value')}
-        name={createFieldGatewayKeyValuePairValueName(index)}
-        label={FIELD_GATEWAY_KEY_VALUE_PAIR_VALUE_LABEL}
-        component={InputFieldFF}
-        validate={isStringWithLengthAtLeastOne}
-    />
-)
-
-GatewayKeyValuePairValueField.defaultProps = {
-    isConfidential: false,
+    return (
+        <Field
+            type={confidential ? 'password' : 'text'}
+            dataTest={dataTest('gateways-gatewaykeyvaluepair-value')}
+            name={createFieldGatewayKeyValuePairValueName(index)}
+            label={i18n.t('Value')}
+            component={InputFieldFF}
+            validate={isStringWithLengthAtLeastOne}
+        />
+    )
 }
 
 GatewayKeyValuePairValueField.propTypes = {
     index: PropTypes.number.isRequired,
-    isConfidential: PropTypes.bool,
 }
