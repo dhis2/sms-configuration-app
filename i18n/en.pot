@@ -20,6 +20,11 @@ msgstr ""
 msgid "Dataset"
 msgstr ""
 
+msgid ""
+"Please make sure the value of this input matches the value in "
+"\"{{otherField}}\"."
+msgstr ""
+
 msgid "Confirm deletion"
 msgstr ""
 
@@ -95,9 +100,6 @@ msgstr ""
 msgid "Key"
 msgstr ""
 
-msgid "Value"
-msgstr ""
-
 msgid "Send as header"
 msgstr ""
 
@@ -108,6 +110,12 @@ msgid "Confidential"
 msgstr ""
 
 msgid "Remove key value pair"
+msgstr ""
+
+msgid "Confirm confidential value"
+msgstr ""
+
+msgid "Value"
 msgstr ""
 
 msgid "Type"

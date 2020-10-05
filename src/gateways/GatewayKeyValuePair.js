@@ -10,6 +10,7 @@ import {
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
+import { GatewayKeyValuePairValue } from './GatewayKeyValuePairValue'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 import styles from './GatewayKeyValuePair.module.css'
@@ -48,14 +49,9 @@ export const GatewayKeyValuePair = ({ index }) => {
                     validate={isStringWithLengthAtLeastOne}
                 />
 
-                <Field
-                    dataTest={dataTest('gateways-gatewaykeyvaluepair-value')}
-                    className={styles.valueInput}
-                    name={`parameters[${index}].value`}
-                    label={i18n.t('Value')}
-                    component={InputFieldFF}
-                    validate={isStringWithLengthAtLeastOne}
-                />
+                <div className={styles.valueInput}>
+                    <GatewayKeyValuePairValue index={index} />
+                </div>
             </div>
 
             <div className={styles.checkboxGroup}>
