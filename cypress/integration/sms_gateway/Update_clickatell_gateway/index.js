@@ -16,7 +16,7 @@ const gateways = [
         uid: 'cAYcoWH79E',
         name: 'Clickatell Gateway',
         username: 'Username',
-        authtoken: 'Auth token',
+        authToken: 'Auth token',
         isDefault: false,
         sendUrlParameters: false,
         urlTemplate: 'https://api.clickatell.com/v1/messages',
@@ -121,7 +121,7 @@ When(
 )
 
 When(
-    "the user changes the authtoken field's value to another valid value",
+    "the user changes the authToken field's value to another valid value",
     () => {
         cy.get('{forms-fieldauthtoken} input')
             .clear()
@@ -130,7 +130,7 @@ When(
         cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
             cy.wrap({
                 ...finalGatewayConfiguration,
-                authtoken: 'New auth token value',
+                authToken: 'New auth token value',
             }).as('finalGatewayConfiguration')
         })
     }
@@ -206,11 +206,11 @@ Then(
                 $usernameInput,
                 $authtokenInput,
             ]) => {
-                const { name, username, authtoken } = editedGatewayConfiguration
+                const { name, username, authToken } = editedGatewayConfiguration
 
                 expect($nameInput.val()).to.eql(name)
                 expect($usernameInput.val()).to.eql(username)
-                expect($authtokenInput.val()).to.eql(authtoken)
+                expect($authtokenInput.val()).to.eql(authToken)
             }
         )
     }
@@ -229,12 +229,12 @@ Then('the updates should be sent to the correct endpoint', () => {
                 name,
                 username,
                 urlTemplate,
-                authtoken,
+                authToken,
             } = finalGatewayConfiguration
 
             expect(sentData.name).to.equal(name)
             expect(sentData.username).to.equal(username)
-            expect(sentData.authtoken).to.equal(authtoken)
+            expect(sentData.authToken).to.equal(authToken)
             expect(sentData.urlTemplate).to.equal(urlTemplate)
         })
     })

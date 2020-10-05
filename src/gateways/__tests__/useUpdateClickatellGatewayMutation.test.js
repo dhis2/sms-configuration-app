@@ -14,7 +14,7 @@ describe('gateways - useUpdateClickatellGatewayMutation', () => {
         id: 'ID1',
         name: 'Name',
         username: 'User name',
-        authtoken: 'Auth token',
+        authToken: 'Auth token',
         urlTemplate: 'http://domain.tld',
     }
 
@@ -96,7 +96,7 @@ describe('gateways - useUpdateClickatellGatewayMutation', () => {
             type: 'clickatell',
             name: 'Name',
             username: 'User name',
-            authtoken: 'Auth token',
+            authToken: 'Auth token',
             urlTemplate: 'http://domain.tld',
         })
     })
