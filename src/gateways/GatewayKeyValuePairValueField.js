@@ -11,15 +11,14 @@ import React from 'react'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
-const { Field, useField } = ReactFinalForm
+const { Field, useFormState } = ReactFinalForm
 const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
 
 export const createFieldGatewayKeyValuePairValueName = index =>
     `parameters[${index}].value`
 
 export const GatewayKeyValuePairValueField = ({ index }) => {
-    const { input } = useField(`parameters[${index}]`)
-    const { confidential } = input.value
+    const { confidential } = useFormState().values.parameters[index]
 
     return (
         <Field
