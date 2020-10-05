@@ -4,11 +4,11 @@ export const UPDATE_CLICKATELL_GATEWAY_MUTATION = {
     resource: 'gateways',
     id: ({ id }) => id,
     type: 'update',
-    data: ({ name, username, authtoken, urlTemplate }) => ({
+    data: ({ name, username, authToken, urlTemplate }) => ({
         type: 'clickatell',
         name,
         username,
-        authtoken,
+        authToken,
         urlTemplate,
     }),
 }
