@@ -10,7 +10,7 @@ import {
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 
-import { GatewayKeyValuePairValue } from './GatewayKeyValuePairValue'
+import { GatewayKeyValuePairValueField } from './GatewayKeyValuePairValueField'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 import styles from './GatewayKeyValuePair.module.css'
@@ -50,7 +50,7 @@ export const GatewayKeyValuePair = ({ index }) => {
                 />
 
                 <div className={styles.valueInput}>
-                    <GatewayKeyValuePairValue index={index} />
+                    <GatewayKeyValuePairValueField index={index} />
                 </div>
             </div>
 
