@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-24T12:57:20.633Z\n"
+"POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Use GET"
 msgstr ""
 
-msgid "Not using get results in using POST"
+msgid "Use GET instead of POST to send data to gateway"
 msgstr ""
 
 msgid "User name"
@@ -119,9 +119,6 @@ msgid "Confidential"
 msgstr "Mật"
 
 msgid "Remove key value pair"
-msgstr ""
-
-msgid "Confirm confidential value"
 msgstr ""
 
 msgid "Value"
