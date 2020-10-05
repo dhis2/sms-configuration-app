@@ -27,30 +27,30 @@ When('the user fills in complete form data', () => {
     const name = 'Name'
     const username = 'Username'
     const urlTemplate = 'http://domain.tld'
-    const authtoken = 'Auth token'
+    const authToken = 'Auth token'
 
     cy.get('{forms-fieldname}').type(name)
     cy.get('{forms-fieldusername}').type(username)
     cy.get('{forms-fieldurltemplate}').type(urlTemplate)
-    cy.get('{forms-fieldauthtoken}').type(authtoken)
+    cy.get('{forms-fieldauthtoken}').type(authToken)
 
     cy.wrap({
         type: 'clickatell',
         name,
         username,
         urlTemplate,
-        authtoken,
+        authToken,
     }).as('gatewayData')
 })
 
 When('the user fills in incomplete form data', () => {
     const name = 'Name'
     const urlTemplate = 'http://domain.tld'
-    const authtoken = 'Auth token'
+    const authToken = 'Auth token'
 
     cy.get('{forms-fieldname}').type(name)
     cy.get('{forms-fieldurltemplate}').type(urlTemplate)
-    cy.get('{forms-fieldauthtoken}').type(authtoken)
+    cy.get('{forms-fieldauthtoken}').type(authToken)
 
     cy.get('{forms-fieldusername}').as('missingFields')
     cy.wrap({
@@ -58,7 +58,7 @@ When('the user fills in incomplete form data', () => {
         username: '',
         name,
         urlTemplate,
-        authtoken,
+        authToken,
     }).as('gatewayData')
 })
 

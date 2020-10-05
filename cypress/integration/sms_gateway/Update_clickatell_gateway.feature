@@ -19,7 +19,7 @@ Feature: Generic gateway configurations can be edited and updated
             | field       |
             | name        |
             | username    |
-            | authtoken   |
+            | authToken   |
             | urlTemplate |
 
     Scenario Outline: The user changes a field in the first Clickatell gateway configuration to an invalid value
@@ -34,7 +34,7 @@ Feature: Generic gateway configurations can be edited and updated
             | field       |
             | name        |
             | username    |
-            | authtoken   |
+            | authToken   |
             | urlTemplate |
 
     Scenario: The user submits the changes successfully

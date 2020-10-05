@@ -15,7 +15,7 @@ export const FieldGatewayAuthToken = () => (
     <Field
         required
         dataTest={dataTest('gateways-fieldgatewayauthtoken')}
-        name="authtoken"
+        name="authToken"
         label={i18n.t('Auth token')}
         component={InputFieldFF}
         validate={composeValidators(string, hasValue)}
