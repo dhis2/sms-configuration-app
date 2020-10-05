@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-24T12:57:20.633Z\n"
+"POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -83,8 +83,8 @@ msgstr "网址模板"
 msgid "Use GET"
 msgstr "使用GET"
 
-msgid "Not using get results in using POST"
-msgstr "在使用POST时不使用GET的结果"
+msgid "Use GET instead of POST to send data to gateway"
+msgstr ""
 
 msgid "User name"
 msgstr "用户名"
@@ -121,9 +121,6 @@ msgstr "保密"
 
 msgid "Remove key value pair"
 msgstr "删除键值对"
-
-msgid "Confirm confidential value"
-msgstr "确认机密值"
 
 msgid "Value"
 msgstr "值"
