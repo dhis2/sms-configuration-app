@@ -393,10 +393,10 @@ msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "Previous"
-msgstr ""
+msgstr "Олдинги"
 
 msgid "Page"
-msgstr ""
+msgstr "Саҳифа"
 
 msgid "of {{pageCount}}"
 msgstr ""
