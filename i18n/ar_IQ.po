@@ -1,20 +1,19 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2020
-# phil_dhis2, 2020
+# KRG HIS <antonia.bezenchek@informa.pro>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
+"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
+"Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: ar_IQ\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -64,13 +63,13 @@ msgid "Content type"
 msgstr ""
 
 msgid "Name"
-msgstr "Nome"
+msgstr "الاسم"
 
 msgid "Password"
-msgstr "Password"
+msgstr ""
 
 msgid "Confirm password"
-msgstr "Confirmar Password"
+msgstr ""
 
 msgid "Send url parameters"
 msgstr ""
@@ -85,7 +84,7 @@ msgid "Use GET instead of POST to send data to gateway"
 msgstr ""
 
 msgid "User name"
-msgstr "Nome do Utilizador"
+msgstr ""
 
 msgid "Add key value pair"
 msgstr ""
@@ -94,10 +93,10 @@ msgid "Save gateway"
 msgstr ""
 
 msgid "Add gateway"
-msgstr "Adicionar gateway"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "إلغاء"
 
 msgid "Gateway setup"
 msgstr ""
@@ -121,10 +120,10 @@ msgid "Remove key value pair"
 msgstr ""
 
 msgid "Value"
-msgstr "Valor"
+msgstr "القيمة"
 
 msgid "Type"
-msgstr "Tipo"
+msgstr ""
 
 msgid "Make default"
 msgstr ""
@@ -133,7 +132,7 @@ msgid "Default gateway"
 msgstr ""
 
 msgid "Edit"
-msgstr "Editar"
+msgstr "تعديل"
 
 msgid "BulkSMS"
 msgstr ""
@@ -145,7 +144,7 @@ msgid "Generic"
 msgstr ""
 
 msgid "Program"
-msgstr "Programa"
+msgstr "البرنامج"
 
 msgid "Program stage"
 msgstr ""
@@ -154,7 +153,7 @@ msgid "Are you sure you want to delete the selected commands?"
 msgstr ""
 
 msgid "Delete"
-msgstr "Apagar"
+msgstr "حذف"
 
 msgid "Save command"
 msgstr ""
@@ -184,7 +183,7 @@ msgid "Confirm message"
 msgstr ""
 
 msgid "Reply message if no codes are sent (only the command)"
-msgstr "Responder mensagens se nenhum código for enviado ( Apenas comando)\\:"
+msgstr ""
 
 msgid "More than one orgunit message"
 msgstr ""
@@ -205,7 +204,7 @@ msgid "Special character value"
 msgstr ""
 
 msgid "Remove"
-msgstr "Remover"
+msgstr "إزالة"
 
 msgid "Success message"
 msgstr ""
@@ -223,7 +222,7 @@ msgid "Loading formula"
 msgstr ""
 
 msgid "Formula"
-msgstr "Fórmula"
+msgstr ""
 
 msgid "Edit formula"
 msgstr ""
@@ -235,7 +234,7 @@ msgid "Formula for {{combo}}"
 msgstr ""
 
 msgid "Data element"
-msgstr "Elemento de dado"
+msgstr ""
 
 msgid "formula operator"
 msgstr ""
@@ -244,7 +243,7 @@ msgid "Something went wrong whilst saving"
 msgstr ""
 
 msgid "Save"
-msgstr "Salvar"
+msgstr "حفظ"
 
 msgid "Receive all data values"
 msgstr ""
@@ -334,7 +333,7 @@ msgid ""
 msgstr ""
 
 msgid "Gateway Configuration"
-msgstr "Configuração do Gateway"
+msgstr ""
 
 msgid ""
 "Add and manage gateways for sending and receiving SMS messages in DHIS2."
@@ -344,7 +343,7 @@ msgid "Set up gateways"
 msgstr ""
 
 msgid "SMS Commands"
-msgstr "comandos SMS"
+msgstr ""
 
 msgid ""
 "Add and manage commands triggered by incoming SMS messages to register, "
@@ -379,10 +378,10 @@ msgid "Filter by phone number"
 msgstr ""
 
 msgid "Filter"
-msgstr "Filtro"
+msgstr ""
 
 msgid "Show"
-msgstr "Mostrar"
+msgstr ""
 
 msgid "per page"
 msgstr ""
@@ -400,19 +399,19 @@ msgid "of {{pageCount}}"
 msgstr ""
 
 msgid "Next"
-msgstr "Próximo"
+msgstr "التالي"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr ""
 
 msgid "Message"
-msgstr "Mensagem"
+msgstr ""
 
 msgid "Phone number"
-msgstr "Número de telefone"
+msgstr ""
 
 msgid "Status"
-msgstr "Estado"
+msgstr "الحالة"
 
 msgid "Sender"
 msgstr ""
@@ -424,10 +423,10 @@ msgid "No SMSes to display"
 msgstr ""
 
 msgid "Unknown"
-msgstr "Desconhecido"
+msgstr ""
 
 msgid "All"
-msgstr "Tudo"
+msgstr "الجميع"
 
 msgid "Failed"
 msgstr ""
@@ -439,10 +438,10 @@ msgid "Processed"
 msgstr ""
 
 msgid "Processing"
-msgstr "Processando"
+msgstr ""
 
 msgid "Sent"
-msgstr "Enviar"
+msgstr ""
 
 msgid "Unhandled"
 msgstr ""
@@ -457,16 +456,16 @@ msgid "Delivered"
 msgstr ""
 
 msgid "Error"
-msgstr "Erro"
+msgstr "خطأ"
 
 msgid "Outbound"
-msgstr "Saida"
+msgstr ""
 
 msgid "Pending"
 msgstr ""
 
 msgid "Scheduled"
-msgstr ""
+msgstr "تمت جدولته"
 
 msgid "Something went wrong whilst loading commands"
 msgstr ""
@@ -481,7 +480,7 @@ msgid "Could not find the requested parser type"
 msgstr ""
 
 msgid "Add command"
-msgstr "Adicionar comando"
+msgstr ""
 
 msgid "Automatically selected by selecting a program"
 msgstr ""

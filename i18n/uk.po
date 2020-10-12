@@ -9,12 +9,12 @@ msgstr ""
 "POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
+"Language-Team: Ukrainian (https://www.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Підтвердити видалення"
 
 msgid "Are you sure you want to delete the selected gateways?"
 msgstr ""
@@ -64,13 +64,13 @@ msgid "Content type"
 msgstr ""
 
 msgid "Name"
-msgstr "Nome"
+msgstr "Ім'я"
 
 msgid "Password"
-msgstr "Password"
+msgstr "Пароль"
 
 msgid "Confirm password"
-msgstr "Confirmar Password"
+msgstr "Підтвердити пароль"
 
 msgid "Send url parameters"
 msgstr ""
@@ -85,7 +85,7 @@ msgid "Use GET instead of POST to send data to gateway"
 msgstr ""
 
 msgid "User name"
-msgstr "Nome do Utilizador"
+msgstr "Ім'я користувача"
 
 msgid "Add key value pair"
 msgstr ""
@@ -94,10 +94,10 @@ msgid "Save gateway"
 msgstr ""
 
 msgid "Add gateway"
-msgstr "Adicionar gateway"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Скасувати"
 
 msgid "Gateway setup"
 msgstr ""
@@ -121,10 +121,10 @@ msgid "Remove key value pair"
 msgstr ""
 
 msgid "Value"
-msgstr "Valor"
+msgstr "Значення"
 
 msgid "Type"
-msgstr "Tipo"
+msgstr "Тип"
 
 msgid "Make default"
 msgstr ""
@@ -133,7 +133,7 @@ msgid "Default gateway"
 msgstr ""
 
 msgid "Edit"
-msgstr "Editar"
+msgstr "Редагувати"
 
 msgid "BulkSMS"
 msgstr ""
@@ -145,16 +145,16 @@ msgid "Generic"
 msgstr ""
 
 msgid "Program"
-msgstr "Programa"
+msgstr "Програма"
 
 msgid "Program stage"
-msgstr ""
+msgstr "Етап програми"
 
 msgid "Are you sure you want to delete the selected commands?"
 msgstr ""
 
 msgid "Delete"
-msgstr "Apagar"
+msgstr "Видалити"
 
 msgid "Save command"
 msgstr ""
@@ -184,7 +184,7 @@ msgid "Confirm message"
 msgstr ""
 
 msgid "Reply message if no codes are sent (only the command)"
-msgstr "Responder mensagens se nenhum código for enviado ( Apenas comando)\\:"
+msgstr ""
 
 msgid "More than one orgunit message"
 msgstr ""
@@ -205,7 +205,7 @@ msgid "Special character value"
 msgstr ""
 
 msgid "Remove"
-msgstr "Remover"
+msgstr "Прибрати"
 
 msgid "Success message"
 msgstr ""
@@ -223,7 +223,7 @@ msgid "Loading formula"
 msgstr ""
 
 msgid "Formula"
-msgstr "Fórmula"
+msgstr ""
 
 msgid "Edit formula"
 msgstr ""
@@ -235,7 +235,7 @@ msgid "Formula for {{combo}}"
 msgstr ""
 
 msgid "Data element"
-msgstr "Elemento de dado"
+msgstr "Елемент даних"
 
 msgid "formula operator"
 msgstr ""
@@ -244,7 +244,7 @@ msgid "Something went wrong whilst saving"
 msgstr ""
 
 msgid "Save"
-msgstr "Salvar"
+msgstr "Зберегти"
 
 msgid "Receive all data values"
 msgstr ""
@@ -334,7 +334,7 @@ msgid ""
 msgstr ""
 
 msgid "Gateway Configuration"
-msgstr "Configuração do Gateway"
+msgstr ""
 
 msgid ""
 "Add and manage gateways for sending and receiving SMS messages in DHIS2."
@@ -344,7 +344,7 @@ msgid "Set up gateways"
 msgstr ""
 
 msgid "SMS Commands"
-msgstr "comandos SMS"
+msgstr ""
 
 msgid ""
 "Add and manage commands triggered by incoming SMS messages to register, "
@@ -379,10 +379,10 @@ msgid "Filter by phone number"
 msgstr ""
 
 msgid "Filter"
-msgstr "Filtro"
+msgstr "Фільтр"
 
 msgid "Show"
-msgstr "Mostrar"
+msgstr "Показати"
 
 msgid "per page"
 msgstr ""
@@ -391,28 +391,28 @@ msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "Previous"
-msgstr ""
+msgstr "Попереднє"
 
 msgid "Page"
-msgstr ""
+msgstr "Сторінка"
 
 msgid "of {{pageCount}}"
 msgstr ""
 
 msgid "Next"
-msgstr "Próximo"
+msgstr "Наступне"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr ""
 
 msgid "Message"
-msgstr "Mensagem"
+msgstr "Повідомлення"
 
 msgid "Phone number"
-msgstr "Número de telefone"
+msgstr "Номер телефону"
 
 msgid "Status"
-msgstr "Estado"
+msgstr "Статус"
 
 msgid "Sender"
 msgstr ""
@@ -424,10 +424,10 @@ msgid "No SMSes to display"
 msgstr ""
 
 msgid "Unknown"
-msgstr "Desconhecido"
+msgstr "Невідоме"
 
 msgid "All"
-msgstr "Tudo"
+msgstr "Всі"
 
 msgid "Failed"
 msgstr ""
@@ -439,10 +439,10 @@ msgid "Processed"
 msgstr ""
 
 msgid "Processing"
-msgstr "Processando"
+msgstr "Обробляємо"
 
 msgid "Sent"
-msgstr "Enviar"
+msgstr ""
 
 msgid "Unhandled"
 msgstr ""
@@ -457,16 +457,16 @@ msgid "Delivered"
 msgstr ""
 
 msgid "Error"
-msgstr "Erro"
+msgstr "Помилка"
 
 msgid "Outbound"
-msgstr "Saida"
+msgstr ""
 
 msgid "Pending"
 msgstr ""
 
 msgid "Scheduled"
-msgstr ""
+msgstr "Заплановано"
 
 msgid "Something went wrong whilst loading commands"
 msgstr ""
@@ -481,7 +481,7 @@ msgid "Could not find the requested parser type"
 msgstr ""
 
 msgid "Add command"
-msgstr "Adicionar comando"
+msgstr ""
 
 msgid "Automatically selected by selecting a program"
 msgstr ""
