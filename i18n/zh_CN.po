@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-09-24T12:57:20.633Z\n"
+"POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -42,6 +42,27 @@ msgstr ""
 msgid "Auth token"
 msgstr ""
 
+msgid "Configuration template"
+msgstr ""
+
+msgid "Please refer to the documentation for possible values"
+msgstr ""
+
+msgid "Application/json"
+msgstr ""
+
+msgid "Application/xml"
+msgstr ""
+
+msgid "Form url encoded"
+msgstr ""
+
+msgid "Plain text"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
 msgid "Name"
 msgstr "名称"
 
@@ -51,7 +72,16 @@ msgstr "口令"
 msgid "Confirm password"
 msgstr ""
 
+msgid "Send url parameters"
+msgstr ""
+
 msgid "Url template"
+msgstr ""
+
+msgid "Use GET"
+msgstr ""
+
+msgid "Use GET instead of POST to send data to gateway"
 msgstr ""
 
 msgid "User name"
@@ -88,9 +118,6 @@ msgid "Confidential"
 msgstr "保密"
 
 msgid "Remove key value pair"
-msgstr ""
-
-msgid "Confirm confidential value"
 msgstr ""
 
 msgid "Value"
