@@ -7,6 +7,8 @@ import {
     GENERIC_FORM,
     BULK_SMS_FORM,
     CLICKATELL_FORM,
+    FIELD_GATEWAY_PASSWORD_CONFIRMATION_NAME,
+    FIELD_GATEWAY_PASSWORD_NAME,
     GatewayBulkSMSForm,
     GatewayClickatellForm,
     GatewayGenericForm,
@@ -38,6 +40,18 @@ const getFormComponent = gatewayType => {
     }
 
     throw new Error(`The gateway type does not exist, got "${gatewayType}"`)
+}
+
+const getInitialValues = gateway => {
+    if (gateway.type === BULK_SMS_FORM) {
+        return {
+            ...gateway,
+            [FIELD_GATEWAY_PASSWORD_CONFIRMATION_NAME]:
+                gateway[FIELD_GATEWAY_PASSWORD_NAME],
+        }
+    }
+
+    return gateway
 }
 
 export const GatewayConfigFormEdit = () => {
@@ -126,8 +140,8 @@ export const GatewayConfigFormEdit = () => {
         }
     }
 
-    const hasGateway = data?.gateway
     const FormComponent = getFormComponent(gatewayType)
+    const initialValues = gatewayType && getInitialValues(data.gateway)
 
     return (
         <div
@@ -136,7 +150,7 @@ export const GatewayConfigFormEdit = () => {
         >
             <PageHeadline>{i18n.t('Edit gateway')}</PageHeadline>
 
-            {hasGateway ? (
+            {gatewayType ? (
                 <div
                     data-test={dataTest(
                         'views-gatewayconfigformedit-formcontainer'
@@ -155,7 +169,7 @@ export const GatewayConfigFormEdit = () => {
                     )}
 
                     <FormComponent
-                        initialValues={data.gateway}
+                        initialValues={initialValues}
                         onSubmit={onSubmit}
                         onCancelClick={pristine =>
                             pristine

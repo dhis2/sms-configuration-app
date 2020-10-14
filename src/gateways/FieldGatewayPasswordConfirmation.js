@@ -22,12 +22,14 @@ const equalToPassword = createEqualTo(
     FIELD_GATEWAY_PASSWORD_LABEL
 )
 
+export const FIELD_GATEWAY_PASSWORD_CONFIRMATION_NAME = 'password-confirmation'
+
 export const FieldGatewayPasswordConfirmation = () => (
     <Field
         required
         type="password"
         dataTest={dataTest('gateways-fieldgatewaypasswordconfirmation')}
-        name="password-confirmation"
+        name={FIELD_GATEWAY_PASSWORD_CONFIRMATION_NAME}
         label={i18n.t('Confirm password')}
         component={InputFieldFF}
         validate={composeValidators(string, hasValue, equalToPassword)}
