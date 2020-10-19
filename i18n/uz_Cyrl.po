@@ -426,7 +426,7 @@ msgid "No SMSes to display"
 msgstr ""
 
 msgid "Unknown"
-msgstr ""
+msgstr "Номаълум"
 
 msgid "All"
 msgstr "Барчаси"
@@ -441,7 +441,7 @@ msgid "Processed"
 msgstr ""
 
 msgid "Processing"
-msgstr ""
+msgstr "Қайта ишлаш"
 
 msgid "Sent"
 msgstr ""
