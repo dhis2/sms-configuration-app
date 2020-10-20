@@ -22,6 +22,7 @@ import { CommandEditJ2MEParserForm } from '../../smsCommandJ2MEParser'
 import { CommandEditEventRegistrationParserForm } from '../../smsCommandEventRegistrationParser'
 import { CommandEditAlertParserForm } from '../../smsCommandAlertParser'
 import { PageHeadline } from '../../headline'
+import { dataTest } from '../../dataTest'
 import {
     isParserType,
     useReadSmsCommandParserTypeQuery,
@@ -97,7 +98,10 @@ export const SmsCommandFormEdit = () => {
     const FormComponent = getSmsCommandEditFormComponent(parserType)
 
     return (
-        <div className={styles.container}>
+        <div
+            className={styles.container}
+            data-test={dataTest('views-smscommandformedit')}
+        >
             <PageHeadline>{i18n.t('Edit command')}</PageHeadline>
 
             {FormComponent && (

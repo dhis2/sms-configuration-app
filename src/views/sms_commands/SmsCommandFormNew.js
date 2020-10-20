@@ -15,6 +15,7 @@ import {
     FieldCommandName,
     FieldCommandParser,
 } from '../../smsCommandFields'
+import { dataTest } from '../../dataTest'
 import { useCreateSmsCommandMutation } from '../../smsCommand'
 import { FieldDataSetWithAutoLoad } from '../../dataSet'
 import {
@@ -209,13 +210,15 @@ export const SmsCommandFormNew = () => {
     const onSubmit = values => createSmsCommand(values)
 
     return (
-        <Form destroyOnUnregister onSubmit={onSubmit}>
-            {({ handleSubmit, submitting }) => (
-                <ActualForm
-                    handleSubmit={handleSubmit}
-                    submitting={submitting}
-                />
-            )}
-        </Form>
+        <div data-test={dataTest('views-smscommandformnew')}>
+            <Form destroyOnUnregister onSubmit={onSubmit}>
+                {({ handleSubmit, submitting }) => (
+                    <ActualForm
+                        handleSubmit={handleSubmit}
+                        submitting={submitting}
+                    />
+                )}
+            </Form>
+        </div>
     )
 }
