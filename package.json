@@ -9,7 +9,7 @@
         "build": "d2-app-scripts build",
         "start": "d2-app-scripts start",
         "test": "d2-app-scripts test",
-        "cypress:start": "BROWSER=none yarn start",
+        "cy:start": "BROWSER=none yarn start",
         "cy:open": "d2-utils-cypress open --appStart 'yarn cypress:start'",
         "cy:run": "d2-utils-cypress run --appStart 'yarn cypress:start'",
         "lint:js": "d2-style js check",
