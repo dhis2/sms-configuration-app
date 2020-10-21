@@ -1,4 +1,8 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+
+Before(() => {
+    cy.server()
+})
 
 const gateways = [
     {
@@ -45,7 +49,7 @@ const prepareGateways = gateways => {
 Given('the user can delete configurations from the network perspective', () => {
     gateways.forEach(({ uid }) => {
         cy.route({
-            url: new RegExp(`.*/gateway/${uid}$`),
+            url: new RegExp(`.*/gateways/${uid}$`),
             method: 'DELETE',
             response: {},
         }).as(`delete${uid}XHR`)
@@ -55,7 +59,7 @@ Given('the user can delete configurations from the network perspective', () => {
 Given("the user can't delete configurations due to a request failure", () => {
     gateways.forEach(({ uid }) => {
         cy.route({
-            url: new RegExp(`.*/gateway/${uid}$`),
+            url: new RegExp(`.*/gateways/${uid}$`),
             method: 'DELETE',
             status: 503,
             response: {
@@ -74,12 +78,12 @@ Given('some gateways exist', () => {
 })
 
 Given('the user navigated to the gateway configuration page', () => {
-    cy.visit('/')
+    cy.visitWhenStubbed('/')
     cy.get('{navigation-navigationitem}:nth-child(2)').click()
 })
 
 Given('the user wants to delete the first configuration', () => {
-    cy.visit('/')
+    cy.visitWhenStubbed('/')
     cy.get('{navigation-navigationitem}:nth-child(2)').click()
     cy.get('{gateways-gatewaystable-checkbox}')
         .first()
@@ -172,9 +176,10 @@ Then('the delete button should be disabled', () => {
 })
 
 Then('an alert with an error message should be displayed', () => {
-    cy.get('{notifications-alert}').should('exist')
-    cy.get('{notifications-alert}').should(
-        'contain',
-        'An unknown error occurred - Service Unavailable (503)'
-    )
+    cy.get('[data-test="dhis2-uicore-noticebox"].error')
+        .should('exist')
+        .should(
+            'contain',
+            'An unknown error occurred - Service Unavailable (503)'
+        )
 })

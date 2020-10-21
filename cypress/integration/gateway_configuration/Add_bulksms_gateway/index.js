@@ -1,19 +1,23 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+
+Before(() => {
+    cy.server()
+})
 
 Given('the user is adding a new gateway with type BulkSMS', () => {
     cy.route({
-        url: /.*\/gateways.json$/,
+        url: /.*\/gateways/,
         method: 'GET',
         response: { gateways: [] },
     })
 
     cy.route({
-        url: /.*\/gateways$/,
+        url: /gateways/,
         method: 'POST',
         response: {},
     }).as('createGatewayConfigurationXHR')
 
-    cy.visit('/')
+    cy.visitWhenStubbed('/')
     cy.get('{navigation-navigationitem}:nth-child(2)').click()
     cy.get('{views-gatewayconfiglist-add}').click()
 
@@ -28,9 +32,10 @@ When('the user fills in complete form data', () => {
     const username = 'Username'
     const password = 'Password'
 
-    cy.get('{forms-fieldname}').type(name)
-    cy.get('{forms-fieldusername}').type(username)
-    cy.get('{forms-fieldpassword}').type(password)
+    cy.get('{gateways-fieldgatewayname}').type(name)
+    cy.get('{gateways-fieldgatewayusername}').type(username)
+    cy.get('{gateways-fieldgatewaypassword}').type(password)
+    cy.get('{gateways-fieldgatewaypasswordconfirmation}').type(password)
 
     cy.wrap({
         type: 'bulksms',
@@ -44,10 +49,11 @@ When('the user fills in incomplete form data', () => {
     const name = 'Name'
     const password = 'Password'
 
-    cy.get('{forms-fieldname}').type(name)
-    cy.get('{forms-fieldpassword}').type(password)
+    cy.get('{gateways-fieldgatewayname}').type(name)
+    cy.get('{gateways-fieldgatewaypassword}').type(password)
+    cy.get('{gateways-fieldgatewaypasswordconfirmation}').type(password)
 
-    cy.get('{forms-fieldusername}').as('missingFields')
+    cy.get('{gateways-fieldgatewayusername}').as('missingFields')
     cy.wrap({
         type: 'bulksms',
         username: '',
