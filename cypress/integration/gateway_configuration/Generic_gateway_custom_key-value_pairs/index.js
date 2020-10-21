@@ -1,4 +1,8 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+
+Before(() => {
+    cy.server()
+})
 
 const gateways = [
     {
@@ -7,6 +11,7 @@ const gateways = [
         name: 'Foobarbaz',
         isDefault: true,
         urlTemplate: 'https://a.url.tld',
+        configurationTemplate: 'foo',
         useGet: false,
         contentType: 'FORM_URL_ENCODED',
         parameters: [],
@@ -17,6 +22,7 @@ const gateways = [
         name: 'asdf',
         isDefault: false,
         urlTemplate: 'http://d.dd',
+        configurationTemplate: 'foo',
         useGet: false,
         contentType: 'FORM_URL_ENCODED',
         parameters: [],
@@ -27,6 +33,7 @@ const gateways = [
         name: 'foobar',
         isDefault: false,
         urlTemplate: 'http://d.dd',
+        configurationTemplate: 'foo',
         useGet: false,
         contentType: 'FORM_URL_ENCODED',
         parameters: [],
@@ -65,7 +72,7 @@ Given('the user navigated to the gateway configuration page', () => {
     cy.wrap(defaultParameter).as('newParameter')
 
     cy.wrap(gateways).as('gateways')
-    cy.visit('/')
+    cy.visitWhenStubbed('/')
     cy.get('{navigation-navigationitem}:nth-child(2)').click()
 })
 
@@ -99,8 +106,13 @@ Given('the user is adding a generic gateway configuration', () => {
 
     // Need to provide the required values,
     // otherwise the form can't be submitted
-    cy.get('{forms-fieldname}').type('Field name', { delay: 0 })
-    cy.get('{forms-fieldurltemplate}').type('http://domain.tld', { delay: 0 })
+    cy.get('{gateways-fieldgatewayname}').type('Field name', { delay: 0 })
+    cy.get('{gateways-fieldgatewayurltemplate}').type('http://domain.tld', {
+        delay: 0,
+    })
+    cy.get(
+        '{gateways-fieldgatewayconfigurationtemplate}'
+    ).type('Configuration template', { delay: 0 })
 })
 
 Given('the user has added multiple key value pairs', () => {
@@ -111,17 +123,17 @@ Given('the user has added multiple key value pairs', () => {
     ]
 
     keyValuePairs.forEach(({ key, value }) => {
-        cy.get('{forms-addkeyvaluepair}').click()
-        cy.get('{forms-keyvaluepair}')
+        cy.get('{gateways-gatewayaddkeyvaluepair}').click()
+        cy.get('{gateways-gatewaykeyvaluepair}')
             .last()
             .as('lastKeyValuePair')
 
         cy.get('@lastKeyValuePair')
-            .find('{forms-keyvaluepair-key}')
+            .find('{gateways-gatewaykeyvaluepair-key}')
             .type(key)
 
         cy.get('@lastKeyValuePair')
-            .find('{forms-keyvaluepair-value}')
+            .find('{gateways-gatewaykeyvaluepair-value}')
             .type(value)
     })
 
@@ -134,12 +146,12 @@ Given('the user has added multiple key value pairs', () => {
 })
 
 When('the user clicks on the "add more" button', () => {
-    cy.get('{forms-addkeyvaluepair}').click()
+    cy.get('{gateways-gatewayaddkeyvaluepair}').click()
 })
 
 When('the user enters values for the key and value', () => {
-    cy.get('{forms-keyvaluepair-key} input').type('Key')
-    cy.get('{forms-keyvaluepair-value} input').type('Value')
+    cy.get('{gateways-gatewaykeyvaluepair-key} input').type('Key')
+    cy.get('{gateways-gatewaykeyvaluepair-value} input').type('Value')
 
     cy.get('@newParameter').then(newParameter => {
         const updated = {
@@ -154,7 +166,7 @@ When('the user enters values for the key and value', () => {
 
 When('checks the "confidential" checkbox', () => {
     cy.get(
-        '{forms-keyvaluepair} {forms-keyvaluepair-isconfidential} label'
+        '{gateways-gatewaykeyvaluepair} {gateways-gatewaykeyvaluepair-isconfidential} label'
     ).click()
 
     cy.get('@newParameter').then(newParameter => {
@@ -168,7 +180,7 @@ When('checks the "confidential" checkbox', () => {
 })
 
 When('checks the "header" checkbox', () => {
-    cy.get('{forms-keyvaluepair-isheader} label').click()
+    cy.get('{gateways-gatewaykeyvaluepair-isheader} label').click()
 
     cy.get('@newParameter').then(newParameter => {
         const updated = {
@@ -185,7 +197,7 @@ When('the user submits the form', () => {
 })
 
 Then('the key-value form should appear', () => {
-    cy.get('{forms-keyvaluepair}').should('exist')
+    cy.get('{gateways-gatewaykeyvaluepair}').should('exist')
 })
 
 Then('the additional key-value pair should be sent to the endpoint', () => {

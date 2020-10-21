@@ -33,6 +33,8 @@ Feature: Generic gateway configurations can be edited and updated
             | field    |
             | name     |
             | username |
+            | password |
+            | passwordConfirmation |
 
     Scenario: The user submits the changes successfully
         When the user clicks on the update button in the first bulksms gateway

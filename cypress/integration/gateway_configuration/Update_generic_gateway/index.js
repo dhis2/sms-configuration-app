@@ -1,4 +1,8 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+
+Before(() => {
+    cy.server()
+})
 
 const gateways = [
     {
@@ -9,6 +13,7 @@ const gateways = [
         urlTemplate: 'https://a.url.tld',
         useGet: false,
         contentType: 'FORM_URL_ENCODED',
+        configurationTemplate: 'A sample value',
         parameters: [],
     },
     {
@@ -19,6 +24,7 @@ const gateways = [
         urlTemplate: 'http://d.dd',
         useGet: false,
         contentType: 'FORM_URL_ENCODED',
+        configurationTemplate: 'A sample value',
         parameters: [],
     },
     {
@@ -29,6 +35,7 @@ const gateways = [
         urlTemplate: 'http://d.dd',
         useGet: false,
         contentType: 'FORM_URL_ENCODED',
+        configurationTemplate: 'A sample value',
         parameters: [],
     },
 ]
@@ -55,7 +62,7 @@ Given('the user navigated to the gateway configuration page', () => {
         }).as(`updateGatewayConfiguration${uid}XHR`)
     })
 
-    cy.visit('/')
+    cy.visitWhenStubbed('/')
     cy.get('{navigation-navigationitem}:nth-child(2)').click()
 })
 
@@ -70,7 +77,7 @@ When('the user clicks on the update button in the first row', () => {
 })
 
 When("the user changes the name field's value to another valid value", () => {
-    cy.get('{forms-fieldname} input')
+    cy.get('{gateways-fieldgatewayname} input')
         .clear()
         .type('New name value')
 
@@ -85,7 +92,7 @@ When("the user changes the name field's value to another valid value", () => {
 When(
     "the user changes the urlTemplate field's value to another valid value",
     () => {
-        cy.get('{forms-fieldurltemplate} input')
+        cy.get('{gateways-fieldgatewayurltemplate} input')
             .clear()
             .type('http://another-domain.tld')
 
@@ -128,34 +135,34 @@ When(
         keyValuePairs.forEach(keyValuePair => {
             const { key, value, header, confidential, encode } = keyValuePair
 
-            cy.get('{forms-addkeyvaluepair}').click()
-            cy.get('{forms-keyvaluepair}')
+            cy.get('{gateways-gatewayaddkeyvaluepair}').click()
+            cy.get('{gateways-gatewaykeyvaluepair}')
                 .last()
                 .as('lastKeyValuePair')
 
             cy.get('@lastKeyValuePair')
-                .find('{forms-keyvaluepair-key}')
+                .find('{gateways-gatewaykeyvaluepair-key}')
                 .type(key)
 
             cy.get('@lastKeyValuePair')
-                .find('{forms-keyvaluepair-value}')
+                .find('{gateways-gatewaykeyvaluepair-value}')
                 .type(value)
 
             if (header) {
                 cy.get('@lastKeyValuePair')
-                    .find('{forms-keyvaluepair-isheader} label')
+                    .find('{gateways-gatewaykeyvaluepair-isheader} label')
                     .click()
             }
 
             if (confidential) {
                 cy.get('@lastKeyValuePair')
-                    .find('{forms-keyvaluepair-isconfidential} label')
+                    .find('{gateways-gatewaykeyvaluepair-isconfidential} label')
                     .click()
             }
 
             if (encode) {
                 cy.get('@lastKeyValuePair')
-                    .find('{forms-keyvaluepair-isencoded} label')
+                    .find('{gateways-gatewaykeyvaluepair-isencoded} label')
                     .click()
             }
         })
@@ -176,7 +183,7 @@ When('submits the form', () => {
 })
 
 When("the user changes the name field's value to another invalid value", () => {
-    cy.get('{forms-fieldname}')
+    cy.get('{gateways-fieldgatewayname}')
         .as('invalidField')
         .find('input')
         .clear()
@@ -185,7 +192,7 @@ When("the user changes the name field's value to another invalid value", () => {
 When(
     "the user changes the urlTemplate field's value to another invalid value",
     () => {
-        cy.get('{forms-fieldurltemplate}')
+        cy.get('{gateways-fieldgatewayurltemplate}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -194,7 +201,7 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{forms-fieldname} input')
+    cy.get('{gateways-fieldgatewayname} input')
         .clear()
         .type('A valid name')
 })
@@ -211,8 +218,8 @@ Then(
     () => {
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
-            () => cy.get('{forms-fieldname} input'),
-            () => cy.get('{forms-fieldurltemplate} input')
+            () => cy.get('{gateways-fieldgatewayname} input'),
+            () => cy.get('{gateways-fieldgatewayurltemplate} input')
         ).then(
             ([editedGatewayConfiguration, $nameInput, $urlTemplateInput]) => {
                 const { name, urlTemplate } = editedGatewayConfiguration
@@ -223,12 +230,12 @@ Then(
 
         cy.get('@editedGatewayConfiguration').then(({ parameters }) => {
             if (parameters.length) {
-                cy.get('{forms-keyvaluepair}').should(
+                cy.get('{gateways-gatewaykeyvaluepair}').should(
                     'have.lengthOf',
                     parameters.length
                 )
             } else {
-                cy.get('{forms-keyvaluepair}').should('not.exist')
+                cy.get('{gateways-gatewaykeyvaluepair}').should('not.exist')
             }
         })
     }
