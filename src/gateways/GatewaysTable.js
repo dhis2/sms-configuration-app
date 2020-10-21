@@ -96,7 +96,12 @@ export const GatewaysTable = ({
                                     {i18n.t('Make default')}
                                 </Button>
                             ) : (
-                                <span className={styles.isDefaultText}>
+                                <span
+                                    className={styles.isDefaultText}
+                                    data-test={dataTest(
+                                        'gateways-gatewaystable-isdefault'
+                                    )}
+                                >
                                     {i18n.t('Default gateway')}
                                 </span>
                             )}
