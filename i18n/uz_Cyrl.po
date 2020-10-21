@@ -432,7 +432,7 @@ msgid "All"
 msgstr "Барчаси"
 
 msgid "Failed"
-msgstr ""
+msgstr "Амалга ошмади"
 
 msgid "Incoming"
 msgstr ""
