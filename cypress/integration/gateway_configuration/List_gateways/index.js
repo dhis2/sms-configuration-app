@@ -1,4 +1,8 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+
+Before(() => {
+    cy.server()
+})
 
 Given('there are no gateways', () => {
     cy.route({
@@ -50,16 +54,24 @@ Given('some gateways exist', () => {
         method: 'GET',
         response: { gateways },
     })
+
+    gateways.forEach(gateway => {
+        cy.route({
+            url: new RegExp(`gateways/${gateway.uid}$`),
+            method: 'GET',
+            response: gateway,
+        })
+    })
 })
 
 Given('the first gateway is the default', () => {
     cy.get(
         '{gateways-gatewaystable-row}:first-child {gateways-gatewaystable-isdefault}'
-    ).should('contain', 'Yes')
+    ).should('exist')
 })
 
 Given('the user navigated to the gateway configuration page', () => {
-    cy.visit('/')
+    cy.visitWhenStubbed('/')
     cy.get('{navigation-navigationitem}:nth-child(2)').click()
 })
 
@@ -148,19 +160,15 @@ Then("each row displays the gateway configuration's data", () => {
 
             cy.wrap($row)
                 .find('{gateways-gatewaystable-isdefault}')
-                .then($isDefaultCell => {
-                    const isDefaultText = gateway.isDefault ? 'Yes' : 'No'
-                    expect($isDefaultCell.text()).to.equal(isDefaultText)
-                })
+                .should(gateway.isDefault ? 'exist' : 'not.exist')
         })
     })
 })
 
 Then('exactly one default gateway should be displayed', () => {
-    cy.get('{gateways-gatewaystable-isdefault}:contains("Yes")').should(
-        'have.lengthOf',
-        1
-    )
+    cy.get(
+        '{gateways-gatewaystable-row}:first-child {gateways-gatewaystable-isdefault}'
+    ).should('have.lengthOf', 1)
 })
 
 Then(

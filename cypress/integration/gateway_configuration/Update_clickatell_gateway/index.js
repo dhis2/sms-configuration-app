@@ -1,4 +1,8 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+
+Before(() => {
+    cy.server()
+})
 
 const gateways = [
     {
@@ -56,7 +60,7 @@ Given('the user navigated to the gateway configuration page', () => {
         }).as(`updateGatewayConfiguration${uid}XHR`)
     })
 
-    cy.visit('/')
+    cy.visitWhenStubbed('/')
     cy.get('{navigation-navigationitem}:nth-child(2)').click()
 })
 
@@ -76,7 +80,7 @@ When(
 )
 
 When("the user changes the name field's value to another valid value", () => {
-    cy.get('{forms-fieldname} input')
+    cy.get('{gateways-fieldgatewayname} input')
         .clear()
         .type('New name value')
 
@@ -91,7 +95,7 @@ When("the user changes the name field's value to another valid value", () => {
 When(
     "the user changes the username field's value to another valid value",
     () => {
-        cy.get('{forms-fieldusername} input')
+        cy.get('{gateways-fieldgatewayusername} input')
             .clear()
             .type('New user name value')
 
@@ -107,7 +111,7 @@ When(
 When(
     "the user changes the urlTemplate field's value to another valid value",
     () => {
-        cy.get('{forms-fieldurltemplate} input')
+        cy.get('{gateways-fieldgatewayurltemplate} input')
             .clear()
             .type('http://another.domain.tld')
 
@@ -123,7 +127,7 @@ When(
 When(
     "the user changes the authToken field's value to another valid value",
     () => {
-        cy.get('{forms-fieldauthtoken} input')
+        cy.get('{gateways-fieldgatewayauthtoken} input')
             .clear()
             .type('New auth token value')
 
@@ -141,7 +145,7 @@ When('submits the form', () => {
 })
 
 When("the user changes the name field's value to another invalid value", () => {
-    cy.get('{forms-fieldname}')
+    cy.get('{gateways-fieldgatewayname}')
         .as('invalidField')
         .find('input')
         .clear()
@@ -150,7 +154,7 @@ When("the user changes the name field's value to another invalid value", () => {
 When(
     "the user changes the username field's value to another invalid value",
     () => {
-        cy.get('{forms-fieldusername}')
+        cy.get('{gateways-fieldgatewayusername}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -158,9 +162,9 @@ When(
 )
 
 When(
-    "the user changes the authtoken field's value to another invalid value",
+    "the user changes the authToken field's value to another invalid value",
     () => {
-        cy.get('{forms-fieldauthtoken}')
+        cy.get('{gateways-fieldgatewayauthtoken}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -170,7 +174,7 @@ When(
 When(
     "the user changes the urlTemplate field's value to another invalid value",
     () => {
-        cy.get('{forms-fieldurltemplate}')
+        cy.get('{gateways-fieldgatewayurltemplate}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -179,7 +183,7 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{forms-fieldname} input')
+    cy.get('{gateways-fieldgatewayname} input')
         .clear()
         .type('A valid name')
 })
@@ -196,9 +200,9 @@ Then(
     () => {
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
-            () => cy.get('{forms-fieldname} input'),
-            () => cy.get('{forms-fieldusername} input'),
-            () => cy.get('{forms-fieldauthtoken} input')
+            () => cy.get('{gateways-fieldgatewayname} input'),
+            () => cy.get('{gateways-fieldgatewayusername} input'),
+            () => cy.get('{gateways-fieldgatewayauthtoken} input')
         ).then(
             ([
                 editedGatewayConfiguration,

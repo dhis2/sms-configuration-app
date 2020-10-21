@@ -1,4 +1,8 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+
+Before(() => {
+    cy.server()
+})
 
 const gateways = [
     {
@@ -48,27 +52,27 @@ Given('some gateway configurations exist', () => {
         }).as('defaultGatewayXHR')
     })
 
-    cy.visit('/')
+    cy.visitWhenStubbed('/')
     cy.get('{navigation-navigationitem}:nth-child(2)').click()
 })
 
 When(
     'the user clicks on the make default button of a non-default gateway configuration',
     () => {
-        cy.get('{gateways-gatewaystable-isdefault}:contains("No")')
+        cy.get('{gateways-gatewaystable-makedefault}')
             .first()
+            .as('makeDefaultButton')
+
+        cy.get('@makeDefaultButton')
             .parents('tr')
             .as('newDefaultGatewayConfiguration')
-            .find('{gateways-gatewaystable-makedefault}')
-            .click()
+
+        cy.get('@makeDefaultButton').click()
     }
 )
 
 Then('there should be exactly one default gateway configuration', () => {
-    cy.get('{gateways-gatewaystable-isdefault}:contains("Yes")').should(
-        'have.lengthOf',
-        1
-    )
+    cy.get('{gateways-gatewaystable-isdefault}').should('have.lengthOf', 1)
 })
 
 Then(

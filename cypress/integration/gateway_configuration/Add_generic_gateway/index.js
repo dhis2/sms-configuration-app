@@ -1,4 +1,8 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+
+Before(() => {
+    cy.server()
+})
 
 const gateways = [
     {
@@ -53,7 +57,7 @@ Given('the user navigated to the gateway configuration page', () => {
         })
     })
 
-    cy.visit('/')
+    cy.visitWhenStubbed('/')
     cy.get('{navigation-navigationitem}:nth-child(2)').click()
 })
 
@@ -64,21 +68,31 @@ When('the user clicks on the add gateway button', () => {
 When('the user fills in complete form data', () => {
     const name = 'foo'
     const urlTemplate = 'http://domain.tld'
+    const configurationTemplate = 'foobarbaz'
+    const contentType = 'FORM_URL_ENCODED'
 
     cy.wrap({
         type: 'http',
         name,
         urlTemplate,
+        configurationTemplate,
+        contentType,
         parameters: [],
     }).as('gatewayData')
 
-    cy.get('{forms-fieldname} input').type(name)
-    cy.get('{forms-fieldurltemplate} input').type(urlTemplate)
+    cy.get('{gateways-fieldgatewayname} input').type(name)
+    cy.get('{gateways-fieldgatewayurltemplate} input').type(urlTemplate)
+    cy.get('{gateways-fieldgatewayconfigurationtemplate} input').type(
+        configurationTemplate
+    )
+
+    cy.get('{gateways-fieldgatewaycontenttype-content}').click()
+    cy.get(`[data-value="${contentType}"]`).click()
 })
 
 When('the user fills in incomplete form data', () => {
-    cy.get('{forms-fieldname} input').type('Name')
-    cy.get('{forms-fieldurltemplate}').as('missingFields')
+    cy.get('{gateways-fieldgatewayname} input').type('Name')
+    cy.get('{gateways-fieldgatewayurltemplate}').as('missingFields')
 })
 
 When('the user submits', () => {
@@ -91,8 +105,12 @@ Then('the add gateway form should be displayed', () => {
 
 Then('the default gateway type is "generic"', () => {
     cy.get(
-        '{views-gatewayconfigformnew-gatewaytype} [data-test="dhis2-uicore-singleselect"]'
-    ).should('contain', 'Generic form')
+        '{views-gatewayconfigformnew-gatewaytype} {views-gatewayconfigformnew-gatewaytype-content}'
+    ).should('exist')
+
+    cy.get(
+        '{views-gatewayconfigformnew-gatewaytype} {views-gatewayconfigformnew-gatewaytype-content}'
+    ).should('contain', 'Generic')
 })
 
 Then('the entered data should be sent to the endpoint', () => {
