@@ -36,7 +36,7 @@ msgid "Confirm deletion"
 msgstr "Ўчиришни тасдиқлаш"
 
 msgid "Are you sure you want to delete the selected gateways?"
-msgstr "Танланган йўналишни ўчиришни тасдиқлайсизми?"
+msgstr "Ҳақиқатдан ҳам танланган йўналишни ўчирмоқчимисиз?"
 
 msgid "Auth token"
 msgstr "Калит аутентификацияси"
@@ -150,7 +150,7 @@ msgid "Program stage"
 msgstr "Дастур босқичи"
 
 msgid "Are you sure you want to delete the selected commands?"
-msgstr "танланган буйруқларни ўчиришни хохлайсизми?"
+msgstr "Ҳақиқатдан ҳам танланган буйруқларни ўчирмоқчимисиз?"
 
 msgid "Delete"
 msgstr "Ўчириш"
