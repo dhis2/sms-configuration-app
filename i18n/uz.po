@@ -31,6 +31,8 @@ msgid ""
 "Please make sure the value of this input matches the value in "
 "\"{{otherField}}\"."
 msgstr ""
+"Ушбу ёзувнинг қиймати \"{{otherField}}\" даги қийматга мос келишига ишонч "
+"ҳосил қилинг."
 
 msgid "Confirm deletion"
 msgstr "Ўчиришни тасдиқлаш"
@@ -42,25 +44,25 @@ msgid "Auth token"
 msgstr "Калит аутентификацияси"
 
 msgid "Configuration template"
-msgstr ""
+msgstr "Конфигурация шаблони"
 
 msgid "Please refer to the documentation for possible values"
-msgstr ""
+msgstr "Муммкин бўлган қийматлар учун ҳужжатларга мурожжаат қилинг"
 
 msgid "Application/json"
-msgstr ""
+msgstr "Илова/json"
 
 msgid "Application/xml"
-msgstr ""
+msgstr "Илова/xml"
 
 msgid "Form url encoded"
-msgstr ""
+msgstr "Шаклдаги URL кодланган"
 
 msgid "Plain text"
-msgstr ""
+msgstr "Оддий матн"
 
 msgid "Content type"
-msgstr ""
+msgstr "Таркиб тури"
 
 msgid "Name"
 msgstr "Исми"
@@ -69,19 +71,19 @@ msgid "Password"
 msgstr "Парол"
 
 msgid "Confirm password"
-msgstr ""
+msgstr "Парлни тасдиқланг"
 
 msgid "Send url parameters"
-msgstr ""
+msgstr "URL параметрларини юборинг"
 
 msgid "Url template"
 msgstr "URL шаблони"
 
 msgid "Use GET"
-msgstr ""
+msgstr "GET дан фойдаланинг"
 
 msgid "Use GET instead of POST to send data to gateway"
-msgstr ""
+msgstr "Маълумотларни шлюзга юбориш учун POST ўрнига GET дан фойдаланинг"
 
 msgid "User name"
 msgstr "Фойдаланувчи Исми"
@@ -138,7 +140,7 @@ msgid "BulkSMS"
 msgstr "Оммавий SMS"
 
 msgid "Clickatell"
-msgstr ""
+msgstr "Clickatell"
 
 msgid "Generic"
 msgstr "Умумий"
@@ -192,7 +194,7 @@ msgid "No user message"
 msgstr "Фойдаланувчига хабар йўқ"
 
 msgid "Parser"
-msgstr ""
+msgstr "Айрим"
 
 msgid "Field separator"
 msgstr "Майдон ажратгич"
@@ -255,25 +257,25 @@ msgid "Do not mark as complete"
 msgstr "Тугалланган деб белгиламанг"
 
 msgid "Key value parser"
-msgstr ""
+msgstr "Калит қийматни таҳлил қилувчи"
 
 msgid "J2ME parser"
-msgstr ""
+msgstr "J2ME ни таҳлил қилиш"
 
 msgid "Alert parser"
-msgstr ""
+msgstr "Огоҳлатиришни таҳлил қилиш"
 
 msgid "Unregistered parser"
-msgstr ""
+msgstr "Рўйхатдан ўтмаган таҳлилчи"
 
 msgid "Tracked entity registration parser"
-msgstr ""
+msgstr "Кузатувдаги шахсни рўйхатдан ўтказилишини таҳлил қилувчи"
 
 msgid "Program stage data entry parser"
-msgstr ""
+msgstr "Дастур босқичлари маълумотларини киритилишини таҳлил қилувчи"
 
 msgid "Event registration parser"
-msgstr ""
+msgstr "Ҳодиса/Тадбирни рўйхатга олинишини таҳлил қилувчи"
 
 msgid "Duplicate value!"
 msgstr "Қиймат такрорланиши!"
@@ -294,16 +296,16 @@ msgid "Something went wrong whilst saving gateways"
 msgstr "Йўлакларни сақлашда хатолик юз берди"
 
 msgid "Gateway not found"
-msgstr ""
+msgstr "Шлюз топилмади"
 
 msgid "The requested gateway could not be loaded"
-msgstr ""
+msgstr "Сўралган шлюзни юклаб бўлмади"
 
 msgid "Something went wrong whilst saving the gateway"
-msgstr ""
+msgstr "Шлюзни сақлаш пайтида хатолик юз берди"
 
 msgid "Something went wrong whilst performing the requested operation"
-msgstr ""
+msgstr "Сўралган операцияни бажаришда хатолик юз берди"
 
 msgid ""
 "An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
@@ -312,28 +314,35 @@ msgid ""
 "all gateways if there are multiple available. Read about gateway "
 "configuration in the DHIS2 documentation."
 msgstr ""
+"СМС-шлюз DHIS2 инстанциясида СМС хабарларни юбориш ва қабул қилишга имкон "
+"беради. Қуйида турли хил шлюзлар қўшилиши ва созланиши мумкин. СМС "
+"хабарларни юбориш ва қабул қилиш учун камида битта шлюз керак. Агарда бир "
+"нечта шлюз тури мавжуд бўлса, жжараённи мувозанатлаштириш учун барча "
+"шлюзлардан фойдалиш лозим. DHIS2 ҳужжатларида шлюз созламалари ҳақида ўқинг."
 
 msgid "Delete selected"
 msgstr "Танланган ўчирилчин"
 
 msgid "No gateways found"
-msgstr ""
+msgstr "Ҳеч қандай шлюз топилмади"
 
 msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
-msgstr ""
+msgstr "Ҳеч қандай шлюзлар мавжуд эмас, ёки уларни юклаб бўлмади."
 
 msgid "Overview: SMS Configuration"
-msgstr ""
+msgstr "Умумий нуқтаи наза: СМС созламаси"
 
 msgid ""
 "Configure settings for SMS sending, receiving, data reporting, alerts, "
 "registration and more."
 msgstr ""
+"СМС юбориш, қабул қилиш, маълумотлар ҳақида хабар бериш, огоҳлантиришлар, "
+"қайд қилиш ва бошқалар учун созламаларни созланг."
 
 msgid "Gateway Configuration"
-msgstr ""
+msgstr "Шлюз конфигурацияси"
 
 msgid ""
 "Add and manage gateways for sending and receiving SMS messages in DHIS2."
@@ -341,10 +350,10 @@ msgstr ""
 "DHIS2 да SMS-хабарларни юбориш ва олиш учун йўлакларни қўшинг ва бошқаринг"
 
 msgid "Set up gateways"
-msgstr ""
+msgstr "Шлюзларни ўрнатинг"
 
 msgid "SMS Commands"
-msgstr ""
+msgstr "СМС буйруқлар"
 
 msgid ""
 "Add and manage commands triggered by incoming SMS messages to register, "
@@ -444,7 +453,7 @@ msgid "Processing"
 msgstr "Қайта ишлаш"
 
 msgid "Sent"
-msgstr ""
+msgstr "Юборилди"
 
 msgid "Unhandled"
 msgstr ""
@@ -462,7 +471,7 @@ msgid "Error"
 msgstr "Хато"
 
 msgid "Outbound"
-msgstr ""
+msgstr "Чиқувчи"
 
 msgid "Pending"
 msgstr "Кутилмоқда"
