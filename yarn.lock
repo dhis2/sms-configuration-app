@@ -2031,10 +2031,10 @@
   dependencies:
     prop-types "^15"
 
-"@dhis2/prop-types@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/prop-types/-/prop-types-2.0.0.tgz#681f0d358cec4829e675e1db96c71c38469bb34e"
-  integrity sha512-gL7KkGu0ytWfFXWigIsS8Rm8Ix1IesPakIs4DqqDlz14NGiwU/Pc+mHc/0iXru/AQ++XYUBpsWf91ni8nGXarA==
+"@dhis2/prop-types@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/prop-types/-/prop-types-2.0.1.tgz#229e6d8e7b6235aa7a88c4d6213178f9d8a8c1d8"
+  integrity sha512-JFYchgh1CpQP1K7csCYXtSJaQcjpWz0WPPIoXgMq0yr6FL9WHzUrqudD2nRujOippNDYmKXqdUVp2WA0ZB1itA==
   dependencies:
     prop-types "^15"
 
