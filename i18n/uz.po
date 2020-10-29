@@ -363,7 +363,7 @@ msgstr ""
 "буйруқларни қўшинг ва бошқаринг"
 
 msgid "Set up SMS commands"
-msgstr ""
+msgstr "СМС буйруқлар сифатида ўрнатинг"
 
 msgid "Sent SMS messages"
 msgstr "SMS хабарлар юборилди"
@@ -372,7 +372,7 @@ msgid "Open logs of all SMS messages sent from DHIS2."
 msgstr "DHIS2 дан юборилган барча SMS-хабарлар журналини очиш"
 
 msgid "View all sent SMS"
-msgstr ""
+msgstr "Барча жўнатилган СМСларни кўриб чиқиш"
 
 msgid "Received SMS messages"
 msgstr "Қабул қилинган SMS-хабарлар"
@@ -381,13 +381,13 @@ msgid "Open logs of all SMS messages received by DHIS2."
 msgstr "DHIS2 томонидан қабул қилинган барча SMS-хабарлар журналини очиш"
 
 msgid "View all received SMS"
-msgstr ""
+msgstr "Барча қабул қилинган СМСларни кўриб чиқиш"
 
 msgid "Filter by status"
-msgstr ""
+msgstr "Ҳолатига қараб фильтрлаш"
 
 msgid "Filter by phone number"
-msgstr ""
+msgstr "Телефон рақамига қараб фильтрлаш"
 
 msgid "Filter"
 msgstr "Фильтр"
@@ -396,10 +396,10 @@ msgid "Show"
 msgstr "Кўрсатинг"
 
 msgid "per page"
-msgstr ""
+msgstr "ҳар саҳифада"
 
 msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr ""
+msgstr "Кўриниш {{Жами}} дан {{ДастлабкиЭлемент}}-{{ОхиргиЭлемент}} "
 
 msgid "Previous"
 msgstr "Олдинги"
@@ -408,13 +408,13 @@ msgid "Page"
 msgstr "Саҳифа"
 
 msgid "of {{pageCount}}"
-msgstr ""
+msgstr "{{pageCount}} га/дан"
 
 msgid "Next"
 msgstr "Кейинги"
 
 msgid "Something went wrong whilst loading received SMSes"
-msgstr ""
+msgstr "SMSлар юкланишида хатолик юз берди"
 
 msgid "Message"
 msgstr "Хабар"
@@ -429,10 +429,10 @@ msgid "Sender"
 msgstr "Юборувчи"
 
 msgid "Received"
-msgstr ""
+msgstr "Қабул қилинди"
 
 msgid "No SMSes to display"
-msgstr ""
+msgstr "Кўрсатиш учун СМСлар йўқ"
 
 msgid "Unknown"
 msgstr "Номаълум"
@@ -444,10 +444,10 @@ msgid "Failed"
 msgstr "Амалга ошмади"
 
 msgid "Incoming"
-msgstr ""
+msgstr "Кирувчи"
 
 msgid "Processed"
-msgstr ""
+msgstr "Қайта ишланган"
 
 msgid "Processing"
 msgstr "Қайта ишлаш"
@@ -456,16 +456,16 @@ msgid "Sent"
 msgstr "Юборилди"
 
 msgid "Unhandled"
-msgstr ""
+msgstr "Қайта ишланмаган"
 
 msgid "Something went wrong whilst loading sent SMSes"
-msgstr ""
+msgstr "SMSлар юборилишида хатолик юз берди"
 
 msgid "Recipients"
-msgstr ""
+msgstr "Қабул қилувчилар"
 
 msgid "Delivered"
-msgstr ""
+msgstr "Жўнатилди"
 
 msgid "Error"
 msgstr "Хато"
@@ -480,25 +480,25 @@ msgid "Scheduled"
 msgstr "Режа бўйича"
 
 msgid "Something went wrong whilst loading commands"
-msgstr ""
+msgstr "Буйруқлар юкланишида хатолик юз берди"
 
 msgid "Edit command"
-msgstr ""
+msgstr "Буйруқни таҳрирланг"
 
 msgid "Unrecognised parser type"
-msgstr ""
+msgstr "Танилмаган таҳлилчи тури"
 
 msgid "Could not find the requested parser type"
-msgstr ""
+msgstr "Сўралган таҳлилчи турини топиб бўлмади"
 
 msgid "Add command"
-msgstr ""
+msgstr "Буйруқни киритинг"
 
 msgid "Automatically selected by selecting a program"
-msgstr ""
+msgstr "Танланган дастурдан автоматик танланди"
 
 msgid "Commands"
-msgstr ""
+msgstr "Буйруқлар"
 
 msgid ""
 "SMS commands process SMS messages received by a DHIS2 instance, taking "
@@ -507,9 +507,14 @@ msgid ""
 "configure SMS commands below. Read about SMS commands in the DHIS2 "
 "documentation."
 msgstr ""
+"DHIS2 плтформаси СМС хабарлар томонидан олинган СМС буйруқларни қайта "
+"ишлайди, буйруқлар ва хабарлар таркибига қараб муайян харакатларни амалга "
+"оширади. Маълумотларни қайта ишлаш ва ишлов бериш учун бир нечта СМС "
+"буйруқлар ўрнатилиши мумкин. Қуйида СМС буйруқларни қўшинг ва созланг. СМС "
+"буйруқлари ҳақида DHIS2 ҳужжатларида ўқинг."
 
 msgid "Sms command"
-msgstr ""
+msgstr "СМС буйруқлар"
 
 msgid "No commands to display"
-msgstr ""
+msgstr "Буйруқлар дисплейга чиқарилмасин"
