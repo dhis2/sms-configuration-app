@@ -41,10 +41,9 @@ const query = {
             if (status && status !== STATUS_ALL) {
                 filters.push(`smsstatus:eq:${status}`)
             }
-            const filterParams = filters.join('&')
 
-            if (filterParams) {
-                params.filter = filterParams
+            if (filters.length > 0) {
+                params.filter = filters
             }
 
             return params
