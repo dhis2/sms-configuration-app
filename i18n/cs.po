@@ -96,7 +96,7 @@ msgid "Add gateway"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 msgid "Gateway setup"
 msgstr ""
