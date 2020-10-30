@@ -24,7 +24,7 @@
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^5.2.0",
         "@dhis2/cli-style": "^7.0.0",
-        "@dhis2/cli-utils-cypress": "^2.2.1",
+        "@dhis2/cli-utils-cypress": "^3.0.2",
         "@testing-library/react-hooks": "^3.3.0",
         "react-test-renderer": "^16.13.1"
     },
