@@ -66,7 +66,7 @@ msgid "Name"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 msgid "Confirm password"
 msgstr ""
@@ -84,7 +84,7 @@ msgid "Use GET instead of POST to send data to gateway"
 msgstr ""
 
 msgid "User name"
-msgstr ""
+msgstr "Uživatelské jméno"
 
 msgid "Add key value pair"
 msgstr ""
@@ -192,7 +192,7 @@ msgid "No user message"
 msgstr ""
 
 msgid "Parser"
-msgstr ""
+msgstr "Analyzátor"
 
 msgid "Field separator"
 msgstr ""
@@ -343,7 +343,7 @@ msgid "Set up gateways"
 msgstr ""
 
 msgid "SMS Commands"
-msgstr ""
+msgstr "SMS příkazy"
 
 msgid ""
 "Add and manage commands triggered by incoming SMS messages to register, "
@@ -411,7 +411,7 @@ msgid "Phone number"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "Stav"
 
 msgid "Sender"
 msgstr ""
@@ -426,7 +426,7 @@ msgid "Unknown"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Vše"
 
 msgid "Failed"
 msgstr ""
@@ -480,7 +480,7 @@ msgid "Could not find the requested parser type"
 msgstr ""
 
 msgid "Add command"
-msgstr ""
+msgstr "Přidat příkaz"
 
 msgid "Automatically selected by selecting a program"
 msgstr ""
