@@ -144,7 +144,7 @@ msgid "Generic"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Program stage"
 msgstr ""
@@ -204,7 +204,7 @@ msgid "Special character value"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Odebrat"
 
 msgid "Success message"
 msgstr ""
@@ -378,7 +378,7 @@ msgid "Filter by phone number"
 msgstr ""
 
 msgid "Filter"
-msgstr ""
+msgstr "Filtr"
 
 msgid "Show"
 msgstr ""
