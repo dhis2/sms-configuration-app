@@ -67,10 +67,10 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
     }
 
     const options = data.map(dataElement => {
-        const { code, displayName } = dataElement
+        const { id, displayName } = dataElement
 
         return {
-            value: code,
+            value: id,
             label: displayName,
         }
     })
