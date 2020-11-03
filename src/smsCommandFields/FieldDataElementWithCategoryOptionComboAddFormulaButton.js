@@ -10,11 +10,8 @@ const { useField } = ReactFinalForm
 const DATA_ELEMENTS_QUERY = {
     dataElement: {
         resource: 'dataElements',
-        params: ({ code }) => ({
-            filter: `code:eq:${code}`,
-            fields: 'displayName',
-            paging: 'false',
-        }),
+        id: ({ id }) => id,
+        params: () => ({ fields: 'displayName' }),
     },
 }
 
@@ -34,29 +31,29 @@ export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
 
     const { formula, code } = smsCode
     const operator = formula && formula[0]
-    const dataElementCode = formula && formula.slice(1)
+    const dataElementId = formula && formula.slice(1)
 
     useEffect(() => {
-        if (!called && dataElementCode) {
+        if (!called && dataElementId) {
             setLoading(true)
             setCalled(true)
 
             engine
                 .query(DATA_ELEMENTS_QUERY, {
-                    variables: { code: dataElementCode },
+                    variables: { id: dataElementId },
                 })
                 .then(response => {
-                    const [{ displayName }] = response.dataElement.dataElements
+                    const { displayName } = response.dataElement
                     setFormulaDataElementName(displayName)
                 })
                 .finally(() => setLoading(false))
         }
-    }, [dataElementCode, called])
+    }, [dataElementId, called])
 
     return (
         <>
             {loading && i18n.t('Loading formula')}
-            {code && formulaDataElementName && (
+            {code && formula && formulaDataElementName && (
                 <span className={styles.formulaInWords}>
                     <span className={styles.formulaInWordsLabel}>
                         {i18n.t('Formula')}:
