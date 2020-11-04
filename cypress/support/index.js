@@ -61,7 +61,6 @@ const handleLogin = () => {
         // It also ensures that the value from the cypress env is used instead of REACT_APP_DHIS2_BASE_URL
         const baseUrl = getApiBaseUrl()
         localStorage.setItem('DHIS2_BASE_URL', baseUrl)
-        console.log('localStorage', localStorage)
     })
 }
 
