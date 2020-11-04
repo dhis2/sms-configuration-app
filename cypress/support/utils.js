@@ -29,3 +29,17 @@ export const isStubMode = () =>
     Cypress.env('dhis2_api_stub_mode') === API_STUB_MODES.STUB
 
 export const getFileName = () => NETWORK_FIXTURES_FILE_PATH
+
+function extractTitles(obj, titles) {
+    if ('parent' in obj) {
+        titles.push(obj.title)
+        return extractTitles(obj.parent, titles)
+    }
+
+    return titles
+}
+
+export const getFullTestName = () =>
+    extractTitles(Cypress.mocha.getRunner().suite.ctx.test, [])
+        .reverse()
+        .join(' -- ')
