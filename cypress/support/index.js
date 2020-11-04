@@ -1,4 +1,5 @@
 import '@dhis2/cli-utils-cypress/support'
+import { enableNetworkShim } from './enableNetworkShim.js'
 import './all.js'
 
 Cypress.Commands.add('visitWhenStubbed', (url, options = {}) => {
@@ -65,3 +66,5 @@ const handleLogin = () => {
 }
 
 handleLogin()
+
+enableNetworkShim()
