@@ -408,7 +408,7 @@ msgid "Message"
 msgstr ""
 
 msgid "Phone number"
-msgstr ""
+msgstr "Telefonní číslo"
 
 msgid "Status"
 msgstr "Stav"
