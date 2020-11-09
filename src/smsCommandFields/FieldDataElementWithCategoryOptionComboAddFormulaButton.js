@@ -21,7 +21,6 @@ export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
     disabled,
 }) => {
     const engine = useDataEngine()
-    const [called, setCalled] = useState(false)
     const [loading, setLoading] = useState(false)
     const [formulaDataElementName, setFormulaDataElementName] = useState('')
 
@@ -34,9 +33,8 @@ export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
     const dataElementId = formula && formula.slice(1)
 
     useEffect(() => {
-        if (!called && dataElementId) {
+        if (dataElementId) {
             setLoading(true)
-            setCalled(true)
 
             engine
                 .query(DATA_ELEMENTS_QUERY, {
@@ -48,20 +46,19 @@ export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
                 })
                 .finally(() => setLoading(false))
         }
-    }, [dataElementId, called])
+    }, [dataElementId])
 
     return (
         <>
-            {loading && i18n.t('Loading formula')}
             {code && formula && formulaDataElementName && (
                 <span className={styles.formulaInWords}>
                     <span className={styles.formulaInWordsLabel}>
                         {i18n.t('Formula')}:
                     </span>
 
-                    {code}
-                    {` ${operator} `}
-                    {formulaDataElementName}
+                    {loading && i18n.t('Loading formula')}
+                    {!loading &&
+                        `${code} ${operator} ${formulaDataElementName}`}
                 </span>
             )}
 
