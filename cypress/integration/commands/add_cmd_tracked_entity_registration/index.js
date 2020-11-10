@@ -1,43 +1,5 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const programs = [
-    {
-        id: 'lxAQ7Zs9VYR',
-        displayName: 'Antenatal care visit',
-    },
-    {
-        id: 'kla3mAPgvCH',
-        displayName: 'Contraceptives Voucher Program',
-    },
-    {
-        id: 'q04UBOqq3rp',
-        displayName: 'Information Campaign',
-    },
-    {
-        id: 'eBAyeGv0exc',
-        displayName: 'Inpatient morbidity and mortality',
-    },
-    {
-        id: 'VBqh0ynB2wv',
-        displayName: 'Malaria case registration',
-    },
-    {
-        id: 'bMcwwoVnbSR',
-        displayName: 'Malaria testing and surveillance',
-    },
-    {
-        id: 'MoUd5BTQ3lY',
-        displayName: 'XX MAL RDT - Case Registration',
-    },
-]
-
-const programStages = [
-    {
-        id: 'dBwrot7S420',
-        displayName: 'Antenatal care visit - Program rules demo',
-    },
-]
-
 Before(() => {
     cy.server()
 
@@ -52,13 +14,15 @@ Before(() => {
     cy.route({
         url: /.*\/programs/,
         method: 'GET',
-        response: { programs },
+        response:
+            'fixture:commands/add_cmd_tracked_entity_registration/programs',
     }).as('programsXhr')
 
     cy.route({
         url: /.*\/programStages/,
         method: 'GET',
-        response: { programStages },
+        response:
+            'fixture:commands/add_cmd_tracked_entity_registration/programStages',
     }).as('programStagesXhr')
 })
 
@@ -85,11 +49,15 @@ When('the user enters the name', () => {
 })
 
 When('the user chooses a program', () => {
-    const program = programs[0]
-    cy.wrap(program).as('selectedProgram')
+    cy.fixture('commands/add_cmd_tracked_entity_registration/programs').then(
+        ({ programs }) => {
+            const program = programs[0]
+            cy.wrap(program).as('selectedProgram')
 
-    cy.get('{forms-fieldprogram}').click()
-    cy.get(`[data-value="${program.id}"]`).click()
+            cy.get('{forms-fieldprogram}').click()
+            cy.get(`[data-value="${program.id}"]`).click()
+        }
+    )
 })
 
 When('the user submits the form', () => {
