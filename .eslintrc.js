@@ -7,5 +7,6 @@ module.exports = {
         after: "readonly",
         before: "readonly",
         cy: "readonly",
-    }
+        assert: "readonly",
+    },
 }
