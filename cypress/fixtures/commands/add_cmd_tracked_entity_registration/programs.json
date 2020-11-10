@@ -1,0 +1,32 @@
+{
+    "programs": [
+        {
+            "id": "lxAQ7Zs9VYR",
+            "displayName": "Antenatal care visit"
+        },
+        {
+            "id": "kla3mAPgvCH",
+            "displayName": "Contraceptives Voucher Program"
+        },
+        {
+            "id": "q04UBOqq3rp",
+            "displayName": "Information Campaign"
+        },
+        {
+            "id": "eBAyeGv0exc",
+            "displayName": "Inpatient morbidity and mortality"
+        },
+        {
+            "id": "VBqh0ynB2wv",
+            "displayName": "Malaria case registration"
+        },
+        {
+            "id": "bMcwwoVnbSR",
+            "displayName": "Malaria testing and surveillance"
+        },
+        {
+            "id": "MoUd5BTQ3lY",
+            "displayName": "XX MAL RDT - Case Registration"
+        }
+    ]
+}
