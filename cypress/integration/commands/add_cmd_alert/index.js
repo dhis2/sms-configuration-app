@@ -1,27 +1,18 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const userGroups = [
-    { id: 'wl5cDMuUhmF', displayName: 'Administrators' },
-    { id: 'vAvEltyXGbD', displayName: 'Africare HQ' },
-    { id: 'ZoHNWQajIoe', displayName: 'Bo District M&E officers' },
-    { id: 'th4S6ovwcr8', displayName: 'Bonthe District M&E Officers' },
-]
-
 Before(() => {
     cy.server()
 
     cy.route({
         url: /.*\/smsCommands/,
         method: 'POST',
-        response: {
-            commands: [],
-        },
+        response: { commands: [] },
     }).as('createSmsCommandXhr')
 
     cy.route({
         url: /.*\/userGroups/,
         method: 'GET',
-        response: { userGroups },
+        response: 'fixture:commands/add_cmd_alert/userGroups',
     })
 })
 
@@ -47,8 +38,10 @@ When('the user leaves the name empty', () => {
 })
 
 When('the user chooses a user group', () => {
-    cy.get('{forms-fieldusergroup}').click()
-    cy.get(`[data-value="${userGroups[0].id}"]`).click()
+    cy.fixture('commands/add_cmd_alert/userGroups').then(({ userGroups }) => {
+        cy.get('{forms-fieldusergroup}').click()
+        cy.get(`[data-value="${userGroups[0].id}"]`).click()
+    })
 })
 
 When('the user leaves the user group field empty', () => {

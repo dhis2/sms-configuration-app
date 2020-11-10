@@ -1,24 +1,25 @@
-Feature: The user can add a new alert parser sms command
+Feature: Alert parsers can be edited
 
-    Scenario: The user successfully adds a new command
-        Given the user is adding a new alert parser sms command
-        When the user enters the name
-        And the user chooses a user group
+    Scenario Outline: The user edits some fields
+        Given the user is editing an alert parser command
+        When the user changes the <name> field
         And the user submits the form
-        Then the data should be sent successfully
+        Then the complete command should be sent to the endpoint
+        And the value of the changed <name> field should be reflected in the payload
 
-    Scenario: The user does not provide a name
-        Given the user is adding a new alert parser sms command
-        When the user chooses a user group
-        But the user leaves the name empty
-        And the user submits the form
-        Then the form should not submit
-        And display an error message on the name field
+        Examples:
+            | name |
+            | name |
+            | confirmMessage |
 
-    Scenario: The user does not provide a user group
-        Given the user is adding a new alert parser sms command
-        When the user enters the name
-        But the user leaves the user group field empty
+    Scenario Outline: The user provides an invalid value
+        Given the user is editing an alert parser command
+        When the user changes the <name> field to an invalid value
         And the user submits the form
-        Then the form should not submit
-        And display an error message on the user group field
+        Then the form should not submit successfully
+
+        # the confirm message is optional and could be anything,
+        # so it's left out
+        Examples:
+            | name |
+            | name |
