@@ -1,47 +1,5 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const programs = [
-    {
-        id: 'lxAQ7Zs9VYR',
-        displayName: 'Antenatal care visit',
-    },
-    {
-        id: 'kla3mAPgvCH',
-        displayName: 'Contraceptives Voucher Program',
-    },
-    {
-        id: 'q04UBOqq3rp',
-        displayName: 'Information Campaign',
-    },
-    {
-        id: 'eBAyeGv0exc',
-        displayName: 'Inpatient morbidity and mortality',
-    },
-    {
-        id: 'VBqh0ynB2wv',
-        displayName: 'Malaria case registration',
-    },
-    {
-        id: 'bMcwwoVnbSR',
-        displayName: 'Malaria testing and surveillance',
-    },
-    {
-        id: 'MoUd5BTQ3lY',
-        displayName: 'XX MAL RDT - Case Registration',
-    },
-]
-
-const programStages = [
-    {
-        id: 'ZzYYXq4fJie',
-        displayName: 'Baby Postnatal',
-    },
-    {
-        id: 'A03MvHHogjR',
-        displayName: 'Birth',
-    },
-]
-
 Before(() => {
     cy.server()
 
@@ -56,13 +14,14 @@ Before(() => {
     cy.route({
         url: /.*\/programs/,
         method: 'GET',
-        response: { programs },
+        response: 'fixture:commands/add_cmd_program_stage_data_entry/programs',
     }).as('programsXhr')
 
     cy.route({
         url: /.*\/programStages/,
         method: 'GET',
-        response: { programStages },
+        response:
+            'fixture:commands/add_cmd_program_stage_data_entry/programStages',
     }).as('programStagesXhr')
 })
 
@@ -95,19 +54,27 @@ When('the user enters the name', () => {
 })
 
 When('the user chooses a program', () => {
-    const program = programs[0]
-    cy.wrap(program).as('selectedProgram')
+    cy.fixture('commands/add_cmd_program_stage_data_entry/programs').then(
+        ({ programs }) => {
+            const program = programs[0]
+            cy.wrap(program).as('selectedProgram')
 
-    cy.get('{forms-fieldprogram}').click()
-    cy.get(`[data-value="${program.id}"]`).click()
+            cy.get('{forms-fieldprogram}').click()
+            cy.get(`[data-value="${program.id}"]`).click()
+        }
+    )
 })
 
 When('the user chooses a program stage', () => {
-    const programStage = programStages[0]
-    cy.wrap(programStage).as('selectedProgramStage')
+    cy.fixture('commands/add_cmd_program_stage_data_entry/programStages').then(
+        ({ programStages }) => {
+            const programStage = programStages[0]
+            cy.wrap(programStage).as('selectedProgramStage')
 
-    cy.get('{forms-fieldprogramstage}').click()
-    cy.get(`[data-value="${programStage.id}"]`).click()
+            cy.get('{forms-fieldprogramstage}').click()
+            cy.get(`[data-value="${programStage.id}"]`).click()
+        }
+    )
 })
 
 When('the user submits the form', () => {
