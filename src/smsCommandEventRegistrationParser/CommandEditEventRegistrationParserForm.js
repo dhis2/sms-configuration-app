@@ -35,6 +35,7 @@ import { FormRow } from '../forms'
 import { FieldProgram } from '../program'
 import { FieldProgramStage } from '../programStage'
 import { PageSubHeadline } from '../headline'
+import { dataTest } from '../dataTest'
 import { useReadSmsCommandEventRegistrationParserQuery } from './useReadSmsCommandEventRegistrationParserQuery'
 import i18n from '../locales'
 
@@ -140,7 +141,12 @@ export const CommandEditEventRegistrationParserForm = ({
         >
             {({ handleSubmit, values, pristine }) => {
                 return (
-                    <form onSubmit={handleSubmit}>
+                    <form
+                        onSubmit={handleSubmit}
+                        data-test={dataTest(
+                            'smscommandeventregistrationparser-commandediteventregistrationparserform'
+                        )}
+                    >
                         <FormRow>
                             <FieldCommandName />
                         </FormRow>

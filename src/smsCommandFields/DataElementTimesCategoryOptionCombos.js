@@ -5,18 +5,27 @@ import { FieldDataElementWithCategoryOptionCombo } from './FieldDataElementWithC
 import { DataElementTimesCategoryOptionCombosCompletenessMessage } from './DataElementTimesCategoryOptionCombosCompletenessMessage'
 import { FormRow } from '../forms'
 import { PageSubHeadline } from '../headline'
+import { dataTest } from '../dataTest'
 import i18n from '../locales'
 import styles from './DataElementTimesCategoryOptionCombos.module.css'
 
 export const DataElementTimesCategoryOptionCombos = ({
     DE_COC_combinations,
 }) => (
-    <div>
+    <div
+        data-test={dataTest(
+            'smscommandfields-dataelementtimescategoryoptioncombos'
+        )}
+    >
         <PageSubHeadline>{i18n.t('SMS short codes')}</PageSubHeadline>
 
         <DataElementTimesCategoryOptionCombosCompletenessMessage />
 
-        <div>
+        <div
+            data-test={dataTest(
+                'smscommandfields-dataelementtimescategoryoptioncombos-rows'
+            )}
+        >
             {DE_COC_combinations.map(({ dataElement, categoryOptionCombo }) => {
                 return (
                     <FormRow

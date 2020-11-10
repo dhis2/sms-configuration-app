@@ -158,7 +158,7 @@ export const SmsCommandList = () => {
                 />
             )}
 
-            <Table>
+            <Table dataTest={dataTest('views-smscommandlist-commandtable')}>
                 <TableHead>
                     <TableRowHead>
                         <TableCellHead>

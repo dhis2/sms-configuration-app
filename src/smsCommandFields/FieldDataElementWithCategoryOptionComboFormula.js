@@ -16,6 +16,7 @@ import React, { useMemo } from 'react'
 
 import { FIELD_DATA_SET_NAME } from '../dataSet'
 import { FormRow } from '../forms'
+import { dataTest } from '../dataTest'
 import { useReadDataElementsOfDataSetQuery } from '../dataElement'
 import i18n from '../locales'
 
@@ -58,9 +59,13 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
         dataElementCode: initialDataElementCode,
     }
 
+    const modalDataTest = dataTest(
+        'smscommandfields-fielddataelementwithcategoryoptioncomboformula'
+    )
+
     if (loading) {
         return (
-            <Modal>
+            <Modal dataTest={modalDataTest}>
                 <CircularLoader />
             </Modal>
         )
@@ -89,7 +94,7 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
     return (
         <Form onSubmit={onSubmit} initialValues={initialValues}>
             {({ handleSubmit }) => (
-                <Modal>
+                <Modal dataTest={modalDataTest}>
                     <form
                         onSubmit={event => {
                             event.stopPropagation()
@@ -103,6 +108,9 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
                             <FormRow>
                                 <Field
                                     required
+                                    dataTest={dataTest(
+                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-dataelement'
+                                    )}
                                     name="dataElementCode"
                                     label={i18n.t('Data element')}
                                     component={SingleSelectFieldFF}
@@ -114,6 +122,9 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
                             <FormRow>
                                 <Field
                                     required
+                                    dataTest={dataTest(
+                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-operator'
+                                    )}
                                     name="operator"
                                     label={i18n.t('formula operator')}
                                     component={SingleSelectFieldFF}
@@ -146,15 +157,31 @@ export const FieldDataElementWithCategoryOptionComboFormula = ({
                         </ModalContent>
                         <ModalActions>
                             <ButtonStrip>
-                                <Button onClick={onRemove}>
+                                <Button
+                                    onClick={onRemove}
+                                    dataTest={dataTest(
+                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-remove'
+                                    )}
+                                >
                                     {i18n.t('Remove')}
                                 </Button>
 
-                                <Button onClick={onClose}>
+                                <Button
+                                    onClick={onClose}
+                                    dataTest={dataTest(
+                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-cancel'
+                                    )}
+                                >
                                     {i18n.t('Cancel')}
                                 </Button>
 
-                                <Button type="submit" primary>
+                                <Button
+                                    type="submit"
+                                    primary
+                                    dataTest={dataTest(
+                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-save'
+                                    )}
+                                >
                                     {i18n.t('Save')}
                                 </Button>
                             </ButtonStrip>
