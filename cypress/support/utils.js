@@ -1,7 +1,10 @@
 import {
     API_STUB_MODES,
     DEFAULT_API_STUB_MODE,
-    NETWORK_FIXTURES_FILE_PATH,
+    FIXTURE_MODES,
+    DEFAULT_FIXTURE_MODE,
+    DEFAULT_STATIC_RESOURCES,
+    NETWORK_FIXTURES_DIR,
 } from './constants.js'
 
 export const getApiBaseUrl = () => {
@@ -16,6 +19,8 @@ export const getApiBaseUrl = () => {
     return baseUrl
 }
 
+export const getDefaultHosts = () => [getApiBaseUrl()]
+
 export const getDefaultMode = () =>
     Cypress.env('dhis2_api_stub_mode') || DEFAULT_API_STUB_MODE
 
@@ -28,9 +33,32 @@ export const isCaptureMode = () =>
 export const isStubMode = () =>
     Cypress.env('dhis2_api_stub_mode') === API_STUB_MODES.STUB
 
-export const getFileName = () => NETWORK_FIXTURES_FILE_PATH
+export const getDefaultFixtureMode = () => DEFAULT_FIXTURE_MODE
 
-function extractTitles(obj, titles) {
+export const isStaticFixtureMode = mode => mode === FIXTURE_MODES.STATIC
+
+export const isDynamicFixtureMode = mode => mode === FIXTURE_MODES.DYNAMIC
+
+export const getDefaultStaticResources = () => DEFAULT_STATIC_RESOURCES
+
+export const isStaticResource = (path, staticResources) => {
+    const cleanedPath = path.split('?')[0]
+    return staticResources.some(resourcePath =>
+        cleanedPath.endsWith(resourcePath)
+    )
+}
+
+export const getNetworkFixturesDir = () => NETWORK_FIXTURES_DIR
+
+export const splitHostAndPath = (url, hosts) => {
+    console.log(url)
+    const host = hosts.find(host => url.indexOf(host) === 0)
+    const path = url.substr(host.length)
+
+    return { host, path }
+}
+
+const extractTitles = (obj, titles) => {
     if ('parent' in obj) {
         titles.push(obj.title)
         return extractTitles(obj.parent, titles)

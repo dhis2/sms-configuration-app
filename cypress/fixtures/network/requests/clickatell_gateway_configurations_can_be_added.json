@@ -1,0 +1,78 @@
+[
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Clickatell Gateway configurations can be added -- The user successfully adds a Clickatell gateway",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[]}",
+    "responseSize": 15,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "15",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:21 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways",
+    "testName": "Clickatell Gateway configurations can be added -- The user successfully adds a Clickatell gateway",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "POST",
+    "requestBody": {
+      "type": "clickatell",
+      "name": "Name",
+      "username": "Username",
+      "authToken": "Auth token",
+      "urlTemplate": "http://domain.tld"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:23 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Clickatell Gateway configurations can be added -- The user wants to add a Clickatell gateway but doesn't supply the required data",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[]}",
+    "responseSize": 15,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "15",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:25 GMT",
+      "vary": "Accept-Encoding"
+    }
+  }
+]

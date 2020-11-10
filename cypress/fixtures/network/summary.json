@@ -1,0 +1,17 @@
+{
+  "count": 486,
+  "totalResponseSize": 57281,
+  "duplicates": 367,
+  "nonDeterministicResponses": 5,
+  "fixtureFiles": [
+    "static_resources.json",
+    "bulksms_gateway_configurations_can_be_added.json",
+    "clickatell_gateway_configurations_can_be_added.json",
+    "generic_gateway_configurations_can_be_added.json",
+    "there_is_always_be_a_default_gateway_when_configurations_exist.json",
+    "gateway_configurations_can_be_deleted.json",
+    "generic_gateway_configurations_can_have_custom_key-value_pairs.json",
+    "all_gateways_should_be_listed.json",
+    "generic_gateway_configurations_can_be_edited_and_updated.json"
+  ]
+}

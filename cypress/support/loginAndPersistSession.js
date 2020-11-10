@@ -14,7 +14,7 @@ export const loginAndPersistSession = (mode = getDefaultMode()) => {
         before(() => {
             // Persist this across tests so we don't have to login before each test
             Cypress.Cookies.defaults({
-                whitelist: 'JSESSIONID',
+                preserve: 'JSESSIONID',
             })
             // This will authenticate and set the session cookie
             cy.login()

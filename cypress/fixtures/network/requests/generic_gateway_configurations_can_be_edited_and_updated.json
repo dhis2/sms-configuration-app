@@ -1,0 +1,1545 @@
+[
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user opens the update form of a BulkSMS gateway configuration",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 542,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "542",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:40 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user opens the update form of a BulkSMS gateway configuration",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"}",
+    "responseSize": 197,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "197",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:40 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration (example #1)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 542,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "542",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:41 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"}",
+    "responseSize": 197,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "197",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:42 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "bulksms",
+      "name": "New name value",
+      "username": "Username",
+      "password": "foo"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:43 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration (example #2)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 542,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "542",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:44 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"}",
+    "responseSize": 197,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "197",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:45 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "bulksms",
+      "name": "BulkSMS Gateway",
+      "username": "New user name value",
+      "password": "foo"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:46 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration (example #3)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 542,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "542",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:47 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration (example #3)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"}",
+    "responseSize": 197,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "197",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:48 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration (example #3)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "bulksms",
+      "name": "BulkSMS Gateway",
+      "username": "Username",
+      "password": "New password value"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:49 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration to an invalid value (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 542,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "542",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:51 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration to an invalid value (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"}",
+    "responseSize": 197,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "197",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:51 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration to an invalid value (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 542,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "542",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:54 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration to an invalid value (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"}",
+    "responseSize": 197,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "197",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:55 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration to an invalid value (example #3)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 542,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "542",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:57 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration to an invalid value (example #3)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"}",
+    "responseSize": 197,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "197",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:57 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration to an invalid value (example #4)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 542,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "542",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:59 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first BulkSMS gateway configuration to an invalid value (example #4)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"}",
+    "responseSize": 197,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "197",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:59 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user submits the changes successfully",
+    "static": false,
+    "count": 6,
+    "nonDeterministic": true,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 542,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "542",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:02 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user submits the changes successfully",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": true,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"bulksms\",\"uid\":\"cAYcoWH79E\",\"name\":\"BulkSMS Gateway\",\"username\":\"Username\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.bulksms.com/v1/messages\",\"password\":\"foo\"}",
+    "responseSize": 197,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "197",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:02 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user submits the changes successfully",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "bulksms",
+      "name": "A valid name",
+      "username": "Username",
+      "password": "foo"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:03 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user opens the update form of a Clickatell gateway configuration",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 559,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "559",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:04 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user opens the update form of a Clickatell gateway configuration",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"}",
+    "responseSize": 214,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "214",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:04 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #1)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 559,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "559",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:06 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"}",
+    "responseSize": 214,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "214",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:06 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "clickatell",
+      "name": "New name value",
+      "username": "Username",
+      "authToken": "Auth token",
+      "urlTemplate": "https://api.clickatell.com/v1/messages"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:07 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #2)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 559,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "559",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:09 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"}",
+    "responseSize": 214,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "214",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:09 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "clickatell",
+      "name": "Clickatell Gateway",
+      "username": "New user name value",
+      "authToken": "Auth token",
+      "urlTemplate": "https://api.clickatell.com/v1/messages"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:10 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #3)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 559,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "559",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:11 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #3)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"}",
+    "responseSize": 214,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "214",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:12 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #3)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "clickatell",
+      "name": "Clickatell Gateway",
+      "username": "Username",
+      "authToken": "New auth token value",
+      "urlTemplate": "https://api.clickatell.com/v1/messages"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:13 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #4)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 559,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "559",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:14 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #4)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"}",
+    "responseSize": 214,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "214",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:15 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration (example #4)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "clickatell",
+      "name": "Clickatell Gateway",
+      "username": "Username",
+      "authToken": "Auth token",
+      "urlTemplate": "http://another.domain.tld"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:16 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration to an invalid value (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 559,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "559",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:17 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration to an invalid value (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"}",
+    "responseSize": 214,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "214",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:18 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration to an invalid value (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 559,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "559",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:19 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration to an invalid value (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"}",
+    "responseSize": 214,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "214",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:20 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration to an invalid value (example #3)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 559,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "559",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:21 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration to an invalid value (example #3)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"}",
+    "responseSize": 214,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "214",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:22 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration to an invalid value (example #4)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 559,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "559",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:24 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first Clickatell gateway configuration to an invalid value (example #4)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"clickatell\",\"uid\":\"cAYcoWH79E\",\"name\":\"Clickatell Gateway\",\"username\":\"Username\",\"authToken\":\"Auth token\",\"isDefault\":false,\"sendUrlParameters\":false,\"urlTemplate\":\"https://api.clickatell.com/v1/messages\"}",
+    "responseSize": 214,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "214",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:24 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/cAYcoWH79E",
+    "testName": "Generic gateway configurations can be edited and updated -- The user submits the changes successfully",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "clickatell",
+      "name": "A valid name",
+      "username": "Username",
+      "authToken": "Auth token",
+      "urlTemplate": "https://api.clickatell.com/v1/messages"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:27 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user opens the update form of a generic gateway configuration",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}]}",
+    "responseSize": 626,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "626",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:29 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can be edited and updated -- The user opens the update form of a generic gateway configuration",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}",
+    "responseSize": 209,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "209",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:29 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration (example #1)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}]}",
+    "responseSize": 626,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "626",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:30 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}",
+    "responseSize": 209,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "209",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:31 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "A sample value",
+      "contentType": "FORM_URL_ENCODED",
+      "name": "New name value",
+      "parameters": [],
+      "urlTemplate": "https://a.url.tld",
+      "useGet": false
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:32 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration (example #2)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}]}",
+    "responseSize": 626,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "626",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:33 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}",
+    "responseSize": 209,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "209",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:34 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "A sample value",
+      "contentType": "FORM_URL_ENCODED",
+      "name": "Foobarbaz",
+      "parameters": [],
+      "urlTemplate": "http://another-domain.tld",
+      "useGet": false
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:35 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration (example #3)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}]}",
+    "responseSize": 626,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "626",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:37 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration (example #3)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}",
+    "responseSize": 209,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "209",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:37 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration (example #3)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "A sample value",
+      "contentType": "FORM_URL_ENCODED",
+      "name": "Foobarbaz",
+      "parameters": [
+        {
+          "header": true,
+          "encode": false,
+          "key": "Key One",
+          "value": "Value One",
+          "confidential": false
+        },
+        {
+          "header": false,
+          "encode": false,
+          "key": "Key Two",
+          "value": "Value Two",
+          "confidential": true
+        },
+        {
+          "header": false,
+          "encode": true,
+          "key": "Key Three",
+          "value": "Value Trhee",
+          "confidential": false
+        }
+      ],
+      "urlTemplate": "https://a.url.tld",
+      "useGet": false
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:44 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration to an invalid value (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}]}",
+    "responseSize": 626,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "626",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:46 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration to an invalid value (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}",
+    "responseSize": 209,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "209",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:46 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration to an invalid value (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}]}",
+    "responseSize": 626,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "626",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:48 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can be edited and updated -- The user changes a field in the first generic gateway configuration to an invalid value (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}",
+    "responseSize": 209,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "209",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:48 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can be edited and updated -- The user submits the changes successfully",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"configurationTemplate\":\"A sample value\",\"parameters\":[]}",
+    "responseSize": 209,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "209",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:51 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can be edited and updated -- The user submits the changes successfully",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "A sample value",
+      "contentType": "FORM_URL_ENCODED",
+      "name": "A valid name",
+      "parameters": [],
+      "urlTemplate": "https://a.url.tld",
+      "useGet": false
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:04:52 GMT",
+      "vary": "Accept-Encoding"
+    }
+  }
+]

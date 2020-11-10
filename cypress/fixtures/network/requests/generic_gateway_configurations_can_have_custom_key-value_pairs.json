@@ -1,0 +1,622 @@
+[
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a standard key value pair (example #1)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 593,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "593",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:53 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a standard key value pair (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}",
+    "responseSize": 198,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "198",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:53 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a standard key value pair (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "foo",
+      "contentType": "FORM_URL_ENCODED",
+      "name": "Foobarbaz",
+      "parameters": [
+        {
+          "header": false,
+          "encode": false,
+          "key": "Key",
+          "value": "Value",
+          "confidential": false
+        }
+      ],
+      "urlTemplate": "https://a.url.tld",
+      "useGet": false
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:55 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a standard key value pair (example #2)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 593,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "593",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:56 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a standard key value pair (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "POST",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "Configuration template",
+      "contentType": "APPLICATION_JSON",
+      "name": "Field name",
+      "parameters": [
+        {
+          "header": false,
+          "encode": false,
+          "key": "Key",
+          "value": "Value",
+          "confidential": false
+        }
+      ],
+      "urlTemplate": "http://domain.tld"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:59 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a confidential key value pair (example #1)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 593,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "593",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:01 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a confidential key value pair (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}",
+    "responseSize": 198,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "198",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:01 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a confidential key value pair (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "foo",
+      "contentType": "FORM_URL_ENCODED",
+      "name": "Foobarbaz",
+      "parameters": [
+        {
+          "header": false,
+          "encode": false,
+          "key": "Key",
+          "value": "Value",
+          "confidential": true
+        }
+      ],
+      "urlTemplate": "https://a.url.tld",
+      "useGet": false
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:02 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a confidential key value pair (example #2)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 593,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "593",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:04 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a confidential key value pair (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "POST",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "Configuration template",
+      "contentType": "APPLICATION_JSON",
+      "name": "Field name",
+      "parameters": [
+        {
+          "header": false,
+          "encode": false,
+          "key": "Key",
+          "value": "Value",
+          "confidential": true
+        }
+      ],
+      "urlTemplate": "http://domain.tld"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:07 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a key value pair as header (example #1)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 593,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "593",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:09 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a key value pair as header (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}",
+    "responseSize": 198,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "198",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:09 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a key value pair as header (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "foo",
+      "contentType": "FORM_URL_ENCODED",
+      "name": "Foobarbaz",
+      "parameters": [
+        {
+          "header": true,
+          "encode": false,
+          "key": "Key",
+          "value": "Value",
+          "confidential": false
+        }
+      ],
+      "urlTemplate": "https://a.url.tld",
+      "useGet": false
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:10 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a key value pair as header (example #2)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 593,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "593",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:12 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds a key value pair as header (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "POST",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "Configuration template",
+      "contentType": "APPLICATION_JSON",
+      "name": "Field name",
+      "parameters": [
+        {
+          "header": true,
+          "encode": false,
+          "key": "Key",
+          "value": "Value",
+          "confidential": false
+        }
+      ],
+      "urlTemplate": "http://domain.tld"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:15 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds multiple key value pairs (example #1)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 593,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "593",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:16 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds multiple key value pairs (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}",
+    "responseSize": 198,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "198",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:17 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds multiple key value pairs (example #1)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "foo",
+      "contentType": "FORM_URL_ENCODED",
+      "name": "Foobarbaz",
+      "parameters": [
+        {
+          "header": false,
+          "encode": false,
+          "key": "Key One",
+          "value": "Value One",
+          "confidential": false
+        },
+        {
+          "header": false,
+          "encode": false,
+          "key": "Key Two",
+          "value": "Value Two",
+          "confidential": false
+        },
+        {
+          "header": false,
+          "encode": false,
+          "key": "Key Three",
+          "value": "Value Trhee",
+          "confidential": false
+        }
+      ],
+      "urlTemplate": "https://a.url.tld",
+      "useGet": false
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:21 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds multiple key value pairs (example #2)",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"configurationTemplate\":\"foo\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 593,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "593",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:23 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways",
+    "testName": "Generic gateway configurations can have custom key-value pairs -- The user adds multiple key value pairs (example #2)",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "POST",
+    "requestBody": {
+      "type": "http",
+      "configurationTemplate": "Configuration template",
+      "contentType": "APPLICATION_JSON",
+      "name": "Field name",
+      "parameters": [
+        {
+          "header": false,
+          "encode": false,
+          "key": "Key One",
+          "value": "Value One",
+          "confidential": false
+        },
+        {
+          "header": false,
+          "encode": false,
+          "key": "Key Two",
+          "value": "Value Two",
+          "confidential": false
+        },
+        {
+          "header": false,
+          "encode": false,
+          "key": "Key Three",
+          "value": "Value Trhee",
+          "confidential": false
+        }
+      ],
+      "urlTemplate": "http://domain.tld"
+    },
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:30 GMT",
+      "vary": "Accept-Encoding"
+    }
+  }
+]

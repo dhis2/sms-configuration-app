@@ -1,8 +1,18 @@
 import NetworkShim from './Networkshim.js'
-import { isDisabledMode, isCaptureMode, getApiBaseUrl } from './utils.js'
+import {
+    isDisabledMode,
+    isCaptureMode,
+    getDefaultHosts,
+    getDefaultFixtureMode,
+    getDefaultStaticResources,
+} from './utils.js'
 import visitWithUnfetchOverwriteFn from './visitWithUnfetchOverwriteFn.js'
 
-export function enableNetworkShim(hosts = [getApiBaseUrl()]) {
+export function enableNetworkShim({
+    hosts = getDefaultHosts(),
+    fixtureMode = getDefaultFixtureMode(),
+    staticResources = getDefaultStaticResources(),
+} = {}) {
     // Replace window.fetch with unfetch, which uses XHR and cypress can work with this
     Cypress.Commands.overwrite('visit', visitWithUnfetchOverwriteFn)
 
@@ -11,7 +21,7 @@ export function enableNetworkShim(hosts = [getApiBaseUrl()]) {
         return
     }
 
-    const networkShim = new NetworkShim(hosts)
+    const networkShim = new NetworkShim({ hosts, fixtureMode, staticResources })
 
     before(() => {
         if (isCaptureMode()) {
@@ -31,7 +41,7 @@ export function enableNetworkShim(hosts = [getApiBaseUrl()]) {
 
     after(() => {
         if (isCaptureMode()) {
-            networkShim.writeFile()
+            networkShim.createFixtures()
         }
     })
 }

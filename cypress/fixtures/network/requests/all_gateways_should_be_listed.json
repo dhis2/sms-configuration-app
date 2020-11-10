@@ -1,0 +1,163 @@
+[
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "All gateways should be listed -- No gateways have been configured yet",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[]}",
+    "responseSize": 15,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "15",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:31 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "All gateways should be listed -- Some gateways have been configured",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:32 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "All gateways should be listed -- A default gateways exists",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:34 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "All gateways should be listed -- A non-default gateway is made the default gateway",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:35 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/default/wddjdkXLsD",
+    "testName": "All gateways should be listed -- A non-default gateway is made the default gateway",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "PUT",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"httpStatus\":\"OK\",\"httpStatusCode\":200,\"status\":\"OK\",\"message\":\"Jan-Gerke Salomon is set to default\"}",
+    "responseSize": 102,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "102",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:37 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "All gateways should be listed -- A gateway is edited",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:38 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "All gateways should be listed -- A gateway is edited",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}",
+    "responseSize": 168,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "168",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:03:38 GMT",
+      "vary": "Accept-Encoding"
+    }
+  }
+]

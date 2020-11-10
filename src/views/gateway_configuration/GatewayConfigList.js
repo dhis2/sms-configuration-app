@@ -74,6 +74,8 @@ export const GatewayConfigList = () => {
             'Something went wrong whilst performing the requested operation'
         )
 
+        console.error(error)
+
         return (
             <>
                 <PageHeadline>{GATEWAY_CONFIG_LIST_LABEL}</PageHeadline>

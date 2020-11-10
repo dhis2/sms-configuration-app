@@ -1,128 +1,242 @@
-import { getFileName } from './utils.js'
+import {
+    // getApiBaseUrl,
+    getNetworkFixturesDir,
+    getFullTestName,
+    splitHostAndPath,
+    isStaticFixtureMode,
+    isStaticResource,
+} from './utils.js'
+import loadXHook from './loadXHook.js'
 
 export default class NetworkShim {
-    constructor(hosts) {
+    constructor({ hosts, fixtureMode, staticResources }) {
         this.state = null
         this.hosts = hosts
+        this.fixtureMode = fixtureMode
+        this.staticResources = staticResources
     }
 
     initCaptureMode() {
+        this.cleanup()
         this.state = {
-            totalSize: 0,
+            count: 0,
+            totalResponseSize: 0,
             duplicates: 0,
             nonDeterministicResponses: 0,
-            requests: {},
+            requests: [],
         }
     }
 
     initStubMode() {
-        cy.readFile(getFileName()).then(file => {
-            this.state = {
-                requests: this.parseFileRequests(file.requests),
-            }
-        })
+        try {
+            cy.readFile(`${getNetworkFixturesDir()}/summary.json`).then(
+                ({ fixtureFiles }) =>
+                    this.parseFixtureFiles(fixtureFiles).then(requests => {
+                        this.state = {
+                            requests,
+                        }
+                        loadXHook(this.handleStubbedRoute)
+                    })
+            )
+        } catch (error) {
+            console.error('NetworkShim stub mode initialzation error', error)
+        }
     }
 
-    parseFileRequests(requests) {
-        return requests.reduce((acc, request) => {
-            const { method, path, requestBody } = request
-            const key = this.createKey(method, path, requestBody)
-            request.response = JSON.parse(request.response)
-            acc[key] = request
-            return acc
-        }, {})
+    cleanup() {
+        cy.exec(`rm -rf ./${getNetworkFixturesDir()}`)
+    }
+
+    parseFixtureFiles(fileNames) {
+        return cy
+            .all(
+                ...fileNames.map(fileName => () =>
+                    cy.readFile(
+                        `${getNetworkFixturesDir()}/requests/${fileName}`
+                    )
+                )
+            )
+            .then(results => results.flat())
     }
 
     captureRequestsAndResponses() {
         cy.server({
-            onAnyRequest: this.captureRequest,
-            onAnyResponse: this.captureResponse,
+            onAnyRequest: (_, xhr) => {
+                try {
+                    this.captureRequest(xhr)
+                } catch (error) {
+                    console.error('NetworkShim capture error on request', error)
+                }
+            },
+            onAnyResponse: (_, xhr) => {
+                try {
+                    this.captureResponse(xhr)
+                } catch (error) {
+                    console.error(
+                        'NetworkShim capture error on response',
+                        error
+                    )
+                }
+            },
         })
     }
 
     createStubRoutes() {
-        cy.server()
-        Object.values(this.state.requests).forEach(stub => {
-            cy.route({
-                url: Cypress.env('dhis2_base_url') + stub.path,
-                method: stub.method,
-                /*
-                TODO: for POST / PUT requests we will quite likely have to
-                be able to differentiate between different request bodies
-                specifying a body in the route options could theoretically be
-                a way to do so, but quite likely it doesn't work. I have posted
-                a question on Stackoverlflow about this topic:
-                https://stackoverflow.com/questions/62530197/how-to-access-request-body-in-cy-route-response-callback
-                */
-                body: stub.requestBody || undefined,
-                response: stub.response,
-            })
+        // const baseUrl = getApiBaseUrl()
+        // const uniqueMethodPathCombos = Array.from(
+        //     new Set(
+        //         this.state.requests.map(({ method, path }) =>
+        //             JSON.stringify({ method, path })
+        //         )
+        //     )
+        // ).map(jsonStr => JSON.parse(jsonStr))
+        // uniqueMethodPathCombos.forEach(({ method, path }) => {
+        //     const url = baseUrl + path
+        //     console.log('creating route for ', method, ' to ', url)
+        //     // cy.route2(method, url, this.handleStubbedRoute)
+        //     // cy.route2(method, url, { what: 'That' })
+        // })
+    }
+
+    handleStubbedRoute = request => {
+        console.log('handleStubRoute', request)
+        const { path } = splitHostAndPath(request.url, this.hosts)
+
+        const matchingRequest = this.findMatchingRequest({
+            path,
+            method: request.method,
+            testName: getFullTestName(),
+            // Cast '' to null to match fixtures
+            requestBody: request.body || null,
+            isStaticResource: this.isPathStaticResource(path),
+        })
+
+        console.log(
+            'Handle stub route ',
+            request.method,
+            ' to ',
+            path,
+            'Going to return this data',
+            JSON.parse(matchingRequest.responseBody)
+        )
+
+        return matchingRequest
+    }
+
+    isPathStaticResource(path) {
+        return (
+            isStaticFixtureMode(this.fixtureMode) ||
+            isStaticResource(path, this.staticResources)
+        )
+    }
+
+    findMatchingRequest({
+        id,
+        path,
+        method,
+        testName,
+        requestBody,
+        isStaticResource,
+    }) {
+        return this.state.requests.find(r => {
+            if (id && id === r.id) {
+                return true
+            }
+
+            const isMatchingRequest =
+                path === r.path &&
+                method === r.method &&
+                requestBody === r.requestBody
+
+            // console.log('isMatchingRequest', path, method, requestBody, r)
+
+            // For dynamic resource we store a seperate request per test
+            // because the data might get mutated in other tests
+            return isStaticResource
+                ? isMatchingRequest
+                : isMatchingRequest && testName === r.testName
         })
     }
 
-    processRequest(xhr) {
-        const host = this.hosts.find(host => xhr.url.indexOf(host) === 0)
-        const path = xhr.url.substr(host.length)
-        const key = this.createKey(xhr.method, path, xhr.request.body)
-
-        return { host, path, key }
-    }
-
-    createKey(method, path, requestBody) {
-        const sections = [method, path]
-
-        if (requestBody) {
-            sections.push(JSON.stringify(requestBody))
-        }
-
-        return sections.join('__')
-    }
-
-    captureRequest = (_, xhr) => {
-        const { host, path, key } = this.processRequest(xhr)
+    captureRequest = xhr => {
+        const { host, path } = splitHostAndPath(xhr.url, this.hosts)
         if (!host) {
             // pass through
             return xhr
         }
 
-        if (this.state.requests[key]) {
+        this.state.count++
+
+        const testName = getFullTestName()
+        const isStaticResource = this.isPathStaticResource(path)
+        const duplicatedRequest = this.findMatchingRequest({
+            id: xhr.id,
+            path,
+            method: xhr.method,
+            testName,
+            requestBody: xhr.request.body,
+            isStaticResource,
+        })
+
+        if (duplicatedRequest) {
             // Repeated request
-            this.state.requests[key].count += 1
+            duplicatedRequest.count += 1
             this.state.duplicates += 1
         } else {
             // New request
-            this.state.requests[key] = {
+            this.state.requests.push({
                 path,
+                id: xhr.id,
+                testName: isStaticResource ? null : testName,
+                static: isStaticResource,
+                count: 1,
+                nonDeterministic: false,
                 method: xhr.method,
                 requestBody: xhr.request.body,
-                count: 1,
-                response: null,
-            }
+                requestHeaders: xhr.request.headers,
+                status: null,
+                responseBody: null,
+                responseSize: null,
+                responseHeaders: null,
+            })
         }
         return xhr
     }
 
-    captureResponse = async (_, xhr) => {
-        const { host, key } = this.processRequest(xhr)
+    captureResponse = async xhr => {
+        const { host, path } = splitHostAndPath(xhr.url, this.hosts)
+
         if (!host) {
             // pass through
             return xhr
         }
 
-        const stateRequest = this.state.requests[key]
+        const request = this.findMatchingRequest({
+            id: xhr.id,
+            path,
+            method: xhr.method,
+            testName: getFullTestName(),
+            requestBody: xhr.request.body,
+            isStaticResource: this.isPathStaticResource(path),
+        })
         const { size, text } = await this.createResponseBlob(xhr)
 
-        if (stateRequest.response) {
-            if (text !== stateRequest.response) {
+        if (!request) {
+            throw new Error('Could not find request to match response')
+        }
+
+        if (request.responseBody) {
+            if (text !== request.responseBody) {
                 this.state.nonDeterministicResponses += 1
-                stateRequest.nonDeterministic = true
+                request.nonDeterministic = true
             }
         } else {
-            // TODO: Capture response headers
-            stateRequest.response = text
-            stateRequest.size = size
+            request.status = xhr.status
+            request.responseBody = text
+            request.responseSize = size
+            request.responseHeaders = xhr.response.headers
 
-            this.state.totalSize += size
+            this.state.totalResponseSize += size
         }
 
         return xhr
@@ -137,15 +251,49 @@ export default class NetworkShim {
         return { size, text }
     }
 
-    writeFile() {
-        const requestArray = Object.values(this.state.requests)
-        cy.log(
-            `Networkshim successfully captured ${requestArray.length} requests`,
-            this.state
+    createFixtures() {
+        const dir = getNetworkFixturesDir()
+        const summary = {
+            count: this.state.count,
+            totalResponseSize: this.state.totalResponseSize,
+            duplicates: this.state.duplicates,
+            nonDeterministicResponses: this.state.nonDeterministicResponses,
+            fixtureFiles: [],
+        }
+        const files = this.state.requests.reduce(
+            (acc, request) => {
+                const fileName = request.static
+                    ? 'static_resources'
+                    : request.testName
+                          .split(' -- ')[0]
+                          .toLowerCase()
+                          .replaceAll(' ', '_')
+
+                if (!acc[fileName]) {
+                    acc[fileName] = []
+                    acc.summary.fixtureFiles.push(`${fileName}.json`)
+                }
+
+                // request id is not valid across test-runs
+                // so needs to be removed from fitures
+                delete request.id
+                acc[fileName].push(request)
+                return acc
+            },
+            { summary }
         )
-        cy.writeFile(getFileName(), {
-            ...this.state,
-            requests: requestArray,
-        })
+
+        for (const [name, requests] of Object.entries(files)) {
+            const filePath =
+                name === 'summary'
+                    ? `${dir}/${name}`
+                    : `${dir}/requests/${name}`
+
+            cy.writeFile(`${filePath}.json`, requests)
+        }
+
+        cy.log(
+            `Networkshim successfully captured ${this.state.requests.length} requests`
+        )
     }
 }

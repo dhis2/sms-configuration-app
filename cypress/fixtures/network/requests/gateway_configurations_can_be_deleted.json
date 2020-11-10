@@ -1,0 +1,255 @@
+[
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Gateway configurations can be deleted -- The user wants to delete the first gateway configuration",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:39 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Gateway configurations can be deleted -- The user deletes the first gateway configuration",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:40 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Gateway configurations can be deleted -- The user deletes the first gateway configuration",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "DELETE",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{}",
+    "responseSize": 2,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "2",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:41 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Gateway configurations can be deleted -- The user attempts to delete the first gateway but cancels the process",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:42 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Gateway configurations can be deleted -- The user selects all gateway configurations",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:44 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Gateway configurations can be deleted -- The user selects all gateway configurations while some are already selected",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:45 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Gateway configurations can be deleted -- The user deselects all gateway configurations",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:47 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Gateway configurations can be deleted -- The delete button is disabled if no gateway configuration is selected",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:48 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Gateway configurations can be deleted -- The delete button is disabled if no gateway configuration exists",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[]}",
+    "responseSize": 15,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "15",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:50 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways.json",
+    "testName": "Gateway configurations can be deleted -- The user unsuccessfully tries to delete a gateway configuration",
+    "static": false,
+    "count": 2,
+    "nonDeterministic": false,
+    "method": "GET",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 200,
+    "responseBody": "{\"gateways\":[{\"type\":\"http\",\"uid\":\"wRi738xEht\",\"name\":\"Foobarbaz\",\"isDefault\":true,\"urlTemplate\":\"https://a.url.tld\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"wddjdkXLsD\",\"name\":\"asdf\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]},{\"type\":\"http\",\"uid\":\"EylO7K98mx\",\"name\":\"foobar\",\"isDefault\":false,\"urlTemplate\":\"http://d.dd\",\"useGet\":false,\"contentType\":\"FORM_URL_ENCODED\",\"parameters\":[]}]}",
+    "responseSize": 503,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "503",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:51 GMT",
+      "vary": "Accept-Encoding"
+    }
+  },
+  {
+    "path": "/api/32/gateways/wRi738xEht",
+    "testName": "Gateway configurations can be deleted -- The user unsuccessfully tries to delete a gateway configuration",
+    "static": false,
+    "count": 1,
+    "nonDeterministic": false,
+    "method": "DELETE",
+    "requestBody": null,
+    "requestHeaders": {
+      "X-Requested-With": "XMLHttpRequest",
+      "Accept": "application/json"
+    },
+    "status": 503,
+    "responseBody": "{\"error\":\"Internal server error\"}",
+    "responseSize": 33,
+    "responseHeaders": {
+      "connection": "keep-alive",
+      "content-length": "33",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Mon, 09 Nov 2020 12:02:52 GMT",
+      "vary": "Accept-Encoding"
+    }
+  }
+]
