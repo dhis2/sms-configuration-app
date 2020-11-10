@@ -17,6 +17,22 @@ export const queryDataElementsOfDataSet = (engine, variables) =>
         const { dataSet } = data
         const { dataSetElements } = dataSet
         const formatted = dataSetElements.map(({ dataElement }) => dataElement)
+
+        formatted.sort((left, right) => {
+            const leftDisplayName = left.displayName
+            const rightDisplayName = right.displayName
+
+            if (leftDisplayName === rightDisplayName) {
+                return 0
+            }
+
+            if (leftDisplayName < rightDisplayName) {
+                return -1
+            }
+
+            return 1
+        })
+
         return formatted
     })
 
