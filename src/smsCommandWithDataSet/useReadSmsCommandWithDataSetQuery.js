@@ -1,4 +1,5 @@
-import { useDataQuery } from '@dhis2/app-runtime'
+import { useDataEngine } from '@dhis2/app-runtime'
+import { useEffect, useState } from 'react'
 
 // @TODO(non-critical):
 //   The response for key value parser
