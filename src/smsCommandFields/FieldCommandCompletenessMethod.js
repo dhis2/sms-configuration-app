@@ -11,7 +11,7 @@ const options = Object.values(completenessMethods)
 
 export const FieldCommandCompletenessMethod = () => (
     <Field
-        dataTest={dataTest('forms-fielddataset')}
+        dataTest={dataTest('smscommandfields-fieldcommandcompletenessmethod')}
         name={FIELD_COMMAND_COMPLETENESS_METHOD_NAME}
         label={i18n.t('Completeness method')}
         component={SingleSelectFieldFF}

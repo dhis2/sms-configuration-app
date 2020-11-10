@@ -2,6 +2,7 @@ import { Button, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import { useDataEngine } from '@dhis2/app-runtime'
 import React, { useEffect, useState } from 'react'
+import { dataTest } from '../dataTest'
 import i18n from '../locales'
 import styles from './FieldDataElementWithCategoryOptionComboAddFormulaButton.module.css'
 
@@ -51,7 +52,12 @@ export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
     return (
         <>
             {code && formula && formulaDataElementName && (
-                <span className={styles.formulaInWords}>
+                <span
+                    className={styles.formulaInWords}
+                    data-test={dataTest(
+                        'smscommandfields-fielddataelementwithcategoryoptioncomboaddformulabutton-formulainwords'
+                    )}
+                >
                     <span className={styles.formulaInWordsLabel}>
                         {i18n.t('Formula')}:
                     </span>
@@ -62,7 +68,14 @@ export const FieldDataElementWithCategoryOptionComboAddFormulaButton = ({
                 </span>
             )}
 
-            <Button small onClick={onClick} disabled={disabled}>
+            <Button
+                small
+                onClick={onClick}
+                disabled={disabled}
+                dataTest={dataTest(
+                    'smscommandfields-fielddataelementwithcategoryoptioncomboaddformulabutton-button'
+                )}
+            >
                 {formula ? i18n.t('Edit formula') : i18n.t('Add formula')}
             </Button>
         </>

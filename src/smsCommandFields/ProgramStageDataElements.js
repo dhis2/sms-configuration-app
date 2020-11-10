@@ -3,6 +3,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
 
 import { FIELD_COMMAND_SMS_CODES_NAME } from './fieldNames'
+import { dataTest } from '../dataTest'
 
 const { Field } = ReactFinalForm
 
@@ -14,6 +15,9 @@ export const ProgramStageDataElements = ({
         <>
             {programStageDataElements.map(({ dataElement }) => (
                 <Field
+                    dataTest={dataTest(
+                        'smscommandfields-programstagedataelements-row'
+                    )}
                     key={dataElement.id}
                     name={`${FIELD_COMMAND_SMS_CODES_NAME}.${dataElement.id}`}
                     label={dataElement.displayName}

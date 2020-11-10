@@ -334,6 +334,7 @@ export const CommandEditWithDataSetForm = ({
         command,
         initialCompletenessMethod
     )
+
     const DE_COC_combination_data = command.dataset.dataSetElements.reduce(
         (curCombinations, { dataElement }) => {
             const categoryOptionCombo =
