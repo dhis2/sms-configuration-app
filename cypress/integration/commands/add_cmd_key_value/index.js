@@ -1,24 +1,5 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const dataSets = [
-    {
-        id: 'lyLU2wR22tC',
-        displayName: 'ART monthly summary',
-    },
-    {
-        id: 'BfMAe6Itzgt',
-        displayName: 'Child Health',
-    },
-    {
-        id: 'VTdjfLXXmoi',
-        displayName: 'Clinical Monitoring Checklist ',
-    },
-    {
-        id: 'Lpw6GcnTrmS',
-        displayName: 'Emergency Response',
-    },
-]
-
 Before(() => {
     cy.server()
 
@@ -33,7 +14,7 @@ Before(() => {
     cy.route({
         url: /.*\/datasets/,
         method: 'GET',
-        response: { dataSets },
+        response: 'fixture:commands/add_cmd_key_value/dataSets',
     })
 })
 
@@ -59,8 +40,10 @@ When('the user leaves the name empty', () => {
 })
 
 When('the user chooses a data set', () => {
-    cy.get('{forms-fielddataset}').click()
-    cy.get(`[data-value="${dataSets[0].id}"]`).click()
+    cy.fixture('commands/add_cmd_j2me/dataSets').then(({ dataSets }) => {
+        cy.get('{forms-fielddataset}').click()
+        cy.get(`[data-value="${dataSets[0].id}"]`).click()
+    })
 })
 
 When('the user leaves the data set field empty', () => {
