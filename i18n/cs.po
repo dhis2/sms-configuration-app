@@ -132,7 +132,7 @@ msgid "Default gateway"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 msgid "BulkSMS"
 msgstr ""
