@@ -1,92 +1,36 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const smsCommandId = 'zYT407xRwIB'
-
-const smsCommandsForList = [
-    {
-        access: {
-            read: true,
-            update: true,
-            externalize: false,
-            delete: true,
-            write: true,
-            manage: true,
-        },
-        attributeValues: [],
-        completenessMethod: 'AT_LEAST_ONE_DATAVALUE',
-        created: '2020-10-20T11:27:02.664',
-        currentPeriodUsedForReporting: false,
-        displayName: 'asdf',
-        externalAccess: false,
-        favorite: false,
-        favorites: [],
-        href: 'https://debug.dhis2.org/2.35dev/api/32/smsCommands/zYT407xRwIB',
-        id: smsCommandId,
-        lastUpdated: '2020-10-20T11:27:02.664',
-        moreThanOneOrgUnitMessage:
-            'Found more than one org unit for this number. Please specify one organisation unit',
-        name: 'asdf',
-        noUserMessage:
-            'No user associated with this phone number. Please contact your supervisor.',
-        parserType: 'ALERT_PARSER',
-        receivedMessage: 'Command has been processed successfully',
-        smsCodes: [],
-        specialCharacters: [],
-        successMessage: 'Command has been processed successfully',
-        translations: [],
-        userAccesses: [],
-        userGroup: { id: 'vAvEltyXGbD' },
-        userGroupAccesses: [],
-        wrongFormatMessage: 'Wrong command format',
-    },
-]
-
-const alertParserCommandParserTypeResponse = [
-    {
-        parserType: 'ALERT_PARSER',
-    },
-]
-
-const alertParserCommandDetails = [
-    {
-        name: 'asdf',
-        receivedMessage: 'Command has been processed successfully',
-        parserType: 'ALERT_PARSER',
-        userGroup: {
-            name: 'Africare HQ',
-            id: 'vAvEltyXGbD',
-        },
-    },
-]
-
 Before(() => {
     cy.server()
 
-    cy.route({
-        url: /\/smsCommands\?paging=false&fields=\*/,
-        method: 'GET',
-        response: { smsCommands: smsCommandsForList },
-    })
+    console.log('foo')
+    cy.fixture('commands/edit_cmd_alert/commandsForListView').then(
+        ({ smsCommands }) => {
+            const [command] = smsCommands
+            const { id: commandId } = command
+            console.log('commandId', commandId)
 
-    cy.route({
-        url: new RegExp(`${smsCommandId}?fields=parserType&paging=false`),
-        method: 'GET',
-        response: { smsCommands: alertParserCommandParserTypeResponse },
-    })
+            cy.route({
+                url: /\/smsCommands[?]/,
+                method: 'GET',
+                response: 'fixture:commands/edit_cmd_alert/commandsForListView',
+            })
 
-    cy.route({
-        url: new RegExp(
-            `${smsCommandId}?fields=name,parserType,receivedMessage,userGroup[name%2Cid]`
-        ),
-        method: 'GET',
-        response: { smsCommands: alertParserCommandDetails },
-    })
+            cy.route({
+                url: new RegExp(
+                    `${commandId}?fields=name,parserType,receivedMessage,userGroup[name%2Cid]`
+                ),
+                method: 'GET',
+                response: 'fixture:commands/edit_cmd_alert/commandDetails',
+            })
 
-    cy.route({
-        url: new RegExp(`smsCommands/${smsCommandId}`),
-        method: 'PATCH',
-        response: {},
-    }).as('updateSmsCommandXhr')
+            cy.route({
+                url: new RegExp(`smsCommands/${commandId}`),
+                method: 'PATCH',
+                response: {},
+            }).as('updateSmsCommandXhr')
+        }
+    )
 })
 
 Given('the user is editing an alert parser command', () => {
@@ -97,7 +41,7 @@ Given('the user is editing an alert parser command', () => {
 })
 
 When('the user changes the name field', () => {
-    const newNameValue = 'New name'
+    const newNameValue = 'A new name'
 
     cy.wrap({
         name: newNameValue,
@@ -129,10 +73,13 @@ When('the user submits the form', () => {
 })
 
 Then('the complete command should be sent to the endpoint', () => {
-    cy.wait('@updateSmsCommandXhr').then(xhr => {
+    cy.all(
+        () => cy.wait('@updateSmsCommandXhr'),
+        () => cy.fixture('commands/edit_cmd_alert/commandDetails')
+    ).then(([xhr, { smsCommands }]) => {
         const payload = xhr.request.body
         const payloadKeys = Object.keys(payload)
-        const commandKeys = Object.keys(alertParserCommandDetails[0])
+        const commandKeys = Object.keys(smsCommands[0])
 
         cy.wrap(payload).as('updateRequestPayload')
 
