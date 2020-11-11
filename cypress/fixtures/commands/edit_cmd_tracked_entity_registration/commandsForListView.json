@@ -1,0 +1,40 @@
+{
+    "smsCommands": [
+        {
+            "lastUpdated": "2020-11-09T15:02:37.775",
+            "id": "ueBblO2S3QA",
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/ueBblO2S3QA",
+            "created": "2020-11-09T15:02:37.775",
+            "name": "TERP - Antenatal care visit",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "displayName": "TERP - Antenatal care visit",
+            "currentPeriodUsedForReporting": false,
+            "externalAccess": false,
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "receivedMessage": "Command has been processed successfully",
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "wrongFormatMessage": "Wrong command format",
+            "successMessage": "Command has been processed successfully",
+            "parserType": "TRACKED_ENTITY_REGISTRATION_PARSER",
+            "favorite": false,
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "program": {
+                "id": "lxAQ7Zs9VYR"
+            },
+            "favorites": [],
+            "smsCodes": [],
+            "specialCharacters": [],
+            "translations": [],
+            "userGroupAccesses": [],
+            "attributeValues": [],
+            "userAccesses": []
+        }
+    ]
+}
