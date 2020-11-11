@@ -1,0 +1,43 @@
+{
+    "smsCommands": [
+        {
+            "lastUpdated": "2020-11-09T14:25:44.064",
+            "id": "gqaGxMG34Qj",
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/gqaGxMG34Qj",
+            "created": "2020-11-09T14:25:44.064",
+            "name": "PSDE - Child Programme - Baby Postnatal",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "displayName": "PSDE - Child Programme - Baby Postnatal",
+            "currentPeriodUsedForReporting": false,
+            "externalAccess": false,
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "receivedMessage": "Command has been processed successfully",
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "wrongFormatMessage": "Wrong command format",
+            "successMessage": "Command has been processed successfully",
+            "parserType": "PROGRAM_STAGE_DATAENTRY_PARSER",
+            "favorite": false,
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "program": {
+                "id": "IpHINAT79UW"
+            },
+            "programStage": {
+                "id": "ZzYYXq4fJie"
+            },
+            "favorites": [],
+            "smsCodes": [],
+            "specialCharacters": [],
+            "translations": [],
+            "userGroupAccesses": [],
+            "attributeValues": [],
+            "userAccesses": []
+        }
+    ]
+}
