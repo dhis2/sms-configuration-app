@@ -381,7 +381,7 @@ msgid "Filter"
 msgstr "Filtr"
 
 msgid "Show"
-msgstr ""
+msgstr "Zobrazit"
 
 msgid "per page"
 msgstr ""
@@ -465,7 +465,7 @@ msgid "Pending"
 msgstr ""
 
 msgid "Scheduled"
-msgstr ""
+msgstr "Naplánováno"
 
 msgid "Something went wrong whilst loading commands"
 msgstr ""
