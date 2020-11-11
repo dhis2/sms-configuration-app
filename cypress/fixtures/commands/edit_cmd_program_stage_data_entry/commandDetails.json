@@ -1,0 +1,127 @@
+{
+    "lastUpdated": "2020-11-09T14:25:44.064",
+    "id": "gqaGxMG34Qj",
+    "created": "2020-11-09T14:25:44.064",
+    "name": "PSDE - Child Programme - Baby Postnatal",
+    "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+    "displayName": "PSDE - Child Programme - Baby Postnatal",
+    "currentPeriodUsedForReporting": false,
+    "externalAccess": false,
+    "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+    "receivedMessage": "Command has been processed successfully",
+    "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+    "wrongFormatMessage": "Wrong command format",
+    "successMessage": "Command has been processed successfully",
+    "parserType": "PROGRAM_STAGE_DATAENTRY_PARSER",
+    "favorite": false,
+    "separator": "I'm a separatist",
+    "access": {
+        "read": true,
+        "update": true,
+        "externalize": false,
+        "delete": true,
+        "write": true,
+        "manage": true
+    },
+    "program": {
+        "id": "IpHINAT79UW",
+        "displayName": "Child Programme"
+    },
+    "programStage": {
+        "id": "ZzYYXq4fJie",
+        "displayName": "Baby Postnatal",
+        "programStageDataElements": [
+            {
+                "dataElement": {
+                    "id": "GQY2lXrypjO",
+                    "displayName": "MCH Infant Weight  (g)"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "X8zyunlgUfM",
+                    "displayName": "MCH Infant Feeding"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "FqlgKAG8HOu",
+                    "displayName": "MCH Measles dose"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "vTUhAUZFoys",
+                    "displayName": "MCH Penta dose"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "rxBfISxXS2U",
+                    "displayName": "MCH Yellow fever dose"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "lNNb3truQoi",
+                    "displayName": "MCH IPT dose"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "pOe0ogW4OWd",
+                    "displayName": "MCH DPT dose"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "HLmTEmupdX0",
+                    "displayName": "MCH Vit A"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "cYGaxwK615G",
+                    "displayName": "MCH Infant HIV Test Result"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "hDZbpskhqDd",
+                    "displayName": "MCH HIV Test Type"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "sj3j9Hwc7so",
+                    "displayName": "MCH Child ARVs"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "aei1xRjSU2l",
+                    "displayName": "MCH Septrin Given"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "BeynU4L6VCQ",
+                    "displayName": "MCH Results given to caretaker"
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "OuJ6sgPyAbC",
+                    "displayName": "MCH Visit Comment"
+                }
+            }
+        ]
+    },
+    "favorites": [],
+    "smsCodes": [],
+    "specialCharacters": [],
+    "translations": [],
+    "userGroupAccesses": [],
+    "attributeValues": [],
+    "userAccesses": []
+}
