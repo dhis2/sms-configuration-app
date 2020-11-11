@@ -1,0 +1,9 @@
+{
+    "name": "Unregistered parser - Administrators",
+    "receivedMessage": "Command has been processed successfully",
+    "parserType": "UNREGISTERED_PARSER",
+    "userGroup": {
+        "name": "Administrators",
+        "id": "wl5cDMuUhmF"
+    }
+}
