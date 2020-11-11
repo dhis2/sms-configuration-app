@@ -1,0 +1,13 @@
+{
+    "smsCommands": [
+        {
+            "name": "asdf",
+            "receivedMessage": "Command has been processed successfully",
+            "parserType": "ALERT_PARSER",
+            "userGroup": {
+                "name": "Africare HQ",
+                "id": "vAvEltyXGbD"
+            }
+        }
+    ]
+}

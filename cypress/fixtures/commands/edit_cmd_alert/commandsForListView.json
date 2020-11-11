@@ -1,0 +1,40 @@
+{
+    "smsCommands": [
+        {
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "attributeValues": [],
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "created": "2020-10-20T11:27:02.664",
+            "currentPeriodUsedForReporting": false,
+            "displayName": "asdf",
+            "externalAccess": false,
+            "favorite": false,
+            "favorites": [],
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/zYT407xRwIB",
+            "id": "zYT407xRwIB",
+            "lastUpdated": "2020-10-20T11:27:02.664",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "name": "asdf",
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "parserType": "ALERT_PARSER",
+            "receivedMessage": "Command has been processed successfully",
+            "smsCodes": [],
+            "specialCharacters": [],
+            "successMessage": "Command has been processed successfully",
+            "translations": [],
+            "userAccesses": [],
+            "userGroup": {
+                "id": "vAvEltyXGbD"
+            },
+            "userGroupAccesses": [],
+            "wrongFormatMessage": "Wrong command format"
+        }
+    ]
+}
