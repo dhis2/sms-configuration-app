@@ -1,0 +1,40 @@
+{
+    "smsCommands": [
+        {
+            "lastUpdated": "2020-11-09T15:32:13.423",
+            "id": "Omise7rTMjI",
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/Omise7rTMjI",
+            "created": "2020-11-09T15:32:13.423",
+            "name": "Unregistered parser - Administrators",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "displayName": "Unregistered parser - Administrators",
+            "currentPeriodUsedForReporting": false,
+            "externalAccess": false,
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "receivedMessage": "Command has been processed successfully",
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "wrongFormatMessage": "Wrong command format",
+            "successMessage": "Command has been processed successfully",
+            "parserType": "UNREGISTERED_PARSER",
+            "favorite": false,
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "userGroup": {
+                "id": "wl5cDMuUhmF"
+            },
+            "favorites": [],
+            "smsCodes": [],
+            "specialCharacters": [],
+            "translations": [],
+            "userGroupAccesses": [],
+            "attributeValues": [],
+            "userAccesses": []
+        }
+    ]
+}
