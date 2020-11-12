@@ -1,0 +1,64 @@
+{
+    "dataSetElements": [
+        {
+            "dataElement": {
+                "id": "w1G4l0cSxOi",
+                "displayName": "ER Census reports produced"
+            }
+        },
+        {
+            "dataElement": {
+                "id": "LCmAJHuXaoG",
+                "displayName": "ER Vulnerable families receiving follow-up visits"
+            }
+        },
+        {
+            "dataElement": {
+                "id": "DCSDJH4IFUG",
+                "displayName": "ER Technical support visits"
+            }
+        },
+        {
+            "dataElement": {
+                "id": "AcXiLSABIOe",
+                "displayName": "ER Teacher accommodation constructed"
+            }
+        },
+        {
+            "dataElement": {
+                "id": "qiaHMoI3bjA",
+                "displayName": "ER Workshops conducted"
+            }
+        },
+        {
+            "dataElement": {
+                "id": "oI6YtDaVFcw",
+                "displayName": "ER Visits in schools"
+            }
+        },
+        {
+            "dataElement": {
+                "id": "KFnFpbqDqji",
+                "displayName": "ER Children trained on key survival skills"
+            }
+        },
+        {
+            "dataElement": {
+                "id": "EX2jDbKe4Yq",
+                "displayName": "ER Teachers trained"
+            }
+        },
+        {
+            "dataElement": {
+                "id": "zFFb3bar4Ct",
+                "displayName": "ER Teacher training programs designed"
+            }
+        },
+        {
+            "dataElement": {
+                "id": "l8gZXKhwawK",
+                "displayName": "ER Teaching materials improved"
+            }
+        }
+    ]
+}

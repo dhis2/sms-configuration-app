@@ -1,0 +1,201 @@
+{
+    "lastUpdated": "2020-10-23T08:48:52.327",
+    "id": "R4gqV7ffKwM",
+    "created": "2020-10-23T08:48:52.327",
+    "name": "J2ME - Emergency Response",
+    "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+    "displayName": "J2ME - Emergency Response",
+    "currentPeriodUsedForReporting": false,
+    "externalAccess": false,
+    "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+    "receivedMessage": "Command has been processed successfully",
+    "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+    "wrongFormatMessage": "Wrong command format",
+    "successMessage": "Command has been processed successfully",
+    "parserType": "J2ME_PARSER",
+    "separator": "I'm a separatist",
+    "favorite": false,
+    "access": {
+        "read": true,
+        "update": true,
+        "externalize": false,
+        "delete": true,
+        "write": true,
+        "manage": true
+    },
+    "dataset": {
+        "id": "Lpw6GcnTrmS",
+        "displayName": "Emergency Response",
+        "dataSetElements": [
+            {
+                "dataElement": {
+                    "id": "w1G4l0cSxOi",
+                    "displayName": "ER Census reports produced",
+                    "categoryCombo": {
+                        "categoryOptionCombos": [
+                            {
+                                "code": "default",
+                                "id": "HllvX50cXC0",
+                                "displayName": "default"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "AcXiLSABIOe",
+                    "displayName": "ER Teacher accommodation constructed",
+                    "categoryCombo": {
+                        "categoryOptionCombos": [
+                            {
+                                "id": "mPBwiaWc2sk",
+                                "displayName": "Rural"
+                            },
+                            {
+                                "id": "IGhnY0XeHXe",
+                                "displayName": "Urban"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "DCSDJH4IFUG",
+                    "displayName": "ER Technical support visits",
+                    "categoryCombo": {
+                        "categoryOptionCombos": [
+                            {
+                                "id": "mPBwiaWc2sk",
+                                "displayName": "Rural"
+                            },
+                            {
+                                "id": "IGhnY0XeHXe",
+                                "displayName": "Urban"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "zFFb3bar4Ct",
+                    "displayName": "ER Teacher training programs designed",
+                    "categoryCombo": {
+                        "categoryOptionCombos": [
+                            {
+                                "code": "default",
+                                "id": "HllvX50cXC0",
+                                "displayName": "default"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "qiaHMoI3bjA",
+                    "displayName": "ER Workshops conducted",
+                    "categoryCombo": {
+                        "categoryOptionCombos": [
+                            {
+                                "code": "default",
+                                "id": "HllvX50cXC0",
+                                "displayName": "default"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "l8gZXKhwawK",
+                    "displayName": "ER Teaching materials improved",
+                    "categoryCombo": {
+                        "categoryOptionCombos": [
+                            {
+                                "code": "default",
+                                "id": "HllvX50cXC0",
+                                "displayName": "default"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "LCmAJHuXaoG",
+                    "displayName": "ER Vulnerable families receiving follow-up visits",
+                    "categoryCombo": {
+                        "categoryOptionCombos": [
+                            {
+                                "id": "mPBwiaWc2sk",
+                                "displayName": "Rural"
+                            },
+                            {
+                                "id": "IGhnY0XeHXe",
+                                "displayName": "Urban"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "KFnFpbqDqji",
+                    "displayName": "ER Children trained on key survival skills",
+                    "categoryCombo": {
+                        "categoryOptionCombos": [
+                            {
+                                "code": "default",
+                                "id": "HllvX50cXC0",
+                                "displayName": "default"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "oI6YtDaVFcw",
+                    "displayName": "ER Visits in schools",
+                    "categoryCombo": {
+                        "categoryOptionCombos": [
+                            {
+                                "id": "mPBwiaWc2sk",
+                                "displayName": "Rural"
+                            },
+                            {
+                                "id": "IGhnY0XeHXe",
+                                "displayName": "Urban"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "dataElement": {
+                    "id": "EX2jDbKe4Yq",
+                    "displayName": "ER Teachers trained",
+                    "categoryCombo": {
+                        "categoryOptionCombos": [
+                            {
+                                "code": "default",
+                                "id": "HllvX50cXC0",
+                                "displayName": "default"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "favorites": [],
+    "smsCodes": [],
+    "specialCharacters": [],
+    "translations": [],
+    "userGroupAccesses": [],
+    "attributeValues": [],
+    "userAccesses": []
+}

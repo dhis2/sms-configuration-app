@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-10-20T11:24:26.182Z\n"
-"PO-Revision-Date: 2020-10-20T11:24:26.182Z\n"
+"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
+"PO-Revision-Date: 2020-11-12T07:59:47.850Z\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -211,10 +211,10 @@ msgstr ""
 msgid "default"
 msgstr ""
 
-msgid "Loading formula"
+msgid "Formula"
 msgstr ""
 
-msgid "Formula"
+msgid "Loading formula"
 msgstr ""
 
 msgid "Edit formula"
