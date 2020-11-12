@@ -50,7 +50,6 @@ export const useReadSmsCommandWithDataSetQuery = id => {
                     }
                 )
 
-                console.log('response', response)
                 setData(response)
             })
             .catch(setError)
