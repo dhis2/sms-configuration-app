@@ -259,7 +259,6 @@ When('the user changes the formula', () => {
                     ({ dataElement }) => dataElement.displayName === label
                 ).dataElement
 
-                console.log('dataElement', dataElement)
                 cy.wrap(dataElement).as('formulaDataElement')
 
                 // keep options as the current subject
@@ -431,7 +430,6 @@ Then(
             () => cy.get('@payload'),
             () => cy.get('@newSmsCodeValue')
         ).then(([payload, newSmsCodeValue]) => {
-            console.log('payload.smsCodes', payload.smsCodes)
             expect(payload.smsCodes[0].code).to.equal(newSmsCodeValue)
         })
     }
@@ -449,7 +447,6 @@ Then('the formula should be reflected below the code', () => {
         const codeValue = code.code
         const operator = code.formula[0]
 
-        console.log('formulaDataElement', formulaDataElement)
         cy.get(
             `:contains("${codeValue} ${operator} ${formulaDataElement.displayName}")`
         ).should('exist')
@@ -464,7 +461,6 @@ Then('the formula should not be shown below the code', () => {
         const codeValue = code.code
         const operator = code.formula[0]
 
-        console.log('formulaDataElement', formulaDataElement)
         cy.get(
             `:contains("${codeValue} ${operator} ${formulaDataElement.displayName}")`
         ).should('not.exist')
