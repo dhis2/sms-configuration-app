@@ -3,12 +3,10 @@ import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 Before(() => {
     cy.server()
 
-    console.log('foo')
     cy.fixture('commands/edit_cmd_alert/commandsForListView').then(
         ({ smsCommands }) => {
             const [command] = smsCommands
             const { id: commandId } = command
-            console.log('commandId', commandId)
 
             cy.route({
                 url: /\/smsCommands[?]/,
