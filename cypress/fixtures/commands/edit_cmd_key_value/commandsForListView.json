@@ -1,0 +1,50 @@
+{
+    "smsCommands": [
+        {
+            "lastUpdated": "2020-11-09T10:39:24.067",
+            "id": "u3tfuz8T6dJ",
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/u3tfuz8T6dJ",
+            "created": "2020-11-09T10:39:24.067",
+            "name": "J2Me",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "displayName": "J2Me",
+            "currentPeriodUsedForReporting": false,
+            "externalAccess": false,
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "receivedMessage": "Command has been processed successfully",
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "wrongFormatMessage": "Wrong command format",
+            "successMessage": "Command has been processed successfully",
+            "parserType": "KEY_VALUE_PARSER",
+            "favorite": false,
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "dataset": {
+                "id": "Lpw6GcnTrmS"
+            },
+            "favorites": [],
+            "smsCodes": [
+                {
+                    "compulsory": false,
+                    "code": "asdf",
+                    "formula": "+oI6YtDaVFcw",
+                    "optionId": 0,
+                    "dataElement": {
+                        "id": "qiaHMoI3bjA"
+                    }
+                }
+            ],
+            "specialCharacters": [],
+            "translations": [],
+            "userGroupAccesses": [],
+            "attributeValues": [],
+            "userAccesses": []
+        }
+    ]
+}
