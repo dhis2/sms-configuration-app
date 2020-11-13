@@ -124,7 +124,7 @@ jobs:
             - name: End-to-End tests
               uses: cypress-io/github-action@v2
               with:
-                  install: false
+                  install: true
                   record: true
                   parallel: true
                   start: ${{ env.SERVER_START_CMD }}
