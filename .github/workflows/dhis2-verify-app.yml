@@ -101,7 +101,7 @@ jobs:
     e2e:
         runs-on: ubuntu-latest
         if: "!contains(github.event.head_commit.message, '[skip ci]')"
-        needs: [install, build]
+        needs: [install]
 
         strategy:
             matrix:
@@ -120,10 +120,6 @@ jobs:
               with:
                   path: '**/node_modules'
                   key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-
-            - uses: actions/download-artifact@v2
-              with:
-                  name: lib-build
 
             - name: Install Cypress binary
               run: yarn cypress install
