@@ -121,9 +121,6 @@ jobs:
                   path: '**/node_modules'
                   key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
-            - name: Install Cypress binary
-              run: yarn cypress install
-
             - name: End-to-End tests
               uses: cypress-io/github-action@v2
               with:
@@ -139,9 +136,8 @@ jobs:
               env:
                   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
                   COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
-                  STORYBOOK_TESTING: true
-                  SERVER_START_CMD: 'yarn cy:server'
-                  SERVER_URL: 'http://localhost:5001'
+                  SERVER_START_CMD: 'yarn cy:start'
+                  SERVER_URL: 'http://localhost:3000'
 
     publish:
         runs-on: ubuntu-latest
