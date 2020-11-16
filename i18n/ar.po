@@ -1,15 +1,15 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2020
-# Hamza Assada <7amza.it@gmail.com>, 2020
 # phil_dhis2, 2020
+# Hamza Assada <7amza.it@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
-msgstr ""
+msgstr "هل أنت متأكد أنك تريد الإلغاء؟ ستفقد التغييرات غير المحفوظة"
 
 msgid "No, stay on page"
-msgstr ""
+msgstr "لا ، ابق على الصفحة"
 
 msgid "Yes, cancel"
-msgstr ""
+msgstr "نعم، إلغاء"
 
 msgid "Dataset"
 msgstr ""
@@ -33,12 +33,14 @@ msgid ""
 "Please make sure the value of this input matches the value in "
 "\"{{otherField}}\"."
 msgstr ""
+"الرجاء التأكد من أن قيمة مربع الإدخال هذا تطابق القيمة الموجودة في "
+"\"{{otherField}}\"."
 
 msgid "Confirm deletion"
 msgstr "تأكيد الحذف"
 
 msgid "Are you sure you want to delete the selected gateways?"
-msgstr ""
+msgstr "هل أنت متأكد أنك تريد حذف البوابات المحددة؟"
 
 msgid "Auth token"
 msgstr ""
@@ -47,7 +49,7 @@ msgid "Configuration template"
 msgstr ""
 
 msgid "Please refer to the documentation for possible values"
-msgstr ""
+msgstr "يرجى الرجوع إلى الوثائق لمعرفة القيم الممكنة"
 
 msgid "Application/json"
 msgstr ""
@@ -62,7 +64,7 @@ msgid "Plain text"
 msgstr ""
 
 msgid "Content type"
-msgstr ""
+msgstr "نوع المحتوى"
 
 msgid "Name"
 msgstr "الإسم"
@@ -80,10 +82,10 @@ msgid "Url template"
 msgstr ""
 
 msgid "Use GET"
-msgstr ""
+msgstr "استخدم GET"
 
 msgid "Use GET instead of POST to send data to gateway"
-msgstr ""
+msgstr "استخدم GET بدلاً من POST لإرسال البيانات إلى البوابة"
 
 msgid "User name"
 msgstr "اسم المستخدم"
@@ -92,7 +94,7 @@ msgid "Add key value pair"
 msgstr ""
 
 msgid "Save gateway"
-msgstr ""
+msgstr "حفظ البوابة"
 
 msgid "Add gateway"
 msgstr "إضافة بوابة"
@@ -101,7 +103,7 @@ msgid "Cancel"
 msgstr "إلغاء"
 
 msgid "Gateway setup"
-msgstr ""
+msgstr "إعداد البوابة"
 
 msgid "Key value pairs"
 msgstr ""
@@ -128,10 +130,10 @@ msgid "Type"
 msgstr "النوع"
 
 msgid "Make default"
-msgstr ""
+msgstr "اجعلها افتراضية"
 
 msgid "Default gateway"
-msgstr ""
+msgstr "البوابة الإفتراضية"
 
 msgid "Edit"
 msgstr "تعديل"
@@ -152,22 +154,22 @@ msgid "Program stage"
 msgstr "مرحلة البرنامج"
 
 msgid "Are you sure you want to delete the selected commands?"
-msgstr ""
+msgstr "هل أنت متأكد أنك تريد حذف الأوامر المحددة؟"
 
 msgid "Delete"
 msgstr "حذف"
 
 msgid "Save command"
-msgstr ""
+msgstr "حفظ الأوامر"
 
 msgid "Something went wrong whilst submitting the form"
-msgstr ""
+msgstr "حدث خطأ ما أثناء إرسال النموذج"
 
 msgid "Something went wrong whilst loading the sms command"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل أمر sms"
 
 msgid "Something went wrong whilst loading the command's details"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل تفاصيل الأمر"
 
 msgid "SMS short codes"
 msgstr ""
@@ -176,28 +178,28 @@ msgid "Add special character"
 msgstr ""
 
 msgid "Required values notice"
-msgstr ""
+msgstr "إشعار القيم المطلوبة"
 
 msgid "Completeness method"
 msgstr "طريقة الاكتمال"
 
 msgid "Confirm message"
-msgstr ""
+msgstr "رسالة التأكيد"
 
 msgid "Reply message if no codes are sent (only the command)"
-msgstr "رد على الرسالة إذا لم يتم إرسال أية رموز (الأمر فقط)"
+msgstr "رسالة الرد إذا لم يتم إرسال أية رموز (الأمر فقط)"
 
 msgid "More than one orgunit message"
-msgstr ""
+msgstr "رسالة أكثر من وحدة تنظيمية"
 
 msgid "No user message"
-msgstr "لا توجد رسالة مستخدم"
+msgstr "رسالة عدم وجود مستخدم"
 
 msgid "Parser"
-msgstr "المحلل"
+msgstr ""
 
 msgid "Field separator"
-msgstr ""
+msgstr "فاصل الحقول"
 
 msgid "Special character name"
 msgstr ""
@@ -209,31 +211,31 @@ msgid "Remove"
 msgstr "إزلة"
 
 msgid "Success message"
-msgstr ""
+msgstr "رسالة النجاح"
 
 msgid "Use current period for reporting"
-msgstr ""
+msgstr "استخدم الفترة الحالية لإعداد التقارير"
 
 msgid "Wrong format message"
 msgstr "رسالة الصيغة غير صحيحة"
 
 msgid "default"
-msgstr ""
+msgstr "إفتراضي"
 
 msgid "Loading formula"
-msgstr ""
+msgstr "صيغة التحميل"
 
 msgid "Formula"
 msgstr "الصيغة"
 
 msgid "Edit formula"
-msgstr ""
+msgstr "تعديل الصيغة"
 
 msgid "Add formula"
-msgstr ""
+msgstr "إضافة صيغة"
 
 msgid "Formula for {{combo}}"
-msgstr ""
+msgstr "صيغة {{combo}}"
 
 msgid "Data element"
 msgstr "عنصر البيانات"
@@ -242,13 +244,13 @@ msgid "formula operator"
 msgstr ""
 
 msgid "Something went wrong whilst saving"
-msgstr ""
+msgstr "حدث خطأ ما أثناء الحفظ"
 
 msgid "Save"
 msgstr "حفظ"
 
 msgid "Receive all data values"
-msgstr ""
+msgstr "استلام جميع قيم البيانات"
 
 msgid "Receive at least one data value"
 msgstr "استقبال قيمة بيانات واحدة على الأقل"
@@ -278,34 +280,34 @@ msgid "Event registration parser"
 msgstr ""
 
 msgid "Duplicate value!"
-msgstr ""
+msgstr "قيمة مكررة!"
 
 msgid "Special characters"
 msgstr ""
 
 msgid "Usergroup"
-msgstr ""
+msgstr "مجموعة مستخدم"
 
 msgid "Something went wrong whilst loading gateways"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل البوابات"
 
 msgid "Edit gateway"
-msgstr ""
+msgstr "تعديل البوابة"
 
 msgid "Something went wrong whilst saving gateways"
-msgstr ""
+msgstr "حدث خطأ ما أثناء حفظ البوابات"
 
 msgid "Gateway not found"
-msgstr ""
+msgstr "البوابة غير موجودة"
 
 msgid "The requested gateway could not be loaded"
-msgstr ""
+msgstr "تعذر تحميل البوابة المطلوبة"
 
 msgid "Something went wrong whilst saving the gateway"
-msgstr ""
+msgstr "حدث خطأ أثناء حفظ البوابة"
 
 msgid "Something went wrong whilst performing the requested operation"
-msgstr ""
+msgstr "حدث خطأ ما أثناء إجراء العملية المطلوبة"
 
 msgid ""
 "An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
@@ -314,70 +316,78 @@ msgid ""
 "all gateways if there are multiple available. Read about gateway "
 "configuration in the DHIS2 documentation."
 msgstr ""
+"تتيح بوابة الرسائل القصيرة لـ DHIS2 إرسال واستقبال رسائل SMS. يمكن إضافة "
+"أنواع مختلفة من البوابات وضبطها أدناه. يلزم وجود بوابة واحدة على الأقل "
+"لإرسال واستقبال الرسائل النصية القصيرة. سيستخدم موزع الحمل جميع البوابات إذا"
+" كان هناك العديد منها متاحًا. اقرأ عن كيفية ضبط البوابة في وثائق DHIS2."
 
 msgid "Delete selected"
 msgstr "حذف المحدد"
 
 msgid "No gateways found"
-msgstr ""
+msgstr "لم يتم العثور على بوابات"
 
 msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
-msgstr ""
+msgstr "يبدو أنه لا توجد أي بوابات مهيأة ، أو لا يمكن تحميلها."
 
 msgid "Overview: SMS Configuration"
-msgstr ""
+msgstr "نظرة عامة: إعدادات تكوين الرسائل القصيرة"
 
 msgid ""
 "Configure settings for SMS sending, receiving, data reporting, alerts, "
 "registration and more."
 msgstr ""
+"إعدادات التكوين لإرسال الرسائل القصيرة واستلامها وتقارير البيانات والتنبيهات"
+" والتسجيل والمزيد."
 
 msgid "Gateway Configuration"
 msgstr "تهيئة البوابة"
 
 msgid ""
 "Add and manage gateways for sending and receiving SMS messages in DHIS2."
-msgstr ""
+msgstr "إضافة وإدارة بوابات لإرسال واستقبال الرسائل القصيرة في DHIS2."
 
 msgid "Set up gateways"
-msgstr ""
+msgstr "إعداد البوابات"
 
 msgid "SMS Commands"
-msgstr "أوامر رسائل الجوال القصيرة"
+msgstr "أوامر رسائل SMS"
 
 msgid ""
 "Add and manage commands triggered by incoming SMS messages to register, "
 "alert and more."
 msgstr ""
+"إضافة وإدارة الأوامر التي يتم إصدارها عند وصول رسائل SMS، للتسجيل والتنبيه "
+"والمزيد."
 
 msgid "Set up SMS commands"
-msgstr ""
+msgstr "إعداد أوامر SMS"
 
 msgid "Sent SMS messages"
-msgstr ""
+msgstr "رسائل SMS المرسلة"
 
 msgid "Open logs of all SMS messages sent from DHIS2."
-msgstr ""
+msgstr "افتح سجلات جميع رسائل SMS المرسلة من DHIS2."
 
 msgid "View all sent SMS"
-msgstr ""
+msgstr "عرض جميع رسائل SMS المرسلة"
 
 msgid "Received SMS messages"
-msgstr ""
+msgstr "رسائل SMS المستلمة"
 
 msgid "Open logs of all SMS messages received by DHIS2."
-msgstr ""
+msgstr "افتح سجلات جميع رسائل SMS التي تم قام DHIS2 بتلقيها."
 
 msgid "View all received SMS"
-msgstr ""
+msgstr "عرض جميع رسائل SMS المستلمة"
 
 msgid "Filter by status"
-msgstr ""
+msgstr "تصفية حسب الحالة"
 
 msgid "Filter by phone number"
-msgstr ""
+msgstr "تصفية حسب رقم التلفون"
 
 msgid "Filter"
 msgstr "عامل التصفية"
@@ -386,10 +396,10 @@ msgid "Show"
 msgstr "إظهار"
 
 msgid "per page"
-msgstr ""
+msgstr "لكل صفحة"
 
 msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr ""
+msgstr "عرض {{firstItem}}-{{lastItem}} من {{total}}"
 
 msgid "Previous"
 msgstr "السابق"
@@ -398,13 +408,13 @@ msgid "Page"
 msgstr "الصفحة"
 
 msgid "of {{pageCount}}"
-msgstr ""
+msgstr "من {{pageCount}}"
 
 msgid "Next"
 msgstr "التالي"
 
 msgid "Something went wrong whilst loading received SMSes"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل رسائل SMS المستلمة"
 
 msgid "Message"
 msgstr "الرسالة"
@@ -419,10 +429,10 @@ msgid "Sender"
 msgstr "المرسل"
 
 msgid "Received"
-msgstr ""
+msgstr "مستلم"
 
 msgid "No SMSes to display"
-msgstr ""
+msgstr "لا توجد رسائل SMS لعرضها"
 
 msgid "Unknown"
 msgstr "غير معروف"
@@ -449,13 +459,13 @@ msgid "Unhandled"
 msgstr "غير معالج"
 
 msgid "Something went wrong whilst loading sent SMSes"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل رسائل SMS المرسلة"
 
 msgid "Recipients"
 msgstr "المستلمون"
 
 msgid "Delivered"
-msgstr ""
+msgstr "تم تسليمها"
 
 msgid "Error"
 msgstr "خطأ"
@@ -470,25 +480,25 @@ msgid "Scheduled"
 msgstr "تمت جدولته"
 
 msgid "Something went wrong whilst loading commands"
-msgstr ""
+msgstr "حدث خطأ ما أثناء تحميل الأوامر"
 
 msgid "Edit command"
-msgstr ""
+msgstr "تعديل الأمر"
 
 msgid "Unrecognised parser type"
-msgstr ""
+msgstr "نوع parser غير معروف"
 
 msgid "Could not find the requested parser type"
-msgstr ""
+msgstr "تعذر العثور على نوع الـ parser المطلوب"
 
 msgid "Add command"
 msgstr "إضافة أمر"
 
 msgid "Automatically selected by selecting a program"
-msgstr ""
+msgstr "يتم تحديده اوتوماتيكيا بعد تحديد برنامج"
 
 msgid "Commands"
-msgstr ""
+msgstr "الأوامر"
 
 msgid ""
 "SMS commands process SMS messages received by a DHIS2 instance, taking "
@@ -499,7 +509,7 @@ msgid ""
 msgstr ""
 
 msgid "Sms command"
-msgstr ""
+msgstr "أوامر SMS"
 
 msgid "No commands to display"
-msgstr ""
+msgstr "لا توجد أوامر للعرض"
