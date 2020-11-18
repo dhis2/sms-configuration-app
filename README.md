@@ -4,6 +4,23 @@ New DHIS2 SMS web app
 
 This project was bootstrapped with [DHIS2 Application Platform](https://github.com/dhis2/app-platform).
 
+## End-to-End tests
+
+You will need a `cypress.env.json` file with the contents:
+
+```json
+{
+    "dhis2_base_url": "",
+    "dhis2_username": "",
+    "dhis2_password": ""
+}
+```
+
+The value for each field needs to be appropriate for the server you wish
+to test against.
+
+Run the tests with `yarn cy:run`.
+
 ## Available Scripts
 
 In the project directory, you can run:
