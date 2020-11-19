@@ -10,7 +10,7 @@ Before(() => {
     }).as('createSmsCommandXhr')
 
     cy.route({
-        url: /.*\/datasets/,
+        url: /.*\/dataSets/,
         method: 'GET',
         response: 'fixture:commands/add_cmd_j2me/dataSets',
     })
