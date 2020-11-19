@@ -1,19 +1,19 @@
 {
     "userGroups": [
         {
-            "id": "wl5cDMuUhmF",
+            "id": "G000000000",
             "displayName": "Administrators"
         },
         {
-            "id": "vAvEltyXGbD",
+            "id": "G000000001",
             "displayName": "Africare HQ"
         },
         {
-            "id": "ZoHNWQajIoe",
+            "id": "G000000002",
             "displayName": "Bo District M&E officers"
         },
         {
-            "id": "th4S6ovwcr8",
+            "id": "G000000003",
             "displayName": "Bonthe District M&E Officers"
         }
     ]

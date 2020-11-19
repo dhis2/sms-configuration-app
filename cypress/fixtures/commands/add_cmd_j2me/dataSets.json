@@ -1,19 +1,19 @@
 {
     "dataSets": [
         {
-            "id": "lyLU2wR22tC",
+            "id": "DS00000000",
             "displayName": "ART monthly summary"
         },
         {
-            "id": "BfMAe6Itzgt",
+            "id": "DS00000001",
             "displayName": "Child Health"
         },
         {
-            "id": "VTdjfLXXmoi",
+            "id": "DS00000002",
             "displayName": "Clinical Monitoring Checklist "
         },
         {
-            "id": "Lpw6GcnTrmS",
+            "id": "DS00000003",
             "displayName": "Emergency Response"
         }
     ]
