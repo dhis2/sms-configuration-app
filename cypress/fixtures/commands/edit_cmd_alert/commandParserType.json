@@ -1,7 +1,3 @@
 {
-    "smsCommands": [
-        {
-            "parserType": "ALERT_PARSER"
-        }
-    ]
+    "parserType": "ALERT_PARSER"
 }

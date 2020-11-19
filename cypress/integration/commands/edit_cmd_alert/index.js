@@ -15,9 +15,13 @@ Before(() => {
             })
 
             cy.route({
-                url: new RegExp(
-                    `${commandId}?fields=name,parserType,receivedMessage,userGroup[name%2Cid]`
-                ),
+                url: new RegExp(`${commandId}[?].*=parserType&`),
+                method: 'GET',
+                response: 'fixture:commands/edit_cmd_alert/commandParserType',
+            })
+
+            cy.route({
+                url: new RegExp(`${commandId}[?].*receivedMessage`),
                 method: 'GET',
                 response: 'fixture:commands/edit_cmd_alert/commandDetails',
             })
@@ -74,10 +78,10 @@ Then('the complete command should be sent to the endpoint', () => {
     cy.all(
         () => cy.wait('@updateSmsCommandXhr'),
         () => cy.fixture('commands/edit_cmd_alert/commandDetails')
-    ).then(([xhr, { smsCommands }]) => {
+    ).then(([xhr, smsCommand]) => {
         const payload = xhr.request.body
         const payloadKeys = Object.keys(payload)
-        const commandKeys = Object.keys(smsCommands[0])
+        const commandKeys = Object.keys(smsCommand)
 
         cy.wrap(payload).as('updateRequestPayload')
 

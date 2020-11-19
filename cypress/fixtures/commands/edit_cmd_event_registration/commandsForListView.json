@@ -2,7 +2,7 @@
     "smsCommands": [
         {
             "lastUpdated": "2020-10-22T08:05:10.917",
-            "id": "JcrPTBRAyRs",
+            "id": "F0000OOOOO",
             "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/JcrPTBRAyRs",
             "created": "2020-10-22T08:05:10.917",
             "name": "Event Registration Parser - Antenatal care visit",
