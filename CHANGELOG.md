@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/dhis2/sms-configuration-app/compare/v1.0.0...v1.0.1) (2020-11-19)
+
+
+### Bug Fixes
+
+* **commands with datasets:** sort codes & formula options alphabetically ([ee65e7f](https://github.com/dhis2/sms-configuration-app/commit/ee65e7f09c9f4741789f5717976cad0914d785d2))
+* **hook:** add missing imports for the used native react hooks ([a519a39](https://github.com/dhis2/sms-configuration-app/commit/a519a399ac1b484026aaabd3081d2348ca8899da))
+
 # 1.0.0 (2020-11-17)
 
 
