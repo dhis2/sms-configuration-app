@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2020
-# phil_dhis2, 2020
 # Hamza Assada <7amza.it@gmail.com>, 2020
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
+"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,8 +26,8 @@ msgstr "لا ، ابق على الصفحة"
 msgid "Yes, cancel"
 msgstr "نعم، إلغاء"
 
-msgid "Dataset"
-msgstr ""
+msgid "Data set"
+msgstr "حزمة البيانات"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -222,11 +222,11 @@ msgstr "رسالة الصيغة غير صحيحة"
 msgid "default"
 msgstr "إفتراضي"
 
-msgid "Loading formula"
-msgstr "صيغة التحميل"
-
 msgid "Formula"
 msgstr "الصيغة"
+
+msgid "Loading formula"
+msgstr "صيغة التحميل"
 
 msgid "Edit formula"
 msgstr "تعديل الصيغة"
@@ -285,8 +285,8 @@ msgstr "قيمة مكررة!"
 msgid "Special characters"
 msgstr ""
 
-msgid "Usergroup"
-msgstr "مجموعة مستخدم"
+msgid "User group"
+msgstr "مجموعة المستخدمين"
 
 msgid "Something went wrong whilst loading gateways"
 msgstr "حدث خطأ ما أثناء تحميل البوابات"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
+"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Yes, cancel"
 msgstr ""
 
-msgid "Dataset"
+msgid "Data set"
 msgstr ""
 
 msgid ""
@@ -219,11 +219,11 @@ msgstr ""
 msgid "default"
 msgstr ""
 
-msgid "Loading formula"
-msgstr ""
-
 msgid "Formula"
 msgstr "Formel"
+
+msgid "Loading formula"
+msgstr ""
 
 msgid "Edit formula"
 msgstr ""
@@ -282,7 +282,7 @@ msgstr ""
 msgid "Special characters"
 msgstr ""
 
-msgid "Usergroup"
+msgid "User group"
 msgstr ""
 
 msgid "Something went wrong whilst loading gateways"
