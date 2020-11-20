@@ -2,15 +2,15 @@
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2020
 # ericbp <ericbarredap@gmail.com>, 2020
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # phil_dhis2, 2020
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgid "Yes, cancel"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Set de Datos\\:"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -285,7 +285,7 @@ msgid "Special characters"
 msgstr ""
 
 msgid "User group"
-msgstr ""
+msgstr "Grupo de usuario"
 
 msgid "Something went wrong whilst loading gateways"
 msgstr ""
