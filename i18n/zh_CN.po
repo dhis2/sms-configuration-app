@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
+"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -25,8 +25,8 @@ msgstr ""
 msgid "Yes, cancel"
 msgstr ""
 
-msgid "Dataset"
-msgstr ""
+msgid "Data set"
+msgstr "数据集"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -219,11 +219,11 @@ msgstr ""
 msgid "default"
 msgstr ""
 
-msgid "Loading formula"
-msgstr ""
-
 msgid "Formula"
 msgstr "公式"
+
+msgid "Loading formula"
+msgstr ""
 
 msgid "Edit formula"
 msgstr ""
@@ -282,8 +282,8 @@ msgstr ""
 msgid "Special characters"
 msgstr ""
 
-msgid "Usergroup"
-msgstr ""
+msgid "User group"
+msgstr "用户组"
 
 msgid "Something went wrong whilst loading gateways"
 msgstr ""

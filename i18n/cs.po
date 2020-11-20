@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
+"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: trendspotter, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -24,8 +24,8 @@ msgstr "Ne, zůstat na stránce"
 msgid "Yes, cancel"
 msgstr "Ano, zrušit"
 
-msgid "Dataset"
-msgstr "Dataset"
+msgid "Data set"
+msgstr "Datová sada"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -220,11 +220,11 @@ msgstr "Chybný formát zprávy"
 msgid "default"
 msgstr "výchozí"
 
-msgid "Loading formula"
-msgstr "Načítání vzorce"
-
 msgid "Formula"
 msgstr "Vzorec"
+
+msgid "Loading formula"
+msgstr "Načítání vzorce"
 
 msgid "Edit formula"
 msgstr "Upravit vzorec"
@@ -283,7 +283,7 @@ msgstr "Duplicitní hodnota!"
 msgid "Special characters"
 msgstr "Speciální znaky"
 
-msgid "Usergroup"
+msgid "User group"
 msgstr "Uživatelská skupina"
 
 msgid "Something went wrong whilst loading gateways"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
+"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -24,8 +24,8 @@ msgstr "Йўқ, саҳифада қолиш"
 msgid "Yes, cancel"
 msgstr "Ҳа, бекор қилиш"
 
-msgid "Dataset"
-msgstr "Маълумотлар тўплами"
+msgid "Data set"
+msgstr ""
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -220,11 +220,11 @@ msgstr "Хабар формати нотўғри"
 msgid "default"
 msgstr "Стандарт"
 
-msgid "Loading formula"
-msgstr "Формула юкланмоқда"
-
 msgid "Formula"
 msgstr "Формула"
+
+msgid "Loading formula"
+msgstr "Формула юкланмоқда"
 
 msgid "Edit formula"
 msgstr "Формула таҳрирлаш"
@@ -283,8 +283,8 @@ msgstr "Қиймат такрорланиши!"
 msgid "Special characters"
 msgstr "Махсус белгилар"
 
-msgid "Usergroup"
-msgstr "Фойдаланувчи гуруҳи"
+msgid "User group"
+msgstr ""
 
 msgid "Something went wrong whilst loading gateways"
 msgstr "Йўлаклар юкланишида хатолик юз берди"

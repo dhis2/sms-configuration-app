@@ -1,17 +1,17 @@
 # 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2020
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Edem Kossi <ekossi@hispwca.org>, 2020
 # phil_dhis2, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
+"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
+"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +30,7 @@ msgstr "Non, rester sur la page"
 msgid "Yes, cancel"
 msgstr "Oui, annuler"
 
-msgid "Dataset"
+msgid "Data set"
 msgstr "Ensemble de données"
 
 msgid ""
@@ -224,11 +224,11 @@ msgstr "Message de mauvais format"
 msgid "default"
 msgstr "par défaut"
 
-msgid "Loading formula"
-msgstr "Chargement de formule"
-
 msgid "Formula"
 msgstr "Formule"
+
+msgid "Loading formula"
+msgstr "Chargement de formule"
 
 msgid "Edit formula"
 msgstr "Editer la formule"
@@ -287,8 +287,8 @@ msgstr ""
 msgid "Special characters"
 msgstr ""
 
-msgid "Usergroup"
-msgstr ""
+msgid "User group"
+msgstr "Groupe d'utilisateur"
 
 msgid "Something went wrong whilst loading gateways"
 msgstr ""

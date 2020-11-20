@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-10-05T09:21:01.838Z\n"
+"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
@@ -24,8 +24,8 @@ msgstr ""
 msgid "Yes, cancel"
 msgstr ""
 
-msgid "Dataset"
-msgstr ""
+msgid "Data set"
+msgstr "Data set"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -218,10 +218,10 @@ msgstr ""
 msgid "default"
 msgstr ""
 
-msgid "Loading formula"
+msgid "Formula"
 msgstr ""
 
-msgid "Formula"
+msgid "Loading formula"
 msgstr ""
 
 msgid "Edit formula"
@@ -281,7 +281,7 @@ msgstr ""
 msgid "Special characters"
 msgstr ""
 
-msgid "Usergroup"
+msgid "User group"
 msgstr ""
 
 msgid "Something went wrong whilst loading gateways"
