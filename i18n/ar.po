@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Hamza Assada <7amza.it@gmail.com>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2020
+# Hamza Assada <7amza.it@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
+"Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2020\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,10 +58,10 @@ msgid "Application/xml"
 msgstr ""
 
 msgid "Form url encoded"
-msgstr ""
+msgstr "عنوان نموذج url مشفر"
 
 msgid "Plain text"
-msgstr ""
+msgstr "نص عادي"
 
 msgid "Content type"
 msgstr "نوع المحتوى"
@@ -115,7 +115,7 @@ msgid "Send as header"
 msgstr ""
 
 msgid "Encode"
-msgstr ""
+msgstr "تشفير"
 
 msgid "Confidential"
 msgstr "سري"
@@ -139,13 +139,13 @@ msgid "Edit"
 msgstr "تعديل"
 
 msgid "BulkSMS"
-msgstr ""
+msgstr "الرسائل القصيرة بالجملة"
 
 msgid "Clickatell"
 msgstr ""
 
 msgid "Generic"
-msgstr ""
+msgstr "عام"
 
 msgid "Program"
 msgstr "البرنامج"
@@ -172,10 +172,10 @@ msgid "Something went wrong whilst loading the command's details"
 msgstr "حدث خطأ ما أثناء تحميل تفاصيل الأمر"
 
 msgid "SMS short codes"
-msgstr ""
+msgstr "الرموز القصيرة لرسائل SMS"
 
 msgid "Add special character"
-msgstr ""
+msgstr "أضف حرف خاص"
 
 msgid "Required values notice"
 msgstr "إشعار القيم المطلوبة"
@@ -202,10 +202,10 @@ msgid "Field separator"
 msgstr "فاصل الحقول"
 
 msgid "Special character name"
-msgstr ""
+msgstr "اسم الحرف الخاص"
 
 msgid "Special character value"
-msgstr ""
+msgstr "قيمة الحرف الخاص"
 
 msgid "Remove"
 msgstr "إزلة"
@@ -283,7 +283,7 @@ msgid "Duplicate value!"
 msgstr "قيمة مكررة!"
 
 msgid "Special characters"
-msgstr ""
+msgstr "الحروف الخاصة"
 
 msgid "User group"
 msgstr "مجموعة المستخدمين"
@@ -507,6 +507,10 @@ msgid ""
 "configure SMS commands below. Read about SMS commands in the DHIS2 "
 "documentation."
 msgstr ""
+"تعالج أوامر SMS رسائل SMS المستلمة بواسطة DHIS2 ، وتتخذ إجراءات معينة بناءً "
+"على محتوى الأوامر والرسالة. يمكن إعداد أوامر SMS المتعددة لمعالجة البيانات "
+"ومعالجتها بطرق متعددة. قم بإضافة وتكوين أوامر SMS أدناه. اقرأ عن أوامر SMS "
+"في وثائق DHIS2."
 
 msgid "Sms command"
 msgstr "أوامر SMS"
