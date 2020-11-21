@@ -25,7 +25,7 @@ msgid "Yes, cancel"
 msgstr "Ҳа, бекор қилиш"
 
 msgid "Data set"
-msgstr ""
+msgstr "Маълумотлар тўплами"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
