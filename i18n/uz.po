@@ -284,7 +284,7 @@ msgid "Special characters"
 msgstr "Махсус белгилар"
 
 msgid "User group"
-msgstr ""
+msgstr "Фойдаланувчи гуруҳи"
 
 msgid "Something went wrong whilst loading gateways"
 msgstr "Йўлаклар юкланишида хатолик юз берди"
