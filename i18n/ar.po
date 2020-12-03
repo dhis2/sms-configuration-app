@@ -52,10 +52,10 @@ msgid "Please refer to the documentation for possible values"
 msgstr "يرجى الرجوع إلى الوثائق لمعرفة القيم الممكنة"
 
 msgid "Application/json"
-msgstr ""
+msgstr "Application/json"
 
 msgid "Application/xml"
-msgstr ""
+msgstr "Application/xml"
 
 msgid "Form url encoded"
 msgstr "عنوان نموذج url مشفر"
