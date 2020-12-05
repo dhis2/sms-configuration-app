@@ -142,7 +142,7 @@ msgid "BulkSMS"
 msgstr "الرسائل القصيرة بالجملة"
 
 msgid "Clickatell"
-msgstr ""
+msgstr "Clickatell"
 
 msgid "Generic"
 msgstr "عام"
