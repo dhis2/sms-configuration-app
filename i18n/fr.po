@@ -5,13 +5,14 @@
 # Edem Kossi <ekossi@hispwca.org>, 2020
 # phil_dhis2, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Yao Selom SAKA <saka.yao@yahoo.fr>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"Last-Translator: Yao Selom SAKA <saka.yao@yahoo.fr>, 2020\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -195,7 +196,7 @@ msgid "More than one orgunit message"
 msgstr ""
 
 msgid "No user message"
-msgstr ""
+msgstr "Aucun message utilisateur"
 
 msgid "Parser"
 msgstr "Analyseur syntaxique"
@@ -255,10 +256,10 @@ msgid "Receive all data values"
 msgstr ""
 
 msgid "Receive at least one data value"
-msgstr ""
+msgstr "Recevoir au moins une valeur de données"
 
 msgid "Do not mark as complete"
-msgstr ""
+msgstr "Ne pas marquer comme terminé"
 
 msgid "Key value parser"
 msgstr ""
@@ -273,7 +274,7 @@ msgid "Unregistered parser"
 msgstr ""
 
 msgid "Tracked entity registration parser"
-msgstr ""
+msgstr "Analyseur d'enregistrement d'entités suivies"
 
 msgid "Program stage data entry parser"
 msgstr ""
