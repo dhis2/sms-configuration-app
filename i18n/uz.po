@@ -68,10 +68,10 @@ msgid "Name"
 msgstr "Исми"
 
 msgid "Password"
-msgstr "Парол"
+msgstr "Пароль"
 
 msgid "Confirm password"
-msgstr "Парлни тасдиқланг"
+msgstr "Паролни тасдиқланг"
 
 msgid "Send url parameters"
 msgstr "URL параметрларини юборинг"
@@ -155,7 +155,7 @@ msgid "Are you sure you want to delete the selected commands?"
 msgstr "Ҳақиқатдан ҳам танланган буйруқларни ўчирмоқчимисиз?"
 
 msgid "Delete"
-msgstr "Ўчириш"
+msgstr "Ўчириб ташлаш"
 
 msgid "Save command"
 msgstr "Буйруқ сақлансин"
@@ -206,7 +206,7 @@ msgid "Special character value"
 msgstr "Махсус белги қиймати"
 
 msgid "Remove"
-msgstr "Ўчириш"
+msgstr "Олиб ташлаш"
 
 msgid "Success message"
 msgstr "Муваффақият ҳақида хабар"
