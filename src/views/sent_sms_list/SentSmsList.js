@@ -44,6 +44,14 @@ const query = {
     },
 }
 
+const deduplicateSms = smses =>
+    Object.values(
+        smses.reduce((smsesById, sms) => {
+            smsesById[sms.id] = sms
+            return smsesById
+        }, {})
+    )
+
 export const SentSmsList = () => {
     const [selected, setSelected] = useState([])
     const [status, setStatus] = useState('ALL')
@@ -79,8 +87,12 @@ export const SentSmsList = () => {
         )
     }
 
+    // Backend returns duplicate outbound SMS messages (see https://jira.dhis2.org/browse/DHIS2-9480)
+    // but `SmsTable` component assumes that each SMS ID in its `smes` prop is unique as it uses them as keys
+    const smses = deduplicateSms(data.sms.outboundsmss)
+
     // Selectors
-    const allIds = getAllIds(data.sms.outboundsmss)
+    const allIds = getAllIds(smses)
     const allSelected = getAllSelected(allIds, selected)
 
     // Handlers
@@ -100,8 +112,6 @@ export const SentSmsList = () => {
             refetch(params)
         },
     }
-
-    const smses = data?.sms?.outboundsmss || []
 
     return (
         <div className={styles.container}>
