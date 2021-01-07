@@ -1,3 +1,11 @@
+## [1.0.11](https://github.com/dhis2/sms-configuration-app/compare/v1.0.10...v1.0.11) (2021-01-07)
+
+
+### Bug Fixes
+
+* **sent sms list:** use flex-end instead of end ([ae35fc7](https://github.com/dhis2/sms-configuration-app/commit/ae35fc7c10f85eabebf993a4708f19f398debcb0))
+* **sent sms list:** use flex-end instead of end ([c1e6249](https://github.com/dhis2/sms-configuration-app/commit/c1e62492b2a081e952e8fb3fdb8e64fd6e83e216))
+
 ## [1.0.10](https://github.com/dhis2/sms-configuration-app/compare/v1.0.9...v1.0.10) (2020-12-21)
 
 
