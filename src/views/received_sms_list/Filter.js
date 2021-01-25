@@ -1,6 +1,5 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { PropTypes } from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { dataTest } from '../../dataTest'
 import {
@@ -10,13 +9,13 @@ import {
     SingleSelectFieldFF,
 } from '@dhis2/ui'
 import { STATUS_FILTER_OPTIONS } from './config'
-import { useQueryParams } from './useQueryParams'
-import { createSearchString } from './createSearchString'
+import useQueryParams from '../useQueryParams'
+import createSearchString from '../createSearchString'
 import styles from './Filter.module.css'
 
 const { Form, Field } = ReactFinalForm
 
-const Filter = ({ loading }) => {
+const Filter = () => {
     const { status, phoneNumber, pageSize } = useQueryParams()
     const initialValues = { status, phoneNumber }
     const history = useHistory()
@@ -57,11 +56,7 @@ const Filter = ({ loading }) => {
                             className={styles.phoneNumberField}
                             inputWidth="300px"
                         />
-                        <Button
-                            large
-                            type="submit"
-                            disabled={loading || pristine}
-                        >
+                        <Button large type="submit" disabled={pristine}>
                             {i18n.t('Filter')}
                         </Button>
                     </form>
@@ -69,10 +64,6 @@ const Filter = ({ loading }) => {
             </Form>
         </div>
     )
-}
-
-Filter.propTypes = {
-    loading: PropTypes.bool,
 }
 
 export { Filter }

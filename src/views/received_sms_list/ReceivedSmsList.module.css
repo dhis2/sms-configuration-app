@@ -2,7 +2,7 @@
     max-width: 800px;
 }
 
-.topBar {
+.header {
     display: flex;
     align-items: flex-end;
     margin-bottom: var(--spacers-dp16);

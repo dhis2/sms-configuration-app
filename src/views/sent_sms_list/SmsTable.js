@@ -13,68 +13,81 @@ import {
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import SmsTableItem from './SmsTableItem'
-import Pagination from './Pagination'
-import s from './SmsTable.module.css'
+import Pagination from '../pagination/Pagination'
+import styles from './SmsTable.module.css'
 
-const SmsTable = ({
-    smses,
-    toggleSelected,
-    toggleAll,
-    allSelected,
-    selected,
-    pager,
-}) => (
-    <Table>
-        <TableHead>
-            <TableRowHead>
-                <TableCellHead>
-                    <Checkbox
-                        disabled={smses.length === 0}
-                        onChange={toggleAll}
-                        checked={allSelected}
-                    />
-                </TableCellHead>
-                <TableCellHead>{i18n.t('Message')}</TableCellHead>
-                <TableCellHead>{i18n.t('Recipients')}</TableCellHead>
-                <TableCellHead>{i18n.t('Status')}</TableCellHead>
-                <TableCellHead>{i18n.t('Sent')}</TableCellHead>
-            </TableRowHead>
-        </TableHead>
-        <TableBody>
-            {smses.length === 0 ? (
+const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
+    const selectedIdSet = new Set(selectedIds)
+    const allSelected =
+        messages.length > 0 && selectedIds.length === messages.length
+    const toggle = id => {
+        if (selectedIdSet.has(id)) {
+            selectedIdSet.delete(id)
+        } else {
+            selectedIdSet.add(id)
+        }
+
+        setSelectedIds(Array.from(selectedIdSet))
+    }
+    const toggleAll = () => {
+        if (allSelected) {
+            setSelectedIds([])
+        } else {
+            setSelectedIds(messages.map(({ id }) => id))
+        }
+    }
+
+    return (
+        <Table>
+            <TableHead>
+                <TableRowHead>
+                    <TableCellHead>
+                        <Checkbox
+                            disabled={messages.length === 0}
+                            onChange={toggleAll}
+                            checked={allSelected}
+                        />
+                    </TableCellHead>
+                    <TableCellHead>{i18n.t('Message')}</TableCellHead>
+                    <TableCellHead>{i18n.t('Recipients')}</TableCellHead>
+                    <TableCellHead>{i18n.t('Status')}</TableCellHead>
+                    <TableCellHead>{i18n.t('Sent')}</TableCellHead>
+                </TableRowHead>
+            </TableHead>
+            <TableBody>
+                {messages.length === 0 ? (
+                    <TableRow>
+                        <TableCell colSpan="7" className={styles.noResults}>
+                            {i18n.t('No SMSes to display')}
+                        </TableCell>
+                    </TableRow>
+                ) : (
+                    messages.map(sms => (
+                        <SmsTableItem
+                            key={sms.id}
+                            sms={sms}
+                            isSelected={selectedIds.includes(sms.id)}
+                            toggleSelected={toggle}
+                        />
+                    ))
+                )}
+            </TableBody>
+            <TableFoot>
                 <TableRow>
-                    <TableCell colSpan="7" className={s.noResults}>
-                        {i18n.t('No SMSes to display')}
+                    <TableCell colSpan="7">
+                        <Pagination pager={pager} />
                     </TableCell>
                 </TableRow>
-            ) : (
-                smses.map(sms => (
-                    <SmsTableItem
-                        key={sms.id}
-                        sms={sms}
-                        isSelected={selected.includes(sms.id)}
-                        toggleSelected={toggleSelected}
-                    />
-                ))
-            )}
-        </TableBody>
-        <TableFoot>
-            <TableRow>
-                <TableCell colSpan="7">
-                    <Pagination pager={pager} />
-                </TableCell>
-            </TableRow>
-        </TableFoot>
-    </Table>
-)
+            </TableFoot>
+        </Table>
+    )
+}
 
 SmsTable.propTypes = {
-    allSelected: PropTypes.bool.isRequired,
-    pager: PropTypes.object.isRequired,
-    selected: PropTypes.arrayOf(PropTypes.string).isRequired,
-    smses: PropTypes.arrayOf(PropTypes.object).isRequired,
-    toggleAll: PropTypes.func.isRequired,
-    toggleSelected: PropTypes.func.isRequired,
+    messages: PropTypes.arrayOf(PropTypes.object).isRequired,
+    pager: PropTypes.PropTypes.object.isRequired,
+    selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+    setSelectedIds: PropTypes.func.isRequired,
 }
 
 export default SmsTable

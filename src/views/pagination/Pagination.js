@@ -3,25 +3,36 @@ import { PropTypes } from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { useHistory } from 'react-router-dom'
 import { Button, SingleSelect, SingleSelectOption } from '@dhis2/ui'
-import { useQueryParams } from './useQueryParams'
-import { createSearchString } from './createSearchString'
+import useQueryParams from '../useQueryParams'
+import createSearchString from '../createSearchString'
 import styles from './Pagination.module.css'
 
 const PAGE_LENGTHS = ['1', '2', '10', '20', '30', '40', '50', '100']
 
-const Pagination = ({ page, pageCount, pageSize, total }) => {
+const take = (object, keys) => {
+    const o = {}
+    for (const key of Object.keys(object)) {
+        if (keys.includes(key)) {
+            o[key] = object[key]
+        }
+    }
+    return o
+}
+
+const Pagination = ({ pager, extraSearchParams = [] }) => {
+    const { page, pageCount, pageSize, total } = pager
     const firstItem = Math.min((page - 1) * pageSize + 1, total)
     const lastItem = Math.min(firstItem + pageSize - 1, total)
     const availablePages = Array.from({ length: pageCount }, (_x, i) =>
         (i + 1).toString()
     )
-    const { status, phoneNumber } = useQueryParams()
+    const queryParams = useQueryParams()
     const history = useHistory()
     const navigateToPage = newPage => {
         history.push({
             search: createSearchString({
-                status,
-                phoneNumber,
+                status: queryParams.status,
+                ...take(queryParams, extraSearchParams),
                 pageSize,
                 page: newPage,
             }),
@@ -31,7 +42,7 @@ const Pagination = ({ page, pageCount, pageSize, total }) => {
         history.push({
             search: createSearchString({
                 status,
-                phoneNumber,
+                ...take(queryParams, extraSearchParams),
                 pageSize: selected,
                 page: 1,
             }),
@@ -106,10 +117,13 @@ const Pagination = ({ page, pageCount, pageSize, total }) => {
 }
 
 Pagination.propTypes = {
-    page: PropTypes.number,
-    pageCount: PropTypes.number,
-    pageSize: PropTypes.number,
-    total: PropTypes.number,
+    extraSearchParams: PropTypes.array,
+    pager: PropTypes.shape({
+        page: PropTypes.number.isRequired,
+        pageCount: PropTypes.number.isRequired,
+        pageSize: PropTypes.number.isRequired,
+        total: PropTypes.number.isRequired,
+    }),
 }
 
-export { Pagination }
+export default Pagination

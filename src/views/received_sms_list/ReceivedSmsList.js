@@ -7,47 +7,49 @@ import {
     RECEIVED_SMS_LIST_PATH,
     STATUS_ALL,
 } from './config'
-import { DeleteSelectedButton } from './DeleteSelectedButton'
+import DeleteSelectedButton from '../delete_selected_button/DeleteSelectedButton'
 import { Filter } from './Filter'
 import { PageHeadline } from '../../headline'
 import { SmsTable } from './SmsTable'
 import { dataTest } from '../../dataTest'
-import { useQueryParams } from './useQueryParams'
+import useQueryParams from '../useQueryParams'
 import i18n from '../../locales'
 import styles from './ReceivedSmsList.module.css'
+
+const parseParams = ({ page, pageSize, phoneNumber, status }) => {
+    const params = {
+        page,
+        pageSize,
+        fields: [
+            'id',
+            'text',
+            'originator',
+            'smsstatus',
+            'user[userCredentials[username]]', // sender
+            'receiveddate',
+        ],
+        order: 'receiveddate:desc',
+    }
+
+    const filters = []
+    if (phoneNumber) {
+        filters.push(`originator:ilike:${phoneNumber}`)
+    }
+    if (status && status !== STATUS_ALL) {
+        filters.push(`smsstatus:eq:${status}`)
+    }
+
+    if (filters.length > 0) {
+        params.filter = filters
+    }
+
+    return params
+}
 
 const query = {
     inboundSms: {
         resource: 'sms/inbound',
-        params: ({ page, pageSize, phoneNumber, status }) => {
-            const params = {
-                page,
-                pageSize,
-                fields: [
-                    'id',
-                    'text',
-                    'originator',
-                    'smsstatus',
-                    'user[userCredentials[username]]', // sender
-                    'receiveddate',
-                ],
-                order: 'receiveddate:desc',
-            }
-
-            const filters = []
-            if (phoneNumber) {
-                filters.push(`originator:ilike:${phoneNumber}`)
-            }
-            if (status && status !== STATUS_ALL) {
-                filters.push(`smsstatus:eq:${status}`)
-            }
-
-            if (filters.length > 0) {
-                params.filter = filters
-            }
-
-            return params
-        },
+        params: parseParams,
     },
 }
 
@@ -98,25 +100,20 @@ const ReceivedSmsList = () => {
             className={styles.container}
         >
             <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
-
-            <div className={styles.topBar}>
-                <Filter loading={loading} />
+            <header className={styles.header}>
+                <Filter />
                 <DeleteSelectedButton
-                    onComplete={refetchAndClear}
                     selectedIds={selectedIds}
+                    mutationResource="sms/inbound"
+                    onComplete={refetchAndClear}
                 />
-            </div>
-
-            <div>
-                {
-                    <SmsTable
-                        messages={messages}
-                        pager={data.inboundSms.pager}
-                        selectedIds={selectedIds}
-                        setSelectedIds={setSelectedIds}
-                    />
-                }
-            </div>
+            </header>
+            <SmsTable
+                messages={messages}
+                pager={data.inboundSms.pager}
+                selectedIds={selectedIds}
+                setSelectedIds={setSelectedIds}
+            />
         </div>
     )
 }

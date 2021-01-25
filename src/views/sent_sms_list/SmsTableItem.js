@@ -1,7 +1,6 @@
 import { TableRow, TableCell, Checkbox } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-
 import { Date, Time } from '../../time'
 import { statusMap } from './translations'
 import styles from './SmsTableItem.module.css'

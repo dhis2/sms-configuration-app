@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
-"PO-Revision-Date: 2020-11-12T07:59:47.850Z\n"
+"POT-Creation-Date: 2021-01-25T14:58:44.611Z\n"
+"PO-Revision-Date: 2021-01-25T14:58:44.611Z\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -277,6 +277,9 @@ msgstr ""
 msgid "User group"
 msgstr ""
 
+msgid "Delete selected"
+msgstr ""
+
 msgid "Something went wrong whilst loading gateways"
 msgstr ""
 
@@ -304,9 +307,6 @@ msgid ""
 "gateway is needed to send and receive SMS messages. Load balancing will use "
 "all gateways if there are multiple available. Read about gateway "
 "configuration in the DHIS2 documentation."
-msgstr ""
-
-msgid "Delete selected"
 msgstr ""
 
 msgid "No gateways found"
@@ -363,15 +363,6 @@ msgstr ""
 msgid "View all received SMS"
 msgstr ""
 
-msgid "Filter by status"
-msgstr ""
-
-msgid "Filter by phone number"
-msgstr ""
-
-msgid "Filter"
-msgstr ""
-
 msgid "Show"
 msgstr ""
 
@@ -391,6 +382,15 @@ msgid "of {{pageCount}}"
 msgstr ""
 
 msgid "Next"
+msgstr ""
+
+msgid "Filter by status"
+msgstr ""
+
+msgid "Filter by phone number"
+msgstr ""
+
+msgid "Filter"
 msgstr ""
 
 msgid "Something went wrong whilst loading received SMSes"

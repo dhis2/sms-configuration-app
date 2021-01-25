@@ -1,7 +1,6 @@
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
 import i18n from '@dhis2/d2-i18n'
-
 import {
     Checkbox,
     Table,
@@ -14,7 +13,7 @@ import {
     TableRowHead,
 } from '@dhis2/ui'
 import { Date, Time } from '../../time'
-import { Pagination } from './Pagination'
+import Pagination from '../pagination/Pagination'
 import styles from './SmsTable.module.css'
 
 const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
@@ -43,7 +42,11 @@ const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
             <TableHead>
                 <TableRowHead>
                     <TableCellHead>
-                        <Checkbox checked={allSelected} onChange={toggleAll} />
+                        <Checkbox
+                            disabled={messages.length === 0}
+                            onChange={toggleAll}
+                            checked={allSelected}
+                        />
                     </TableCellHead>
                     <TableCellHead>{i18n.t('Message')}</TableCellHead>
                     <TableCellHead>{i18n.t('Phone number')}</TableCellHead>
@@ -92,7 +95,10 @@ const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
             <TableFoot>
                 <TableRow>
                     <TableCell colSpan="7">
-                        <Pagination {...pager} />
+                        <Pagination
+                            pager={pager}
+                            extraSearchParams={['phoneNumber']}
+                        />
                     </TableCell>
                 </TableRow>
             </TableFoot>
