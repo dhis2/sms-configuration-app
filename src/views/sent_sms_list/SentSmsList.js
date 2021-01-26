@@ -82,7 +82,7 @@ export const SentSmsList = () => {
                 <StatusFilter />
                 <DeleteSelectedButton
                     selectedIds={selectedIds}
-                    mutationResource="sms/outbound"
+                    type="outbound"
                     onComplete={refetchAndClear}
                 />
             </header>

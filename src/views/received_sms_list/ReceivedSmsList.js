@@ -104,7 +104,7 @@ const ReceivedSmsList = () => {
                 <Filter />
                 <DeleteSelectedButton
                     selectedIds={selectedIds}
-                    mutationResource="sms/inbound"
+                    type="inbound"
                     onComplete={refetchAndClear}
                 />
             </header>
