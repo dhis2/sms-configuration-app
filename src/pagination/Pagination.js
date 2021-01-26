@@ -3,8 +3,8 @@ import { PropTypes } from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { useHistory } from 'react-router-dom'
 import { Button, SingleSelect, SingleSelectOption } from '@dhis2/ui'
-import useQueryParams from '../useQueryParams'
-import createSearchString from '../createSearchString'
+import { useQueryParams } from '../hooks'
+import { createSearchString } from '../utils'
 import styles from './Pagination.module.css'
 
 const PAGE_LENGTHS = ['1', '2', '10', '20', '30', '40', '50', '100']

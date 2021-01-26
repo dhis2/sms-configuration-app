@@ -1,9 +1,9 @@
 import React from 'react'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import { useHistory } from 'react-router-dom'
-import useQueryParams from '../useQueryParams'
 import i18n from '../../locales'
-import createSearchString from '../createSearchString'
+import { useQueryParams } from '../../hooks'
+import { createSearchString } from '../../utils'
 import { statusMap } from './translations'
 
 // From https://github.com/dhis2/dhis2-core/blob/master/dhis-2/dhis-api/src/main/java/org/hisp/dhis/sms/outbound/OutboundSmsStatus.java

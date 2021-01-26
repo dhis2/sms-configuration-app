@@ -7,12 +7,12 @@ import {
     RECEIVED_SMS_LIST_PATH,
     STATUS_ALL,
 } from './config'
-import DeleteSelectedButton from '../delete_selected_button/DeleteSelectedButton'
+import DeleteSelectedButton from '../../delete_selected_button/DeleteSelectedButton'
 import { Filter } from './Filter'
 import { PageHeadline } from '../../headline'
 import { SmsTable } from './SmsTable'
 import { dataTest } from '../../dataTest'
-import useQueryParams from '../useQueryParams'
+import { useQueryParams } from '../../hooks'
 import i18n from '../../locales'
 import styles from './ReceivedSmsList.module.css'
 

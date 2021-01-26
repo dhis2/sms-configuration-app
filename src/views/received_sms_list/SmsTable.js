@@ -13,7 +13,7 @@ import {
     TableRowHead,
 } from '@dhis2/ui'
 import { Date, Time } from '../../time'
-import Pagination from '../pagination/Pagination'
+import Pagination from '../../pagination/Pagination'
 import styles from './SmsTable.module.css'
 
 const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {

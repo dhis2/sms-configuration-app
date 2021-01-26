@@ -3,7 +3,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
 import { useDataMutation } from '@dhis2/app-runtime'
 import { Button } from '@dhis2/ui'
-import { AlertContext } from '../../notifications'
+import { AlertContext } from '../notifications'
 
 const inboundMutation = {
     resource: 'sms/inbound',

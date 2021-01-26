@@ -12,8 +12,8 @@ import {
     TableFoot,
 } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import Pagination from '../../pagination/Pagination'
 import SmsTableItem from './SmsTableItem'
-import Pagination from '../pagination/Pagination'
 import styles from './SmsTable.module.css'
 
 const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {

@@ -9,8 +9,8 @@ import {
     SingleSelectFieldFF,
 } from '@dhis2/ui'
 import { STATUS_FILTER_OPTIONS } from './config'
-import useQueryParams from '../useQueryParams'
-import createSearchString from '../createSearchString'
+import { useQueryParams } from '../../hooks'
+import { createSearchString } from '../../utils'
 import styles from './Filter.module.css'
 
 const { Form, Field } = ReactFinalForm
