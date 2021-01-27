@@ -19,7 +19,7 @@ const STATUS_FILTER_OPTIONS = [
     'SENT',
 ].map(status => ({ value: status, label: statusMap[status] }))
 
-const StatusFilter = () => {
+export const StatusFilter = () => {
     const { status, pageSize } = useQueryParams()
     const history = useHistory()
     const handleStatusChange = ({ selected }) => {
@@ -51,5 +51,3 @@ const StatusFilter = () => {
         </div>
     )
 }
-
-export default StatusFilter

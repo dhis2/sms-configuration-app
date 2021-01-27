@@ -3,10 +3,10 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import React, { useState, useEffect } from 'react'
 import { useQueryParams } from '../../hooks'
 import { PageHeadline } from '../../headline'
-import DeleteSelectedButton from '../../delete_selected_button/DeleteSelectedButton'
+import { DeleteSelectedButton } from '../../delete_selected_button/DeleteSelectedButton'
 import i18n from '../../locales'
-import SmsTable from './SmsTable'
-import StatusFilter from './StatusFilter'
+import { SmsTable } from './SmsTable'
+import { StatusFilter } from './StatusFilter'
 import styles from './SentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('Sent')

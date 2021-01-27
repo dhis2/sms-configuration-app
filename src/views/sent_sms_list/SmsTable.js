@@ -16,7 +16,7 @@ import Pagination from '../../pagination/Pagination'
 import SmsTableItem from './SmsTableItem'
 import styles from './SmsTable.module.css'
 
-const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
+export const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
     const selectedIdSet = new Set(selectedIds)
     const allSelected =
         messages.length > 0 && selectedIds.length === messages.length
@@ -89,5 +89,3 @@ SmsTable.propTypes = {
     selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
     setSelectedIds: PropTypes.func.isRequired,
 }
-
-export default SmsTable

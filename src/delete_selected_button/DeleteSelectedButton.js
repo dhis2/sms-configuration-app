@@ -17,7 +17,7 @@ const outboundMutation = {
     params: ({ ids }) => ({ ids }),
 }
 
-const DeleteSelectedButton = ({ selectedIds, type, onComplete }) => {
+export const DeleteSelectedButton = ({ selectedIds, type, onComplete }) => {
     const { addAlert } = useContext(AlertContext)
     const mutation = type == 'inbound' ? inboundMutation : outboundMutation
     const [mutate] = useDataMutation(mutation, {
@@ -43,5 +43,3 @@ DeleteSelectedButton.propTypes = {
     type: PropTypes.oneOf(['inbound', 'outbound']).isRequired,
     onComplete: PropTypes.func.isRequired,
 }
-
-export default DeleteSelectedButton
