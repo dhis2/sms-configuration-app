@@ -9,7 +9,7 @@ import styles from './Pagination.module.css'
 
 const PAGE_LENGTHS = ['1', '2', '10', '20', '30', '40', '50', '100']
 
-const Pagination = ({ page, pageCount, pageSize, total }) => {
+export const Pagination = ({ page, pageCount, pageSize, total }) => {
     const firstItem = Math.min((page - 1) * pageSize + 1, total)
     const lastItem = Math.min(firstItem + pageSize - 1, total)
     const availablePages = Array.from({ length: pageCount }, (_x, i) =>
@@ -109,5 +109,3 @@ Pagination.propTypes = {
     pageSize: PropTypes.number.isRequired,
     total: PropTypes.number.isRequired,
 }
-
-export default Pagination

@@ -5,7 +5,7 @@ import { useQueryParams } from '../../hooks'
 import { PageHeadline } from '../../headline'
 import { DeleteSelectedButton } from '../../delete_selected_button/DeleteSelectedButton'
 import i18n from '../../locales'
-import { SmsTable } from './SmsTable'
+import { SentSmsTable } from './SentSmsTable'
 import { StatusFilter } from './StatusFilter'
 import styles from './SentSmsList.module.css'
 
@@ -86,7 +86,7 @@ export const SentSmsList = () => {
                     onComplete={refetchAndClear}
                 />
             </header>
-            <SmsTable
+            <SentSmsTable
                 messages={messages}
                 pager={data.sms.pager}
                 selectedIds={selectedIds}

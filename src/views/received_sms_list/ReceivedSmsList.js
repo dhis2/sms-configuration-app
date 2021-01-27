@@ -7,7 +7,7 @@ import { DeleteSelectedButton } from '../../delete_selected_button/DeleteSelecte
 import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
 import { Filter } from './Filter'
-import { SmsTable } from './SmsTable'
+import { ReceivedSmsTable } from './ReceivedSmsTable'
 import styles from './ReceivedSmsList.module.css'
 
 export const RECEIVED_SMS_LIST_LABEL = i18n.t('Received')
@@ -105,7 +105,7 @@ export const ReceivedSmsList = () => {
                     onComplete={refetchAndClear}
                 />
             </header>
-            <SmsTable
+            <ReceivedSmsTable
                 messages={messages}
                 pager={data.inboundSms.pager}
                 selectedIds={selectedIds}

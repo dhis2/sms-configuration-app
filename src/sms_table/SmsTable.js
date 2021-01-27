@@ -12,12 +12,17 @@ import {
     TableRow,
     TableRowHead,
 } from '@dhis2/ui'
-import { Date, Time } from '../../time'
-import Pagination from '../../pagination/Pagination'
-import { statusMap } from './translations'
+import { Pagination } from '../pagination/Pagination'
 import styles from './SmsTable.module.css'
 
-export const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
+export const SmsTable = ({
+    messages,
+    pager,
+    selectedIds,
+    setSelectedIds,
+    columns,
+    rowRenderFn,
+}) => {
     const selectedIdSet = new Set(selectedIds)
     const allSelected =
         messages.length > 0 && selectedIds.length === messages.length
@@ -49,17 +54,18 @@ export const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
                             checked={allSelected}
                         />
                     </TableCellHead>
-                    <TableCellHead>{i18n.t('Message')}</TableCellHead>
-                    <TableCellHead>{i18n.t('Phone number')}</TableCellHead>
-                    <TableCellHead>{i18n.t('Status')}</TableCellHead>
-                    <TableCellHead>{i18n.t('Sender')}</TableCellHead>
-                    <TableCellHead>{i18n.t('Received')}</TableCellHead>
+                    {columns.map(column => (
+                        <TableCellHead key={column}>{column}</TableCellHead>
+                    ))}
                 </TableRowHead>
             </TableHead>
             <TableBody>
                 {messages.length === 0 ? (
                     <TableRow>
-                        <TableCell colSpan="7" className={styles.noResults}>
+                        <TableCell
+                            colSpan={columns.length}
+                            className={styles.noResults}
+                        >
                             {i18n.t('No SMSes to display')}
                         </TableCell>
                     </TableRow>
@@ -69,35 +75,17 @@ export const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
                             <TableCell>
                                 <Checkbox
                                     checked={selectedIdSet.has(message.id)}
-                                    onChange={toggle.bind(null, message.id)}
+                                    onChange={() => toggle(message.id)}
                                 />
                             </TableCell>
-                            <TableCell>{message.text}</TableCell>
-                            <TableCell>
-                                <span className={styles.originator}>
-                                    {message.originator}
-                                </span>
-                            </TableCell>
-                            <TableCell>
-                                {statusMap[message.smsstatus]}
-                            </TableCell>
-                            <TableCell>
-                                {message.user?.userCredentials?.username ||
-                                    i18n.t('Unknown')}
-                            </TableCell>
-                            <TableCell>
-                                <Date date={message.receiveddate} />
-                                {', '}
-                                <br />
-                                <Time time={message.receiveddate} />
-                            </TableCell>
+                            {rowRenderFn(message)}
                         </TableRow>
                     ))
                 )}
             </TableBody>
             <TableFoot>
                 <TableRow>
-                    <TableCell colSpan="6">
+                    <TableCell colSpan={columns.length}>
                         <Pagination {...pager} />
                     </TableCell>
                 </TableRow>
@@ -107,8 +95,10 @@ export const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
 }
 
 SmsTable.propTypes = {
+    columns: PropTypes.arrayOf(PropTypes.element).isRequired,
     messages: PropTypes.arrayOf(PropTypes.object).isRequired,
     pager: PropTypes.PropTypes.object.isRequired,
+    rowRenderFn: PropTypes.func.isRequired,
     selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
     setSelectedIds: PropTypes.func.isRequired,
 }
