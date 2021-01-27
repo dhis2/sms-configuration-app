@@ -98,10 +98,7 @@ const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
             <TableFoot>
                 <TableRow>
                     <TableCell colSpan="6">
-                        <Pagination
-                            pager={pager}
-                            extraSearchParams={['phoneNumber']}
-                        />
+                        <Pagination {...pager} />
                     </TableCell>
                 </TableRow>
             </TableFoot>

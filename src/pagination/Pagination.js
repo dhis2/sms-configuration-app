@@ -9,18 +9,7 @@ import styles from './Pagination.module.css'
 
 const PAGE_LENGTHS = ['1', '2', '10', '20', '30', '40', '50', '100']
 
-const take = (object, keys) => {
-    const o = {}
-    for (const key of Object.keys(object)) {
-        if (keys.includes(key)) {
-            o[key] = object[key]
-        }
-    }
-    return o
-}
-
-const Pagination = ({ pager, extraSearchParams = [] }) => {
-    const { page, pageCount, pageSize, total } = pager
+const Pagination = ({ page, pageCount, pageSize, total }) => {
     const firstItem = Math.min((page - 1) * pageSize + 1, total)
     const lastItem = Math.min(firstItem + pageSize - 1, total)
     const availablePages = Array.from({ length: pageCount }, (_x, i) =>
@@ -31,8 +20,7 @@ const Pagination = ({ pager, extraSearchParams = [] }) => {
     const navigateToPage = newPage => {
         history.push({
             search: createSearchString({
-                status: queryParams.status,
-                ...take(queryParams, extraSearchParams),
+                ...queryParams,
                 pageSize,
                 page: newPage,
             }),
@@ -41,8 +29,7 @@ const Pagination = ({ pager, extraSearchParams = [] }) => {
     const navigateToNewPageSize = ({ selected }) => {
         history.push({
             search: createSearchString({
-                status,
-                ...take(queryParams, extraSearchParams),
+                ...queryParams,
                 pageSize: selected,
                 page: 1,
             }),
@@ -117,13 +104,10 @@ const Pagination = ({ pager, extraSearchParams = [] }) => {
 }
 
 Pagination.propTypes = {
-    extraSearchParams: PropTypes.array,
-    pager: PropTypes.shape({
-        page: PropTypes.number.isRequired,
-        pageCount: PropTypes.number.isRequired,
-        pageSize: PropTypes.number.isRequired,
-        total: PropTypes.number.isRequired,
-    }),
+    page: PropTypes.number.isRequired,
+    pageCount: PropTypes.number.isRequired,
+    pageSize: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
 }
 
 export default Pagination
