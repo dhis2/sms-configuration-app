@@ -74,7 +74,7 @@ const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
             </TableBody>
             <TableFoot>
                 <TableRow>
-                    <TableCell colSpan="7">
+                    <TableCell colSpan="5">
                         <Pagination pager={pager} />
                     </TableCell>
                 </TableRow>

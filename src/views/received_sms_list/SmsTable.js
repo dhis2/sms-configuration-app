@@ -14,6 +14,7 @@ import {
 } from '@dhis2/ui'
 import { Date, Time } from '../../time'
 import Pagination from '../../pagination/Pagination'
+import { statusMap } from './translations'
 import styles from './SmsTable.module.css'
 
 const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
@@ -77,7 +78,9 @@ const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
                                     {message.originator}
                                 </span>
                             </TableCell>
-                            <TableCell>{message.smsstatus}</TableCell>
+                            <TableCell>
+                                {statusMap[message.smsstatus]}
+                            </TableCell>
                             <TableCell>
                                 {message.user?.userCredentials?.username ||
                                     i18n.t('Unknown')}
@@ -94,7 +97,7 @@ const SmsTable = ({ messages, pager, selectedIds, setSelectedIds }) => {
             </TableBody>
             <TableFoot>
                 <TableRow>
-                    <TableCell colSpan="7">
+                    <TableCell colSpan="6">
                         <Pagination
                             pager={pager}
                             extraSearchParams={['phoneNumber']}

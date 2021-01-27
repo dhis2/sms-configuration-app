@@ -7,7 +7,7 @@ import { createSearchString } from '../../utils'
 import { statusMap } from './translations'
 import styles from './StatusFilter.module.css'
 
-// From https://github.com/dhis2/dhis2-core/blob/master/dhis-2/dhis-api/src/main/java/org/hisp/dhis/sms/outbound/OutboundSmsStatus.java
+// From https://github.com/dhis2/dhis2-core/blob/ea76fa86409613c9766d4508d65c88ac55c413c3/dhis-2/dhis-api/src/main/java/org/hisp/dhis/sms/outbound/OutboundSmsStatus.java
 const STATUS_FILTER_OPTIONS = [
     'ALL',
     'DELIVERED',

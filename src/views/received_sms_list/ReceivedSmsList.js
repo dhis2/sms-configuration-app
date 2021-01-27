@@ -1,20 +1,17 @@
-import { useDataQuery } from '@dhis2/app-service-data'
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
+import { useDataQuery } from '@dhis2/app-runtime'
 import React, { useState, useEffect } from 'react'
-
-import {
-    RECEIVED_SMS_LIST_LABEL,
-    RECEIVED_SMS_LIST_PATH,
-    STATUS_ALL,
-} from './config'
-import DeleteSelectedButton from '../../delete_selected_button/DeleteSelectedButton'
-import { Filter } from './Filter'
-import { PageHeadline } from '../../headline'
-import { SmsTable } from './SmsTable'
-import { dataTest } from '../../dataTest'
 import { useQueryParams } from '../../hooks'
+import { PageHeadline } from '../../headline'
+import DeleteSelectedButton from '../../delete_selected_button/DeleteSelectedButton'
+import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { Filter } from './Filter'
+import { SmsTable } from './SmsTable'
 import styles from './ReceivedSmsList.module.css'
+
+export const RECEIVED_SMS_LIST_LABEL = i18n.t('Received')
+export const RECEIVED_SMS_LIST_PATH = '/received'
 
 const parseParams = ({ page, pageSize, phoneNumber, status }) => {
     const params = {
@@ -35,7 +32,7 @@ const parseParams = ({ page, pageSize, phoneNumber, status }) => {
     if (phoneNumber) {
         filters.push(`originator:ilike:${phoneNumber}`)
     }
-    if (status && status !== STATUS_ALL) {
+    if (status && status !== 'ALL') {
         filters.push(`smsstatus:eq:${status}`)
     }
 
@@ -53,7 +50,7 @@ const query = {
     },
 }
 
-const ReceivedSmsList = () => {
+export const ReceivedSmsList = () => {
     const [selectedIds, setSelectedIds] = useState([])
     const { page, pageSize, phoneNumber, status } = useQueryParams()
     const { called, loading, error, data, refetch } = useDataQuery(query, {
@@ -117,5 +114,3 @@ const ReceivedSmsList = () => {
         </div>
     )
 }
-
-export { ReceivedSmsList, RECEIVED_SMS_LIST_LABEL, RECEIVED_SMS_LIST_PATH }
