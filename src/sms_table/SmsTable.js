@@ -63,7 +63,7 @@ export const SmsTable = ({
                 {messages.length === 0 ? (
                     <TableRow>
                         <TableCell
-                            colSpan={columns.length}
+                            colSpan={String(columns.length)}
                             className={styles.noResults}
                         >
                             {i18n.t('No SMSes to display')}
@@ -85,7 +85,7 @@ export const SmsTable = ({
             </TableBody>
             <TableFoot>
                 <TableRow>
-                    <TableCell colSpan={columns.length}>
+                    <TableCell colSpan={String(columns.length)}>
                         <Pagination {...pager} />
                     </TableCell>
                 </TableRow>
@@ -95,7 +95,7 @@ export const SmsTable = ({
 }
 
 SmsTable.propTypes = {
-    columns: PropTypes.arrayOf(PropTypes.element).isRequired,
+    columns: PropTypes.arrayOf(PropTypes.string).isRequired,
     messages: PropTypes.arrayOf(PropTypes.object).isRequired,
     pager: PropTypes.PropTypes.object.isRequired,
     rowRenderFn: PropTypes.func.isRequired,
