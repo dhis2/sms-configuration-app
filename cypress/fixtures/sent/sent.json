@@ -1,0 +1,31 @@
+{
+    "pager": {
+        "page": 1,
+        "pageCount": 1,
+        "total": 3,
+        "pageSize": 50
+    },
+    "outboundsmss": [
+        {
+            "id": "sms_id_1",
+            "date": "2021-01-01T12:34:00.000",
+            "message": "A message",
+            "status": "SENT",
+            "recipients": ["+555555"]
+        },
+        {
+            "id": "sms_id_2",
+            "date": "2021-01-02T12:34:00.000",
+            "message": "Another message",
+            "status": "SENT",
+            "recipients": ["+555555"]
+        },
+        {
+            "id": "sms_id_3",
+            "date": "2021-01-03T12:34:00.000",
+            "message": "A third message",
+            "status": "SENT",
+            "recipients": ["+555555"]
+        }
+    ]
+}
