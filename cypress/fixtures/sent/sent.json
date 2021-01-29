@@ -24,7 +24,7 @@
             "id": "sms_id_3",
             "date": "2021-01-03T12:34:00.000",
             "message": "A third message",
-            "status": "SENT",
+            "status": "FAILED",
             "recipients": ["+555555"]
         }
     ]
