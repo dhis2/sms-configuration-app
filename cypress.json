@@ -2,5 +2,6 @@
     "projectId": "m4qhfz",
     "baseUrl": "http://localhost:3000",
     "testFiles": "**/*.feature",
-    "video": false
+    "video": false,
+    "experimentalFetchPolyfill": true
 }
