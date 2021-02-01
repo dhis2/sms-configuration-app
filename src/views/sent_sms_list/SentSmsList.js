@@ -49,17 +49,6 @@ export const SentSmsList = () => {
         refetch({ page, pageSize, status })
     }, [page, pageSize, status])
 
-    if (loading || !called) {
-        return (
-            <>
-                <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
-                <CenteredContent>
-                    <CircularLoader />
-                </CenteredContent>
-            </>
-        )
-    }
-
     if (error) {
         const msg = i18n.t('Something went wrong whilst loading sent SMSes')
 
@@ -86,12 +75,18 @@ export const SentSmsList = () => {
                     onComplete={refetchAndClear}
                 />
             </header>
-            <SentSmsTable
-                messages={messages}
-                pager={data.sms.pager}
-                selectedIds={selectedIds}
-                setSelectedIds={setSelectedIds}
-            />
+            {loading || !called ? (
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            ) : (
+                <SentSmsTable
+                    messages={messages}
+                    pager={data.sms.pager}
+                    selectedIds={selectedIds}
+                    setSelectedIds={setSelectedIds}
+                />
+            )}
         </div>
     )
 }

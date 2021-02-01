@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-01-27T16:27:02.815Z\n"
-"PO-Revision-Date: 2021-01-27T16:27:02.815Z\n"
+"POT-Creation-Date: 2021-02-01T14:22:02.196Z\n"
+"PO-Revision-Date: 2021-02-01T14:22:02.196Z\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -387,13 +387,13 @@ msgstr ""
 msgid "View all received SMS"
 msgstr ""
 
-msgid "Filter by status"
-msgstr ""
-
 msgid "Filter by phone number"
 msgstr ""
 
-msgid "Filter"
+msgid "Filter by status"
+msgstr ""
+
+msgid "Reset filter"
 msgstr ""
 
 msgid "Received"

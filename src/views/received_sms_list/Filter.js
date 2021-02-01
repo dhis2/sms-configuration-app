@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import { PropTypes } from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
+import debounce from 'lodash.debounce'
 import { dataTest } from '../../dataTest'
 import {
     Button,
-    InputFieldFF,
-    ReactFinalForm,
-    SingleSelectFieldFF,
+    SingleSelectField,
+    SingleSelectOption,
+    InputField,
+    CircularLoader,
 } from '@dhis2/ui'
 import { useQueryParams } from '../../hooks'
 import { createSearchString } from '../../utils'
@@ -24,18 +27,69 @@ const STATUS_FILTER_OPTIONS = [
     'UNHANDLED',
 ].map(status => ({ value: status, label: statusMap[status] }))
 
-const { Form, Field } = ReactFinalForm
+const PhoneInputField = ({ phoneNumber, onChange }) => {
+    const [value, setValue] = useState(phoneNumber)
+    const [waiting, setWaiting] = useState(false)
+    useEffect(() => {
+        setValue(phoneNumber)
+    }, [phoneNumber])
+    const debouncedOnChange = useCallback(
+        debounce(event => {
+            onChange(event)
+            setWaiting(false)
+        }, 300),
+        [onChange]
+    )
+    const handleChange = ({ value }) => {
+        setValue(value)
+        setWaiting(true)
+        debouncedOnChange({ value })
+    }
+
+    return (
+        <>
+            <InputField
+                label={i18n.t('Filter by phone number')}
+                inputWidth="250px"
+                onChange={handleChange}
+                value={value}
+            />
+            {waiting ? <CircularLoader small /> : null}
+        </>
+    )
+}
+PhoneInputField.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    phoneNumber: PropTypes.string,
+}
 
 const Filter = () => {
     const { status, phoneNumber, pageSize } = useQueryParams()
-    const initialValues = { status, phoneNumber }
     const history = useHistory()
 
-    const navigateToFilteredUrl = ({ status, phoneNumber }) => {
+    const handleStatusChange = ({ selected }) => {
+        history.push({
+            search: createSearchString({
+                status: selected,
+                phoneNumber,
+                pageSize,
+                page: 1,
+            }),
+        })
+    }
+    const handlePhoneNumberChange = ({ value }) => {
         history.push({
             search: createSearchString({
                 status,
-                phoneNumber,
+                phoneNumber: value,
+                pageSize,
+                page: 1,
+            }),
+        })
+    }
+    const handleReset = () => {
+        history.push({
+            search: createSearchString({
                 pageSize,
                 page: 1,
             }),
@@ -47,32 +101,29 @@ const Filter = () => {
             data-test={dataTest('views-receivedsms-filter')}
             className={styles.container}
         >
-            <Form
-                onSubmit={navigateToFilteredUrl}
-                initialValues={initialValues}
-            >
-                {({ handleSubmit, pristine }) => (
-                    <form onSubmit={handleSubmit} className={styles.inputStrip}>
-                        <Field
-                            name="status"
-                            component={SingleSelectFieldFF}
-                            options={STATUS_FILTER_OPTIONS}
-                            label={i18n.t('Filter by status')}
-                            inputWidth="200px"
+            <div className={styles.inputStrip}>
+                <SingleSelectField
+                    label={i18n.t('Filter by status')}
+                    inputWidth="200px"
+                    onChange={handleStatusChange}
+                    selected={status}
+                >
+                    {STATUS_FILTER_OPTIONS.map(({ label, value }) => (
+                        <SingleSelectOption
+                            key={label}
+                            label={label}
+                            value={value}
                         />
-                        <Field
-                            name="phoneNumber"
-                            component={InputFieldFF}
-                            label={i18n.t('Filter by phone number')}
-                            className={styles.phoneNumberField}
-                            inputWidth="300px"
-                        />
-                        <Button large type="submit" disabled={pristine}>
-                            {i18n.t('Filter')}
-                        </Button>
-                    </form>
-                )}
-            </Form>
+                    ))}
+                </SingleSelectField>
+                <PhoneInputField
+                    phoneNumber={phoneNumber}
+                    onChange={handlePhoneNumberChange}
+                />
+                <Button large onClick={handleReset}>
+                    {i18n.t('Reset filter')}
+                </Button>
+            </div>
         </div>
     )
 }

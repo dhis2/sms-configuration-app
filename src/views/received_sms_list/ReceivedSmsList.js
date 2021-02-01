@@ -65,17 +65,6 @@ export const ReceivedSmsList = () => {
         refetch({ page, pageSize, phoneNumber, status })
     }, [page, pageSize, phoneNumber, status])
 
-    if (loading || !called) {
-        return (
-            <>
-                <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
-                <CenteredContent>
-                    <CircularLoader />
-                </CenteredContent>
-            </>
-        )
-    }
-
     if (error) {
         const msg = i18n.t('Something went wrong whilst loading received SMSes')
 
@@ -105,12 +94,18 @@ export const ReceivedSmsList = () => {
                     onComplete={refetchAndClear}
                 />
             </header>
-            <ReceivedSmsTable
-                messages={messages}
-                pager={data.inboundSms.pager}
-                selectedIds={selectedIds}
-                setSelectedIds={setSelectedIds}
-            />
+            {loading || !called ? (
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            ) : (
+                <ReceivedSmsTable
+                    messages={messages}
+                    pager={data.inboundSms.pager}
+                    selectedIds={selectedIds}
+                    setSelectedIds={setSelectedIds}
+                />
+            )}
         </div>
     )
 }
