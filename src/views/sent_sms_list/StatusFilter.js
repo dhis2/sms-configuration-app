@@ -39,6 +39,7 @@ export const StatusFilter = () => {
                 inputWidth="200px"
                 onChange={handleStatusChange}
                 selected={status}
+                dataTest="status-filter"
             >
                 {STATUS_FILTER_OPTIONS.map(({ label, value }) => (
                     <SingleSelectOption
