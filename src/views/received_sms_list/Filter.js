@@ -53,6 +53,7 @@ const PhoneInputField = ({ phoneNumber, onChange }) => {
                 inputWidth="250px"
                 onChange={handleChange}
                 value={value}
+                dataTest="phone-number-filter"
             />
             {waiting ? <CircularLoader small /> : null}
         </>
@@ -107,6 +108,7 @@ const Filter = () => {
                     inputWidth="200px"
                     onChange={handleStatusChange}
                     selected={status}
+                    dataTest="status-filter"
                 >
                     {STATUS_FILTER_OPTIONS.map(({ label, value }) => (
                         <SingleSelectOption
@@ -120,7 +122,7 @@ const Filter = () => {
                     phoneNumber={phoneNumber}
                     onChange={handlePhoneNumberChange}
                 />
-                <Button large onClick={handleReset}>
+                <Button large onClick={handleReset} dataTest="reset-filter-btn">
                     {i18n.t('Reset filter')}
                 </Button>
             </div>

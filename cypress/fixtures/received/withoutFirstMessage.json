@@ -7,24 +7,17 @@
     },
     "inboundsmss": [
         {
-            "id": "sms_id_1",
-            "smsstatus": "INCOMING",
-            "text": "A message",
-            "originator": "+555123",
-            "receiveddate": "2021-01-01T12:34:00.000"
-        },
-        {
             "id": "sms_id_2",
             "smsstatus": "INCOMING",
             "text": "Another message",
-            "originator": "+555456",
+            "originator": "+555555",
             "receiveddate": "2021-01-02T12:34:00.000"
         },
         {
             "id": "sms_id_3",
             "smsstatus": "FAILED",
             "text": "A third message",
-            "originator": "+555789",
+            "originator": "+555555",
             "receiveddate": "2021-01-02T12:34:00.000"
         }
     ]
