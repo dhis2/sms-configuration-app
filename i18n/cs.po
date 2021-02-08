@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
+"POT-Creation-Date: 2021-02-01T14:22:02.196Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Jiří Podhorecký, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -26,6 +26,9 @@ msgstr "Ano, zrušit"
 
 msgid "Data set"
 msgstr "Datová sada"
+
+msgid "Delete selected"
+msgstr "Smazat vybrané"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -144,6 +147,27 @@ msgstr "Clickatell"
 
 msgid "Generic"
 msgstr "Obecný"
+
+msgid "Show"
+msgstr "Zobrazit"
+
+msgid "per page"
+msgstr "na stránku"
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "Zobrazeno {{firstItem}} - {{lastItem}} z {{total}}"
+
+msgid "Previous"
+msgstr "Předchozí"
+
+msgid "Page"
+msgstr "Strana"
+
+msgid "of {{pageCount}}"
+msgstr "z {{pageCount}}"
+
+msgid "Next"
+msgstr "Další"
 
 msgid "Program"
 msgstr "Program"
@@ -283,6 +307,9 @@ msgstr "Duplicitní hodnota!"
 msgid "Special characters"
 msgstr "Speciální znaky"
 
+msgid "No SMSes to display"
+msgstr "Žádné SMS k zobrazení"
+
 msgid "User group"
 msgstr "Uživatelská skupina"
 
@@ -319,9 +346,6 @@ msgstr ""
 "je potřeba alespoň jedna brána. Vyrovnávání zatížení použije všechny brány, "
 "pokud je jich k dispozici více. Přečtěte si o konfiguraci brány v "
 "dokumentaci DHIS2."
-
-msgid "Delete selected"
-msgstr "Smazat vybrané"
 
 msgid "No gateways found"
 msgstr "Nebyly nalezeny žádné brány"
@@ -384,35 +408,17 @@ msgstr "Otevřít protokoly všech SMS zpráv přijatých DHIS2."
 msgid "View all received SMS"
 msgstr "Zobrazit všechny přijaté SMS"
 
-msgid "Filter by status"
-msgstr "Filtrovat podle stavu"
-
 msgid "Filter by phone number"
 msgstr "Filtrovat podle telefonního čísla"
 
-msgid "Filter"
-msgstr "Filtr"
+msgid "Filter by status"
+msgstr "Filtrovat podle stavu"
 
-msgid "Show"
-msgstr "Zobrazit"
+msgid "Reset filter"
+msgstr ""
 
-msgid "per page"
-msgstr "na stránku"
-
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr "Zobrazeno {{firstItem}} - {{lastItem}} z {{total}}"
-
-msgid "Previous"
-msgstr "Předchozí"
-
-msgid "Page"
-msgstr "Strana"
-
-msgid "of {{pageCount}}"
-msgstr "z {{pageCount}}"
-
-msgid "Next"
-msgstr "Další"
+msgid "Received"
+msgstr "Přijato"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr "Při načítání přijatých SMS se něco pokazilo"
@@ -428,12 +434,6 @@ msgstr "Stav"
 
 msgid "Sender"
 msgstr "Odesílatel"
-
-msgid "Received"
-msgstr "Přijato"
-
-msgid "No SMSes to display"
-msgstr "Žádné SMS k zobrazení"
 
 msgid "Unknown"
 msgstr "Neznámý"

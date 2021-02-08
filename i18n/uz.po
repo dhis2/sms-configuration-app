@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
+"POT-Creation-Date: 2021-02-01T14:22:02.196Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -26,6 +26,9 @@ msgstr "Ҳа, бекор қилиш"
 
 msgid "Data set"
 msgstr "Маълумотлар тўплами"
+
+msgid "Delete selected"
+msgstr "Танланган ўчирилчин"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -144,6 +147,27 @@ msgstr "Clickatell"
 
 msgid "Generic"
 msgstr "Умумий"
+
+msgid "Show"
+msgstr "Кўрсатинг"
+
+msgid "per page"
+msgstr "ҳар саҳифада"
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "Кўриниш {{Жами}} дан {{ДастлабкиЭлемент}}-{{ОхиргиЭлемент}} "
+
+msgid "Previous"
+msgstr "Олдинги"
+
+msgid "Page"
+msgstr "Саҳифа"
+
+msgid "of {{pageCount}}"
+msgstr "{{pageCount}} га/дан"
+
+msgid "Next"
+msgstr "Кейинги"
 
 msgid "Program"
 msgstr "Дастур"
@@ -283,6 +307,9 @@ msgstr "Қиймат такрорланиши!"
 msgid "Special characters"
 msgstr "Махсус белгилар"
 
+msgid "No SMSes to display"
+msgstr "Кўрсатиш учун СМСлар йўқ"
+
 msgid "User group"
 msgstr "Фойдаланувчи гуруҳи"
 
@@ -319,9 +346,6 @@ msgstr ""
 "хабарларни юбориш ва қабул қилиш учун камида битта шлюз керак. Агарда бир "
 "нечта шлюз тури мавжуд бўлса, жжараённи мувозанатлаштириш учун барча "
 "шлюзлардан фойдалиш лозим. DHIS2 ҳужжатларида шлюз созламалари ҳақида ўқинг."
-
-msgid "Delete selected"
-msgstr "Танланган ўчирилчин"
 
 msgid "No gateways found"
 msgstr "Ҳеч қандай шлюз топилмади"
@@ -383,35 +407,17 @@ msgstr "DHIS2 томонидан қабул қилинган барча SMS-ха
 msgid "View all received SMS"
 msgstr "Барча қабул қилинган СМСларни кўриб чиқиш"
 
-msgid "Filter by status"
-msgstr "Ҳолатига қараб фильтрлаш"
-
 msgid "Filter by phone number"
 msgstr "Телефон рақамига қараб фильтрлаш"
 
-msgid "Filter"
-msgstr "Фильтр"
+msgid "Filter by status"
+msgstr "Ҳолатига қараб фильтрлаш"
 
-msgid "Show"
-msgstr "Кўрсатинг"
+msgid "Reset filter"
+msgstr ""
 
-msgid "per page"
-msgstr "ҳар саҳифада"
-
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr "Кўриниш {{Жами}} дан {{ДастлабкиЭлемент}}-{{ОхиргиЭлемент}} "
-
-msgid "Previous"
-msgstr "Олдинги"
-
-msgid "Page"
-msgstr "Саҳифа"
-
-msgid "of {{pageCount}}"
-msgstr "{{pageCount}} га/дан"
-
-msgid "Next"
-msgstr "Кейинги"
+msgid "Received"
+msgstr "Қабул қилинди"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr "SMSлар юкланишида хатолик юз берди"
@@ -427,12 +433,6 @@ msgstr "Статус"
 
 msgid "Sender"
 msgstr "Юборувчи"
-
-msgid "Received"
-msgstr "Қабул қилинди"
-
-msgid "No SMSes to display"
-msgstr "Кўрсатиш учун СМСлар йўқ"
 
 msgid "Unknown"
 msgstr "Номаълум"

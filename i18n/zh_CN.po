@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
+"POT-Creation-Date: 2021-02-01T14:22:02.196Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -27,6 +27,9 @@ msgstr "是的，取消"
 
 msgid "Data set"
 msgstr "数据集"
+
+msgid "Delete selected"
+msgstr "删除选择的"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -143,6 +146,27 @@ msgstr "Clickatell"
 
 msgid "Generic"
 msgstr "普通"
+
+msgid "Show"
+msgstr "显示"
+
+msgid "per page"
+msgstr "每页"
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "正在查看{{total}}中的{{firstItem}}-{{lastItem}} "
+
+msgid "Previous"
+msgstr "前一"
+
+msgid "Page"
+msgstr "页"
+
+msgid "of {{pageCount}}"
+msgstr "的{{pageCount}}"
+
+msgid "Next"
+msgstr "下一个"
 
 msgid "Program"
 msgstr "项目"
@@ -282,6 +306,9 @@ msgstr "值重复！"
 msgid "Special characters"
 msgstr "特殊字符"
 
+msgid "No SMSes to display"
+msgstr "没有短信显示"
+
 msgid "User group"
 msgstr "User组"
 
@@ -314,9 +341,6 @@ msgid ""
 "configuration in the DHIS2 documentation."
 msgstr ""
 "SMS网关使DHIS2实例可以发送和接收SMS消息。可以在下面添加和配置不同的网关类型。至少需要一个网关来发送和接收SMS消息。如果有多个可用网关，则负载平衡将使用所有网关。在DHIS2文档中阅读有关网关配置的信息。"
-
-msgid "Delete selected"
-msgstr "删除选择的"
 
 msgid "No gateways found"
 msgstr "找不到网关"
@@ -373,35 +397,17 @@ msgstr "打开DHIS2收到的所有SMS消息的日志。"
 msgid "View all received SMS"
 msgstr "查看所有收到的短信"
 
-msgid "Filter by status"
-msgstr "按状态过滤"
-
 msgid "Filter by phone number"
 msgstr "按电话号码过滤"
 
-msgid "Filter"
-msgstr "过滤器"
+msgid "Filter by status"
+msgstr "按状态过滤"
 
-msgid "Show"
-msgstr "显示"
+msgid "Reset filter"
+msgstr ""
 
-msgid "per page"
-msgstr "每页"
-
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr "正在查看{{total}}中的{{firstItem}}-{{lastItem}} "
-
-msgid "Previous"
-msgstr "前一"
-
-msgid "Page"
-msgstr "页"
-
-msgid "of {{pageCount}}"
-msgstr "的{{pageCount}}"
-
-msgid "Next"
-msgstr "下一个"
+msgid "Received"
+msgstr "已收到"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr "加载收到的SMS时出了点问题"
@@ -417,12 +423,6 @@ msgstr "状态"
 
 msgid "Sender"
 msgstr "发送者"
-
-msgid "Received"
-msgstr "已收到"
-
-msgid "No SMSes to display"
-msgstr "没有短信显示"
 
 msgid "Unknown"
 msgstr "未知"

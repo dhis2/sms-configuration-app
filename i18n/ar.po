@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
+"POT-Creation-Date: 2021-02-01T14:22:02.196Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -28,6 +28,9 @@ msgstr "نعم، إلغاء"
 
 msgid "Data set"
 msgstr "حزمة البيانات"
+
+msgid "Delete selected"
+msgstr "حذف المحدد"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -146,6 +149,27 @@ msgstr "Clickatell"
 
 msgid "Generic"
 msgstr "عام"
+
+msgid "Show"
+msgstr "إظهار"
+
+msgid "per page"
+msgstr "لكل صفحة"
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "عرض {{firstItem}}-{{lastItem}} من {{total}}"
+
+msgid "Previous"
+msgstr "السابق"
+
+msgid "Page"
+msgstr "الصفحة"
+
+msgid "of {{pageCount}}"
+msgstr "من {{pageCount}}"
+
+msgid "Next"
+msgstr "التالي"
 
 msgid "Program"
 msgstr "البرنامج"
@@ -285,6 +309,9 @@ msgstr "قيمة مكررة!"
 msgid "Special characters"
 msgstr "الحروف الخاصة"
 
+msgid "No SMSes to display"
+msgstr "لا توجد رسائل SMS لعرضها"
+
 msgid "User group"
 msgstr "مجموعة المستخدمين"
 
@@ -320,9 +347,6 @@ msgstr ""
 "أنواع مختلفة من البوابات وضبطها أدناه. يلزم وجود بوابة واحدة على الأقل "
 "لإرسال واستقبال الرسائل النصية القصيرة. سيستخدم موزع الحمل جميع البوابات إذا"
 " كان هناك العديد منها متاحًا. اقرأ عن كيفية ضبط البوابة في وثائق DHIS2."
-
-msgid "Delete selected"
-msgstr "حذف المحدد"
 
 msgid "No gateways found"
 msgstr "لم يتم العثور على بوابات"
@@ -383,35 +407,17 @@ msgstr "افتح سجلات جميع رسائل SMS التي تم قام DHIS2 �
 msgid "View all received SMS"
 msgstr "عرض جميع رسائل SMS المستلمة"
 
-msgid "Filter by status"
-msgstr "تصفية حسب الحالة"
-
 msgid "Filter by phone number"
 msgstr "تصفية حسب رقم التلفون"
 
-msgid "Filter"
-msgstr "عامل التصفية"
+msgid "Filter by status"
+msgstr "تصفية حسب الحالة"
 
-msgid "Show"
-msgstr "إظهار"
+msgid "Reset filter"
+msgstr ""
 
-msgid "per page"
-msgstr "لكل صفحة"
-
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr "عرض {{firstItem}}-{{lastItem}} من {{total}}"
-
-msgid "Previous"
-msgstr "السابق"
-
-msgid "Page"
-msgstr "الصفحة"
-
-msgid "of {{pageCount}}"
-msgstr "من {{pageCount}}"
-
-msgid "Next"
-msgstr "التالي"
+msgid "Received"
+msgstr "مستلم"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr "حدث خطأ ما أثناء تحميل رسائل SMS المستلمة"
@@ -427,12 +433,6 @@ msgstr "الحالة"
 
 msgid "Sender"
 msgstr "المرسل"
-
-msgid "Received"
-msgstr "مستلم"
-
-msgid "No SMSes to display"
-msgstr "لا توجد رسائل SMS لعرضها"
 
 msgid "Unknown"
 msgstr "غير معروف"
