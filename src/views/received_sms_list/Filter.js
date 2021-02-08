@@ -9,7 +9,6 @@ import {
     SingleSelectField,
     SingleSelectOption,
     InputField,
-    CircularLoader,
 } from '@dhis2/ui'
 import { useQueryParams } from '../../hooks'
 import { createSearchString } from '../../utils'
@@ -47,16 +46,14 @@ const PhoneInputField = ({ phoneNumber, onChange }) => {
     }
 
     return (
-        <>
-            <InputField
-                label={i18n.t('Filter by phone number')}
-                inputWidth="250px"
-                onChange={handleChange}
-                value={value}
-                dataTest="phone-number-filter"
-            />
-            {waiting ? <CircularLoader small /> : null}
-        </>
+        <InputField
+            label={i18n.t('Filter by phone number')}
+            inputWidth="250px"
+            onChange={handleChange}
+            value={value}
+            dataTest="phone-number-filter"
+            loading={waiting}
+        />
     )
 }
 PhoneInputField.propTypes = {
