@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/dhis2/sms-configuration-app/compare/v1.0.14...v1.0.15) (2021-02-08)
+
+
+### Bug Fixes
+
+* **sent sms list:** store filter and page params in URL (DHIS2-9866) ([#207](https://github.com/dhis2/sms-configuration-app/issues/207)) ([8340ce9](https://github.com/dhis2/sms-configuration-app/commit/8340ce90049b4c40603713359cb2d513cd762ddb))
+
 ## [1.0.14](https://github.com/dhis2/sms-configuration-app/compare/v1.0.13...v1.0.14) (2021-02-01)
 
 
