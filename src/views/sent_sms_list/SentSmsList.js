@@ -1,40 +1,30 @@
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import { useDataQuery } from '@dhis2/app-runtime'
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react'
+import { useQueryParams } from '../../hooks'
 import { PageHeadline } from '../../headline'
-import SmsTable from './SmsTable'
-import StatusFilter, { parseStatus } from './StatusFilter'
-import { getAllIds, getAllSelected } from './selectors'
-import {
-    createToggleAllHandler,
-    createToggleHandler,
-    createCleanSelectedHandler,
-} from './handlers'
-import DeleteSelectedButton from './DeleteSelectedButton'
-import RefetchSms from './RefetchSms'
+import { DeleteSelectedButton } from '../../delete_selected_button/DeleteSelectedButton'
 import i18n from '../../locales'
+import { SentSmsTable } from './SentSmsTable'
+import { StatusFilter } from './StatusFilter'
 import styles from './SentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('Sent')
 export const SENT_SMS_LIST_PATH = '/sent'
 
 const parseParams = ({ status, page, pageSize }) => {
-    const base = {
+    const params = {
         pageSize,
         page,
         fields: ['id', 'message', 'status', 'date', 'recipients'],
         order: 'date:desc',
     }
 
-    if (!status) {
-        return base
+    if (status && status !== 'ALL') {
+        params.filter = `status:eq:${status}`
     }
 
-    return {
-        ...base,
-        filter: `status:eq:${status}`,
-    }
+    return params
 }
 
 const query = {
@@ -45,26 +35,19 @@ const query = {
 }
 
 export const SentSmsList = () => {
-    const [selected, setSelected] = useState([])
-    const [status, setStatus] = useState('ALL')
-    const { loading, error, data, refetch } = useDataQuery(query, {
-        variables: {
-            status: parseStatus(status),
-            pageSize: 10,
-            page: 1,
-        },
+    const [selectedIds, setSelectedIds] = useState([])
+    const { page, pageSize, status } = useQueryParams()
+    const { called, loading, error, data, refetch } = useDataQuery(query, {
+        lazy: true,
     })
-
-    if (loading) {
-        return (
-            <>
-                <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
-                <CenteredContent>
-                    <CircularLoader />
-                </CenteredContent>
-            </>
-        )
+    const refetchAndClear = () => {
+        refetch()
+        setSelectedIds([])
     }
+
+    useEffect(() => {
+        refetch({ page, pageSize, status })
+    }, [page, pageSize, status])
 
     if (error) {
         const msg = i18n.t('Something went wrong whilst loading sent SMSes')
@@ -79,50 +62,31 @@ export const SentSmsList = () => {
         )
     }
 
-    // Selectors
-    const allIds = getAllIds(data.sms.outboundsmss)
-    const allSelected = getAllSelected(allIds, selected)
-
-    // Handlers
-    const cleanSelected = createCleanSelectedHandler({ selected, setSelected })
-    const toggleAll = createToggleAllHandler({
-        allSelected,
-        setSelected,
-        allIds,
-    })
-    const toggleSelected = createToggleHandler({ selected, setSelected })
-
-    // Context
-    const context = {
-        refetch,
-        refetchAndClear: params => {
-            setSelected([])
-            refetch(params)
-        },
-    }
-
-    const smses = data?.sms?.outboundsmss || []
+    const messages = data?.sms?.outboundsmss || []
 
     return (
         <div className={styles.container}>
-            <RefetchSms.Provider value={context}>
-                <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
-                <div className={styles.header}>
-                    <StatusFilter status={status} setStatus={setStatus} />
-                    <div className={styles.headerRight}>
-                        <DeleteSelectedButton selected={selected} />
-                    </div>
-                </div>
-                <SmsTable
-                    smses={smses}
-                    cleanSelected={cleanSelected}
-                    allSelected={allSelected}
-                    selected={selected}
-                    toggleSelected={toggleSelected}
-                    toggleAll={toggleAll}
-                    pager={data.sms.pager}
+            <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
+            <header className={styles.header}>
+                <StatusFilter />
+                <DeleteSelectedButton
+                    selectedIds={selectedIds}
+                    type="outbound"
+                    onComplete={refetchAndClear}
                 />
-            </RefetchSms.Provider>
+            </header>
+            {loading || !called ? (
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            ) : (
+                <SentSmsTable
+                    messages={messages}
+                    pager={data.sms.pager}
+                    selectedIds={selectedIds}
+                    setSelectedIds={setSelectedIds}
+                />
+            )}
         </div>
     )
 }

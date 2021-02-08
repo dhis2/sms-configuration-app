@@ -1,6 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 
 export const statusMap = {
+    ALL: i18n.t('All'),
     DELIVERED: i18n.t('Delivered'),
     ERROR: i18n.t('Error'),
     FAILED: i18n.t('Failed'),
