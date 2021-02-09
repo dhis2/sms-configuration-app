@@ -52,7 +52,20 @@ const query = {
 
 export const ReceivedSmsList = () => {
     const [selectedIds, setSelectedIds] = useState([])
-    const { page, pageSize, phoneNumber, status } = useQueryParams()
+    const [queryParams, setQueryParams] = useQueryParams()
+    const { page, pageSize, phoneNumber, status } = queryParams
+    const setPhoneNumber = phoneNumber => {
+        setQueryParams({ phoneNumber, page: 1 })
+    }
+    const setStatus = status => {
+        setQueryParams({ status, page: 1 })
+    }
+    const handleFilterReset = () => {
+        setQueryParams({
+            phoneNumber: undefined,
+            status: undefined,
+        })
+    }
     const { called, loading, error, data, refetch } = useDataQuery(query, {
         lazy: true,
     })
@@ -87,7 +100,13 @@ export const ReceivedSmsList = () => {
         >
             <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
             <header className={styles.header}>
-                <Filter />
+                <Filter
+                    status={status}
+                    setStatus={setStatus}
+                    phoneNumber={phoneNumber}
+                    setPhoneNumber={setPhoneNumber}
+                    onReset={handleFilterReset}
+                />
                 <DeleteSelectedButton
                     selectedIds={selectedIds}
                     type="inbound"

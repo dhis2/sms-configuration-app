@@ -1,5 +1,5 @@
 import { When, Then } from 'cypress-cucumber-preprocessor/steps'
-import { createSearchString } from '../../../../src/utils'
+import queryString from 'query-string'
 import '../common'
 
 When("the user clicks on the status filter and selects 'Failed'", () => {
@@ -10,10 +10,9 @@ When("the user clicks on the status filter and selects 'Failed'", () => {
 })
 
 Then("only messages with the status of 'Failed' will be shown", () => {
-    const query = createSearchString({
+    const query = queryString.stringify({
         status: 'FAILED',
-        pageSize: 50,
         page: 1,
     })
-    cy.hash().should('eq', `#/sent${query}`)
+    cy.hash().should('eq', `#/sent?${query}`)
 })
