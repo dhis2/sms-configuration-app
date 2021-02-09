@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
+"POT-Creation-Date: 2021-02-01T14:22:02.196Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -27,6 +27,9 @@ msgstr ""
 
 msgid "Data set"
 msgstr "datamängd"
+
+msgid "Delete selected"
+msgstr ""
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -143,6 +146,27 @@ msgstr ""
 
 msgid "Generic"
 msgstr ""
+
+msgid "Show"
+msgstr "Visa"
+
+msgid "per page"
+msgstr ""
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr ""
+
+msgid "Previous"
+msgstr "Tidigare"
+
+msgid "Page"
+msgstr "Sida"
+
+msgid "of {{pageCount}}"
+msgstr ""
+
+msgid "Next"
+msgstr "Nästa"
 
 msgid "Program"
 msgstr "Program"
@@ -282,6 +306,9 @@ msgstr ""
 msgid "Special characters"
 msgstr ""
 
+msgid "No SMSes to display"
+msgstr ""
+
 msgid "User group"
 msgstr ""
 
@@ -312,9 +339,6 @@ msgid ""
 "gateway is needed to send and receive SMS messages. Load balancing will use "
 "all gateways if there are multiple available. Read about gateway "
 "configuration in the DHIS2 documentation."
-msgstr ""
-
-msgid "Delete selected"
 msgstr ""
 
 msgid "No gateways found"
@@ -372,35 +396,17 @@ msgstr ""
 msgid "View all received SMS"
 msgstr ""
 
-msgid "Filter by status"
-msgstr ""
-
 msgid "Filter by phone number"
 msgstr ""
 
-msgid "Filter"
-msgstr "Filtrera"
-
-msgid "Show"
-msgstr "Visa"
-
-msgid "per page"
+msgid "Filter by status"
 msgstr ""
 
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgid "Reset filter"
 msgstr ""
 
-msgid "Previous"
-msgstr "Tidigare"
-
-msgid "Page"
-msgstr "Sida"
-
-msgid "of {{pageCount}}"
+msgid "Received"
 msgstr ""
-
-msgid "Next"
-msgstr "Nästa"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr ""
@@ -415,12 +421,6 @@ msgid "Status"
 msgstr "Status"
 
 msgid "Sender"
-msgstr ""
-
-msgid "Received"
-msgstr ""
-
-msgid "No SMSes to display"
 msgstr ""
 
 msgid "Unknown"

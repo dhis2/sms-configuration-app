@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
+"POT-Creation-Date: 2021-02-01T14:22:02.196Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -28,6 +28,9 @@ msgstr ""
 
 msgid "Data set"
 msgstr "Tập dữ liệu"
+
+msgid "Delete selected"
+msgstr "Xóa các tin đã chọn"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -144,6 +147,27 @@ msgstr ""
 
 msgid "Generic"
 msgstr ""
+
+msgid "Show"
+msgstr "Hiện"
+
+msgid "per page"
+msgstr ""
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr ""
+
+msgid "Previous"
+msgstr "Trước"
+
+msgid "Page"
+msgstr "Trang"
+
+msgid "of {{pageCount}}"
+msgstr ""
+
+msgid "Next"
+msgstr "Sau"
 
 msgid "Program"
 msgstr "Chương trình"
@@ -283,6 +307,9 @@ msgstr ""
 msgid "Special characters"
 msgstr ""
 
+msgid "No SMSes to display"
+msgstr ""
+
 msgid "User group"
 msgstr "Nhóm Người Dùng"
 
@@ -314,9 +341,6 @@ msgid ""
 "all gateways if there are multiple available. Read about gateway "
 "configuration in the DHIS2 documentation."
 msgstr ""
-
-msgid "Delete selected"
-msgstr "Xóa các tin đã chọn"
 
 msgid "No gateways found"
 msgstr ""
@@ -373,35 +397,17 @@ msgstr ""
 msgid "View all received SMS"
 msgstr ""
 
-msgid "Filter by status"
-msgstr ""
-
 msgid "Filter by phone number"
 msgstr ""
 
-msgid "Filter"
-msgstr "Lọc"
-
-msgid "Show"
-msgstr "Hiện"
-
-msgid "per page"
+msgid "Filter by status"
 msgstr ""
 
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgid "Reset filter"
 msgstr ""
 
-msgid "Previous"
-msgstr "Trước"
-
-msgid "Page"
-msgstr "Trang"
-
-msgid "of {{pageCount}}"
+msgid "Received"
 msgstr ""
-
-msgid "Next"
-msgstr "Sau"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr ""
@@ -417,12 +423,6 @@ msgstr "Tình trạng"
 
 msgid "Sender"
 msgstr "Người gửi"
-
-msgid "Received"
-msgstr ""
-
-msgid "No SMSes to display"
-msgstr ""
 
 msgid "Unknown"
 msgstr "Không rõ"

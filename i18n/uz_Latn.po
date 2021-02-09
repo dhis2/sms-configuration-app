@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2020-11-12T07:59:47.850Z\n"
+"POT-Creation-Date: 2021-02-01T14:22:02.196Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -27,6 +27,9 @@ msgstr "Ha, bekor qilish"
 
 msgid "Data set"
 msgstr "Maʼlumotlar toʼplami"
+
+msgid "Delete selected"
+msgstr "Tanlangan oʼchirilchin"
 
 msgid ""
 "Please make sure the value of this input matches the value in "
@@ -146,6 +149,27 @@ msgstr "Clickatell"
 
 msgid "Generic"
 msgstr "Umumiy"
+
+msgid "Show"
+msgstr "Koʼrsating"
+
+msgid "per page"
+msgstr "har sahifada"
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "Koʼrinish {{Jami}} dan {{DastlabkiElement}}-{{OxirgiElement}}"
+
+msgid "Previous"
+msgstr "Oldingi"
+
+msgid "Page"
+msgstr "Sahifa"
+
+msgid "of {{pageCount}}"
+msgstr "{{pageCount}} ga/dan"
+
+msgid "Next"
+msgstr "Кейинги"
 
 msgid "Program"
 msgstr "Dastur"
@@ -286,6 +310,9 @@ msgstr "Qiymat takrorlanishi!"
 msgid "Special characters"
 msgstr ""
 
+msgid "No SMSes to display"
+msgstr "Koʼrsatish uchun SMSlar yoʼq"
+
 msgid "User group"
 msgstr ""
 
@@ -323,9 +350,6 @@ msgstr ""
 "Аgarda bir nechta shlyuz turi mavjud boʼlsa, jjarayonni muvozanatlashtirish "
 "uchun barcha shlyuzlardan foydalish lozim. DHIS2 hujjatlarida shlyuz "
 "sozlamalari haqida oʼqing."
-
-msgid "Delete selected"
-msgstr "Tanlangan oʼchirilchin"
 
 msgid "No gateways found"
 msgstr "Hech qanday shlyuz topilmadi"
@@ -388,35 +412,17 @@ msgstr "DHIS2 tomonidan qabul qilingan barcha SMS-xabarlar jurnalini ochish"
 msgid "View all received SMS"
 msgstr "Barcha qabul qilingan SMSlarni koʼrib chiqish"
 
-msgid "Filter by status"
-msgstr "Holatiga qarab filtrlash"
-
 msgid "Filter by phone number"
 msgstr ""
 
-msgid "Filter"
-msgstr "Filtr"
+msgid "Filter by status"
+msgstr "Holatiga qarab filtrlash"
 
-msgid "Show"
-msgstr "Koʼrsating"
+msgid "Reset filter"
+msgstr ""
 
-msgid "per page"
-msgstr "har sahifada"
-
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr "Koʼrinish {{Jami}} dan {{DastlabkiElement}}-{{OxirgiElement}}"
-
-msgid "Previous"
-msgstr "Oldingi"
-
-msgid "Page"
-msgstr "Sahifa"
-
-msgid "of {{pageCount}}"
-msgstr "{{pageCount}} ga/dan"
-
-msgid "Next"
-msgstr "Кейинги"
+msgid "Received"
+msgstr "Qabul qilindi"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr "SMSlar yuklanishida xatolik yuz berdi"
@@ -432,12 +438,6 @@ msgstr "Status"
 
 msgid "Sender"
 msgstr "Yuboruvchi"
-
-msgid "Received"
-msgstr "Qabul qilindi"
-
-msgid "No SMSes to display"
-msgstr "Koʼrsatish uchun SMSlar yoʼq"
 
 msgid "Unknown"
 msgstr "Nomaʼlum"
