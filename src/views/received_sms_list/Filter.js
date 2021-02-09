@@ -1,7 +1,6 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
-import debounce from 'lodash.debounce'
 import { dataTest } from '../../dataTest'
 import {
     Button,
@@ -22,41 +21,6 @@ const STATUS_FILTER_OPTIONS = [
     'SENT',
     'UNHANDLED',
 ].map(status => ({ value: status, label: statusMap[status] }))
-
-const PhoneInputField = ({ phoneNumber, onChange }) => {
-    const [value, setValue] = useState(phoneNumber)
-    const [waiting, setWaiting] = useState(false)
-    useEffect(() => {
-        setValue(phoneNumber)
-    }, [phoneNumber])
-    const debouncedOnChange = useCallback(
-        debounce(event => {
-            onChange(event)
-            setWaiting(false)
-        }, 300),
-        [onChange]
-    )
-    const handleChange = ({ value }) => {
-        setValue(value)
-        setWaiting(true)
-        debouncedOnChange({ value })
-    }
-
-    return (
-        <InputField
-            label={i18n.t('Filter by phone number')}
-            inputWidth="250px"
-            onChange={handleChange}
-            value={value}
-            dataTest="phone-number-filter"
-            loading={waiting}
-        />
-    )
-}
-PhoneInputField.propTypes = {
-    onChange: PropTypes.func.isRequired,
-    phoneNumber: PropTypes.string,
-}
 
 export const Filter = ({
     status,
@@ -85,9 +49,12 @@ export const Filter = ({
                     />
                 ))}
             </SingleSelectField>
-            <PhoneInputField
-                phoneNumber={phoneNumber}
+            <InputField
+                label={i18n.t('Filter by phone number')}
+                inputWidth="250px"
+                value={phoneNumber}
                 onChange={({ value }) => setPhoneNumber(value)}
+                dataTest="phone-number-filter"
             />
             <Button large onClick={onReset} dataTest="reset-filter-btn">
                 {i18n.t('Reset filter')}

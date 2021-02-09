@@ -74,9 +74,16 @@ export const ReceivedSmsList = () => {
         setSelectedIds([])
     }
 
-    useEffect(() => {
+    const refetchWithParams = () => {
         refetch({ page, pageSize, phoneNumber, status })
-    }, [page, pageSize, phoneNumber, status])
+    }
+    useEffect(refetchWithParams, [page, pageSize, status])
+    useEffect(() => {
+        if (called) {
+            const timeoutId = setTimeout(refetchWithParams, 500)
+            return () => clearTimeout(timeoutId)
+        }
+    }, [phoneNumber])
 
     if (error) {
         const msg = i18n.t('Something went wrong whilst loading received SMSes')
