@@ -64,6 +64,7 @@ export const ReceivedSmsList = () => {
         setQueryParams({
             phoneNumber: undefined,
             status: undefined,
+            page: 1,
         })
     }
     const { called, loading, error, data, refetch } = useDataQuery(query, {
