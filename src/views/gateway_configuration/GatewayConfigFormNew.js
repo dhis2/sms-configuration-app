@@ -3,7 +3,12 @@ import { useHistory } from 'react-router-dom'
 import React, { useState } from 'react'
 
 import { GATEWAY_CONFIG_LIST_PATH } from './GatewayConfigList'
-import { GENERIC_FORM, BULK_SMS_FORM, CLICKATELL_FORM } from '../../gateways'
+import {
+    GENERIC_FORM,
+    BULK_SMS_FORM,
+    CLICKATELL_FORM,
+    SMPP_FORM,
+} from '../../gateways'
 import { FormRow } from '../../forms'
 import { PageHeadline } from '../../headline'
 import { dataTest } from '../../dataTest'
@@ -11,8 +16,10 @@ import {
     GatewayBulkSMSForm,
     GatewayClickatellForm,
     GatewayGenericForm,
+    GatewaySMPPForm,
     useCreateBulkSMSGatewayMutation,
     useCreateClickatellGatewayMutation,
+    useCreateSMPPGatewayMutation,
     useCreateGenericGatewayMutation,
 } from '../../gateways'
 import i18n from '../../locales'
@@ -39,10 +46,16 @@ export const GatewayConfigFormNew = () => {
         { error: saveClickatellGatewayError },
     ] = useCreateClickatellGatewayMutation()
 
+    const [
+        saveSMPPGateway,
+        { error: saveSMPPGatewayError },
+    ] = useCreateSMPPGatewayMutation()
+
     const error =
         saveGenericGatewayError ||
         saveBulkSMSGatewayError ||
-        saveClickatellGatewayError
+        saveClickatellGatewayError ||
+        saveSMPPGatewayError
 
     if (error) {
         const msg = i18n.t('Something went wrong whilst saving the gateway')
@@ -69,6 +82,10 @@ export const GatewayConfigFormNew = () => {
 
             if (visibleForm === CLICKATELL_FORM) {
                 await saveClickatellGateway(values)
+            }
+
+            if (visibleForm === SMPP_FORM) {
+                await saveSMPPGateway(values)
             }
 
             history.push(GATEWAY_CONFIG_LIST_PATH)
@@ -109,6 +126,11 @@ export const GatewayConfigFormNew = () => {
                         value={CLICKATELL_FORM}
                         label={i18n.t('Clickatell')}
                     />
+
+                    <SingleSelectOption
+                        value={SMPP_FORM}
+                        label={i18n.t('SMPP')}
+                    />
                 </SingleSelectField>
             </FormRow>
 
@@ -130,6 +152,14 @@ export const GatewayConfigFormNew = () => {
 
                 {visibleForm === CLICKATELL_FORM && (
                     <GatewayClickatellForm
+                        onSubmit={onSubmit}
+                        passwordRequired={true}
+                        onCancelClick={onCancelClick}
+                    />
+                )}
+
+                {visibleForm === SMPP_FORM && (
+                    <GatewaySMPPForm
                         onSubmit={onSubmit}
                         passwordRequired={true}
                         onCancelClick={onCancelClick}

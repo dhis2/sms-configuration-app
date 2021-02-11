@@ -7,15 +7,18 @@ import {
     GENERIC_FORM,
     BULK_SMS_FORM,
     CLICKATELL_FORM,
+    SMPP_FORM,
     FIELD_GATEWAY_PASSWORD_CONFIRMATION_NAME,
     FIELD_GATEWAY_PASSWORD_NAME,
     GatewayBulkSMSForm,
     GatewayClickatellForm,
     GatewayGenericForm,
+    GatewaySMPPForm,
     useReadGatewayQuery,
     useUpdateGenericGatewayMutation,
     useUpdateBulkSMSGatewayMutation,
     useUpdateClickatellGatewayMutation,
+    useUpdateSMPPGatewayMutation,
 } from '../../gateways'
 import { CancelDialog } from '../../cancelDialog'
 import { PageHeadline } from '../../headline'
@@ -37,6 +40,10 @@ const getFormComponent = gatewayType => {
 
     if (gatewayType === CLICKATELL_FORM) {
         return GatewayClickatellForm
+    }
+
+    if (gatewayType === SMPP_FORM) {
+        return GatewaySMPPForm
     }
 
     throw new Error(`The gateway type does not exist, got "${gatewayType}"`)
@@ -78,10 +85,16 @@ export const GatewayConfigFormEdit = () => {
         { error: saveClickatellGatewayError },
     ] = useUpdateClickatellGatewayMutation()
 
+    const [
+        saveSMPPGateway,
+        { error: saveSMPPGatewayError },
+    ] = useUpdateSMPPGatewayMutation()
+
     const saveError =
         saveGenericGatewayError ||
         saveBulkSMSGatewayError ||
-        saveClickatellGatewayError
+        saveClickatellGatewayError ||
+        saveSMPPGatewayError
 
     if (loading) {
         return (
@@ -132,6 +145,10 @@ export const GatewayConfigFormEdit = () => {
 
             if (values.type === CLICKATELL_FORM) {
                 await saveClickatellGateway(values)
+            }
+
+            if (values.type === SMPP_FORM) {
+                await saveSMPPGateway(values)
             }
 
             history.push(GATEWAY_CONFIG_LIST_PATH)
