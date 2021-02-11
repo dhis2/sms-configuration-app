@@ -2252,6 +2252,13 @@
   dependencies:
     "@dhis2/prop-types" "^1.6.4"
 
+"@dhis2/ui-constants@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-constants/-/ui-constants-6.2.2.tgz#8bfaeb237449e081fd087b5042a67f8e50614275"
+  integrity sha512-/g+QYafwli/raeEQj1io0wCE4SQa78Y05Cq6ZyJK6D/XPQGP9L97xY8Xgeibzb0brLEChoXn+w8tI3lj9bPqyw==
+  dependencies:
+    "@dhis2/prop-types" "^1.6.4"
+
 "@dhis2/ui-core@5.6.2":
   version "5.6.2"
   resolved "https://registry.yarnpkg.com/@dhis2/ui-core/-/ui-core-5.6.2.tgz#4461eb099578c71e47ff709203fe5c7ad0d33b65"
@@ -2259,6 +2266,17 @@
   dependencies:
     "@dhis2/prop-types" "^1.6.4"
     "@popperjs/core" "^2.4.4"
+    classnames "^2.2.6"
+    react-popper "^2.2.3"
+    resize-observer-polyfill "^1.5.1"
+
+"@dhis2/ui-core@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-core/-/ui-core-6.2.2.tgz#09e6f13f0500d3ce9a08b5d9ef4d33108166b33b"
+  integrity sha512-lcNy7vE6RlwU02Rp83sPceztndQ8RJthiQ/cD3SdPnlQWnw51G/g89cEmLxUxZ1xOOxUJ1QIxvsTJjtf4kWxtg==
+  dependencies:
+    "@dhis2/prop-types" "^1.6.4"
+    "@popperjs/core" "^2.6.0"
     classnames "^2.2.6"
     react-popper "^2.2.3"
     resize-observer-polyfill "^1.5.1"
@@ -2273,10 +2291,27 @@
     final-form "^4.20.1"
     react-final-form "^6.5.1"
 
+"@dhis2/ui-forms@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-forms/-/ui-forms-6.2.2.tgz#c1350e8973ce74f6eee6c231d36dee9245cf8964"
+  integrity sha512-V3t9bN+zIOk4IAsTqCzGhpKeCWdxXr/iB+yMxxX7eLXqqmHE1L684THqP4pncZ+fTg1+1eaFOAxnjUoI1gPevA==
+  dependencies:
+    "@dhis2/prop-types" "^1.6.4"
+    classnames "^2.2.6"
+    final-form "^4.20.1"
+    react-final-form "^6.5.1"
+
 "@dhis2/ui-icons@5.6.2":
   version "5.6.2"
   resolved "https://registry.yarnpkg.com/@dhis2/ui-icons/-/ui-icons-5.6.2.tgz#96af58a2b6ac092328c544688654ddf0ef7a8cc8"
   integrity sha512-IrdmYuZtGn7WtkcwTkvdonxLnrK3SkrMeJK5gD7QXVYWF4qbWBeVtNTyfyNnAUivyr4PM77mO4aDCd5elzjAaw==
+  dependencies:
+    "@dhis2/prop-types" "^1.6.4"
+
+"@dhis2/ui-icons@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-icons/-/ui-icons-6.2.2.tgz#21d9a495b4fcdc860b2dfeab5024fd8c619b957c"
+  integrity sha512-zjIo6I2muIgKJHgSp+p8WbCAJzqflVddeATb39vijt8H30ASyWq6ftMpeiC3uufFgnwAbmDyAaKMQuel6IRTDg==
   dependencies:
     "@dhis2/prop-types" "^1.6.4"
 
@@ -2288,7 +2323,15 @@
     "@dhis2/prop-types" "^1.6.4"
     classnames "^2.2.6"
 
-"@dhis2/ui@^5.4.2", "@dhis2/ui@^5.6.2":
+"@dhis2/ui-widgets@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-widgets/-/ui-widgets-6.2.2.tgz#981b40a649f4f21710dc95f7cd99792497cdd9eb"
+  integrity sha512-HiIBf/ThDEYZOQ9sPg0zMuJHdqPXF2kTBZ50K44RMOs3ZYbYO60WNKBgd3ZRnfuwtNsp9mToQr0i47JBEa+a/w==
+  dependencies:
+    "@dhis2/prop-types" "^1.6.4"
+    classnames "^2.2.6"
+
+"@dhis2/ui@^5.4.2":
   version "5.6.2"
   resolved "https://registry.yarnpkg.com/@dhis2/ui/-/ui-5.6.2.tgz#ada103ad642c55a021b08fd91b519a7e21e6f4df"
   integrity sha512-OrsK//1WFyflbyJ8RxJUxeLP/9HUPuy8if9b39BXhlDpzi9GfBV3gITKMQCg691VMZ22LG+qU4KTHEA0si5WeA==
@@ -2298,6 +2341,17 @@
     "@dhis2/ui-forms" "5.6.2"
     "@dhis2/ui-icons" "5.6.2"
     "@dhis2/ui-widgets" "5.6.2"
+
+"@dhis2/ui@^6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui/-/ui-6.2.2.tgz#a7f3f4bde3283ef4dd739940aca0cdf16f16bec0"
+  integrity sha512-V8ldouBQxMPbNZRjgYpN0j31Cb19WoS02cy+CcRul9Lzb/U/HPRMbhAObzNqVqQLHjXCExmv4K2KjEqaW61OOw==
+  dependencies:
+    "@dhis2/ui-constants" "6.2.2"
+    "@dhis2/ui-core" "6.2.2"
+    "@dhis2/ui-forms" "6.2.2"
+    "@dhis2/ui-icons" "6.2.2"
+    "@dhis2/ui-widgets" "6.2.2"
 
 "@hapi/address@2.x.x":
   version "2.1.4"
@@ -2566,6 +2620,11 @@
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.4.4.tgz#11d5db19bd178936ec89cd84519c4de439574398"
   integrity sha512-1oO6+dN5kdIA3sKPZhRGJTfGVP4SWV6KqlMOwry4J3HfyD68sl/3KmG7DeYUzvN+RbhXDnv/D8vNNB8168tAMg==
+
+"@popperjs/core@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.6.0.tgz#f022195afdfc942e088ee2101285a1d31c7d727f"
+  integrity sha512-cPqjjzuFWNK3BSKLm0abspP0sp/IGOli4p5I5fKFAzdS8fvjdOwDCfZqAaIiXd9lPkOWi3SUUfZof3hEb7J/uw==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.1"
