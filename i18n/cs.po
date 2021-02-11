@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-01T14:22:02.196Z\n"
+"POT-Creation-Date: 2021-02-05T10:00:15.820Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Jiří Podhorecký, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -46,6 +46,12 @@ msgstr "Opravdu chcete odstranit vybrané brány?"
 msgid "Auth token"
 msgstr "Ověřovací token"
 
+msgid "Bind type"
+msgstr ""
+
+msgid "Compressed"
+msgstr ""
+
 msgid "Configuration template"
 msgstr "Šablona konfigurace"
 
@@ -67,8 +73,14 @@ msgstr "Prostý text"
 msgid "Content type"
 msgstr "Typ obsahu"
 
+msgid "Host"
+msgstr ""
+
 msgid "Name"
 msgstr "Název"
+
+msgid "Number plan indicator"
+msgstr ""
 
 msgid "Password"
 msgstr "Heslo"
@@ -76,8 +88,20 @@ msgstr "Heslo"
 msgid "Confirm password"
 msgstr "Potvrdit heslo"
 
+msgid "Port"
+msgstr ""
+
 msgid "Send url parameters"
 msgstr "Odeslat parametry URL"
+
+msgid "System id"
+msgstr ""
+
+msgid "System type"
+msgstr ""
+
+msgid "Type of number"
+msgstr ""
 
 msgid "Url template"
 msgstr "Šablona URL"
@@ -330,6 +354,9 @@ msgstr "Požadovanou bránu nelze načíst"
 
 msgid "Something went wrong whilst saving the gateway"
 msgstr "Při ukládání brány se něco pokazilo"
+
+msgid "SMPP"
+msgstr ""
 
 msgid "Something went wrong whilst performing the requested operation"
 msgstr "Při provádění požadované operace se něco pokazilo"

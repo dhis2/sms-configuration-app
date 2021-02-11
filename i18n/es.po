@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-01T14:22:02.196Z\n"
+"POT-Creation-Date: 2021-02-05T10:00:15.820Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
@@ -47,6 +47,12 @@ msgstr ""
 msgid "Auth token"
 msgstr ""
 
+msgid "Bind type"
+msgstr ""
+
+msgid "Compressed"
+msgstr ""
+
 msgid "Configuration template"
 msgstr ""
 
@@ -68,8 +74,14 @@ msgstr ""
 msgid "Content type"
 msgstr ""
 
+msgid "Host"
+msgstr ""
+
 msgid "Name"
 msgstr "Nombre"
+
+msgid "Number plan indicator"
+msgstr ""
 
 msgid "Password"
 msgstr "Contraseña"
@@ -77,7 +89,19 @@ msgstr "Contraseña"
 msgid "Confirm password"
 msgstr "Confirmar contraseña"
 
+msgid "Port"
+msgstr ""
+
 msgid "Send url parameters"
+msgstr ""
+
+msgid "System id"
+msgstr ""
+
+msgid "System type"
+msgstr ""
+
+msgid "Type of number"
 msgstr ""
 
 msgid "Url template"
@@ -330,6 +354,9 @@ msgid "The requested gateway could not be loaded"
 msgstr ""
 
 msgid "Something went wrong whilst saving the gateway"
+msgstr ""
+
+msgid "SMPP"
 msgstr ""
 
 msgid "Something went wrong whilst performing the requested operation"
