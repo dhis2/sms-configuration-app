@@ -55,7 +55,7 @@ export const ReceivedSmsList = () => {
     const [queryParams, setQueryParams] = useQueryParams()
     const { page, pageSize, phoneNumber, status } = queryParams
     const setPhoneNumber = phoneNumber => {
-        setQueryParams({ phoneNumber, page: 1 })
+        setQueryParams({ phoneNumber, page: 1 }, 'replaceIn')
     }
     const setStatus = status => {
         setQueryParams({ status, page: 1 })
