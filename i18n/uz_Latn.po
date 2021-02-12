@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-01T14:22:02.196Z\n"
+"POT-Creation-Date: 2021-02-05T10:00:15.820Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -47,6 +47,12 @@ msgstr "Haqiqatdan ham tanlangan yoʼnalishni oʼchirmoqchimisiz?"
 msgid "Auth token"
 msgstr ""
 
+msgid "Bind type"
+msgstr ""
+
+msgid "Compressed"
+msgstr ""
+
 msgid "Configuration template"
 msgstr "Konfiguratsiya shabloni"
 
@@ -68,8 +74,14 @@ msgstr "Oddiy matn"
 msgid "Content type"
 msgstr "Tarkib turi"
 
+msgid "Host"
+msgstr ""
+
 msgid "Name"
 msgstr "Исми"
+
+msgid "Number plan indicator"
+msgstr ""
 
 msgid "Password"
 msgstr "Parol"
@@ -77,8 +89,20 @@ msgstr "Parol"
 msgid "Confirm password"
 msgstr "Parolni tasdiqlang"
 
+msgid "Port"
+msgstr ""
+
 msgid "Send url parameters"
 msgstr "URL parametrlarini yuboring"
+
+msgid "System id"
+msgstr ""
+
+msgid "System type"
+msgstr ""
+
+msgid "Type of number"
+msgstr ""
 
 msgid "Url template"
 msgstr "URL shabloni"
@@ -333,6 +357,9 @@ msgstr "Soʼralgan shlyuzni yuklab boʼlmadi"
 
 msgid "Something went wrong whilst saving the gateway"
 msgstr "Shlyuzni saqlash paytida xatolik yuz berdi"
+
+msgid "SMPP"
+msgstr ""
 
 msgid "Something went wrong whilst performing the requested operation"
 msgstr "Soʼralgan operatsiyani bajarishda xatolik yuz berdi"

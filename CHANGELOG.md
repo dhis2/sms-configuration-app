@@ -1,3 +1,17 @@
+## [1.1.1](https://github.com/dhis2/sms-configuration-app/compare/v1.1.0...v1.1.1) (2021-02-12)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([3edc360](https://github.com/dhis2/sms-configuration-app/commit/3edc3600d6466c7c2e5c03d4ab5da51c7508d8ca))
+
+# [1.1.0](https://github.com/dhis2/sms-configuration-app/compare/v1.0.16...v1.1.0) (2021-02-11)
+
+
+### Features
+
+* **gateways:** add smpp gateway configuration option ([372c2ef](https://github.com/dhis2/sms-configuration-app/commit/372c2ef802f893cfd1c3fce67b64c5d141c00ea6))
+
 ## [1.0.16](https://github.com/dhis2/sms-configuration-app/compare/v1.0.15...v1.0.16) (2021-02-09)
 
 
