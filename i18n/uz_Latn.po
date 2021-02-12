@@ -90,7 +90,7 @@ msgid "Confirm password"
 msgstr "Parolni tasdiqlang"
 
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 msgid "Send url parameters"
 msgstr "URL parametrlarini yuboring"
