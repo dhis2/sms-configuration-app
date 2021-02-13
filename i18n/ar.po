@@ -91,7 +91,7 @@ msgid "Confirm password"
 msgstr "تأكيد كلمة المرور"
 
 msgid "Port"
-msgstr ""
+msgstr "المنفذ"
 
 msgid "Send url parameters"
 msgstr ""
