@@ -2,15 +2,15 @@
 # Translators:
 # phil_dhis2, 2020
 # 晓东 林 <13981924470@126.com>, 2020
-# easylin <lin_xd@126.com>, 2020
 # Viktor Varland <viktor@dhis2.org>, 2021
+# easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-02-05T10:00:15.820Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,10 +48,10 @@ msgid "Auth token"
 msgstr "验证令牌"
 
 msgid "Bind type"
-msgstr ""
+msgstr "绑定类型"
 
 msgid "Compressed"
-msgstr ""
+msgstr "压缩的"
 
 msgid "Configuration template"
 msgstr "配置模板"
@@ -75,13 +75,13 @@ msgid "Content type"
 msgstr "内容类型"
 
 msgid "Host"
-msgstr ""
+msgstr "主持人"
 
 msgid "Name"
 msgstr "名称"
 
 msgid "Number plan indicator"
-msgstr ""
+msgstr "号码计划指示器"
 
 msgid "Password"
 msgstr "口令"
@@ -96,13 +96,13 @@ msgid "Send url parameters"
 msgstr "发送网址参数"
 
 msgid "System id"
-msgstr ""
+msgstr "系统编号"
 
 msgid "System type"
-msgstr ""
+msgstr "系统类型"
 
 msgid "Type of number"
-msgstr ""
+msgstr "号码类型"
 
 msgid "Url template"
 msgstr "网址模板"
@@ -357,7 +357,7 @@ msgid "Something went wrong whilst saving the gateway"
 msgstr "保存网关时出了点问题"
 
 msgid "SMPP"
-msgstr ""
+msgstr "开关电源"
 
 msgid "Something went wrong whilst performing the requested operation"
 msgstr "执行请求的操作时出了点问题"
@@ -433,7 +433,7 @@ msgid "Filter by status"
 msgstr "按状态过滤"
 
 msgid "Reset filter"
-msgstr ""
+msgstr "重置过滤器"
 
 msgid "Received"
 msgstr "已收到"
