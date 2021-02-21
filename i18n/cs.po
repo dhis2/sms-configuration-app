@@ -47,10 +47,10 @@ msgid "Auth token"
 msgstr "Ověřovací token"
 
 msgid "Bind type"
-msgstr ""
+msgstr "Typ vazby"
 
 msgid "Compressed"
-msgstr ""
+msgstr "Stlačený"
 
 msgid "Configuration template"
 msgstr "Šablona konfigurace"
@@ -74,13 +74,13 @@ msgid "Content type"
 msgstr "Typ obsahu"
 
 msgid "Host"
-msgstr ""
+msgstr "Hostitel"
 
 msgid "Name"
 msgstr "Název"
 
 msgid "Number plan indicator"
-msgstr ""
+msgstr "indikátor číselného plánu"
 
 msgid "Password"
 msgstr "Heslo"
@@ -95,13 +95,13 @@ msgid "Send url parameters"
 msgstr "Odeslat parametry URL"
 
 msgid "System id"
-msgstr ""
+msgstr "System id"
 
 msgid "System type"
-msgstr ""
+msgstr "System type"
 
 msgid "Type of number"
-msgstr ""
+msgstr "Typ čísla"
 
 msgid "Url template"
 msgstr "Šablona URL"
@@ -356,7 +356,7 @@ msgid "Something went wrong whilst saving the gateway"
 msgstr "Při ukládání brány se něco pokazilo"
 
 msgid "SMPP"
-msgstr ""
+msgstr "SMPP"
 
 msgid "Something went wrong whilst performing the requested operation"
 msgstr "Při provádění požadované operace se něco pokazilo"
@@ -442,7 +442,7 @@ msgid "Filter by status"
 msgstr "Filtrovat podle stavu"
 
 msgid "Reset filter"
-msgstr ""
+msgstr "Reset filtru"
 
 msgid "Received"
 msgstr "Přijato"
