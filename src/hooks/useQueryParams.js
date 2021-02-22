@@ -8,7 +8,7 @@ import {
 export const useQueryParams = () =>
     _useQueryParams({
         status: withDefault(StringParam, 'ALL'),
-        phoneNumber: StringParam,
+        phoneNumber: withDefault(StringParam, ''),
         page: withDefault(NumberParam, 1),
         pageSize: withDefault(NumberParam, 50),
     })

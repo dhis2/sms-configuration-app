@@ -1,6 +1,7 @@
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import { useDataQuery } from '@dhis2/app-runtime'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
+import debounce from 'lodash.debounce'
 import { useQueryParams } from '../../hooks'
 import { PageHeadline } from '../../headline'
 import { DeleteSelectedButton } from '../../delete_selected_button/DeleteSelectedButton'
@@ -74,17 +75,14 @@ export const ReceivedSmsList = () => {
         refetch()
         setSelectedIds([])
     }
+    const debouncedRefetch = useCallback(
+        debounce(refetch, 500, { leading: true }),
+        []
+    )
 
-    const refetchWithParams = () => {
-        refetch({ page, pageSize, phoneNumber, status })
-    }
-    useEffect(refetchWithParams, [page, pageSize, status])
     useEffect(() => {
-        if (called) {
-            const timeoutId = setTimeout(refetchWithParams, 500)
-            return () => clearTimeout(timeoutId)
-        }
-    }, [phoneNumber])
+        debouncedRefetch({ page, pageSize, phoneNumber, status })
+    }, [page, pageSize, phoneNumber, status])
 
     if (error) {
         const msg = i18n.t('Something went wrong whilst loading received SMSes')
