@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-05T10:00:15.820Z\n"
+"POT-Creation-Date: 2021-02-09T13:21:14.657Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -424,11 +424,11 @@ msgstr "打开DHIS2收到的所有SMS消息的日志。"
 msgid "View all received SMS"
 msgstr "查看所有收到的短信"
 
-msgid "Filter by phone number"
-msgstr "按电话号码过滤"
-
 msgid "Filter by status"
 msgstr "按状态过滤"
+
+msgid "Filter by phone number"
+msgstr "按电话号码过滤"
 
 msgid "Reset filter"
 msgstr ""

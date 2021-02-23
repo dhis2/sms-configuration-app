@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-05T10:00:15.820Z\n"
+"POT-Creation-Date: 2021-02-09T13:21:14.657Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -435,11 +435,11 @@ msgstr "Otevřít protokoly všech SMS zpráv přijatých DHIS2."
 msgid "View all received SMS"
 msgstr "Zobrazit všechny přijaté SMS"
 
-msgid "Filter by phone number"
-msgstr "Filtrovat podle telefonního čísla"
-
 msgid "Filter by status"
 msgstr "Filtrovat podle stavu"
+
+msgid "Filter by phone number"
+msgstr "Filtrovat podle telefonního čísla"
 
 msgid "Reset filter"
 msgstr "Reset filtru"

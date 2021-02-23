@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-05T10:00:15.820Z\n"
+"POT-Creation-Date: 2021-02-09T13:21:14.657Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Khmer (https://www.transifex.com/hisp-uio/teams/100509/km/)\n"
@@ -423,10 +423,10 @@ msgstr ""
 msgid "View all received SMS"
 msgstr ""
 
-msgid "Filter by phone number"
+msgid "Filter by status"
 msgstr ""
 
-msgid "Filter by status"
+msgid "Filter by phone number"
 msgstr ""
 
 msgid "Reset filter"
