@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dhis2/sms-configuration-app/compare/v1.1.5...v1.2.0) (2021-02-23)
+
+
+### Features
+
+* use use-query-params for state management  ([#217](https://github.com/dhis2/sms-configuration-app/issues/217)) ([227ecba](https://github.com/dhis2/sms-configuration-app/commit/227ecba74355f27942b801d5ff01dc624f72b4a0))
+
 ## [1.1.5](https://github.com/dhis2/sms-configuration-app/compare/v1.1.4...v1.1.5) (2021-02-21)
 
 
