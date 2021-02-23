@@ -1,10 +1,8 @@
 import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
-import { useHistory } from 'react-router-dom'
 import { Button, SingleSelect, SingleSelectOption } from '@dhis2/ui'
 import { useQueryParams } from '../hooks'
-import { createSearchString } from '../utils'
 import styles from './Pagination.module.css'
 
 const PAGE_LENGTHS = ['1', '2', '10', '20', '30', '40', '50', '100']
@@ -15,25 +13,12 @@ export const Pagination = ({ page, pageCount, pageSize, total }) => {
     const availablePages = Array.from({ length: pageCount }, (_x, i) =>
         (i + 1).toString()
     )
-    const queryParams = useQueryParams()
-    const history = useHistory()
-    const navigateToPage = newPage => {
-        history.push({
-            search: createSearchString({
-                ...queryParams,
-                pageSize,
-                page: newPage,
-            }),
-        })
+    const [, setQueryParams] = useQueryParams()
+    const setPage = page => {
+        setQueryParams({ page })
     }
-    const navigateToNewPageSize = ({ selected }) => {
-        history.push({
-            search: createSearchString({
-                ...queryParams,
-                pageSize: selected,
-                page: 1,
-            }),
-        })
+    const setPageSize = pageSize => {
+        setQueryParams({ pageSize, page: 1 })
     }
 
     return (
@@ -43,7 +28,7 @@ export const Pagination = ({ page, pageCount, pageSize, total }) => {
                 <SingleSelect
                     dense
                     selected={pageSize.toString()}
-                    onChange={navigateToNewPageSize}
+                    onChange={({ selected }) => setPageSize(selected)}
                     className={styles.select}
                 >
                     {PAGE_LENGTHS.map(length => (
@@ -69,7 +54,7 @@ export const Pagination = ({ page, pageCount, pageSize, total }) => {
                     className={styles.buttonPrevious}
                     small
                     disabled={page === 1}
-                    onClick={() => navigateToPage(page - 1)}
+                    onClick={() => setPage(page - 1)}
                 >
                     {i18n.t('Previous')}
                 </Button>
@@ -78,7 +63,7 @@ export const Pagination = ({ page, pageCount, pageSize, total }) => {
                     dense
                     inputWidth="600px"
                     selected={page.toString()}
-                    onChange={({ selected }) => navigateToPage(selected)}
+                    onChange={({ selected }) => setPage(selected)}
                     className={styles.select}
                 >
                     {availablePages.map(availablePage => (
@@ -94,7 +79,7 @@ export const Pagination = ({ page, pageCount, pageSize, total }) => {
                     className={styles.buttonNext}
                     small
                     disabled={page === pageCount}
-                    onClick={() => navigateToPage(page + 1)}
+                    onClick={() => setPage(page + 1)}
                 >
                     {i18n.t('Next')}
                 </Button>

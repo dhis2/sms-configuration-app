@@ -1,6 +1,7 @@
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import { useDataQuery } from '@dhis2/app-runtime'
 import React, { useState, useEffect } from 'react'
+import { useDebouncedCallback } from 'use-debounce'
 import { useQueryParams } from '../../hooks'
 import { PageHeadline } from '../../headline'
 import { DeleteSelectedButton } from '../../delete_selected_button/DeleteSelectedButton'
@@ -52,7 +53,21 @@ const query = {
 
 export const ReceivedSmsList = () => {
     const [selectedIds, setSelectedIds] = useState([])
-    const { page, pageSize, phoneNumber, status } = useQueryParams()
+    const [queryParams, setQueryParams] = useQueryParams()
+    const { page, pageSize, phoneNumber, status } = queryParams
+    const setPhoneNumber = phoneNumber => {
+        setQueryParams({ phoneNumber, page: 1 }, 'replaceIn')
+    }
+    const setStatus = status => {
+        setQueryParams({ status, page: 1 })
+    }
+    const handleFilterReset = () => {
+        setQueryParams({
+            phoneNumber: undefined,
+            status: undefined,
+            page: 1,
+        })
+    }
     const { called, loading, error, data, refetch } = useDataQuery(query, {
         lazy: true,
     })
@@ -60,9 +75,12 @@ export const ReceivedSmsList = () => {
         refetch()
         setSelectedIds([])
     }
+    const { callback: debouncedRefetch } = useDebouncedCallback(refetch, 500, {
+        leading: true,
+    })
 
     useEffect(() => {
-        refetch({ page, pageSize, phoneNumber, status })
+        debouncedRefetch({ page, pageSize, phoneNumber, status })
     }, [page, pageSize, phoneNumber, status])
 
     if (error) {
@@ -87,7 +105,13 @@ export const ReceivedSmsList = () => {
         >
             <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
             <header className={styles.header}>
-                <Filter />
+                <Filter
+                    status={status}
+                    setStatus={setStatus}
+                    phoneNumber={phoneNumber}
+                    setPhoneNumber={setPhoneNumber}
+                    onReset={handleFilterReset}
+                />
                 <DeleteSelectedButton
                     selectedIds={selectedIds}
                     type="inbound"

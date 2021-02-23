@@ -1,8 +1,6 @@
-import React, { useState, useCallback, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 import i18n from '@dhis2/d2-i18n'
-import debounce from 'lodash.debounce'
 import { dataTest } from '../../dataTest'
 import {
     Button,
@@ -10,8 +8,6 @@ import {
     SingleSelectOption,
     InputField,
 } from '@dhis2/ui'
-import { useQueryParams } from '../../hooks'
-import { createSearchString } from '../../utils'
 import { statusMap } from './translations'
 import styles from './Filter.module.css'
 
@@ -26,105 +22,51 @@ const STATUS_FILTER_OPTIONS = [
     'UNHANDLED',
 ].map(status => ({ value: status, label: statusMap[status] }))
 
-const PhoneInputField = ({ phoneNumber, onChange }) => {
-    const [value, setValue] = useState(phoneNumber)
-    const [waiting, setWaiting] = useState(false)
-    useEffect(() => {
-        setValue(phoneNumber)
-    }, [phoneNumber])
-    const debouncedOnChange = useCallback(
-        debounce(event => {
-            onChange(event)
-            setWaiting(false)
-        }, 300),
-        [onChange]
-    )
-    const handleChange = ({ value }) => {
-        setValue(value)
-        setWaiting(true)
-        debouncedOnChange({ value })
-    }
-
-    return (
-        <InputField
-            label={i18n.t('Filter by phone number')}
-            inputWidth="250px"
-            onChange={handleChange}
-            value={value}
-            dataTest="phone-number-filter"
-            loading={waiting}
-        />
-    )
-}
-PhoneInputField.propTypes = {
-    onChange: PropTypes.func.isRequired,
-    phoneNumber: PropTypes.string,
-}
-
-const Filter = () => {
-    const { status, phoneNumber, pageSize } = useQueryParams()
-    const history = useHistory()
-
-    const handleStatusChange = ({ selected }) => {
-        history.push({
-            search: createSearchString({
-                status: selected,
-                phoneNumber,
-                pageSize,
-                page: 1,
-            }),
-        })
-    }
-    const handlePhoneNumberChange = ({ value }) => {
-        history.push({
-            search: createSearchString({
-                status,
-                phoneNumber: value,
-                pageSize,
-                page: 1,
-            }),
-        })
-    }
-    const handleReset = () => {
-        history.push({
-            search: createSearchString({
-                pageSize,
-                page: 1,
-            }),
-        })
-    }
-
-    return (
-        <div
-            data-test={dataTest('views-receivedsms-filter')}
-            className={styles.container}
-        >
-            <div className={styles.inputStrip}>
-                <SingleSelectField
-                    label={i18n.t('Filter by status')}
-                    inputWidth="200px"
-                    onChange={handleStatusChange}
-                    selected={status}
-                    dataTest="status-filter"
-                >
-                    {STATUS_FILTER_OPTIONS.map(({ label, value }) => (
-                        <SingleSelectOption
-                            key={label}
-                            label={label}
-                            value={value}
-                        />
-                    ))}
-                </SingleSelectField>
-                <PhoneInputField
-                    phoneNumber={phoneNumber}
-                    onChange={handlePhoneNumberChange}
-                />
-                <Button large onClick={handleReset} dataTest="reset-filter-btn">
-                    {i18n.t('Reset filter')}
-                </Button>
-            </div>
+export const Filter = ({
+    status,
+    setStatus,
+    phoneNumber,
+    setPhoneNumber,
+    onReset,
+}) => (
+    <div
+        data-test={dataTest('views-receivedsms-filter')}
+        className={styles.container}
+    >
+        <div className={styles.inputStrip}>
+            <SingleSelectField
+                label={i18n.t('Filter by status')}
+                inputWidth="200px"
+                onChange={({ selected }) => setStatus(selected)}
+                selected={status}
+                dataTest="status-filter"
+            >
+                {STATUS_FILTER_OPTIONS.map(({ label, value }) => (
+                    <SingleSelectOption
+                        key={label}
+                        label={label}
+                        value={value}
+                    />
+                ))}
+            </SingleSelectField>
+            <InputField
+                label={i18n.t('Filter by phone number')}
+                inputWidth="250px"
+                value={phoneNumber}
+                onChange={({ value }) => setPhoneNumber(value)}
+                dataTest="phone-number-filter"
+            />
+            <Button large onClick={onReset} dataTest="reset-filter-btn">
+                {i18n.t('Reset filter')}
+            </Button>
         </div>
-    )
-}
+    </div>
+)
 
-export { Filter }
+Filter.propTypes = {
+    phoneNumber: PropTypes.string.isRequired,
+    setPhoneNumber: PropTypes.func.isRequired,
+    setStatus: PropTypes.func.isRequired,
+    status: PropTypes.string.isRequired,
+    onReset: PropTypes.func.isRequired,
+}

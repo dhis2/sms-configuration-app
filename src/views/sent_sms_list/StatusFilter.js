@@ -1,9 +1,7 @@
 import React from 'react'
+import { PropTypes } from '@dhis2/prop-types'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
-import { useHistory } from 'react-router-dom'
 import i18n from '../../locales'
-import { useQueryParams } from '../../hooks'
-import { createSearchString } from '../../utils'
 import { statusMap } from './translations'
 import styles from './StatusFilter.module.css'
 
@@ -19,36 +17,23 @@ const STATUS_FILTER_OPTIONS = [
     'SENT',
 ].map(status => ({ value: status, label: statusMap[status] }))
 
-export const StatusFilter = () => {
-    const { status, pageSize } = useQueryParams()
-    const history = useHistory()
-    const handleStatusChange = ({ selected }) => {
-        history.push({
-            search: createSearchString({
-                status: selected,
-                pageSize,
-                page: 1,
-            }),
-        })
-    }
+export const StatusFilter = ({ status, setStatus }) => (
+    <div className={styles.container}>
+        <SingleSelectField
+            label={i18n.t('Filter by status')}
+            inputWidth="200px"
+            onChange={({ selected }) => setStatus(selected)}
+            selected={status}
+            dataTest="status-filter"
+        >
+            {STATUS_FILTER_OPTIONS.map(({ label, value }) => (
+                <SingleSelectOption key={label} label={label} value={value} />
+            ))}
+        </SingleSelectField>
+    </div>
+)
 
-    return (
-        <div className={styles.container}>
-            <SingleSelectField
-                label={i18n.t('Filter by status')}
-                inputWidth="200px"
-                onChange={handleStatusChange}
-                selected={status}
-                dataTest="status-filter"
-            >
-                {STATUS_FILTER_OPTIONS.map(({ label, value }) => (
-                    <SingleSelectOption
-                        key={label}
-                        label={label}
-                        value={value}
-                    />
-                ))}
-            </SingleSelectField>
-        </div>
-    )
+StatusFilter.propTypes = {
+    setStatus: PropTypes.func.isRequired,
+    status: PropTypes.string.isRequired,
 }

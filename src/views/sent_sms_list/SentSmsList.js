@@ -36,7 +36,11 @@ const query = {
 
 export const SentSmsList = () => {
     const [selectedIds, setSelectedIds] = useState([])
-    const { page, pageSize, status } = useQueryParams()
+    const [queryParams, setQueryParams] = useQueryParams()
+    const { page, pageSize, status } = queryParams
+    const setStatus = status => {
+        setQueryParams({ status, page: 1 })
+    }
     const { called, loading, error, data, refetch } = useDataQuery(query, {
         lazy: true,
     })
@@ -68,7 +72,7 @@ export const SentSmsList = () => {
         <div className={styles.container}>
             <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
             <header className={styles.header}>
-                <StatusFilter />
+                <StatusFilter status={status} setStatus={setStatus} />
                 <DeleteSelectedButton
                     selectedIds={selectedIds}
                     type="outbound"
