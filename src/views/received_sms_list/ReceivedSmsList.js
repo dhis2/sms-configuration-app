@@ -1,7 +1,7 @@
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import { useDataQuery } from '@dhis2/app-runtime'
-import React, { useState, useCallback, useEffect } from 'react'
-import debounce from 'lodash.debounce'
+import React, { useState, useEffect } from 'react'
+import { useDebouncedCallback } from 'use-debounce'
 import { useQueryParams } from '../../hooks'
 import { PageHeadline } from '../../headline'
 import { DeleteSelectedButton } from '../../delete_selected_button/DeleteSelectedButton'
@@ -75,10 +75,9 @@ export const ReceivedSmsList = () => {
         refetch()
         setSelectedIds([])
     }
-    const debouncedRefetch = useCallback(
-        debounce(refetch, 500, { leading: true }),
-        []
-    )
+    const { callback: debouncedRefetch } = useDebouncedCallback(refetch, 500, {
+        leading: true,
+    })
 
     useEffect(() => {
         debouncedRefetch({ page, pageSize, phoneNumber, status })
