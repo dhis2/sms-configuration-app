@@ -73,7 +73,7 @@ Given('the user navigated to the gateway configuration page', () => {
 
     cy.wrap(gateways).as('gateways')
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{navigation-navigationitem}:nth-child(2)').click()
 })
 
 Given('the user is editing a generic gateway configuration', () => {
@@ -89,28 +89,33 @@ Given('the user is editing a generic gateway configuration', () => {
 
     cy.wrap('editing').as('operation')
 
-    cy.get(
+    cy.getWithDataTest(
         '{gateways-gatewaystable-row}:first-child {gateways-gatewaystable-edit}'
     ).click()
 
-    cy.get('{views-gatewayconfigformedit}').should('exist')
-    cy.get('{views-gatewayconfigformedit-formcontainer}')
+    cy.getWithDataTest('{views-gatewayconfigformedit}').should('exist')
+    cy.getWithDataTest('{views-gatewayconfigformedit-formcontainer}')
         .invoke('attr', 'data-gateway-id')
         .as('gatewayId')
 })
 
 Given('the user is adding a generic gateway configuration', () => {
     cy.wrap('adding').as('operation')
-    cy.get('{views-gatewayconfiglist-add}').click()
-    cy.get('{views-gatewayconfigformnew}').should('exist')
+    cy.getWithDataTest('{views-gatewayconfiglist-add}').click()
+    cy.getWithDataTest('{views-gatewayconfigformnew}').should('exist')
 
     // Need to provide the required values,
     // otherwise the form can't be submitted
-    cy.get('{gateways-fieldgatewayname}').type('Field name', { delay: 0 })
-    cy.get('{gateways-fieldgatewayurltemplate}').type('http://domain.tld', {
+    cy.getWithDataTest('{gateways-fieldgatewayname}').type('Field name', {
         delay: 0,
     })
-    cy.get(
+    cy.getWithDataTest('{gateways-fieldgatewayurltemplate}').type(
+        'http://domain.tld',
+        {
+            delay: 0,
+        }
+    )
+    cy.getWithDataTest(
         '{gateways-fieldgatewayconfigurationtemplate}'
     ).type('Configuration template', { delay: 0 })
 })
@@ -123,17 +128,17 @@ Given('the user has added multiple key value pairs', () => {
     ]
 
     keyValuePairs.forEach(({ key, value }) => {
-        cy.get('{gateways-gatewayaddkeyvaluepair}').click()
-        cy.get('{gateways-gatewaykeyvaluepair}')
+        cy.getWithDataTest('{gateways-gatewayaddkeyvaluepair}').click()
+        cy.getWithDataTest('{gateways-gatewaykeyvaluepair}')
             .last()
             .as('lastKeyValuePair')
 
         cy.get('@lastKeyValuePair')
-            .find('{gateways-gatewaykeyvaluepair-key}')
+            .findWithDataTest('{gateways-gatewaykeyvaluepair-key}')
             .type(key)
 
         cy.get('@lastKeyValuePair')
-            .find('{gateways-gatewaykeyvaluepair-value}')
+            .findWithDataTest('{gateways-gatewaykeyvaluepair-value}')
             .type(value)
     })
 
@@ -146,12 +151,14 @@ Given('the user has added multiple key value pairs', () => {
 })
 
 When('the user clicks on the "add more" button', () => {
-    cy.get('{gateways-gatewayaddkeyvaluepair}').click()
+    cy.getWithDataTest('{gateways-gatewayaddkeyvaluepair}').click()
 })
 
 When('the user enters values for the key and value', () => {
-    cy.get('{gateways-gatewaykeyvaluepair-key} input').type('Key')
-    cy.get('{gateways-gatewaykeyvaluepair-value} input').type('Value')
+    cy.getWithDataTest('{gateways-gatewaykeyvaluepair-key} input').type('Key')
+    cy.getWithDataTest('{gateways-gatewaykeyvaluepair-value} input').type(
+        'Value'
+    )
 
     cy.get('@newParameter').then(newParameter => {
         const updated = {
@@ -165,7 +172,7 @@ When('the user enters values for the key and value', () => {
 })
 
 When('checks the "confidential" checkbox', () => {
-    cy.get(
+    cy.getWithDataTest(
         '{gateways-gatewaykeyvaluepair} {gateways-gatewaykeyvaluepair-isconfidential} label'
     ).click()
 
@@ -180,7 +187,7 @@ When('checks the "confidential" checkbox', () => {
 })
 
 When('checks the "header" checkbox', () => {
-    cy.get('{gateways-gatewaykeyvaluepair-isheader} label').click()
+    cy.getWithDataTest('{gateways-gatewaykeyvaluepair-isheader} label').click()
 
     cy.get('@newParameter').then(newParameter => {
         const updated = {
@@ -193,11 +200,11 @@ When('checks the "header" checkbox', () => {
 })
 
 When('the user submits the form', () => {
-    cy.get('{forms-gatewaygenericform-submit}').click()
+    cy.getWithDataTest('{forms-gatewaygenericform-submit}').click()
 })
 
 Then('the key-value form should appear', () => {
-    cy.get('{gateways-gatewaykeyvaluepair}').should('exist')
+    cy.getWithDataTest('{gateways-gatewaykeyvaluepair}').should('exist')
 })
 
 Then('the additional key-value pair should be sent to the endpoint', () => {

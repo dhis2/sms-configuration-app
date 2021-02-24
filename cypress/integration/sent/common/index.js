@@ -25,5 +25,5 @@ Given('some sent messages exist', () => {
 
 Given('the user navigated to the sent messages page', () => {
     cy.visit('/')
-    cy.get('{navigation-navigationitem}:nth-child(4)').click()
+    cy.getWithDataTest('{navigation-navigationitem}:nth-child(4)').click()
 })

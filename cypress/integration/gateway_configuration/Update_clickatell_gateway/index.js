@@ -61,16 +61,18 @@ Given('the user navigated to the gateway configuration page', () => {
     })
 
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{navigation-navigationitem}:nth-child(2)').click()
 })
 
 When(
     'the user clicks on the update button in the first clickatell gateway',
     () => {
-        cy.get('{gateways-gatewaystable-type}:contains("Clickatell")')
+        cy.getWithDataTest(
+            '{gateways-gatewaystable-type}:contains("Clickatell")'
+        )
             .first()
             .parents('tr')
-            .find('{gateways-gatewaystable-edit}')
+            .findWithDataTest('{gateways-gatewaystable-edit}')
             .click()
 
         cy.wrap(gateways[1])
@@ -80,7 +82,7 @@ When(
 )
 
 When("the user changes the name field's value to another valid value", () => {
-    cy.get('{gateways-fieldgatewayname} input')
+    cy.getWithDataTest('{gateways-fieldgatewayname} input')
         .clear()
         .type('New name value')
 
@@ -95,7 +97,7 @@ When("the user changes the name field's value to another valid value", () => {
 When(
     "the user changes the username field's value to another valid value",
     () => {
-        cy.get('{gateways-fieldgatewayusername} input')
+        cy.getWithDataTest('{gateways-fieldgatewayusername} input')
             .clear()
             .type('New user name value')
 
@@ -111,7 +113,7 @@ When(
 When(
     "the user changes the urlTemplate field's value to another valid value",
     () => {
-        cy.get('{gateways-fieldgatewayurltemplate} input')
+        cy.getWithDataTest('{gateways-fieldgatewayurltemplate} input')
             .clear()
             .type('http://another.domain.tld')
 
@@ -127,7 +129,7 @@ When(
 When(
     "the user changes the authToken field's value to another valid value",
     () => {
-        cy.get('{gateways-fieldgatewayauthtoken} input')
+        cy.getWithDataTest('{gateways-fieldgatewayauthtoken} input')
             .clear()
             .type('New auth token value')
 
@@ -141,11 +143,11 @@ When(
 )
 
 When('submits the form', () => {
-    cy.get('{forms-gatewayclickatellform-submit}').click()
+    cy.getWithDataTest('{forms-gatewayclickatellform-submit}').click()
 })
 
 When("the user changes the name field's value to another invalid value", () => {
-    cy.get('{gateways-fieldgatewayname}')
+    cy.getWithDataTest('{gateways-fieldgatewayname}')
         .as('invalidField')
         .find('input')
         .clear()
@@ -154,7 +156,7 @@ When("the user changes the name field's value to another invalid value", () => {
 When(
     "the user changes the username field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayusername}')
+        cy.getWithDataTest('{gateways-fieldgatewayusername}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -164,7 +166,7 @@ When(
 When(
     "the user changes the authToken field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayauthtoken}')
+        cy.getWithDataTest('{gateways-fieldgatewayauthtoken}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -174,7 +176,7 @@ When(
 When(
     "the user changes the urlTemplate field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayurltemplate}')
+        cy.getWithDataTest('{gateways-fieldgatewayurltemplate}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -183,14 +185,14 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{gateways-fieldgatewayname} input')
+    cy.getWithDataTest('{gateways-fieldgatewayname} input')
         .clear()
         .type('A valid name')
 })
 
 Then('the app should navigate to the update form', () => {
-    cy.get('{views-gatewayconfigformedit}').should('exist')
-    cy.get('{views-gatewayconfigformedit-formcontainer}')
+    cy.getWithDataTest('{views-gatewayconfigformedit}').should('exist')
+    cy.getWithDataTest('{views-gatewayconfigformedit-formcontainer}')
         .invoke('attr', 'data-gateway-id')
         .as('gatewayId')
 })
@@ -200,9 +202,9 @@ Then(
     () => {
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
-            () => cy.get('{gateways-fieldgatewayname} input'),
-            () => cy.get('{gateways-fieldgatewayusername} input'),
-            () => cy.get('{gateways-fieldgatewayauthtoken} input')
+            () => cy.getWithDataTest('{gateways-fieldgatewayname} input'),
+            () => cy.getWithDataTest('{gateways-fieldgatewayusername} input'),
+            () => cy.getWithDataTest('{gateways-fieldgatewayauthtoken} input')
         ).then(
             ([
                 editedGatewayConfiguration,
@@ -245,7 +247,7 @@ Then('the updates should be sent to the correct endpoint', () => {
 })
 
 Then('the form does not submit', () => {
-    cy.get('{views-gatewayconfiglist}').should('not.exist')
+    cy.getWithDataTest('{views-gatewayconfiglist}').should('not.exist')
 })
 
 Then('an error message should be shown at the invalid field', () => {
@@ -257,6 +259,6 @@ Then('an error message should be shown at the invalid field', () => {
 Then(
     'the user should be redirected to the gateway configuration overview page',
     () => {
-        cy.get('{views-gatewayconfiglist}').should('exist')
+        cy.getWithDataTest('{views-gatewayconfiglist}').should('exist')
     }
 )

@@ -5,7 +5,7 @@ Before(() => {
 })
 
 const selectSelectValue = (selectSelector, optionValue) => {
-    cy.get(selectSelector).click()
+    cy.getWithDataTest(selectSelector).click()
     return cy.get(`[data-value="${optionValue}"]`).click()
 }
 
@@ -81,14 +81,14 @@ Given('the user navigated to the gateway configuration page', () => {
     })
 
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{navigation-navigationitem}:nth-child(2)').click()
 })
 
 When('the user clicks on the update button in the first SMPP gateway', () => {
-    cy.get('{gateways-gatewaystable-type}:contains("smpp")')
+    cy.getWithDataTest('{gateways-gatewaystable-type}:contains("smpp")')
         .first()
         .parents('tr')
-        .find('{gateways-gatewaystable-edit}')
+        .findWithDataTest('{gateways-gatewaystable-edit}')
         .click()
 
     cy.wrap(gateways[0])
@@ -115,7 +115,7 @@ When(
 
                 if (isInputField) {
                     newValue = field === 'port' ? '1337' : 'This is a new value'
-                    cy.get(`${dataTest} input`)
+                    cy.getWithDataTest(`${dataTest} input`)
                         .clear()
                         .type(newValue)
                 } else if (field === 'numberPlanIndicator') {
@@ -138,7 +138,7 @@ When(
                     )
                 } else if (field === 'compressed') {
                     newValue = !prevValue
-                    cy.get(`${dataTest} label`).click()
+                    cy.getWithDataTest(`${dataTest} label`).click()
                 }
 
                 cy.get('@finalGatewayConfiguration').then(
@@ -155,7 +155,7 @@ When(
 )
 
 When('submits the form', () => {
-    cy.get('{forms-gatewaysmppform-submit}').click()
+    cy.getWithDataTest('{forms-gatewaysmppform-submit}').click()
 })
 
 When(
@@ -163,7 +163,7 @@ When(
     field => {
         const dataTest = `{gateways-fieldgateway${field.toLowerCase()}}`
         const newValue = field === 'port' ? '1337' : 'This is a new value'
-        cy.get(dataTest)
+        cy.getWithDataTest(dataTest)
             .as('invalidField')
             .find('input')
             .clear()
@@ -180,7 +180,7 @@ When(
 When(
     "the user changes the username field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayusername}')
+        cy.getWithDataTest('{gateways-fieldgatewayusername}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -190,7 +190,7 @@ When(
 When(
     "the user changes the authToken field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayauthtoken}')
+        cy.getWithDataTest('{gateways-fieldgatewayauthtoken}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -200,7 +200,7 @@ When(
 When(
     "the user changes the urlTemplate field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayurltemplate}')
+        cy.getWithDataTest('{gateways-fieldgatewayurltemplate}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -209,14 +209,14 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{gateways-fieldgatewayname} input')
+    cy.getWithDataTest('{gateways-fieldgatewayname} input')
         .clear()
         .type('A valid name')
 })
 
 Then('the app should navigate to the update form', () => {
-    cy.get('{views-gatewayconfigformedit}').should('exist')
-    cy.get('{views-gatewayconfigformedit-formcontainer}')
+    cy.getWithDataTest('{views-gatewayconfigformedit}').should('exist')
+    cy.getWithDataTest('{views-gatewayconfigformedit-formcontainer}')
         .invoke('attr', 'data-gateway-id')
         .as('gatewayId')
 })
@@ -226,24 +226,24 @@ Then(
     () => {
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
-            () => cy.get('{gateways-fieldgatewayname} input'),
-            () => cy.get('{gateways-fieldgatewaysystemid} input'),
-            () => cy.get('{gateways-fieldgatewayhost} input'),
+            () => cy.getWithDataTest('{gateways-fieldgatewayname} input'),
+            () => cy.getWithDataTest('{gateways-fieldgatewaysystemid} input'),
+            () => cy.getWithDataTest('{gateways-fieldgatewayhost} input'),
             () =>
-                cy.get(
+                cy.getWithDataTest(
                     '{gateways-fieldgatewaynumberplanindicator} [data-test="dhis2-uicore-select"]'
                 ),
             () =>
-                cy.get(
+                cy.getWithDataTest(
                     '{gateways-fieldgatewaytypeofnumber} [data-test="dhis2-uicore-select"]'
                 ),
             () =>
-                cy.get(
+                cy.getWithDataTest(
                     '{gateways-fieldgatewaybindtype} [data-test="dhis2-uicore-select"]'
                 ),
-            () => cy.get('{gateways-fieldgatewaysystemtype} input'),
-            () => cy.get('{gateways-fieldgatewayport} input'),
-            () => cy.get('{gateways-fieldgatewaypassword} input')
+            () => cy.getWithDataTest('{gateways-fieldgatewaysystemtype} input'),
+            () => cy.getWithDataTest('{gateways-fieldgatewayport} input'),
+            () => cy.getWithDataTest('{gateways-fieldgatewaypassword} input')
         ).then(
             ([
                 editedGatewayConfiguration,
@@ -322,7 +322,7 @@ Then('the updates should be sent to the correct endpoint', () => {
 })
 
 Then('the form does not submit', () => {
-    cy.get('{views-gatewayconfiglist}').should('not.exist')
+    cy.getWithDataTest('{views-gatewayconfiglist}').should('not.exist')
 })
 
 Then('an error message should be shown at the invalid field', () => {
@@ -334,6 +334,6 @@ Then('an error message should be shown at the invalid field', () => {
 Then(
     'the user should be redirected to the gateway configuration overview page',
     () => {
-        cy.get('{views-gatewayconfiglist}').should('exist')
+        cy.getWithDataTest('{views-gatewayconfiglist}').should('exist')
     }
 )

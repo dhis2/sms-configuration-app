@@ -63,11 +63,11 @@ Given('the user navigated to the gateway configuration page', () => {
     })
 
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{navigation-navigationitem}:nth-child(2)').click()
 })
 
 When('the user clicks on the update button in the first row', () => {
-    cy.get(
+    cy.getWithDataTest(
         '{gateways-gatewaystable-row}:first-child {gateways-gatewaystable-edit}'
     ).click()
 
@@ -77,7 +77,7 @@ When('the user clicks on the update button in the first row', () => {
 })
 
 When("the user changes the name field's value to another valid value", () => {
-    cy.get('{gateways-fieldgatewayname} input')
+    cy.getWithDataTest('{gateways-fieldgatewayname} input')
         .clear()
         .type('New name value')
 
@@ -92,7 +92,7 @@ When("the user changes the name field's value to another valid value", () => {
 When(
     "the user changes the urlTemplate field's value to another valid value",
     () => {
-        cy.get('{gateways-fieldgatewayurltemplate} input')
+        cy.getWithDataTest('{gateways-fieldgatewayurltemplate} input')
             .clear()
             .type('http://another-domain.tld')
 
@@ -135,34 +135,40 @@ When(
         keyValuePairs.forEach(keyValuePair => {
             const { key, value, header, confidential, encode } = keyValuePair
 
-            cy.get('{gateways-gatewayaddkeyvaluepair}').click()
-            cy.get('{gateways-gatewaykeyvaluepair}')
+            cy.getWithDataTest('{gateways-gatewayaddkeyvaluepair}').click()
+            cy.getWithDataTest('{gateways-gatewaykeyvaluepair}')
                 .last()
                 .as('lastKeyValuePair')
 
             cy.get('@lastKeyValuePair')
-                .find('{gateways-gatewaykeyvaluepair-key}')
+                .findWithDataTest('{gateways-gatewaykeyvaluepair-key}')
                 .type(key)
 
             cy.get('@lastKeyValuePair')
-                .find('{gateways-gatewaykeyvaluepair-value}')
+                .findWithDataTest('{gateways-gatewaykeyvaluepair-value}')
                 .type(value)
 
             if (header) {
                 cy.get('@lastKeyValuePair')
-                    .find('{gateways-gatewaykeyvaluepair-isheader} label')
+                    .findWithDataTest(
+                        '{gateways-gatewaykeyvaluepair-isheader} label'
+                    )
                     .click()
             }
 
             if (confidential) {
                 cy.get('@lastKeyValuePair')
-                    .find('{gateways-gatewaykeyvaluepair-isconfidential} label')
+                    .findWithDataTest(
+                        '{gateways-gatewaykeyvaluepair-isconfidential} label'
+                    )
                     .click()
             }
 
             if (encode) {
                 cy.get('@lastKeyValuePair')
-                    .find('{gateways-gatewaykeyvaluepair-isencoded} label')
+                    .findWithDataTest(
+                        '{gateways-gatewaykeyvaluepair-isencoded} label'
+                    )
                     .click()
             }
         })
@@ -179,11 +185,11 @@ When(
 )
 
 When('submits the form', () => {
-    cy.get('{forms-gatewaygenericform-submit}').click()
+    cy.getWithDataTest('{forms-gatewaygenericform-submit}').click()
 })
 
 When("the user changes the name field's value to another invalid value", () => {
-    cy.get('{gateways-fieldgatewayname}')
+    cy.getWithDataTest('{gateways-fieldgatewayname}')
         .as('invalidField')
         .find('input')
         .clear()
@@ -192,7 +198,7 @@ When("the user changes the name field's value to another invalid value", () => {
 When(
     "the user changes the urlTemplate field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayurltemplate}')
+        cy.getWithDataTest('{gateways-fieldgatewayurltemplate}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -201,14 +207,14 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{gateways-fieldgatewayname} input')
+    cy.getWithDataTest('{gateways-fieldgatewayname} input')
         .clear()
         .type('A valid name')
 })
 
 Then('the app should navigate to the update form', () => {
-    cy.get('{views-gatewayconfigformedit}').should('exist')
-    cy.get('{views-gatewayconfigformedit-formcontainer}')
+    cy.getWithDataTest('{views-gatewayconfigformedit}').should('exist')
+    cy.getWithDataTest('{views-gatewayconfigformedit-formcontainer}')
         .invoke('attr', 'data-gateway-id')
         .as('gatewayId')
 })
@@ -218,8 +224,8 @@ Then(
     () => {
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
-            () => cy.get('{gateways-fieldgatewayname} input'),
-            () => cy.get('{gateways-fieldgatewayurltemplate} input')
+            () => cy.getWithDataTest('{gateways-fieldgatewayname} input'),
+            () => cy.getWithDataTest('{gateways-fieldgatewayurltemplate} input')
         ).then(
             ([editedGatewayConfiguration, $nameInput, $urlTemplateInput]) => {
                 const { name, urlTemplate } = editedGatewayConfiguration
@@ -230,12 +236,14 @@ Then(
 
         cy.get('@editedGatewayConfiguration').then(({ parameters }) => {
             if (parameters.length) {
-                cy.get('{gateways-gatewaykeyvaluepair}').should(
+                cy.getWithDataTest('{gateways-gatewaykeyvaluepair}').should(
                     'have.lengthOf',
                     parameters.length
                 )
             } else {
-                cy.get('{gateways-gatewaykeyvaluepair}').should('not.exist')
+                cy.getWithDataTest('{gateways-gatewaykeyvaluepair}').should(
+                    'not.exist'
+                )
             }
         })
     }
@@ -260,7 +268,7 @@ Then('the updates should be sent to the correct endpoint', () => {
 })
 
 Then('the form does not submit', () => {
-    cy.get('{views-gatewayconfiglist}').should('not.exist')
+    cy.getWithDataTest('{views-gatewayconfiglist}').should('not.exist')
 })
 
 Then('an error message should be shown at the invalid field', () => {
@@ -272,6 +280,6 @@ Then('an error message should be shown at the invalid field', () => {
 Then(
     'the user should be redirected to the gateway configuration overview page',
     () => {
-        cy.get('{views-gatewayconfiglist}').should('exist')
+        cy.getWithDataTest('{views-gatewayconfiglist}').should('exist')
     }
 )

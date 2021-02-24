@@ -41,29 +41,31 @@ Given(
     'the user is editing an tracked entity registration parser command',
     () => {
         cy.visitWhenStubbed('/')
-        cy.get('{navigation-navigationitem}:nth-child(3)').click()
+        cy.getWithDataTest('{navigation-navigationitem}:nth-child(3)').click()
         // There's only one command in the mocked api response
-        cy.get('{views-smscommandlist-commandtable} button').click()
+        cy.getWithDataTest('{views-smscommandlist-commandtable} button').click()
     }
 )
 
 Given('the command has short codes', () => {
-    cy.get('h2:contains("SMS short codes") + {forms-formrow}').should('exist')
+    cy.getWithDataTest(
+        'h2:contains("SMS short codes") + {forms-formrow}'
+    ).should('exist')
 })
 
 When('the user changes the name field', () => {
-    cy.get('{commands-fieldcommandname} input')
+    cy.getWithDataTest('{commands-fieldcommandname} input')
         .invoke('val')
         .then(currentName => {
             cy.wrap({ name: `${currentName}!` }).as('newValues')
-            cy.get('{commands-fieldcommandname} input').type('!')
+            cy.getWithDataTest('{commands-fieldcommandname} input').type('!')
         })
 })
 
 When('the user changes the fieldSeparator field', () => {
     const separator = 'New separator'
 
-    cy.get('{forms-fieldcommandseparator} input')
+    cy.getWithDataTest('{forms-fieldcommandseparator} input')
         .clear()
         .type(separator)
 
@@ -73,7 +75,7 @@ When('the user changes the fieldSeparator field', () => {
 When('the user changes the replyMessage field', () => {
     const defaultMessage = 'New default message'
 
-    cy.get('{forms-fieldcommanddefaultmessage} textarea')
+    cy.getWithDataTest('{forms-fieldcommanddefaultmessage} textarea')
         .clear()
         .type(defaultMessage)
 
@@ -83,7 +85,7 @@ When('the user changes the replyMessage field', () => {
 When('the user changes the wrongFormatMessage field', () => {
     const wrongFormatMessage = 'New wrong format message'
 
-    cy.get('{forms-fieldcommandwrongformatmessage} textarea')
+    cy.getWithDataTest('{forms-fieldcommandwrongformatmessage} textarea')
         .clear()
         .type(wrongFormatMessage)
 
@@ -93,7 +95,7 @@ When('the user changes the wrongFormatMessage field', () => {
 When('the user changes the noUserMessage field', () => {
     const noUserMessage = 'New no user message'
 
-    cy.get('{forms-fieldcommandnousermessage} textarea')
+    cy.getWithDataTest('{forms-fieldcommandnousermessage} textarea')
         .clear()
         .type(noUserMessage)
 
@@ -103,7 +105,7 @@ When('the user changes the noUserMessage field', () => {
 When('the user changes the moreThanOneOrgUnitMessage field', () => {
     const moreThanOneOrgUnitMessage = 'New more than one org unit message'
 
-    cy.get('{forms-fieldcommandmorethanoneorgunitmessage} textarea')
+    cy.getWithDataTest('{forms-fieldcommandmorethanoneorgunitmessage} textarea')
         .clear()
         .type(moreThanOneOrgUnitMessage)
 
@@ -113,7 +115,7 @@ When('the user changes the moreThanOneOrgUnitMessage field', () => {
 When('the user changes the successMessage field', () => {
     const successMessage = 'New success message'
 
-    cy.get('{forms-fieldcommandsuccessmessage} textarea')
+    cy.getWithDataTest('{forms-fieldcommandsuccessmessage} textarea')
         .clear()
         .type(successMessage)
 
@@ -121,19 +123,21 @@ When('the user changes the successMessage field', () => {
 })
 
 When('the user changes the name field to an invalid value', () => {
-    cy.get('{commands-fieldcommandname} input').clear()
+    cy.getWithDataTest('{commands-fieldcommandname} input').clear()
 })
 
 When('the user changes the value of a sms short code', () => {
     const newSmsShortCodeValue = 'New sms short code value'
     cy.wrap(newSmsShortCodeValue).as('newSmsShortCodeValue')
-    cy.get('h2:contains("SMS short codes") + {forms-formrow} input')
+    cy.getWithDataTest('h2:contains("SMS short codes") + {forms-formrow} input')
         .clear()
         .type(newSmsShortCodeValue)
 })
 
 When('the user submits the form', () => {
-    cy.get('{views-smscommandformedit} button[type="submit"]').click()
+    cy.getWithDataTest(
+        '{views-smscommandformedit} button[type="submit"]'
+    ).click()
 })
 
 Then('the form should submit successfully', () => {
@@ -261,7 +265,7 @@ Then(
 )
 
 Then('the form should not submit successfully', () => {
-    cy.get('{views-smscommandformedit} .error').should(
+    cy.getWithDataTest('{views-smscommandformedit} .error').should(
         'have.length.of.at.least',
         1
     )

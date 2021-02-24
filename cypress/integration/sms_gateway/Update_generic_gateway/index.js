@@ -76,28 +76,28 @@ Given('the user navigated to the gateway configuration page', () => {
     }).as('updateGatewayConfigurationXHR')
 
     cy.visit('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{navigation-navigationitem}:nth-child(2)').click()
 })
 
 When('the user clicks on the edit button in the first row', () => {
-    cy.get(
+    cy.getWithDataTest(
         '{gateways-gatewaystable-row}:first-child {gateways-gatewaystable-edit}'
     ).click()
 })
 
 Then('the app should navigate to the update form', () => {
-    cy.get('{views-gatewayconfigformedit}').should('exist')
+    cy.getWithDataTest('{views-gatewayconfigformedit}').should('exist')
 })
 
 Then(
     'the input fields contain the information of the chosen gateway configuration',
     () => {
         cy.all(
-            () => cy.get('{forms-fieldname} input'),
-            () => cy.get('{forms-fieldmessageparameter} input'),
-            () => cy.get('{forms-fieldrecipientparameter} input'),
-            () => cy.get('{forms-fieldurltemplate} input'),
-            () => cy.get('{forms-keyvaluepair}')
+            () => cy.getWithDataTest('{forms-fieldname} input'),
+            () => cy.getWithDataTest('{forms-fieldmessageparameter} input'),
+            () => cy.getWithDataTest('{forms-fieldrecipientparameter} input'),
+            () => cy.getWithDataTest('{forms-fieldurltemplate} input'),
+            () => cy.getWithDataTest('{forms-keyvaluepair}')
         ).then(
             ([
                 $nameInput,
@@ -134,25 +134,33 @@ Then(
                         const $keyValuePair = Cypress.$(keyValuePair)
 
                         cy.wrap($keyValuePair)
-                            .find('{forms-keyvaluepair-key} input')
+                            .findWithDataTest('{forms-keyvaluepair-key} input')
                             .should('have.value', key)
 
                         cy.wrap($keyValuePair)
-                            .find('{forms-keyvaluepair-value} input')
+                            .findWithDataTest(
+                                '{forms-keyvaluepair-value} input'
+                            )
                             .should('have.value', value)
 
                         cy.wrap($keyValuePair)
-                            .find('{forms-keyvaluepair-isconfidential} input')
+                            .findWithDataTest(
+                                '{forms-keyvaluepair-isconfidential} input'
+                            )
                             .should(
                                 confidential ? 'be.checked' : 'not.be.checked'
                             )
 
                         cy.wrap($keyValuePair)
-                            .find('{forms-keyvaluepair-isheader} input')
+                            .findWithDataTest(
+                                '{forms-keyvaluepair-isheader} input'
+                            )
                             .should(header ? 'be.checked' : 'not.be.checked')
 
                         cy.wrap($keyValuePair)
-                            .find('{forms-keyvaluepair-isencoded} input')
+                            .findWithDataTest(
+                                '{forms-keyvaluepair-isencoded} input'
+                            )
                             .should(encode ? 'be.checked' : 'not.be.checked')
                     })
                 })

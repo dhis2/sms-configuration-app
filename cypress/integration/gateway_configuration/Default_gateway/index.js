@@ -53,13 +53,13 @@ Given('some gateway configurations exist', () => {
     })
 
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{navigation-navigationitem}:nth-child(2)').click()
 })
 
 When(
     'the user clicks on the make default button of a non-default gateway configuration',
     () => {
-        cy.get('{gateways-gatewaystable-makedefault}')
+        cy.getWithDataTest('{gateways-gatewaystable-makedefault}')
             .first()
             .as('makeDefaultButton')
 
@@ -72,7 +72,10 @@ When(
 )
 
 Then('there should be exactly one default gateway configuration', () => {
-    cy.get('{gateways-gatewaystable-isdefault}').should('have.lengthOf', 1)
+    cy.getWithDataTest('{gateways-gatewaystable-isdefault}').should(
+        'have.lengthOf',
+        1
+    )
 })
 
 Then(
@@ -83,7 +86,7 @@ Then(
             () =>
                 cy
                     .get('@newDefaultGatewayConfiguration')
-                    .find('{gateways-gatewaystable-id} input')
+                    .findWithDataTest('{gateways-gatewaystable-id} input')
                     .invoke('val')
         ).then(([xhr, id]) => {
             expect(xhr.status).to.equal(200)
