@@ -1,4 +1,4 @@
-import React from 'react'
+import { useDataQuery } from '@dhis2/app-runtime'
 import { PropTypes } from '@dhis2/prop-types'
 import {
     ReactFinalForm,
@@ -6,8 +6,12 @@ import {
     CenteredContent,
     CircularLoader,
 } from '@dhis2/ui'
-import { useDataQuery } from '@dhis2/app-runtime'
-
+import React from 'react'
+import { FormRow } from '../forms'
+import { PageSubHeadline } from '../headline'
+import i18n from '../locales'
+import { FieldProgram } from '../program'
+import { CommandFormActions, useUpdateCommand } from '../smsCommand'
 import {
     FIELD_COMMAND_SMS_CODES_NAME,
     FieldCommandName,
@@ -20,11 +24,6 @@ import {
     FieldCommandSuccessMessage,
     FieldCommandSmsCode,
 } from '../smsCommandFields'
-import { CommandFormActions, useUpdateCommand } from '../smsCommand'
-import { FormRow } from '../forms'
-import { FieldProgram } from '../program'
-import { PageSubHeadline } from '../headline'
-import i18n from '../locales'
 
 const { Form } = ReactFinalForm
 

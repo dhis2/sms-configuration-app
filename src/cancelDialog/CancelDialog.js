@@ -1,7 +1,6 @@
-import { Button, ButtonStrip, Modal, ModalTitle, ModalActions } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import { Button, ButtonStrip, Modal, ModalTitle, ModalActions } from '@dhis2/ui'
 import React from 'react'
-
 import i18n from '../locales'
 
 export const CancelDialog = ({ onConfirmCancel, onAbortCancel }) => (

@@ -1,13 +1,12 @@
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-
-import { FieldDataElementWithCategoryOptionCombo } from './FieldDataElementWithCategoryOptionCombo'
-import { DataElementTimesCategoryOptionCombosCompletenessMessage } from './DataElementTimesCategoryOptionCombosCompletenessMessage'
+import { dataTest } from '../dataTest'
 import { FormRow } from '../forms'
 import { PageSubHeadline } from '../headline'
-import { dataTest } from '../dataTest'
 import i18n from '../locales'
 import styles from './DataElementTimesCategoryOptionCombos.module.css'
+import { DataElementTimesCategoryOptionCombosCompletenessMessage } from './DataElementTimesCategoryOptionCombosCompletenessMessage'
+import { FieldDataElementWithCategoryOptionCombo } from './FieldDataElementWithCategoryOptionCombo'
 
 export const DataElementTimesCategoryOptionCombos = ({
     DE_COC_combinations,

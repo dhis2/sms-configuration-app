@@ -1,8 +1,7 @@
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-
-import { CommandEditWithDataSetForm } from '../smsCommandWithDataSet'
 import { dataTest } from '../dataTest'
+import { CommandEditWithDataSetForm } from '../smsCommandWithDataSet'
 
 export const CommandEditKeyValueParserForm = ({
     commandId,

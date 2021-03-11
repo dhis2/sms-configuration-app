@@ -1,7 +1,7 @@
 import { Button, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../locales'
 import { dataTest } from '../dataTest'
+import i18n from '../locales'
 import styles from './GatewayAddKeyValuePair.module.css'
 
 const { useForm } = ReactFinalForm

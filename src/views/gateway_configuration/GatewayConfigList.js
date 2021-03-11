@@ -1,8 +1,8 @@
-import { useHistory } from 'react-router-dom'
-import React, { useState } from 'react'
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
-
-import { GATEWAY_CONFIG_FORM_NEW_PATH } from './GatewayConfigFormNew'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { ListActions } from '../../dataList'
+import { dataTest } from '../../dataTest'
 import {
     DeleteGatewaysConfirmationDialog,
     GatewayList,
@@ -10,11 +10,10 @@ import {
     useReadGatewaysQuery,
     useSetDefaultGatewayMutation,
 } from '../../gateways'
-import { ListActions } from '../../dataList'
 import { PageHeadline } from '../../headline'
-import { Paragraph } from '../../text'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { Paragraph } from '../../text'
+import { GATEWAY_CONFIG_FORM_NEW_PATH } from './GatewayConfigFormNew'
 import styles from './GatewayConfigList.module.css'
 
 export const GATEWAY_CONFIG_LIST_PATH = '/sms-gateway'

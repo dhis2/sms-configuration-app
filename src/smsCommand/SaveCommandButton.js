@@ -1,5 +1,5 @@
-import { Button, CircularLoader, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import { Button, CircularLoader, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../locales'
 

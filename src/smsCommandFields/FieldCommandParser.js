@@ -1,12 +1,11 @@
-import { hasValue } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import { hasValue } from '@dhis2/ui'
 import { SingleSelectFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-
-import { FIELD_COMMAND_PARSER_NAME } from './fieldNames'
-import * as commandTypes from './parserTypes'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
+import { FIELD_COMMAND_PARSER_NAME } from './fieldNames'
+import * as commandTypes from './parserTypes'
 
 const { Field } = ReactFinalForm
 const options = Object.values(commandTypes).sort((a, b) => {

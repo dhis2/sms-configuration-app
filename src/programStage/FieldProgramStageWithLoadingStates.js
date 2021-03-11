@@ -1,7 +1,6 @@
-import { hasValue, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import { hasValue, ReactFinalForm } from '@dhis2/ui'
 import React, { useEffect } from 'react'
-
 import { EVENT_REGISTRATION_PARSER } from '../smsCommandFields'
 import {
     FIELD_PROGRAM_STAGE_NAME,

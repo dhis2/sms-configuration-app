@@ -1,3 +1,4 @@
+import { PropTypes } from '@dhis2/prop-types'
 import {
     Button,
     ButtonStrip,
@@ -10,15 +11,13 @@ import {
     TableRow,
     TableCell,
 } from '@dhis2/ui'
-import { PropTypes } from '@dhis2/prop-types'
-import { useHistory } from 'react-router-dom'
 import React from 'react'
-
-import { GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC } from '../views/gateway_configuration/GatewayConfigFormEdit'
+import { useHistory } from 'react-router-dom'
 import { dataTest } from '../dataTest'
-import { getTypeLabelByType } from './getTypeLabelByType'
 import i18n from '../locales'
+import { GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC } from '../views/gateway_configuration/GatewayConfigFormEdit'
 import styles from './GatewaysTable.module.css'
+import { getTypeLabelByType } from './getTypeLabelByType'
 
 export const GatewaysTable = ({
     allGatewaysChecked,

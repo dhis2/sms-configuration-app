@@ -1,13 +1,13 @@
 import React from 'react'
-import i18n from '../../locales'
-import { PageHeadline } from '../../headline'
-import { dataTest } from '../../dataTest'
 import {
     GATEWAY_CONFIG_LIST_PATH,
     SMS_COMMAND_LIST_PATH,
     SENT_SMS_LIST_PATH,
     RECEIVED_SMS_LIST_PATH,
 } from '../'
+import { dataTest } from '../../dataTest'
+import { PageHeadline } from '../../headline'
+import i18n from '../../locales'
 import s from './Home.module.css'
 import HomeCard from './HomeCard'
 

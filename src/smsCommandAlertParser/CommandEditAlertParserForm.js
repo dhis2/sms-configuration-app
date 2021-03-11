@@ -1,4 +1,4 @@
-import React from 'react'
+import { useDataQuery } from '@dhis2/app-runtime'
 import { PropTypes } from '@dhis2/prop-types'
 import {
     ReactFinalForm,
@@ -6,18 +6,17 @@ import {
     CenteredContent,
     CircularLoader,
 } from '@dhis2/ui'
-import { useDataQuery } from '@dhis2/app-runtime'
-
+import React from 'react'
+import { dataTest } from '../dataTest'
+import { FormRow } from '../forms'
+import i18n from '../locales'
+import { CommandFormActions, useUpdateCommand } from '../smsCommand'
 import {
     FieldCommandName,
     FieldCommandParser,
     FieldCommandConfirmMessage,
 } from '../smsCommandFields'
-import { CommandFormActions, useUpdateCommand } from '../smsCommand'
 import { FieldUserGroup } from '../userGroup'
-import { FormRow } from '../forms'
-import { dataTest } from '../dataTest'
-import i18n from '../locales'
 
 const { Form } = ReactFinalForm
 

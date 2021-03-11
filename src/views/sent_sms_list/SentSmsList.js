@@ -1,13 +1,13 @@
-import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import { useDataQuery } from '@dhis2/app-runtime'
+import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState, useEffect } from 'react'
-import { useQueryParams } from '../../hooks'
-import { PageHeadline } from '../../headline'
 import { DeleteSelectedButton } from '../../delete_selected_button/DeleteSelectedButton'
+import { PageHeadline } from '../../headline'
+import { useQueryParams } from '../../hooks'
 import i18n from '../../locales'
+import styles from './SentSmsList.module.css'
 import { SentSmsTable } from './SentSmsTable'
 import { StatusFilter } from './StatusFilter'
-import styles from './SentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('Sent')
 export const SENT_SMS_LIST_PATH = '/sent'

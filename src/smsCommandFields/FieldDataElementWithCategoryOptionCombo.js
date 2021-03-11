@@ -1,12 +1,11 @@
-import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React, { useState } from 'react'
-
-import { DE_COC_toFormName } from '../smsCommand'
-import { FieldDataElementWithCategoryOptionComboFormula } from './FieldDataElementWithCategoryOptionComboFormula'
-import { FieldDataElementWithCategoryOptionComboAddFormulaButton } from './FieldDataElementWithCategoryOptionComboAddFormulaButton'
 import i18n from '../locales'
+import { DE_COC_toFormName } from '../smsCommand'
 import styles from './FieldDataElementWithCategoryOptionCombo.module.css'
+import { FieldDataElementWithCategoryOptionComboAddFormulaButton } from './FieldDataElementWithCategoryOptionComboAddFormulaButton'
+import { FieldDataElementWithCategoryOptionComboFormula } from './FieldDataElementWithCategoryOptionComboFormula'
 
 const { Field } = ReactFinalForm
 

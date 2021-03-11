@@ -1,7 +1,6 @@
-import { hasValue, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import { hasValue, ReactFinalForm } from '@dhis2/ui'
 import React, { useEffect } from 'react'
-
 import { FIELD_PROGRAM_NAME, FieldProgram } from './FieldProgram'
 import { ALL_PROGRAMS, useReadProgramsQuery } from './useReadProgramsQuery'
 

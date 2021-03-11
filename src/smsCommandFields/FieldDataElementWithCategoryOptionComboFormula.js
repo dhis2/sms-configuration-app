@@ -1,3 +1,4 @@
+import { PropTypes } from '@dhis2/prop-types'
 import {
     Button,
     ButtonStrip,
@@ -11,13 +12,11 @@ import {
     SingleSelectFieldFF,
     hasValue,
 } from '@dhis2/ui'
-import { PropTypes } from '@dhis2/prop-types'
 import React, { useMemo } from 'react'
-
-import { FIELD_DATA_SET_NAME } from '../dataSet'
-import { FormRow } from '../forms'
-import { dataTest } from '../dataTest'
 import { useReadDataElementsOfDataSetQuery } from '../dataElement'
+import { FIELD_DATA_SET_NAME } from '../dataSet'
+import { dataTest } from '../dataTest'
+import { FormRow } from '../forms'
 import i18n from '../locales'
 
 const { Field, Form, useForm, useField } = ReactFinalForm

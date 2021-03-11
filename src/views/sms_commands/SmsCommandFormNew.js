@@ -1,8 +1,24 @@
-import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
-import { useHistory } from 'react-router-dom'
+import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React, { useEffect, useState } from 'react'
-
+import { useHistory } from 'react-router-dom'
+import { FieldDataSetWithAutoLoad } from '../../dataSet'
+import { dataTest } from '../../dataTest'
+import { FormRow } from '../../forms'
+import { PageHeadline } from '../../headline'
+import i18n from '../../locales'
+import {
+    ALL_PROGRAMS,
+    FIELD_PROGRAM_NAME,
+    PROGRAMS_WITH_REGISTRATION,
+    PROGRAMS_WITHOUT_REGISTRATION,
+    FieldProgramWithAutoLoad,
+} from '../../program'
+import {
+    FIELD_PROGRAM_STAGE_NAME,
+    FieldProgramStageWithLoadingStates,
+} from '../../programStage'
+import { useCreateSmsCommandMutation } from '../../smsCommand'
 import {
     ALERT_PARSER,
     EVENT_REGISTRATION_PARSER,
@@ -15,26 +31,9 @@ import {
     FieldCommandName,
     FieldCommandParser,
 } from '../../smsCommandFields'
-import { dataTest } from '../../dataTest'
-import { useCreateSmsCommandMutation } from '../../smsCommand'
-import { FieldDataSetWithAutoLoad } from '../../dataSet'
-import {
-    ALL_PROGRAMS,
-    FIELD_PROGRAM_NAME,
-    PROGRAMS_WITH_REGISTRATION,
-    PROGRAMS_WITHOUT_REGISTRATION,
-    FieldProgramWithAutoLoad,
-} from '../../program'
-import {
-    FIELD_PROGRAM_STAGE_NAME,
-    FieldProgramStageWithLoadingStates,
-} from '../../programStage'
 import { FieldUserGroupWithAutoLoad } from '../../userGroup'
-import { FormRow } from '../../forms'
-import { PageHeadline } from '../../headline'
-import i18n from '../../locales'
-import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
 import styles from './SmsCommandFormNew.module.css'
+import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
 
 const { Form, useForm } = ReactFinalForm
 

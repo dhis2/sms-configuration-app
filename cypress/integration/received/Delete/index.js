@@ -52,9 +52,7 @@ When("the user clicks on the 'delete selected' button", () => {
 
 Then('the message should be deleted', () => {
     cy.wait('@receivedMessageDeleted')
-    cy.get('tbody')
-        .children()
-        .should('have.length', 2)
+    cy.get('tbody').children().should('have.length', 2)
 })
 
 Then('all the messages should be deleted', () => {

@@ -12,22 +12,21 @@ import {
     CenteredContent,
     CircularLoader,
 } from '@dhis2/ui'
-import { useHistory } from 'react-router-dom'
 import React, { useState } from 'react'
-
-import { SMS_COMMAND_FORM_EDIT_PATH_STATIC } from './SmsCommandFormEdit'
-import { SMS_COMMAND_FORM_NEW_PATH } from './SmsCommandFormNew'
+import { useHistory } from 'react-router-dom'
 import { ListActions } from '../../dataList'
+import { dataTest } from '../../dataTest'
 import { PageHeadline } from '../../headline'
-import { Paragraph } from '../../text'
+import i18n from '../../locales'
 import {
     DeleteCommandsConfirmationDialog,
     getLabelByParserTypes,
     useDeleteSmsCommandMutation,
     useReadSmsCommandsQuery,
 } from '../../smsCommand'
-import { dataTest } from '../../dataTest'
-import i18n from '../../locales'
+import { Paragraph } from '../../text'
+import { SMS_COMMAND_FORM_EDIT_PATH_STATIC } from './SmsCommandFormEdit'
+import { SMS_COMMAND_FORM_NEW_PATH } from './SmsCommandFormNew'
 import styles from './SmsCommandList.module.css'
 
 export const SMS_COMMAND_LIST_LABEL = i18n.t('Commands')

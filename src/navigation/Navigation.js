@@ -1,6 +1,6 @@
 import { Menu } from '@dhis2/ui'
 import React from 'react'
-
+import { dataTest } from '../dataTest'
 import {
     GATEWAY_CONFIG_LIST_LABEL,
     GATEWAY_CONFIG_LIST_PATH,
@@ -14,7 +14,6 @@ import {
     RECEIVED_SMS_LIST_LABEL,
 } from '../views'
 import { NavigationItem } from './NavigationItem'
-import { dataTest } from '../dataTest'
 
 export const Navigation = () => (
     <Menu dataTest={dataTest('navigation-navigation')}>

@@ -1,5 +1,5 @@
-import { useUpdateGatewayMutation } from './useUpdateGatewayMutation'
 import { createGenericGateWayDataFromVariables } from './createGenericGateWayDataFromVariables'
+import { useUpdateGatewayMutation } from './useUpdateGatewayMutation'
 
 export const UPDATE_GENERIC_GATEWAY_MUTATION = {
     resource: 'gateways',

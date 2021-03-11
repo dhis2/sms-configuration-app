@@ -1,6 +1,5 @@
-import { PropTypes } from '@dhis2/prop-types'
-import React from 'react'
 import i18n from '@dhis2/d2-i18n'
+import { PropTypes } from '@dhis2/prop-types'
 import {
     Checkbox,
     Table,
@@ -12,6 +11,7 @@ import {
     TableRow,
     TableRowHead,
 } from '@dhis2/ui'
+import React from 'react'
 import { Pagination } from '../pagination/Pagination'
 import styles from './SmsTable.module.css'
 

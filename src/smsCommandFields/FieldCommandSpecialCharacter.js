@@ -1,3 +1,4 @@
+import { PropTypes } from '@dhis2/prop-types'
 import {
     Button,
     Field as UiField,
@@ -5,13 +6,11 @@ import {
     ReactFinalForm,
     hasValue,
 } from '@dhis2/ui'
-import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-
-import { FIELD_COMMAND_SPECIAL_CHARS_NAME } from './fieldNames'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 import styles from './FieldCommandSpecialCharacter.module.css'
+import { FIELD_COMMAND_SPECIAL_CHARS_NAME } from './fieldNames'
 
 const { Field, useForm } = ReactFinalForm
 

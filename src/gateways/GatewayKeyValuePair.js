@@ -1,3 +1,4 @@
+import { PropTypes } from '@dhis2/prop-types'
 import {
     Button,
     CheckboxFieldFF,
@@ -8,12 +9,10 @@ import {
     string,
 } from '@dhis2/ui'
 import React from 'react'
-import { PropTypes } from '@dhis2/prop-types'
-
-import { GatewayKeyValuePairValueField } from './GatewayKeyValuePairValueField'
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 import styles from './GatewayKeyValuePair.module.css'
+import { GatewayKeyValuePairValueField } from './GatewayKeyValuePairValueField'
 
 const { Field, useForm } = ReactFinalForm
 const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)

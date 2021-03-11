@@ -1,3 +1,4 @@
+import { PropTypes } from '@dhis2/prop-types'
 import {
     Button,
     ButtonStrip,
@@ -6,9 +7,7 @@ import {
     ModalContent,
     ModalTitle,
 } from '@dhis2/ui'
-import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 

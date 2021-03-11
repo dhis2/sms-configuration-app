@@ -1,12 +1,20 @@
+import { PropTypes } from '@dhis2/prop-types'
 import {
     CenteredContent,
     CircularLoader,
     NoticeBox,
     ReactFinalForm,
 } from '@dhis2/ui'
-import { PropTypes } from '@dhis2/prop-types'
 import React, { useState } from 'react'
-
+import { FIELD_DATA_SET_NAME, FieldDataSet } from '../dataSet'
+import { FormRow } from '../forms'
+import { PageSubHeadline } from '../headline'
+import i18n from '../locales'
+import {
+    CommandFormActions,
+    getSmsCodeDuplicates,
+    useUpdateCommand,
+} from '../smsCommand'
 import {
     ALL_DATAVALUE,
     CommandsAddSpecialCharacters,
@@ -36,16 +44,7 @@ import {
     FieldCommandWrongFormatMessage,
     KEY_VALUE_PARSER,
 } from '../smsCommandFields'
-import {
-    CommandFormActions,
-    getSmsCodeDuplicates,
-    useUpdateCommand,
-} from '../smsCommand'
-import { FIELD_DATA_SET_NAME, FieldDataSet } from '../dataSet'
-import { FormRow } from '../forms'
-import { PageSubHeadline } from '../headline'
 import { useReadSmsCommandWithDataSetQuery } from './useReadSmsCommandWithDataSetQuery'
-import i18n from '../locales'
 
 const { Form, FormSpy } = ReactFinalForm
 
