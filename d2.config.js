@@ -6,7 +6,7 @@ const config = {
     coreApp: true,
 
     entryPoints: {
-        app: './src/App',
+        app: './src/App.js',
     },
 }
 
