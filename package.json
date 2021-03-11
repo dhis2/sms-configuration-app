@@ -26,7 +26,7 @@
         "@dhis2/cli-style": "^7.3.0",
         "@dhis2/cli-utils-cypress": "^5.1.1",
         "@dhis2/cypress-commands": "^5.1.1",
-        "@dhis2/cypress-plugins": "^7.0.0",
+        "@dhis2/cypress-plugins": "^7.0.1",
         "@testing-library/react-hooks": "^3.3.0",
         "eslint-plugin-cypress": "^2.11.2",
         "react-test-renderer": "^16.13.1"
