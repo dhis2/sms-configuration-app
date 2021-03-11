@@ -1,6 +1,5 @@
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-
 import { dataTest } from '../dataTest'
 import styles from './PageHeadline.module.css'
 

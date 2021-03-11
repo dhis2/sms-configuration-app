@@ -1,11 +1,10 @@
-import { Button, ButtonStrip } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import { Button, ButtonStrip } from '@dhis2/ui'
 import React from 'react'
-
-import { SaveCommandButton } from './SaveCommandButton'
-import { SubmitErrors } from './SubmitErrors'
 import i18n from '../locales'
 import styles from './CommandFormActions.module.css'
+import { SaveCommandButton } from './SaveCommandButton'
+import { SubmitErrors } from './SubmitErrors'
 
 export const CommandFormActions = ({ enableSubmit, onCancel }) => (
     <div className={styles.container}>

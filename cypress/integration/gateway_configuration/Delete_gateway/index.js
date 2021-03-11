@@ -85,10 +85,7 @@ Given('the user navigated to the gateway configuration page', () => {
 Given('the user wants to delete the first configuration', () => {
     cy.visitWhenStubbed('/')
     cy.get('{navigation-navigationitem}:nth-child(2)').click()
-    cy.get('{gateways-gatewaystable-checkbox}')
-        .first()
-        .find('label')
-        .click()
+    cy.get('{gateways-gatewaystable-checkbox}').first().find('label').click()
 })
 
 Given('the confirmation model is visible', () => {
@@ -97,10 +94,7 @@ Given('the confirmation model is visible', () => {
 })
 
 Given('some gateway configurations have been selected', () => {
-    cy.get('{gateways-gatewaystable-checkbox}')
-        .first()
-        .find('label')
-        .click()
+    cy.get('{gateways-gatewaystable-checkbox}').first().find('label').click()
 })
 
 Given('all gateway configurations have been selected', () => {
@@ -114,10 +108,7 @@ Given('no gateway configuration has been selected', () => {
 })
 
 When('the user user selects the first gateway configuration', () => {
-    cy.get('{gateways-gatewaystable-checkbox}')
-        .first()
-        .find('label')
-        .click()
+    cy.get('{gateways-gatewaystable-checkbox}').first().find('label').click()
 })
 
 When('the user cancels the deletion', () => {

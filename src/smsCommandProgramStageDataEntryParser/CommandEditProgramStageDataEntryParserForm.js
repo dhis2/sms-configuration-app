@@ -1,12 +1,18 @@
+import { PropTypes } from '@dhis2/prop-types'
 import {
     CenteredContent,
     CircularLoader,
     NoticeBox,
     ReactFinalForm,
 } from '@dhis2/ui'
-import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-
+import { dataTest } from '../dataTest'
+import { FormRow } from '../forms'
+import { PageSubHeadline } from '../headline'
+import i18n from '../locales'
+import { FieldProgram } from '../program'
+import { FieldProgramStage } from '../programStage'
+import { CommandFormActions, useUpdateCommand } from '../smsCommand'
 import {
     FIELD_COMMAND_DEFAULT_MESSAGE_NAME,
     FIELD_COMMAND_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME,
@@ -30,14 +36,7 @@ import {
     PROGRAM_STAGE_DATAENTRY_PARSER,
     ProgramStageDataElements,
 } from '../smsCommandFields'
-import { CommandFormActions, useUpdateCommand } from '../smsCommand'
-import { FieldProgram } from '../program'
-import { FieldProgramStage } from '../programStage'
-import { FormRow } from '../forms'
-import { PageSubHeadline } from '../headline'
-import { dataTest } from '../dataTest'
 import { useReadSmsCommandProgramStageDataEntryParserQuery } from './useReadSmsCommandProgramStageDataEntryParserQuery'
-import i18n from '../locales'
 
 const { Form } = ReactFinalForm
 

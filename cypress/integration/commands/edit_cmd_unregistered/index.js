@@ -50,9 +50,7 @@ When('the user changes the name field', () => {
         name: newNameValue,
     }).as('newValues')
 
-    cy.get('{commands-fieldcommandname} input')
-        .clear()
-        .type(newNameValue)
+    cy.get('{commands-fieldcommandname} input').clear().type(newNameValue)
 })
 
 When('the user changes the confirmMessage field', () => {

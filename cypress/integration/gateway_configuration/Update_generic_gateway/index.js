@@ -77,9 +77,7 @@ When('the user clicks on the update button in the first row', () => {
 })
 
 When("the user changes the name field's value to another valid value", () => {
-    cy.get('{gateways-fieldgatewayname} input')
-        .clear()
-        .type('New name value')
+    cy.get('{gateways-fieldgatewayname} input').clear().type('New name value')
 
     cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
         cy.wrap({
@@ -201,9 +199,7 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{gateways-fieldgatewayname} input')
-        .clear()
-        .type('A valid name')
+    cy.get('{gateways-fieldgatewayname} input').clear().type('A valid name')
 })
 
 Then('the app should navigate to the update form', () => {
@@ -264,9 +260,7 @@ Then('the form does not submit', () => {
 })
 
 Then('an error message should be shown at the invalid field', () => {
-    cy.get('@invalidField')
-        .find('.error')
-        .should('exist')
+    cy.get('@invalidField').find('.error').should('exist')
 })
 
 Then(

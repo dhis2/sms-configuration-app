@@ -1,7 +1,16 @@
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
-import { useHistory, useParams } from 'react-router-dom'
 import React, { useState } from 'react'
-
+import { useHistory, useParams } from 'react-router-dom'
+import { CancelDialog } from '../../cancelDialog'
+import { dataTest } from '../../dataTest'
+import { PageHeadline } from '../../headline'
+import i18n from '../../locales'
+import {
+    isParserType,
+    useReadSmsCommandParserTypeQuery,
+} from '../../smsCommand'
+import { CommandEditAlertParserForm } from '../../smsCommandAlertParser'
+import { CommandEditEventRegistrationParserForm } from '../../smsCommandEventRegistrationParser'
 import {
     ALERT_PARSER,
     EVENT_REGISTRATION_PARSER,
@@ -12,23 +21,13 @@ import {
     UNREGISTERED_PARSER,
     FIELD_COMMAND_PARSER_NAME,
 } from '../../smsCommandFields'
-import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
-import { CancelDialog } from '../../cancelDialog'
-import { CommandEditUnregisteredParserForm } from '../../smsCommandUnregisteredParser'
-import { CommandEditTrackedEntityRegistrationParserForm } from '../../smsCommandTrackedEntityRegistrationParser'
-import { CommandEditProgramStageDataEntryParserForm } from '../../smsCommandProgramStageDataEntryParser'
-import { CommandEditKeyValueParserForm } from '../../smsCommandKeyValueParser'
 import { CommandEditJ2MEParserForm } from '../../smsCommandJ2MEParser'
-import { CommandEditEventRegistrationParserForm } from '../../smsCommandEventRegistrationParser'
-import { CommandEditAlertParserForm } from '../../smsCommandAlertParser'
-import { PageHeadline } from '../../headline'
-import { dataTest } from '../../dataTest'
-import {
-    isParserType,
-    useReadSmsCommandParserTypeQuery,
-} from '../../smsCommand'
-import i18n from '../../locales'
+import { CommandEditKeyValueParserForm } from '../../smsCommandKeyValueParser'
+import { CommandEditProgramStageDataEntryParserForm } from '../../smsCommandProgramStageDataEntryParser'
+import { CommandEditTrackedEntityRegistrationParserForm } from '../../smsCommandTrackedEntityRegistrationParser'
+import { CommandEditUnregisteredParserForm } from '../../smsCommandUnregisteredParser'
 import styles from './SmsCommandFormEdit.module.css'
+import { SMS_COMMAND_LIST_PATH } from './SmsCommandList'
 
 export const SMS_COMMAND_FORM_EDIT_PATH_STATIC = '/sms-config/edit'
 export const SMS_COMMAND_FORM_EDIT_PATH = `${SMS_COMMAND_FORM_EDIT_PATH_STATIC}/:id`

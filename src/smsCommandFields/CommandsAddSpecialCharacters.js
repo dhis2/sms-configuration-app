@@ -1,10 +1,9 @@
 import { Button, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-
-import { FIELD_COMMAND_SPECIAL_CHARS_NAME } from './fieldNames'
-import { FormRow } from '../forms'
 import { dataTest } from '../dataTest'
+import { FormRow } from '../forms'
 import i18n from '../locales'
+import { FIELD_COMMAND_SPECIAL_CHARS_NAME } from './fieldNames'
 
 const { useForm } = ReactFinalForm
 

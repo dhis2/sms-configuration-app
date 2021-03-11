@@ -1,9 +1,8 @@
+import { useDataEngine } from '@dhis2/app-runtime'
 import { FinalForm } from '@dhis2/ui'
 import { useContext } from 'react'
-import { useDataEngine } from '@dhis2/app-runtime'
-
-import { AlertContext } from '../notifications'
 import i18n from '../locales'
+import { AlertContext } from '../notifications'
 
 const { FORM_ERROR } = FinalForm
 

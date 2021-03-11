@@ -1,5 +1,5 @@
-import { act, renderHook } from '@testing-library/react-hooks'
 import { useDataEngine } from '@dhis2/app-runtime'
+import { act, renderHook } from '@testing-library/react-hooks'
 import { useDeleteGatewaysMutation } from '../useDeleteGatewaysMutation'
 
 jest.mock('@dhis2/app-runtime', () => ({

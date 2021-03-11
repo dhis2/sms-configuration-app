@@ -124,9 +124,7 @@ Given('the user has added multiple key value pairs', () => {
 
     keyValuePairs.forEach(({ key, value }) => {
         cy.get('{gateways-gatewayaddkeyvaluepair}').click()
-        cy.get('{gateways-gatewaykeyvaluepair}')
-            .last()
-            .as('lastKeyValuePair')
+        cy.get('{gateways-gatewaykeyvaluepair}').last().as('lastKeyValuePair')
 
         cy.get('@lastKeyValuePair')
             .find('{gateways-gatewaykeyvaluepair-key}')

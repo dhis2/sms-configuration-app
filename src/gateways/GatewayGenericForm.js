@@ -1,21 +1,20 @@
+import { PropTypes } from '@dhis2/prop-types'
 import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React from 'react'
-import { PropTypes } from '@dhis2/prop-types'
-
+import { dataTest } from '../dataTest'
+import { FormRow } from '../forms'
 import {
     FieldGatewayName,
     FieldGatewayUrlTemplate,
     GatewayAddKeyValuePair,
     GatewayKeyValuePair,
 } from '../gateways'
-import { FieldGatewayConfigurationTemplate } from './FieldGatewayConfigurationTemplate'
-import { FieldGatewayUseGet } from './FieldGatewayUseGet'
-import { FieldGatewaySendUrlParameters } from './FieldGatewaySendUrlParameters'
-import { FieldGatewayContentType } from './FieldGatewayContentType'
-import { FormRow } from '../forms'
 import { PageSubHeadline } from '../headline'
-import { dataTest } from '../dataTest'
 import i18n from '../locales'
+import { FieldGatewayConfigurationTemplate } from './FieldGatewayConfigurationTemplate'
+import { FieldGatewayContentType } from './FieldGatewayContentType'
+import { FieldGatewaySendUrlParameters } from './FieldGatewaySendUrlParameters'
+import { FieldGatewayUseGet } from './FieldGatewayUseGet'
 
 const { Form } = ReactFinalForm
 

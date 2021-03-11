@@ -1,17 +1,14 @@
 import { SingleSelectField, SingleSelectOption, NoticeBox } from '@dhis2/ui'
-import { useHistory } from 'react-router-dom'
 import React, { useState } from 'react'
-
-import { GATEWAY_CONFIG_LIST_PATH } from './GatewayConfigList'
+import { useHistory } from 'react-router-dom'
+import { dataTest } from '../../dataTest'
+import { FormRow } from '../../forms'
 import {
     GENERIC_FORM,
     BULK_SMS_FORM,
     CLICKATELL_FORM,
     SMPP_FORM,
 } from '../../gateways'
-import { FormRow } from '../../forms'
-import { PageHeadline } from '../../headline'
-import { dataTest } from '../../dataTest'
 import {
     GatewayBulkSMSForm,
     GatewayClickatellForm,
@@ -22,8 +19,10 @@ import {
     useCreateSMPPGatewayMutation,
     useCreateGenericGatewayMutation,
 } from '../../gateways'
+import { PageHeadline } from '../../headline'
 import i18n from '../../locales'
 import styles from './GatewayConfigFormNew.module.css'
+import { GATEWAY_CONFIG_LIST_PATH } from './GatewayConfigList'
 
 export const GATEWAY_CONFIG_FORM_NEW_PATH = '/sms-gateway/new'
 

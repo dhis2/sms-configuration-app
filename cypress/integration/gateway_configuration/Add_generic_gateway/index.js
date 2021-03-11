@@ -126,9 +126,7 @@ Then('the entered data should be sent to the endpoint', () => {
 Then('an error message should be shown at the invalid field', () => {
     cy.get('@missingFields').then($missingFields => {
         $missingFields.each((index, $missingField) => {
-            cy.wrap($missingField)
-                .find('.error')
-                .should('exist')
+            cy.wrap($missingField).find('.error').should('exist')
         })
     })
 })

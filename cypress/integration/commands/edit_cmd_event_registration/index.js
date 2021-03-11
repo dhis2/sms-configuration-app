@@ -65,9 +65,7 @@ When('the user changes the name field', () => {
 When('the user changes the fieldSeparator field', () => {
     const separator = 'New separator'
 
-    cy.get('{forms-fieldcommandseparator} input')
-        .clear()
-        .type(separator)
+    cy.get('{forms-fieldcommandseparator} input').clear().type(separator)
 
     cy.wrap({ separator }).as('newValues')
 })

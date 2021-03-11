@@ -1,7 +1,7 @@
+import { PropTypes } from '@dhis2/prop-types'
 import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React from 'react'
-import { PropTypes } from '@dhis2/prop-types'
-
+import { dataTest } from '../dataTest'
 import { FormRow } from '../forms'
 import {
     FieldGatewayAuthToken,
@@ -9,7 +9,6 @@ import {
     FieldGatewayUrlTemplate,
     FieldGatewayUsername,
 } from '../gateways'
-import { dataTest } from '../dataTest'
 import i18n from '../locales'
 
 const { Form } = ReactFinalForm

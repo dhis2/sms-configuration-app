@@ -1,6 +1,5 @@
 import { NoticeBox, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-
 import { FormRow } from '../forms'
 import i18n from '../locales'
 

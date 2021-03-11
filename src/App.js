@@ -1,11 +1,11 @@
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
-import { QueryParamProvider } from 'use-query-params'
 import { CssVariables } from '@dhis2/ui'
 import React from 'react'
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { QueryParamProvider } from 'use-query-params'
 import styles from './App.module.css'
-
-import { AlertHandler } from './notifications'
+import { dataTest } from './dataTest'
 import { Navigation } from './navigation'
+import { AlertHandler } from './notifications'
 import {
     GATEWAY_CONFIG_FORM_EDIT_PATH,
     GATEWAY_CONFIG_FORM_NEW_PATH,
@@ -26,7 +26,6 @@ import {
     HOME_PATH,
     Home,
 } from './views'
-import { dataTest } from './dataTest'
 
 const App = () => (
     <AlertHandler>

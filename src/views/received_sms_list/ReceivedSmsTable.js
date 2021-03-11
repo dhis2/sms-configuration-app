@@ -1,11 +1,11 @@
-import { PropTypes } from '@dhis2/prop-types'
-import React from 'react'
 import i18n from '@dhis2/d2-i18n'
+import { PropTypes } from '@dhis2/prop-types'
 import { TableCell } from '@dhis2/ui'
-import { Date, Time } from '../../time'
-import { statusMap } from './translations'
+import React from 'react'
 import { SmsTable } from '../../sms_table/SmsTable'
+import { Date, Time } from '../../time'
 import styles from './ReceivedSmsTable.module.css'
+import { statusMap } from './translations'
 
 export const ReceivedSmsTable = ({
     messages,

@@ -1,8 +1,8 @@
-import { useHistory, useParams } from 'react-router-dom'
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState } from 'react'
-
-import { GATEWAY_CONFIG_LIST_PATH } from './GatewayConfigList'
+import { useHistory, useParams } from 'react-router-dom'
+import { CancelDialog } from '../../cancelDialog'
+import { dataTest } from '../../dataTest'
 import {
     GENERIC_FORM,
     BULK_SMS_FORM,
@@ -20,11 +20,10 @@ import {
     useUpdateClickatellGatewayMutation,
     useUpdateSMPPGatewayMutation,
 } from '../../gateways'
-import { CancelDialog } from '../../cancelDialog'
 import { PageHeadline } from '../../headline'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
 import styles from './GatewayConfigFormEdit.module.css'
+import { GATEWAY_CONFIG_LIST_PATH } from './GatewayConfigList'
 
 export const GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC = '/sms-gateway/edit'
 export const GATEWAY_CONFIG_FORM_EDIT_PATH = `${GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC}/:id`

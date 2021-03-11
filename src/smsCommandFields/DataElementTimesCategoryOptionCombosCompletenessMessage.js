@@ -1,13 +1,12 @@
 import { NoticeBox, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-
+import { FormRow } from '../forms'
+import i18n from '../locales'
 import {
     ALL_DATAVALUE,
     AT_LEAST_ONE_DATAVALUE,
     FIELD_COMMAND_COMPLETENESS_METHOD_NAME,
 } from '../smsCommandFields'
-import { FormRow } from '../forms'
-import i18n from '../locales'
 
 const { useField } = ReactFinalForm
 

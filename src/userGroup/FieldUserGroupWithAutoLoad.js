@@ -1,7 +1,6 @@
-import { hasValue } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import { hasValue } from '@dhis2/ui'
 import React from 'react'
-
 import { FieldUserGroup } from './FieldUserGroup'
 import { useReadUserGroupsQuery } from './useReadUserGroupsQuery'
 

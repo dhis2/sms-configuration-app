@@ -1,9 +1,8 @@
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-
-import { CommandEditWithDataSetForm } from '../smsCommandWithDataSet'
-import { AT_LEAST_ONE_DATAVALUE } from '../smsCommandFields'
 import { dataTest } from '../dataTest'
+import { AT_LEAST_ONE_DATAVALUE } from '../smsCommandFields'
+import { CommandEditWithDataSetForm } from '../smsCommandWithDataSet'
 
 export const CommandEditJ2MEParserForm = ({
     commandId,

@@ -1,7 +1,6 @@
-import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import { PropTypes } from '@dhis2/prop-types'
+import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-
 import { FIELD_COMMAND_SMS_CODES_NAME } from './fieldNames'
 
 const { Field, useFormState } = ReactFinalForm

@@ -1,3 +1,4 @@
+import { PropTypes } from '@dhis2/prop-types'
 import {
     InputFieldFF,
     ReactFinalForm,
@@ -5,9 +6,7 @@ import {
     string,
     hasValue,
 } from '@dhis2/ui'
-import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-
 import { dataTest } from '../dataTest'
 import i18n from '../locales'
 

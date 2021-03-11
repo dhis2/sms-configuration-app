@@ -1,7 +1,6 @@
-import React from 'react'
 import { PropTypes } from '@dhis2/prop-types'
 import cx from 'classnames'
-
+import React from 'react'
 import { dataTest } from '../dataTest'
 import styles from './FormRow.module.css'
 
