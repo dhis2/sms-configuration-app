@@ -3,29 +3,18 @@ import React from 'react'
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { QueryParamProvider } from 'use-query-params'
 import styles from './App.module.css'
+import { Navigation } from './components/navigation'
+import { AlertHandler } from './components/notifications'
 import { dataTest } from './dataTest'
-import { Navigation } from './navigation'
-import { AlertHandler } from './notifications'
-import {
-    GATEWAY_CONFIG_FORM_EDIT_PATH,
-    GATEWAY_CONFIG_FORM_NEW_PATH,
-    GATEWAY_CONFIG_LIST_PATH,
-    RECEIVED_SMS_LIST_PATH,
-    SMS_COMMAND_LIST_PATH,
-    SMS_COMMAND_FORM_EDIT_PATH,
-    SMS_COMMAND_FORM_NEW_PATH,
-    SENT_SMS_LIST_PATH,
-    GatewayConfigFormEdit,
-    GatewayConfigFormNew,
-    GatewayConfigList,
-    ReceivedSmsList,
-    SmsCommandList,
-    SmsCommandFormEdit,
-    SmsCommandFormNew,
-    SentSmsList,
-    HOME_PATH,
-    Home,
-} from './views'
+import { Home } from './pages/index'
+import { Received } from './pages/received'
+import { Sent } from './pages/sent'
+import { SmsCommand } from './pages/sms-command'
+import { SmsCommandEdit } from './pages/sms-command/[id]'
+import { SmsCommandNew } from './pages/sms-command/new'
+import { SmsGateway } from './pages/sms-gateway'
+import { SmsGatewayEdit } from './pages/sms-gateway/[id]'
+import { SmsGatewayNew } from './pages/sms-gateway/new'
 
 const App = () => (
     <AlertHandler>
@@ -39,61 +28,51 @@ const App = () => (
 
                     <main className={styles.content}>
                         <Switch>
-                            <Route exact path={HOME_PATH} component={Home} />
+                            {/* Home */ ''}
+                            <Route exact path="/" component={Home} />
 
                             {/* Gateway configuration */ ''}
                             <Route
                                 exact
-                                path={GATEWAY_CONFIG_LIST_PATH}
-                                component={GatewayConfigList}
+                                path="/sms-gateway"
+                                component={SmsGateway}
                             />
 
                             <Route
-                                exact
-                                path={GATEWAY_CONFIG_FORM_EDIT_PATH}
-                                component={GatewayConfigFormEdit}
+                                path="/sms-gateway/new"
+                                component={SmsGatewayNew}
                             />
 
                             <Route
-                                exact
-                                path={GATEWAY_CONFIG_FORM_NEW_PATH}
-                                component={GatewayConfigFormNew}
+                                path="/sms-gateway/:id"
+                                component={SmsGatewayEdit}
                             />
 
                             {/* Sms command */ ''}
                             <Route
                                 exact
-                                path={SMS_COMMAND_LIST_PATH}
-                                component={SmsCommandList}
+                                path="/sms-command"
+                                component={SmsCommand}
                             />
 
                             <Route
-                                exact
-                                path={SMS_COMMAND_FORM_EDIT_PATH}
-                                component={SmsCommandFormEdit}
+                                path="/sms-command/new"
+                                component={SmsCommandNew}
                             />
 
                             <Route
-                                exact
-                                path={SMS_COMMAND_FORM_NEW_PATH}
-                                component={SmsCommandFormNew}
+                                path="/sms-command/:id"
+                                component={SmsCommandEdit}
                             />
 
                             {/* View sent sms */ ''}
-                            <Route
-                                exact
-                                path={SENT_SMS_LIST_PATH}
-                                component={SentSmsList}
-                            />
+                            <Route path="/sent" component={Sent} />
 
                             {/* View received sms */ ''}
-                            <Route
-                                exact
-                                path={RECEIVED_SMS_LIST_PATH}
-                                component={ReceivedSmsList}
-                            />
+                            <Route path="/received" component={Received} />
 
-                            <Redirect from="*" to={HOME_PATH} />
+                            {/* Handle 404 */ ''}
+                            <Redirect from="*" to="/" />
                         </Switch>
                     </main>
                 </div>
