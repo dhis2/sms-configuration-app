@@ -2,7 +2,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales'
-import { statusMap } from '../../utils/translations/sent'
+import { sentTranslations } from '../../utils'
 import styles from './StatusFilter.module.css'
 
 // From https://github.com/dhis2/dhis2-core/blob/ea76fa86409613c9766d4508d65c88ac55c413c3/dhis-2/dhis-api/src/main/java/org/hisp/dhis/sms/outbound/OutboundSmsStatus.java
@@ -15,7 +15,7 @@ const STATUS_FILTER_OPTIONS = [
     'PENDING',
     'SCHEDULED',
     'SENT',
-].map(status => ({ value: status, label: statusMap[status] }))
+].map(status => ({ value: status, label: sentTranslations[status] }))
 
 export const StatusFilter = ({ status, setStatus }) => (
     <div className={styles.container}>

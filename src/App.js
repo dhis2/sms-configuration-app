@@ -5,7 +5,6 @@ import { QueryParamProvider } from 'use-query-params'
 import styles from './App.module.css'
 import { Navigation } from './components/navigation'
 import { AlertHandler } from './components/notifications'
-import { dataTest } from './dataTest'
 import { Home } from './pages/index'
 import { Received } from './pages/received'
 import { Sent } from './pages/sent'
@@ -15,6 +14,7 @@ import { SmsCommandNew } from './pages/sms-command/new'
 import { SmsGateway } from './pages/sms-gateway'
 import { SmsGatewayEdit } from './pages/sms-gateway/[id]'
 import { SmsGatewayNew } from './pages/sms-gateway/new'
+import { dataTest } from './utils'
 
 const App = () => (
     <AlertHandler>

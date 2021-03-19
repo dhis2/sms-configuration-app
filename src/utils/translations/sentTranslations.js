@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 
-export const statusMap = {
+export const sentTranslations = {
     ALL: i18n.t('All'),
     DELIVERED: i18n.t('Delivered'),
     ERROR: i18n.t('Error'),

@@ -2,7 +2,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import { TableCell } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales'
-import { statusMap } from '../../utils/translations/sent'
+import { sentTranslations } from '../../utils'
 import { SmsTable } from '../sms_table/SmsTable'
 import { Date, Time } from '../time'
 import styles from './SentSmsTable.module.css'
@@ -39,7 +39,7 @@ export const SentSmsTable = ({
                         </span>
                     ))}
                 </TableCell>
-                <TableCell>{statusMap[message.status]}</TableCell>
+                <TableCell>{sentTranslations[message.status]}</TableCell>
                 <TableCell>
                     <Date date={message.date} />
                     {', '}

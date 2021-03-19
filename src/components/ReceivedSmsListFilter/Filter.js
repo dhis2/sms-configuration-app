@@ -7,8 +7,7 @@ import {
     InputField,
 } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../utils'
-import { statusMap } from '../../utils/translations/received'
+import { dataTest, receivedTranslations } from '../../utils'
 import styles from './Filter.module.css'
 
 // From https://github.com/dhis2/dhis2-core/blob/ea76fa86409613c9766d4508d65c88ac55c413c3/dhis-2/dhis-api/src/main/java/org/hisp/dhis/sms/incoming/SmsMessageStatus.java
@@ -20,7 +19,7 @@ const STATUS_FILTER_OPTIONS = [
     'PROCESSING',
     'SENT',
     'UNHANDLED',
-].map(status => ({ value: status, label: statusMap[status] }))
+].map(status => ({ value: status, label: receivedTranslations[status] }))
 
 export const Filter = ({
     status,

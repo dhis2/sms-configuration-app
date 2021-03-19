@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import { PropTypes } from '@dhis2/prop-types'
 import { TableCell } from '@dhis2/ui'
 import React from 'react'
-import { statusMap } from '../../utils/translations/received'
+import { receivedTranslations } from '../../utils'
 import { SmsTable } from '../sms_table/SmsTable'
 import { Date, Time } from '../time'
 import styles from './ReceivedSmsTable.module.css'
@@ -33,7 +33,7 @@ export const ReceivedSmsTable = ({
                         {message.originator}
                     </span>
                 </TableCell>
-                <TableCell>{statusMap[message.smsstatus]}</TableCell>
+                <TableCell>{receivedTranslations[message.smsstatus]}</TableCell>
                 <TableCell>
                     {message.user?.userCredentials?.username ||
                         i18n.t('Unknown')}
