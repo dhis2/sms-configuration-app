@@ -1,7 +1,7 @@
 import { CheckboxFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { dataTest } from '../../utils'
 
 const { Field } = ReactFinalForm
 

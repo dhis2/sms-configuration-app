@@ -17,8 +17,8 @@ import {
     useCreateGenericGatewayMutation,
 } from '../../components/gateways'
 import { PageHeadline } from '../../components/headline'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { dataTest } from '../../utils'
 import styles from './new.module.css'
 
 export const GATEWAY_CONFIG_FORM_NEW_PATH = '/sms-gateway/new'

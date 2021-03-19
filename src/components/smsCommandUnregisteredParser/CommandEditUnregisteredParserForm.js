@@ -7,8 +7,8 @@ import {
     CircularLoader,
 } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { dataTest } from '../../utils'
 import { FormRow } from '../forms'
 import { CommandFormActions, useUpdateCommand } from '../smsCommand'
 import {

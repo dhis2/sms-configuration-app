@@ -1,6 +1,6 @@
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-import { dataTest } from '../../dataTest'
+import { dataTest } from '../../utils'
 import { AT_LEAST_ONE_DATAVALUE } from '../smsCommandFields'
 import { CommandEditWithDataSetForm } from '../smsCommandWithDataSet'
 

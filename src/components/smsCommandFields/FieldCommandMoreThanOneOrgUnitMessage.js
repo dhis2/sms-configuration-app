@@ -1,7 +1,7 @@
 import { TextAreaFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { dataTest } from '../../utils'
 import { FIELD_COMMAND_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME } from './fieldNames'
 
 const { Field } = ReactFinalForm

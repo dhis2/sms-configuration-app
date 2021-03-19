@@ -1,7 +1,7 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { ButtonStrip, Button } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../dataTest'
+import { dataTest } from '../../utils'
 import styles from './ListActions.module.css'
 
 export const ListActions = ({

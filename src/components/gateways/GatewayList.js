@@ -1,7 +1,7 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { CircularLoader } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../dataTest'
+import { dataTest } from '../../utils'
 import styles from './GatewayList.module.css'
 import { GatewaysTable } from './GatewaysTable'
 

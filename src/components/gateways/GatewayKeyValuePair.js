@@ -9,8 +9,8 @@ import {
     string,
 } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { dataTest } from '../../utils'
 import styles from './GatewayKeyValuePair.module.css'
 import { GatewayKeyValuePairValueField } from './GatewayKeyValuePairValueField'
 
