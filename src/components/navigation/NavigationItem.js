@@ -2,7 +2,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import { MenuItem } from '@dhis2/ui'
 import React from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom'
-import { dataTest } from '../../dataTest'
+import { dataTest } from '../../utils'
 import styles from './NavigationItem.module.css'
 
 const useIsItemActive = (path, exactMatch) => {

@@ -1,7 +1,7 @@
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { dataTest } from '../../utils'
 import { FormRow } from '../forms'
 import { PageSubHeadline } from '../headline'
 import styles from './DataElementTimesCategoryOptionCombos.module.css'

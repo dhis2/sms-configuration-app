@@ -20,8 +20,8 @@ import {
     useUpdateSMPPGatewayMutation,
 } from '../../components/gateways'
 import { PageHeadline } from '../../components/headline'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { dataTest } from '../../utils'
 import styles from './[id].module.css'
 
 export const GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC = '/sms-gateway/edit'

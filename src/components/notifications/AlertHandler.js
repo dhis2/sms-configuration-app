@@ -1,7 +1,7 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { AlertBar, AlertStack } from '@dhis2/ui'
 import React, { useState } from 'react'
-import { dataTest } from '../../dataTest'
+import { dataTest } from '../../utils'
 import { AlertContext } from './AlertContext'
 
 export const AlertHandler = ({ children }) => {

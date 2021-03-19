@@ -13,8 +13,8 @@ import {
 } from '@dhis2/ui'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { dataTest } from '../../utils'
 import styles from './GatewaysTable.module.css'
 import { getTypeLabelByType } from './getTypeLabelByType'
 

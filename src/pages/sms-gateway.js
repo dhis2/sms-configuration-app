@@ -11,8 +11,8 @@ import {
 } from '../components/gateways'
 import { PageHeadline } from '../components/headline'
 import { Paragraph } from '../components/text'
-import { dataTest } from '../dataTest'
 import i18n from '../locales'
+import { dataTest } from '../utils'
 import styles from './sms-gateway.module.css'
 
 export const GATEWAY_CONFIG_LIST_PATH = '/sms-gateway'

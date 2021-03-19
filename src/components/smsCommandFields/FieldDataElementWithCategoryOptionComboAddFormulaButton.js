@@ -2,8 +2,8 @@ import { useDataEngine } from '@dhis2/app-runtime'
 import { PropTypes } from '@dhis2/prop-types'
 import { Button, ReactFinalForm } from '@dhis2/ui'
 import React, { useEffect, useState } from 'react'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { dataTest } from '../../utils'
 import styles from './FieldDataElementWithCategoryOptionComboAddFormulaButton.module.css'
 
 const { useField } = ReactFinalForm

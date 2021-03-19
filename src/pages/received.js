@@ -7,8 +7,8 @@ import { PageHeadline } from '../components/headline'
 import { useQueryParams } from '../components/hooks'
 import { Filter } from '../components/ReceivedSmsListFilter/Filter'
 import { ReceivedSmsTable } from '../components/ReceivedSmsTable/ReceivedSmsTable'
-import { dataTest } from '../dataTest'
 import i18n from '../locales'
+import { dataTest } from '../utils'
 import styles from './received.module.css'
 
 export const RECEIVED_SMS_LIST_LABEL = i18n.t('Received')

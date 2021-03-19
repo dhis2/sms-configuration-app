@@ -1,8 +1,8 @@
 import React from 'react'
 import { PageHeadline } from '../components/headline'
 import HomeCard from '../components/HomeCard/HomeCard'
-import { dataTest } from '../dataTest'
 import i18n from '../locales'
+import { dataTest } from '../utils'
 import s from './index.module.css'
 
 export const HOME_PATH = '/'

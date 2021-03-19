@@ -30,8 +30,8 @@ import {
     FieldCommandParser,
 } from '../../components/smsCommandFields'
 import { FieldUserGroupWithAutoLoad } from '../../components/userGroup'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { dataTest } from '../../utils'
 import styles from './new.module.css'
 
 const { Form, useForm } = ReactFinalForm

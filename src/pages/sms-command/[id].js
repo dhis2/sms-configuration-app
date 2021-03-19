@@ -24,8 +24,8 @@ import { CommandEditKeyValueParserForm } from '../../components/smsCommandKeyVal
 import { CommandEditProgramStageDataEntryParserForm } from '../../components/smsCommandProgramStageDataEntryParser'
 import { CommandEditTrackedEntityRegistrationParserForm } from '../../components/smsCommandTrackedEntityRegistrationParser'
 import { CommandEditUnregisteredParserForm } from '../../components/smsCommandUnregisteredParser'
-import { dataTest } from '../../dataTest'
 import i18n from '../../locales'
+import { dataTest } from '../../utils'
 import styles from './[id].module.css'
 
 export const SMS_COMMAND_FORM_EDIT_PATH_STATIC = '/sms-config/edit'

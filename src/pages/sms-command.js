@@ -23,8 +23,8 @@ import {
     useReadSmsCommandsQuery,
 } from '../components/smsCommand'
 import { Paragraph } from '../components/text'
-import { dataTest } from '../dataTest'
 import i18n from '../locales'
+import { dataTest } from '../utils'
 import styles from './sms-command.module.css'
 
 export const SMS_COMMAND_LIST_LABEL = i18n.t('Commands')
