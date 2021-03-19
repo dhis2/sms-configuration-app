@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-18T14:33:12.335Z\n"
-"PO-Revision-Date: 2021-03-18T14:33:12.335Z\n"
+"POT-Creation-Date: 2021-03-19T08:27:36.621Z\n"
+"PO-Revision-Date: 2021-03-19T08:27:36.621Z\n"
 
 msgid "Filter by status"
 msgstr ""
@@ -194,6 +194,15 @@ msgid "Clickatell"
 msgstr ""
 
 msgid "Generic"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Gateway configuration"
+msgstr ""
+
+msgid "Commands"
 msgstr ""
 
 msgid "Show"
@@ -429,9 +438,6 @@ msgid "Add command"
 msgstr ""
 
 msgid "Automatically selected by selecting a program"
-msgstr ""
-
-msgid "Commands"
 msgstr ""
 
 msgid "Something went wrong whilst performing the requested operation"
