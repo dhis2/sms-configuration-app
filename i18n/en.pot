@@ -5,8 +5,17 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-19T08:27:36.621Z\n"
-"PO-Revision-Date: 2021-03-19T08:27:36.621Z\n"
+"POT-Creation-Date: 2021-03-24T15:11:01.846Z\n"
+"PO-Revision-Date: 2021-03-24T15:11:01.846Z\n"
+
+msgid "Confirm deletion"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
 
 msgid "Filter by status"
 msgstr ""
@@ -59,9 +68,6 @@ msgstr ""
 msgid ""
 "Please make sure the value of this input matches the value in "
 "\"{{otherField}}\"."
-msgstr ""
-
-msgid "Confirm deletion"
 msgstr ""
 
 msgid "Are you sure you want to delete the selected gateways?"
@@ -148,9 +154,6 @@ msgstr ""
 msgid "Add gateway"
 msgstr ""
 
-msgid "Cancel"
-msgstr ""
-
 msgid "Gateway setup"
 msgstr ""
 
@@ -226,79 +229,28 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-msgid "Program"
-msgstr ""
-
-msgid "Program stage"
-msgstr ""
-
-msgid "Are you sure you want to delete the selected commands?"
-msgstr ""
-
-msgid "Delete"
-msgstr ""
-
-msgid "Save command"
-msgstr ""
-
-msgid "Something went wrong whilst submitting the form"
-msgstr ""
-
-msgid "Something went wrong whilst loading the sms command"
-msgstr ""
-
-msgid "Something went wrong whilst loading the command's details"
-msgstr ""
-
-msgid "SMS short codes"
-msgstr ""
-
 msgid "Add special character"
 msgstr ""
 
 msgid "Required values notice"
 msgstr ""
 
+msgid "SMS short codes"
+msgstr ""
+
 msgid "Completeness method"
 msgstr ""
 
+msgid "Receive all data values"
+msgstr ""
+
+msgid "Receive at least one data value"
+msgstr ""
+
+msgid "Do not mark as complete"
+msgstr ""
+
 msgid "Confirm message"
-msgstr ""
-
-msgid "Reply message if no codes are sent (only the command)"
-msgstr ""
-
-msgid "More than one orgunit message"
-msgstr ""
-
-msgid "No user message"
-msgstr ""
-
-msgid "Parser"
-msgstr ""
-
-msgid "Field separator"
-msgstr ""
-
-msgid "Special character name"
-msgstr ""
-
-msgid "Special character value"
-msgstr ""
-
-msgid "Remove"
-msgstr ""
-
-msgid "Success message"
-msgstr ""
-
-msgid "Use current period for reporting"
-msgstr ""
-
-msgid "Wrong format message"
-msgstr ""
-
-msgid "default"
 msgstr ""
 
 msgid "Formula"
@@ -325,16 +277,25 @@ msgstr ""
 msgid "Something went wrong whilst saving"
 msgstr ""
 
+msgid "Remove"
+msgstr ""
+
 msgid "Save"
 msgstr ""
 
-msgid "Receive all data values"
+msgid "default"
 msgstr ""
 
-msgid "Receive at least one data value"
+msgid "Reply message if no codes are sent (only the command)"
 msgstr ""
 
-msgid "Do not mark as complete"
+msgid "More than one orgunit message"
+msgstr ""
+
+msgid "No user message"
+msgstr ""
+
+msgid "Parser"
 msgstr ""
 
 msgid "Key value parser"
@@ -358,10 +319,46 @@ msgstr ""
 msgid "Event registration parser"
 msgstr ""
 
-msgid "Duplicate value!"
+msgid "Program"
+msgstr ""
+
+msgid "Program stage"
+msgstr ""
+
+msgid "Field separator"
+msgstr ""
+
+msgid "Special character name"
+msgstr ""
+
+msgid "Special character value"
+msgstr ""
+
+msgid "Success message"
+msgstr ""
+
+msgid "Use current period for reporting"
+msgstr ""
+
+msgid "Wrong format message"
+msgstr ""
+
+msgid "Save command"
+msgstr ""
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr ""
+
+msgid "Something went wrong whilst loading the command's details"
 msgstr ""
 
 msgid "Special characters"
+msgstr ""
+
+msgid "Duplicate value!"
+msgstr ""
+
+msgid "Something went wrong whilst submitting the form"
 msgstr ""
 
 msgid "No SMSes to display"
@@ -451,6 +448,9 @@ msgid ""
 "documentation."
 msgstr ""
 
+msgid "Are you sure you want to delete the selected commands?"
+msgstr ""
+
 msgid "Sms command"
 msgstr ""
 
@@ -525,4 +525,7 @@ msgid "Pending"
 msgstr ""
 
 msgid "Scheduled"
+msgstr ""
+
+msgid "No error message was provided"
 msgstr ""

@@ -3,12 +3,8 @@ import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { CancelDialog } from '../../components/cancelDialog'
 import { PageHeadline } from '../../components/headline'
-import {
-    isParserType,
-    useReadSmsCommandParserTypeQuery,
-} from '../../components/smsCommand'
-import { CommandEditAlertParserForm } from '../../components/smsCommandAlertParser'
-import { CommandEditEventRegistrationParserForm } from '../../components/smsCommandEventRegistrationParser'
+import { FIELD_PARSER_NAME } from '../../components/sms-command/FieldParser'
+// @TODO(parser types): export object instead of individual constants
 import {
     ALERT_PARSER,
     EVENT_REGISTRATION_PARSER,
@@ -17,13 +13,15 @@ import {
     PROGRAM_STAGE_DATAENTRY_PARSER,
     TRACKED_ENTITY_REGISTRATION_PARSER,
     UNREGISTERED_PARSER,
-    FIELD_COMMAND_PARSER_NAME,
-} from '../../components/smsCommandFields'
-import { CommandEditJ2MEParserForm } from '../../components/smsCommandJ2MEParser'
-import { CommandEditKeyValueParserForm } from '../../components/smsCommandKeyValueParser'
-import { CommandEditProgramStageDataEntryParserForm } from '../../components/smsCommandProgramStageDataEntryParser'
-import { CommandEditTrackedEntityRegistrationParserForm } from '../../components/smsCommandTrackedEntityRegistrationParser'
-import { CommandEditUnregisteredParserForm } from '../../components/smsCommandUnregisteredParser'
+} from '../../components/sms-command/FieldParser/parserTypes'
+import { FormAlertParser } from '../../components/sms-command/FormAlertParser'
+import { FormEventRegistrationParser } from '../../components/sms-command/FormEventRegistrationParser'
+import { FormJ2meParser } from '../../components/sms-command/FormJ2meParser'
+import { FormKeyValueParser } from '../../components/sms-command/FormKeyValueParser'
+import { FormProgramStageDataEntryParser } from '../../components/sms-command/FormProgramStageDataEntryParser'
+import { FormTrackedEntityRegistrationParser } from '../../components/sms-command/FormTrackedEntityRegistrationParser'
+import { FormUnregisteredParser } from '../../components/sms-command/FormUnregisteredParser'
+import { useReadSmsCommandParserTypeQuery } from '../../components/sms-command/hooks'
 import i18n from '../../locales'
 import { dataTest } from '../../utils'
 import styles from './[id].module.css'
@@ -31,35 +29,41 @@ import styles from './[id].module.css'
 export const SMS_COMMAND_FORM_EDIT_PATH_STATIC = '/sms-config/edit'
 export const SMS_COMMAND_FORM_EDIT_PATH = `${SMS_COMMAND_FORM_EDIT_PATH_STATIC}/:id`
 
+const isParserType = (parserType, parser) => parserType === parser.value
+
 const getSmsCommandEditFormComponent = parserType => {
     const isParser = isParserType.bind(null, parserType)
 
-    if (parserType && isParser(KEY_VALUE_PARSER)) {
-        return CommandEditKeyValueParserForm
+    if (!parserType) {
+        return null
     }
 
-    if (parserType && isParser(J2ME_PARSER)) {
-        return CommandEditJ2MEParserForm
+    if (isParser(KEY_VALUE_PARSER)) {
+        return FormKeyValueParser
     }
 
-    if (parserType && isParser(ALERT_PARSER)) {
-        return CommandEditAlertParserForm
+    if (isParser(J2ME_PARSER)) {
+        return FormJ2meParser
     }
 
-    if (parserType && isParser(PROGRAM_STAGE_DATAENTRY_PARSER)) {
-        return CommandEditProgramStageDataEntryParserForm
+    if (isParser(ALERT_PARSER)) {
+        return FormAlertParser
     }
 
-    if (parserType && isParser(UNREGISTERED_PARSER)) {
-        return CommandEditUnregisteredParserForm
+    if (isParser(PROGRAM_STAGE_DATAENTRY_PARSER)) {
+        return FormProgramStageDataEntryParser
     }
 
-    if (parserType && isParser(EVENT_REGISTRATION_PARSER)) {
-        return CommandEditEventRegistrationParserForm
+    if (isParser(UNREGISTERED_PARSER)) {
+        return FormUnregisteredParser
     }
 
-    if (parserType && isParser(TRACKED_ENTITY_REGISTRATION_PARSER)) {
-        return CommandEditTrackedEntityRegistrationParserForm
+    if (isParser(EVENT_REGISTRATION_PARSER)) {
+        return FormEventRegistrationParser
+    }
+
+    if (isParser(TRACKED_ENTITY_REGISTRATION_PARSER)) {
+        return FormTrackedEntityRegistrationParser
     }
 
     return null
@@ -92,7 +96,7 @@ export const SmsCommandEdit = () => {
         )
     }
 
-    const parserType = data?.smsCommand[FIELD_COMMAND_PARSER_NAME]
+    const parserType = data?.smsCommand[FIELD_PARSER_NAME]
     const FormComponent = getSmsCommandEditFormComponent(parserType)
 
     return (

@@ -15,13 +15,14 @@ import {
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { ListActions } from '../components/dataList'
+import { DeleteConfirmationDialog } from '../components/DeleteConfirmationDialog'
 import { PageHeadline } from '../components/headline'
+// @TODO(parser types): wrap parsers in exported object
+import * as parserTypes from '../components/sms-command/FieldParser/parserTypes'
 import {
-    DeleteCommandsConfirmationDialog,
-    getLabelByParserTypes,
     useDeleteSmsCommandMutation,
     useReadSmsCommandsQuery,
-} from '../components/smsCommand'
+} from '../components/sms-command/hooks'
 import { Paragraph } from '../components/text'
 import i18n from '../locales'
 import { dataTest } from '../utils'
@@ -29,6 +30,14 @@ import styles from './sms-command.module.css'
 
 export const SMS_COMMAND_LIST_LABEL = i18n.t('Commands')
 export const SMS_COMMAND_LIST_PATH = '/sms-config'
+
+const getLabelByParserTypes = parserType => {
+    const type = Object.values(parserTypes).find(
+        ({ value }) => value === parserType
+    )
+
+    return type?.label || parserType
+}
 
 export const SmsCommand = () => {
     const history = useHistory()
@@ -149,10 +158,14 @@ export const SmsCommand = () => {
             />
 
             {showDeleteConfirmationDialog && (
-                <DeleteCommandsConfirmationDialog
+                <DeleteConfirmationDialog
                     onCancelClick={() => setShowDeleteConfirmationDialog(false)}
                     onDeleteClick={onDeleteClick}
-                />
+                >
+                    {i18n.t(
+                        'Are you sure you want to delete the selected commands?'
+                    )}
+                </DeleteConfirmationDialog>
             )}
 
             <Table dataTest={dataTest('views-smscommandlist-commandtable')}>

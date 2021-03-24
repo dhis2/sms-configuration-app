@@ -1,0 +1,1 @@
+export { FormTrackedEntityRegistrationParser } from './FormTrackedEntityRegistrationParser'

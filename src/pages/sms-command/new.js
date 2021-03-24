@@ -5,30 +5,34 @@ import { useHistory } from 'react-router-dom'
 import { FieldDataSetWithAutoLoad } from '../../components/dataSet'
 import { FormRow } from '../../components/forms'
 import { PageHeadline } from '../../components/headline'
+import { FieldCommandName } from '../../components/sms-command/FieldCommandName'
+import {
+    FIELD_PARSER_NAME,
+    FieldParser,
+} from '../../components/sms-command/FieldParser'
+// @TODO(parser types): export object instead of individual constants
+import {
+    ALERT_PARSER,
+    EVENT_REGISTRATION_PARSER,
+    J2ME_PARSER,
+    KEY_VALUE_PARSER,
+    PROGRAM_STAGE_DATAENTRY_PARSER,
+    TRACKED_ENTITY_REGISTRATION_PARSER,
+    UNREGISTERED_PARSER,
+} from '../../components/sms-command/FieldParser/parserTypes'
+// @TODO(programs): export program options as object
 import {
     ALL_PROGRAMS,
     FIELD_PROGRAM_NAME,
     PROGRAMS_WITH_REGISTRATION,
     PROGRAMS_WITHOUT_REGISTRATION,
     FieldProgramWithAutoLoad,
-} from '../../components/program'
+} from '../../components/sms-command/FieldProgram'
 import {
     FIELD_PROGRAM_STAGE_NAME,
     FieldProgramStageWithLoadingStates,
-} from '../../components/programStage'
-import { useCreateSmsCommandMutation } from '../../components/smsCommand'
-import {
-    ALERT_PARSER,
-    EVENT_REGISTRATION_PARSER,
-    FIELD_COMMAND_PARSER_NAME,
-    J2ME_PARSER,
-    KEY_VALUE_PARSER,
-    PROGRAM_STAGE_DATAENTRY_PARSER,
-    TRACKED_ENTITY_REGISTRATION_PARSER,
-    UNREGISTERED_PARSER,
-    FieldCommandName,
-    FieldCommandParser,
-} from '../../components/smsCommandFields'
+} from '../../components/sms-command/FieldProgramStage'
+import { useCreateSmsCommandMutation } from '../../components/sms-command/hooks'
 import { FieldUserGroupWithAutoLoad } from '../../components/userGroup'
 import i18n from '../../locales'
 import { dataTest } from '../../utils'
@@ -47,12 +51,11 @@ const useResetFormFields = () => {
             form.subscribe(
                 ({ values }) => {
                     form.batch(() => {
-                        const parserType = values[FIELD_COMMAND_PARSER_NAME]
+                        const parserType = values[FIELD_PARSER_NAME]
                         const program = values[FIELD_PROGRAM_NAME]
                         const programStage = values[FIELD_PROGRAM_STAGE_NAME]
                         const prevProgram = prevValues[FIELD_PROGRAM_NAME]
-                        const prevParserType =
-                            prevValues[FIELD_COMMAND_PARSER_NAME]
+                        const prevParserType = prevValues[FIELD_PARSER_NAME]
 
                         const programChanged =
                             prevProgram && program !== prevProgram
@@ -102,7 +105,7 @@ const ActualForm = ({ handleSubmit, submitting }) => {
     const history = useHistory()
     const form = useForm()
     const { values } = form.getState()
-    const parserType = values[FIELD_COMMAND_PARSER_NAME]
+    const parserType = values[FIELD_PARSER_NAME]
     const program = values[FIELD_PROGRAM_NAME]
 
     const showDataSetField =
@@ -134,7 +137,7 @@ const ActualForm = ({ handleSubmit, submitting }) => {
                 </FormRow>
 
                 <FormRow>
-                    <FieldCommandParser />
+                    <FieldParser />
                 </FormRow>
 
                 {showDataSetField && (

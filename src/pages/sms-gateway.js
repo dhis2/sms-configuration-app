@@ -2,8 +2,8 @@ import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { ListActions } from '../components/dataList'
+import { DeleteConfirmationDialog } from '../components/DeleteConfirmationDialog'
 import {
-    DeleteGatewaysConfirmationDialog,
     GatewayList,
     useDeleteGatewaysMutation,
     useReadGatewaysQuery,
@@ -124,10 +124,14 @@ export const SmsGateway = () => {
             )}
 
             {showDeleteDialog && (
-                <DeleteGatewaysConfirmationDialog
+                <DeleteConfirmationDialog
                     onCancelClick={() => setShowDeleteDialog(false)}
                     onDeleteClick={onDeleteClick}
-                />
+                >
+                    {i18n.t(
+                        'Are you sure you want to delete the selected gateways?'
+                    )}
+                </DeleteConfirmationDialog>
             )}
         </div>
     )
