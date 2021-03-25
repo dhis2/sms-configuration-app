@@ -1,11 +1,11 @@
 import React from 'react'
-import { Home } from '../home'
 import {
     LayoutContainer,
     LayoutContent,
     LayoutSidebar,
 } from '../shared/components/layout'
 import { Navigation } from '../shared/components/navigation'
+import { Overview } from '../sms-overview'
 
 const RouteHome = () => (
     <LayoutContainer>
@@ -14,7 +14,7 @@ const RouteHome = () => (
         </LayoutSidebar>
 
         <LayoutContent>
-            <Home />
+            <Overview />
         </LayoutContent>
     </LayoutContainer>
 )

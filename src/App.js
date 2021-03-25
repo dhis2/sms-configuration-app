@@ -3,14 +3,14 @@ import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { AppWrapper } from './AppWrapper'
 import Home from './routes/index'
-// import { Received } from './routes/received'
+import ReceivedSms from './routes/received'
 import SentSms from './routes/sent'
 import SmsCommand from './routes/sms-command'
 import SmsCommandEdit from './routes/sms-command/[id]'
 import SmsCommandNew from './routes/sms-command/new'
-// import { SmsGateway } from './routes/sms-gateway'
-// import { SmsGatewayEdit } from './routes/sms-gateway/[id]'
-// import { SmsGatewayNew } from './routes/sms-gateway/new'
+import SmsGateway from './routes/sms-gateway'
+import SmsGatewayEdit from './routes/sms-gateway/[id]'
+import SmsGatewayNew from './routes/sms-gateway/new'
 
 const App = () => (
     <AppWrapper>
@@ -19,9 +19,9 @@ const App = () => (
             <Route exact path="/" component={Home} />
 
             {/* Gateway configuration */}
-            <Route exact path="/sms-gateway" component={() => null} />
-            <Route path="/sms-gateway/new" component={() => null} />
-            <Route path="/sms-gateway/:id" component={() => null} />
+            <Route exact path="/sms-gateway" component={SmsGateway} />
+            <Route path="/sms-gateway/new" component={SmsGatewayNew} />
+            <Route path="/sms-gateway/:id" component={SmsGatewayEdit} />
 
             {/* Sms command */}
             <Route exact path="/sms-command" component={SmsCommand} />
@@ -32,7 +32,7 @@ const App = () => (
             <Route path="/sent" component={SentSms} />
 
             {/* View received sms */ ''}
-            <Route path="/received" component={() => null} />
+            <Route path="/received" component={ReceivedSms} />
 
             {/* Handle 404 */ ''}
             <Redirect from="*" to="/" />

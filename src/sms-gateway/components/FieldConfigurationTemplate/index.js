@@ -1,0 +1,1 @@
+export { FieldConfigurationTemplate } from './FieldConfigurationTemplate'
