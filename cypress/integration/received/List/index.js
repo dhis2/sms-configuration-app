@@ -1,5 +1,5 @@
 import { Then } from 'cypress-cucumber-preprocessor/steps'
-import { statusMap } from '../../../../src/views/received_sms_list/translations'
+import { translations } from '../../../../src/sms-received/utils/translations/translations'
 import '../common'
 
 Then('the user should be notified that there are no messages', () => {
@@ -20,7 +20,7 @@ Then('each row displays the message contents and metadata', () => {
                 $elem => {
                     expect($elem.text()).to.contain(text)
                     expect($elem.text()).to.contain(originator)
-                    expect($elem.text()).to.contain(statusMap[smsstatus])
+                    expect($elem.text()).to.contain(translations[smsstatus])
                 }
             )
         })
