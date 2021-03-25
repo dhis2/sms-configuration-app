@@ -1,0 +1,1 @@
+export { SentSmsTable } from './SentSmsTable'

@@ -1,0 +1,6 @@
+.container {
+    display: grid;
+    height: 100%;
+    grid-template-areas: "sidebar main";
+    grid-template-columns: 300px auto;
+}

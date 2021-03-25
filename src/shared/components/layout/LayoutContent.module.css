@@ -1,0 +1,6 @@
+.content {
+    position: relative;
+    grid-area: main;
+    padding: 20px;
+    background: var(--colors-grey050);
+}
