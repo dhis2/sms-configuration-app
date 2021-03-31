@@ -1,9 +1,9 @@
-import { FIELD_DATA_SET_NAME } from '../../../shared/components/dataSet'
 import { FIELD_COMMAND_NAME } from '../FieldCommandName'
 import {
     AT_LEAST_ONE_DATAVALUE,
     FIELD_COMPLETENESS_METHOD_NAME,
 } from '../FieldCompletenessMethod'
+import { FIELD_DATA_SET_NAME } from '../FieldDataSet'
 import { FIELD_DEFAULT_MESSAGE_NAME } from '../FieldDefaultMessage'
 import { FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME } from '../FieldMoreThanOneOrgUnitMessage'
 import { FIELD_NO_USER_MESSAGE_NAME } from '../FieldNoUserMessage'

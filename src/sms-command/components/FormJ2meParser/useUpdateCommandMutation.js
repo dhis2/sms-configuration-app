@@ -1,8 +1,8 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import { FIELD_DATA_SET_NAME } from '../../../shared/components/dataSet'
 import { useSubmit } from '../../../shared/utils'
 import { FIELD_COMMAND_NAME } from '../FieldCommandName'
 import { FIELD_COMPLETENESS_METHOD_NAME } from '../FieldCompletenessMethod'
+import { FIELD_DATA_SET_NAME } from '../FieldDataSet'
 import { FIELD_DEFAULT_MESSAGE_NAME } from '../FieldDefaultMessage'
 import { FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME } from '../FieldMoreThanOneOrgUnitMessage'
 import { FIELD_NO_USER_MESSAGE_NAME } from '../FieldNoUserMessage'
@@ -74,15 +74,12 @@ const updateJ2meParserMutation = {
 
 export const useUpdateCommandMutation = ({ id, onAfterChange }) => {
     const engine = useDataEngine()
-    const onSubmit = variables =>
-        engine
-            .mutate(updateJ2meParserMutation, {
-                variables: {
-                    ...variables,
-                    id,
-                },
-            })
+    const onSubmit = values => {
+        const variables = { ...values, id }
+        return engine
+            .mutate(updateJ2meParserMutation, { variables })
             .then(onAfterChange)
+    }
 
     return useSubmit(onSubmit)
 }

@@ -1,22 +1,11 @@
 import React from 'react'
-import {
-    LayoutContainer,
-    LayoutContent,
-    LayoutSidebar,
-} from '../shared/components/layout'
-import { Navigation } from '../shared/components/navigation'
+import { TemplateSidebarNavContent } from '../shared'
 import { SmsCommandList } from '../sms-command'
 
 const RouteSmsCommand = () => (
-    <LayoutContainer>
-        <LayoutSidebar>
-            <Navigation />
-        </LayoutSidebar>
-
-        <LayoutContent>
-            <SmsCommandList />
-        </LayoutContent>
-    </LayoutContainer>
+    <TemplateSidebarNavContent>
+        <SmsCommandList />
+    </TemplateSidebarNavContent>
 )
 
 export default RouteSmsCommand

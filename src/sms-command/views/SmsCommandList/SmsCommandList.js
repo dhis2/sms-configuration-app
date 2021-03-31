@@ -15,9 +15,11 @@ import {
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import i18n from '../../../locales'
-import { ListActions } from '../../../shared/components/dataList'
-import { DeleteConfirmationDialog } from '../../../shared/components/DeleteConfirmationDialog'
-import { PageHeadline } from '../../../shared/components/headline'
+import {
+    ListActions,
+    DeleteConfirmationDialog,
+    PageHeadline,
+} from '../../../shared/components'
 // @TODO(parser types): wrap parsers in exported object
 import { Paragraph } from '../../../shared/components/text'
 import { dataTest } from '../../../shared/utils'

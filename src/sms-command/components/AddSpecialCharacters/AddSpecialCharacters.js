@@ -1,7 +1,7 @@
 import { Button, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../../locales'
-import { FormRow } from '../../../shared/components/forms'
+import { FormRow } from '../../../shared/components'
 import { dataTest } from '../../../shared/utils'
 import { FIELD_SPECIAL_CHARS_NAME } from '../FieldSpecialCharacter'
 

@@ -3,13 +3,15 @@ import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import i18n from '../../../locales'
-import { FieldDataSetWithAutoLoad } from '../../../shared/components/dataSet'
 // @TODO(parser types): export object instead of individual constants
 // @TODO(programs): export program options as object
-import { FormRow } from '../../../shared/components/forms'
-import { PageHeadline } from '../../../shared/components/headline'
-import { FieldUserGroupWithAutoLoad } from '../../../shared/components/userGroup'
+import {
+    FormRow,
+    PageHeadline,
+    FieldUserGroupWithAutoLoad,
+} from '../../../shared/components'
 import { dataTest } from '../../../shared/utils'
+import { FieldDataSetWithAutoLoad } from '../../components'
 import { FieldCommandName } from '../../components/FieldCommandName'
 import { FIELD_PARSER_NAME, FieldParser } from '../../components/FieldParser'
 import {

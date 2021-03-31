@@ -1,7 +1,7 @@
 import { FinalForm } from '@dhis2/ui'
 import { useContext } from 'react'
 import i18n from '../../../locales'
-import { AlertContext } from '../../components/notifications'
+import { AlertContext } from '../../components'
 
 const { FORM_ERROR } = FinalForm
 

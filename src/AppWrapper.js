@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { HashRouter, Route } from 'react-router-dom'
 import { QueryParamProvider } from 'use-query-params'
-import { AlertHandler } from './shared/components/notifications'
+import { AlertHandler } from './shared/components'
 
 export const AppWrapper = ({ children }) => (
     <AlertHandler>
