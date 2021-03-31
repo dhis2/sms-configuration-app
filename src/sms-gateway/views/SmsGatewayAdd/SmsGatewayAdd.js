@@ -9,18 +9,15 @@ import {
     FormClickatell,
     FormGeneric,
     FormSMPP,
+    gatewayTypes,
 } from '../../components'
-import {
-    GENERIC_FORM,
-    BULK_SMS_FORM,
-    CLICKATELL_FORM,
-    SMPP_FORM,
-} from '../../utils'
 import styles from './SmsGatewayAdd.module.css'
 import { useCreateBulkSMSGatewayMutation } from './useCreateBulkSMSGatewayMutation'
 import { useCreateClickatellGatewayMutation } from './useCreateClickatellGatewayMutation'
 import { useCreateGenericGatewayMutation } from './useCreateGenericGatewayMutation'
 import { useCreateSMPPGatewayMutation } from './useCreateSMPPGatewayMutation'
+
+const { GENERIC_FORM, BULK_SMS_FORM, CLICKATELL_FORM, SMPP_FORM } = gatewayTypes
 
 export const GATEWAY_CONFIG_FORM_NEW_PATH = '/sms-gateway/new'
 

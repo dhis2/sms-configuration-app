@@ -11,20 +11,16 @@ import {
     FormClickatell,
     FormGeneric,
     FormSMPP,
+    gatewayTypes,
 } from '../../components'
-import {
-    GENERIC_FORM,
-    BULK_SMS_FORM,
-    CLICKATELL_FORM,
-    SMPP_FORM,
-} from '../../utils'
 import styles from './SmsGatewayEdit.module.css'
 import { useReadGatewayQuery } from './useReadGatewayQuery'
 import { useUpdateBulkSMSGatewayMutation } from './useUpdateBulkSMSGatewayMutation'
 import { useUpdateClickatellGatewayMutation } from './useUpdateClickatellGatewayMutation'
 import { useUpdateGenericGatewayMutation } from './useUpdateGenericGatewayMutation'
 import { useUpdateSMPPGatewayMutation } from './useUpdateSMPPGatewayMutation'
-// @TODO(gateway types): wrap export with object
+
+const { GENERIC_FORM, BULK_SMS_FORM, CLICKATELL_FORM, SMPP_FORM } = gatewayTypes
 
 export const GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC = '/sms-gateway/edit'
 export const GATEWAY_CONFIG_FORM_EDIT_PATH = `${GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC}/:id`

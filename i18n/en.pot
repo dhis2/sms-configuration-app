@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-31T12:50:20.230Z\n"
-"PO-Revision-Date: 2021-03-31T12:50:20.230Z\n"
+"POT-Creation-Date: 2021-03-31T14:33:36.873Z\n"
+"PO-Revision-Date: 2021-03-31T14:33:36.873Z\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -355,9 +355,6 @@ msgstr ""
 msgid "Key value pairs"
 msgstr ""
 
-msgid "Something went wrong whilst saving the gateway"
-msgstr ""
-
 msgid "Type"
 msgstr ""
 
@@ -371,6 +368,9 @@ msgid "Clickatell"
 msgstr ""
 
 msgid "SMPP"
+msgstr ""
+
+msgid "Something went wrong whilst saving the gateway"
 msgstr ""
 
 msgid "Something went wrong whilst loading gateways"
