@@ -1,0 +1,1 @@
+export { PageSubHeadline } from './PageSubHeadline'

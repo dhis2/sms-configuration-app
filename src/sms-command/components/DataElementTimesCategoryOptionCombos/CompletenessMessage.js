@@ -1,7 +1,7 @@
 import { NoticeBox, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../../locales'
-import { FormRow } from '../../../shared/components/forms'
+import { FormRow } from '../../../shared/components'
 import {
     ALL_DATAVALUE,
     AT_LEAST_ONE_DATAVALUE,

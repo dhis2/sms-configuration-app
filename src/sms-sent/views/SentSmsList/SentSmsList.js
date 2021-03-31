@@ -1,12 +1,16 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
-import React, { useState, useEffect } from 'react'
+import { Button, NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
+import React, { useState, useEffect, useContext } from 'react'
 import i18n from '../../../locales'
-import { DeleteSelectedButton } from '../../../shared/components/delete_selected_button/DeleteSelectedButton'
-import { PageHeadline } from '../../../shared/components/headline'
-import { useQueryParams } from '../../../shared/components/hooks'
+import {
+    DeleteConfirmationDialog,
+    PageHeadline,
+    AlertContext,
+} from '../../../shared/components'
+import { useQueryParams } from '../../../shared/hooks'
 import { StatusFilter, SentSmsTable } from '../../components'
 import styles from './SentSmsList.module.css'
+import { useDeleteMutation } from './useDeleteMutation'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('Sent')
 export const SENT_SMS_LIST_PATH = '/sent'
@@ -34,6 +38,10 @@ const query = {
 }
 
 export const SentSmsList = () => {
+    const [
+        showDeleteConfirmationDialog,
+        setShowDeleteConfirmationDialog,
+    ] = useState(false)
     const [selectedIds, setSelectedIds] = useState([])
     const [queryParams, setQueryParams] = useQueryParams()
     const { page, pageSize, status } = queryParams
@@ -43,14 +51,26 @@ export const SentSmsList = () => {
     const { called, loading, error, data, refetch } = useDataQuery(query, {
         lazy: true,
     })
-    const refetchAndClear = () => {
-        refetch()
-        setSelectedIds([])
-    }
 
     useEffect(() => {
         refetch({ page, pageSize, status })
     }, [page, pageSize, status])
+
+    const { addAlert } = useContext(AlertContext)
+    const [deleteSms] = useDeleteMutation({
+        onComplete: () => {
+            setShowDeleteConfirmationDialog(false)
+            refetch()
+            setSelectedIds([])
+        },
+        onError: error =>
+            addAlert({
+                type: 'critical',
+                message: error.message,
+            }),
+    })
+    const onDeleteClick = () => deleteSms({ ids: selectedIds })
+    const onCancelClick = () => setShowDeleteConfirmationDialog(false)
 
     if (error) {
         const msg = i18n.t('Something went wrong whilst loading sent SMSes')
@@ -72,11 +92,25 @@ export const SentSmsList = () => {
             <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
             <header className={styles.header}>
                 <StatusFilter status={status} setStatus={setStatus} />
-                <DeleteSelectedButton
-                    selectedIds={selectedIds}
-                    type="outbound"
-                    onComplete={refetchAndClear}
-                />
+
+                <Button
+                    destructive
+                    onClick={() => setShowDeleteConfirmationDialog(true)}
+                    disabled={selectedIds.length === 0}
+                >
+                    {i18n.t('Delete selected')}
+                </Button>
+
+                {showDeleteConfirmationDialog && (
+                    <DeleteConfirmationDialog
+                        onCancelClick={onCancelClick}
+                        onDeleteClick={onDeleteClick}
+                    >
+                        {i18n.t(
+                            'Are you sure you want to delete the selected sms?'
+                        )}
+                    </DeleteConfirmationDialog>
+                )}
             </header>
             {loading || !called ? (
                 <CenteredContent>

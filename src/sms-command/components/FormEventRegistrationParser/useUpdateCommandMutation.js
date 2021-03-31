@@ -48,12 +48,12 @@ const updateEventRegistrationParserMutation = {
 
 export const useUpdateCommandMutation = ({ id, onAfterChange }) => {
     const engine = useDataEngine()
-    const onSubmit = variables =>
-        engine
-            .mutate(updateEventRegistrationParserMutation, {
-                variables: { ...variables, id },
-            })
+    const onSubmit = values => {
+        const variables = { ...values, id }
+        return engine
+            .mutate(updateEventRegistrationParserMutation, { variables })
             .then(onAfterChange)
+    }
 
     return useSubmit(onSubmit)
 }

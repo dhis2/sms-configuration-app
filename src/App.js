@@ -12,7 +12,7 @@ import SmsGateway from './routes/sms-gateway'
 import SmsGatewayEdit from './routes/sms-gateway/[id]'
 import SmsGatewayNew from './routes/sms-gateway/new'
 
-const App = () => (
+export const App = () => (
     <AppWrapper>
         <Switch>
             {/* Home */}
@@ -39,5 +39,3 @@ const App = () => (
         </Switch>
     </AppWrapper>
 )
-
-export default App

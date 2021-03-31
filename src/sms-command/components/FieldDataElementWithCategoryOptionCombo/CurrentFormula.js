@@ -14,10 +14,10 @@ import {
 } from '@dhis2/ui'
 import React, { useMemo } from 'react'
 import i18n from '../../../locales'
-import { useReadDataElementsOfDataSetQuery } from '../../../shared/components/dataElement'
-import { FIELD_DATA_SET_NAME } from '../../../shared/components/dataSet'
-import { FormRow } from '../../../shared/components/forms'
+import { FormRow } from '../../../shared/components'
 import { dataTest } from '../../../shared/utils'
+import { FIELD_DATA_SET_NAME } from '../../components'
+import { useReadDataElementsOfDataSetQuery } from './useReadDataElementsOfDataSetQuery'
 
 const { Field, Form, useForm, useField } = ReactFinalForm
 

@@ -5,17 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-03-25T13:39:20.891Z\n"
-"PO-Revision-Date: 2021-03-25T13:39:20.891Z\n"
-
-msgid "Confirm deletion"
-msgstr ""
-
-msgid "Cancel"
-msgstr ""
-
-msgid "Delete"
-msgstr ""
+"POT-Creation-Date: 2021-03-31T12:50:20.230Z\n"
+"PO-Revision-Date: 2021-03-31T12:50:20.230Z\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -26,15 +17,16 @@ msgstr ""
 msgid "Yes, cancel"
 msgstr ""
 
-msgid "Data set"
+msgid "Confirm deletion"
 msgstr ""
 
-msgid "Delete selected"
+msgid "Cancel"
 msgstr ""
 
-msgid ""
-"Please make sure the value of this input matches the value in "
-"\"{{otherField}}\"."
+msgid "Delete"
+msgstr ""
+
+msgid "User group"
 msgstr ""
 
 msgid "Home"
@@ -50,6 +42,9 @@ msgid "Sent"
 msgstr ""
 
 msgid "Received"
+msgstr ""
+
+msgid "No SMSes to display"
 msgstr ""
 
 msgid "Show"
@@ -71,12 +66,6 @@ msgid "of {{pageCount}}"
 msgstr ""
 
 msgid "Next"
-msgstr ""
-
-msgid "No SMSes to display"
-msgstr ""
-
-msgid "User group"
 msgstr ""
 
 msgid "No error message was provided"
@@ -140,6 +129,9 @@ msgid "Save"
 msgstr ""
 
 msgid "default"
+msgstr ""
+
+msgid "Data set"
 msgstr ""
 
 msgid "Reply message if no codes are sent (only the command)"
@@ -244,6 +236,9 @@ msgid ""
 "commands can be set up to process and handle data in multiple ways. Add and "
 "configure SMS commands below. Read about SMS commands in the DHIS2 "
 "documentation."
+msgstr ""
+
+msgid "Delete selected"
 msgstr ""
 
 msgid "Are you sure you want to delete the selected commands?"
@@ -507,6 +502,9 @@ msgid "Unhandled"
 msgstr ""
 
 msgid "Something went wrong whilst loading received SMSes"
+msgstr ""
+
+msgid "Are you sure you want to delete the selected sms?"
 msgstr ""
 
 msgid "Recipients"
