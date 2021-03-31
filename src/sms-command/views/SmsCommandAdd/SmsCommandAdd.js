@@ -3,7 +3,6 @@ import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import i18n from '../../../locales'
-// @TODO(programs): export program options as object
 import {
     FormRow,
     PageHeadline,
@@ -15,17 +14,21 @@ import {
     FieldCommandName,
     FIELD_PARSER_NAME,
     FieldParser,
-    ALL_PROGRAMS,
     FIELD_PROGRAM_NAME,
-    PROGRAMS_WITH_REGISTRATION,
-    PROGRAMS_WITHOUT_REGISTRATION,
     FieldProgramWithAutoLoad,
     FIELD_PROGRAM_STAGE_NAME,
     FieldProgramStageWithLoadingStates,
     parserTypes,
+    programTypes,
 } from '../../components'
 import { useCreateSmsCommandMutation } from '../../hooks'
 import styles from './SmsCommandAdd.module.css'
+
+const {
+    ALL_PROGRAMS,
+    PROGRAMS_WITH_REGISTRATION,
+    PROGRAMS_WITHOUT_REGISTRATION,
+} = programTypes
 
 const { Form, useForm } = ReactFinalForm
 const {
