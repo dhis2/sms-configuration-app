@@ -1,3 +1,4 @@
 export * from './FieldProgram'
 export * from './FieldProgramWithAutoLoad'
-export * from './useReadProgramsQuery'
+export { useReadProgramsQuery } from './useReadProgramsQuery'
+export { programTypes } from './programTypes'
