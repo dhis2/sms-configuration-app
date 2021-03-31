@@ -20,10 +20,9 @@ import {
     DeleteConfirmationDialog,
     PageHeadline,
 } from '../../../shared/components'
-// @TODO(parser types): wrap parsers in exported object
 import { Paragraph } from '../../../shared/components/text'
 import { dataTest } from '../../../shared/utils'
-import * as parserTypes from '../../components/FieldParser/parserTypes'
+import { parserTypes } from '../../components'
 import {
     useDeleteSmsCommandMutation,
     useReadSmsCommandsQuery,

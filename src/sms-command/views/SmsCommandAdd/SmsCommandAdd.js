@@ -3,7 +3,6 @@ import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import i18n from '../../../locales'
-// @TODO(parser types): export object instead of individual constants
 // @TODO(programs): export program options as object
 import {
     FormRow,
@@ -23,8 +22,13 @@ import {
     FieldProgramWithAutoLoad,
     FIELD_PROGRAM_STAGE_NAME,
     FieldProgramStageWithLoadingStates,
+    parserTypes,
 } from '../../components'
-import {
+import { useCreateSmsCommandMutation } from '../../hooks'
+import styles from './SmsCommandAdd.module.css'
+
+const { Form, useForm } = ReactFinalForm
+const {
     ALERT_PARSER,
     EVENT_REGISTRATION_PARSER,
     J2ME_PARSER,
@@ -32,11 +36,7 @@ import {
     PROGRAM_STAGE_DATAENTRY_PARSER,
     TRACKED_ENTITY_REGISTRATION_PARSER,
     UNREGISTERED_PARSER,
-} from '../../components/FieldParser/parserTypes'
-import { useCreateSmsCommandMutation } from '../../hooks'
-import styles from './SmsCommandAdd.module.css'
-
-const { Form, useForm } = ReactFinalForm
+} = parserTypes
 
 export const SMS_COMMAND_FORM_NEW_PATH = '/sms-config/new'
 
