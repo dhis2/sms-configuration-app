@@ -3,11 +3,11 @@ import React from 'react'
 import i18n from '../../../locales'
 import { FormRow } from '../../../shared/components'
 import {
-    ALL_DATAVALUE,
-    AT_LEAST_ONE_DATAVALUE,
     FIELD_COMPLETENESS_METHOD_NAME,
+    completenessMethods,
 } from '../FieldCompletenessMethod'
 
+const { ALL_DATAVALUE, AT_LEAST_ONE_DATAVALUE } = completenessMethods
 const { useField } = ReactFinalForm
 
 export const CompletenessMessage = () => {

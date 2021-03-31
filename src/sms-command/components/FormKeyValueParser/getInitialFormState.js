@@ -1,7 +1,7 @@
 import { FIELD_COMMAND_NAME } from '../FieldCommandName'
 import {
-    AT_LEAST_ONE_DATAVALUE,
     FIELD_COMPLETENESS_METHOD_NAME,
+    completenessMethods,
 } from '../FieldCompletenessMethod'
 import { FIELD_DATA_SET_NAME } from '../FieldDataSet'
 import { FIELD_DEFAULT_MESSAGE_NAME } from '../FieldDefaultMessage'
@@ -15,6 +15,7 @@ import { FIELD_SUCCESS_MESSAGE_NAME } from '../FieldSuccessMessage'
 import { FIELD_USE_CURRENT_PERIOD_FOR_REPORTING_NAME } from '../FieldUseCurrentPeriodForReporting'
 import { FIELD_WRONG_FORMAT_MESSAGE_NAME } from '../FieldWrongFormatMessage'
 
+const { AT_LEAST_ONE_DATAVALUE } = completenessMethods
 const { KEY_VALUE_PARSER } = parserTypes
 
 export const getInitialFormState = command => {
