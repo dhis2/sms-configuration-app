@@ -4,7 +4,16 @@ import { useHistory, useParams } from 'react-router-dom'
 import i18n from '../../../locales'
 import { CancelDialog, PageHeadline } from '../../../shared/components'
 import { dataTest } from '../../../shared/utils'
-import { FIELD_PARSER_NAME } from '../../components/FieldParser'
+import {
+    FIELD_PARSER_NAME,
+    FormAlertParser,
+    FormEventRegistrationParser,
+    FormJ2meParser,
+    FormKeyValueParser,
+    FormProgramStageDataEntryParser,
+    FormTrackedEntityRegistrationParser,
+    FormUnregisteredParser,
+} from '../../components'
 // @TODO(parser types): export object instead of individual constants
 import {
     ALERT_PARSER,
@@ -15,13 +24,6 @@ import {
     TRACKED_ENTITY_REGISTRATION_PARSER,
     UNREGISTERED_PARSER,
 } from '../../components/FieldParser/parserTypes'
-import { FormAlertParser } from '../../components/FormAlertParser'
-import { FormEventRegistrationParser } from '../../components/FormEventRegistrationParser'
-import { FormJ2meParser } from '../../components/FormJ2meParser'
-import { FormKeyValueParser } from '../../components/FormKeyValueParser'
-import { FormProgramStageDataEntryParser } from '../../components/FormProgramStageDataEntryParser'
-import { FormTrackedEntityRegistrationParser } from '../../components/FormTrackedEntityRegistrationParser'
-import { FormUnregisteredParser } from '../../components/FormUnregisteredParser'
 import { useReadSmsCommandParserTypeQuery } from '../../hooks'
 import styles from './SmsCommandEdit.module.css'
 
