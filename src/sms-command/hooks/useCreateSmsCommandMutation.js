@@ -1,5 +1,7 @@
 import { useDataMutation } from '@dhis2/app-runtime'
-import {
+import { parserTypes } from '../components'
+
+const {
     ALERT_PARSER,
     EVENT_REGISTRATION_PARSER,
     J2ME_PARSER,
@@ -7,7 +9,7 @@ import {
     PROGRAM_STAGE_DATAENTRY_PARSER,
     TRACKED_ENTITY_REGISTRATION_PARSER,
     UNREGISTERED_PARSER,
-} from '../components/FieldParser/parserTypes'
+} = parserTypes
 
 export const CREATE_SMS_COMMAND_MUTATION = {
     resource: 'smsCommands',

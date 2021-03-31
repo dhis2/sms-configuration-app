@@ -3,10 +3,10 @@ import { SingleSelectFieldFF, ReactFinalForm, hasValue } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../../locales'
 import { dataTest } from '../../../shared/utils'
-import * as commandTypes from './parserTypes'
+import { parserTypes } from './parserTypes'
 
 const { Field } = ReactFinalForm
-const options = Object.values(commandTypes).sort((a, b) => {
+const options = Object.values(parserTypes).sort((a, b) => {
     if (a.label < b.label) {
         return -1
     }

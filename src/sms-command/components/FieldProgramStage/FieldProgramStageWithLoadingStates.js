@@ -1,7 +1,7 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { hasValue, ReactFinalForm } from '@dhis2/ui'
 import React, { useEffect } from 'react'
-import { EVENT_REGISTRATION_PARSER } from '../FieldParser/parserTypes'
+import { parserTypes } from '../FieldParser'
 import {
     FIELD_PROGRAM_STAGE_NAME,
     FieldProgramStage,
@@ -9,6 +9,7 @@ import {
 import { useReadProgramStagesQuery } from './useReadProgramStagesQuery'
 
 const { useForm } = ReactFinalForm
+const { EVENT_REGISTRATION_PARSER } = parserTypes
 
 export const FieldProgramStageWithLoadingStates = ({
     parserType,

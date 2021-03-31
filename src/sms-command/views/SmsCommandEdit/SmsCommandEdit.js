@@ -13,9 +13,15 @@ import {
     FormProgramStageDataEntryParser,
     FormTrackedEntityRegistrationParser,
     FormUnregisteredParser,
+    parserTypes,
 } from '../../components'
-// @TODO(parser types): export object instead of individual constants
-import {
+import { useReadSmsCommandParserTypeQuery } from '../../hooks'
+import styles from './SmsCommandEdit.module.css'
+
+export const SMS_COMMAND_FORM_EDIT_PATH_STATIC = '/sms-config/edit'
+export const SMS_COMMAND_FORM_EDIT_PATH = `${SMS_COMMAND_FORM_EDIT_PATH_STATIC}/:id`
+
+const {
     ALERT_PARSER,
     EVENT_REGISTRATION_PARSER,
     J2ME_PARSER,
@@ -23,12 +29,7 @@ import {
     PROGRAM_STAGE_DATAENTRY_PARSER,
     TRACKED_ENTITY_REGISTRATION_PARSER,
     UNREGISTERED_PARSER,
-} from '../../components/FieldParser/parserTypes'
-import { useReadSmsCommandParserTypeQuery } from '../../hooks'
-import styles from './SmsCommandEdit.module.css'
-
-export const SMS_COMMAND_FORM_EDIT_PATH_STATIC = '/sms-config/edit'
-export const SMS_COMMAND_FORM_EDIT_PATH = `${SMS_COMMAND_FORM_EDIT_PATH_STATIC}/:id`
+} = parserTypes
 
 const isParserType = (parserType, parser) => parserType === parser.value
 
