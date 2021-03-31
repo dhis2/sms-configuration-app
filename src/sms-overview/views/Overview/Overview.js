@@ -2,7 +2,7 @@ import React from 'react'
 import i18n from '../../../locales'
 import { PageHeadline } from '../../../shared/components'
 import { dataTest } from '../../../shared/utils'
-import { HomeCard } from '../../components/HomeCard'
+import { HomeCard } from '../../components'
 import s from './Overview.module.css'
 
 export const OVERVIEW_PATH = '/'

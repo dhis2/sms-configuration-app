@@ -11,9 +11,19 @@ import {
     FieldUserGroupWithAutoLoad,
 } from '../../../shared/components'
 import { dataTest } from '../../../shared/utils'
-import { FieldDataSetWithAutoLoad } from '../../components'
-import { FieldCommandName } from '../../components/FieldCommandName'
-import { FIELD_PARSER_NAME, FieldParser } from '../../components/FieldParser'
+import {
+    FieldDataSetWithAutoLoad,
+    FieldCommandName,
+    FIELD_PARSER_NAME,
+    FieldParser,
+    ALL_PROGRAMS,
+    FIELD_PROGRAM_NAME,
+    PROGRAMS_WITH_REGISTRATION,
+    PROGRAMS_WITHOUT_REGISTRATION,
+    FieldProgramWithAutoLoad,
+    FIELD_PROGRAM_STAGE_NAME,
+    FieldProgramStageWithLoadingStates,
+} from '../../components'
 import {
     ALERT_PARSER,
     EVENT_REGISTRATION_PARSER,
@@ -23,17 +33,6 @@ import {
     TRACKED_ENTITY_REGISTRATION_PARSER,
     UNREGISTERED_PARSER,
 } from '../../components/FieldParser/parserTypes'
-import {
-    ALL_PROGRAMS,
-    FIELD_PROGRAM_NAME,
-    PROGRAMS_WITH_REGISTRATION,
-    PROGRAMS_WITHOUT_REGISTRATION,
-    FieldProgramWithAutoLoad,
-} from '../../components/FieldProgram'
-import {
-    FIELD_PROGRAM_STAGE_NAME,
-    FieldProgramStageWithLoadingStates,
-} from '../../components/FieldProgramStage'
 import { useCreateSmsCommandMutation } from '../../hooks'
 import styles from './SmsCommandAdd.module.css'
 
