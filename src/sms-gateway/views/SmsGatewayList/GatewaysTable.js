@@ -14,7 +14,7 @@ import {
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import i18n from '../../../locales'
-import { dataTest } from '../../../shared/utils'
+import { dataTest } from '../../../shared'
 import styles from './GatewaysTable.module.css'
 import { getTypeLabelByType } from './getTypeLabelByType'
 

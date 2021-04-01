@@ -3,7 +3,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import { Button, ReactFinalForm } from '@dhis2/ui'
 import React, { useEffect, useState } from 'react'
 import i18n from '../../../locales'
-import { dataTest } from '../../../shared/utils'
+import { dataTest } from '../../../shared'
 import styles from './AddFormulaButton.module.css'
 
 const { useField } = ReactFinalForm

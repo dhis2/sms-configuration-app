@@ -2,8 +2,7 @@ import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import i18n from '../../../locales'
-import { CancelDialog, PageHeadline } from '../../../shared/components'
-import { dataTest } from '../../../shared/utils'
+import { CancelDialog, PageHeadline, dataTest } from '../../../shared'
 import {
     FIELD_PASSWORD_CONFIRMATION_NAME,
     FIELD_PASSWORD_NAME,

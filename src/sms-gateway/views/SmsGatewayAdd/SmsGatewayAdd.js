@@ -2,8 +2,7 @@ import { SingleSelectField, SingleSelectOption, NoticeBox } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import i18n from '../../../locales'
-import { FormRow, PageHeadline } from '../../../shared/components'
-import { dataTest } from '../../../shared/utils'
+import { FormRow, PageHeadline, dataTest } from '../../../shared'
 import {
     FormBulkSMS,
     FormClickatell,

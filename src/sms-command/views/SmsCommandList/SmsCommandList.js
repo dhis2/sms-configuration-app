@@ -19,15 +19,13 @@ import {
     ListActions,
     DeleteConfirmationDialog,
     PageHeadline,
-} from '../../../shared/components'
-import { Paragraph } from '../../../shared/components/text'
-import { dataTest } from '../../../shared/utils'
+    Paragraph,
+    dataTest,
+} from '../../../shared'
 import { parserTypes } from '../../components'
-import {
-    useDeleteSmsCommandMutation,
-    useReadSmsCommandsQuery,
-} from '../../hooks'
 import styles from './SmsCommandList.module.css'
+import { useDeleteSmsCommandMutation } from './useDeleteSmsCommandMutation'
+import { useReadSmsCommandsQuery } from './useReadSmsCommandsQuery'
 
 export const SMS_COMMAND_LIST_LABEL = i18n.t('Commands')
 export const SMS_COMMAND_LIST_PATH = '/sms-config'

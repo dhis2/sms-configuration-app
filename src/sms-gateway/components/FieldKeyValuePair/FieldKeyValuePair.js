@@ -10,7 +10,7 @@ import {
 } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../../locales'
-import { dataTest } from '../../../shared/utils'
+import { dataTest } from '../../../shared'
 import styles from './FieldKeyValuePair.module.css'
 import { ValueField } from './ValueField'
 

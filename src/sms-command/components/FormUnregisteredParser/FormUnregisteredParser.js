@@ -2,10 +2,13 @@ import { PropTypes } from '@dhis2/prop-types'
 import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../../locales'
-import { FormRow, FieldUserGroup } from '../../../shared/components'
-import { ContentLoading } from '../../../shared/components/ContentLoading'
-import { ContentLoadingError } from '../../../shared/components/ContentLoadingError'
-import { dataTest } from '../../../shared/utils'
+import {
+    FormRow,
+    FieldUserGroup,
+    ContentLoading,
+    ContentLoadingError,
+    dataTest,
+} from '../../../shared'
 import { FieldCommandName } from '../FieldCommandName'
 import { FieldConfirmMessage } from '../FieldConfirmMessage'
 import { FieldParser } from '../FieldParser'

@@ -1,7 +1,6 @@
 import React from 'react'
 import i18n from '../../../locales'
-import { PageHeadline } from '../../../shared/components'
-import { dataTest } from '../../../shared/utils'
+import { PageHeadline, dataTest } from '../../../shared'
 import { HomeCard } from '../../components'
 import s from './Overview.module.css'
 

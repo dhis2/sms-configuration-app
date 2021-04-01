@@ -2,10 +2,13 @@ import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import i18n from '../../../locales'
-import { ListActions, PageHeadline } from '../../../shared/components'
-import { DeleteConfirmationDialog } from '../../../shared/components/DeleteConfirmationDialog'
-import { Paragraph } from '../../../shared/components/text'
-import { dataTest } from '../../../shared/utils'
+import {
+    ListActions,
+    PageHeadline,
+    DeleteConfirmationDialog,
+    Paragraph,
+    dataTest,
+} from '../../../shared'
 import { List } from './List'
 import styles from './SmsGatewayList.module.css'
 import { useDeleteGatewaysMutation } from './useDeleteGatewaysMutation'

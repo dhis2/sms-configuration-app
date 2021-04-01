@@ -2,7 +2,7 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import { PropTypes } from 'prop-types'
 import React from 'react'
 import i18n from '../../../locales'
-import { dataTest } from '../../../shared/utils'
+import { dataTest } from '../../../shared'
 import { gatewayTypes } from './gatewayTypes'
 
 const { GENERIC_FORM, BULK_SMS_FORM, CLICKATELL_FORM, SMPP_FORM } = gatewayTypes
