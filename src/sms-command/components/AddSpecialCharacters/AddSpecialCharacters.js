@@ -1,8 +1,7 @@
 import { Button, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../../locales'
-import { FormRow } from '../../../shared/components'
-import { dataTest } from '../../../shared/utils'
+import { FormRow, dataTest } from '../../../shared'
 import { FIELD_SPECIAL_CHARS_NAME } from '../FieldSpecialCharacter'
 
 const { useForm } = ReactFinalForm

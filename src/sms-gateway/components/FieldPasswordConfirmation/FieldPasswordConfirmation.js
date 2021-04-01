@@ -8,7 +8,7 @@ import {
 } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../../locales'
-import { dataTest } from '../../../shared/utils'
+import { dataTest } from '../../../shared'
 import { FIELD_PASSWORD_LABEL, FIELD_PASSWORD_NAME } from '../FieldPassword'
 
 const { Field } = ReactFinalForm

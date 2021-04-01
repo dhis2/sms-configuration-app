@@ -1,7 +1,7 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../../shared/utils'
+import { dataTest } from '../../../shared'
 import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
 
 const { Field } = ReactFinalForm

@@ -7,9 +7,9 @@ import {
     AlertContext,
     DeleteConfirmationDialog,
     PageHeadline,
-} from '../../../shared/components'
-import { useQueryParams } from '../../../shared/hooks'
-import { dataTest } from '../../../shared/utils'
+    useQueryParams,
+    dataTest,
+} from '../../../shared'
 import { Filter, ReceivedSmsTable } from '../../components'
 import styles from './ReceivedSmsList.module.css'
 import { useDeleteMutation } from './useDeleteMutation'

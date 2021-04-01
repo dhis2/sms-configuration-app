@@ -2,8 +2,7 @@ import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import i18n from '../../../locales'
-import { CancelDialog, PageHeadline } from '../../../shared/components'
-import { dataTest } from '../../../shared/utils'
+import { CancelDialog, PageHeadline, dataTest } from '../../../shared'
 import {
     FIELD_PARSER_NAME,
     FormAlertParser,
@@ -15,8 +14,8 @@ import {
     FormUnregisteredParser,
     parserTypes,
 } from '../../components'
-import { useReadSmsCommandParserTypeQuery } from '../../hooks'
 import styles from './SmsCommandEdit.module.css'
+import { useReadSmsCommandParserTypeQuery } from './useReadSmsCommandParserTypeQuery'
 
 export const SMS_COMMAND_FORM_EDIT_PATH_STATIC = '/sms-config/edit'
 export const SMS_COMMAND_FORM_EDIT_PATH = `${SMS_COMMAND_FORM_EDIT_PATH_STATIC}/:id`

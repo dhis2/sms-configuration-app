@@ -7,8 +7,8 @@ import {
     ContentLoadingError,
     FormRow,
     FieldUserGroup,
-} from '../../../shared/components'
-import { dataTest } from '../../../shared/utils'
+    dataTest,
+} from '../../../shared'
 import { FieldCommandName } from '../FieldCommandName'
 import { FieldConfirmMessage } from '../FieldConfirmMessage'
 import { FieldParser } from '../FieldParser'

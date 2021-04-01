@@ -1,5 +1,5 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import { useSubmit } from '../../../shared/utils'
+import { useSubmit } from '../../../shared'
 import { FIELD_COMMAND_NAME } from '../FieldCommandName'
 import { FIELD_COMPLETENESS_METHOD_NAME } from '../FieldCompletenessMethod'
 import { FIELD_DATA_SET_NAME } from '../FieldDataSet'

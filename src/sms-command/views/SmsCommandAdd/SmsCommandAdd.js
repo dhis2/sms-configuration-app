@@ -7,8 +7,8 @@ import {
     FormRow,
     PageHeadline,
     FieldUserGroupWithAutoLoad,
-} from '../../../shared/components'
-import { dataTest } from '../../../shared/utils'
+    dataTest,
+} from '../../../shared'
 import {
     FieldDataSetWithAutoLoad,
     FieldCommandName,
@@ -21,8 +21,8 @@ import {
     parserTypes,
     programTypes,
 } from '../../components'
-import { useCreateSmsCommandMutation } from '../../hooks'
 import styles from './SmsCommandAdd.module.css'
+import { useCreateSmsCommandMutation } from './useCreateSmsCommandMutation'
 
 const {
     ALL_PROGRAMS,

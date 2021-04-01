@@ -1,5 +1,5 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import { useSubmit } from '../../../shared/utils'
+import { useSubmit } from '../../../shared'
 import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
 
 export const REPLACE_SMS_COMMAND_MUTATION = {

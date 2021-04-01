@@ -1,7 +1,7 @@
 import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../../locales'
-import { dataTest } from '../../../shared/utils'
+import { dataTest } from '../../../shared'
 
 const { Field } = ReactFinalForm
 

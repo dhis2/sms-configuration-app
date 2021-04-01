@@ -7,7 +7,7 @@ import {
 } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../../locales'
-import { dataTest as createDataTestValue } from '../../../shared/utils'
+import { dataTest as createDataTestValue } from '../../../shared'
 import { FIELD_DATA_SET_NAME } from '../FieldDataSet'
 import { FIELD_SPECIAL_CHARS_NAME } from '../FieldSpecialCharacter'
 import { FormComponent } from './FormComponent'

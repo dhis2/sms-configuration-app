@@ -1,5 +1,5 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import { useSubmit } from '../../../shared/utils'
+import { useSubmit } from '../../../shared'
 import { FIELD_COMMAND_NAME } from '../FieldCommandName'
 import { FIELD_DEFAULT_MESSAGE_NAME } from '../FieldDefaultMessage'
 import { FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME } from '../FieldMoreThanOneOrgUnitMessage'

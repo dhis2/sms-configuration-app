@@ -14,8 +14,7 @@ import {
 } from '@dhis2/ui'
 import React, { useMemo } from 'react'
 import i18n from '../../../locales'
-import { FormRow } from '../../../shared/components'
-import { dataTest } from '../../../shared/utils'
+import { FormRow, dataTest } from '../../../shared'
 import { FIELD_DATA_SET_NAME } from '../../components'
 import { useReadDataElementsOfDataSetQuery } from './useReadDataElementsOfDataSetQuery'
 

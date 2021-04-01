@@ -7,7 +7,7 @@ import {
     InputField,
 } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../../shared/utils'
+import { dataTest } from '../../../shared'
 import { translations } from '../../utils'
 import styles from './Filter.module.css'
 

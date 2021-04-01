@@ -1,5 +1,5 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import { useSubmit } from '../../../shared/utils'
+import { useSubmit } from '../../../shared'
 
 const updateAlertParserMutation = {
     resource: 'smsCommands',
