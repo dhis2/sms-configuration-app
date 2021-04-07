@@ -1,1 +1,0 @@
-export { SmsCommandList } from './SmsCommandList'
