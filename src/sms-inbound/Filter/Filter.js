@@ -7,8 +7,8 @@ import {
     InputField,
 } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../../shared'
-import { translations } from '../../utils'
+import { dataTest } from '../../shared'
+import { translations } from '../translations'
 import styles from './Filter.module.css'
 
 // From https://github.com/dhis2/dhis2-core/blob/ea76fa86409613c9766d4508d65c88ac55c413c3/dhis-2/dhis-api/src/main/java/org/hisp/dhis/sms/incoming/SmsMessageStatus.java
