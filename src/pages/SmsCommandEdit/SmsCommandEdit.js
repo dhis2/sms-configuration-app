@@ -3,12 +3,6 @@ import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import i18n from '../../locales'
 import {
-    CancelDialog,
-    PageHeadline,
-    TemplateSidebarNavContent,
-    dataTest,
-} from '../../shared'
-import {
     FIELD_PARSER_NAME,
     FormAlertParser,
     FormEventRegistrationParser,
@@ -18,7 +12,13 @@ import {
     FormTrackedEntityRegistrationParser,
     FormUnregisteredParser,
     parserTypes,
-} from '../../sms-command'
+} from '../../modules/sms-command'
+import {
+    CancelDialog,
+    PageHeadline,
+    TemplateSidebarNavContent,
+    dataTest,
+} from '../../shared'
 import styles from './SmsCommandEdit.module.css'
 import { useReadSmsCommandParserTypeQuery } from './useReadSmsCommandParserTypeQuery'
 

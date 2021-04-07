@@ -3,18 +3,18 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import i18n from '../../locales'
 import {
-    FormRow,
-    PageHeadline,
-    TemplateSidebarNavContent,
-    dataTest,
-} from '../../shared'
-import {
     FormBulkSMS,
     FormClickatell,
     FormGeneric,
     FormSMPP,
     gatewayTypes,
-} from '../../sms-gateway'
+} from '../../modules/sms-gateway'
+import {
+    FormRow,
+    PageHeadline,
+    TemplateSidebarNavContent,
+    dataTest,
+} from '../../shared'
 import styles from './SmsGatewayAdd.module.css'
 import { useCreateBulkSMSGatewayMutation } from './useCreateBulkSMSGatewayMutation'
 import { useCreateClickatellGatewayMutation } from './useCreateClickatellGatewayMutation'

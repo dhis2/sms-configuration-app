@@ -1,5 +1,5 @@
 import { useDataMutation } from '@dhis2/app-runtime'
-import { createGenericGateWayDataFromVariables } from '../../sms-gateway'
+import { createGenericGateWayDataFromVariables } from '../../modules/sms-gateway'
 
 export const CREATE_GENERIC_GATEWAY_MUTATION = {
     resource: 'gateways',

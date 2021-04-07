@@ -1,4 +1,4 @@
-import { createGenericGateWayDataFromVariables } from '../../sms-gateway'
+import { createGenericGateWayDataFromVariables } from '../../modules/sms-gateway'
 import { useUpdateGatewayMutation } from './useUpdateGatewayMutation'
 
 export const UPDATE_GENERIC_GATEWAY_MUTATION = {

@@ -3,6 +3,7 @@ import { Button, NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState, useEffect, useContext } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
 import i18n from '../../locales'
+import { Filter, ReceivedSmsTable } from '../../modules/sms-inbound'
 import {
     AlertContext,
     DeleteConfirmationDialog,
@@ -11,7 +12,6 @@ import {
     TemplateSidebarNavContent,
     dataTest,
 } from '../../shared'
-import { Filter, ReceivedSmsTable } from '../../sms-inbound'
 import styles from './ReceivedSmsList.module.css'
 import { useDeleteMutation } from './useDeleteMutation'
 

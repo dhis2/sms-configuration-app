@@ -2,6 +2,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import { Button, NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState, useEffect, useContext } from 'react'
 import i18n from '../../locales'
+import { SentSmsTable, StatusFilter } from '../../modules/sms-outbound'
 import {
     DeleteConfirmationDialog,
     PageHeadline,
@@ -9,7 +10,6 @@ import {
     TemplateSidebarNavContent,
     useQueryParams,
 } from '../../shared'
-import { SentSmsTable, StatusFilter } from '../../sms-outbound'
 import styles from './SentSmsList.module.css'
 import { useDeleteMutation } from './useDeleteMutation'
 

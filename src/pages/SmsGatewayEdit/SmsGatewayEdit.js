@@ -3,12 +3,6 @@ import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import i18n from '../../locales'
 import {
-    CancelDialog,
-    PageHeadline,
-    TemplateSidebarNavContent,
-    dataTest,
-} from '../../shared'
-import {
     FIELD_PASSWORD_NAME,
     FIELD_PASSWORD_CONFIRMATION_NAME,
     FormBulkSMS,
@@ -16,7 +10,13 @@ import {
     FormGeneric,
     FormSMPP,
     gatewayTypes,
-} from '../../sms-gateway'
+} from '../../modules/sms-gateway'
+import {
+    CancelDialog,
+    PageHeadline,
+    TemplateSidebarNavContent,
+    dataTest,
+} from '../../shared'
 import styles from './SmsGatewayEdit.module.css'
 import { useReadGatewayQuery } from './useReadGatewayQuery'
 import { useUpdateBulkSMSGatewayMutation } from './useUpdateBulkSMSGatewayMutation'

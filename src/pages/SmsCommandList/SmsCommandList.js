@@ -15,6 +15,7 @@ import {
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import i18n from '../../locales'
+import { parserTypes } from '../../modules/sms-command'
 import {
     ListActions,
     DeleteConfirmationDialog,
@@ -23,7 +24,6 @@ import {
     TemplateSidebarNavContent,
     dataTest,
 } from '../../shared'
-import { parserTypes } from '../../sms-command'
 import styles from './SmsCommandList.module.css'
 import { useDeleteSmsCommandMutation } from './useDeleteSmsCommandMutation'
 import { useReadSmsCommandsQuery } from './useReadSmsCommandsQuery'

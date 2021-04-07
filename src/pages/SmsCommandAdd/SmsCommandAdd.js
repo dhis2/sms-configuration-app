@@ -4,13 +4,6 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import i18n from '../../locales'
 import {
-    FormRow,
-    PageHeadline,
-    FieldUserGroupWithAutoLoad,
-    TemplateSidebarNavContent,
-    dataTest,
-} from '../../shared'
-import {
     FIELD_PARSER_NAME,
     FIELD_PROGRAM_NAME,
     FIELD_PROGRAM_STAGE_NAME,
@@ -21,7 +14,14 @@ import {
     FieldProgramWithAutoLoad,
     parserTypes,
     programTypes,
-} from '../../sms-command'
+} from '../../modules/sms-command'
+import {
+    FormRow,
+    PageHeadline,
+    FieldUserGroupWithAutoLoad,
+    TemplateSidebarNavContent,
+    dataTest,
+} from '../../shared'
 import styles from './SmsCommandAdd.module.css'
 import { useCreateSmsCommandMutation } from './useCreateSmsCommandMutation'
 

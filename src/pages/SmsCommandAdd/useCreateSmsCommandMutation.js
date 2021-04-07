@@ -1,5 +1,5 @@
 import { useDataMutation } from '@dhis2/app-runtime'
-import { parserTypes } from '../../sms-command'
+import { parserTypes } from '../../modules/sms-command'
 
 const {
     ALERT_PARSER,
