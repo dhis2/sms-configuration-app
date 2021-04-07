@@ -1,1 +1,0 @@
-export { SmsGatewayEdit } from './SmsGatewayEdit'
