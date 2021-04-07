@@ -2,7 +2,6 @@ import './locales'
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { AppWrapper } from './AppWrapper'
-import Home from './routes/index'
 import {
     ViewSmsCommandAdd,
     ViewSmsCommandList,
@@ -15,12 +14,13 @@ import {
 } from './sms-gateway'
 import { ViewReceivedSmsList } from './sms-inbound'
 import { ViewSentSmsList } from './sms-outbound'
+import { ViewOverview } from './sms-overview'
 
 export const App = () => (
     <AppWrapper>
         <Switch>
             {/* Home */}
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={ViewOverview} />
 
             {/* Gateway configuration */}
             <Route exact path="/sms-gateway" component={ViewSmsGatewayList} />
