@@ -3,8 +3,6 @@ import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { AppWrapper } from './AppWrapper'
 import Home from './routes/index'
-import ReceivedSms from './routes/received'
-import SentSms from './routes/sent'
 import {
     ViewSmsCommandAdd,
     ViewSmsCommandList,
@@ -15,6 +13,8 @@ import {
     ViewSmsGatewayList,
     ViewSmsGatewayEdit,
 } from './sms-gateway'
+import { ViewReceivedSmsList } from './sms-inbound'
+import { ViewSentSmsList } from './sms-outbound'
 
 export const App = () => (
     <AppWrapper>
@@ -33,10 +33,10 @@ export const App = () => (
             <Route path="/sms-command/:id" component={ViewSmsCommandEdit} />
 
             {/* View sent sms */}
-            <Route path="/sent" component={SentSms} />
+            <Route path="/sent" component={ViewSentSmsList} />
 
             {/* View received sms */ ''}
-            <Route path="/received" component={ReceivedSms} />
+            <Route path="/received" component={ViewReceivedSmsList} />
 
             {/* Handle 404 */ ''}
             <Redirect from="*" to="/" />

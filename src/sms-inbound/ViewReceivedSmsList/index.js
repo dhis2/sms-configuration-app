@@ -1,0 +1,1 @@
+export { ViewReceivedSmsList } from './ViewReceivedSmsList'

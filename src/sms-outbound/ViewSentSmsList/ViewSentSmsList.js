@@ -1,16 +1,18 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { Button, NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState, useEffect, useContext } from 'react'
-import i18n from '../../../locales'
+import i18n from '../../locales'
 import {
     DeleteConfirmationDialog,
     PageHeadline,
     AlertContext,
+    TemplateSidebarNavContent,
     useQueryParams,
-} from '../../../shared'
-import { StatusFilter, SentSmsTable } from '../../components'
-import styles from './SentSmsList.module.css'
+} from '../../shared'
+import { SentSmsTable } from '../SentSmsTable'
+import { StatusFilter } from '../StatusFilter'
 import { useDeleteMutation } from './useDeleteMutation'
+import styles from './ViewSentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('Sent')
 export const SENT_SMS_LIST_PATH = '/sent'
@@ -37,7 +39,7 @@ const query = {
     },
 }
 
-export const SentSmsList = () => {
+export const ViewSentSmsList = () => {
     const [
         showDeleteConfirmationDialog,
         setShowDeleteConfirmationDialog,
@@ -76,54 +78,56 @@ export const SentSmsList = () => {
         const msg = i18n.t('Something went wrong whilst loading sent SMSes')
 
         return (
-            <>
+            <TemplateSidebarNavContent>
                 <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
                 <NoticeBox error title={msg}>
                     {error.message}
                 </NoticeBox>
-            </>
+            </TemplateSidebarNavContent>
         )
     }
 
     const messages = data?.sms?.outboundsmss || []
 
     return (
-        <div className={styles.container}>
-            <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
-            <header className={styles.header}>
-                <StatusFilter status={status} setStatus={setStatus} />
+        <TemplateSidebarNavContent>
+            <div className={styles.container}>
+                <PageHeadline>{SENT_SMS_LIST_LABEL}</PageHeadline>
+                <header className={styles.header}>
+                    <StatusFilter status={status} setStatus={setStatus} />
 
-                <Button
-                    destructive
-                    onClick={() => setShowDeleteConfirmationDialog(true)}
-                    disabled={selectedIds.length === 0}
-                >
-                    {i18n.t('Delete selected')}
-                </Button>
-
-                {showDeleteConfirmationDialog && (
-                    <DeleteConfirmationDialog
-                        onCancelClick={onCancelClick}
-                        onDeleteClick={onDeleteClick}
+                    <Button
+                        destructive
+                        onClick={() => setShowDeleteConfirmationDialog(true)}
+                        disabled={selectedIds.length === 0}
                     >
-                        {i18n.t(
-                            'Are you sure you want to delete the selected sms?'
-                        )}
-                    </DeleteConfirmationDialog>
+                        {i18n.t('Delete selected')}
+                    </Button>
+
+                    {showDeleteConfirmationDialog && (
+                        <DeleteConfirmationDialog
+                            onCancelClick={onCancelClick}
+                            onDeleteClick={onDeleteClick}
+                        >
+                            {i18n.t(
+                                'Are you sure you want to delete the selected sms?'
+                            )}
+                        </DeleteConfirmationDialog>
+                    )}
+                </header>
+                {loading || !called ? (
+                    <CenteredContent>
+                        <CircularLoader />
+                    </CenteredContent>
+                ) : (
+                    <SentSmsTable
+                        messages={messages}
+                        pager={data.sms.pager}
+                        selectedIds={selectedIds}
+                        setSelectedIds={setSelectedIds}
+                    />
                 )}
-            </header>
-            {loading || !called ? (
-                <CenteredContent>
-                    <CircularLoader />
-                </CenteredContent>
-            ) : (
-                <SentSmsTable
-                    messages={messages}
-                    pager={data.sms.pager}
-                    selectedIds={selectedIds}
-                    setSelectedIds={setSelectedIds}
-                />
-            )}
-        </div>
+            </div>
+        </TemplateSidebarNavContent>
     )
 }

@@ -1,1 +1,0 @@
-export { SentSmsList } from './SentSmsList'

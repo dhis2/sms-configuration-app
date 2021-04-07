@@ -2,17 +2,19 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import { Button, NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState, useEffect, useContext } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
-import i18n from '../../../locales'
+import i18n from '../../locales'
 import {
     AlertContext,
     DeleteConfirmationDialog,
     PageHeadline,
     useQueryParams,
+    TemplateSidebarNavContent,
     dataTest,
-} from '../../../shared'
-import { Filter, ReceivedSmsTable } from '../../components'
-import styles from './ReceivedSmsList.module.css'
+} from '../../shared'
+import { Filter } from '../Filter'
+import { ReceivedSmsTable } from '../ReceivedSmsTable'
 import { useDeleteMutation } from './useDeleteMutation'
+import styles from './ViewReceivedSmsList.module.css'
 
 export const RECEIVED_SMS_LIST_LABEL = i18n.t('Received')
 export const RECEIVED_SMS_LIST_PATH = '/received'
@@ -54,7 +56,7 @@ const query = {
     },
 }
 
-export const ReceivedSmsList = () => {
+export const ViewReceivedSmsList = () => {
     const [
         showDeleteConfirmationDialog,
         setShowDeleteConfirmationDialog,
@@ -106,63 +108,65 @@ export const ReceivedSmsList = () => {
         const msg = i18n.t('Something went wrong whilst loading received SMSes')
 
         return (
-            <>
+            <TemplateSidebarNavContent>
                 <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
                 <NoticeBox error title={msg}>
                     {error.message}
                 </NoticeBox>
-            </>
+            </TemplateSidebarNavContent>
         )
     }
 
     const messages = data?.inboundSms?.inboundsmss || []
 
     return (
-        <div
-            data-test={dataTest('views-receivedsmslist')}
-            className={styles.container}
-        >
-            <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
-            <header className={styles.header}>
-                <Filter
-                    status={status}
-                    setStatus={setStatus}
-                    phoneNumber={phoneNumber}
-                    setPhoneNumber={setPhoneNumber}
-                    onReset={handleFilterReset}
-                />
+        <TemplateSidebarNavContent>
+            <div
+                data-test={dataTest('views-receivedsmslist')}
+                className={styles.container}
+            >
+                <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
+                <header className={styles.header}>
+                    <Filter
+                        status={status}
+                        setStatus={setStatus}
+                        phoneNumber={phoneNumber}
+                        setPhoneNumber={setPhoneNumber}
+                        onReset={handleFilterReset}
+                    />
 
-                <Button
-                    destructive
-                    onClick={() => setShowDeleteConfirmationDialog(true)}
-                    disabled={selectedIds.length === 0}
-                >
-                    {i18n.t('Delete selected')}
-                </Button>
-
-                {showDeleteConfirmationDialog && (
-                    <DeleteConfirmationDialog
-                        onCancelClick={onCancelClick}
-                        onDeleteClick={onDeleteClick}
+                    <Button
+                        destructive
+                        onClick={() => setShowDeleteConfirmationDialog(true)}
+                        disabled={selectedIds.length === 0}
                     >
-                        {i18n.t(
-                            'Are you sure you want to delete the selected sms?'
-                        )}
-                    </DeleteConfirmationDialog>
+                        {i18n.t('Delete selected')}
+                    </Button>
+
+                    {showDeleteConfirmationDialog && (
+                        <DeleteConfirmationDialog
+                            onCancelClick={onCancelClick}
+                            onDeleteClick={onDeleteClick}
+                        >
+                            {i18n.t(
+                                'Are you sure you want to delete the selected sms?'
+                            )}
+                        </DeleteConfirmationDialog>
+                    )}
+                </header>
+                {loading || !called ? (
+                    <CenteredContent>
+                        <CircularLoader />
+                    </CenteredContent>
+                ) : (
+                    <ReceivedSmsTable
+                        messages={messages}
+                        pager={data.inboundSms.pager}
+                        selectedIds={selectedIds}
+                        setSelectedIds={setSelectedIds}
+                    />
                 )}
-            </header>
-            {loading || !called ? (
-                <CenteredContent>
-                    <CircularLoader />
-                </CenteredContent>
-            ) : (
-                <ReceivedSmsTable
-                    messages={messages}
-                    pager={data.inboundSms.pager}
-                    selectedIds={selectedIds}
-                    setSelectedIds={setSelectedIds}
-                />
-            )}
-        </div>
+            </div>
+        </TemplateSidebarNavContent>
     )
 }
