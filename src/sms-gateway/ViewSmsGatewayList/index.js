@@ -1,0 +1,1 @@
+export { ViewSmsGatewayList } from './ViewSmsGatewayList'

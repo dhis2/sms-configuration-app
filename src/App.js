@@ -5,14 +5,16 @@ import { AppWrapper } from './AppWrapper'
 import Home from './routes/index'
 import ReceivedSms from './routes/received'
 import SentSms from './routes/sent'
-import SmsGateway from './routes/sms-gateway'
-import SmsGatewayEdit from './routes/sms-gateway/[id]'
-import SmsGatewayNew from './routes/sms-gateway/new'
 import {
     ViewSmsCommandAdd,
     ViewSmsCommandList,
     ViewSmsCommandEdit,
 } from './sms-command'
+import {
+    ViewSmsGatewayAdd,
+    ViewSmsGatewayList,
+    ViewSmsGatewayEdit,
+} from './sms-gateway'
 
 export const App = () => (
     <AppWrapper>
@@ -21,9 +23,9 @@ export const App = () => (
             <Route exact path="/" component={Home} />
 
             {/* Gateway configuration */}
-            <Route exact path="/sms-gateway" component={SmsGateway} />
-            <Route path="/sms-gateway/new" component={SmsGatewayNew} />
-            <Route path="/sms-gateway/:id" component={SmsGatewayEdit} />
+            <Route exact path="/sms-gateway" component={ViewSmsGatewayList} />
+            <Route path="/sms-gateway/new" component={ViewSmsGatewayAdd} />
+            <Route path="/sms-gateway/:id" component={ViewSmsGatewayEdit} />
 
             {/* Sms command */}
             <Route exact path="/sms-command" component={ViewSmsCommandList} />
