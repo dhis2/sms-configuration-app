@@ -1,1 +1,0 @@
-export { ViewSmsCommandList } from './ViewSmsCommandList'

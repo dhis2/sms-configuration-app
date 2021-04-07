@@ -1,1 +1,0 @@
-export { ViewReceivedSmsList } from './ViewReceivedSmsList'

@@ -1,1 +1,0 @@
-export { ViewSmsGatewayAdd } from './ViewSmsGatewayAdd'

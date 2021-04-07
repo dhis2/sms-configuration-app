@@ -1,1 +1,0 @@
-export { ViewSmsCommandEdit } from './ViewSmsCommandEdit'
