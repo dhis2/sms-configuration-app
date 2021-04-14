@@ -90,7 +90,7 @@ Given('the user wants to delete the first configuration', () => {
 
 Given('the confirmation model is visible', () => {
     cy.get('{views-gatewayconfiglist-delete}').click()
-    cy.get('{gateways-deleteconfirmationdialog}').should('exist')
+    cy.get('{deleteconfirmationdialog}').should('exist')
 })
 
 Given('some gateway configurations have been selected', () => {
@@ -112,11 +112,11 @@ When('the user user selects the first gateway configuration', () => {
 })
 
 When('the user cancels the deletion', () => {
-    cy.get('{gateways-deleteconfirmationdialog-cancel}').click()
+    cy.get('{deleteconfirmationdialog-cancel}').click()
 })
 
 When('the user confirms the deletion', () => {
-    cy.get('{gateways-deleteconfirmationdialog-confirm}').click()
+    cy.get('{deleteconfirmationdialog-confirm}').click()
 })
 
 When('clicks the delete button', () => {
@@ -128,7 +128,7 @@ When('the user clicks the checkbox to select all', () => {
 })
 
 Then('a confirmation model should pop up', () => {
-    cy.get('{gateways-deleteconfirmationdialog}').should('exist')
+    cy.get('{deleteconfirmationdialog}').should('exist')
 })
 
 Then(
@@ -141,7 +141,7 @@ Then(
 )
 
 Then('the confirmation modal should close', () => {
-    cy.get('{gateways-deleteconfirmationdialog}').should('not.exist')
+    cy.get('{deleteconfirmationdialog}').should('not.exist')
 })
 
 Then(
