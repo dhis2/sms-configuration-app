@@ -11,7 +11,7 @@ export const REPLACE_SMS_COMMAND_MUTATION = {
     //   Make this produce static object structures
     // eslint-disable-next-line no-unused-vars
     data: ({ commandId, ...params }) => ({
-        params,
+        ...params,
         [FIELD_SMS_CODES_NAME]: Object.values(params[FIELD_SMS_CODES_NAME]),
     }),
 }
