@@ -4,6 +4,7 @@ import { useSubmit } from '../../shared'
 export const UPDATE_COMMAND_MUTATION = {
     resource: 'smsCommands',
     type: 'update',
+    partial: true,
     id: ({ commandId }) => commandId,
 
     // @TODO(non-critical):
