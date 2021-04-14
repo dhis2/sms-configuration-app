@@ -1,5 +1,5 @@
 import { Then } from 'cypress-cucumber-preprocessor/steps'
-import { translations } from '../../../../src/sms-sent/utils/translations/translations'
+import { translations } from '../../../../src/sms-outbound/translations'
 import '../common'
 
 Then('the user should be notified that there are no messages', () => {
