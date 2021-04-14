@@ -30,7 +30,7 @@ export const FormJ2meParser = ({ commandId, onAfterChange, onCancel }) => {
     const command = commandData?.smsCommand
 
     const updateCommand = useUpdateCommandMutation({
-        commandId,
+        id: commandId,
         onAfterChange,
     })
 
