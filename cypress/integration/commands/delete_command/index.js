@@ -64,7 +64,7 @@ Given('the user wants to delete the first command', () => {
 })
 
 Given('the confirmation modal is visible', () => {
-    cy.get('{commands-deleteconfirmationdialog}').should('exist')
+    cy.get('{deleteconfirmationdialog}').should('exist')
 })
 
 Given('some commands have been selected', () => {
@@ -96,11 +96,11 @@ When('the user selects the first command', () => {
 })
 
 When('the user cancels the deletion', () => {
-    cy.get('{commands-deleteconfirmationdialog-cancel}').click()
+    cy.get('{deleteconfirmationdialog-cancel}').click()
 })
 
 When('the user confirms the deletion', () => {
-    cy.get('{commands-deleteconfirmationdialog-confirm}').click()
+    cy.get('{deleteconfirmationdialog-confirm}').click()
 })
 
 When('clicks the delete button', () => {
@@ -114,7 +114,7 @@ When('the user clicks the checkbox to select all', () => {
 })
 
 Then('a confirmation modal should pop up', () => {
-    cy.get('{commands-deleteconfirmationdialog}').should('exist')
+    cy.get('{deleteconfirmationdialog}').should('exist')
 })
 
 Then("a delete request with the first command's id should be sent", () => {
@@ -126,7 +126,7 @@ Then("a delete request with the first command's id should be sent", () => {
 })
 
 Then('the confirmation modal should close', () => {
-    cy.get('{commands-deleteconfirmationdialog}').should('not.exist')
+    cy.get('{deleteconfirmationdialog}').should('not.exist')
 })
 
 Then("all individual commands' checkboxes should be selected", () => {
