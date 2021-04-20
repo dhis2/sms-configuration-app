@@ -1,0 +1,281 @@
+{
+    "smsCommands": [
+        {
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "attributeValues": [],
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "created": "2020-10-20T11:27:02.664",
+            "currentPeriodUsedForReporting": false,
+            "displayName": "asdf",
+            "externalAccess": false,
+            "favorite": false,
+            "favorites": [],
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/zYT407xRwIB",
+            "id": "FOOOO00000",
+            "lastUpdated": "2020-10-20T11:27:02.664",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "name": "asdf",
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "parserType": "ALERT_PARSER",
+            "receivedMessage": "Command has been processed successfully",
+            "smsCodes": [],
+            "specialCharacters": [],
+            "successMessage": "Command has been processed successfully",
+            "translations": [],
+            "userAccesses": [],
+            "userGroup": {
+                "id": "vAvEltyXGbD"
+            },
+            "userGroupAccesses": [],
+            "wrongFormatMessage": "Wrong command format"
+        },
+        {
+            "lastUpdated": "2020-11-09T10:39:24.067",
+            "id": "F0000OOOOO",
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/u3tfuz8T6dJ",
+            "created": "2020-11-09T10:39:24.067",
+            "name": "J2Me",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "displayName": "J2Me",
+            "currentPeriodUsedForReporting": false,
+            "externalAccess": false,
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "receivedMessage": "Command has been processed successfully",
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "wrongFormatMessage": "Wrong command format",
+            "successMessage": "Command has been processed successfully",
+            "parserType": "KEY_VALUE_PARSER",
+            "favorite": false,
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "dataset": {
+                "id": "Lpw6GcnTrmS"
+            },
+            "favorites": [],
+            "smsCodes": [
+                {
+                    "compulsory": false,
+                    "code": "asdf",
+                    "formula": "+oI6YtDaVFcw",
+                    "optionId": 0,
+                    "dataElement": {
+                        "id": "qiaHMoI3bjA"
+                    }
+                }
+            ],
+            "specialCharacters": [],
+            "translations": [],
+            "userGroupAccesses": [],
+            "attributeValues": [],
+            "userAccesses": []
+        },
+        {
+            "lastUpdated": "2020-10-23T08:48:52.327",
+            "id": "F0000OOOOO",
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/R4gqV7ffKwM",
+            "created": "2020-10-23T08:48:52.327",
+            "name": "J2ME - Emergency Response",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "displayName": "J2ME - Emergency Response",
+            "currentPeriodUsedForReporting": false,
+            "externalAccess": false,
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "receivedMessage": "Command has been processed successfully",
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "wrongFormatMessage": "Wrong command format",
+            "successMessage": "Command has been processed successfully",
+            "parserType": "J2ME_PARSER",
+            "favorite": false,
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "dataset": {
+                "id": "Lpw6GcnTrmS"
+            },
+            "favorites": [],
+            "smsCodes": [],
+            "specialCharacters": [],
+            "translations": [],
+            "userGroupAccesses": [],
+            "attributeValues": [],
+            "userAccesses": []
+        },
+        {
+            "lastUpdated": "2020-11-09T15:32:13.423",
+            "id": "F0000OOOOO",
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/Omise7rTMjI",
+            "created": "2020-11-09T15:32:13.423",
+            "name": "Unregistered parser - Administrators",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "displayName": "Unregistered parser - Administrators",
+            "currentPeriodUsedForReporting": false,
+            "externalAccess": false,
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "receivedMessage": "Command has been processed successfully",
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "wrongFormatMessage": "Wrong command format",
+            "successMessage": "Command has been processed successfully",
+            "parserType": "UNREGISTERED_PARSER",
+            "favorite": false,
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "userGroup": {
+                "id": "wl5cDMuUhmF"
+            },
+            "favorites": [],
+            "smsCodes": [],
+            "specialCharacters": [],
+            "translations": [],
+            "userGroupAccesses": [],
+            "attributeValues": [],
+            "userAccesses": []
+        },
+        {
+            "lastUpdated": "2020-11-09T15:02:37.775",
+            "id": "F0000OOOOO",
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/ueBblO2S3QA",
+            "created": "2020-11-09T15:02:37.775",
+            "name": "TERP - Antenatal care visit",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "displayName": "TERP - Antenatal care visit",
+            "currentPeriodUsedForReporting": false,
+            "externalAccess": false,
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "receivedMessage": "Command has been processed successfully",
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "wrongFormatMessage": "Wrong command format",
+            "successMessage": "Command has been processed successfully",
+            "parserType": "TRACKED_ENTITY_REGISTRATION_PARSER",
+            "favorite": false,
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "program": {
+                "id": "lxAQ7Zs9VYR"
+            },
+            "favorites": [],
+            "smsCodes": [],
+            "specialCharacters": [],
+            "translations": [],
+            "userGroupAccesses": [],
+            "attributeValues": [],
+            "userAccesses": []
+        },
+        {
+            "lastUpdated": "2020-11-09T14:25:44.064",
+            "id": "F0000OOOOO",
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/gqaGxMG34Qj",
+            "created": "2020-11-09T14:25:44.064",
+            "name": "PSDE - Child Programme - Baby Postnatal",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "displayName": "PSDE - Child Programme - Baby Postnatal",
+            "currentPeriodUsedForReporting": false,
+            "externalAccess": false,
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "receivedMessage": "Command has been processed successfully",
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "wrongFormatMessage": "Wrong command format",
+            "successMessage": "Command has been processed successfully",
+            "parserType": "PROGRAM_STAGE_DATAENTRY_PARSER",
+            "favorite": false,
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "program": {
+                "id": "IpHINAT79UW"
+            },
+            "programStage": {
+                "id": "ZzYYXq4fJie"
+            },
+            "favorites": [],
+            "smsCodes": [],
+            "specialCharacters": [],
+            "translations": [],
+            "userGroupAccesses": [],
+            "attributeValues": [],
+            "userAccesses": []
+        },
+        {
+            "lastUpdated": "2020-10-22T08:05:10.917",
+            "id": "F0000OOOOO",
+            "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/JcrPTBRAyRs",
+            "created": "2020-10-22T08:05:10.917",
+            "name": "Event Registration Parser - Antenatal care visit",
+            "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
+            "displayName": "Event Registration Parser - Antenatal care visit",
+            "currentPeriodUsedForReporting": false,
+            "externalAccess": false,
+            "noUserMessage": "No user associated with this phone number. Please contact your supervisor.",
+            "receivedMessage": "Command has been processed successfully",
+            "completenessMethod": "AT_LEAST_ONE_DATAVALUE",
+            "wrongFormatMessage": "Wrong command format",
+            "successMessage": "Command has been processed successfully",
+            "parserType": "EVENT_REGISTRATION_PARSER",
+            "favorite": false,
+            "access": {
+                "read": true,
+                "update": true,
+                "externalize": false,
+                "delete": true,
+                "write": true,
+                "manage": true
+            },
+            "program": {
+                "id": "lxAQ7Zs9VYR"
+            },
+            "programStage": {
+                "id": "dBwrot7S420"
+            },
+            "favorites": [],
+            "smsCodes": [
+                {
+                    "compulsory": false,
+                    "code": "asdf",
+                    "optionId": 0,
+                    "dataElement": {
+                        "id": "sWoqcoByYmD"
+                    }
+                }
+            ],
+            "specialCharacters": [],
+            "translations": [],
+            "userGroupAccesses": [],
+            "attributeValues": [],
+            "userAccesses": []
+        }
+    ]
+}
