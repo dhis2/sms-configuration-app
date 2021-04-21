@@ -18,7 +18,7 @@ export const FieldProgramStage = ({
 }) => (
     <Field
         component={SingleSelectFieldFF}
-        dataTest={dataTest('forms-fieldprogramstage')}
+        dataTest={dataTest('smscommand-fieldprogramstage')}
         disabled={disabled}
         error={!!errorText}
         format={value => value?.id || null}

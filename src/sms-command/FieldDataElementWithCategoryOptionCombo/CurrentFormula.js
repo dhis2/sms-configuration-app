@@ -1,199 +1,39 @@
 import { PropTypes } from '@dhis2/prop-types'
-import {
-    Button,
-    ButtonStrip,
-    CircularLoader,
-    Modal,
-    ModalActions,
-    ModalContent,
-    ModalTitle,
-    NoticeBox,
-    ReactFinalForm,
-    SingleSelectFieldFF,
-    hasValue,
-} from '@dhis2/ui'
-import React, { useMemo } from 'react'
+import React from 'react'
 import i18n from '../../locales'
-import { FormRow, dataTest } from '../../shared'
-import { FIELD_DATA_SET_NAME } from '../FieldDataSet'
-import { useReadDataElementsOfDataSetQuery } from './useReadDataElementsOfDataSetQuery'
-
-const { Field, Form, useForm, useField } = ReactFinalForm
+import { dataTest } from '../../shared'
+import styles from './CurrentFormula.module.css'
 
 export const CurrentFormula = ({
-    baseName,
-    combo,
-    targetFieldName,
-    onClose,
+    code,
+    formula,
+    formulaDataElementName,
+    loading,
+    operator,
 }) => {
-    const form = useForm()
-
-    const smsCode = useField(baseName, {
-        subscription: { value: true },
-    }).input.value
-
-    const dataSetId = useField(FIELD_DATA_SET_NAME, {
-        subscription: { value: true },
-    }).input.value.id
-
-    const { loading, error, data } = useReadDataElementsOfDataSetQuery(
-        dataSetId
-    )
-
-    // Using memo so changing the form does not change the "initialValues"
-    // which would cause the form to update unnecessarily
-    const initialFormula = smsCode.formula
-    const initialOperator = useMemo(
-        () => (initialFormula ? initialFormula[0] : '+'),
-        []
-    )
-    const initialDataElementCode = useMemo(
-        () => (initialFormula ? initialFormula.slice(1) : ''),
-        []
-    )
-
-    const initialValues = {
-        operator: initialOperator,
-        dataElementCode: initialDataElementCode,
-    }
-
-    const modalDataTest = dataTest(
-        'smscommandfields-fielddataelementwithcategoryoptioncomboformula'
-    )
-
-    if (loading) {
-        return (
-            <Modal dataTest={modalDataTest}>
-                <CircularLoader />
-            </Modal>
-        )
-    }
-
-    const options = data.map(dataElement => {
-        const { id, displayName } = dataElement
-
-        return {
-            value: id,
-            label: displayName,
-        }
-    })
-
-    const onSubmit = values => {
-        const newFormula = `${values.operator}${values.dataElementCode}`
-        form.change(targetFieldName, newFormula)
-        onClose()
-    }
-
-    const onRemove = () => {
-        form.change(targetFieldName, null)
-        onClose()
-    }
+    if (!code || !formula || !formulaDataElementName || !operator) return null
 
     return (
-        <Form onSubmit={onSubmit} initialValues={initialValues}>
-            {({ handleSubmit }) => (
-                <Modal dataTest={modalDataTest}>
-                    <form
-                        onSubmit={event => {
-                            event.stopPropagation()
-                            handleSubmit(event)
-                        }}
-                    >
-                        <ModalTitle>
-                            {i18n.t('Formula for {{combo}}', { combo })}
-                        </ModalTitle>
-                        <ModalContent>
-                            <FormRow>
-                                <Field
-                                    required
-                                    dataTest={dataTest(
-                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-dataelement'
-                                    )}
-                                    name="dataElementCode"
-                                    label={i18n.t('Data element')}
-                                    component={SingleSelectFieldFF}
-                                    options={options}
-                                    validate={hasValue}
-                                />
-                            </FormRow>
-
-                            <FormRow>
-                                <Field
-                                    required
-                                    dataTest={dataTest(
-                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-operator'
-                                    )}
-                                    name="operator"
-                                    label={i18n.t('formula operator')}
-                                    component={SingleSelectFieldFF}
-                                    initialValue="+"
-                                    options={[
-                                        {
-                                            value: '+',
-                                            label: '+',
-                                        },
-                                        {
-                                            value: '-',
-                                            label: '-',
-                                        },
-                                    ]}
-                                />
-                            </FormRow>
-
-                            {error && (
-                                <FormRow>
-                                    <NoticeBox
-                                        error
-                                        title={i18n.t(
-                                            'Something went wrong whilst saving'
-                                        )}
-                                    >
-                                        {error.message}
-                                    </NoticeBox>
-                                </FormRow>
-                            )}
-                        </ModalContent>
-                        <ModalActions>
-                            <ButtonStrip>
-                                <Button
-                                    onClick={onRemove}
-                                    dataTest={dataTest(
-                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-remove'
-                                    )}
-                                >
-                                    {i18n.t('Remove')}
-                                </Button>
-
-                                <Button
-                                    onClick={onClose}
-                                    dataTest={dataTest(
-                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-cancel'
-                                    )}
-                                >
-                                    {i18n.t('Cancel')}
-                                </Button>
-
-                                <Button
-                                    type="submit"
-                                    primary
-                                    dataTest={dataTest(
-                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-save'
-                                    )}
-                                >
-                                    {i18n.t('Save')}
-                                </Button>
-                            </ButtonStrip>
-                        </ModalActions>
-                    </form>
-                </Modal>
+        <span
+            className={styles.formulaInWords}
+            data-test={dataTest(
+                'smscommand-fielddataelementwithcategoryoptioncombo-currentformula'
             )}
-        </Form>
+        >
+            <span className={styles.formulaInWordsLabel}>
+                {i18n.t('Formula')}:
+            </span>
+
+            {loading && i18n.t('Loading formula')}
+            {!loading && `${code} ${operator} ${formulaDataElementName}`}
+        </span>
     )
 }
 
 CurrentFormula.propTypes = {
-    baseName: PropTypes.string.isRequired,
-    combo: PropTypes.string.isRequired,
-    targetFieldName: PropTypes.string.isRequired,
-    onClose: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired,
+    code: PropTypes.string,
+    formula: PropTypes.string,
+    formulaDataElementName: PropTypes.string,
+    operator: PropTypes.string,
 }

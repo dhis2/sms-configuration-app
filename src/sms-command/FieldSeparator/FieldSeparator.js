@@ -9,7 +9,7 @@ export const FIELD_SEPARATOR_NAME = 'separator'
 
 export const FieldSeparator = () => (
     <Field
-        dataTest={dataTest('forms-fieldcommandseparator')}
+        dataTest={dataTest('smscommand-fieldseparator')}
         name={FIELD_SEPARATOR_NAME}
         label={i18n.t('Field separator')}
         component={InputFieldFF}

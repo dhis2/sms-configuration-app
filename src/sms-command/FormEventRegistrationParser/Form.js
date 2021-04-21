@@ -10,9 +10,9 @@ import { FieldNoUserMessage } from '../FieldNoUserMessage'
 import { FieldParser } from '../FieldParser'
 import { FieldProgram } from '../FieldProgram'
 import { FieldProgramStage } from '../FieldProgramStage'
-import { FieldProgramStageDataElements } from '../FieldProgramStageDataElements'
 import { FieldSeparator } from '../FieldSeparator'
 import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
+import { FieldSmsCodeDataElement } from '../FieldSmsCodeDataElement'
 import { FieldSuccessMessage } from '../FieldSuccessMessage'
 import { FieldWrongFormatMessage } from '../FieldWrongFormatMessage'
 import { FormActions } from '../FormActions'
@@ -20,7 +20,7 @@ import { SubmitErrors } from '../SubmitErrors'
 
 const { useFormState } = ReactFinalForm
 
-export const FormComponent = ({
+export const Form = ({
     handleSubmit,
     onCancel,
     programStageDataElements,
@@ -32,9 +32,7 @@ export const FormComponent = ({
     return (
         <form
             onSubmit={handleSubmit}
-            data-test={dataTest(
-                'smscommandeventregistrationparser-commandediteventregistrationparserform'
-            )}
+            data-test={dataTest('smscommand-formeventregistrationparser-form')}
         >
             <FormRow>
                 <FieldCommandName />
@@ -83,10 +81,13 @@ export const FormComponent = ({
 
             {programStageDataElements && (
                 <FormRow>
-                    <FieldProgramStageDataElements
-                        programStageDataElements={programStageDataElements}
-                        smsCodes={values[FIELD_SMS_CODES_NAME]}
-                    />
+                    {programStageDataElements.map(({ dataElement }) => (
+                        <FieldSmsCodeDataElement
+                            key={dataElement.id}
+                            dataElement={dataElement}
+                            smsCodes={values[FIELD_SMS_CODES_NAME]}
+                        />
+                    ))}
                 </FormRow>
             )}
 
@@ -96,7 +97,7 @@ export const FormComponent = ({
     )
 }
 
-FormComponent.propTypes = {
+Form.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     programStageDataElements: PropTypes.arrayOf(
         PropTypes.shape({

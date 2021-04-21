@@ -2,7 +2,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales'
-import { FormRow, PageSubHeadline } from '../../shared'
+import { FormRow, PageSubHeadline, dataTest } from '../../shared'
 import { FieldCommandName } from '../FieldCommandName'
 import { FieldDefaultMessage } from '../FieldDefaultMessage'
 import { FieldMoreThanOneOrgUnitMessage } from '../FieldMoreThanOneOrgUnitMessage'
@@ -18,7 +18,7 @@ import { SubmitErrors } from '../SubmitErrors'
 
 const { useFormState } = ReactFinalForm
 
-export const FormComponent = ({
+export const Form = ({
     handleSubmit,
     dynamicFields,
     selectedProgramOption,
@@ -27,7 +27,12 @@ export const FormComponent = ({
     const { pristine } = useFormState()
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form
+            onSubmit={handleSubmit}
+            data-test={dataTest(
+                'smscommand-formtrackedentityregistrationparser-form'
+            )}
+        >
             <FormRow>
                 <FieldCommandName />
             </FormRow>
@@ -87,7 +92,7 @@ export const FormComponent = ({
     )
 }
 
-FormComponent.propTypes = {
+Form.propTypes = {
     dynamicFields: PropTypes.arrayOf(
         PropTypes.shape({
             displayName: PropTypes.string.isRequired,

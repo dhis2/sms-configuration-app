@@ -2,18 +2,8 @@ import { PropTypes } from '@dhis2/prop-types'
 import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales'
-import {
-    FormRow,
-    FieldUserGroup,
-    ContentLoading,
-    ContentLoadingError,
-    dataTest,
-} from '../../shared'
-import { FieldCommandName } from '../FieldCommandName'
-import { FieldConfirmMessage } from '../FieldConfirmMessage'
-import { FieldParser } from '../FieldParser'
-import { FormActions } from '../FormActions'
-import { SubmitErrors } from '../SubmitErrors'
+import { ContentLoading, ContentLoadingError } from '../../shared'
+import { Form as FormComponent } from './Form'
 import { useCommandData } from './useCommandData'
 import { useUpdateCommandMutation } from './useUpdateCommandMutation'
 
@@ -63,31 +53,12 @@ export const FormUnregisteredParser = ({
             initialValues={initialValues}
         >
             {({ handleSubmit, pristine }) => (
-                <form
-                    onSubmit={handleSubmit}
-                    data-test={dataTest(
-                        'commands-commandunregisteredparserform'
-                    )}
-                >
-                    <FormRow>
-                        <FieldCommandName />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldParser disabled />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldUserGroup disabled userGroups={userGroups} />
-                    </FormRow>
-
-                    <FormRow>
-                        <FieldConfirmMessage />
-                    </FormRow>
-
-                    <SubmitErrors />
-                    <FormActions onCancel={() => onCancel(pristine)} />
-                </form>
+                <FormComponent
+                    handleSubmit={handleSubmit}
+                    userGroups={userGroups}
+                    pristine={pristine}
+                    onCancel={onCancel}
+                />
             )}
         </Form>
     )

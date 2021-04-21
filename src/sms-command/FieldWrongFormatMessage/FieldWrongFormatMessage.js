@@ -9,7 +9,7 @@ export const FIELD_WRONG_FORMAT_MESSAGE_NAME = 'wrongFormatMessage'
 
 export const FieldWrongFormatMessage = () => (
     <Field
-        dataTest={dataTest('forms-fieldcommandwrongformatmessage')}
+        dataTest={dataTest('smscommand-fieldwrongformatmessage')}
         name={FIELD_WRONG_FORMAT_MESSAGE_NAME}
         label={i18n.t('Wrong format message')}
         component={TextAreaFieldFF}

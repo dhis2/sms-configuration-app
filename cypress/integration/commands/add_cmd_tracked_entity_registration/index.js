@@ -37,7 +37,7 @@ Given(
         cy.get('[data-value="TRACKED_ENTITY_REGISTRATION_PARSER"]').click()
 
         cy.get(
-            '{forms-fieldcommandparser} [data-test="dhis2-uicore-select-input"]'
+            '{smscommand-fieldparser} [data-test="dhis2-uicore-select-input"]'
         )
             .invoke('text')
             .should('equal', 'Tracked entity registration parser')
@@ -45,7 +45,7 @@ Given(
 )
 
 When('the user enters the name', () => {
-    cy.get('{commands-fieldcommandname} input').type('User name')
+    cy.get('{smscommands-fieldcommandname} input').type('User name')
 })
 
 When('the user chooses a program', () => {
@@ -54,7 +54,7 @@ When('the user chooses a program', () => {
             const program = programs[0]
             cy.wrap(program).as('selectedProgram')
 
-            cy.get('{forms-fieldprogram}').click()
+            cy.get('{smscommand-fieldprogram}').click()
             cy.get(`[data-value="${program.id}"]`).click()
         }
     )
@@ -65,11 +65,11 @@ When('the user submits the form', () => {
 })
 
 When('the user leaves the name empty', () => {
-    cy.get('{commands-fieldcommandname} input').should('have.value', '')
+    cy.get('{smscommands-fieldcommandname} input').should('have.value', '')
 })
 
 When('the user leaves the program field empty', () => {
-    cy.get('{forms-fieldprogram} [data-test="dhis2-uicore-select-input"]')
+    cy.get('{smscommand-fieldprogram} [data-test="dhis2-uicore-select-input"]')
         .invoke('text')
         .should('equal', '')
 })
@@ -81,7 +81,7 @@ Then('the data should be sent successfully', () => {
 })
 
 Then('the form should not submit', () => {
-    cy.get('{views-smscommandlist}').should('not.exist')
+    cy.get('{smscommand-viewsmscommandlist}').should('not.exist')
 })
 
 Then('display an error message on the name field', () => {

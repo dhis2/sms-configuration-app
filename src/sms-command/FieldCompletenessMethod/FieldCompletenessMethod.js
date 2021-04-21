@@ -11,7 +11,7 @@ export const FIELD_COMPLETENESS_METHOD_NAME = 'completenessMethod'
 
 export const FieldCompletenessMethod = () => (
     <Field
-        dataTest={dataTest('smscommandfields-fieldcommandcompletenessmethod')}
+        dataTest={dataTest('smscommand-fieldcompletenessmethod')}
         name={FIELD_COMPLETENESS_METHOD_NAME}
         label={i18n.t('Completeness method')}
         component={SingleSelectFieldFF}

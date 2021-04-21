@@ -9,7 +9,7 @@ export const FIELD_SUCCESS_MESSAGE_NAME = 'successMessage'
 
 export const FieldSuccessMessage = () => (
     <Field
-        dataTest={dataTest('forms-fieldcommandsuccessmessage')}
+        dataTest={dataTest('smscommand-fieldsuccessmessage')}
         name={FIELD_SUCCESS_MESSAGE_NAME}
         label={i18n.t('Success message')}
         component={TextAreaFieldFF}

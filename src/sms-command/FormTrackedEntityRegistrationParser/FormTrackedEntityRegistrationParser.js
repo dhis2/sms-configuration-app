@@ -3,7 +3,7 @@ import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales'
 import { ContentLoading, ContentLoadingError } from '../../shared'
-import { FormComponent } from './FormComponent'
+import { Form as FormComponent } from './Form'
 import { useCommandData } from './useCommandData'
 import { useUpdateCommandMutation } from './useUpdateCommandMutation'
 

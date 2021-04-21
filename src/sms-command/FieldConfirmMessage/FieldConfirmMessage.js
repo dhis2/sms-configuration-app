@@ -9,7 +9,7 @@ export const FIELD_CONFIRM_MESSAGE_NAME = 'receivedMessage'
 
 export const FieldConfirmMessage = () => (
     <Field
-        dataTest={dataTest('commands-fieldcommandconfirmmessage')}
+        dataTest={dataTest('smscommands-fieldconfirmmessage')}
         name={FIELD_CONFIRM_MESSAGE_NAME}
         label={i18n.t('Confirm message')}
         component={TextAreaFieldFF}

@@ -26,7 +26,7 @@ export const AddSpecialCharacters = () => {
         <FormRow>
             <Button
                 onClick={addSpecialKeyFieldsToFormState}
-                dataTest={dataTest('forms-commandsaddspecialcharacters')}
+                dataTest={dataTest('smscommand-addspecialcharacter')}
             >
                 {i18n.t('Add special character')}
             </Button>

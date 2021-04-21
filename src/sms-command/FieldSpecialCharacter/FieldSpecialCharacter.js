@@ -34,7 +34,7 @@ export const FieldSpecialCharacter = ({ index, onSpecialKeyRemoved }) => {
             <Field
                 required
                 className={styles.field}
-                dataTest={dataTest('@TODO')}
+                dataTest={dataTest('smscommand-fieldspecialcharacter-name')}
                 label={i18n.t('Special character name')}
                 name={`${FIELD_SPECIAL_CHARS_NAME}[${index}].name`}
                 component={InputFieldFF}
@@ -44,7 +44,7 @@ export const FieldSpecialCharacter = ({ index, onSpecialKeyRemoved }) => {
             <Field
                 required
                 className={styles.field}
-                dataTest={dataTest('@TODO')}
+                dataTest={dataTest('smscommand-fieldspecialcharacter-value')}
                 label={i18n.t('Special character value')}
                 name={`${FIELD_SPECIAL_CHARS_NAME}[${index}].value`}
                 component={InputFieldFF}
@@ -55,6 +55,9 @@ export const FieldSpecialCharacter = ({ index, onSpecialKeyRemoved }) => {
                 <Button
                     className={styles.button}
                     onClick={removeSpecialKeyFieldsFromFormState}
+                    dataTest={dataTest(
+                        'smscommand-fieldspecialcharacter-remove'
+                    )}
                 >
                     {i18n.t('Remove')}
                 </Button>

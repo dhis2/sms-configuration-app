@@ -52,18 +52,18 @@ Given('the command has short codes', () => {
 })
 
 When('the user changes the name field', () => {
-    cy.get('{commands-fieldcommandname} input')
+    cy.get('{smscommands-fieldcommandname} input')
         .invoke('val')
         .then(currentName => {
             cy.wrap({ name: `${currentName}!` }).as('newValues')
-            cy.get('{commands-fieldcommandname} input').type('!')
+            cy.get('{smscommands-fieldcommandname} input').type('!')
         })
 })
 
 When('the user changes the fieldSeparator field', () => {
     const separator = 'New separator'
 
-    cy.get('{forms-fieldcommandseparator} input').clear().type(separator)
+    cy.get('{smscommand-fieldseparator} input').clear().type(separator)
 
     cy.wrap({ separator }).as('newValues')
 })
@@ -71,7 +71,7 @@ When('the user changes the fieldSeparator field', () => {
 When('the user changes the replyMessage field', () => {
     const defaultMessage = 'New default message'
 
-    cy.get('{forms-fieldcommanddefaultmessage} textarea')
+    cy.get('{smscommands-fielddefaultmessage} textarea')
         .clear()
         .type(defaultMessage)
 
@@ -81,7 +81,7 @@ When('the user changes the replyMessage field', () => {
 When('the user changes the wrongFormatMessage field', () => {
     const wrongFormatMessage = 'New wrong format message'
 
-    cy.get('{forms-fieldcommandwrongformatmessage} textarea')
+    cy.get('{smscommand-fieldwrongformatmessage} textarea')
         .clear()
         .type(wrongFormatMessage)
 
@@ -91,7 +91,7 @@ When('the user changes the wrongFormatMessage field', () => {
 When('the user changes the noUserMessage field', () => {
     const noUserMessage = 'New no user message'
 
-    cy.get('{forms-fieldcommandnousermessage} textarea')
+    cy.get('{smscommand-fieldnousermessage} textarea')
         .clear()
         .type(noUserMessage)
 
@@ -101,7 +101,7 @@ When('the user changes the noUserMessage field', () => {
 When('the user changes the moreThanOneOrgUnitMessage field', () => {
     const moreThanOneOrgUnitMessage = 'New more than one org unit message'
 
-    cy.get('{forms-fieldcommandmorethanoneorgunitmessage} textarea')
+    cy.get('{smscommand-fieldmorethanoneorgunitmessage} textarea')
         .clear()
         .type(moreThanOneOrgUnitMessage)
 
@@ -111,7 +111,7 @@ When('the user changes the moreThanOneOrgUnitMessage field', () => {
 When('the user changes the successMessage field', () => {
     const successMessage = 'New success message'
 
-    cy.get('{forms-fieldcommandsuccessmessage} textarea')
+    cy.get('{smscommand-fieldsuccessmessage} textarea')
         .clear()
         .type(successMessage)
 
@@ -119,7 +119,7 @@ When('the user changes the successMessage field', () => {
 })
 
 When('the user changes the name field to an invalid value', () => {
-    cy.get('{commands-fieldcommandname} input').clear()
+    cy.get('{smscommands-fieldcommandname} input').clear()
 })
 
 When('the user changes the value of a sms short code', () => {
@@ -131,7 +131,7 @@ When('the user changes the value of a sms short code', () => {
 })
 
 When('the user submits the form', () => {
-    cy.get('{views-smscommandformedit} button[type="submit"]').click()
+    cy.get('{smscommand-viewsmscommandedit} button[type="submit"]').click()
 })
 
 Then('the form should submit successfully', () => {
@@ -259,7 +259,7 @@ Then(
 )
 
 Then('the form should not submit successfully', () => {
-    cy.get('{views-smscommandformedit} .error').should(
+    cy.get('{smscommand-viewsmscommandedit} .error').should(
         'have.length.of.at.least',
         1
     )

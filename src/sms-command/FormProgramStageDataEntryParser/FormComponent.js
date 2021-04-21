@@ -2,8 +2,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales'
-import { FormRow, PageSubHeadline } from '../../shared'
-import { dataTest } from '../../shared'
+import { FormRow, PageSubHeadline, dataTest } from '../../shared'
 import { FieldCommandName } from '../FieldCommandName'
 import { FieldDefaultMessage } from '../FieldDefaultMessage'
 import { FieldMoreThanOneOrgUnitMessage } from '../FieldMoreThanOneOrgUnitMessage'
@@ -11,9 +10,9 @@ import { FieldNoUserMessage } from '../FieldNoUserMessage'
 import { FieldParser } from '../FieldParser'
 import { FieldProgram } from '../FieldProgram'
 import { FieldProgramStage } from '../FieldProgramStage'
-import { FieldProgramStageDataElements } from '../FieldProgramStageDataElements'
 import { FieldSeparator } from '../FieldSeparator'
 import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
+import { FieldSmsCodeDataElement } from '../FieldSmsCodeDataElement'
 import { FieldSuccessMessage } from '../FieldSuccessMessage'
 import { FieldWrongFormatMessage } from '../FieldWrongFormatMessage'
 import { FormActions } from '../FormActions'
@@ -84,10 +83,13 @@ export const FormComponent = ({
 
             {programStageDataElements && (
                 <FormRow>
-                    <FieldProgramStageDataElements
-                        programStageDataElements={programStageDataElements}
-                        smsCodes={values[FIELD_SMS_CODES_NAME]}
-                    />
+                    {programStageDataElements.map(({ dataElement }) => (
+                        <FieldSmsCodeDataElement
+                            key={dataElement.id}
+                            dataElement={dataElement}
+                            smsCodes={values[FIELD_SMS_CODES_NAME]}
+                        />
+                    ))}
                 </FormRow>
             )}
 

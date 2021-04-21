@@ -10,7 +10,7 @@ export const FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME =
 
 export const FieldMoreThanOneOrgUnitMessage = () => (
     <Field
-        dataTest={dataTest('forms-fieldcommandmorethanoneorgunitmessage')}
+        dataTest={dataTest('smscommand-fieldmorethanoneorgunitmessage')}
         name={FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME}
         label={i18n.t('More than one orgunit message')}
         component={TextAreaFieldFF}

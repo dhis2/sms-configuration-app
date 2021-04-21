@@ -22,7 +22,7 @@ export const FieldParser = ({ disabled }) => (
     <Field
         required
         disabled={disabled}
-        dataTest={dataTest('forms-fieldcommandparser')}
+        dataTest={dataTest('smscommand-fieldparser')}
         name={FIELD_PARSER_NAME}
         label={i18n.t('Parser')}
         component={SingleSelectFieldFF}

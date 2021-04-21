@@ -7,7 +7,7 @@ import {
 } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales'
-import { FormComponent } from './FormComponent'
+import { Form as FormComponent } from './Form'
 import { getInitialFormState } from './getInitialFormState'
 import { useCommandQuery } from './useCommandQuery'
 import { useUpdateCommandMutation } from './useUpdateCommandMutation'

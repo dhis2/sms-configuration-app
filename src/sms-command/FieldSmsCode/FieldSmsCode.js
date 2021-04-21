@@ -1,6 +1,7 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
+import { dataTest } from '../../shared'
 
 const { Field, useFormState } = ReactFinalForm
 const subscription = {
@@ -23,6 +24,7 @@ export const FieldSmsCode = ({ id, displayName, valueType }) => {
     return (
         <Field
             required
+            dataTest={dataTest('smscommand-fieldsmscode')}
             name={`${FIELD_SMS_CODES_NAME}.${id}`}
             label={displayName}
             component={InputFieldFF}

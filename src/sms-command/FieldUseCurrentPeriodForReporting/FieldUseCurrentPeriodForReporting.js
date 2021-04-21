@@ -11,9 +11,7 @@ export const FIELD_USE_CURRENT_PERIOD_FOR_REPORTING_NAME =
 export const FieldUseCurrentPeriodForReporting = () => (
     <Field
         type="checkbox"
-        dataTest={dataTest(
-            'smscommandfields-fieldcommandusecurrentperiodforreporting'
-        )}
+        dataTest={dataTest('smscommand-fieldusecurrentperiodforreporting')}
         name={FIELD_USE_CURRENT_PERIOD_FOR_REPORTING_NAME}
         label={i18n.t('Use current period for reporting')}
         component={CheckboxFieldFF}

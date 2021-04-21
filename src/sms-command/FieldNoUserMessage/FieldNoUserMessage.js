@@ -9,7 +9,7 @@ export const FIELD_NO_USER_MESSAGE_NAME = 'noUserMessage'
 
 export const FieldNoUserMessage = () => (
     <Field
-        dataTest={dataTest('forms-fieldcommandnousermessage')}
+        dataTest={dataTest('smscommand-fieldnousermessage')}
         name={FIELD_NO_USER_MESSAGE_NAME}
         label={i18n.t('No user message')}
         component={TextAreaFieldFF}

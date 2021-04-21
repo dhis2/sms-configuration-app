@@ -4,7 +4,7 @@ import { Button, ReactFinalForm } from '@dhis2/ui'
 import React, { useEffect, useState } from 'react'
 import i18n from '../../locales'
 import { dataTest } from '../../shared'
-import styles from './AddFormulaButton.module.css'
+import { CurrentFormula } from './CurrentFormula'
 
 const { useField } = ReactFinalForm
 
@@ -47,29 +47,20 @@ export const AddFormulaButton = ({ baseName, onClick, disabled }) => {
 
     return (
         <>
-            {code && formula && formulaDataElementName && (
-                <span
-                    className={styles.formulaInWords}
-                    data-test={dataTest(
-                        'smscommandfields-fielddataelementwithcategoryoptioncomboaddformulabutton-formulainwords'
-                    )}
-                >
-                    <span className={styles.formulaInWordsLabel}>
-                        {i18n.t('Formula')}:
-                    </span>
-
-                    {loading && i18n.t('Loading formula')}
-                    {!loading &&
-                        `${code} ${operator} ${formulaDataElementName}`}
-                </span>
-            )}
+            <CurrentFormula
+                code={code}
+                formula={formula}
+                formulaDataElementName={formulaDataElementName}
+                loading={loading}
+                operator={operator}
+            />
 
             <Button
                 small
                 onClick={onClick}
                 disabled={disabled}
                 dataTest={dataTest(
-                    'smscommandfields-fielddataelementwithcategoryoptioncomboaddformulabutton-button'
+                    'smscommand-fielddataelementwithcategoryoptioncombo-addformulabutton'
                 )}
             >
                 {formula ? i18n.t('Edit formula') : i18n.t('Add formula')}

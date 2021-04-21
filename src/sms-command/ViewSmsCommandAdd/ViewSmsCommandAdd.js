@@ -214,7 +214,7 @@ export const ViewSmsCommandAdd = () => {
 
     return (
         <TemplateSidebarNavContent>
-            <div data-test={dataTest('views-smscommandformnew')}>
+            <div data-test={dataTest('smscommand-viewsmscommandadd')}>
                 <Form destroyOnUnregister onSubmit={onSubmit}>
                     {({ handleSubmit, submitting }) => (
                         <ActualForm

@@ -10,9 +10,7 @@ export const DataElementTimesCategoryOptionCombos = ({
     DE_COC_combinations,
 }) => (
     <div
-        data-test={dataTest(
-            'smscommandfields-dataelementtimescategoryoptioncombos'
-        )}
+        data-test={dataTest('smscommand-dataelementtimescategoryoptioncombos')}
     >
         <PageSubHeadline>{i18n.t('SMS short codes')}</PageSubHeadline>
 
@@ -20,7 +18,7 @@ export const DataElementTimesCategoryOptionCombos = ({
 
         <div
             data-test={dataTest(
-                'smscommandfields-dataelementtimescategoryoptioncombos-rows'
+                'smscommand-dataelementtimescategoryoptioncombos-rows'
             )}
         >
             {DE_COC_combinations.map(({ dataElement, categoryOptionCombo }) => {

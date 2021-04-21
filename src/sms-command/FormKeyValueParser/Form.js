@@ -2,7 +2,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import { ReactFinalForm } from '@dhis2/ui'
 import React, { useState } from 'react'
 import i18n from '../../locales'
-import { FormRow, PageSubHeadline } from '../../shared'
+import { FormRow, PageSubHeadline, dataTest } from '../../shared'
 import { AddSpecialCharacters } from '../AddSpecialCharacters'
 import { DataElementTimesCategoryOptionCombos } from '../DataElementTimesCategoryOptionCombos'
 import { FieldCommandName } from '../FieldCommandName'
@@ -25,9 +25,8 @@ import { SubmitErrors } from '../SubmitErrors'
 
 const { FormSpy } = ReactFinalForm
 
-export const FormComponent = ({
+export const Form = ({
     DE_COC_combination_data,
-    dataTest,
     handleSubmit,
     hasSpecialChars,
     onCancel,
@@ -39,7 +38,10 @@ export const FormComponent = ({
     const enableSubmit = specialKeyRemoved && hasSpecialChars
 
     return (
-        <form onSubmit={handleSubmit} data-test={dataTest}>
+        <form
+            onSubmit={handleSubmit}
+            data-test={dataTest('smscommand-formkeyvalueparser-form')}
+        >
             <FormRow>
                 <FieldCommandName />
             </FormRow>
@@ -118,8 +120,7 @@ export const FormComponent = ({
     )
 }
 
-FormComponent.propTypes = {
-    dataTest: PropTypes.string.isRequired,
+Form.propTypes = {
     handleSubmit: PropTypes.func.isRequired,
     hasSpecialChars: PropTypes.bool.isRequired,
     pristine: PropTypes.bool.isRequired,

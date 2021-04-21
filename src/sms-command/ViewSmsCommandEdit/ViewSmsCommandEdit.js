@@ -106,7 +106,7 @@ export const ViewSmsCommandEdit = () => {
         <TemplateSidebarNavContent>
             <div
                 className={styles.container}
-                data-test={dataTest('views-smscommandformedit')}
+                data-test={dataTest('smscommand-viewsmscommandedit')}
             >
                 <PageHeadline>{i18n.t('Edit command')}</PageHeadline>
 

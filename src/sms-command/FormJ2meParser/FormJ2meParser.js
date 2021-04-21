@@ -7,10 +7,9 @@ import {
 } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales'
-import { dataTest as createDataTestValue } from '../../shared'
 import { FIELD_DATA_SET_NAME } from '../FieldDataSet'
 import { FIELD_SPECIAL_CHARS_NAME } from '../FieldSpecialCharacter'
-import { FormComponent } from './FormComponent'
+import { Form as FormComponent } from './Form'
 import { getInitialFormState } from './getInitialFormState'
 import { globalValidate } from './globalValidate'
 import { useCommandData } from './useCommandData'
@@ -19,10 +18,6 @@ import { useUpdateCommandMutation } from './useUpdateCommandMutation'
 const { Form } = ReactFinalForm
 
 export const FormJ2meParser = ({ commandId, onAfterChange, onCancel }) => {
-    const dataTest = createDataTestValue(
-        'smscommandkeyvalueparser-commandeditj2meparserform'
-    )
-
     const { error: loadingCommandError, data: commandData } = useCommandData(
         commandId
     )
@@ -94,7 +89,6 @@ export const FormJ2meParser = ({ commandId, onAfterChange, onCancel }) => {
             {({ handleSubmit, pristine, dirty }) => (
                 <FormComponent
                     DE_COC_combination_data={DE_COC_combination_data}
-                    dataTest={dataTest}
                     dirty={dirty}
                     handleSubmit={handleSubmit}
                     pristine={pristine}

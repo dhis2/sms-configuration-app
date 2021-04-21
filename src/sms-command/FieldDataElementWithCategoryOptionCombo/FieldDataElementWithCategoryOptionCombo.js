@@ -2,10 +2,11 @@ import { PropTypes } from '@dhis2/prop-types'
 import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React, { useState } from 'react'
 import i18n from '../../locales'
+import { dataTest } from '../../shared'
 import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
 import { AddFormulaButton } from './AddFormulaButton'
-import { CurrentFormula } from './CurrentFormula'
 import styles from './FieldDataElementWithCategoryOptionCombo.module.css'
+import { FormulaModalForm } from './FormulaModalForm'
 
 const DE_COC_toFormName = (dataElement, categoryOptionCombo) => {
     const dataElementId = dataElement.id
@@ -36,7 +37,12 @@ export const FieldDataElementWithCategoryOptionCombo = ({
     const formulaName = `${baseName}.formula`
 
     return (
-        <div className={styles.container}>
+        <div
+            className={styles.container}
+            data-test={dataTest(
+                'smscommand-fielddataelementwithcategoryoptioncombo'
+            )}
+        >
             <Field
                 className={styles.field}
                 label={label}
@@ -69,7 +75,7 @@ export const FieldDataElementWithCategoryOptionCombo = ({
                             />
 
                             {showFormula && (
-                                <CurrentFormula
+                                <FormulaModalForm
                                     baseName={baseName}
                                     combo={label}
                                     targetFieldName={formulaName}

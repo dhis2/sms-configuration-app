@@ -26,28 +26,28 @@ Given('the user is adding a new key value parser sms command', () => {
     cy.get('{forms-fieldcommandparser-content}').click()
     cy.get('[data-value="KEY_VALUE_PARSER"]').click()
 
-    cy.get('{forms-fieldcommandparser} [data-test="dhis2-uicore-select-input"]')
+    cy.get('{smscommand-fieldparser} [data-test="dhis2-uicore-select-input"]')
         .invoke('text')
         .should('equal', 'Key value parser')
 })
 
 When('the user enters the name', () => {
-    cy.get('{commands-fieldcommandname} input').type('User name')
+    cy.get('{smscommands-fieldcommandname} input').type('User name')
 })
 
 When('the user leaves the name empty', () => {
-    cy.get('{commands-fieldcommandname} input').should('have.value', '')
+    cy.get('{smscommands-fieldcommandname} input').should('have.value', '')
 })
 
 When('the user chooses a data set', () => {
     cy.fixture('commands/add_cmd_j2me/dataSets').then(({ dataSets }) => {
-        cy.get('{forms-fielddataset}').click()
+        cy.get('{smscommand-fielddataset}').click()
         cy.get(`[data-value="${dataSets[0].id}"]`).click()
     })
 })
 
 When('the user leaves the data set field empty', () => {
-    cy.get('{forms-fielddataset} [data-test="dhis2-uicore-select-input"]')
+    cy.get('{smscommand-fielddataset} [data-test="dhis2-uicore-select-input"]')
         .invoke('text')
         .should('equal', '')
 })
@@ -63,7 +63,7 @@ Then('the data should be sent successfully', () => {
 })
 
 Then('the form should not submit', () => {
-    cy.get('{views-smscommandlist}').should('not.exist')
+    cy.get('{smscommand-viewsmscommandlist}').should('not.exist')
 })
 
 Then('display an error message on the name field', () => {

@@ -63,7 +63,7 @@ export const ViewSmsCommandList = () => {
     if (loadingReadSmsCommands) {
         return (
             <TemplateSidebarNavContent>
-                <div data-test={dataTest('views-smscommandlist')}>
+                <div data-test={dataTest('smscommand-viewsmscommandlist')}>
                     <PageHeadline>{SMS_COMMAND_LIST_LABEL}</PageHeadline>
                     <CenteredContent>
                         <CircularLoader />
