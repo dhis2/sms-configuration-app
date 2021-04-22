@@ -20,7 +20,7 @@ Given('the user is adding a new j2me parser sms command', () => {
     cy.visitWhenStubbed('/')
 
     cy.get('{shared-navigationitem}:nth-child(3)').click()
-    cy.get('{views-smscommandlist-add}').click()
+    cy.get('{shared-listactions-add}').click()
     cy.get('{smscommand-fieldparser-content}').click()
     cy.get('[data-value="J2ME_PARSER"]').click()
 

@@ -32,7 +32,7 @@ Given(
         cy.visitWhenStubbed('/')
 
         cy.get('{shared-navigationitem}:nth-child(3)').click()
-        cy.get('{views-smscommandlist-add}').click()
+        cy.get('{shared-listactions-add}').click()
         cy.get('{smscommand-fieldparser-content}').click()
         cy.get('[data-value="TRACKED_ENTITY_REGISTRATION_PARSER"]').click()
 

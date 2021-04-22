@@ -28,7 +28,7 @@ Given('the user is adding a new event registration parser sms command', () => {
     cy.visitWhenStubbed('/')
 
     cy.get('{shared-navigationitem}:nth-child(3)').click()
-    cy.get('{views-smscommandlist-add}').click()
+    cy.get('{shared-listactions-add}').click()
     cy.get('{smscommand-fieldparser-content}').click()
     cy.get('[data-value="EVENT_REGISTRATION_PARSER"]').click()
 
