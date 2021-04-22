@@ -68,7 +68,7 @@ Given('the user navigated to the gateway configuration page', () => {
 
 When('the user clicks on the update button in the first row', () => {
     cy.get(
-        '{gateways-gatewaystable-row}:first-child {gateways-gatewaystable-edit}'
+        '{smsgateway-stable-row}:first-child {smsgateway-stable-edit}'
     ).click()
 
     cy.wrap(gateways[0])
@@ -77,7 +77,7 @@ When('the user clicks on the update button in the first row', () => {
 })
 
 When("the user changes the name field's value to another valid value", () => {
-    cy.get('{gateways-fieldgatewayname} input').clear().type('New name value')
+    cy.get('{smsgateway-fieldgatewayname} input').clear().type('New name value')
 
     cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
         cy.wrap({
@@ -90,7 +90,7 @@ When("the user changes the name field's value to another valid value", () => {
 When(
     "the user changes the urlTemplate field's value to another valid value",
     () => {
-        cy.get('{gateways-fieldgatewayurltemplate} input')
+        cy.get('{smsgateway-fieldurltemplate} input')
             .clear()
             .type('http://another-domain.tld')
 
@@ -133,34 +133,34 @@ When(
         keyValuePairs.forEach(keyValuePair => {
             const { key, value, header, confidential, encode } = keyValuePair
 
-            cy.get('{gateways-gatewayaddkeyvaluepair}').click()
-            cy.get('{gateways-gatewaykeyvaluepair}')
+            cy.get('{smsgateway-actionaddkeyvaluepair}').click()
+            cy.get('{smsgateway-fieldkeyvaluepair}')
                 .last()
                 .as('lastKeyValuePair')
 
             cy.get('@lastKeyValuePair')
-                .find('{gateways-gatewaykeyvaluepair-key}')
+                .find('{smsgateway-fieldkeyvaluepair-key}')
                 .type(key)
 
             cy.get('@lastKeyValuePair')
-                .find('{gateways-gatewaykeyvaluepair-value}')
+                .find('{smsgateway-fieldkeyvaluepair-value}')
                 .type(value)
 
             if (header) {
                 cy.get('@lastKeyValuePair')
-                    .find('{gateways-gatewaykeyvaluepair-isheader} label')
+                    .find('{smsgateway-fieldkeyvaluepair-isheader} label')
                     .click()
             }
 
             if (confidential) {
                 cy.get('@lastKeyValuePair')
-                    .find('{gateways-gatewaykeyvaluepair-isconfidential} label')
+                    .find('{smsgateway-fieldkeyvaluepair-isconfidential} label')
                     .click()
             }
 
             if (encode) {
                 cy.get('@lastKeyValuePair')
-                    .find('{gateways-gatewaykeyvaluepair-isencoded} label')
+                    .find('{smsgateway-fieldkeyvaluepair-isencoded} label')
                     .click()
             }
         })
@@ -181,7 +181,7 @@ When('submits the form', () => {
 })
 
 When("the user changes the name field's value to another invalid value", () => {
-    cy.get('{gateways-fieldgatewayname}')
+    cy.get('{smsgateway-fieldgatewayname}')
         .as('invalidField')
         .find('input')
         .clear()
@@ -190,7 +190,7 @@ When("the user changes the name field's value to another invalid value", () => {
 When(
     "the user changes the urlTemplate field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayurltemplate}')
+        cy.get('{smsgateway-fieldurltemplate}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -199,7 +199,7 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{gateways-fieldgatewayname} input').clear().type('A valid name')
+    cy.get('{smsgateway-fieldgatewayname} input').clear().type('A valid name')
 })
 
 Then('the app should navigate to the update form', () => {
@@ -214,8 +214,8 @@ Then(
     () => {
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
-            () => cy.get('{gateways-fieldgatewayname} input'),
-            () => cy.get('{gateways-fieldgatewayurltemplate} input')
+            () => cy.get('{smsgateway-fieldgatewayname} input'),
+            () => cy.get('{smsgateway-fieldurltemplate} input')
         ).then(
             ([editedGatewayConfiguration, $nameInput, $urlTemplateInput]) => {
                 const { name, urlTemplate } = editedGatewayConfiguration
@@ -226,12 +226,12 @@ Then(
 
         cy.get('@editedGatewayConfiguration').then(({ parameters }) => {
             if (parameters.length) {
-                cy.get('{gateways-gatewaykeyvaluepair}').should(
+                cy.get('{smsgateway-fieldkeyvaluepair}').should(
                     'have.lengthOf',
                     parameters.length
                 )
             } else {
-                cy.get('{gateways-gatewaykeyvaluepair}').should('not.exist')
+                cy.get('{smsgateway-fieldkeyvaluepair}').should('not.exist')
             }
         })
     }

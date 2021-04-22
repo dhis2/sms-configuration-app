@@ -18,7 +18,7 @@ export const FieldPassword = () => (
     <Field
         required
         type="password"
-        dataTest={dataTest('gateways-fieldgatewaypassword')}
+        dataTest={dataTest('smsgateway-fieldpassword')}
         name={FIELD_PASSWORD_NAME}
         label={FIELD_PASSWORD_LABEL}
         component={InputFieldFF}

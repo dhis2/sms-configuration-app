@@ -22,7 +22,7 @@ export const ValueField = ({ index }) => {
     return (
         <Field
             type={confidential ? 'password' : 'text'}
-            dataTest={dataTest('gateways-gatewaykeyvaluepair-value')}
+            dataTest={dataTest('smsgateway-fieldkeyvaluepair-value')}
             name={createFieldGatewayKeyValuePairValueName(index)}
             label={i18n.t('Value')}
             component={InputFieldFF}

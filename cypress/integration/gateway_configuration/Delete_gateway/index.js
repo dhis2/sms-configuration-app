@@ -85,7 +85,7 @@ Given('the user navigated to the gateway configuration page', () => {
 Given('the user wants to delete the first configuration', () => {
     cy.visitWhenStubbed('/')
     cy.get('{shared-navigationitem}:nth-child(2)').click()
-    cy.get('{gateways-gatewaystable-checkbox}').first().find('label').click()
+    cy.get('{smsgateway-stable-checkbox}').first().find('label').click()
 })
 
 Given('the confirmation model is visible', () => {
@@ -94,21 +94,21 @@ Given('the confirmation model is visible', () => {
 })
 
 Given('some gateway configurations have been selected', () => {
-    cy.get('{gateways-gatewaystable-checkbox}').first().find('label').click()
+    cy.get('{smsgateway-stable-checkbox}').first().find('label').click()
 })
 
 Given('all gateway configurations have been selected', () => {
-    cy.get('{gateways-gatewaystable-checkall} label').click()
+    cy.get('{smsgateway-stable-checkall} label').click()
 })
 
 Given('no gateway configuration has been selected', () => {
-    cy.get('{gateways-gatewaystable-checkbox} input').each($checkbox => {
+    cy.get('{smsgateway-stable-checkbox} input').each($checkbox => {
         expect($checkbox).to.not.be.checked
     })
 })
 
 When('the user user selects the first gateway configuration', () => {
-    cy.get('{gateways-gatewaystable-checkbox}').first().find('label').click()
+    cy.get('{smsgateway-stable-checkbox}').first().find('label').click()
 })
 
 When('the user cancels the deletion', () => {
@@ -124,7 +124,7 @@ When('clicks the delete button', () => {
 })
 
 When('the user clicks the checkbox to select all', () => {
-    cy.get('{gateways-gatewaystable-checkall} label').click()
+    cy.get('{smsgateway-stable-checkall} label').click()
 })
 
 Then('a confirmation model should pop up', () => {
@@ -147,7 +147,7 @@ Then('the confirmation modal should close', () => {
 Then(
     "all individual gateway configurations' checkboxes should be selected",
     () => {
-        cy.get('{gateways-gatewaystable-checkbox} input').each($checkbox => {
+        cy.get('{smsgateway-stable-checkbox} input').each($checkbox => {
             expect($checkbox).to.be.checked
         })
     }
@@ -156,7 +156,7 @@ Then(
 Then(
     "all individual gateway configurations' checkboxes should not be selected",
     () => {
-        cy.get('{gateways-gatewaystable-checkbox} input').each($checkbox => {
+        cy.get('{smsgateway-stable-checkbox} input').each($checkbox => {
             expect($checkbox).to.not.be.checked
         })
     }

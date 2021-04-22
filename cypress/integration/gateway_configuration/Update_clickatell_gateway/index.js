@@ -67,10 +67,10 @@ Given('the user navigated to the gateway configuration page', () => {
 When(
     'the user clicks on the update button in the first clickatell gateway',
     () => {
-        cy.get('{gateways-gatewaystable-type}:contains("Clickatell")')
+        cy.get('{smsgateway-stable-type}:contains("Clickatell")')
             .first()
             .parents('tr')
-            .find('{gateways-gatewaystable-edit}')
+            .find('{smsgateway-stable-edit}')
             .click()
 
         cy.wrap(gateways[1])
@@ -80,7 +80,7 @@ When(
 )
 
 When("the user changes the name field's value to another valid value", () => {
-    cy.get('{gateways-fieldgatewayname} input').clear().type('New name value')
+    cy.get('{smsgateway-fieldgatewayname} input').clear().type('New name value')
 
     cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
         cy.wrap({
@@ -93,7 +93,7 @@ When("the user changes the name field's value to another valid value", () => {
 When(
     "the user changes the username field's value to another valid value",
     () => {
-        cy.get('{gateways-fieldgatewayusername} input')
+        cy.get('{smsgateway-fieldusername} input')
             .clear()
             .type('New user name value')
 
@@ -109,7 +109,7 @@ When(
 When(
     "the user changes the urlTemplate field's value to another valid value",
     () => {
-        cy.get('{gateways-fieldgatewayurltemplate} input')
+        cy.get('{smsgateway-fieldurltemplate} input')
             .clear()
             .type('http://another.domain.tld')
 
@@ -125,7 +125,7 @@ When(
 When(
     "the user changes the authToken field's value to another valid value",
     () => {
-        cy.get('{gateways-fieldgatewayauthtoken} input')
+        cy.get('{smsgateway-fieldauthtoken} input')
             .clear()
             .type('New auth token value')
 
@@ -143,7 +143,7 @@ When('submits the form', () => {
 })
 
 When("the user changes the name field's value to another invalid value", () => {
-    cy.get('{gateways-fieldgatewayname}')
+    cy.get('{smsgateway-fieldgatewayname}')
         .as('invalidField')
         .find('input')
         .clear()
@@ -152,7 +152,7 @@ When("the user changes the name field's value to another invalid value", () => {
 When(
     "the user changes the username field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayusername}')
+        cy.get('{smsgateway-fieldusername}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -162,7 +162,7 @@ When(
 When(
     "the user changes the authToken field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayauthtoken}')
+        cy.get('{smsgateway-fieldauthtoken}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -172,7 +172,7 @@ When(
 When(
     "the user changes the urlTemplate field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayurltemplate}')
+        cy.get('{smsgateway-fieldurltemplate}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -181,7 +181,7 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{gateways-fieldgatewayname} input').clear().type('A valid name')
+    cy.get('{smsgateway-fieldgatewayname} input').clear().type('A valid name')
 })
 
 Then('the app should navigate to the update form', () => {
@@ -196,9 +196,9 @@ Then(
     () => {
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
-            () => cy.get('{gateways-fieldgatewayname} input'),
-            () => cy.get('{gateways-fieldgatewayusername} input'),
-            () => cy.get('{gateways-fieldgatewayauthtoken} input')
+            () => cy.get('{smsgateway-fieldgatewayname} input'),
+            () => cy.get('{smsgateway-fieldusername} input'),
+            () => cy.get('{smsgateway-fieldauthtoken} input')
         ).then(
             ([
                 editedGatewayConfiguration,

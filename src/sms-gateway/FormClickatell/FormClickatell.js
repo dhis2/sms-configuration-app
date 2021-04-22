@@ -24,7 +24,7 @@ export const FormClickatell = ({ onCancelClick, onSubmit, initialValues }) => {
             {({ handleSubmit, submitting, pristine }) => (
                 <form
                     onSubmit={handleSubmit}
-                    data-test={dataTest('gateways-gatewayclickatellform')}
+                    data-test={dataTest('smsgateway-formclickatell')}
                 >
                     <FormRow>
                         <FieldGatewayName />

@@ -34,7 +34,7 @@ const options = [
 
 export const FieldContentType = () => (
     <Field
-        dataTest={dataTest('gateways-fieldgatewaycontenttype')}
+        dataTest={dataTest('smsgateway-fieldcontenttype')}
         name="contentType"
         label={i18n.t('Content type')}
         component={SingleSelectFieldFF}

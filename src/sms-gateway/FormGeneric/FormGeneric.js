@@ -28,7 +28,7 @@ export const FormGeneric = ({ onCancelClick, onSubmit, initialValues }) => {
             {({ handleSubmit, values, submitting, pristine }) => (
                 <form
                     onSubmit={handleSubmit}
-                    data-test={dataTest('gateways-gatewaygenericform')}
+                    data-test={dataTest('smsgateway-formgeneric')}
                 >
                     <PageSubHeadline>{i18n.t('Gateway setup')}</PageSubHeadline>
 

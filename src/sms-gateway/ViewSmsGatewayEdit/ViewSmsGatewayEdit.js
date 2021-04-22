@@ -160,7 +160,7 @@ export const ViewSmsGatewayEdit = () => {
     return (
         <TemplateSidebarNavContent>
             <div
-                data-test={dataTest('views-gatewayconfigformedit')}
+                data-test={dataTest('smsgateway-viewsmsgatewayedit')}
                 className={styles.container}
             >
                 <PageHeadline>{i18n.t('Edit gateway')}</PageHeadline>

@@ -14,7 +14,7 @@ const { Field } = ReactFinalForm
 export const FieldSystemId = () => (
     <Field
         required
-        dataTest={dataTest('gateways-fieldgatewaysystemid')}
+        dataTest={dataTest('smsgateway-fieldsystemid')}
         name="systemId"
         label={i18n.t('System id')}
         component={InputFieldFF}

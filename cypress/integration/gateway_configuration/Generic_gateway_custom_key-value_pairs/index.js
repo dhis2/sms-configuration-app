@@ -90,7 +90,7 @@ Given('the user is editing a generic gateway configuration', () => {
     cy.wrap('editing').as('operation')
 
     cy.get(
-        '{gateways-gatewaystable-row}:first-child {gateways-gatewaystable-edit}'
+        '{smsgateway-stable-row}:first-child {smsgateway-stable-edit}'
     ).click()
 
     cy.get('{views-gatewayconfigformedit}').should('exist')
@@ -106,12 +106,12 @@ Given('the user is adding a generic gateway configuration', () => {
 
     // Need to provide the required values,
     // otherwise the form can't be submitted
-    cy.get('{gateways-fieldgatewayname}').type('Field name', { delay: 0 })
-    cy.get('{gateways-fieldgatewayurltemplate}').type('http://domain.tld', {
+    cy.get('{smsgateway-fieldgatewayname}').type('Field name', { delay: 0 })
+    cy.get('{smsgateway-fieldurltemplate}').type('http://domain.tld', {
         delay: 0,
     })
     cy.get(
-        '{gateways-fieldgatewayconfigurationtemplate}'
+        '{smsgateway-fieldconfigurationtemplate}'
     ).type('Configuration template', { delay: 0 })
 })
 
@@ -123,15 +123,15 @@ Given('the user has added multiple key value pairs', () => {
     ]
 
     keyValuePairs.forEach(({ key, value }) => {
-        cy.get('{gateways-gatewayaddkeyvaluepair}').click()
-        cy.get('{gateways-gatewaykeyvaluepair}').last().as('lastKeyValuePair')
+        cy.get('{smsgateway-actionaddkeyvaluepair}').click()
+        cy.get('{smsgateway-fieldkeyvaluepair}').last().as('lastKeyValuePair')
 
         cy.get('@lastKeyValuePair')
-            .find('{gateways-gatewaykeyvaluepair-key}')
+            .find('{smsgateway-fieldkeyvaluepair-key}')
             .type(key)
 
         cy.get('@lastKeyValuePair')
-            .find('{gateways-gatewaykeyvaluepair-value}')
+            .find('{smsgateway-fieldkeyvaluepair-value}')
             .type(value)
     })
 
@@ -144,12 +144,12 @@ Given('the user has added multiple key value pairs', () => {
 })
 
 When('the user clicks on the "add more" button', () => {
-    cy.get('{gateways-gatewayaddkeyvaluepair}').click()
+    cy.get('{smsgateway-actionaddkeyvaluepair}').click()
 })
 
 When('the user enters values for the key and value', () => {
-    cy.get('{gateways-gatewaykeyvaluepair-key} input').type('Key')
-    cy.get('{gateways-gatewaykeyvaluepair-value} input').type('Value')
+    cy.get('{smsgateway-fieldkeyvaluepair-key} input').type('Key')
+    cy.get('{smsgateway-fieldkeyvaluepair-value} input').type('Value')
 
     cy.get('@newParameter').then(newParameter => {
         const updated = {
@@ -164,7 +164,7 @@ When('the user enters values for the key and value', () => {
 
 When('checks the "confidential" checkbox', () => {
     cy.get(
-        '{gateways-gatewaykeyvaluepair} {gateways-gatewaykeyvaluepair-isconfidential} label'
+        '{smsgateway-fieldkeyvaluepair} {smsgateway-fieldkeyvaluepair-isconfidential} label'
     ).click()
 
     cy.get('@newParameter').then(newParameter => {
@@ -178,7 +178,7 @@ When('checks the "confidential" checkbox', () => {
 })
 
 When('checks the "header" checkbox', () => {
-    cy.get('{gateways-gatewaykeyvaluepair-isheader} label').click()
+    cy.get('{smsgateway-fieldkeyvaluepair-isheader} label').click()
 
     cy.get('@newParameter').then(newParameter => {
         const updated = {
@@ -195,7 +195,7 @@ When('the user submits the form', () => {
 })
 
 Then('the key-value form should appear', () => {
-    cy.get('{gateways-gatewaykeyvaluepair}').should('exist')
+    cy.get('{smsgateway-fieldkeyvaluepair}').should('exist')
 })
 
 Then('the additional key-value pair should be sent to the endpoint', () => {

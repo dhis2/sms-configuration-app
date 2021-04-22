@@ -29,11 +29,11 @@ export const GatewaysTable = ({
     const history = useHistory()
 
     return (
-        <Table dataTest={dataTest('gateways-gatewaystable')}>
+        <Table dataTest={dataTest('smsgateway-stable')}>
             <TableHead>
                 <TableRowHead>
                     <TableCellHead
-                        dataTest={dataTest('gateways-gatewaystable-checkall')}
+                        dataTest={dataTest('smsgateway-stable-checkall')}
                     >
                         <Checkbox
                             onChange={onToggleAll}
@@ -51,31 +51,29 @@ export const GatewaysTable = ({
                 {gateways.map(gateway => (
                     <TableRow
                         key={gateway.uid}
-                        dataTest={dataTest('gateways-gatewaystable-row')}
+                        dataTest={dataTest('smsgateway-stable-row')}
                     >
                         <TableCell
                             className={styles.checkboxCell}
-                            dataTest={dataTest(
-                                'gateways-gatewaystable-checkbox'
-                            )}
+                            dataTest={dataTest('smsgateway-table-checkbox')}
                         >
                             <Checkbox
                                 value={gateway.uid}
                                 onChange={() => onGatewayToggle(gateway.uid)}
                                 checked={checkedGateways.includes(gateway.uid)}
-                                dataTest={dataTest('gateways-gatewaystable-id')}
+                                dataTest={dataTest('smsgateway-stable-id')}
                             />
                         </TableCell>
 
                         <TableCell
-                            dataTest={dataTest('gateways-gatewaystable-name')}
+                            dataTest={dataTest('smsgateway-stable-name')}
                         >
                             {gateway.name}
                         </TableCell>
 
                         <TableCell
                             className={styles.typeCell}
-                            dataTest={dataTest('gateways-gatewaystable-type')}
+                            dataTest={dataTest('smsgateway-stable-type')}
                         >
                             {getTypeLabelByType(gateway.type)}
                         </TableCell>
@@ -84,7 +82,7 @@ export const GatewaysTable = ({
                             {!gateway.isDefault ? (
                                 <Button
                                     dataTest={dataTest(
-                                        'gateways-gatewaystable-makedefault'
+                                        'smsgateway-table-makedefault'
                                     )}
                                     onClick={() =>
                                         onMakeDefaultClick(gateway.uid)
@@ -97,7 +95,7 @@ export const GatewaysTable = ({
                                 <span
                                     className={styles.isDefaultText}
                                     data-test={dataTest(
-                                        'gateways-gatewaystable-isdefault'
+                                        'smsgateway-table-isdefault'
                                     )}
                                 >
                                     {i18n.t('Default gateway')}
@@ -106,16 +104,12 @@ export const GatewaysTable = ({
                         </TableCell>
 
                         <TableCell
-                            dataTest={dataTest(
-                                'gateways-gatewaystable-actions'
-                            )}
+                            dataTest={dataTest('smsgateway-table-actions')}
                             className={styles.editCell}
                         >
                             <ButtonStrip className={styles.rowActions}>
                                 <Button
-                                    dataTest={dataTest(
-                                        'gateways-gatewaystable-edit'
-                                    )}
+                                    dataTest={dataTest('smsgateway-table-edit')}
                                     onClick={() => {
                                         history.push(
                                             `sms-gateway/${gateway.uid}`

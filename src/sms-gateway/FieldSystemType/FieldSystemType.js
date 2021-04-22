@@ -7,7 +7,7 @@ const { Field } = ReactFinalForm
 
 export const FieldSystemType = () => (
     <Field
-        dataTest={dataTest('gateways-fieldgatewaysystemtype')}
+        dataTest={dataTest('smsgateway-fieldsystemtype')}
         name="systemType"
         label={i18n.t('System type')}
         component={InputFieldFF}

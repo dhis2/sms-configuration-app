@@ -21,7 +21,7 @@ export const FieldPasswordConfirmation = () => (
     <Field
         required
         type="password"
-        dataTest={dataTest('gateways-fieldgatewaypasswordconfirmation')}
+        dataTest={dataTest('smsgateway-fieldpasswordconfirmation')}
         name={FIELD_PASSWORD_CONFIRMATION_NAME}
         label={i18n.t('Confirm password')}
         component={InputFieldFF}

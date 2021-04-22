@@ -89,7 +89,7 @@ export const ViewSmsGatewayList = () => {
         <TemplateSidebarNavContent>
             <div
                 className={styles.container}
-                data-test={dataTest('views-gatewayconfiglist')}
+                data-test={dataTest('smsgateway-viewsmsgatewaylist')}
             >
                 <PageHeadline>{GATEWAY_CONFIG_LIST_LABEL}</PageHeadline>
 

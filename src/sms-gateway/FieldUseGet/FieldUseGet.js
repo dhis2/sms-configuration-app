@@ -8,7 +8,7 @@ const { Field } = ReactFinalForm
 export const FieldUseGet = () => (
     <Field
         type="checkbox"
-        dataTest={dataTest('gateways-fieldgatewayuseget')}
+        dataTest={dataTest('smsgateway-fielduseget')}
         name="useGet"
         label={i18n.t('Use GET')}
         component={CheckboxFieldFF}

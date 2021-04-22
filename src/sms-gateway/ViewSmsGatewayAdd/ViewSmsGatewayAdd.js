@@ -58,7 +58,7 @@ export const ViewSmsGatewayAdd = () => {
 
         return (
             <TemplateSidebarNavContent>
-                <div data-test={dataTest('views-gatewayconfigformnew')}>
+                <div data-test={dataTest('smsgateway-viewsmsgatewayadd')}>
                     <PageHeadline>{i18n.t('Add gateway')}</PageHeadline>
                     <NoticeBox error title={msg}>
                         {error.message}

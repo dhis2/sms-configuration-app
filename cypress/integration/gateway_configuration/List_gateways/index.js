@@ -66,7 +66,7 @@ Given('some gateways exist', () => {
 
 Given('the first gateway is the default', () => {
     cy.get(
-        '{gateways-gatewaystable-row}:first-child {gateways-gatewaystable-isdefault}'
+        '{smsgateway-stable-row}:first-child {smsgateway-stable-isdefault}'
     ).should('exist')
 })
 
@@ -95,7 +95,7 @@ When('the user makes the second gateway the default gateway', () => {
     })
 
     cy.get(
-        '{gateways-gatewaystable-row}:nth-child(2) {gateways-gatewaystable-makedefault}'
+        '{smsgateway-stable-row}:nth-child(2) {smsgateway-stable-makedefault}'
     ).click()
 })
 
@@ -103,25 +103,25 @@ When(
     'the user clicks on the edit button of the first gateway configuration',
     () => {
         cy.get(
-            '{gateways-gatewaystable-row}:first-child {gateways-gatewaystable-edit}'
+            '{smsgateway-stable-row}:first-child {smsgateway-stable-edit}'
         ).click()
     }
 )
 
 Then('no table should be displayed', () => {
-    cy.get('{gateways-gatewaystable-row}').should('not.exist')
+    cy.get('{smsgateway-stable-row}').should('not.exist')
 })
 
 Then('the gateways are rendered as tabular data', () => {
     cy.all(
         () => cy.get('@gateways'),
-        () => cy.get('{gateways-gatewaystable-row}')
+        () => cy.get('{smsgateway-stable-row}')
     ).then(([gateways, $rows]) => {
         expect(gateways.length).to.equal($rows.length)
 
         gateways.forEach(gateway => {
             cy.get(
-                `{gateways-gatewaystable-name}:contains("${gateway.name}")`
+                `{smsgateway-stable-name}:contains("${gateway.name}")`
             ).should('exist')
         })
     })
@@ -130,19 +130,19 @@ Then('the gateways are rendered as tabular data', () => {
 Then("each row displays the gateway configuration's data", () => {
     cy.all(
         () => cy.get('@gateways'),
-        () => cy.get('{gateways-gatewaystable-row}')
+        () => cy.get('{smsgateway-stable-row}')
     ).then(([gateways, $rows]) => {
         $rows.each((index, $row) => {
             const gateway = gateways[index]
 
             cy.wrap($row)
-                .find('{gateways-gatewaystable-name}')
+                .find('{smsgateway-stable-name}')
                 .then($nameCell => {
                     expect($nameCell.text()).to.equal(gateway.name)
                 })
 
             cy.wrap($row)
-                .find('{gateways-gatewaystable-type}')
+                .find('{smsgateway-stable-type}')
                 .then($typeCell => {
                     const typeText =
                         gateway.type === 'http'
@@ -159,7 +159,7 @@ Then("each row displays the gateway configuration's data", () => {
                 })
 
             cy.wrap($row)
-                .find('{gateways-gatewaystable-isdefault}')
+                .find('{smsgateway-stable-isdefault}')
                 .should(gateway.isDefault ? 'exist' : 'not.exist')
         })
     })
@@ -167,7 +167,7 @@ Then("each row displays the gateway configuration's data", () => {
 
 Then('exactly one default gateway should be displayed', () => {
     cy.get(
-        '{gateways-gatewaystable-row}:first-child {gateways-gatewaystable-isdefault}'
+        '{smsgateway-stable-row}:first-child {smsgateway-stable-isdefault}'
     ).should('have.lengthOf', 1)
 })
 

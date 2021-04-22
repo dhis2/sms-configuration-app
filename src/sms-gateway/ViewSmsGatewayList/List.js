@@ -44,7 +44,7 @@ export const List = ({
     return (
         <div
             className={styles.container}
-            data-test={dataTest('gateways-gatewaylist')}
+            data-test={dataTest('smsgateway-viewsmsgatewaylist-list')}
         >
             {processing && (
                 <div className={styles.processingMessage}>

@@ -30,7 +30,7 @@ export const FormSMPP = ({ onCancelClick, onSubmit, initialValues }) => {
             {({ handleSubmit, submitting, pristine }) => (
                 <form
                     onSubmit={handleSubmit}
-                    data-test={dataTest('gateways-gatewaysmppform')}
+                    data-test={dataTest('smsgateway-formsmpp')}
                 >
                     <FormRow>
                         <FieldGatewayName />

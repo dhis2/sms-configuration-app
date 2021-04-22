@@ -14,7 +14,7 @@ const { Field } = ReactFinalForm
 export const FieldConfigurationTemplate = () => (
     <Field
         required
-        dataTest={dataTest('gateways-fieldgatewayconfigurationtemplate')}
+        dataTest={dataTest('smsgateway-fieldconfigurationtemplate')}
         name="configurationTemplate"
         label={i18n.t('Configuration template')}
         component={InputFieldFF}

@@ -8,7 +8,7 @@ const { Field } = ReactFinalForm
 export const FieldSendUrlParameters = () => (
     <Field
         type="checkbox"
-        dataTest={dataTest('gateways-fieldgatewaysendurlparameters')}
+        dataTest={dataTest('smsgateway-fieldsendurlparameters')}
         name="sendUrlParameters"
         label={i18n.t('Send url parameters')}
         component={CheckboxFieldFF}

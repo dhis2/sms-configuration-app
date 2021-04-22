@@ -67,10 +67,10 @@ Given('the user navigated to the gateway configuration page', () => {
 When(
     'the user clicks on the update button in the first bulksms gateway',
     () => {
-        cy.get('{gateways-gatewaystable-type}:contains("BulkSMS")')
+        cy.get('{smsgateway-stable-type}:contains("BulkSMS")')
             .first()
             .parents('tr')
-            .find('{gateways-gatewaystable-edit}')
+            .find('{smsgateway-stable-edit}')
             .click()
 
         cy.wrap(gateways[1])
@@ -80,7 +80,7 @@ When(
 )
 
 When("the user changes the name field's value to another valid value", () => {
-    cy.get('{gateways-fieldgatewayname} input').clear().type('New name value')
+    cy.get('{smsgateway-fieldgatewayname} input').clear().type('New name value')
 
     cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
         cy.wrap({
@@ -93,7 +93,7 @@ When("the user changes the name field's value to another valid value", () => {
 When(
     "the user changes the username field's value to another valid value",
     () => {
-        cy.get('{gateways-fieldgatewayusername} input')
+        cy.get('{smsgateway-fieldusername} input')
             .clear()
             .type('New user name value')
 
@@ -109,11 +109,11 @@ When(
 When(
     "the user changes the password field's value to another valid value",
     () => {
-        cy.get('{gateways-fieldgatewaypassword} input')
+        cy.get('{smsgateway-fieldpassword} input')
             .clear()
             .type('New password value')
 
-        cy.get('{gateways-fieldgatewaypasswordconfirmation} input')
+        cy.get('{smsgateway-fieldpasswordconfirmation} input')
             .clear()
             .type('New password value')
 
@@ -132,7 +132,7 @@ When('submits the form', () => {
 })
 
 When("the user changes the name field's value to another invalid value", () => {
-    cy.get('{gateways-fieldgatewayname}')
+    cy.get('{smsgateway-fieldgatewayname}')
         .as('invalidField')
         .find('input')
         .clear()
@@ -141,7 +141,7 @@ When("the user changes the name field's value to another invalid value", () => {
 When(
     "the user changes the username field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayusername}')
+        cy.get('{smsgateway-fieldusername}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -151,7 +151,7 @@ When(
 When(
     "the user changes the password field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewaypassword}')
+        cy.get('{smsgateway-fieldpassword}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -161,13 +161,13 @@ When(
 When(
     "the user changes the passwordConfirmation field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewaypassword}')
+        cy.get('{smsgateway-fieldpassword}')
             .as('invalidField')
             .find('input')
             .clear()
             .type('A password')
 
-        cy.get('{gateways-fieldgatewaypasswordconfirmation}')
+        cy.get('{smsgateway-fieldpasswordconfirmation}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -176,7 +176,7 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{gateways-fieldgatewayname} input').clear().type('A valid name')
+    cy.get('{smsgateway-fieldgatewayname} input').clear().type('A valid name')
 })
 
 Then('the app should navigate to the update form', () => {
@@ -191,8 +191,8 @@ Then(
     () => {
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
-            () => cy.get('{gateways-fieldgatewayname} input'),
-            () => cy.get('{gateways-fieldgatewayusername} input')
+            () => cy.get('{smsgateway-fieldgatewayname} input'),
+            () => cy.get('{smsgateway-fieldusername} input')
         ).then(([editedGatewayConfiguration, $nameInput, $usernameInput]) => {
             const { name, username } = editedGatewayConfiguration
 

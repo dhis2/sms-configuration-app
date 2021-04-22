@@ -36,11 +36,11 @@ export const FieldKeyValuePair = ({ index }) => {
     return (
         <div
             className={styles.container}
-            data-test={dataTest('gateways-gatewaykeyvaluepair')}
+            data-test={dataTest('smsgateway-fieldkeyvaluepair')}
         >
             <div className={styles.textInputs}>
                 <Field
-                    dataTest={dataTest('gateways-gatewaykeyvaluepair-key')}
+                    dataTest={dataTest('smsgateway-fieldkeyvaluepair-key')}
                     className={styles.keyInput}
                     name={`parameters[${index}].key`}
                     label={i18n.t('Key')}
@@ -55,7 +55,7 @@ export const FieldKeyValuePair = ({ index }) => {
 
             <div className={styles.checkboxGroup}>
                 <Field
-                    dataTest={dataTest('gateways-gatewaykeyvaluepair-isheader')}
+                    dataTest={dataTest('smsgateway-fieldkeyvaluepair-isheader')}
                     className={styles.checkbox}
                     type="checkbox"
                     name={`parameters[${index}].header`}
@@ -65,7 +65,7 @@ export const FieldKeyValuePair = ({ index }) => {
 
                 <Field
                     dataTest={dataTest(
-                        'gateways-gatewaykeyvaluepair-isencoded'
+                        'smsgateway-fieldkeyvaluepair-isencoded'
                     )}
                     className={styles.checkbox}
                     type="checkbox"
@@ -76,7 +76,7 @@ export const FieldKeyValuePair = ({ index }) => {
 
                 <Field
                     dataTest={dataTest(
-                        'gateways-gatewaykeyvaluepair-isconfidential'
+                        'smsgateway-fieldkeyvaluepair-isconfidential'
                     )}
                     className={styles.checkbox}
                     type="checkbox"
@@ -89,7 +89,7 @@ export const FieldKeyValuePair = ({ index }) => {
             <Button
                 small
                 secondary
-                dataTest={dataTest('gateways-gatewaykeyvaluepair-remove')}
+                dataTest={dataTest('smsgateway-fieldkeyvaluepair-remove')}
                 onClick={() => removeKeyValueFromFormState(index)}
             >
                 {i18n.t('Remove key value pair')}

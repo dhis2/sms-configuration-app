@@ -14,7 +14,7 @@ const { Field } = ReactFinalForm
 export const FieldAuthToken = () => (
     <Field
         required
-        dataTest={dataTest('gateways-fieldgatewayauthtoken')}
+        dataTest={dataTest('smsgateway-fieldauthtoken')}
         name="authToken"
         label={i18n.t('Auth token')}
         component={InputFieldFF}

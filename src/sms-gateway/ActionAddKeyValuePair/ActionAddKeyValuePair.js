@@ -28,7 +28,7 @@ export const ActionAddKeyValuePair = () => {
         <Button
             className={styles.button}
             onClick={addKeyValueToFormState}
-            dataTest={dataTest('gateways-gatewayaddkeyvaluepair')}
+            dataTest={dataTest('smsgateway-actionaddkeyvaluepair')}
         >
             {i18n.t('Add key value pair')}
         </Button>

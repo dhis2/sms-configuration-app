@@ -33,10 +33,10 @@ When('the user fills in complete form data', () => {
     const urlTemplate = 'http://domain.tld'
     const authToken = 'Auth token'
 
-    cy.get('{gateways-fieldgatewayname}').type(name)
-    cy.get('{gateways-fieldgatewayusername}').type(username)
-    cy.get('{gateways-fieldgatewayurltemplate}').type(urlTemplate)
-    cy.get('{gateways-fieldgatewayauthtoken}').type(authToken)
+    cy.get('{smsgateway-fieldgatewayname}').type(name)
+    cy.get('{smsgateway-fieldusername}').type(username)
+    cy.get('{smsgateway-fieldurltemplate}').type(urlTemplate)
+    cy.get('{smsgateway-fieldauthtoken}').type(authToken)
 
     cy.wrap({
         type: 'clickatell',
@@ -52,11 +52,11 @@ When('the user fills in incomplete form data', () => {
     const urlTemplate = 'http://domain.tld'
     const authToken = 'Auth token'
 
-    cy.get('{gateways-fieldgatewayname}').type(name)
-    cy.get('{gateways-fieldgatewayurltemplate}').type(urlTemplate)
-    cy.get('{gateways-fieldgatewayauthtoken}').type(authToken)
+    cy.get('{smsgateway-fieldgatewayname}').type(name)
+    cy.get('{smsgateway-fieldurltemplate}').type(urlTemplate)
+    cy.get('{smsgateway-fieldauthtoken}').type(authToken)
 
-    cy.get('{gateways-fieldgatewayusername}').as('missingFields')
+    cy.get('{smsgateway-fieldusername}').as('missingFields')
     cy.wrap({
         type: 'clickatell',
         username: '',

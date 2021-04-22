@@ -14,7 +14,7 @@ const options = [
 export const FieldBindType = () => (
     <Field
         required
-        dataTest={dataTest('gateways-fieldgatewaybindtype')}
+        dataTest={dataTest('smsgateway-fieldbindtype')}
         name="bindType"
         label={i18n.t('Bind type')}
         component={SingleSelectFieldFF}

@@ -14,7 +14,7 @@ const { Field } = ReactFinalForm
 export const FieldUrlTemplate = () => (
     <Field
         required
-        dataTest={dataTest('gateways-fieldgatewayurltemplate')}
+        dataTest={dataTest('smsgateway-fieldurltemplate')}
         name="urlTemplate"
         label={i18n.t('Url template')}
         component={InputFieldFF}

@@ -18,7 +18,7 @@ const options = [
 export const FieldTypeOfNumber = () => (
     <Field
         required
-        dataTest={dataTest('gateways-fieldgatewaytypeofnumber')}
+        dataTest={dataTest('smsgateway-fieldtypeofnumber')}
         name="typeOfNumber"
         label={i18n.t('Type of number')}
         component={SingleSelectFieldFF}

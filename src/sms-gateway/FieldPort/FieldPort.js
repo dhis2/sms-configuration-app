@@ -14,7 +14,7 @@ const { Field } = ReactFinalForm
 export const FieldPort = () => (
     <Field
         required
-        dataTest={dataTest('gateways-fieldgatewayport')}
+        dataTest={dataTest('smsgateway-fieldport')}
         name="port"
         label={i18n.t('Port')}
         component={InputFieldFF}

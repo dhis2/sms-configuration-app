@@ -24,7 +24,7 @@ export const FormBulkSMS = ({ onCancelClick, onSubmit, initialValues }) => {
             {({ handleSubmit, submitting, pristine }) => (
                 <form
                     onSubmit={handleSubmit}
-                    data-test={dataTest('gateways-gatewaybulksmsform')}
+                    data-test={dataTest('smsgateway-formbulksms')}
                 >
                     <FormRow>
                         <FieldGatewayName />

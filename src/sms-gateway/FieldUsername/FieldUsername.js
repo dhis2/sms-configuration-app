@@ -14,7 +14,7 @@ const { Field } = ReactFinalForm
 export const FieldUsername = () => (
     <Field
         required
-        dataTest={dataTest('gateways-fieldgatewayusername')}
+        dataTest={dataTest('smsgateway-fieldusername')}
         name="username"
         label={i18n.t('User name')}
         component={InputFieldFF}

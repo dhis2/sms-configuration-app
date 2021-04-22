@@ -21,7 +21,7 @@ const options = [
 export const FieldNumberPlanIndicator = () => (
     <Field
         required
-        dataTest={dataTest('gateways-fieldgatewaynumberplanindicator')}
+        dataTest={dataTest('smsgateway-fieldnumberplanindicator')}
         name="numberPlanIndicator"
         label={i18n.t('Number plan indicator')}
         component={SingleSelectFieldFF}

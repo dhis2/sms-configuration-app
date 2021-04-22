@@ -85,10 +85,10 @@ Given('the user navigated to the gateway configuration page', () => {
 })
 
 When('the user clicks on the update button in the first SMPP gateway', () => {
-    cy.get('{gateways-gatewaystable-type}:contains("smpp")')
+    cy.get('{smsgateway-stable-type}:contains("smpp")')
         .first()
         .parents('tr')
-        .find('{gateways-gatewaystable-edit}')
+        .find('{smsgateway-stable-edit}')
         .click()
 
     cy.wrap(gateways[0])
@@ -103,7 +103,7 @@ When(
             editedGatewayConfiguration => {
                 let newValue
                 const prevValue = editedGatewayConfiguration[field]
-                const dataTest = `{gateways-fieldgateway${field.toLowerCase()}}`
+                const dataTest = `{smsgateway-field${field.toLowerCase()}}`
                 const isInputField = [
                     'name',
                     'systemId',
@@ -119,19 +119,19 @@ When(
                 } else if (field === 'numberPlanIndicator') {
                     newValue = 'INTERNET'
                     selectSelectValue(
-                        '{gateways-fieldgatewaynumberplanindicator} [data-test="dhis2-uicore-singleselect"]',
+                        '{smsgateway-fieldnumberplanindicator} [data-test="dhis2-uicore-singleselect"]',
                         newValue
                     )
                 } else if (field === 'typeOfNumber') {
                     newValue = 'ABBREVIATED'
                     selectSelectValue(
-                        '{gateways-fieldgatewaytypeofnumber} [data-test="dhis2-uicore-singleselect"]',
+                        '{smsgateway-fieldtypeofnumber} [data-test="dhis2-uicore-singleselect"]',
                         newValue
                     )
                 } else if (field === 'bindType') {
                     newValue = 'BIND_TRX'
                     selectSelectValue(
-                        '{gateways-fieldgatewaybindtype} [data-test="dhis2-uicore-singleselect"]',
+                        '{smsgateway-fieldbindtype} [data-test="dhis2-uicore-singleselect"]',
                         newValue
                     )
                 } else if (field === 'compressed') {
@@ -159,7 +159,7 @@ When('submits the form', () => {
 When(
     /the user changes the (.+) field's value to another invalid value/,
     field => {
-        const dataTest = `{gateways-fieldgateway${field.toLowerCase()}}`
+        const dataTest = `{smsgateway-field${field.toLowerCase()}}`
         const newValue = field === 'port' ? '1337' : 'This is a new value'
         cy.get(dataTest).as('invalidField').find('input').clear()
 
@@ -175,7 +175,7 @@ When(
 When(
     "the user changes the username field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayusername}')
+        cy.get('{smsgateway-fieldusername}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -185,7 +185,7 @@ When(
 When(
     "the user changes the authToken field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayauthtoken}')
+        cy.get('{smsgateway-fieldauthtoken}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -195,7 +195,7 @@ When(
 When(
     "the user changes the urlTemplate field's value to another invalid value",
     () => {
-        cy.get('{gateways-fieldgatewayurltemplate}')
+        cy.get('{smsgateway-fieldurltemplate}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -204,7 +204,7 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{gateways-fieldgatewayname} input').clear().type('A valid name')
+    cy.get('{smsgateway-fieldgatewayname} input').clear().type('A valid name')
 })
 
 Then('the app should navigate to the update form', () => {
@@ -219,24 +219,24 @@ Then(
     () => {
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
-            () => cy.get('{gateways-fieldgatewayname} input'),
-            () => cy.get('{gateways-fieldgatewaysystemid} input'),
-            () => cy.get('{gateways-fieldgatewayhost} input'),
+            () => cy.get('{smsgateway-fieldgatewayname} input'),
+            () => cy.get('{smsgateway-fieldsystemid} input'),
+            () => cy.get('{smsgateway-fieldhost} input'),
             () =>
                 cy.get(
-                    '{gateways-fieldgatewaynumberplanindicator} [data-test="dhis2-uicore-select"]'
+                    '{smsgateway-fieldnumberplanindicator} [data-test="dhis2-uicore-select"]'
                 ),
             () =>
                 cy.get(
-                    '{gateways-fieldgatewaytypeofnumber} [data-test="dhis2-uicore-select"]'
+                    '{smsgateway-fieldtypeofnumber} [data-test="dhis2-uicore-select"]'
                 ),
             () =>
                 cy.get(
-                    '{gateways-fieldgatewaybindtype} [data-test="dhis2-uicore-select"]'
+                    '{smsgateway-fieldbindtype} [data-test="dhis2-uicore-select"]'
                 ),
-            () => cy.get('{gateways-fieldgatewaysystemtype} input'),
-            () => cy.get('{gateways-fieldgatewayport} input'),
-            () => cy.get('{gateways-fieldgatewaypassword} input')
+            () => cy.get('{smsgateway-fieldsystemtype} input'),
+            () => cy.get('{smsgateway-fieldport} input'),
+            () => cy.get('{smsgateway-fieldpassword} input')
         ).then(
             ([
                 editedGatewayConfiguration,

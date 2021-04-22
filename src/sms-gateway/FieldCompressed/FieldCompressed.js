@@ -7,7 +7,7 @@ const { Field } = ReactFinalForm
 
 export const FieldCompressed = () => (
     <Field
-        dataTest={dataTest('gateways-fieldgatewaycompressed')}
+        dataTest={dataTest('smsgateway-fieldcompressed')}
         name="compressed"
         type="checkbox"
         label={i18n.t('Compressed')}
