@@ -16,7 +16,7 @@ export const FIELD_COMMAND_NAME = 'name'
 export const FieldCommandName = () => (
     <Field
         required
-        dataTest={dataTest('smscommands-fieldcommandname')}
+        dataTest={dataTest('smscommand-fieldcommandname')}
         name={FIELD_COMMAND_NAME}
         label={i18n.t('Name')}
         component={InputFieldFF}

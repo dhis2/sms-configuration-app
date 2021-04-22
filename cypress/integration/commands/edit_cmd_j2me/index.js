@@ -105,17 +105,17 @@ Given('the user is editing an J2ME parser command', () => {
 })
 
 When('the user changes the name field', () => {
-    cy.get('{smscommands-fieldcommandname} input')
+    cy.get('{smscommand-fieldcommandname} input')
         .invoke('val')
         .then(currentName => {
             cy.wrap({ name: `${currentName}!` }).as('newValues')
-            cy.get('{smscommands-fieldcommandname} input').type('!')
+            cy.get('{smscommand-fieldcommandname} input').type('!')
         })
 })
 
 When('the user changes the completenessMethod field', () => {
     const completenessMethod = 'ALL_DATAVALUE'
-    cy.get('{smscommandfields-fieldcommandcompletenessmethod-content}').click()
+    cy.get('{smscommand-fieldcompletenessmethod-content}').click()
     cy.get(`[data-value="${completenessMethod}"]`).click()
     cy.wrap({ completenessMethod }).as('newValues')
 })
@@ -136,7 +136,7 @@ When('the user changes the fieldSeparator field', () => {
 When('the user changes the replyMessage field', () => {
     const defaultMessage = 'New default message'
 
-    cy.get('{smscommands-fielddefaultmessage} textarea')
+    cy.get('{smscommand-fielddefaultmessage} textarea')
         .clear()
         .type(defaultMessage)
 
@@ -184,7 +184,7 @@ When('the user changes the successMessage field', () => {
 })
 
 When('the user changes the name field to an invalid value', () => {
-    cy.get('{smscommands-fieldcommandname} input').clear()
+    cy.get('{smscommand-fieldcommandname} input').clear()
 })
 
 When('the user submits the form', () => {
@@ -212,7 +212,7 @@ When('the user adds a formula', () => {
             const [{ dataElement }] = dataSetElements
 
             cy.get(
-                '{smscommandfields-fielddataelementwithcategoryoptioncomboformula-dataelement}'
+                '{smscommand-fielddataelementwithcategoryoptioncomboformula-dataelement}'
             ).click()
 
             cy.get(
@@ -224,7 +224,7 @@ When('the user adds a formula', () => {
     )
 
     cy.get(
-        '{smscommandfields-fielddataelementwithcategoryoptioncomboformula-save}'
+        '{smscommand-fielddataelementwithcategoryoptioncomboformula-save}'
     ).click()
 })
 

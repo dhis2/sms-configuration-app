@@ -27,18 +27,13 @@ Given('the user navigated to the sms commands list page', () => {
 })
 
 Then('no table should be displayed', () => {
-    cy.get(
-        '[data-test="dhis2-smsconfiguration-views-smscommandlist-commandtable"] tbody tr'
-    ).as('row')
-
+    cy.get('{views-smscommandlist-commandtable} tbody tr').as('row')
     cy.get('@row').should('have.length', 1)
     cy.get('@row').should('contain', 'No commands to display')
 })
 
 Then('the commands are rendered as tabular data', () => {
-    cy.get(
-        '[data-test="dhis2-smsconfiguration-views-smscommandlist-commandtable"]'
-    ).should('exist')
+    cy.get('{views-smscommandlist-commandtable}').should('exist')
 })
 
 Then("each row displays the commands's data", () => {
@@ -46,7 +41,7 @@ Then("each row displays the commands's data", () => {
         ({ smsCommands }) => {
             smsCommands.forEach((smsCommand, index) => {
                 cy.get(
-                    `[data-test="dhis2-smsconfiguration-views-smscommandlist-commandtable"] tbody tr:nth-child(${
+                    `{views-smscommandlist-commandtable} tbody tr:nth-child(${
                         index + 1
                     })`
                 ).as('row')

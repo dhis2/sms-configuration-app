@@ -44,18 +44,18 @@ Given('the user is editing an program stage data entry parser command', () => {
 })
 
 Given('the command has short codes', () => {
-    cy.get('{smscommandfields-programstagedataelements-row}').should(
+    cy.get('{smscommand-fieldsmscodedataelement}').should(
         'have.length.of.at.least',
         1
     )
 })
 
 When('the user changes the name field', () => {
-    cy.get('{smscommands-fieldcommandname} input')
+    cy.get('{smscommand-fieldcommandname} input')
         .invoke('val')
         .then(currentName => {
             cy.wrap({ name: `${currentName}!` }).as('newValues')
-            cy.get('{smscommands-fieldcommandname} input').type('!')
+            cy.get('{smscommand-fieldcommandname} input').type('!')
         })
 })
 
@@ -70,7 +70,7 @@ When('the user changes the fieldSeparator field', () => {
 When('the user changes the replyMessage field', () => {
     const defaultMessage = 'New default message'
 
-    cy.get('{smscommands-fielddefaultmessage} textarea')
+    cy.get('{smscommand-fielddefaultmessage} textarea')
         .clear()
         .type(defaultMessage)
 
@@ -118,13 +118,13 @@ When('the user changes the successMessage field', () => {
 })
 
 When('the user changes the name field to an invalid value', () => {
-    cy.get('{smscommands-fieldcommandname} input').clear()
+    cy.get('{smscommand-fieldcommandname} input').clear()
 })
 
 When('the user changes the value of a sms short code', () => {
     const newSmsShortCodeValue = 'New sms short code value'
     cy.wrap(newSmsShortCodeValue).as('newSmsShortCodeValue')
-    cy.get('{smscommandfields-programstagedataelements-row}:first-child input')
+    cy.get('{smscommand-fieldsmscodedataelement}:first-child input')
         .clear()
         .type(newSmsShortCodeValue)
 })

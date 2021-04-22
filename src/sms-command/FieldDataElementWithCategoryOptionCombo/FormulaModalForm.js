@@ -107,7 +107,7 @@ export const FormulaModalForm = ({
                                 <Field
                                     required
                                     dataTest={dataTest(
-                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-dataelement'
+                                        'smscommand-fielddataelementwithcategoryoptioncomboformula-dataelement'
                                     )}
                                     name="dataElementCode"
                                     label={i18n.t('Data element')}
@@ -121,7 +121,7 @@ export const FormulaModalForm = ({
                                 <Field
                                     required
                                     dataTest={dataTest(
-                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-operator'
+                                        'smscommand-fielddataelementwithcategoryoptioncomboformula-operator'
                                     )}
                                     name="operator"
                                     label={i18n.t('formula operator')}
@@ -158,7 +158,7 @@ export const FormulaModalForm = ({
                                 <Button
                                     onClick={onRemove}
                                     dataTest={dataTest(
-                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-remove'
+                                        'smscommand-fielddataelementwithcategoryoptioncomboformula-remove'
                                     )}
                                 >
                                     {i18n.t('Remove')}
@@ -167,7 +167,7 @@ export const FormulaModalForm = ({
                                 <Button
                                     onClick={onClose}
                                     dataTest={dataTest(
-                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-cancel'
+                                        'smscommand-fielddataelementwithcategoryoptioncomboformula-cancel'
                                     )}
                                 >
                                     {i18n.t('Cancel')}
@@ -177,7 +177,7 @@ export const FormulaModalForm = ({
                                     type="submit"
                                     primary
                                     dataTest={dataTest(
-                                        'smscommandfields-fielddataelementwithcategoryoptioncomboformula-save'
+                                        'smscommand-fielddataelementwithcategoryoptioncomboformula-save'
                                     )}
                                 >
                                     {i18n.t('Save')}

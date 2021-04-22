@@ -33,7 +33,7 @@ Given(
 
         cy.get('{navigation-navigationitem}:nth-child(3)').click()
         cy.get('{views-smscommandlist-add}').click()
-        cy.get('{forms-fieldcommandparser-content}').click()
+        cy.get('{smscommand-fieldparser-content}').click()
         cy.get('[data-value="TRACKED_ENTITY_REGISTRATION_PARSER"]').click()
 
         cy.get(
@@ -45,7 +45,7 @@ Given(
 )
 
 When('the user enters the name', () => {
-    cy.get('{smscommands-fieldcommandname} input').type('User name')
+    cy.get('{smscommand-fieldcommandname} input').type('User name')
 })
 
 When('the user chooses a program', () => {
@@ -65,7 +65,7 @@ When('the user submits the form', () => {
 })
 
 When('the user leaves the name empty', () => {
-    cy.get('{smscommands-fieldcommandname} input').should('have.value', '')
+    cy.get('{smscommand-fieldcommandname} input').should('have.value', '')
 })
 
 When('the user leaves the program field empty', () => {
@@ -85,9 +85,9 @@ Then('the form should not submit', () => {
 })
 
 Then('display an error message on the name field', () => {
-    cy.get('{commands-fieldcommandname-validation}').should('exist')
+    cy.get('{smscommand-fieldcommandname-validation}').should('exist')
 })
 
 Then('display an error message on the program field', () => {
-    cy.get('{forms-fieldprogram-validation}').should('exist')
+    cy.get('{smscommand-fieldprogram-validation}').should('exist')
 })

@@ -9,7 +9,7 @@ export const FIELD_DEFAULT_MESSAGE_NAME = 'defaultMessage'
 
 export const FieldDefaultMessage = () => (
     <Field
-        dataTest={dataTest('smscommands-fielddefaultmessage')}
+        dataTest={dataTest('smscommand-fielddefaultmessage')}
         name={FIELD_DEFAULT_MESSAGE_NAME}
         label={i18n.t('Reply message if no codes are sent (only the command)')}
         component={TextAreaFieldFF}

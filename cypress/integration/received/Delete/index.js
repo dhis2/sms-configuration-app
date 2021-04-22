@@ -10,9 +10,7 @@ Then("the 'delete selected' button should be enabled", () => {
 })
 
 Then('the user should be asked to confirm his choice', () => {
-    cy.get(
-        '[data-test="dhis2-smsconfiguration-deleteconfirmationdialog"]'
-    ).should('exist')
+    cy.get('{deleteconfirmationdialog}').should('exist')
 })
 
 When('the user selects a message', () => {
@@ -57,9 +55,7 @@ When("the user clicks on the 'delete selected' button", () => {
 })
 
 When('the user confirms the deletion', () => {
-    cy.get(
-        '[data-test="dhis2-smsconfiguration-deleteconfirmationdialog-confirm"]'
-    ).click()
+    cy.get('{deleteconfirmationdialog-confirm}').click()
 })
 
 Then('the message should be deleted', () => {

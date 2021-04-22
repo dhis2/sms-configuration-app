@@ -23,7 +23,7 @@ Given('the user is adding a new unregistered parser sms command', () => {
 
     cy.get('{navigation-navigationitem}:nth-child(3)').click()
     cy.get('{views-smscommandlist-add}').click()
-    cy.get('{forms-fieldcommandparser-content}').click()
+    cy.get('{smscommand-fieldparser-content}').click()
     cy.get('[data-value="UNREGISTERED_PARSER"]').click()
 
     cy.get('{smscommand-fieldparser} [data-test="dhis2-uicore-select-input"]')
@@ -32,24 +32,24 @@ Given('the user is adding a new unregistered parser sms command', () => {
 })
 
 When('the user enters the name', () => {
-    cy.get('{smscommands-fieldcommandname} input').type('User name')
+    cy.get('{smscommand-fieldcommandname} input').type('User name')
 })
 
 When('the user leaves the name empty', () => {
-    cy.get('{smscommands-fieldcommandname} input').should('have.value', '')
+    cy.get('{smscommand-fieldcommandname} input').should('have.value', '')
 })
 
 When('the user chooses a user group', () => {
     cy.fixture('commands/add_cmd_unregistered/userGroups').then(
         ({ userGroups }) => {
-            cy.get('{forms-fieldusergroup}').click()
+            cy.get('{shared-fieldusergroup}').click()
             cy.get(`[data-value="${userGroups[0].id}"]`).click()
         }
     )
 })
 
 When('the user leaves the user group field empty', () => {
-    cy.get('{forms-fieldusergroup} [data-test="dhis2-uicore-select-input"]')
+    cy.get('{shared-fieldusergroup} [data-test="dhis2-uicore-select-input"]')
         .invoke('text')
         .should('equal', '')
 })
@@ -69,9 +69,9 @@ Then('the form should not submit', () => {
 })
 
 Then('display an error message on the name field', () => {
-    cy.get('{commands-fieldcommandname-validation}').should('exist')
+    cy.get('{smscommand-fieldcommandname-validation}').should('exist')
 })
 
 Then('display an error message on the user group field', () => {
-    cy.get('{forms-fieldusergroup-validation}').should('exist')
+    cy.get('{shared-fieldusergroup-validation}').should('exist')
 })

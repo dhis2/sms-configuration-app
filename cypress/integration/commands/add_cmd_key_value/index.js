@@ -23,7 +23,7 @@ Given('the user is adding a new key value parser sms command', () => {
 
     cy.get('{navigation-navigationitem}:nth-child(3)').click()
     cy.get('{views-smscommandlist-add}').click()
-    cy.get('{forms-fieldcommandparser-content}').click()
+    cy.get('{smscommand-fieldparser-content}').click()
     cy.get('[data-value="KEY_VALUE_PARSER"]').click()
 
     cy.get('{smscommand-fieldparser} [data-test="dhis2-uicore-select-input"]')
@@ -32,11 +32,11 @@ Given('the user is adding a new key value parser sms command', () => {
 })
 
 When('the user enters the name', () => {
-    cy.get('{smscommands-fieldcommandname} input').type('User name')
+    cy.get('{smscommand-fieldcommandname} input').type('User name')
 })
 
 When('the user leaves the name empty', () => {
-    cy.get('{smscommands-fieldcommandname} input').should('have.value', '')
+    cy.get('{smscommand-fieldcommandname} input').should('have.value', '')
 })
 
 When('the user chooses a data set', () => {
@@ -67,9 +67,9 @@ Then('the form should not submit', () => {
 })
 
 Then('display an error message on the name field', () => {
-    cy.get('{commands-fieldcommandname-validation}').should('exist')
+    cy.get('{smscommand-fieldcommandname-validation}').should('exist')
 })
 
 Then('display an error message on the data set field', () => {
-    cy.get('{forms-fielddataset-validation}').should('exist')
+    cy.get('{smscommand-fielddataset-validation}').should('exist')
 })

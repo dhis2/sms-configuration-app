@@ -49,7 +49,7 @@ When('the user changes the name field', () => {
         name: newNameValue,
     }).as('newValues')
 
-    cy.get('{smscommands-fieldcommandname} input').clear().type(newNameValue)
+    cy.get('{smscommand-fieldcommandname} input').clear().type(newNameValue)
 })
 
 When('the user changes the confirmMessage field', () => {
@@ -59,13 +59,13 @@ When('the user changes the confirmMessage field', () => {
         receivedMessage: newConfirmMessageValue,
     }).as('newValues')
 
-    cy.get('{smscommands-fieldconfirmmessage} textarea')
+    cy.get('{smscommand-fieldconfirmmessage} textarea')
         .clear()
         .type(newConfirmMessageValue)
 })
 
 When('the user changes the name field to an invalid value', () => {
-    cy.get('{smscommands-fieldcommandname} input').clear()
+    cy.get('{smscommand-fieldcommandname} input').clear()
 })
 
 When('the user submits the form', () => {
