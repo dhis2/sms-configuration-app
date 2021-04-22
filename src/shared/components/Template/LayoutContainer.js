@@ -4,7 +4,10 @@ import { dataTest } from '../../utils'
 import styles from './LayoutContainer.module.css'
 
 export const LayoutContainer = ({ children }) => (
-    <div className={styles.container} data-test={dataTest('app')}>
+    <div
+        className={styles.container}
+        data-test={dataTest('shared-layoutcontainer')}
+    >
         {children}
     </div>
 )

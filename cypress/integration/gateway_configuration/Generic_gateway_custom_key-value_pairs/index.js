@@ -73,7 +73,7 @@ Given('the user navigated to the gateway configuration page', () => {
 
     cy.wrap(gateways).as('gateways')
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.get('{shared-navigationitem}:nth-child(2)').click()
 })
 
 Given('the user is editing a generic gateway configuration', () => {

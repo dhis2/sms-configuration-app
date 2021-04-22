@@ -6,7 +6,7 @@ import styles from './PageSubHeadline.module.css'
 export const PageSubHeadline = ({ children }) => (
     <h2
         className={styles.subHeadline}
-        data-test={dataTest('headline-pagesubheadline')}
+        data-test={dataTest('shared-pagesubheadline')}
     >
         {children}
     </h2>

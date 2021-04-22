@@ -5,7 +5,7 @@ import { dataTest } from '../../utils'
 import { NavigationItem } from './NavigationItem'
 
 export const Navigation = () => (
-    <Menu dataTest={dataTest('navigation-navigation')}>
+    <Menu dataTest={dataTest('shared-navigation')}>
         <NavigationItem path="/home" label={i18n.t('Home')} exactMatch />
 
         <NavigationItem

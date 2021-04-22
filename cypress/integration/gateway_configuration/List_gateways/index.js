@@ -72,7 +72,7 @@ Given('the first gateway is the default', () => {
 
 Given('the user navigated to the gateway configuration page', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.get('{shared-navigationitem}:nth-child(2)').click()
 })
 
 When('the user makes the second gateway the default gateway', () => {

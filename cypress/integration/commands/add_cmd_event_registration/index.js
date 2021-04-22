@@ -27,7 +27,7 @@ Before(() => {
 Given('the user is adding a new event registration parser sms command', () => {
     cy.visitWhenStubbed('/')
 
-    cy.get('{navigation-navigationitem}:nth-child(3)').click()
+    cy.get('{shared-navigationitem}:nth-child(3)').click()
     cy.get('{views-smscommandlist-add}').click()
     cy.get('{smscommand-fieldparser-content}').click()
     cy.get('[data-value="EVENT_REGISTRATION_PARSER"]').click()
@@ -54,7 +54,7 @@ When('the user chooses a program', () => {
 })
 
 When('the user submits the form', () => {
-    cy.get('{app} [type="submit"]').click()
+    cy.get('{shared-layoutcontainer} [type="submit"]').click()
 })
 
 When('the user leaves the name empty', () => {

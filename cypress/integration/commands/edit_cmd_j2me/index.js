@@ -98,7 +98,7 @@ Given('the command has short code fields with a value and a formula', () => {
 
 Given('the user is editing an J2ME parser command', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(3)').click()
+    cy.get('{shared-navigationitem}:nth-child(3)').click()
 
     // There's only one command in the mocked api response
     cy.get('{views-smscommandlist-commandtable} button').click()
@@ -204,7 +204,7 @@ When('the user changes the value of a short code', () => {
 
 When('the user adds a formula', () => {
     cy.get(
-        '{smscommand-dataelementtimescategoryoptioncombos-rows} {forms-formrow}:first-child {smscommand-fielddataelementwithcategoryoptioncombo-addformulabutton}'
+        '{smscommand-dataelementtimescategoryoptioncombos-rows} {shared-formrow}:first-child {smscommand-fielddataelementwithcategoryoptioncombo-addformulabutton}'
     ).click()
 
     cy.fixture('commands/edit_cmd_j2me/dataSets').then(

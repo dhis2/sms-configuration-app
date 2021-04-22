@@ -24,7 +24,7 @@ export const NavigationItem = ({ label, path, exactMatch }) => {
             onClick={navigateToPath}
             active={active}
             label={label}
-            dataTest={dataTest('navigation-navigationitem')}
+            dataTest={dataTest('shared-navigationitem')}
         />
     )
 }

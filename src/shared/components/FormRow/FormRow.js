@@ -7,7 +7,7 @@ import styles from './FormRow.module.css'
 export const FormRow = ({ children, className }) => (
     <div
         className={cx(styles.formRow, className)}
-        data-test={dataTest('forms-formrow')}
+        data-test={dataTest('shared-formrow')}
     >
         {children}
     </div>

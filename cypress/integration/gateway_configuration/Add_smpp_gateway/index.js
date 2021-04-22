@@ -23,7 +23,7 @@ Given('the user is adding a new gateway with type SMPP', () => {
     }).as('createGatewayConfigurationXHR')
 
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.get('{shared-navigationitem}:nth-child(2)').click()
     cy.get('{views-gatewayconfiglist-add}').click()
 
     selectSelectValue(

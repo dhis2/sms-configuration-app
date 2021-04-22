@@ -22,7 +22,7 @@ Given('some commands exist', () => {
 
 Given('the user navigated to the sms commands list page', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(3)').click()
+    cy.get('{shared-navigationitem}:nth-child(3)').click()
     cy.get('h1:contains("Commands")').should('exist')
 })
 

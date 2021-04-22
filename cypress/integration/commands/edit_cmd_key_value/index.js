@@ -98,7 +98,7 @@ Given('the command has short code fields with a value and a formula', () => {
 
 Given('the user is editing an Key Value parser command', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(3)').click()
+    cy.get('{shared-navigationitem}:nth-child(3)').click()
 
     // There's only one command in the mocked api response
     cy.get('{views-smscommandlist-commandtable} button').click()

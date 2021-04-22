@@ -17,7 +17,7 @@ export const DeleteConfirmationDialog = ({
     onDeleteClick,
 }) => {
     return (
-        <Modal dataTest={dataTest('deleteconfirmationdialog')}>
+        <Modal dataTest={dataTest('shared-deleteconfirmationdialog')}>
             <ModalTitle>{i18n.t('Confirm deletion')}</ModalTitle>
             <ModalContent>{children}</ModalContent>
             <ModalActions>
@@ -25,7 +25,9 @@ export const DeleteConfirmationDialog = ({
                     <Button
                         secondary
                         onClick={onCancelClick}
-                        dataTest={dataTest('deleteconfirmationdialog-cancel')}
+                        dataTest={dataTest(
+                            'shared-deleteconfirmationdialog-cancel'
+                        )}
                     >
                         {i18n.t('Cancel')}
                     </Button>
@@ -33,7 +35,9 @@ export const DeleteConfirmationDialog = ({
                     <Button
                         primary
                         onClick={onDeleteClick}
-                        dataTest={dataTest('deleteconfirmationdialog-confirm')}
+                        dataTest={dataTest(
+                            'shared-deleteconfirmationdialog-confirm'
+                        )}
                     >
                         {i18n.t('Delete')}
                     </Button>

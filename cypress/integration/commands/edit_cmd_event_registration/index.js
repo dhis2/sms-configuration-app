@@ -41,7 +41,7 @@ Before(() => {
 
 Given('the user is editing an event registration parser command', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(3)').click()
+    cy.get('{shared-navigationitem}:nth-child(3)').click()
     // There's only one command in the mocked api response
     cy.get('{views-smscommandlist-commandtable} button').click()
 })

@@ -79,18 +79,18 @@ Given('some gateways exist', () => {
 
 Given('the user navigated to the gateway configuration page', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.get('{shared-navigationitem}:nth-child(2)').click()
 })
 
 Given('the user wants to delete the first configuration', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.get('{shared-navigationitem}:nth-child(2)').click()
     cy.get('{gateways-gatewaystable-checkbox}').first().find('label').click()
 })
 
 Given('the confirmation model is visible', () => {
     cy.get('{views-gatewayconfiglist-delete}').click()
-    cy.get('{deleteconfirmationdialog}').should('exist')
+    cy.get('{shared-deleteconfirmationdialog}').should('exist')
 })
 
 Given('some gateway configurations have been selected', () => {
@@ -112,11 +112,11 @@ When('the user user selects the first gateway configuration', () => {
 })
 
 When('the user cancels the deletion', () => {
-    cy.get('{deleteconfirmationdialog-cancel}').click()
+    cy.get('{shared-deleteconfirmationdialog-cancel}').click()
 })
 
 When('the user confirms the deletion', () => {
-    cy.get('{deleteconfirmationdialog-confirm}').click()
+    cy.get('{shared-deleteconfirmationdialog-confirm}').click()
 })
 
 When('clicks the delete button', () => {
@@ -128,7 +128,7 @@ When('the user clicks the checkbox to select all', () => {
 })
 
 Then('a confirmation model should pop up', () => {
-    cy.get('{deleteconfirmationdialog}').should('exist')
+    cy.get('{shared-deleteconfirmationdialog}').should('exist')
 })
 
 Then(
@@ -141,7 +141,7 @@ Then(
 )
 
 Then('the confirmation modal should close', () => {
-    cy.get('{deleteconfirmationdialog}').should('not.exist')
+    cy.get('{shared-deleteconfirmationdialog}').should('not.exist')
 })
 
 Then(

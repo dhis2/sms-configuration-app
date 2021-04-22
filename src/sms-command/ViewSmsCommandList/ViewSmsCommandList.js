@@ -155,7 +155,6 @@ export const ViewSmsCommandList = () => {
                 <ListActions
                     addLabel={i18n.t('Add command')}
                     deleteLabel={i18n.t('Delete selected')}
-                    dataTest="views-smscommandlist"
                     onAddClick={onAddCommandClick}
                     onDeleteClick={() => setShowDeleteConfirmationDialog(true)}
                     disableAdd={loadingDelete}

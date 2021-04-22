@@ -50,12 +50,12 @@ Given('some commands exist', () => {
 
 Given('the user navigated to the sms commands list page', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(3)').click()
+    cy.get('{shared-navigationitem}:nth-child(3)').click()
 })
 
 Given('the user wants to delete the first command', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(3)').click()
+    cy.get('{shared-navigationitem}:nth-child(3)').click()
     cy.get('{views-smscommandlist-commandtable} tbody tr')
         .first()
         .find('label')
@@ -64,7 +64,7 @@ Given('the user wants to delete the first command', () => {
 })
 
 Given('the confirmation modal is visible', () => {
-    cy.get('{deleteconfirmationdialog}').should('exist')
+    cy.get('{shared-deleteconfirmationdialog}').should('exist')
 })
 
 Given('some commands have been selected', () => {
@@ -96,11 +96,11 @@ When('the user selects the first command', () => {
 })
 
 When('the user cancels the deletion', () => {
-    cy.get('{deleteconfirmationdialog-cancel}').click()
+    cy.get('{shared-deleteconfirmationdialog-cancel}').click()
 })
 
 When('the user confirms the deletion', () => {
-    cy.get('{deleteconfirmationdialog-confirm}').click()
+    cy.get('{shared-deleteconfirmationdialog-confirm}').click()
 })
 
 When('clicks the delete button', () => {
@@ -114,7 +114,7 @@ When('the user clicks the checkbox to select all', () => {
 })
 
 Then('a confirmation modal should pop up', () => {
-    cy.get('{deleteconfirmationdialog}').should('exist')
+    cy.get('{shared-deleteconfirmationdialog}').should('exist')
 })
 
 Then("a delete request with the first command's id should be sent", () => {
@@ -126,7 +126,7 @@ Then("a delete request with the first command's id should be sent", () => {
 })
 
 Then('the confirmation modal should close', () => {
-    cy.get('{deleteconfirmationdialog}').should('not.exist')
+    cy.get('{shared-deleteconfirmationdialog}').should('not.exist')
 })
 
 Then("all individual commands' checkboxes should be selected", () => {

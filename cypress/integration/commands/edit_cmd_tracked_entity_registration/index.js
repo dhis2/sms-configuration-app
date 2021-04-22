@@ -41,14 +41,14 @@ Given(
     'the user is editing an tracked entity registration parser command',
     () => {
         cy.visitWhenStubbed('/')
-        cy.get('{navigation-navigationitem}:nth-child(3)').click()
+        cy.get('{shared-navigationitem}:nth-child(3)').click()
         // There's only one command in the mocked api response
         cy.get('{views-smscommandlist-commandtable} button').click()
     }
 )
 
 Given('the command has short codes', () => {
-    cy.get('h2:contains("SMS short codes") + {forms-formrow}').should('exist')
+    cy.get('h2:contains("SMS short codes") + {shared-formrow}').should('exist')
 })
 
 When('the user changes the name field', () => {
@@ -125,7 +125,7 @@ When('the user changes the name field to an invalid value', () => {
 When('the user changes the value of a sms short code', () => {
     const newSmsShortCodeValue = 'New sms short code value'
     cy.wrap(newSmsShortCodeValue).as('newSmsShortCodeValue')
-    cy.get('h2:contains("SMS short codes") + {forms-formrow} input')
+    cy.get('h2:contains("SMS short codes") + {shared-formrow} input')
         .clear()
         .type(newSmsShortCodeValue)
 })

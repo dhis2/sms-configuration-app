@@ -4,10 +4,7 @@ import { dataTest } from '../../utils'
 import styles from './PageHeadline.module.css'
 
 export const PageHeadline = ({ children }) => (
-    <h1
-        className={styles.headline}
-        data-test={dataTest('headline-pageheadline')}
-    >
+    <h1 className={styles.headline} data-test={dataTest('shared-pageheadline')}>
         {children}
     </h1>
 )

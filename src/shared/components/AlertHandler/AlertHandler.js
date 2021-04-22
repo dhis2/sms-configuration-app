@@ -21,10 +21,10 @@ export const AlertHandler = ({ children }) => {
         <AlertContext.Provider value={{ addAlert }}>
             {children}
 
-            <AlertStack dataTest={dataTest('notifications-alerthandler')}>
+            <AlertStack dataTest={dataTest('shared-alerthandler-alertstack')}>
                 {alerts.map(({ message, type, timestamp }) => (
                     <AlertBar
-                        dataTest={dataTest('notifications-alert')}
+                        dataTest={dataTest('shared-alerthandler-alertbar')}
                         key={`${message}${timestamp}`}
                         {...{ [type]: true }}
                     >

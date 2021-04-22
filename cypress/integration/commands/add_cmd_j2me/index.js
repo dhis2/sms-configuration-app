@@ -19,7 +19,7 @@ Before(() => {
 Given('the user is adding a new j2me parser sms command', () => {
     cy.visitWhenStubbed('/')
 
-    cy.get('{navigation-navigationitem}:nth-child(3)').click()
+    cy.get('{shared-navigationitem}:nth-child(3)').click()
     cy.get('{views-smscommandlist-add}').click()
     cy.get('{smscommand-fieldparser-content}').click()
     cy.get('[data-value="J2ME_PARSER"]').click()
@@ -51,7 +51,7 @@ When('the user leaves the data set field empty', () => {
 })
 
 When('the user submits the form', () => {
-    cy.get('{app} [type="submit"]').click()
+    cy.get('{shared-layoutcontainer} [type="submit"]').click()
 })
 
 Then('the data should be sent successfully', () => {

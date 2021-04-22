@@ -7,20 +7,22 @@ import styles from './ListActions.module.css'
 export const ListActions = ({
     addLabel,
     deleteLabel,
-    dataTest: dataTestProp,
     onAddClick,
     onDeleteClick,
     disableAdd,
     disableDelete,
 }) => {
     return (
-        <div className={styles.container}>
-            <ButtonStrip data-test={dataTest(`${dataTestProp}-actions`)}>
+        <div
+            className={styles.container}
+            data-test={dataTest('shared-listactions')}
+        >
+            <ButtonStrip data-test={dataTest('shared-listactions-actions')}>
                 <Button
                     primary
                     onClick={onAddClick}
                     disabled={disableAdd}
-                    dataTest={dataTest(`${dataTestProp}-add`)}
+                    dataTest={dataTest(`shared-listactions-add`)}
                 >
                     {addLabel}
                 </Button>
@@ -29,7 +31,7 @@ export const ListActions = ({
                     destructive
                     onClick={onDeleteClick}
                     disabled={disableDelete}
-                    dataTest={dataTest(`${dataTestProp}-delete`)}
+                    dataTest={dataTest(`shared-listactions-delete`)}
                 >
                     {deleteLabel}
                 </Button>
@@ -40,7 +42,6 @@ export const ListActions = ({
 
 ListActions.propTypes = {
     addLabel: PropTypes.string.isRequired,
-    dataTest: PropTypes.string.isRequired,
     deleteLabel: PropTypes.string.isRequired,
     onAddClick: PropTypes.func.isRequired,
     onDeleteClick: PropTypes.func.isRequired,
