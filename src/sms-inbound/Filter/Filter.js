@@ -29,17 +29,14 @@ export const Filter = ({
     setPhoneNumber,
     onReset,
 }) => (
-    <div
-        data-test={dataTest('views-receivedsms-filter')}
-        className={styles.container}
-    >
+    <div data-test={dataTest('smsinbound-filter')} className={styles.container}>
         <div className={styles.inputStrip}>
             <SingleSelectField
                 label={i18n.t('Filter by status')}
                 inputWidth="200px"
                 onChange={({ selected }) => setStatus(selected)}
                 selected={status}
-                dataTest="status-filter"
+                dataTest={dataTest('smsinbound-statusfilter')}
             >
                 {STATUS_FILTER_OPTIONS.map(({ label, value }) => (
                     <SingleSelectOption

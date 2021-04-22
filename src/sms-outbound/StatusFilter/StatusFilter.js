@@ -2,6 +2,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales'
+import { dataTest } from '../../shared'
 import { translations } from '../translations'
 import styles from './StatusFilter.module.css'
 
@@ -24,7 +25,7 @@ export const StatusFilter = ({ status, setStatus }) => (
             inputWidth="200px"
             onChange={({ selected }) => setStatus(selected)}
             selected={status}
-            dataTest="status-filter"
+            dataTest={dataTest('smsoutbound-statusfilter')}
         >
             {STATUS_FILTER_OPTIONS.map(({ label, value }) => (
                 <SingleSelectOption key={label} label={label} value={value} />

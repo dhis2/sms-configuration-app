@@ -5,7 +5,7 @@ import '../common'
 const phoneNumber = '+555123'
 
 When("the user clicks on the status filter and selects 'Failed'", () => {
-    cy.get('[data-test="status-filter"]:eq(0)').click()
+    cy.get('{smsinbound-statusfilter}:eq(0)').click()
     cy.get('[data-value="FAILED"]').click()
 })
 

@@ -122,7 +122,7 @@ export const ViewReceivedSmsList = () => {
     return (
         <TemplateSidebarNavContent>
             <div
-                data-test={dataTest('views-receivedsmslist')}
+                data-test={dataTest('smsinbound-viewreceivedsmslist')}
                 className={styles.container}
             >
                 <PageHeadline>{RECEIVED_SMS_LIST_LABEL}</PageHeadline>
