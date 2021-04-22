@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T13:21:14.657Z\n"
+"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -26,24 +26,248 @@ msgstr "لا ، ابق على الصفحة"
 msgid "Yes, cancel"
 msgstr "نعم، إلغاء"
 
+msgid "Confirm deletion"
+msgstr "تأكيد الحذف"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "User group"
+msgstr "مجموعة المستخدمين"
+
+msgid "Home"
+msgstr ""
+
+msgid "Gateway configuration"
+msgstr ""
+
+msgid "Commands"
+msgstr "الأوامر"
+
+msgid "Sent"
+msgstr "تم الإرسال"
+
+msgid "Received"
+msgstr "مستلم"
+
+msgid "No SMSes to display"
+msgstr "لا توجد رسائل SMS لعرضها"
+
+msgid "Show"
+msgstr "إظهار"
+
+msgid "per page"
+msgstr "لكل صفحة"
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "عرض {{firstItem}}-{{lastItem}} من {{total}}"
+
+msgid "Previous"
+msgstr "السابق"
+
+msgid "Page"
+msgstr "الصفحة"
+
+msgid "of {{pageCount}}"
+msgstr "من {{pageCount}}"
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "No error message was provided"
+msgstr ""
+
+msgid "Add special character"
+msgstr "أضف حرف خاص"
+
+msgid "Required values notice"
+msgstr "إشعار القيم المطلوبة"
+
+msgid "SMS short codes"
+msgstr "الرموز القصيرة لرسائل SMS"
+
+msgid "Name"
+msgstr "الإسم"
+
+msgid "Completeness method"
+msgstr "طريقة الاكتمال"
+
+msgid "Receive all data values"
+msgstr "استلام جميع قيم البيانات"
+
+msgid "Receive at least one data value"
+msgstr "استقبال قيمة بيانات واحدة على الأقل"
+
+msgid "Do not mark as complete"
+msgstr "لا تضع علامة اكتمال"
+
+msgid "Confirm message"
+msgstr "رسالة التأكيد"
+
+msgid "Edit formula"
+msgstr "تعديل الصيغة"
+
+msgid "Add formula"
+msgstr "إضافة صيغة"
+
+msgid "Formula"
+msgstr "الصيغة"
+
+msgid "Loading formula"
+msgstr "صيغة التحميل"
+
+msgid "default"
+msgstr "إفتراضي"
+
+msgid "Formula for {{combo}}"
+msgstr "صيغة {{combo}}"
+
+msgid "Data element"
+msgstr "عنصر البيانات"
+
+msgid "formula operator"
+msgstr ""
+
+msgid "Something went wrong whilst saving"
+msgstr "حدث خطأ ما أثناء الحفظ"
+
+msgid "Remove"
+msgstr "إزلة"
+
+msgid "Save"
+msgstr "حفظ"
+
 msgid "Data set"
 msgstr "حزمة البيانات"
+
+msgid "Reply message if no codes are sent (only the command)"
+msgstr "رسالة الرد إذا لم يتم إرسال أية رموز (الأمر فقط)"
+
+msgid "More than one orgunit message"
+msgstr "رسالة أكثر من وحدة تنظيمية"
+
+msgid "No user message"
+msgstr "رسالة عدم وجود مستخدم"
+
+msgid "Parser"
+msgstr "المحلل"
+
+msgid "Key value parser"
+msgstr ""
+
+msgid "J2ME parser"
+msgstr ""
+
+msgid "Alert parser"
+msgstr ""
+
+msgid "Unregistered parser"
+msgstr ""
+
+msgid "Tracked entity registration parser"
+msgstr "محلل تسجيل الكيان المتتبع"
+
+msgid "Program stage data entry parser"
+msgstr ""
+
+msgid "Event registration parser"
+msgstr ""
+
+msgid "Program"
+msgstr "البرنامج"
+
+msgid "Program stage"
+msgstr "مرحلة البرنامج"
+
+msgid "Field separator"
+msgstr "فاصل الحقول"
+
+msgid "Special character name"
+msgstr "اسم الحرف الخاص"
+
+msgid "Special character value"
+msgstr "قيمة الحرف الخاص"
+
+msgid "Success message"
+msgstr "رسالة النجاح"
+
+msgid "Use current period for reporting"
+msgstr "استخدم الفترة الحالية لإعداد التقارير"
+
+msgid "Wrong format message"
+msgstr "رسالة الصيغة غير صحيحة"
+
+msgid "Save command"
+msgstr "حفظ الأوامر"
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr "حدث خطأ ما أثناء تحميل أمر sms"
+
+msgid "Something went wrong whilst loading the command's details"
+msgstr "حدث خطأ ما أثناء تحميل تفاصيل الأمر"
+
+msgid "Special characters"
+msgstr "الحروف الخاصة"
+
+msgid "Duplicate value!"
+msgstr "قيمة مكررة!"
+
+msgid "Something went wrong whilst submitting the form"
+msgstr "حدث خطأ ما أثناء إرسال النموذج"
+
+msgid "Add command"
+msgstr "إضافة أمر"
+
+msgid "Automatically selected by selecting a program"
+msgstr "يتم تحديده اوتوماتيكيا بعد تحديد برنامج"
+
+msgid "Something went wrong whilst loading commands"
+msgstr "حدث خطأ ما أثناء تحميل الأوامر"
+
+msgid "Edit command"
+msgstr "تعديل الأمر"
+
+msgid "Unrecognised parser type"
+msgstr "نوع parser غير معروف"
+
+msgid "Could not find the requested parser type"
+msgstr "تعذر العثور على نوع الـ parser المطلوب"
+
+msgid "Something went wrong whilst performing the requested operation"
+msgstr "حدث خطأ ما أثناء إجراء العملية المطلوبة"
+
+msgid ""
+"SMS commands process SMS messages received by a DHIS2 instance, taking "
+"certain actions depending on the command and message content. Multiple SMS "
+"commands can be set up to process and handle data in multiple ways. Add and "
+"configure SMS commands below. Read about SMS commands in the DHIS2 "
+"documentation."
+msgstr ""
+"تعالج أوامر SMS رسائل SMS المستلمة بواسطة DHIS2 ، وتتخذ إجراءات معينة بناءً "
+"على محتوى الأوامر والرسالة. يمكن إعداد أوامر SMS المتعددة لمعالجة البيانات "
+"ومعالجتها بطرق متعددة. قم بإضافة وتكوين أوامر SMS أدناه. اقرأ عن أوامر SMS "
+"في وثائق DHIS2."
 
 msgid "Delete selected"
 msgstr "حذف المحدد"
 
-msgid ""
-"Please make sure the value of this input matches the value in "
-"\"{{otherField}}\"."
+msgid "Are you sure you want to delete the selected commands?"
+msgstr "هل أنت متأكد أنك تريد حذف الأوامر المحددة؟"
+
+msgid "Sms command"
+msgstr "أوامر SMS"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "No commands to display"
+msgstr "لا توجد أوامر للعرض"
+
+msgid "Add key value pair"
 msgstr ""
-"الرجاء التأكد من أن قيمة مربع الإدخال هذا تطابق القيمة الموجودة في "
-"\"{{otherField}}\"."
-
-msgid "Confirm deletion"
-msgstr "تأكيد الحذف"
-
-msgid "Are you sure you want to delete the selected gateways?"
-msgstr "هل أنت متأكد أنك تريد حذف البوابات المحددة؟"
 
 msgid "Auth token"
 msgstr ""
@@ -78,8 +302,23 @@ msgstr "نوع المحتوى"
 msgid "Host"
 msgstr ""
 
-msgid "Name"
-msgstr "الإسم"
+msgid "Key"
+msgstr ""
+
+msgid "Send as header"
+msgstr ""
+
+msgid "Encode"
+msgstr "تشفير"
+
+msgid "Confidential"
+msgstr "سري"
+
+msgid "Remove key value pair"
+msgstr ""
+
+msgid "Value"
+msgstr "القيمة"
 
 msgid "Number plan indicator"
 msgstr ""
@@ -117,17 +356,11 @@ msgstr "استخدم GET بدلاً من POST لإرسال البيانات إل
 msgid "User name"
 msgstr "اسم المستخدم"
 
-msgid "Add key value pair"
-msgstr ""
-
 msgid "Save gateway"
 msgstr "حفظ البوابة"
 
 msgid "Add gateway"
 msgstr "إضافة بوابة"
-
-msgid "Cancel"
-msgstr "إلغاء"
 
 msgid "Gateway setup"
 msgstr "إعداد البوابة"
@@ -135,35 +368,11 @@ msgstr "إعداد البوابة"
 msgid "Key value pairs"
 msgstr ""
 
-msgid "Key"
-msgstr ""
-
-msgid "Send as header"
-msgstr ""
-
-msgid "Encode"
-msgstr "تشفير"
-
-msgid "Confidential"
-msgstr "سري"
-
-msgid "Remove key value pair"
-msgstr ""
-
-msgid "Value"
-msgstr "القيمة"
-
 msgid "Type"
 msgstr "النوع"
 
-msgid "Make default"
-msgstr "اجعلها افتراضية"
-
-msgid "Default gateway"
-msgstr "البوابة الإفتراضية"
-
-msgid "Edit"
-msgstr "تعديل"
+msgid "Generic"
+msgstr "عام"
 
 msgid "BulkSMS"
 msgstr "الرسائل القصيرة بالجملة"
@@ -171,173 +380,11 @@ msgstr "الرسائل القصيرة بالجملة"
 msgid "Clickatell"
 msgstr "Clickatell"
 
-msgid "Generic"
-msgstr "عام"
-
-msgid "Show"
-msgstr "إظهار"
-
-msgid "per page"
-msgstr "لكل صفحة"
-
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr "عرض {{firstItem}}-{{lastItem}} من {{total}}"
-
-msgid "Previous"
-msgstr "السابق"
-
-msgid "Page"
-msgstr "الصفحة"
-
-msgid "of {{pageCount}}"
-msgstr "من {{pageCount}}"
-
-msgid "Next"
-msgstr "التالي"
-
-msgid "Program"
-msgstr "البرنامج"
-
-msgid "Program stage"
-msgstr "مرحلة البرنامج"
-
-msgid "Are you sure you want to delete the selected commands?"
-msgstr "هل أنت متأكد أنك تريد حذف الأوامر المحددة؟"
-
-msgid "Delete"
-msgstr "حذف"
-
-msgid "Save command"
-msgstr "حفظ الأوامر"
-
-msgid "Something went wrong whilst submitting the form"
-msgstr "حدث خطأ ما أثناء إرسال النموذج"
-
-msgid "Something went wrong whilst loading the sms command"
-msgstr "حدث خطأ ما أثناء تحميل أمر sms"
-
-msgid "Something went wrong whilst loading the command's details"
-msgstr "حدث خطأ ما أثناء تحميل تفاصيل الأمر"
-
-msgid "SMS short codes"
-msgstr "الرموز القصيرة لرسائل SMS"
-
-msgid "Add special character"
-msgstr "أضف حرف خاص"
-
-msgid "Required values notice"
-msgstr "إشعار القيم المطلوبة"
-
-msgid "Completeness method"
-msgstr "طريقة الاكتمال"
-
-msgid "Confirm message"
-msgstr "رسالة التأكيد"
-
-msgid "Reply message if no codes are sent (only the command)"
-msgstr "رسالة الرد إذا لم يتم إرسال أية رموز (الأمر فقط)"
-
-msgid "More than one orgunit message"
-msgstr "رسالة أكثر من وحدة تنظيمية"
-
-msgid "No user message"
-msgstr "رسالة عدم وجود مستخدم"
-
-msgid "Parser"
-msgstr "المحلل"
-
-msgid "Field separator"
-msgstr "فاصل الحقول"
-
-msgid "Special character name"
-msgstr "اسم الحرف الخاص"
-
-msgid "Special character value"
-msgstr "قيمة الحرف الخاص"
-
-msgid "Remove"
-msgstr "إزلة"
-
-msgid "Success message"
-msgstr "رسالة النجاح"
-
-msgid "Use current period for reporting"
-msgstr "استخدم الفترة الحالية لإعداد التقارير"
-
-msgid "Wrong format message"
-msgstr "رسالة الصيغة غير صحيحة"
-
-msgid "default"
-msgstr "إفتراضي"
-
-msgid "Formula"
-msgstr "الصيغة"
-
-msgid "Loading formula"
-msgstr "صيغة التحميل"
-
-msgid "Edit formula"
-msgstr "تعديل الصيغة"
-
-msgid "Add formula"
-msgstr "إضافة صيغة"
-
-msgid "Formula for {{combo}}"
-msgstr "صيغة {{combo}}"
-
-msgid "Data element"
-msgstr "عنصر البيانات"
-
-msgid "formula operator"
+msgid "SMPP"
 msgstr ""
 
-msgid "Something went wrong whilst saving"
-msgstr "حدث خطأ ما أثناء الحفظ"
-
-msgid "Save"
-msgstr "حفظ"
-
-msgid "Receive all data values"
-msgstr "استلام جميع قيم البيانات"
-
-msgid "Receive at least one data value"
-msgstr "استقبال قيمة بيانات واحدة على الأقل"
-
-msgid "Do not mark as complete"
-msgstr "لا تضع علامة اكتمال"
-
-msgid "Key value parser"
-msgstr ""
-
-msgid "J2ME parser"
-msgstr ""
-
-msgid "Alert parser"
-msgstr ""
-
-msgid "Unregistered parser"
-msgstr ""
-
-msgid "Tracked entity registration parser"
-msgstr "محلل تسجيل الكيان المتتبع"
-
-msgid "Program stage data entry parser"
-msgstr ""
-
-msgid "Event registration parser"
-msgstr ""
-
-msgid "Duplicate value!"
-msgstr "قيمة مكررة!"
-
-msgid "Special characters"
-msgstr "الحروف الخاصة"
-
-msgid "No SMSes to display"
-msgstr "لا توجد رسائل SMS لعرضها"
-
-msgid "User group"
-msgstr "مجموعة المستخدمين"
+msgid "Something went wrong whilst saving the gateway"
+msgstr "حدث خطأ أثناء حفظ البوابة"
 
 msgid "Something went wrong whilst loading gateways"
 msgstr "حدث خطأ ما أثناء تحميل البوابات"
@@ -354,14 +401,11 @@ msgstr "البوابة غير موجودة"
 msgid "The requested gateway could not be loaded"
 msgstr "تعذر تحميل البوابة المطلوبة"
 
-msgid "Something went wrong whilst saving the gateway"
-msgstr "حدث خطأ أثناء حفظ البوابة"
+msgid "Make default"
+msgstr "اجعلها افتراضية"
 
-msgid "SMPP"
-msgstr ""
-
-msgid "Something went wrong whilst performing the requested operation"
-msgstr "حدث خطأ ما أثناء إجراء العملية المطلوبة"
+msgid "Default gateway"
+msgstr "البوابة الإفتراضية"
 
 msgid ""
 "An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
@@ -382,6 +426,78 @@ msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
 msgstr "يبدو أنه لا توجد أي بوابات مهيأة ، أو لا يمكن تحميلها."
+
+msgid "Are you sure you want to delete the selected gateways?"
+msgstr "هل أنت متأكد أنك تريد حذف البوابات المحددة؟"
+
+msgid "Filter by status"
+msgstr "تصفية حسب الحالة"
+
+msgid "Filter by phone number"
+msgstr "تصفية حسب رقم التلفون"
+
+msgid "Reset filter"
+msgstr ""
+
+msgid "Message"
+msgstr "الرسالة"
+
+msgid "Phone number"
+msgstr "رقم الهاتف"
+
+msgid "Status"
+msgstr "الحالة"
+
+msgid "Sender"
+msgstr "المرسل"
+
+msgid "Unknown"
+msgstr "غير معروف"
+
+msgid "Something went wrong whilst loading received SMSes"
+msgstr "حدث خطأ ما أثناء تحميل رسائل SMS المستلمة"
+
+msgid "Are you sure you want to delete the selected sms?"
+msgstr ""
+
+msgid "All"
+msgstr "الجميع"
+
+msgid "Failed"
+msgstr "فشل"
+
+msgid "Incoming"
+msgstr "الوارد"
+
+msgid "Processed"
+msgstr "تمت معالجته"
+
+msgid "Processing"
+msgstr "جار المعالجة"
+
+msgid "Unhandled"
+msgstr "غير معالج"
+
+msgid "Recipients"
+msgstr "المستلمون"
+
+msgid "Something went wrong whilst loading sent SMSes"
+msgstr "حدث خطأ ما أثناء تحميل رسائل SMS المرسلة"
+
+msgid "Delivered"
+msgstr "تم تسليمها"
+
+msgid "Error"
+msgstr "خطأ"
+
+msgid "Outbound"
+msgstr "الصادر"
+
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+msgid "Scheduled"
+msgstr "تمت جدولته"
 
 msgid "Overview: SMS Configuration"
 msgstr "نظرة عامة: إعدادات تكوين الرسائل القصيرة"
@@ -433,114 +549,3 @@ msgstr "افتح سجلات جميع رسائل SMS التي تم قام DHIS2 �
 
 msgid "View all received SMS"
 msgstr "عرض جميع رسائل SMS المستلمة"
-
-msgid "Filter by status"
-msgstr "تصفية حسب الحالة"
-
-msgid "Filter by phone number"
-msgstr "تصفية حسب رقم التلفون"
-
-msgid "Reset filter"
-msgstr ""
-
-msgid "Received"
-msgstr "مستلم"
-
-msgid "Something went wrong whilst loading received SMSes"
-msgstr "حدث خطأ ما أثناء تحميل رسائل SMS المستلمة"
-
-msgid "Message"
-msgstr "الرسالة"
-
-msgid "Phone number"
-msgstr "رقم الهاتف"
-
-msgid "Status"
-msgstr "الحالة"
-
-msgid "Sender"
-msgstr "المرسل"
-
-msgid "Unknown"
-msgstr "غير معروف"
-
-msgid "All"
-msgstr "الجميع"
-
-msgid "Failed"
-msgstr "فشل"
-
-msgid "Incoming"
-msgstr "الوارد"
-
-msgid "Processed"
-msgstr "تمت معالجته"
-
-msgid "Processing"
-msgstr "جار المعالجة"
-
-msgid "Sent"
-msgstr "تم الإرسال"
-
-msgid "Unhandled"
-msgstr "غير معالج"
-
-msgid "Something went wrong whilst loading sent SMSes"
-msgstr "حدث خطأ ما أثناء تحميل رسائل SMS المرسلة"
-
-msgid "Recipients"
-msgstr "المستلمون"
-
-msgid "Delivered"
-msgstr "تم تسليمها"
-
-msgid "Error"
-msgstr "خطأ"
-
-msgid "Outbound"
-msgstr "الصادر"
-
-msgid "Pending"
-msgstr "قيد الانتظار"
-
-msgid "Scheduled"
-msgstr "تمت جدولته"
-
-msgid "Something went wrong whilst loading commands"
-msgstr "حدث خطأ ما أثناء تحميل الأوامر"
-
-msgid "Edit command"
-msgstr "تعديل الأمر"
-
-msgid "Unrecognised parser type"
-msgstr "نوع parser غير معروف"
-
-msgid "Could not find the requested parser type"
-msgstr "تعذر العثور على نوع الـ parser المطلوب"
-
-msgid "Add command"
-msgstr "إضافة أمر"
-
-msgid "Automatically selected by selecting a program"
-msgstr "يتم تحديده اوتوماتيكيا بعد تحديد برنامج"
-
-msgid "Commands"
-msgstr "الأوامر"
-
-msgid ""
-"SMS commands process SMS messages received by a DHIS2 instance, taking "
-"certain actions depending on the command and message content. Multiple SMS "
-"commands can be set up to process and handle data in multiple ways. Add and "
-"configure SMS commands below. Read about SMS commands in the DHIS2 "
-"documentation."
-msgstr ""
-"تعالج أوامر SMS رسائل SMS المستلمة بواسطة DHIS2 ، وتتخذ إجراءات معينة بناءً "
-"على محتوى الأوامر والرسالة. يمكن إعداد أوامر SMS المتعددة لمعالجة البيانات "
-"ومعالجتها بطرق متعددة. قم بإضافة وتكوين أوامر SMS أدناه. اقرأ عن أوامر SMS "
-"في وثائق DHIS2."
-
-msgid "Sms command"
-msgstr "أوامر SMS"
-
-msgid "No commands to display"
-msgstr "لا توجد أوامر للعرض"

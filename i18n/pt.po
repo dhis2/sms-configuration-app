@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T13:21:14.657Z\n"
+"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -27,21 +27,243 @@ msgstr ""
 msgid "Yes, cancel"
 msgstr ""
 
+msgid "Confirm deletion"
+msgstr "Confirmar exclusão"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Delete"
+msgstr "Suprimir"
+
+msgid "User group"
+msgstr "Grupo de usuários"
+
+msgid "Home"
+msgstr ""
+
+msgid "Gateway configuration"
+msgstr ""
+
+msgid "Commands"
+msgstr ""
+
+msgid "Sent"
+msgstr "Enviar"
+
+msgid "Received"
+msgstr ""
+
+msgid "No SMSes to display"
+msgstr ""
+
+msgid "Show"
+msgstr "Mostrar"
+
+msgid "per page"
+msgstr ""
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr ""
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Page"
+msgstr "Pagina"
+
+msgid "of {{pageCount}}"
+msgstr ""
+
+msgid "Next"
+msgstr "Próximo"
+
+msgid "No error message was provided"
+msgstr ""
+
+msgid "Add special character"
+msgstr ""
+
+msgid "Required values notice"
+msgstr ""
+
+msgid "SMS short codes"
+msgstr ""
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Completeness method"
+msgstr "Método de completude"
+
+msgid "Receive all data values"
+msgstr ""
+
+msgid "Receive at least one data value"
+msgstr "Receba pelo menos um valor de dados"
+
+msgid "Do not mark as complete"
+msgstr "Não marque como completo"
+
+msgid "Confirm message"
+msgstr ""
+
+msgid "Edit formula"
+msgstr ""
+
+msgid "Add formula"
+msgstr ""
+
+msgid "Formula"
+msgstr "Fórmula"
+
+msgid "Loading formula"
+msgstr ""
+
+msgid "default"
+msgstr ""
+
+msgid "Formula for {{combo}}"
+msgstr ""
+
+msgid "Data element"
+msgstr "Elemento de dado"
+
+msgid "formula operator"
+msgstr ""
+
+msgid "Something went wrong whilst saving"
+msgstr ""
+
+msgid "Remove"
+msgstr "Remover"
+
+msgid "Save"
+msgstr "Salvar"
+
 msgid "Data set"
 msgstr "Ficha"
+
+msgid "Reply message if no codes are sent (only the command)"
+msgstr "Responder mensagens se nenhum código for enviado ( Apenas comando)\\:"
+
+msgid "More than one orgunit message"
+msgstr ""
+
+msgid "No user message"
+msgstr "Nenhuma mensagem do usuário"
+
+msgid "Parser"
+msgstr "Parser\\:"
+
+msgid "Key value parser"
+msgstr ""
+
+msgid "J2ME parser"
+msgstr ""
+
+msgid "Alert parser"
+msgstr ""
+
+msgid "Unregistered parser"
+msgstr ""
+
+msgid "Tracked entity registration parser"
+msgstr "Analisador de registro de entidade rastreada"
+
+msgid "Program stage data entry parser"
+msgstr ""
+
+msgid "Event registration parser"
+msgstr ""
+
+msgid "Program"
+msgstr "Programa"
+
+msgid "Program stage"
+msgstr "Estagio de programa"
+
+msgid "Field separator"
+msgstr ""
+
+msgid "Special character name"
+msgstr ""
+
+msgid "Special character value"
+msgstr ""
+
+msgid "Success message"
+msgstr ""
+
+msgid "Use current period for reporting"
+msgstr ""
+
+msgid "Wrong format message"
+msgstr "Formato incorreto da mensagem"
+
+msgid "Save command"
+msgstr ""
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr ""
+
+msgid "Something went wrong whilst loading the command's details"
+msgstr ""
+
+msgid "Special characters"
+msgstr ""
+
+msgid "Duplicate value!"
+msgstr ""
+
+msgid "Something went wrong whilst submitting the form"
+msgstr ""
+
+msgid "Add command"
+msgstr "Adicionar comando"
+
+msgid "Automatically selected by selecting a program"
+msgstr ""
+
+msgid "Something went wrong whilst loading commands"
+msgstr ""
+
+msgid "Edit command"
+msgstr ""
+
+msgid "Unrecognised parser type"
+msgstr ""
+
+msgid "Could not find the requested parser type"
+msgstr ""
+
+msgid "Something went wrong whilst performing the requested operation"
+msgstr ""
+
+msgid ""
+"SMS commands process SMS messages received by a DHIS2 instance, taking "
+"certain actions depending on the command and message content. Multiple SMS "
+"commands can be set up to process and handle data in multiple ways. Add and "
+"configure SMS commands below. Read about SMS commands in the DHIS2 "
+"documentation."
+msgstr ""
 
 msgid "Delete selected"
 msgstr ""
 
-msgid ""
-"Please make sure the value of this input matches the value in "
-"\"{{otherField}}\"."
+msgid "Are you sure you want to delete the selected commands?"
 msgstr ""
 
-msgid "Confirm deletion"
-msgstr "Confirmar exclusão"
+msgid "Sms command"
+msgstr ""
 
-msgid "Are you sure you want to delete the selected gateways?"
+msgid "Edit"
+msgstr "Editar"
+
+msgid "No commands to display"
+msgstr ""
+
+msgid "Add key value pair"
 msgstr ""
 
 msgid "Auth token"
@@ -77,8 +299,23 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
-msgid "Name"
-msgstr "Nome"
+msgid "Key"
+msgstr "Chave "
+
+msgid "Send as header"
+msgstr ""
+
+msgid "Encode"
+msgstr ""
+
+msgid "Confidential"
+msgstr "Confidencial"
+
+msgid "Remove key value pair"
+msgstr ""
+
+msgid "Value"
+msgstr "Valor"
 
 msgid "Number plan indicator"
 msgstr ""
@@ -116,17 +353,11 @@ msgstr ""
 msgid "User name"
 msgstr "Nome do Utilizador"
 
-msgid "Add key value pair"
-msgstr ""
-
 msgid "Save gateway"
 msgstr ""
 
 msgid "Add gateway"
 msgstr "Adicionar gateway"
-
-msgid "Cancel"
-msgstr "Cancelar"
 
 msgid "Gateway setup"
 msgstr ""
@@ -134,35 +365,11 @@ msgstr ""
 msgid "Key value pairs"
 msgstr ""
 
-msgid "Key"
-msgstr "Chave "
-
-msgid "Send as header"
-msgstr ""
-
-msgid "Encode"
-msgstr ""
-
-msgid "Confidential"
-msgstr "Confidencial"
-
-msgid "Remove key value pair"
-msgstr ""
-
-msgid "Value"
-msgstr "Valor"
-
 msgid "Type"
 msgstr "Tipo"
 
-msgid "Make default"
+msgid "Generic"
 msgstr ""
-
-msgid "Default gateway"
-msgstr ""
-
-msgid "Edit"
-msgstr "Editar"
 
 msgid "BulkSMS"
 msgstr ""
@@ -170,173 +377,11 @@ msgstr ""
 msgid "Clickatell"
 msgstr ""
 
-msgid "Generic"
+msgid "SMPP"
 msgstr ""
 
-msgid "Show"
-msgstr "Mostrar"
-
-msgid "per page"
+msgid "Something went wrong whilst saving the gateway"
 msgstr ""
-
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr ""
-
-msgid "Previous"
-msgstr "Anterior"
-
-msgid "Page"
-msgstr "Pagina"
-
-msgid "of {{pageCount}}"
-msgstr ""
-
-msgid "Next"
-msgstr "Próximo"
-
-msgid "Program"
-msgstr "Programa"
-
-msgid "Program stage"
-msgstr "Estagio de programa"
-
-msgid "Are you sure you want to delete the selected commands?"
-msgstr ""
-
-msgid "Delete"
-msgstr "Suprimir"
-
-msgid "Save command"
-msgstr ""
-
-msgid "Something went wrong whilst submitting the form"
-msgstr ""
-
-msgid "Something went wrong whilst loading the sms command"
-msgstr ""
-
-msgid "Something went wrong whilst loading the command's details"
-msgstr ""
-
-msgid "SMS short codes"
-msgstr ""
-
-msgid "Add special character"
-msgstr ""
-
-msgid "Required values notice"
-msgstr ""
-
-msgid "Completeness method"
-msgstr "Método de completude"
-
-msgid "Confirm message"
-msgstr ""
-
-msgid "Reply message if no codes are sent (only the command)"
-msgstr "Responder mensagens se nenhum código for enviado ( Apenas comando)\\:"
-
-msgid "More than one orgunit message"
-msgstr ""
-
-msgid "No user message"
-msgstr "Nenhuma mensagem do usuário"
-
-msgid "Parser"
-msgstr "Parser\\:"
-
-msgid "Field separator"
-msgstr ""
-
-msgid "Special character name"
-msgstr ""
-
-msgid "Special character value"
-msgstr ""
-
-msgid "Remove"
-msgstr "Remover"
-
-msgid "Success message"
-msgstr ""
-
-msgid "Use current period for reporting"
-msgstr ""
-
-msgid "Wrong format message"
-msgstr "Formato incorreto da mensagem"
-
-msgid "default"
-msgstr ""
-
-msgid "Formula"
-msgstr "Fórmula"
-
-msgid "Loading formula"
-msgstr ""
-
-msgid "Edit formula"
-msgstr ""
-
-msgid "Add formula"
-msgstr ""
-
-msgid "Formula for {{combo}}"
-msgstr ""
-
-msgid "Data element"
-msgstr "Elemento de dado"
-
-msgid "formula operator"
-msgstr ""
-
-msgid "Something went wrong whilst saving"
-msgstr ""
-
-msgid "Save"
-msgstr "Salvar"
-
-msgid "Receive all data values"
-msgstr ""
-
-msgid "Receive at least one data value"
-msgstr "Receba pelo menos um valor de dados"
-
-msgid "Do not mark as complete"
-msgstr "Não marque como completo"
-
-msgid "Key value parser"
-msgstr ""
-
-msgid "J2ME parser"
-msgstr ""
-
-msgid "Alert parser"
-msgstr ""
-
-msgid "Unregistered parser"
-msgstr ""
-
-msgid "Tracked entity registration parser"
-msgstr "Analisador de registro de entidade rastreada"
-
-msgid "Program stage data entry parser"
-msgstr ""
-
-msgid "Event registration parser"
-msgstr ""
-
-msgid "Duplicate value!"
-msgstr ""
-
-msgid "Special characters"
-msgstr ""
-
-msgid "No SMSes to display"
-msgstr ""
-
-msgid "User group"
-msgstr "Grupo de usuários"
 
 msgid "Something went wrong whilst loading gateways"
 msgstr ""
@@ -353,13 +398,10 @@ msgstr ""
 msgid "The requested gateway could not be loaded"
 msgstr ""
 
-msgid "Something went wrong whilst saving the gateway"
+msgid "Make default"
 msgstr ""
 
-msgid "SMPP"
-msgstr ""
-
-msgid "Something went wrong whilst performing the requested operation"
+msgid "Default gateway"
 msgstr ""
 
 msgid ""
@@ -377,6 +419,78 @@ msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
 msgstr ""
+
+msgid "Are you sure you want to delete the selected gateways?"
+msgstr ""
+
+msgid "Filter by status"
+msgstr ""
+
+msgid "Filter by phone number"
+msgstr ""
+
+msgid "Reset filter"
+msgstr ""
+
+msgid "Message"
+msgstr "Mensagem"
+
+msgid "Phone number"
+msgstr "Número de telefone"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Sender"
+msgstr ""
+
+msgid "Unknown"
+msgstr "Desconhecido"
+
+msgid "Something went wrong whilst loading received SMSes"
+msgstr ""
+
+msgid "Are you sure you want to delete the selected sms?"
+msgstr ""
+
+msgid "All"
+msgstr "Tudo"
+
+msgid "Failed"
+msgstr "Falhou"
+
+msgid "Incoming"
+msgstr "Recebendo"
+
+msgid "Processed"
+msgstr "Processado"
+
+msgid "Processing"
+msgstr "Processando"
+
+msgid "Unhandled"
+msgstr "Não tratado"
+
+msgid "Recipients"
+msgstr "Destinatários"
+
+msgid "Something went wrong whilst loading sent SMSes"
+msgstr ""
+
+msgid "Delivered"
+msgstr ""
+
+msgid "Error"
+msgstr "Erro"
+
+msgid "Outbound"
+msgstr "Saida"
+
+msgid "Pending"
+msgstr ""
+
+msgid "Scheduled"
+msgstr "Agendado"
 
 msgid "Overview: SMS Configuration"
 msgstr ""
@@ -423,111 +537,4 @@ msgid "Open logs of all SMS messages received by DHIS2."
 msgstr ""
 
 msgid "View all received SMS"
-msgstr ""
-
-msgid "Filter by status"
-msgstr ""
-
-msgid "Filter by phone number"
-msgstr ""
-
-msgid "Reset filter"
-msgstr ""
-
-msgid "Received"
-msgstr ""
-
-msgid "Something went wrong whilst loading received SMSes"
-msgstr ""
-
-msgid "Message"
-msgstr "Mensagem"
-
-msgid "Phone number"
-msgstr "Número de telefone"
-
-msgid "Status"
-msgstr "Status"
-
-msgid "Sender"
-msgstr ""
-
-msgid "Unknown"
-msgstr "Desconhecido"
-
-msgid "All"
-msgstr "Tudo"
-
-msgid "Failed"
-msgstr "Falhou"
-
-msgid "Incoming"
-msgstr "Recebendo"
-
-msgid "Processed"
-msgstr "Processado"
-
-msgid "Processing"
-msgstr "Processando"
-
-msgid "Sent"
-msgstr "Enviar"
-
-msgid "Unhandled"
-msgstr "Não tratado"
-
-msgid "Something went wrong whilst loading sent SMSes"
-msgstr ""
-
-msgid "Recipients"
-msgstr "Destinatários"
-
-msgid "Delivered"
-msgstr ""
-
-msgid "Error"
-msgstr "Erro"
-
-msgid "Outbound"
-msgstr "Saida"
-
-msgid "Pending"
-msgstr ""
-
-msgid "Scheduled"
-msgstr "Agendado"
-
-msgid "Something went wrong whilst loading commands"
-msgstr ""
-
-msgid "Edit command"
-msgstr ""
-
-msgid "Unrecognised parser type"
-msgstr ""
-
-msgid "Could not find the requested parser type"
-msgstr ""
-
-msgid "Add command"
-msgstr "Adicionar comando"
-
-msgid "Automatically selected by selecting a program"
-msgstr ""
-
-msgid "Commands"
-msgstr ""
-
-msgid ""
-"SMS commands process SMS messages received by a DHIS2 instance, taking "
-"certain actions depending on the command and message content. Multiple SMS "
-"commands can be set up to process and handle data in multiple ways. Add and "
-"configure SMS commands below. Read about SMS commands in the DHIS2 "
-"documentation."
-msgstr ""
-
-msgid "Sms command"
-msgstr ""
-
-msgid "No commands to display"
 msgstr ""

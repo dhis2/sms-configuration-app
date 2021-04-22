@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T13:21:14.657Z\n"
+"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -27,22 +27,245 @@ msgstr "不，留在页面上"
 msgid "Yes, cancel"
 msgstr "是的，取消"
 
+msgid "Confirm deletion"
+msgstr "确认删除"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "User group"
+msgstr "User组"
+
+msgid "Home"
+msgstr ""
+
+msgid "Gateway configuration"
+msgstr ""
+
+msgid "Commands"
+msgstr "指令"
+
+msgid "Sent"
+msgstr "发送"
+
+msgid "Received"
+msgstr "已收到"
+
+msgid "No SMSes to display"
+msgstr "没有短信显示"
+
+msgid "Show"
+msgstr "显示"
+
+msgid "per page"
+msgstr "每页"
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "正在查看{{total}}中的{{firstItem}}-{{lastItem}} "
+
+msgid "Previous"
+msgstr "前一"
+
+msgid "Page"
+msgstr "页"
+
+msgid "of {{pageCount}}"
+msgstr "的{{pageCount}}"
+
+msgid "Next"
+msgstr "下一个"
+
+msgid "No error message was provided"
+msgstr ""
+
+msgid "Add special character"
+msgstr "添加特殊字符"
+
+msgid "Required values notice"
+msgstr "强制值通知"
+
+msgid "SMS short codes"
+msgstr "短信短代码"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Completeness method"
+msgstr "Completeness method"
+
+msgid "Receive all data values"
+msgstr "接收所有数据值"
+
+msgid "Receive at least one data value"
+msgstr "Receive at least one data value"
+
+msgid "Do not mark as complete"
+msgstr "Do not mark as complete"
+
+msgid "Confirm message"
+msgstr "确认讯息"
+
+msgid "Edit formula"
+msgstr "编辑公式"
+
+msgid "Add formula"
+msgstr "添加公式"
+
+msgid "Formula"
+msgstr "公式"
+
+msgid "Loading formula"
+msgstr "加载公式"
+
+msgid "default"
+msgstr "默认"
+
+msgid "Formula for {{combo}}"
+msgstr "{{combo}}的公式"
+
+msgid "Data element"
+msgstr "数据元"
+
+msgid "formula operator"
+msgstr "公式运算符"
+
+msgid "Something went wrong whilst saving"
+msgstr "保存时出了点问题"
+
+msgid "Remove"
+msgstr "移除"
+
+msgid "Save"
+msgstr "保存"
+
 msgid "Data set"
 msgstr "数据集"
+
+msgid "Reply message if no codes are sent (only the command)"
+msgstr "没有代码发送时的应答消息"
+
+msgid "More than one orgunit message"
+msgstr "一个以上机构的信息"
+
+msgid "No user message"
+msgstr "No user message"
+
+msgid "Parser"
+msgstr "Parser"
+
+msgid "Key value parser"
+msgstr "键值解析器"
+
+msgid "J2ME parser"
+msgstr "J2ME解析器"
+
+msgid "Alert parser"
+msgstr "警报解析器"
+
+msgid "Unregistered parser"
+msgstr "未注册的解析器"
+
+msgid "Tracked entity registration parser"
+msgstr "Tracked entity registration parser"
+
+msgid "Program stage data entry parser"
+msgstr "项目阶段数据输入解析器"
+
+msgid "Event registration parser"
+msgstr "事件注册解析器"
+
+msgid "Program"
+msgstr "项目"
+
+msgid "Program stage"
+msgstr "项目阶段"
+
+msgid "Field separator"
+msgstr "字段分隔符"
+
+msgid "Special character name"
+msgstr "特殊字符名称"
+
+msgid "Special character value"
+msgstr "特殊字符值"
+
+msgid "Success message"
+msgstr "成功讯息"
+
+msgid "Use current period for reporting"
+msgstr "使用当前期间进行报告"
+
+msgid "Wrong format message"
+msgstr "Wrong format message"
+
+msgid "Save command"
+msgstr "保存命令"
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr "加载sms命令时出了点问题"
+
+msgid "Something went wrong whilst loading the command's details"
+msgstr "加载命令详细信息时出了点问题"
+
+msgid "Special characters"
+msgstr "特殊字符"
+
+msgid "Duplicate value!"
+msgstr "值重复！"
+
+msgid "Something went wrong whilst submitting the form"
+msgstr "提交表格时出了点问题"
+
+msgid "Add command"
+msgstr "添加命令"
+
+msgid "Automatically selected by selecting a program"
+msgstr "通过选择项目自动选择"
+
+msgid "Something went wrong whilst loading commands"
+msgstr "加载命令时出了点问题"
+
+msgid "Edit command"
+msgstr "编辑指令"
+
+msgid "Unrecognised parser type"
+msgstr "无法识别的解析器类型"
+
+msgid "Could not find the requested parser type"
+msgstr "找不到请求的解析器类型"
+
+msgid "Something went wrong whilst performing the requested operation"
+msgstr "执行请求的操作时出了点问题"
+
+msgid ""
+"SMS commands process SMS messages received by a DHIS2 instance, taking "
+"certain actions depending on the command and message content. Multiple SMS "
+"commands can be set up to process and handle data in multiple ways. Add and "
+"configure SMS commands below. Read about SMS commands in the DHIS2 "
+"documentation."
+msgstr ""
+"SMS命令处理DHIS2实例接收到的SMS消息，并根据命令和消息内容采取某些措施。可以设置多个SMS命令以多种方式处理和处理数据。在下面添加和配置SMS命令。在DHIS2文档中阅读有关SMS命令的信息。"
 
 msgid "Delete selected"
 msgstr "删除选择的"
 
-msgid ""
-"Please make sure the value of this input matches the value in "
-"\"{{otherField}}\"."
-msgstr "请确保此输入的值与“ {{otherField}}”中的值匹配。"
+msgid "Are you sure you want to delete the selected commands?"
+msgstr "您确定要删除所选命令吗？"
 
-msgid "Confirm deletion"
-msgstr "确认删除"
+msgid "Sms command"
+msgstr "短信命令"
 
-msgid "Are you sure you want to delete the selected gateways?"
-msgstr "您确定要删除所选网关吗？"
+msgid "Edit"
+msgstr "编辑<br>"
+
+msgid "No commands to display"
+msgstr "无命令显示"
+
+msgid "Add key value pair"
+msgstr "添加键值对"
 
 msgid "Auth token"
 msgstr "验证令牌"
@@ -77,8 +300,23 @@ msgstr "内容类型"
 msgid "Host"
 msgstr "主持人"
 
-msgid "Name"
-msgstr "名称"
+msgid "Key"
+msgstr "键值"
+
+msgid "Send as header"
+msgstr "作为标题发送"
+
+msgid "Encode"
+msgstr "编码"
+
+msgid "Confidential"
+msgstr "保密"
+
+msgid "Remove key value pair"
+msgstr "删除键值对"
+
+msgid "Value"
+msgstr "值"
 
 msgid "Number plan indicator"
 msgstr "号码计划指示器"
@@ -116,17 +354,11 @@ msgstr "使用GET而不是POST将数据发送到网关"
 msgid "User name"
 msgstr "用户名"
 
-msgid "Add key value pair"
-msgstr "添加键值对"
-
 msgid "Save gateway"
 msgstr "保存网关"
 
 msgid "Add gateway"
 msgstr "添加网关"
-
-msgid "Cancel"
-msgstr "取消"
 
 msgid "Gateway setup"
 msgstr "网关设置"
@@ -134,35 +366,11 @@ msgstr "网关设置"
 msgid "Key value pairs"
 msgstr "键值对"
 
-msgid "Key"
-msgstr "键值"
-
-msgid "Send as header"
-msgstr "作为标题发送"
-
-msgid "Encode"
-msgstr "编码"
-
-msgid "Confidential"
-msgstr "保密"
-
-msgid "Remove key value pair"
-msgstr "删除键值对"
-
-msgid "Value"
-msgstr "值"
-
 msgid "Type"
 msgstr "类型"
 
-msgid "Make default"
-msgstr "作为默认"
-
-msgid "Default gateway"
-msgstr "默认网关"
-
-msgid "Edit"
-msgstr "编辑<br>"
+msgid "Generic"
+msgstr "普通"
 
 msgid "BulkSMS"
 msgstr "批量短信"
@@ -170,173 +378,11 @@ msgstr "批量短信"
 msgid "Clickatell"
 msgstr "Clickatell"
 
-msgid "Generic"
-msgstr "普通"
+msgid "SMPP"
+msgstr "开关电源"
 
-msgid "Show"
-msgstr "显示"
-
-msgid "per page"
-msgstr "每页"
-
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr "正在查看{{total}}中的{{firstItem}}-{{lastItem}} "
-
-msgid "Previous"
-msgstr "前一"
-
-msgid "Page"
-msgstr "页"
-
-msgid "of {{pageCount}}"
-msgstr "的{{pageCount}}"
-
-msgid "Next"
-msgstr "下一个"
-
-msgid "Program"
-msgstr "项目"
-
-msgid "Program stage"
-msgstr "项目阶段"
-
-msgid "Are you sure you want to delete the selected commands?"
-msgstr "您确定要删除所选命令吗？"
-
-msgid "Delete"
-msgstr "删除"
-
-msgid "Save command"
-msgstr "保存命令"
-
-msgid "Something went wrong whilst submitting the form"
-msgstr "提交表格时出了点问题"
-
-msgid "Something went wrong whilst loading the sms command"
-msgstr "加载sms命令时出了点问题"
-
-msgid "Something went wrong whilst loading the command's details"
-msgstr "加载命令详细信息时出了点问题"
-
-msgid "SMS short codes"
-msgstr "短信短代码"
-
-msgid "Add special character"
-msgstr "添加特殊字符"
-
-msgid "Required values notice"
-msgstr "强制值通知"
-
-msgid "Completeness method"
-msgstr "Completeness method"
-
-msgid "Confirm message"
-msgstr "确认讯息"
-
-msgid "Reply message if no codes are sent (only the command)"
-msgstr "没有代码发送时的应答消息"
-
-msgid "More than one orgunit message"
-msgstr "一个以上机构的信息"
-
-msgid "No user message"
-msgstr "No user message"
-
-msgid "Parser"
-msgstr "Parser"
-
-msgid "Field separator"
-msgstr "字段分隔符"
-
-msgid "Special character name"
-msgstr "特殊字符名称"
-
-msgid "Special character value"
-msgstr "特殊字符值"
-
-msgid "Remove"
-msgstr "移除"
-
-msgid "Success message"
-msgstr "成功讯息"
-
-msgid "Use current period for reporting"
-msgstr "使用当前期间进行报告"
-
-msgid "Wrong format message"
-msgstr "Wrong format message"
-
-msgid "default"
-msgstr "默认"
-
-msgid "Formula"
-msgstr "公式"
-
-msgid "Loading formula"
-msgstr "加载公式"
-
-msgid "Edit formula"
-msgstr "编辑公式"
-
-msgid "Add formula"
-msgstr "添加公式"
-
-msgid "Formula for {{combo}}"
-msgstr "{{combo}}的公式"
-
-msgid "Data element"
-msgstr "数据元"
-
-msgid "formula operator"
-msgstr "公式运算符"
-
-msgid "Something went wrong whilst saving"
-msgstr "保存时出了点问题"
-
-msgid "Save"
-msgstr "保存"
-
-msgid "Receive all data values"
-msgstr "接收所有数据值"
-
-msgid "Receive at least one data value"
-msgstr "Receive at least one data value"
-
-msgid "Do not mark as complete"
-msgstr "Do not mark as complete"
-
-msgid "Key value parser"
-msgstr "键值解析器"
-
-msgid "J2ME parser"
-msgstr "J2ME解析器"
-
-msgid "Alert parser"
-msgstr "警报解析器"
-
-msgid "Unregistered parser"
-msgstr "未注册的解析器"
-
-msgid "Tracked entity registration parser"
-msgstr "Tracked entity registration parser"
-
-msgid "Program stage data entry parser"
-msgstr "项目阶段数据输入解析器"
-
-msgid "Event registration parser"
-msgstr "事件注册解析器"
-
-msgid "Duplicate value!"
-msgstr "值重复！"
-
-msgid "Special characters"
-msgstr "特殊字符"
-
-msgid "No SMSes to display"
-msgstr "没有短信显示"
-
-msgid "User group"
-msgstr "User组"
+msgid "Something went wrong whilst saving the gateway"
+msgstr "保存网关时出了点问题"
 
 msgid "Something went wrong whilst loading gateways"
 msgstr "加载网关时出了点问题"
@@ -353,14 +399,11 @@ msgstr "找不到网关"
 msgid "The requested gateway could not be loaded"
 msgstr "请求的网关无法加载"
 
-msgid "Something went wrong whilst saving the gateway"
-msgstr "保存网关时出了点问题"
+msgid "Make default"
+msgstr "作为默认"
 
-msgid "SMPP"
-msgstr "开关电源"
-
-msgid "Something went wrong whilst performing the requested operation"
-msgstr "执行请求的操作时出了点问题"
+msgid "Default gateway"
+msgstr "默认网关"
 
 msgid ""
 "An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
@@ -378,6 +421,78 @@ msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
 msgstr "似乎没有任何已配置的网关，或者它们无法加载。"
+
+msgid "Are you sure you want to delete the selected gateways?"
+msgstr "您确定要删除所选网关吗？"
+
+msgid "Filter by status"
+msgstr "按状态过滤"
+
+msgid "Filter by phone number"
+msgstr "按电话号码过滤"
+
+msgid "Reset filter"
+msgstr "重置过滤器"
+
+msgid "Message"
+msgstr "消息"
+
+msgid "Phone number"
+msgstr "电话号码"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Sender"
+msgstr "发送者"
+
+msgid "Unknown"
+msgstr "未知"
+
+msgid "Something went wrong whilst loading received SMSes"
+msgstr "加载收到的SMS时出了点问题"
+
+msgid "Are you sure you want to delete the selected sms?"
+msgstr ""
+
+msgid "All"
+msgstr "全部"
+
+msgid "Failed"
+msgstr "Failed"
+
+msgid "Incoming"
+msgstr "Incoming"
+
+msgid "Processed"
+msgstr "Processed"
+
+msgid "Processing"
+msgstr "正在处理"
+
+msgid "Unhandled"
+msgstr "Unhandled"
+
+msgid "Recipients"
+msgstr "收件人"
+
+msgid "Something went wrong whilst loading sent SMSes"
+msgstr "加载发送的SMS时出了点问题"
+
+msgid "Delivered"
+msgstr "已交付"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "Outbound"
+msgstr "出站"
+
+msgid "Pending"
+msgstr "悬吊中"
+
+msgid "Scheduled"
+msgstr "已经调度"
 
 msgid "Overview: SMS Configuration"
 msgstr "概述：SMS配置"
@@ -425,111 +540,3 @@ msgstr "打开DHIS2收到的所有SMS消息的日志。"
 
 msgid "View all received SMS"
 msgstr "查看所有收到的短信"
-
-msgid "Filter by status"
-msgstr "按状态过滤"
-
-msgid "Filter by phone number"
-msgstr "按电话号码过滤"
-
-msgid "Reset filter"
-msgstr "重置过滤器"
-
-msgid "Received"
-msgstr "已收到"
-
-msgid "Something went wrong whilst loading received SMSes"
-msgstr "加载收到的SMS时出了点问题"
-
-msgid "Message"
-msgstr "消息"
-
-msgid "Phone number"
-msgstr "电话号码"
-
-msgid "Status"
-msgstr "状态"
-
-msgid "Sender"
-msgstr "发送者"
-
-msgid "Unknown"
-msgstr "未知"
-
-msgid "All"
-msgstr "全部"
-
-msgid "Failed"
-msgstr "Failed"
-
-msgid "Incoming"
-msgstr "Incoming"
-
-msgid "Processed"
-msgstr "Processed"
-
-msgid "Processing"
-msgstr "正在处理"
-
-msgid "Sent"
-msgstr "发送"
-
-msgid "Unhandled"
-msgstr "Unhandled"
-
-msgid "Something went wrong whilst loading sent SMSes"
-msgstr "加载发送的SMS时出了点问题"
-
-msgid "Recipients"
-msgstr "收件人"
-
-msgid "Delivered"
-msgstr "已交付"
-
-msgid "Error"
-msgstr "错误"
-
-msgid "Outbound"
-msgstr "出站"
-
-msgid "Pending"
-msgstr "悬吊中"
-
-msgid "Scheduled"
-msgstr "已经调度"
-
-msgid "Something went wrong whilst loading commands"
-msgstr "加载命令时出了点问题"
-
-msgid "Edit command"
-msgstr "编辑指令"
-
-msgid "Unrecognised parser type"
-msgstr "无法识别的解析器类型"
-
-msgid "Could not find the requested parser type"
-msgstr "找不到请求的解析器类型"
-
-msgid "Add command"
-msgstr "添加命令"
-
-msgid "Automatically selected by selecting a program"
-msgstr "通过选择项目自动选择"
-
-msgid "Commands"
-msgstr "指令"
-
-msgid ""
-"SMS commands process SMS messages received by a DHIS2 instance, taking "
-"certain actions depending on the command and message content. Multiple SMS "
-"commands can be set up to process and handle data in multiple ways. Add and "
-"configure SMS commands below. Read about SMS commands in the DHIS2 "
-"documentation."
-msgstr ""
-"SMS命令处理DHIS2实例接收到的SMS消息，并根据命令和消息内容采取某些措施。可以设置多个SMS命令以多种方式处理和处理数据。在下面添加和配置SMS命令。在DHIS2文档中阅读有关SMS命令的信息。"
-
-msgid "Sms command"
-msgstr "短信命令"
-
-msgid "No commands to display"
-msgstr "无命令显示"

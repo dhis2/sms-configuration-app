@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T13:21:14.657Z\n"
+"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -30,22 +30,244 @@ msgstr "Tidak, tetap di halaman ini"
 msgid "Yes, cancel"
 msgstr "Ya, batalkan"
 
+msgid "Confirm deletion"
+msgstr "Konfirmasi penghapusan"
+
+msgid "Cancel"
+msgstr "Batal"
+
+msgid "Delete"
+msgstr "Hapus"
+
+msgid "User group"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Gateway configuration"
+msgstr ""
+
+msgid "Commands"
+msgstr ""
+
+msgid "Sent"
+msgstr ""
+
+msgid "Received"
+msgstr ""
+
+msgid "No SMSes to display"
+msgstr ""
+
+msgid "Show"
+msgstr "Tampilkan"
+
+msgid "per page"
+msgstr ""
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr ""
+
+msgid "Previous"
+msgstr "Sebelumnya"
+
+msgid "Page"
+msgstr "Halaman"
+
+msgid "of {{pageCount}}"
+msgstr ""
+
+msgid "Next"
+msgstr "Se;lanjutnya"
+
+msgid "No error message was provided"
+msgstr ""
+
+msgid "Add special character"
+msgstr "Tambahkan karakter khusus"
+
+msgid "Required values notice"
+msgstr "Pemberitahuan nilai yang diperlukan"
+
+msgid "SMS short codes"
+msgstr "Kode pendek SMS"
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "Completeness method"
+msgstr "Metode kelengkapan"
+
+msgid "Receive all data values"
+msgstr "Terima semua nilai data"
+
+msgid "Receive at least one data value"
+msgstr "Terima setidaknya satu nilai data"
+
+msgid "Do not mark as complete"
+msgstr "Jangan tandai sebagai lengkap"
+
+msgid "Confirm message"
+msgstr "Konfirmasi pesan"
+
+msgid "Edit formula"
+msgstr "Edit formula"
+
+msgid "Add formula"
+msgstr "Tambahkan formula"
+
+msgid "Formula"
+msgstr "Formula"
+
+msgid "Loading formula"
+msgstr "Memuat formula"
+
+msgid "default"
+msgstr "default"
+
+msgid "Formula for {{combo}}"
+msgstr "Formula untuk {{combo}}"
+
+msgid "Data element"
+msgstr "Elemen data"
+
+msgid "formula operator"
+msgstr "operator formula"
+
+msgid "Something went wrong whilst saving"
+msgstr "Terjadi kesalahan saat menyimpan"
+
+msgid "Remove"
+msgstr "Hapus"
+
+msgid "Save"
+msgstr "Simpan"
+
 msgid "Data set"
 msgstr "Data set"
+
+msgid "Reply message if no codes are sent (only the command)"
+msgstr "Balas pesan jika tidak ada kode terkirim (hanya perintahnya)"
+
+msgid "More than one orgunit message"
+msgstr "Lebih dari satu pesan orgunit"
+
+msgid "No user message"
+msgstr "Tidak ada pesan pengguna"
+
+msgid "Parser"
+msgstr "Parser"
+
+msgid "Key value parser"
+msgstr "Parser key value"
+
+msgid "J2ME parser"
+msgstr "Parser J2ME"
+
+msgid "Alert parser"
+msgstr ""
+
+msgid "Unregistered parser"
+msgstr ""
+
+msgid "Tracked entity registration parser"
+msgstr ""
+
+msgid "Program stage data entry parser"
+msgstr ""
+
+msgid "Event registration parser"
+msgstr ""
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Program stage"
+msgstr "Tahapan program"
+
+msgid "Field separator"
+msgstr "Field separator"
+
+msgid "Special character name"
+msgstr "Nama karakter khusus"
+
+msgid "Special character value"
+msgstr "Nilai karakter khusus"
+
+msgid "Success message"
+msgstr "Pesan berhasil"
+
+msgid "Use current period for reporting"
+msgstr "Gunakan periode sekarang untuk pelaporan"
+
+msgid "Wrong format message"
+msgstr "Pesan format salah"
+
+msgid "Save command"
+msgstr "Simpan perintah"
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr "Terjadi kesalahan saat memuat perintah sms"
+
+msgid "Something went wrong whilst loading the command's details"
+msgstr "Terjadi kesalahan saat memuat rincian perintah"
+
+msgid "Special characters"
+msgstr ""
+
+msgid "Duplicate value!"
+msgstr ""
+
+msgid "Something went wrong whilst submitting the form"
+msgstr "Terjadi kesalahan saat mengirimkan borang"
+
+msgid "Add command"
+msgstr ""
+
+msgid "Automatically selected by selecting a program"
+msgstr ""
+
+msgid "Something went wrong whilst loading commands"
+msgstr ""
+
+msgid "Edit command"
+msgstr ""
+
+msgid "Unrecognised parser type"
+msgstr ""
+
+msgid "Could not find the requested parser type"
+msgstr ""
+
+msgid "Something went wrong whilst performing the requested operation"
+msgstr ""
+
+msgid ""
+"SMS commands process SMS messages received by a DHIS2 instance, taking "
+"certain actions depending on the command and message content. Multiple SMS "
+"commands can be set up to process and handle data in multiple ways. Add and "
+"configure SMS commands below. Read about SMS commands in the DHIS2 "
+"documentation."
+msgstr ""
 
 msgid "Delete selected"
 msgstr "Hapus yang terpilih"
 
-msgid ""
-"Please make sure the value of this input matches the value in "
-"\"{{otherField}}\"."
+msgid "Are you sure you want to delete the selected commands?"
+msgstr "Apakah Anda yakin ingin menghapus perintah yang terpilih?"
+
+msgid "Sms command"
 msgstr ""
 
-msgid "Confirm deletion"
-msgstr "Konfirmasi penghapusan"
+msgid "Edit"
+msgstr "Sunting"
 
-msgid "Are you sure you want to delete the selected gateways?"
-msgstr "Apakah Anda yakin ingin menghapus gateway yang terpilih?"
+msgid "No commands to display"
+msgstr ""
+
+msgid "Add key value pair"
+msgstr "Tambahkan pasangan nilai kunci"
 
 msgid "Auth token"
 msgstr "Token otorisasi"
@@ -80,8 +302,23 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
-msgid "Name"
-msgstr "Nama"
+msgid "Key"
+msgstr "Kunci"
+
+msgid "Send as header"
+msgstr "Kirim sebagai header"
+
+msgid "Encode"
+msgstr "Sandikan"
+
+msgid "Confidential"
+msgstr "Rahasia"
+
+msgid "Remove key value pair"
+msgstr "Hapus key value pair"
+
+msgid "Value"
+msgstr "Nilai"
 
 msgid "Number plan indicator"
 msgstr ""
@@ -119,17 +356,11 @@ msgstr ""
 msgid "User name"
 msgstr "Nama pengguna"
 
-msgid "Add key value pair"
-msgstr "Tambahkan pasangan nilai kunci"
-
 msgid "Save gateway"
 msgstr "Simpan gateway"
 
 msgid "Add gateway"
 msgstr "Tambahkan gateway"
-
-msgid "Cancel"
-msgstr "Batal"
 
 msgid "Gateway setup"
 msgstr "Setup gateway"
@@ -137,35 +368,11 @@ msgstr "Setup gateway"
 msgid "Key value pairs"
 msgstr "Key value pairs"
 
-msgid "Key"
-msgstr "Kunci"
-
-msgid "Send as header"
-msgstr "Kirim sebagai header"
-
-msgid "Encode"
-msgstr "Sandikan"
-
-msgid "Confidential"
-msgstr "Rahasia"
-
-msgid "Remove key value pair"
-msgstr "Hapus key value pair"
-
-msgid "Value"
-msgstr "Nilai"
-
 msgid "Type"
 msgstr "Tipe"
 
-msgid "Make default"
-msgstr "Jadikan default"
-
-msgid "Default gateway"
-msgstr "Gateway default"
-
-msgid "Edit"
-msgstr "Sunting"
+msgid "Generic"
+msgstr "Generik"
 
 msgid "BulkSMS"
 msgstr "BulkSMS"
@@ -173,172 +380,10 @@ msgstr "BulkSMS"
 msgid "Clickatell"
 msgstr "Clickatell"
 
-msgid "Generic"
-msgstr "Generik"
-
-msgid "Show"
-msgstr "Tampilkan"
-
-msgid "per page"
+msgid "SMPP"
 msgstr ""
 
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr ""
-
-msgid "Previous"
-msgstr "Sebelumnya"
-
-msgid "Page"
-msgstr "Halaman"
-
-msgid "of {{pageCount}}"
-msgstr ""
-
-msgid "Next"
-msgstr "Se;lanjutnya"
-
-msgid "Program"
-msgstr "Program"
-
-msgid "Program stage"
-msgstr "Tahapan program"
-
-msgid "Are you sure you want to delete the selected commands?"
-msgstr "Apakah Anda yakin ingin menghapus perintah yang terpilih?"
-
-msgid "Delete"
-msgstr "Hapus"
-
-msgid "Save command"
-msgstr "Simpan perintah"
-
-msgid "Something went wrong whilst submitting the form"
-msgstr "Terjadi kesalahan saat mengirimkan borang"
-
-msgid "Something went wrong whilst loading the sms command"
-msgstr "Terjadi kesalahan saat memuat perintah sms"
-
-msgid "Something went wrong whilst loading the command's details"
-msgstr "Terjadi kesalahan saat memuat rincian perintah"
-
-msgid "SMS short codes"
-msgstr "Kode pendek SMS"
-
-msgid "Add special character"
-msgstr "Tambahkan karakter khusus"
-
-msgid "Required values notice"
-msgstr "Pemberitahuan nilai yang diperlukan"
-
-msgid "Completeness method"
-msgstr "Metode kelengkapan"
-
-msgid "Confirm message"
-msgstr "Konfirmasi pesan"
-
-msgid "Reply message if no codes are sent (only the command)"
-msgstr "Balas pesan jika tidak ada kode terkirim (hanya perintahnya)"
-
-msgid "More than one orgunit message"
-msgstr "Lebih dari satu pesan orgunit"
-
-msgid "No user message"
-msgstr "Tidak ada pesan pengguna"
-
-msgid "Parser"
-msgstr "Parser"
-
-msgid "Field separator"
-msgstr "Field separator"
-
-msgid "Special character name"
-msgstr "Nama karakter khusus"
-
-msgid "Special character value"
-msgstr "Nilai karakter khusus"
-
-msgid "Remove"
-msgstr "Hapus"
-
-msgid "Success message"
-msgstr "Pesan berhasil"
-
-msgid "Use current period for reporting"
-msgstr "Gunakan periode sekarang untuk pelaporan"
-
-msgid "Wrong format message"
-msgstr "Pesan format salah"
-
-msgid "default"
-msgstr "default"
-
-msgid "Formula"
-msgstr "Formula"
-
-msgid "Loading formula"
-msgstr "Memuat formula"
-
-msgid "Edit formula"
-msgstr "Edit formula"
-
-msgid "Add formula"
-msgstr "Tambahkan formula"
-
-msgid "Formula for {{combo}}"
-msgstr "Formula untuk {{combo}}"
-
-msgid "Data element"
-msgstr "Elemen data"
-
-msgid "formula operator"
-msgstr "operator formula"
-
-msgid "Something went wrong whilst saving"
-msgstr "Terjadi kesalahan saat menyimpan"
-
-msgid "Save"
-msgstr "Simpan"
-
-msgid "Receive all data values"
-msgstr "Terima semua nilai data"
-
-msgid "Receive at least one data value"
-msgstr "Terima setidaknya satu nilai data"
-
-msgid "Do not mark as complete"
-msgstr "Jangan tandai sebagai lengkap"
-
-msgid "Key value parser"
-msgstr "Parser key value"
-
-msgid "J2ME parser"
-msgstr "Parser J2ME"
-
-msgid "Alert parser"
-msgstr ""
-
-msgid "Unregistered parser"
-msgstr ""
-
-msgid "Tracked entity registration parser"
-msgstr ""
-
-msgid "Program stage data entry parser"
-msgstr ""
-
-msgid "Event registration parser"
-msgstr ""
-
-msgid "Duplicate value!"
-msgstr ""
-
-msgid "Special characters"
-msgstr ""
-
-msgid "No SMSes to display"
-msgstr ""
-
-msgid "User group"
+msgid "Something went wrong whilst saving the gateway"
 msgstr ""
 
 msgid "Something went wrong whilst loading gateways"
@@ -356,14 +401,11 @@ msgstr ""
 msgid "The requested gateway could not be loaded"
 msgstr ""
 
-msgid "Something went wrong whilst saving the gateway"
-msgstr ""
+msgid "Make default"
+msgstr "Jadikan default"
 
-msgid "SMPP"
-msgstr ""
-
-msgid "Something went wrong whilst performing the requested operation"
-msgstr ""
+msgid "Default gateway"
+msgstr "Gateway default"
 
 msgid ""
 "An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
@@ -380,6 +422,78 @@ msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
 msgstr ""
+
+msgid "Are you sure you want to delete the selected gateways?"
+msgstr "Apakah Anda yakin ingin menghapus gateway yang terpilih?"
+
+msgid "Filter by status"
+msgstr ""
+
+msgid "Filter by phone number"
+msgstr ""
+
+msgid "Reset filter"
+msgstr ""
+
+msgid "Message"
+msgstr "Pesan"
+
+msgid "Phone number"
+msgstr "No. Telp."
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Sender"
+msgstr "Pengirim"
+
+msgid "Unknown"
+msgstr ""
+
+msgid "Something went wrong whilst loading received SMSes"
+msgstr ""
+
+msgid "Are you sure you want to delete the selected sms?"
+msgstr ""
+
+msgid "All"
+msgstr "Semua"
+
+msgid "Failed"
+msgstr ""
+
+msgid "Incoming"
+msgstr ""
+
+msgid "Processed"
+msgstr ""
+
+msgid "Processing"
+msgstr "Sedang dalam proses"
+
+msgid "Unhandled"
+msgstr ""
+
+msgid "Recipients"
+msgstr "Penerima"
+
+msgid "Something went wrong whilst loading sent SMSes"
+msgstr ""
+
+msgid "Delivered"
+msgstr ""
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Outbound"
+msgstr ""
+
+msgid "Pending"
+msgstr "Tertunda"
+
+msgid "Scheduled"
+msgstr "Terjadual"
 
 msgid "Overview: SMS Configuration"
 msgstr ""
@@ -426,111 +540,4 @@ msgid "Open logs of all SMS messages received by DHIS2."
 msgstr ""
 
 msgid "View all received SMS"
-msgstr ""
-
-msgid "Filter by status"
-msgstr ""
-
-msgid "Filter by phone number"
-msgstr ""
-
-msgid "Reset filter"
-msgstr ""
-
-msgid "Received"
-msgstr ""
-
-msgid "Something went wrong whilst loading received SMSes"
-msgstr ""
-
-msgid "Message"
-msgstr "Pesan"
-
-msgid "Phone number"
-msgstr "No. Telp."
-
-msgid "Status"
-msgstr "Status"
-
-msgid "Sender"
-msgstr "Pengirim"
-
-msgid "Unknown"
-msgstr ""
-
-msgid "All"
-msgstr "Semua"
-
-msgid "Failed"
-msgstr ""
-
-msgid "Incoming"
-msgstr ""
-
-msgid "Processed"
-msgstr ""
-
-msgid "Processing"
-msgstr "Sedang dalam proses"
-
-msgid "Sent"
-msgstr ""
-
-msgid "Unhandled"
-msgstr ""
-
-msgid "Something went wrong whilst loading sent SMSes"
-msgstr ""
-
-msgid "Recipients"
-msgstr "Penerima"
-
-msgid "Delivered"
-msgstr ""
-
-msgid "Error"
-msgstr "Error"
-
-msgid "Outbound"
-msgstr ""
-
-msgid "Pending"
-msgstr "Tertunda"
-
-msgid "Scheduled"
-msgstr "Terjadual"
-
-msgid "Something went wrong whilst loading commands"
-msgstr ""
-
-msgid "Edit command"
-msgstr ""
-
-msgid "Unrecognised parser type"
-msgstr ""
-
-msgid "Could not find the requested parser type"
-msgstr ""
-
-msgid "Add command"
-msgstr ""
-
-msgid "Automatically selected by selecting a program"
-msgstr ""
-
-msgid "Commands"
-msgstr ""
-
-msgid ""
-"SMS commands process SMS messages received by a DHIS2 instance, taking "
-"certain actions depending on the command and message content. Multiple SMS "
-"commands can be set up to process and handle data in multiple ways. Add and "
-"configure SMS commands below. Read about SMS commands in the DHIS2 "
-"documentation."
-msgstr ""
-
-msgid "Sms command"
-msgstr ""
-
-msgid "No commands to display"
 msgstr ""
