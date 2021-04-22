@@ -18,11 +18,11 @@ Given('the user is adding a new gateway with type BulkSMS', () => {
     }).as('createGatewayConfigurationXHR')
 
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
-    cy.get('{views-gatewayconfiglist-add}').click()
+    cy.get('{shared-navigationitem}:nth-child(2)').click()
+    cy.get('{shared-listactions-add}').click()
 
     cy.get(
-        '{views-gatewayconfigformnew-gatewaytype} [data-test="dhis2-uicore-singleselect"]'
+        '{smsgateway-viewsmsgatewayadd-gatewaytype} [data-test="dhis2-uicore-singleselect"]'
     ).click()
     cy.get('[data-value="bulksms"]').click()
 })
@@ -32,10 +32,10 @@ When('the user fills in complete form data', () => {
     const username = 'Username'
     const password = 'Password'
 
-    cy.get('{gateways-fieldgatewayname}').type(name)
-    cy.get('{gateways-fieldgatewayusername}').type(username)
-    cy.get('{gateways-fieldgatewaypassword}').type(password)
-    cy.get('{gateways-fieldgatewaypasswordconfirmation}').type(password)
+    cy.get('{smsgateway-fieldgatewayname}').type(name)
+    cy.get('{smsgateway-fieldusername}').type(username)
+    cy.get('{smsgateway-fieldpassword}').type(password)
+    cy.get('{smsgateway-fieldpasswordconfirmation}').type(password)
 
     cy.wrap({
         type: 'bulksms',
@@ -49,11 +49,11 @@ When('the user fills in incomplete form data', () => {
     const name = 'Name'
     const password = 'Password'
 
-    cy.get('{gateways-fieldgatewayname}').type(name)
-    cy.get('{gateways-fieldgatewaypassword}').type(password)
-    cy.get('{gateways-fieldgatewaypasswordconfirmation}').type(password)
+    cy.get('{smsgateway-fieldgatewayname}').type(name)
+    cy.get('{smsgateway-fieldpassword}').type(password)
+    cy.get('{smsgateway-fieldpasswordconfirmation}').type(password)
 
-    cy.get('{gateways-fieldgatewayusername}').as('missingFields')
+    cy.get('{smsgateway-fieldusername}').as('missingFields')
     cy.wrap({
         type: 'bulksms',
         username: '',

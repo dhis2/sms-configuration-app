@@ -79,56 +79,56 @@ Given('some gateways exist', () => {
 
 Given('the user navigated to the gateway configuration page', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.get('{shared-navigationitem}:nth-child(2)').click()
 })
 
 Given('the user wants to delete the first configuration', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
-    cy.get('{gateways-gatewaystable-checkbox}').first().find('label').click()
+    cy.get('{shared-navigationitem}:nth-child(2)').click()
+    cy.get('{smsgateway-table-checkbox}').first().find('label').click()
 })
 
 Given('the confirmation model is visible', () => {
-    cy.get('{views-gatewayconfiglist-delete}').click()
-    cy.get('{gateways-deleteconfirmationdialog}').should('exist')
+    cy.get('{shared-listactions-delete}').click()
+    cy.get('{shared-deleteconfirmationdialog}').should('exist')
 })
 
 Given('some gateway configurations have been selected', () => {
-    cy.get('{gateways-gatewaystable-checkbox}').first().find('label').click()
+    cy.get('{smsgateway-table-checkbox}').first().find('label').click()
 })
 
 Given('all gateway configurations have been selected', () => {
-    cy.get('{gateways-gatewaystable-checkall} label').click()
+    cy.get('{smsgateway-table-checkall} label').click()
 })
 
 Given('no gateway configuration has been selected', () => {
-    cy.get('{gateways-gatewaystable-checkbox} input').each($checkbox => {
+    cy.get('{smsgateway-table-checkbox} input').each($checkbox => {
         expect($checkbox).to.not.be.checked
     })
 })
 
 When('the user user selects the first gateway configuration', () => {
-    cy.get('{gateways-gatewaystable-checkbox}').first().find('label').click()
+    cy.get('{smsgateway-table-checkbox}').first().find('label').click()
 })
 
 When('the user cancels the deletion', () => {
-    cy.get('{gateways-deleteconfirmationdialog-cancel}').click()
+    cy.get('{shared-deleteconfirmationdialog-cancel}').click()
 })
 
 When('the user confirms the deletion', () => {
-    cy.get('{gateways-deleteconfirmationdialog-confirm}').click()
+    cy.get('{shared-deleteconfirmationdialog-confirm}').click()
 })
 
 When('clicks the delete button', () => {
-    cy.get('{views-gatewayconfiglist-delete}').click()
+    cy.get('{shared-listactions-delete}').click()
 })
 
 When('the user clicks the checkbox to select all', () => {
-    cy.get('{gateways-gatewaystable-checkall} label').click()
+    cy.get('{smsgateway-table-checkall} label').click()
 })
 
 Then('a confirmation model should pop up', () => {
-    cy.get('{gateways-deleteconfirmationdialog}').should('exist')
+    cy.get('{shared-deleteconfirmationdialog}').should('exist')
 })
 
 Then(
@@ -141,13 +141,13 @@ Then(
 )
 
 Then('the confirmation modal should close', () => {
-    cy.get('{gateways-deleteconfirmationdialog}').should('not.exist')
+    cy.get('{shared-deleteconfirmationdialog}').should('not.exist')
 })
 
 Then(
     "all individual gateway configurations' checkboxes should be selected",
     () => {
-        cy.get('{gateways-gatewaystable-checkbox} input').each($checkbox => {
+        cy.get('{smsgateway-table-checkbox} input').each($checkbox => {
             expect($checkbox).to.be.checked
         })
     }
@@ -156,14 +156,14 @@ Then(
 Then(
     "all individual gateway configurations' checkboxes should not be selected",
     () => {
-        cy.get('{gateways-gatewaystable-checkbox} input').each($checkbox => {
+        cy.get('{smsgateway-table-checkbox} input').each($checkbox => {
             expect($checkbox).to.not.be.checked
         })
     }
 )
 
 Then('the delete button should be disabled', () => {
-    cy.get('{views-gatewayconfiglist-delete}').should('be.disabled')
+    cy.get('{shared-listactions-delete}').should('be.disabled')
 })
 
 Then('an alert with an error message should be displayed', () => {

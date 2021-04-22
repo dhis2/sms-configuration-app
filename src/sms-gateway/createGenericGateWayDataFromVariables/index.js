@@ -1,0 +1,1 @@
+export { createGenericGateWayDataFromVariables } from './createGenericGateWayDataFromVariables'

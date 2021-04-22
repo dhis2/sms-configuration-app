@@ -53,15 +53,13 @@ Given('some gateway configurations exist', () => {
     })
 
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.get('{shared-navigationitem}:nth-child(2)').click()
 })
 
 When(
     'the user clicks on the make default button of a non-default gateway configuration',
     () => {
-        cy.get('{gateways-gatewaystable-makedefault}')
-            .first()
-            .as('makeDefaultButton')
+        cy.get('{smsgateway-table-makedefault}').first().as('makeDefaultButton')
 
         cy.get('@makeDefaultButton')
             .parents('tr')
@@ -72,7 +70,7 @@ When(
 )
 
 Then('there should be exactly one default gateway configuration', () => {
-    cy.get('{gateways-gatewaystable-isdefault}').should('have.lengthOf', 1)
+    cy.get('{smsgateway-table-isdefault}').should('have.lengthOf', 1)
 })
 
 Then(
@@ -83,7 +81,7 @@ Then(
             () =>
                 cy
                     .get('@newDefaultGatewayConfiguration')
-                    .find('{gateways-gatewaystable-id} input')
+                    .find('{smsgateway-table-id} input')
                     .invoke('val')
         ).then(([xhr, id]) => {
             expect(xhr.status).to.equal(200)

@@ -38,7 +38,7 @@ Before(() => {
 
 Given('the user is editing an unregistered parser command', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(3)').click()
+    cy.get('{shared-navigationitem}:nth-child(3)').click()
     // There's only one command in the mocked api response
     cy.get('{views-smscommandlist-commandtable} button').click()
 })
@@ -50,7 +50,7 @@ When('the user changes the name field', () => {
         name: newNameValue,
     }).as('newValues')
 
-    cy.get('{commands-fieldcommandname} input').clear().type(newNameValue)
+    cy.get('{smscommand-fieldcommandname} input').clear().type(newNameValue)
 })
 
 When('the user changes the confirmMessage field', () => {
@@ -60,17 +60,17 @@ When('the user changes the confirmMessage field', () => {
         receivedMessage: newConfirmMessageValue,
     }).as('newValues')
 
-    cy.get('{commands-fieldcommandconfirmmessage} textarea')
+    cy.get('{smscommand-fieldconfirmmessage} textarea')
         .clear()
         .type(newConfirmMessageValue)
 })
 
 When('the user changes the name field to an invalid value', () => {
-    cy.get('{commands-fieldcommandname} input').clear()
+    cy.get('{smscommand-fieldcommandname} input').clear()
 })
 
 When('the user submits the form', () => {
-    cy.get('{views-smscommandformedit} button[type="submit"]').click()
+    cy.get('{smscommand-viewsmscommandedit} button[type="submit"]').click()
 })
 
 Then('the complete command should be sent to the endpoint', () => {
@@ -119,5 +119,5 @@ Then(
 )
 
 Then('the form should not submit successfully', () => {
-    cy.get('{views-smscommandlist}').should('not.exist')
+    cy.get('{smscommand-viewsmscommandlist}').should('not.exist')
 })

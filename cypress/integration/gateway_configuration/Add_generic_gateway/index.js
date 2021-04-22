@@ -58,11 +58,11 @@ Given('the user navigated to the gateway configuration page', () => {
     })
 
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
+    cy.get('{shared-navigationitem}:nth-child(2)').click()
 })
 
 When('the user clicks on the add gateway button', () => {
-    cy.get('{views-gatewayconfiglist-add}').click()
+    cy.get('{shared-listactions-add}').click()
 })
 
 When('the user fills in complete form data', () => {
@@ -80,19 +80,19 @@ When('the user fills in complete form data', () => {
         parameters: [],
     }).as('gatewayData')
 
-    cy.get('{gateways-fieldgatewayname} input').type(name)
-    cy.get('{gateways-fieldgatewayurltemplate} input').type(urlTemplate)
-    cy.get('{gateways-fieldgatewayconfigurationtemplate} input').type(
+    cy.get('{smsgateway-fieldgatewayname} input').type(name)
+    cy.get('{smsgateway-fieldurltemplate} input').type(urlTemplate)
+    cy.get('{smsgateway-fieldconfigurationtemplate} input').type(
         configurationTemplate
     )
 
-    cy.get('{gateways-fieldgatewaycontenttype-content}').click()
+    cy.get('{smsgateway-fieldcontenttype-content}').click()
     cy.get(`[data-value="${contentType}"]`).click()
 })
 
 When('the user fills in incomplete form data', () => {
-    cy.get('{gateways-fieldgatewayname} input').type('Name')
-    cy.get('{gateways-fieldgatewayurltemplate}').as('missingFields')
+    cy.get('{smsgateway-fieldgatewayname} input').type('Name')
+    cy.get('{smsgateway-fieldurltemplate}').as('missingFields')
 })
 
 When('the user submits', () => {
@@ -100,16 +100,16 @@ When('the user submits', () => {
 })
 
 Then('the add gateway form should be displayed', () => {
-    cy.get('{views-gatewayconfigformnew}').should('exist')
+    cy.get('{smsgateway-viewsmsgatewayadd}').should('exist')
 })
 
 Then('the default gateway type is "generic"', () => {
     cy.get(
-        '{views-gatewayconfigformnew-gatewaytype} {views-gatewayconfigformnew-gatewaytype-content}'
+        '{smsgateway-viewsmsgatewayadd-gatewaytype} {smsgateway-viewsmsgatewayadd-gatewaytype-content}'
     ).should('exist')
 
     cy.get(
-        '{views-gatewayconfigformnew-gatewaytype} {views-gatewayconfigformnew-gatewaytype-content}'
+        '{smsgateway-viewsmsgatewayadd-gatewaytype} {smsgateway-viewsmsgatewayadd-gatewaytype-content}'
     ).should('contain', 'Generic')
 })
 

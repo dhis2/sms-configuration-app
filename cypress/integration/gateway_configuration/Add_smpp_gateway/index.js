@@ -23,11 +23,11 @@ Given('the user is adding a new gateway with type SMPP', () => {
     }).as('createGatewayConfigurationXHR')
 
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(2)').click()
-    cy.get('{views-gatewayconfiglist-add}').click()
+    cy.get('{shared-navigationitem}:nth-child(2)').click()
+    cy.get('{shared-listactions-add}').click()
 
     selectSelectValue(
-        '{views-gatewayconfigformnew-gatewaytype} [data-test="dhis2-uicore-singleselect"]',
+        '{smsgateway-viewsmsgatewayadd-gatewaytype} [data-test="dhis2-uicore-singleselect"]',
         'smpp'
     )
 })
@@ -44,24 +44,24 @@ When('the user fills in complete form data', () => {
     const bindType = 'BIND_TX'
     const compressed = false
 
-    cy.get('{gateways-fieldgatewayname}').type(name)
-    cy.get('{gateways-fieldgatewaysystemid}').type(systemId)
-    cy.get('{gateways-fieldgatewayhost}').type(host)
-    cy.get('{gateways-fieldgatewaysystemtype}').type(systemType)
+    cy.get('{smsgateway-fieldgatewayname}').type(name)
+    cy.get('{smsgateway-fieldsystemid}').type(systemId)
+    cy.get('{smsgateway-fieldhost}').type(host)
+    cy.get('{smsgateway-fieldsystemtype}').type(systemType)
     selectSelectValue(
-        '{gateways-fieldgatewaynumberplanindicator} [data-test="dhis2-uicore-singleselect"]',
+        '{smsgateway-fieldnumberplanindicator} [data-test="dhis2-uicore-singleselect"]',
         numberPlanIndicator
     )
     selectSelectValue(
-        '{gateways-fieldgatewaytypeofnumber} [data-test="dhis2-uicore-singleselect"]',
+        '{smsgateway-fieldtypeofnumber} [data-test="dhis2-uicore-singleselect"]',
         typeOfNumber
     )
     selectSelectValue(
-        '{gateways-fieldgatewaybindtype} [data-test="dhis2-uicore-singleselect"]',
+        '{smsgateway-fieldbindtype} [data-test="dhis2-uicore-singleselect"]',
         bindType
     )
-    cy.get('{gateways-fieldgatewayport}').type(port)
-    cy.get('{gateways-fieldgatewaypassword}').type(password)
+    cy.get('{smsgateway-fieldport}').type(port)
+    cy.get('{smsgateway-fieldpassword}').type(password)
 
     cy.wrap({
         type: 'smpp',
@@ -89,25 +89,25 @@ When('the user fills in incomplete form data', () => {
     const bindType = 'BIND_TX'
     const compressed = false
 
-    cy.get('{gateways-fieldgatewaysystemid}').type(systemId)
-    cy.get('{gateways-fieldgatewayhost}').type(host)
-    cy.get('{gateways-fieldgatewaysystemtype}').type(systemType)
+    cy.get('{smsgateway-fieldsystemid}').type(systemId)
+    cy.get('{smsgateway-fieldhost}').type(host)
+    cy.get('{smsgateway-fieldsystemtype}').type(systemType)
     selectSelectValue(
-        '{gateways-fieldgatewaynumberplanindicator} [data-test="dhis2-uicore-singleselect"]',
+        '{smsgateway-fieldnumberplanindicator} [data-test="dhis2-uicore-singleselect"]',
         numberPlanIndicator
     )
     selectSelectValue(
-        '{gateways-fieldgatewaytypeofnumber} [data-test="dhis2-uicore-singleselect"]',
+        '{smsgateway-fieldtypeofnumber} [data-test="dhis2-uicore-singleselect"]',
         typeOfNumber
     )
     selectSelectValue(
-        '{gateways-fieldgatewaybindtype} [data-test="dhis2-uicore-singleselect"]',
+        '{smsgateway-fieldbindtype} [data-test="dhis2-uicore-singleselect"]',
         bindType
     )
-    cy.get('{gateways-fieldgatewayport}').type(port)
-    cy.get('{gateways-fieldgatewaypassword}').type(password)
+    cy.get('{smsgateway-fieldport}').type(port)
+    cy.get('{smsgateway-fieldpassword}').type(password)
 
-    cy.get('{gateways-fieldgatewayname}').as('missingFields')
+    cy.get('{smsgateway-fieldgatewayname}').as('missingFields')
     cy.wrap({
         type: 'smpp',
         name: '',

@@ -9,6 +9,10 @@ Then("the 'delete selected' button should be enabled", () => {
     cy.get('button.destructive').should('be.enabled')
 })
 
+Then('the user should be asked to confirm his choice', () => {
+    cy.get('{shared-deleteconfirmationdialog}').should('exist')
+})
+
 When('the user selects a message', () => {
     cy.route({
         method: 'DELETE',
@@ -48,6 +52,10 @@ When('the user selects all messages', () => {
 
 When("the user clicks on the 'delete selected' button", () => {
     cy.get('button.destructive').click()
+})
+
+When('the user confirms the deletion', () => {
+    cy.get('{shared-deleteconfirmationdialog-confirm}').click()
 })
 
 Then('the message should be deleted', () => {

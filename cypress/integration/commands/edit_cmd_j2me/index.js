@@ -98,39 +98,37 @@ Given('the command has short code fields with a value and a formula', () => {
 
 Given('the user is editing an J2ME parser command', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{navigation-navigationitem}:nth-child(3)').click()
+    cy.get('{shared-navigationitem}:nth-child(3)').click()
 
     // There's only one command in the mocked api response
     cy.get('{views-smscommandlist-commandtable} button').click()
 })
 
 When('the user changes the name field', () => {
-    cy.get('{commands-fieldcommandname} input')
+    cy.get('{smscommand-fieldcommandname} input')
         .invoke('val')
         .then(currentName => {
             cy.wrap({ name: `${currentName}!` }).as('newValues')
-            cy.get('{commands-fieldcommandname} input').type('!')
+            cy.get('{smscommand-fieldcommandname} input').type('!')
         })
 })
 
 When('the user changes the completenessMethod field', () => {
     const completenessMethod = 'ALL_DATAVALUE'
-    cy.get('{smscommandfields-fieldcommandcompletenessmethod-content}').click()
+    cy.get('{smscommand-fieldcompletenessmethod-content}').click()
     cy.get(`[data-value="${completenessMethod}"]`).click()
     cy.wrap({ completenessMethod }).as('newValues')
 })
 
 When('the user changes the currentPeriodUsedForReporting field', () => {
-    cy.get(
-        '{smscommandfields-fieldcommandusecurrentperiodforreporting} label'
-    ).click()
+    cy.get('{smscommand-fieldusecurrentperiodforreporting} label').click()
     cy.wrap({ currentPeriodUsedForReporting: true }).as('newValues')
 })
 
 When('the user changes the fieldSeparator field', () => {
     const separator = 'New separator'
 
-    cy.get('{forms-fieldcommandseparator} input').clear().type(separator)
+    cy.get('{smscommand-fieldseparator} input').clear().type(separator)
 
     cy.wrap({ separator }).as('newValues')
 })
@@ -138,7 +136,7 @@ When('the user changes the fieldSeparator field', () => {
 When('the user changes the replyMessage field', () => {
     const defaultMessage = 'New default message'
 
-    cy.get('{forms-fieldcommanddefaultmessage} textarea')
+    cy.get('{smscommand-fielddefaultmessage} textarea')
         .clear()
         .type(defaultMessage)
 
@@ -148,7 +146,7 @@ When('the user changes the replyMessage field', () => {
 When('the user changes the wrongFormatMessage field', () => {
     const wrongFormatMessage = 'New wrong format message'
 
-    cy.get('{forms-fieldcommandwrongformatmessage} textarea')
+    cy.get('{smscommand-fieldwrongformatmessage} textarea')
         .clear()
         .type(wrongFormatMessage)
 
@@ -158,7 +156,7 @@ When('the user changes the wrongFormatMessage field', () => {
 When('the user changes the noUserMessage field', () => {
     const noUserMessage = 'New no user message'
 
-    cy.get('{forms-fieldcommandnousermessage} textarea')
+    cy.get('{smscommand-fieldnousermessage} textarea')
         .clear()
         .type(noUserMessage)
 
@@ -168,7 +166,7 @@ When('the user changes the noUserMessage field', () => {
 When('the user changes the moreThanOneOrgUnitMessage field', () => {
     const moreThanOneOrgUnitMessage = 'New more than one org unit message'
 
-    cy.get('{forms-fieldcommandmorethanoneorgunitmessage} textarea')
+    cy.get('{smscommand-fieldmorethanoneorgunitmessage} textarea')
         .clear()
         .type(moreThanOneOrgUnitMessage)
 
@@ -178,7 +176,7 @@ When('the user changes the moreThanOneOrgUnitMessage field', () => {
 When('the user changes the successMessage field', () => {
     const successMessage = 'New success message'
 
-    cy.get('{forms-fieldcommandsuccessmessage} textarea')
+    cy.get('{smscommand-fieldsuccessmessage} textarea')
         .clear()
         .type(successMessage)
 
@@ -186,17 +184,17 @@ When('the user changes the successMessage field', () => {
 })
 
 When('the user changes the name field to an invalid value', () => {
-    cy.get('{commands-fieldcommandname} input').clear()
+    cy.get('{smscommand-fieldcommandname} input').clear()
 })
 
 When('the user submits the form', () => {
-    cy.get('{views-smscommandformedit} button[type="submit"]').click()
+    cy.get('{smscommand-viewsmscommandedit} button[type="submit"]').click()
 })
 
 When('the user changes the value of a short code', () => {
     const newSmsCodeValue = 'Foo bar baz'
 
-    cy.get('{smscommandfields-dataelementtimescategoryoptioncombos-rows} input')
+    cy.get('{smscommand-dataelementtimescategoryoptioncombos-rows} input')
         .invoke('filter', (_, input) => !!Cypress.$(input).val())
         .clear()
         .type(newSmsCodeValue)
@@ -206,7 +204,7 @@ When('the user changes the value of a short code', () => {
 
 When('the user adds a formula', () => {
     cy.get(
-        '{smscommandfields-dataelementtimescategoryoptioncombos-rows} {forms-formrow}:first-child {smscommandfields-fielddataelementwithcategoryoptioncomboaddformulabutton-button}'
+        '{smscommand-dataelementtimescategoryoptioncombos-rows} {shared-formrow}:first-child {smscommand-fielddataelementwithcategoryoptioncombo-addformulabutton}'
     ).click()
 
     cy.fixture('commands/edit_cmd_j2me/dataSets').then(
@@ -214,7 +212,7 @@ When('the user adds a formula', () => {
             const [{ dataElement }] = dataSetElements
 
             cy.get(
-                '{smscommandfields-fielddataelementwithcategoryoptioncomboformula-dataelement}'
+                '{smscommand-fielddataelementwithcategoryoptioncomboformula-dataelement}'
             ).click()
 
             cy.get(
@@ -226,7 +224,7 @@ When('the user adds a formula', () => {
     )
 
     cy.get(
-        '{smscommandfields-fielddataelementwithcategoryoptioncomboformula-save}'
+        '{smscommand-fielddataelementwithcategoryoptioncomboformula-save}'
     ).click()
 })
 
@@ -415,7 +413,7 @@ Then(
 )
 
 Then('the form should not submit successfully', () => {
-    cy.get('{views-smscommandformedit} .error').should(
+    cy.get('{smscommand-viewsmscommandedit} .error').should(
         'have.length.of.at.least',
         1
     )

@@ -1,0 +1,1 @@
+export { ReceivedSmsTable } from './ReceivedSmsTable'
