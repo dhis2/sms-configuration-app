@@ -85,10 +85,10 @@ Given('the user navigated to the gateway configuration page', () => {
 })
 
 When('the user clicks on the update button in the first SMPP gateway', () => {
-    cy.get('{smsgateway-stable-type}:contains("smpp")')
+    cy.get('{smsgateway-table-type}:contains("smpp")')
         .first()
         .parents('tr')
-        .find('{smsgateway-stable-edit}')
+        .find('{smsgateway-table-edit}')
         .click()
 
     cy.wrap(gateways[0])
@@ -103,7 +103,11 @@ When(
             editedGatewayConfiguration => {
                 let newValue
                 const prevValue = editedGatewayConfiguration[field]
-                const dataTest = `{smsgateway-field${field.toLowerCase()}}`
+                const dataTest =
+                    field === 'name'
+                        ? `{smsgateway-fieldgatewayname}`
+                        : `{smsgateway-field${field.toLowerCase()}}`
+
                 const isInputField = [
                     'name',
                     'systemId',
@@ -159,7 +163,11 @@ When('submits the form', () => {
 When(
     /the user changes the (.+) field's value to another invalid value/,
     field => {
-        const dataTest = `{smsgateway-field${field.toLowerCase()}}`
+        const dataTest =
+            field === 'name'
+                ? `{smsgateway-fieldgatewayname}`
+                : `{smsgateway-field${field.toLowerCase()}}`
+
         const newValue = field === 'port' ? '1337' : 'This is a new value'
         cy.get(dataTest).as('invalidField').find('input').clear()
 
@@ -208,8 +216,8 @@ When('the user changes some fields to valid values', () => {
 })
 
 Then('the app should navigate to the update form', () => {
-    cy.get('{views-gatewayconfigformedit}').should('exist')
-    cy.get('{views-gatewayconfigformedit-formcontainer}')
+    cy.get('{smsgateway-viewsmsgatewayedit}').should('exist')
+    cy.get('{smsgateway-viewsmsgatewayedit-formcontainer}')
         .invoke('attr', 'data-gateway-id')
         .as('gatewayId')
 })
@@ -315,7 +323,7 @@ Then('the updates should be sent to the correct endpoint', () => {
 })
 
 Then('the form does not submit', () => {
-    cy.get('{views-gatewayconfiglist}').should('not.exist')
+    cy.get('{smsgateway-viewsmsgatewaylist}').should('not.exist')
 })
 
 Then('an error message should be shown at the invalid field', () => {
@@ -325,6 +333,6 @@ Then('an error message should be shown at the invalid field', () => {
 Then(
     'the user should be redirected to the gateway configuration overview page',
     () => {
-        cy.get('{views-gatewayconfiglist}').should('exist')
+        cy.get('{smsgateway-viewsmsgatewaylist}').should('exist')
     }
 )

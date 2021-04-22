@@ -62,7 +62,7 @@ Given('the user navigated to the gateway configuration page', () => {
 })
 
 When('the user clicks on the add gateway button', () => {
-    cy.get('{views-gatewayconfiglist-add}').click()
+    cy.get('{shared-listactions-add}').click()
 })
 
 When('the user fills in complete form data', () => {
@@ -100,16 +100,16 @@ When('the user submits', () => {
 })
 
 Then('the add gateway form should be displayed', () => {
-    cy.get('{views-gatewayconfigformnew}').should('exist')
+    cy.get('{smsgateway-viewsmsgatewayadd}').should('exist')
 })
 
 Then('the default gateway type is "generic"', () => {
     cy.get(
-        '{views-gatewayconfigformnew-gatewaytype} {views-gatewayconfigformnew-gatewaytype-content}'
+        '{smsgateway-viewsmsgatewayadd-gatewaytype} {smsgateway-viewsmsgatewayadd-gatewaytype-content}'
     ).should('exist')
 
     cy.get(
-        '{views-gatewayconfigformnew-gatewaytype} {views-gatewayconfigformnew-gatewaytype-content}'
+        '{smsgateway-viewsmsgatewayadd-gatewaytype} {smsgateway-viewsmsgatewayadd-gatewaytype-content}'
     ).should('contain', 'Generic')
 })
 

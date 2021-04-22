@@ -33,7 +33,7 @@ export const GatewaysTable = ({
             <TableHead>
                 <TableRowHead>
                     <TableCellHead
-                        dataTest={dataTest('smsgateway-stable-checkall')}
+                        dataTest={dataTest('smsgateway-table-checkall')}
                     >
                         <Checkbox
                             onChange={onToggleAll}
@@ -51,7 +51,7 @@ export const GatewaysTable = ({
                 {gateways.map(gateway => (
                     <TableRow
                         key={gateway.uid}
-                        dataTest={dataTest('smsgateway-stable-row')}
+                        dataTest={dataTest('smsgateway-table-row')}
                     >
                         <TableCell
                             className={styles.checkboxCell}
@@ -61,19 +61,17 @@ export const GatewaysTable = ({
                                 value={gateway.uid}
                                 onChange={() => onGatewayToggle(gateway.uid)}
                                 checked={checkedGateways.includes(gateway.uid)}
-                                dataTest={dataTest('smsgateway-stable-id')}
+                                dataTest={dataTest('smsgateway-table-id')}
                             />
                         </TableCell>
 
-                        <TableCell
-                            dataTest={dataTest('smsgateway-stable-name')}
-                        >
+                        <TableCell dataTest={dataTest('smsgateway-table-name')}>
                             {gateway.name}
                         </TableCell>
 
                         <TableCell
                             className={styles.typeCell}
-                            dataTest={dataTest('smsgateway-stable-type')}
+                            dataTest={dataTest('smsgateway-table-type')}
                         >
                             {getTypeLabelByType(gateway.type)}
                         </TableCell>

@@ -168,7 +168,7 @@ export const ViewSmsGatewayEdit = () => {
                 {gatewayType ? (
                     <div
                         data-test={dataTest(
-                            'views-gatewayconfigformedit-formcontainer'
+                            'smsgateway-viewsmsgatewayedit-formcontainer'
                         )}
                         data-gateway-id={data.gateway.uid}
                     >

@@ -24,10 +24,10 @@ Given('the user is adding a new gateway with type SMPP', () => {
 
     cy.visitWhenStubbed('/')
     cy.get('{shared-navigationitem}:nth-child(2)').click()
-    cy.get('{views-gatewayconfiglist-add}').click()
+    cy.get('{shared-listactions-add}').click()
 
     selectSelectValue(
-        '{views-gatewayconfigformnew-gatewaytype} [data-test="dhis2-uicore-singleselect"]',
+        '{smsgateway-viewsmsgatewayadd-gatewaytype} [data-test="dhis2-uicore-singleselect"]',
         'smpp'
     )
 })

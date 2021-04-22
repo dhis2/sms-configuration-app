@@ -12,7 +12,7 @@ export const InputSingleSelectGatewayType = ({ onChange, selected }) => (
         label={i18n.t('Type')}
         onChange={onChange}
         selected={selected}
-        dataTest={dataTest('views-gatewayconfigformnew-gatewaytype')}
+        dataTest={dataTest('smsgateway-viewsmsgatewayadd-gatewaytype')}
     >
         <SingleSelectOption value={GENERIC_FORM} label={i18n.t('Generic')} />
         <SingleSelectOption value={BULK_SMS_FORM} label={i18n.t('BulkSMS')} />

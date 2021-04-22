@@ -97,7 +97,7 @@ export const ViewSmsGatewayAdd = () => {
     return (
         <TemplateSidebarNavContent>
             <div
-                data-test={dataTest('views-gatewayconfigformnew')}
+                data-test={dataTest('smsgateway-viewsmsgatewayadd')}
                 className={styles.container}
             >
                 <PageHeadline>{i18n.t('Add gateway')}</PageHeadline>
@@ -108,7 +108,7 @@ export const ViewSmsGatewayAdd = () => {
                         onChange={({ selected }) => setVisibleForm(selected)}
                         selected={visibleForm}
                         dataTest={dataTest(
-                            'views-gatewayconfigformnew-gatewaytype'
+                            'smsgateway-viewsmsgatewayadd-gatewaytype'
                         )}
                     >
                         <SingleSelectOption

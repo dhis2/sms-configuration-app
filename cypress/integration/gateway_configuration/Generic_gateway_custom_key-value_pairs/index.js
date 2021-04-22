@@ -89,20 +89,18 @@ Given('the user is editing a generic gateway configuration', () => {
 
     cy.wrap('editing').as('operation')
 
-    cy.get(
-        '{smsgateway-stable-row}:first-child {smsgateway-stable-edit}'
-    ).click()
+    cy.get('{smsgateway-table-row}:first-child {smsgateway-table-edit}').click()
 
-    cy.get('{views-gatewayconfigformedit}').should('exist')
-    cy.get('{views-gatewayconfigformedit-formcontainer}')
+    cy.get('{smsgateway-viewsmsgatewayedit}').should('exist')
+    cy.get('{smsgateway-viewsmsgatewayedit-formcontainer}')
         .invoke('attr', 'data-gateway-id')
         .as('gatewayId')
 })
 
 Given('the user is adding a generic gateway configuration', () => {
     cy.wrap('adding').as('operation')
-    cy.get('{views-gatewayconfiglist-add}').click()
-    cy.get('{views-gatewayconfigformnew}').should('exist')
+    cy.get('{shared-listactions-add}').click()
+    cy.get('{smsgateway-viewsmsgatewayadd}').should('exist')
 
     // Need to provide the required values,
     // otherwise the form can't be submitted

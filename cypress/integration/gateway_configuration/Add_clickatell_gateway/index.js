@@ -19,10 +19,10 @@ Given('the user is adding a new gateway with type Clickatell', () => {
 
     cy.visitWhenStubbed('/')
     cy.get('{shared-navigationitem}:nth-child(2)').click()
-    cy.get('{views-gatewayconfiglist-add}').click()
+    cy.get('{shared-listactions-add}').click()
 
     cy.get(
-        '{views-gatewayconfigformnew-gatewaytype} [data-test="dhis2-uicore-singleselect"]'
+        '{smsgateway-viewsmsgatewayadd-gatewaytype} [data-test="dhis2-uicore-singleselect"]'
     ).click()
     cy.get('[data-value="clickatell"]').click()
 })

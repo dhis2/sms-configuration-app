@@ -60,7 +60,7 @@ Given('the user wants to delete the first command', () => {
         .first()
         .find('label')
         .click()
-    cy.get('{views-smscommandlist-delete}').click()
+    cy.get('{shared-listactions-delete}').click()
 })
 
 Given('the confirmation modal is visible', () => {
@@ -104,7 +104,7 @@ When('the user confirms the deletion', () => {
 })
 
 When('clicks the delete button', () => {
-    cy.get('{views-smscommandlist-delete}').click()
+    cy.get('{shared-listactions-delete}').click()
 })
 
 When('the user clicks the checkbox to select all', () => {
@@ -146,7 +146,7 @@ Then("all individual commands' checkboxes should not be selected", () => {
 })
 
 Then('the delete button should be disabled', () => {
-    cy.get('{views-smscommandlist-delete}').should('be.disabled')
+    cy.get('{shared-listactions-delete}').should('be.disabled')
 })
 
 Then('an alert with an error message should be displayed', () => {

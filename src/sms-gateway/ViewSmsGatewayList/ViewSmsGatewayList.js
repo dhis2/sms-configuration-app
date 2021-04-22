@@ -102,7 +102,7 @@ export const ViewSmsGatewayList = () => {
                 <ListActions
                     addLabel={i18n.t('Add gateway')}
                     deleteLabel={i18n.t('Delete selected')}
-                    dataTest="views-gatewayconfiglist"
+                    dataTest="smsgateway-viewsmsgatewaylist"
                     onAddClick={onAddGatewayClick}
                     onDeleteClick={() => setShowDeleteDialog(true)}
                     disableAdd={loadingDelete}

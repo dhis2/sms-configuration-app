@@ -67,10 +67,10 @@ Given('the user navigated to the gateway configuration page', () => {
 When(
     'the user clicks on the update button in the first clickatell gateway',
     () => {
-        cy.get('{smsgateway-stable-type}:contains("Clickatell")')
+        cy.get('{smsgateway-table-type}:contains("Clickatell")')
             .first()
             .parents('tr')
-            .find('{smsgateway-stable-edit}')
+            .find('{smsgateway-table-edit}')
             .click()
 
         cy.wrap(gateways[1])
@@ -185,8 +185,8 @@ When('the user changes some fields to valid values', () => {
 })
 
 Then('the app should navigate to the update form', () => {
-    cy.get('{views-gatewayconfigformedit}').should('exist')
-    cy.get('{views-gatewayconfigformedit-formcontainer}')
+    cy.get('{smsgateway-viewsmsgatewayedit}').should('exist')
+    cy.get('{smsgateway-viewsmsgatewayedit-formcontainer}')
         .invoke('attr', 'data-gateway-id')
         .as('gatewayId')
 })
@@ -241,7 +241,7 @@ Then('the updates should be sent to the correct endpoint', () => {
 })
 
 Then('the form does not submit', () => {
-    cy.get('{views-gatewayconfiglist}').should('not.exist')
+    cy.get('{smsgateway-viewsmsgatewaylist}').should('not.exist')
 })
 
 Then('an error message should be shown at the invalid field', () => {
@@ -251,6 +251,6 @@ Then('an error message should be shown at the invalid field', () => {
 Then(
     'the user should be redirected to the gateway configuration overview page',
     () => {
-        cy.get('{views-gatewayconfiglist}').should('exist')
+        cy.get('{smsgateway-viewsmsgatewaylist}').should('exist')
     }
 )
