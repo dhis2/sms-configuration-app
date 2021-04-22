@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T13:21:14.657Z\n"
+"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
 "Language-Team: Uzbek (Latin) (https://www.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -25,24 +25,250 @@ msgstr "Yoʼq, sahifada qolish"
 msgid "Yes, cancel"
 msgstr "Ha, bekor qilish"
 
+msgid "Confirm deletion"
+msgstr "Oʼchirishni tasdiqlash"
+
+msgid "Cancel"
+msgstr "Бекор қилиш"
+
+msgid "Delete"
+msgstr "Oʼchirib tashlash"
+
+msgid "User group"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Gateway configuration"
+msgstr ""
+
+msgid "Commands"
+msgstr "Buyruqlar"
+
+msgid "Sent"
+msgstr "Yuborildi"
+
+msgid "Received"
+msgstr "Qabul qilindi"
+
+msgid "No SMSes to display"
+msgstr "Koʼrsatish uchun SMSlar yoʼq"
+
+msgid "Show"
+msgstr "Koʼrsating"
+
+msgid "per page"
+msgstr "har sahifada"
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "Koʼrinish {{Jami}} dan {{DastlabkiElement}}-{{OxirgiElement}}"
+
+msgid "Previous"
+msgstr "Oldingi"
+
+msgid "Page"
+msgstr "Sahifa"
+
+msgid "of {{pageCount}}"
+msgstr "{{pageCount}} ga/dan"
+
+msgid "Next"
+msgstr "Кейинги"
+
+msgid "No error message was provided"
+msgstr ""
+
+msgid "Add special character"
+msgstr "Maxsus belgini qoʼshish"
+
+msgid "Required values notice"
+msgstr "Zaruriy qiymatlar haqida ogohlantirish"
+
+msgid "SMS short codes"
+msgstr "SMS qisqa kodlari"
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Completeness method"
+msgstr "Mukammal toʼlgʼizish usuli"
+
+msgid "Receive all data values"
+msgstr "Maʼlumotning barcha qiymatlarini olish"
+
+msgid "Receive at least one data value"
+msgstr "Maʼlumotning kamida bitta qiymatini olish"
+
+msgid "Do not mark as complete"
+msgstr "Tugallangan deb belgilamang"
+
+msgid "Confirm message"
+msgstr ""
+
+msgid "Edit formula"
+msgstr "Formula tahrirlash"
+
+msgid "Add formula"
+msgstr "Formula qoʼshish"
+
+msgid "Formula"
+msgstr "Formula"
+
+msgid "Loading formula"
+msgstr "Formula yuklanmoqda"
+
+msgid "default"
+msgstr ""
+
+msgid "Formula for {{combo}}"
+msgstr "{{Kombinatsiyalar}} uchun formula"
+
+msgid "Data element"
+msgstr "Maʼlumotlar elementi"
+
+msgid "formula operator"
+msgstr "Formula operatori"
+
+msgid "Something went wrong whilst saving"
+msgstr "Saqlash paytida xatolik yuz berdi"
+
+msgid "Remove"
+msgstr "Олиб ташлаш"
+
+msgid "Save"
+msgstr "Saqlash"
+
 msgid "Data set"
 msgstr "Maʼlumotlar toʼplami"
+
+msgid "Reply message if no codes are sent (only the command)"
+msgstr ""
+"Аgar kodlar yuborilmagan boʼlsa, xabar qaytarilsin (faqat buyruq uchun)"
+
+msgid "More than one orgunit message"
+msgstr "Tashkiliy muassasadan bir nechta xabar"
+
+msgid "No user message"
+msgstr "Foydalanuvchiga xabar yoʼq"
+
+msgid "Parser"
+msgstr "Аyrim"
+
+msgid "Key value parser"
+msgstr ""
+
+msgid "J2ME parser"
+msgstr ""
+
+msgid "Alert parser"
+msgstr ""
+
+msgid "Unregistered parser"
+msgstr ""
+
+msgid "Tracked entity registration parser"
+msgstr "Kuzatuvdagi shaxsni roʼyxatdan oʼtkazilishini tahlil qiluvchi"
+
+msgid "Program stage data entry parser"
+msgstr ""
+
+msgid "Event registration parser"
+msgstr ""
+
+msgid "Program"
+msgstr "Dastur"
+
+msgid "Program stage"
+msgstr "Dastur bosqichi"
+
+msgid "Field separator"
+msgstr "Maydon ajratgich"
+
+msgid "Special character name"
+msgstr "Maxsus belgi nomi"
+
+msgid "Special character value"
+msgstr "Maxsus belgi qiymati"
+
+msgid "Success message"
+msgstr ""
+
+msgid "Use current period for reporting"
+msgstr "Hisobot berishda joriy davrdan foydalaning"
+
+msgid "Wrong format message"
+msgstr "Xabar formati notoʼgʼri"
+
+msgid "Save command"
+msgstr "Buyruq saqlansin"
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr "SMS buyruq yuklanishida xatolik yuz berdi"
+
+msgid "Something went wrong whilst loading the command's details"
+msgstr "Buyruq elementlari yuklanishida xatolik yuz berdi"
+
+msgid "Special characters"
+msgstr ""
+
+msgid "Duplicate value!"
+msgstr "Qiymat takrorlanishi!"
+
+msgid "Something went wrong whilst submitting the form"
+msgstr "Shakl topshirilishida xotolik yuz berdi"
+
+msgid "Add command"
+msgstr "Buyruqni kiriting"
+
+msgid "Automatically selected by selecting a program"
+msgstr "Tanlangan dasturdan avtomatik tanlandi"
+
+msgid "Something went wrong whilst loading commands"
+msgstr "Buyruqlar yuklanishida xatolik yuz berdi"
+
+msgid "Edit command"
+msgstr "Buyruqni tahrirlang"
+
+msgid "Unrecognised parser type"
+msgstr "Tanilmagan tahlilchi turi"
+
+msgid "Could not find the requested parser type"
+msgstr "Soʼralgan tahlilchi turini topib boʼlmadi"
+
+msgid "Something went wrong whilst performing the requested operation"
+msgstr "Soʼralgan operatsiyani bajarishda xatolik yuz berdi"
+
+msgid ""
+"SMS commands process SMS messages received by a DHIS2 instance, taking "
+"certain actions depending on the command and message content. Multiple SMS "
+"commands can be set up to process and handle data in multiple ways. Add and "
+"configure SMS commands below. Read about SMS commands in the DHIS2 "
+"documentation."
+msgstr ""
+"DHIS2 pltformasi SMS xabarlar tomonidan olingan SMS buyruqlarni qayta "
+"ishlaydi, buyruqlar va xabarlar tarkibiga qarab muayyan xarakatlarni amalga "
+"oshiradi. Maʼlumotlarni qayta ishlash va ishlov berish uchun bir nechta SMS "
+"buyruqlar oʼrnatilishi mumkin. Quyida SMS buyruqlarni qoʼshing va sozlang. "
+"SMS buyruqlari haqida DHIS2 hujjatlarida oʼqing."
 
 msgid "Delete selected"
 msgstr "Tanlangan oʼchirilchin"
 
-msgid ""
-"Please make sure the value of this input matches the value in "
-"\"{{otherField}}\"."
-msgstr ""
-"Ushbu yozuvning qiymati \"{{otherField}}\" dagi qiymatga mos kelishiga "
-"ishonch hosil qiling."
+msgid "Are you sure you want to delete the selected commands?"
+msgstr "Haqiqatdan ham tanlangan buyruqlarni oʼchirmoqchimisiz?"
 
-msgid "Confirm deletion"
-msgstr "Oʼchirishni tasdiqlash"
+msgid "Sms command"
+msgstr "SMS buyruqlar"
 
-msgid "Are you sure you want to delete the selected gateways?"
-msgstr "Haqiqatdan ham tanlangan yoʼnalishni oʼchirmoqchimisiz?"
+msgid "Edit"
+msgstr "Tahrirlash"
+
+msgid "No commands to display"
+msgstr "Buyruqlar displeyga chiqarilmasin"
+
+msgid "Add key value pair"
+msgstr "Kalit-qiymat juftligini qoʼshish"
 
 msgid "Auth token"
 msgstr ""
@@ -77,8 +303,23 @@ msgstr "Tarkib turi"
 msgid "Host"
 msgstr ""
 
-msgid "Name"
-msgstr "Исми"
+msgid "Key"
+msgstr "Kalit"
+
+msgid "Send as header"
+msgstr "Sarlavha sifatida yuborish"
+
+msgid "Encode"
+msgstr "Shifrlash"
+
+msgid "Confidential"
+msgstr "Maxfiy"
+
+msgid "Remove key value pair"
+msgstr "Kalit-qiymat juftligini olib tashlash"
+
+msgid "Value"
+msgstr "Қиймат"
 
 msgid "Number plan indicator"
 msgstr ""
@@ -117,17 +358,11 @@ msgstr ""
 msgid "User name"
 msgstr "Foydalanuvchi Ismi"
 
-msgid "Add key value pair"
-msgstr "Kalit-qiymat juftligini qoʼshish"
-
 msgid "Save gateway"
 msgstr "Yoʼlakni saqlang"
 
 msgid "Add gateway"
 msgstr "Yoʼnalishni qoʼshish"
-
-msgid "Cancel"
-msgstr "Бекор қилиш"
 
 msgid "Gateway setup"
 msgstr "Yoʼnalishni sozlash"
@@ -135,35 +370,11 @@ msgstr "Yoʼnalishni sozlash"
 msgid "Key value pairs"
 msgstr "Juftliklar kalit-qiymat"
 
-msgid "Key"
-msgstr "Kalit"
-
-msgid "Send as header"
-msgstr "Sarlavha sifatida yuborish"
-
-msgid "Encode"
-msgstr "Shifrlash"
-
-msgid "Confidential"
-msgstr "Maxfiy"
-
-msgid "Remove key value pair"
-msgstr "Kalit-qiymat juftligini olib tashlash"
-
-msgid "Value"
-msgstr "Қиймат"
-
 msgid "Type"
 msgstr "Turi"
 
-msgid "Make default"
-msgstr "Standart sifatida belgilash"
-
-msgid "Default gateway"
-msgstr "Standart yoʼlak"
-
-msgid "Edit"
-msgstr "Tahrirlash"
+msgid "Generic"
+msgstr "Umumiy"
 
 msgid "BulkSMS"
 msgstr "Ommaviy SMS"
@@ -171,174 +382,11 @@ msgstr "Ommaviy SMS"
 msgid "Clickatell"
 msgstr "Clickatell"
 
-msgid "Generic"
-msgstr "Umumiy"
-
-msgid "Show"
-msgstr "Koʼrsating"
-
-msgid "per page"
-msgstr "har sahifada"
-
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr "Koʼrinish {{Jami}} dan {{DastlabkiElement}}-{{OxirgiElement}}"
-
-msgid "Previous"
-msgstr "Oldingi"
-
-msgid "Page"
-msgstr "Sahifa"
-
-msgid "of {{pageCount}}"
-msgstr "{{pageCount}} ga/dan"
-
-msgid "Next"
-msgstr "Кейинги"
-
-msgid "Program"
-msgstr "Dastur"
-
-msgid "Program stage"
-msgstr "Dastur bosqichi"
-
-msgid "Are you sure you want to delete the selected commands?"
-msgstr "Haqiqatdan ham tanlangan buyruqlarni oʼchirmoqchimisiz?"
-
-msgid "Delete"
-msgstr "Oʼchirib tashlash"
-
-msgid "Save command"
-msgstr "Buyruq saqlansin"
-
-msgid "Something went wrong whilst submitting the form"
-msgstr "Shakl topshirilishida xotolik yuz berdi"
-
-msgid "Something went wrong whilst loading the sms command"
-msgstr "SMS buyruq yuklanishida xatolik yuz berdi"
-
-msgid "Something went wrong whilst loading the command's details"
-msgstr "Buyruq elementlari yuklanishida xatolik yuz berdi"
-
-msgid "SMS short codes"
-msgstr "SMS qisqa kodlari"
-
-msgid "Add special character"
-msgstr "Maxsus belgini qoʼshish"
-
-msgid "Required values notice"
-msgstr "Zaruriy qiymatlar haqida ogohlantirish"
-
-msgid "Completeness method"
-msgstr "Mukammal toʼlgʼizish usuli"
-
-msgid "Confirm message"
+msgid "SMPP"
 msgstr ""
 
-msgid "Reply message if no codes are sent (only the command)"
-msgstr ""
-"Аgar kodlar yuborilmagan boʼlsa, xabar qaytarilsin (faqat buyruq uchun)"
-
-msgid "More than one orgunit message"
-msgstr "Tashkiliy muassasadan bir nechta xabar"
-
-msgid "No user message"
-msgstr "Foydalanuvchiga xabar yoʼq"
-
-msgid "Parser"
-msgstr "Аyrim"
-
-msgid "Field separator"
-msgstr "Maydon ajratgich"
-
-msgid "Special character name"
-msgstr "Maxsus belgi nomi"
-
-msgid "Special character value"
-msgstr "Maxsus belgi qiymati"
-
-msgid "Remove"
-msgstr "Олиб ташлаш"
-
-msgid "Success message"
-msgstr ""
-
-msgid "Use current period for reporting"
-msgstr "Hisobot berishda joriy davrdan foydalaning"
-
-msgid "Wrong format message"
-msgstr "Xabar formati notoʼgʼri"
-
-msgid "default"
-msgstr ""
-
-msgid "Formula"
-msgstr "Formula"
-
-msgid "Loading formula"
-msgstr "Formula yuklanmoqda"
-
-msgid "Edit formula"
-msgstr "Formula tahrirlash"
-
-msgid "Add formula"
-msgstr "Formula qoʼshish"
-
-msgid "Formula for {{combo}}"
-msgstr "{{Kombinatsiyalar}} uchun formula"
-
-msgid "Data element"
-msgstr "Maʼlumotlar elementi"
-
-msgid "formula operator"
-msgstr "Formula operatori"
-
-msgid "Something went wrong whilst saving"
-msgstr "Saqlash paytida xatolik yuz berdi"
-
-msgid "Save"
-msgstr "Saqlash"
-
-msgid "Receive all data values"
-msgstr "Maʼlumotning barcha qiymatlarini olish"
-
-msgid "Receive at least one data value"
-msgstr "Maʼlumotning kamida bitta qiymatini olish"
-
-msgid "Do not mark as complete"
-msgstr "Tugallangan deb belgilamang"
-
-msgid "Key value parser"
-msgstr ""
-
-msgid "J2ME parser"
-msgstr ""
-
-msgid "Alert parser"
-msgstr ""
-
-msgid "Unregistered parser"
-msgstr ""
-
-msgid "Tracked entity registration parser"
-msgstr "Kuzatuvdagi shaxsni roʼyxatdan oʼtkazilishini tahlil qiluvchi"
-
-msgid "Program stage data entry parser"
-msgstr ""
-
-msgid "Event registration parser"
-msgstr ""
-
-msgid "Duplicate value!"
-msgstr "Qiymat takrorlanishi!"
-
-msgid "Special characters"
-msgstr ""
-
-msgid "No SMSes to display"
-msgstr "Koʼrsatish uchun SMSlar yoʼq"
-
-msgid "User group"
-msgstr ""
+msgid "Something went wrong whilst saving the gateway"
+msgstr "Shlyuzni saqlash paytida xatolik yuz berdi"
 
 msgid "Something went wrong whilst loading gateways"
 msgstr "Yoʼlaklar yuklanishida xatolik yuz berdi"
@@ -355,14 +403,11 @@ msgstr "Shlyuz topilmadi"
 msgid "The requested gateway could not be loaded"
 msgstr "Soʼralgan shlyuzni yuklab boʼlmadi"
 
-msgid "Something went wrong whilst saving the gateway"
-msgstr "Shlyuzni saqlash paytida xatolik yuz berdi"
+msgid "Make default"
+msgstr "Standart sifatida belgilash"
 
-msgid "SMPP"
-msgstr ""
-
-msgid "Something went wrong whilst performing the requested operation"
-msgstr "Soʼralgan operatsiyani bajarishda xatolik yuz berdi"
+msgid "Default gateway"
+msgstr "Standart yoʼlak"
 
 msgid ""
 "An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
@@ -385,6 +430,78 @@ msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
 msgstr "Hech qanday shlyuzlar mavjud emas, yoki ularni yuklab boʼlmadi."
+
+msgid "Are you sure you want to delete the selected gateways?"
+msgstr "Haqiqatdan ham tanlangan yoʼnalishni oʼchirmoqchimisiz?"
+
+msgid "Filter by status"
+msgstr "Holatiga qarab filtrlash"
+
+msgid "Filter by phone number"
+msgstr ""
+
+msgid "Reset filter"
+msgstr ""
+
+msgid "Message"
+msgstr "Xabar"
+
+msgid "Phone number"
+msgstr "Telefon raqami"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Sender"
+msgstr "Yuboruvchi"
+
+msgid "Unknown"
+msgstr "Nomaʼlum"
+
+msgid "Something went wrong whilst loading received SMSes"
+msgstr "SMSlar yuklanishida xatolik yuz berdi"
+
+msgid "Are you sure you want to delete the selected sms?"
+msgstr ""
+
+msgid "All"
+msgstr "Barchasi"
+
+msgid "Failed"
+msgstr "Аmalga oshmadi"
+
+msgid "Incoming"
+msgstr "Kiruvchi"
+
+msgid "Processed"
+msgstr "Qayta ishlangan"
+
+msgid "Processing"
+msgstr "Qayta ishlash"
+
+msgid "Unhandled"
+msgstr "Qayta ishlanmagan"
+
+msgid "Recipients"
+msgstr "Qabul qiluvchilar"
+
+msgid "Something went wrong whilst loading sent SMSes"
+msgstr "SMSlar yuborilishida xatolik yuz berdi"
+
+msgid "Delivered"
+msgstr "Joʼnatildi"
+
+msgid "Error"
+msgstr "Xatolik"
+
+msgid "Outbound"
+msgstr "Chiquvchi"
+
+msgid "Pending"
+msgstr "Kutilmoqda"
+
+msgid "Scheduled"
+msgstr "Reja boʼyicha"
 
 msgid "Overview: SMS Configuration"
 msgstr "Umumiy nuqtai naza: SMS sozlamasi"
@@ -438,115 +555,3 @@ msgstr "DHIS2 tomonidan qabul qilingan barcha SMS-xabarlar jurnalini ochish"
 
 msgid "View all received SMS"
 msgstr "Barcha qabul qilingan SMSlarni koʼrib chiqish"
-
-msgid "Filter by status"
-msgstr "Holatiga qarab filtrlash"
-
-msgid "Filter by phone number"
-msgstr ""
-
-msgid "Reset filter"
-msgstr ""
-
-msgid "Received"
-msgstr "Qabul qilindi"
-
-msgid "Something went wrong whilst loading received SMSes"
-msgstr "SMSlar yuklanishida xatolik yuz berdi"
-
-msgid "Message"
-msgstr "Xabar"
-
-msgid "Phone number"
-msgstr "Telefon raqami"
-
-msgid "Status"
-msgstr "Status"
-
-msgid "Sender"
-msgstr "Yuboruvchi"
-
-msgid "Unknown"
-msgstr "Nomaʼlum"
-
-msgid "All"
-msgstr "Barchasi"
-
-msgid "Failed"
-msgstr "Аmalga oshmadi"
-
-msgid "Incoming"
-msgstr "Kiruvchi"
-
-msgid "Processed"
-msgstr "Qayta ishlangan"
-
-msgid "Processing"
-msgstr "Qayta ishlash"
-
-msgid "Sent"
-msgstr "Yuborildi"
-
-msgid "Unhandled"
-msgstr "Qayta ishlanmagan"
-
-msgid "Something went wrong whilst loading sent SMSes"
-msgstr "SMSlar yuborilishida xatolik yuz berdi"
-
-msgid "Recipients"
-msgstr "Qabul qiluvchilar"
-
-msgid "Delivered"
-msgstr "Joʼnatildi"
-
-msgid "Error"
-msgstr "Xatolik"
-
-msgid "Outbound"
-msgstr "Chiquvchi"
-
-msgid "Pending"
-msgstr "Kutilmoqda"
-
-msgid "Scheduled"
-msgstr "Reja boʼyicha"
-
-msgid "Something went wrong whilst loading commands"
-msgstr "Buyruqlar yuklanishida xatolik yuz berdi"
-
-msgid "Edit command"
-msgstr "Buyruqni tahrirlang"
-
-msgid "Unrecognised parser type"
-msgstr "Tanilmagan tahlilchi turi"
-
-msgid "Could not find the requested parser type"
-msgstr "Soʼralgan tahlilchi turini topib boʼlmadi"
-
-msgid "Add command"
-msgstr "Buyruqni kiriting"
-
-msgid "Automatically selected by selecting a program"
-msgstr "Tanlangan dasturdan avtomatik tanlandi"
-
-msgid "Commands"
-msgstr "Buyruqlar"
-
-msgid ""
-"SMS commands process SMS messages received by a DHIS2 instance, taking "
-"certain actions depending on the command and message content. Multiple SMS "
-"commands can be set up to process and handle data in multiple ways. Add and "
-"configure SMS commands below. Read about SMS commands in the DHIS2 "
-"documentation."
-msgstr ""
-"DHIS2 pltformasi SMS xabarlar tomonidan olingan SMS buyruqlarni qayta "
-"ishlaydi, buyruqlar va xabarlar tarkibiga qarab muayyan xarakatlarni amalga "
-"oshiradi. Maʼlumotlarni qayta ishlash va ishlov berish uchun bir nechta SMS "
-"buyruqlar oʼrnatilishi mumkin. Quyida SMS buyruqlarni qoʼshing va sozlang. "
-"SMS buyruqlari haqida DHIS2 hujjatlarida oʼqing."
-
-msgid "Sms command"
-msgstr "SMS buyruqlar"
-
-msgid "No commands to display"
-msgstr "Buyruqlar displeyga chiqarilmasin"

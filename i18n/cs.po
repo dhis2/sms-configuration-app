@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T13:21:14.657Z\n"
+"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -24,24 +24,249 @@ msgstr "Ne, zůstat na stránce"
 msgid "Yes, cancel"
 msgstr "Ano, zrušit"
 
+msgid "Confirm deletion"
+msgstr "Potvrdit vymazání"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "User group"
+msgstr "Uživatelská skupina"
+
+msgid "Home"
+msgstr ""
+
+msgid "Gateway configuration"
+msgstr ""
+
+msgid "Commands"
+msgstr "Příkazy"
+
+msgid "Sent"
+msgstr "Odesláno"
+
+msgid "Received"
+msgstr "Přijato"
+
+msgid "No SMSes to display"
+msgstr "Žádné SMS k zobrazení"
+
+msgid "Show"
+msgstr "Zobrazit"
+
+msgid "per page"
+msgstr "na stránku"
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr "Zobrazeno {{firstItem}} - {{lastItem}} z {{total}}"
+
+msgid "Previous"
+msgstr "Předchozí"
+
+msgid "Page"
+msgstr "Strana"
+
+msgid "of {{pageCount}}"
+msgstr "z {{pageCount}}"
+
+msgid "Next"
+msgstr "Další"
+
+msgid "No error message was provided"
+msgstr ""
+
+msgid "Add special character"
+msgstr "Přidat speciální znak"
+
+msgid "Required values notice"
+msgstr "Upozornění na požadované hodnoty"
+
+msgid "SMS short codes"
+msgstr "SMS krátké kódy"
+
+msgid "Name"
+msgstr "Název"
+
+msgid "Completeness method"
+msgstr "Metoda úplnosti"
+
+msgid "Receive all data values"
+msgstr "Přijmout všechny datové hodnoty"
+
+msgid "Receive at least one data value"
+msgstr "Získat alespoň jednu datovou hodnotu"
+
+msgid "Do not mark as complete"
+msgstr "Neoznačovat jako úplné"
+
+msgid "Confirm message"
+msgstr "Potvrdit zprávu"
+
+msgid "Edit formula"
+msgstr "Upravit vzorec"
+
+msgid "Add formula"
+msgstr "Přidat vzorec"
+
+msgid "Formula"
+msgstr "Vzorec"
+
+msgid "Loading formula"
+msgstr "Načítání vzorce"
+
+msgid "default"
+msgstr "výchozí"
+
+msgid "Formula for {{combo}}"
+msgstr "Vzorec pro {{combo}}"
+
+msgid "Data element"
+msgstr "Datový prvek"
+
+msgid "formula operator"
+msgstr "operátor vzorce"
+
+msgid "Something went wrong whilst saving"
+msgstr "Při ukládání se něco pokazilo"
+
+msgid "Remove"
+msgstr "Odebrat"
+
+msgid "Save"
+msgstr "Uložit"
+
 msgid "Data set"
 msgstr "Datová sada"
+
+msgid "Reply message if no codes are sent (only the command)"
+msgstr "Pokud nejsou zaslány žádné kódy, odpovězte zprávou (pouze příkaz)"
+
+msgid "More than one orgunit message"
+msgstr "Více než jedna zpráva organizační jednotce"
+
+msgid "No user message"
+msgstr "Žádná uživatelská zpráva"
+
+msgid "Parser"
+msgstr "Analyzátor"
+
+msgid "Key value parser"
+msgstr "Analyzátor klíčové hodnoty"
+
+msgid "J2ME parser"
+msgstr "Analyzátor J2ME"
+
+msgid "Alert parser"
+msgstr "Analyzátor výstrah"
+
+msgid "Unregistered parser"
+msgstr "Neregistrovaný analyzátor"
+
+msgid "Tracked entity registration parser"
+msgstr "Analyzátor registrace sledované entity"
+
+msgid "Program stage data entry parser"
+msgstr "Analyzátor zadávání dat fáze programu"
+
+msgid "Event registration parser"
+msgstr "Analyzátor registrace událostí"
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Program stage"
+msgstr "Programová fáze"
+
+msgid "Field separator"
+msgstr "Oddělovač polí"
+
+msgid "Special character name"
+msgstr "Název zvláštního znaku"
+
+msgid "Special character value"
+msgstr "Hodnota zvláštního znaku"
+
+msgid "Success message"
+msgstr "Zpráva o úspěchu"
+
+msgid "Use current period for reporting"
+msgstr "Pro vykazování zpráv použijte aktuální období"
+
+msgid "Wrong format message"
+msgstr "Chybný formát zprávy"
+
+msgid "Save command"
+msgstr "Uložit příkaz"
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr "Při načítání příkazu sms se něco pokazilo"
+
+msgid "Something went wrong whilst loading the command's details"
+msgstr "Při načítání podrobností příkazu se něco pokazilo"
+
+msgid "Special characters"
+msgstr "Speciální znaky"
+
+msgid "Duplicate value!"
+msgstr "Duplicitní hodnota!"
+
+msgid "Something went wrong whilst submitting the form"
+msgstr "Při odesílání formuláře se něco pokazilo"
+
+msgid "Add command"
+msgstr "Přidat příkaz"
+
+msgid "Automatically selected by selecting a program"
+msgstr "Automaticky vybráno výběrem programu"
+
+msgid "Something went wrong whilst loading commands"
+msgstr "Při načítání příkazů se něco pokazilo"
+
+msgid "Edit command"
+msgstr "Upravit příkaz"
+
+msgid "Unrecognised parser type"
+msgstr "Nerozpoznaný typ analyzátoru"
+
+msgid "Could not find the requested parser type"
+msgstr "Nelze najít požadovaný typ analyzátoru"
+
+msgid "Something went wrong whilst performing the requested operation"
+msgstr "Při provádění požadované operace se něco pokazilo"
+
+msgid ""
+"SMS commands process SMS messages received by a DHIS2 instance, taking "
+"certain actions depending on the command and message content. Multiple SMS "
+"commands can be set up to process and handle data in multiple ways. Add and "
+"configure SMS commands below. Read about SMS commands in the DHIS2 "
+"documentation."
+msgstr ""
+"Příkazy SMS zpracovávají zprávy SMS přijaté instancí DHIS2 a provádějí "
+"určité akce v závislosti na obsahu příkazu a obsahu. Lze nastavit více "
+"příkazů SMS pro zpracování a zpracování dat několika způsoby. Níže přidejte "
+"a nakonfigurujte příkazy SMS. Přečtěte si o SMS příkazech v dokumentaci "
+"DHIS2."
 
 msgid "Delete selected"
 msgstr "Smazat vybrané"
 
-msgid ""
-"Please make sure the value of this input matches the value in "
-"\"{{otherField}}\"."
-msgstr ""
-"Zkontrolujte, zda se hodnota tohoto vstupu shoduje s hodnotou v "
-"\"{{otherField}}\"."
+msgid "Are you sure you want to delete the selected commands?"
+msgstr "Opravdu chcete odstranit vybrané příkazy?"
 
-msgid "Confirm deletion"
-msgstr "Potvrdit vymazání"
+msgid "Sms command"
+msgstr "SMS příkaz"
 
-msgid "Are you sure you want to delete the selected gateways?"
-msgstr "Opravdu chcete odstranit vybrané brány?"
+msgid "Edit"
+msgstr "Upravit"
+
+msgid "No commands to display"
+msgstr "Žádné příkazy k zobrazení"
+
+msgid "Add key value pair"
+msgstr "Přidat pár klíč-hodnota"
 
 msgid "Auth token"
 msgstr "Ověřovací token"
@@ -76,8 +301,23 @@ msgstr "Typ obsahu"
 msgid "Host"
 msgstr "Hostitel"
 
-msgid "Name"
-msgstr "Název"
+msgid "Key"
+msgstr "Klíč"
+
+msgid "Send as header"
+msgstr "Odeslat jako záhlaví"
+
+msgid "Encode"
+msgstr "Zakódovat"
+
+msgid "Confidential"
+msgstr "Důvěrné"
+
+msgid "Remove key value pair"
+msgstr "Odstranit pár klíč-hodnota"
+
+msgid "Value"
+msgstr "Hodnota"
 
 msgid "Number plan indicator"
 msgstr "indikátor číselného plánu"
@@ -115,17 +355,11 @@ msgstr "K odeslání dat do brány použijte GET místo POST"
 msgid "User name"
 msgstr "Uživatelské jméno"
 
-msgid "Add key value pair"
-msgstr "Přidat pár klíč-hodnota"
-
 msgid "Save gateway"
 msgstr "Uložit bránu"
 
 msgid "Add gateway"
 msgstr "Přidat bránu"
-
-msgid "Cancel"
-msgstr "Zrušit"
 
 msgid "Gateway setup"
 msgstr "Nastavení brány"
@@ -133,35 +367,11 @@ msgstr "Nastavení brány"
 msgid "Key value pairs"
 msgstr "Páry klíč-hodnota"
 
-msgid "Key"
-msgstr "Klíč"
-
-msgid "Send as header"
-msgstr "Odeslat jako záhlaví"
-
-msgid "Encode"
-msgstr "Zakódovat"
-
-msgid "Confidential"
-msgstr "Důvěrné"
-
-msgid "Remove key value pair"
-msgstr "Odstranit pár klíč-hodnota"
-
-msgid "Value"
-msgstr "Hodnota"
-
 msgid "Type"
 msgstr "Typ"
 
-msgid "Make default"
-msgstr "Nastavit jako výchozí"
-
-msgid "Default gateway"
-msgstr "Výchozí brána"
-
-msgid "Edit"
-msgstr "Upravit"
+msgid "Generic"
+msgstr "Obecný"
 
 msgid "BulkSMS"
 msgstr "BulkSMS"
@@ -169,173 +379,11 @@ msgstr "BulkSMS"
 msgid "Clickatell"
 msgstr "Clickatell"
 
-msgid "Generic"
-msgstr "Obecný"
+msgid "SMPP"
+msgstr "SMPP"
 
-msgid "Show"
-msgstr "Zobrazit"
-
-msgid "per page"
-msgstr "na stránku"
-
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr "Zobrazeno {{firstItem}} - {{lastItem}} z {{total}}"
-
-msgid "Previous"
-msgstr "Předchozí"
-
-msgid "Page"
-msgstr "Strana"
-
-msgid "of {{pageCount}}"
-msgstr "z {{pageCount}}"
-
-msgid "Next"
-msgstr "Další"
-
-msgid "Program"
-msgstr "Program"
-
-msgid "Program stage"
-msgstr "Programová fáze"
-
-msgid "Are you sure you want to delete the selected commands?"
-msgstr "Opravdu chcete odstranit vybrané příkazy?"
-
-msgid "Delete"
-msgstr "Smazat"
-
-msgid "Save command"
-msgstr "Uložit příkaz"
-
-msgid "Something went wrong whilst submitting the form"
-msgstr "Při odesílání formuláře se něco pokazilo"
-
-msgid "Something went wrong whilst loading the sms command"
-msgstr "Při načítání příkazu sms se něco pokazilo"
-
-msgid "Something went wrong whilst loading the command's details"
-msgstr "Při načítání podrobností příkazu se něco pokazilo"
-
-msgid "SMS short codes"
-msgstr "SMS krátké kódy"
-
-msgid "Add special character"
-msgstr "Přidat speciální znak"
-
-msgid "Required values notice"
-msgstr "Upozornění na požadované hodnoty"
-
-msgid "Completeness method"
-msgstr "Metoda úplnosti"
-
-msgid "Confirm message"
-msgstr "Potvrdit zprávu"
-
-msgid "Reply message if no codes are sent (only the command)"
-msgstr "Pokud nejsou zaslány žádné kódy, odpovězte zprávou (pouze příkaz)"
-
-msgid "More than one orgunit message"
-msgstr "Více než jedna zpráva organizační jednotce"
-
-msgid "No user message"
-msgstr "Žádná uživatelská zpráva"
-
-msgid "Parser"
-msgstr "Analyzátor"
-
-msgid "Field separator"
-msgstr "Oddělovač polí"
-
-msgid "Special character name"
-msgstr "Název zvláštního znaku"
-
-msgid "Special character value"
-msgstr "Hodnota zvláštního znaku"
-
-msgid "Remove"
-msgstr "Odebrat"
-
-msgid "Success message"
-msgstr "Zpráva o úspěchu"
-
-msgid "Use current period for reporting"
-msgstr "Pro vykazování zpráv použijte aktuální období"
-
-msgid "Wrong format message"
-msgstr "Chybný formát zprávy"
-
-msgid "default"
-msgstr "výchozí"
-
-msgid "Formula"
-msgstr "Vzorec"
-
-msgid "Loading formula"
-msgstr "Načítání vzorce"
-
-msgid "Edit formula"
-msgstr "Upravit vzorec"
-
-msgid "Add formula"
-msgstr "Přidat vzorec"
-
-msgid "Formula for {{combo}}"
-msgstr "Vzorec pro {{combo}}"
-
-msgid "Data element"
-msgstr "Datový prvek"
-
-msgid "formula operator"
-msgstr "operátor vzorce"
-
-msgid "Something went wrong whilst saving"
-msgstr "Při ukládání se něco pokazilo"
-
-msgid "Save"
-msgstr "Uložit"
-
-msgid "Receive all data values"
-msgstr "Přijmout všechny datové hodnoty"
-
-msgid "Receive at least one data value"
-msgstr "Získat alespoň jednu datovou hodnotu"
-
-msgid "Do not mark as complete"
-msgstr "Neoznačovat jako úplné"
-
-msgid "Key value parser"
-msgstr "Analyzátor klíčové hodnoty"
-
-msgid "J2ME parser"
-msgstr "Analyzátor J2ME"
-
-msgid "Alert parser"
-msgstr "Analyzátor výstrah"
-
-msgid "Unregistered parser"
-msgstr "Neregistrovaný analyzátor"
-
-msgid "Tracked entity registration parser"
-msgstr "Analyzátor registrace sledované entity"
-
-msgid "Program stage data entry parser"
-msgstr "Analyzátor zadávání dat fáze programu"
-
-msgid "Event registration parser"
-msgstr "Analyzátor registrace událostí"
-
-msgid "Duplicate value!"
-msgstr "Duplicitní hodnota!"
-
-msgid "Special characters"
-msgstr "Speciální znaky"
-
-msgid "No SMSes to display"
-msgstr "Žádné SMS k zobrazení"
-
-msgid "User group"
-msgstr "Uživatelská skupina"
+msgid "Something went wrong whilst saving the gateway"
+msgstr "Při ukládání brány se něco pokazilo"
 
 msgid "Something went wrong whilst loading gateways"
 msgstr "Při načítání bran se něco pokazilo"
@@ -352,14 +400,11 @@ msgstr "Brána nebyla nalezena"
 msgid "The requested gateway could not be loaded"
 msgstr "Požadovanou bránu nelze načíst"
 
-msgid "Something went wrong whilst saving the gateway"
-msgstr "Při ukládání brány se něco pokazilo"
+msgid "Make default"
+msgstr "Nastavit jako výchozí"
 
-msgid "SMPP"
-msgstr "SMPP"
-
-msgid "Something went wrong whilst performing the requested operation"
-msgstr "Při provádění požadované operace se něco pokazilo"
+msgid "Default gateway"
+msgstr "Výchozí brána"
 
 msgid ""
 "An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
@@ -382,6 +427,78 @@ msgid ""
 "loaded."
 msgstr ""
 "Vypadá to, že neexistují žádné nakonfigurované brány, nebo je nelze načíst."
+
+msgid "Are you sure you want to delete the selected gateways?"
+msgstr "Opravdu chcete odstranit vybrané brány?"
+
+msgid "Filter by status"
+msgstr "Filtrovat podle stavu"
+
+msgid "Filter by phone number"
+msgstr "Filtrovat podle telefonního čísla"
+
+msgid "Reset filter"
+msgstr "Reset filtru"
+
+msgid "Message"
+msgstr "Zpráva"
+
+msgid "Phone number"
+msgstr "Telefonní číslo"
+
+msgid "Status"
+msgstr "Stav"
+
+msgid "Sender"
+msgstr "Odesílatel"
+
+msgid "Unknown"
+msgstr "Neznámý"
+
+msgid "Something went wrong whilst loading received SMSes"
+msgstr "Při načítání přijatých SMS se něco pokazilo"
+
+msgid "Are you sure you want to delete the selected sms?"
+msgstr ""
+
+msgid "All"
+msgstr "Vše"
+
+msgid "Failed"
+msgstr "Selhalo"
+
+msgid "Incoming"
+msgstr "Přicházející"
+
+msgid "Processed"
+msgstr "Zpracováno"
+
+msgid "Processing"
+msgstr "Zpracovává se"
+
+msgid "Unhandled"
+msgstr "Neošetřené"
+
+msgid "Recipients"
+msgstr "Příjemci"
+
+msgid "Something went wrong whilst loading sent SMSes"
+msgstr "Při načítání odeslaných SMS se něco pokazilo"
+
+msgid "Delivered"
+msgstr "Doručeno"
+
+msgid "Error"
+msgstr "Chyba"
+
+msgid "Outbound"
+msgstr "Odchozí"
+
+msgid "Pending"
+msgstr "Čekající"
+
+msgid "Scheduled"
+msgstr "Naplánováno"
 
 msgid "Overview: SMS Configuration"
 msgstr "Přehled: Konfigurace SMS"
@@ -434,115 +551,3 @@ msgstr "Otevřít protokoly všech SMS zpráv přijatých DHIS2."
 
 msgid "View all received SMS"
 msgstr "Zobrazit všechny přijaté SMS"
-
-msgid "Filter by status"
-msgstr "Filtrovat podle stavu"
-
-msgid "Filter by phone number"
-msgstr "Filtrovat podle telefonního čísla"
-
-msgid "Reset filter"
-msgstr "Reset filtru"
-
-msgid "Received"
-msgstr "Přijato"
-
-msgid "Something went wrong whilst loading received SMSes"
-msgstr "Při načítání přijatých SMS se něco pokazilo"
-
-msgid "Message"
-msgstr "Zpráva"
-
-msgid "Phone number"
-msgstr "Telefonní číslo"
-
-msgid "Status"
-msgstr "Stav"
-
-msgid "Sender"
-msgstr "Odesílatel"
-
-msgid "Unknown"
-msgstr "Neznámý"
-
-msgid "All"
-msgstr "Vše"
-
-msgid "Failed"
-msgstr "Selhalo"
-
-msgid "Incoming"
-msgstr "Přicházející"
-
-msgid "Processed"
-msgstr "Zpracováno"
-
-msgid "Processing"
-msgstr "Zpracovává se"
-
-msgid "Sent"
-msgstr "Odesláno"
-
-msgid "Unhandled"
-msgstr "Neošetřené"
-
-msgid "Something went wrong whilst loading sent SMSes"
-msgstr "Při načítání odeslaných SMS se něco pokazilo"
-
-msgid "Recipients"
-msgstr "Příjemci"
-
-msgid "Delivered"
-msgstr "Doručeno"
-
-msgid "Error"
-msgstr "Chyba"
-
-msgid "Outbound"
-msgstr "Odchozí"
-
-msgid "Pending"
-msgstr "Čekající"
-
-msgid "Scheduled"
-msgstr "Naplánováno"
-
-msgid "Something went wrong whilst loading commands"
-msgstr "Při načítání příkazů se něco pokazilo"
-
-msgid "Edit command"
-msgstr "Upravit příkaz"
-
-msgid "Unrecognised parser type"
-msgstr "Nerozpoznaný typ analyzátoru"
-
-msgid "Could not find the requested parser type"
-msgstr "Nelze najít požadovaný typ analyzátoru"
-
-msgid "Add command"
-msgstr "Přidat příkaz"
-
-msgid "Automatically selected by selecting a program"
-msgstr "Automaticky vybráno výběrem programu"
-
-msgid "Commands"
-msgstr "Příkazy"
-
-msgid ""
-"SMS commands process SMS messages received by a DHIS2 instance, taking "
-"certain actions depending on the command and message content. Multiple SMS "
-"commands can be set up to process and handle data in multiple ways. Add and "
-"configure SMS commands below. Read about SMS commands in the DHIS2 "
-"documentation."
-msgstr ""
-"Příkazy SMS zpracovávají zprávy SMS přijaté instancí DHIS2 a provádějí "
-"určité akce v závislosti na obsahu příkazu a obsahu. Lze nastavit více "
-"příkazů SMS pro zpracování a zpracování dat několika způsoby. Níže přidejte "
-"a nakonfigurujte příkazy SMS. Přečtěte si o SMS příkazech v dokumentaci "
-"DHIS2."
-
-msgid "Sms command"
-msgstr "SMS příkaz"
-
-msgid "No commands to display"
-msgstr "Žádné příkazy k zobrazení"

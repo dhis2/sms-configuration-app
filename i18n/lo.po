@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-02-09T13:21:14.657Z\n"
+"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
@@ -25,21 +25,243 @@ msgstr ""
 msgid "Yes, cancel"
 msgstr ""
 
+msgid "Confirm deletion"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Delete"
+msgstr "ລົບ"
+
+msgid "User group"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Gateway configuration"
+msgstr ""
+
+msgid "Commands"
+msgstr ""
+
+msgid "Sent"
+msgstr ""
+
+msgid "Received"
+msgstr ""
+
+msgid "No SMSes to display"
+msgstr ""
+
+msgid "Show"
+msgstr "ສະແດງ"
+
+msgid "per page"
+msgstr ""
+
+msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
+msgstr ""
+
+msgid "Previous"
+msgstr "ຍ້ອນກັບ"
+
+msgid "Page"
+msgstr "ໜ້າ"
+
+msgid "of {{pageCount}}"
+msgstr ""
+
+msgid "Next"
+msgstr "ຕໍ່ໄປ"
+
+msgid "No error message was provided"
+msgstr ""
+
+msgid "Add special character"
+msgstr ""
+
+msgid "Required values notice"
+msgstr ""
+
+msgid "SMS short codes"
+msgstr ""
+
+msgid "Name"
+msgstr "ຊື່"
+
+msgid "Completeness method"
+msgstr ""
+
+msgid "Receive all data values"
+msgstr ""
+
+msgid "Receive at least one data value"
+msgstr ""
+
+msgid "Do not mark as complete"
+msgstr ""
+
+msgid "Confirm message"
+msgstr ""
+
+msgid "Edit formula"
+msgstr ""
+
+msgid "Add formula"
+msgstr ""
+
+msgid "Formula"
+msgstr "Formula"
+
+msgid "Loading formula"
+msgstr ""
+
+msgid "default"
+msgstr ""
+
+msgid "Formula for {{combo}}"
+msgstr ""
+
+msgid "Data element"
+msgstr "Data Element"
+
+msgid "formula operator"
+msgstr ""
+
+msgid "Something went wrong whilst saving"
+msgstr ""
+
+msgid "Remove"
+msgstr "ລົບອອກ"
+
+msgid "Save"
+msgstr "ບັນທຶກ"
+
 msgid "Data set"
 msgstr "Data set\\:"
+
+msgid "Reply message if no codes are sent (only the command)"
+msgstr "Reply message if no codes are sent (only the command)\\:"
+
+msgid "More than one orgunit message"
+msgstr ""
+
+msgid "No user message"
+msgstr ""
+
+msgid "Parser"
+msgstr "Parser\\:"
+
+msgid "Key value parser"
+msgstr ""
+
+msgid "J2ME parser"
+msgstr ""
+
+msgid "Alert parser"
+msgstr ""
+
+msgid "Unregistered parser"
+msgstr ""
+
+msgid "Tracked entity registration parser"
+msgstr ""
+
+msgid "Program stage data entry parser"
+msgstr ""
+
+msgid "Event registration parser"
+msgstr ""
+
+msgid "Program"
+msgstr "Program"
+
+msgid "Program stage"
+msgstr "ຂັ້ນຂອງສາຍງານ"
+
+msgid "Field separator"
+msgstr ""
+
+msgid "Special character name"
+msgstr ""
+
+msgid "Special character value"
+msgstr ""
+
+msgid "Success message"
+msgstr ""
+
+msgid "Use current period for reporting"
+msgstr ""
+
+msgid "Wrong format message"
+msgstr ""
+
+msgid "Save command"
+msgstr ""
+
+msgid "Something went wrong whilst loading the sms command"
+msgstr ""
+
+msgid "Something went wrong whilst loading the command's details"
+msgstr ""
+
+msgid "Special characters"
+msgstr ""
+
+msgid "Duplicate value!"
+msgstr ""
+
+msgid "Something went wrong whilst submitting the form"
+msgstr ""
+
+msgid "Add command"
+msgstr ""
+
+msgid "Automatically selected by selecting a program"
+msgstr ""
+
+msgid "Something went wrong whilst loading commands"
+msgstr ""
+
+msgid "Edit command"
+msgstr ""
+
+msgid "Unrecognised parser type"
+msgstr ""
+
+msgid "Could not find the requested parser type"
+msgstr ""
+
+msgid "Something went wrong whilst performing the requested operation"
+msgstr ""
+
+msgid ""
+"SMS commands process SMS messages received by a DHIS2 instance, taking "
+"certain actions depending on the command and message content. Multiple SMS "
+"commands can be set up to process and handle data in multiple ways. Add and "
+"configure SMS commands below. Read about SMS commands in the DHIS2 "
+"documentation."
+msgstr ""
 
 msgid "Delete selected"
 msgstr ""
 
-msgid ""
-"Please make sure the value of this input matches the value in "
-"\"{{otherField}}\"."
+msgid "Are you sure you want to delete the selected commands?"
 msgstr ""
 
-msgid "Confirm deletion"
+msgid "Sms command"
 msgstr ""
 
-msgid "Are you sure you want to delete the selected gateways?"
+msgid "Edit"
+msgstr "ແກ້ໄຂ"
+
+msgid "No commands to display"
+msgstr ""
+
+msgid "Add key value pair"
 msgstr ""
 
 msgid "Auth token"
@@ -75,8 +297,23 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
-msgid "Name"
-msgstr "ຊື່"
+msgid "Key"
+msgstr ""
+
+msgid "Send as header"
+msgstr ""
+
+msgid "Encode"
+msgstr ""
+
+msgid "Confidential"
+msgstr "Confidential"
+
+msgid "Remove key value pair"
+msgstr ""
+
+msgid "Value"
+msgstr "Value"
 
 msgid "Number plan indicator"
 msgstr ""
@@ -114,17 +351,11 @@ msgstr ""
 msgid "User name"
 msgstr ""
 
-msgid "Add key value pair"
-msgstr ""
-
 msgid "Save gateway"
 msgstr ""
 
 msgid "Add gateway"
 msgstr ""
-
-msgid "Cancel"
-msgstr "Cancel"
 
 msgid "Gateway setup"
 msgstr ""
@@ -132,35 +363,11 @@ msgstr ""
 msgid "Key value pairs"
 msgstr ""
 
-msgid "Key"
-msgstr ""
-
-msgid "Send as header"
-msgstr ""
-
-msgid "Encode"
-msgstr ""
-
-msgid "Confidential"
-msgstr "Confidential"
-
-msgid "Remove key value pair"
-msgstr ""
-
-msgid "Value"
-msgstr "Value"
-
 msgid "Type"
 msgstr "Type"
 
-msgid "Make default"
+msgid "Generic"
 msgstr ""
-
-msgid "Default gateway"
-msgstr ""
-
-msgid "Edit"
-msgstr "ແກ້ໄຂ"
 
 msgid "BulkSMS"
 msgstr ""
@@ -168,172 +375,10 @@ msgstr ""
 msgid "Clickatell"
 msgstr ""
 
-msgid "Generic"
+msgid "SMPP"
 msgstr ""
 
-msgid "Show"
-msgstr "ສະແດງ"
-
-msgid "per page"
-msgstr ""
-
-msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr ""
-
-msgid "Previous"
-msgstr "ຍ້ອນກັບ"
-
-msgid "Page"
-msgstr "ໜ້າ"
-
-msgid "of {{pageCount}}"
-msgstr ""
-
-msgid "Next"
-msgstr "ຕໍ່ໄປ"
-
-msgid "Program"
-msgstr "Program"
-
-msgid "Program stage"
-msgstr "ຂັ້ນຂອງສາຍງານ"
-
-msgid "Are you sure you want to delete the selected commands?"
-msgstr ""
-
-msgid "Delete"
-msgstr "ລົບ"
-
-msgid "Save command"
-msgstr ""
-
-msgid "Something went wrong whilst submitting the form"
-msgstr ""
-
-msgid "Something went wrong whilst loading the sms command"
-msgstr ""
-
-msgid "Something went wrong whilst loading the command's details"
-msgstr ""
-
-msgid "SMS short codes"
-msgstr ""
-
-msgid "Add special character"
-msgstr ""
-
-msgid "Required values notice"
-msgstr ""
-
-msgid "Completeness method"
-msgstr ""
-
-msgid "Confirm message"
-msgstr ""
-
-msgid "Reply message if no codes are sent (only the command)"
-msgstr "Reply message if no codes are sent (only the command)\\:"
-
-msgid "More than one orgunit message"
-msgstr ""
-
-msgid "No user message"
-msgstr ""
-
-msgid "Parser"
-msgstr "Parser\\:"
-
-msgid "Field separator"
-msgstr ""
-
-msgid "Special character name"
-msgstr ""
-
-msgid "Special character value"
-msgstr ""
-
-msgid "Remove"
-msgstr "ລົບອອກ"
-
-msgid "Success message"
-msgstr ""
-
-msgid "Use current period for reporting"
-msgstr ""
-
-msgid "Wrong format message"
-msgstr ""
-
-msgid "default"
-msgstr ""
-
-msgid "Formula"
-msgstr "Formula"
-
-msgid "Loading formula"
-msgstr ""
-
-msgid "Edit formula"
-msgstr ""
-
-msgid "Add formula"
-msgstr ""
-
-msgid "Formula for {{combo}}"
-msgstr ""
-
-msgid "Data element"
-msgstr "Data Element"
-
-msgid "formula operator"
-msgstr ""
-
-msgid "Something went wrong whilst saving"
-msgstr ""
-
-msgid "Save"
-msgstr "ບັນທຶກ"
-
-msgid "Receive all data values"
-msgstr ""
-
-msgid "Receive at least one data value"
-msgstr ""
-
-msgid "Do not mark as complete"
-msgstr ""
-
-msgid "Key value parser"
-msgstr ""
-
-msgid "J2ME parser"
-msgstr ""
-
-msgid "Alert parser"
-msgstr ""
-
-msgid "Unregistered parser"
-msgstr ""
-
-msgid "Tracked entity registration parser"
-msgstr ""
-
-msgid "Program stage data entry parser"
-msgstr ""
-
-msgid "Event registration parser"
-msgstr ""
-
-msgid "Duplicate value!"
-msgstr ""
-
-msgid "Special characters"
-msgstr ""
-
-msgid "No SMSes to display"
-msgstr ""
-
-msgid "User group"
+msgid "Something went wrong whilst saving the gateway"
 msgstr ""
 
 msgid "Something went wrong whilst loading gateways"
@@ -351,13 +396,10 @@ msgstr ""
 msgid "The requested gateway could not be loaded"
 msgstr ""
 
-msgid "Something went wrong whilst saving the gateway"
+msgid "Make default"
 msgstr ""
 
-msgid "SMPP"
-msgstr ""
-
-msgid "Something went wrong whilst performing the requested operation"
+msgid "Default gateway"
 msgstr ""
 
 msgid ""
@@ -375,6 +417,78 @@ msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
 msgstr ""
+
+msgid "Are you sure you want to delete the selected gateways?"
+msgstr ""
+
+msgid "Filter by status"
+msgstr ""
+
+msgid "Filter by phone number"
+msgstr ""
+
+msgid "Reset filter"
+msgstr ""
+
+msgid "Message"
+msgstr "ຂໍ້ຄວາມ"
+
+msgid "Phone number"
+msgstr "ໝາຍເລກໂທລະສັບ"
+
+msgid "Status"
+msgstr "ສະຖານະ"
+
+msgid "Sender"
+msgstr ""
+
+msgid "Unknown"
+msgstr "ບໍ່ຮູ້"
+
+msgid "Something went wrong whilst loading received SMSes"
+msgstr ""
+
+msgid "Are you sure you want to delete the selected sms?"
+msgstr ""
+
+msgid "All"
+msgstr "ທັງໝົດ"
+
+msgid "Failed"
+msgstr "Failed"
+
+msgid "Incoming"
+msgstr ""
+
+msgid "Processed"
+msgstr ""
+
+msgid "Processing"
+msgstr "​ກຳ​ລັງ​ດຳ​ເນີນ​ການ​ຢູ່"
+
+msgid "Unhandled"
+msgstr ""
+
+msgid "Recipients"
+msgstr "Recipients"
+
+msgid "Something went wrong whilst loading sent SMSes"
+msgstr ""
+
+msgid "Delivered"
+msgstr ""
+
+msgid "Error"
+msgstr "ເກີດການຜິດພາດ"
+
+msgid "Outbound"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid "Scheduled"
+msgstr "ຕາມເວລາທີ່ກໍານົດ"
 
 msgid "Overview: SMS Configuration"
 msgstr ""
@@ -421,111 +535,4 @@ msgid "Open logs of all SMS messages received by DHIS2."
 msgstr ""
 
 msgid "View all received SMS"
-msgstr ""
-
-msgid "Filter by status"
-msgstr ""
-
-msgid "Filter by phone number"
-msgstr ""
-
-msgid "Reset filter"
-msgstr ""
-
-msgid "Received"
-msgstr ""
-
-msgid "Something went wrong whilst loading received SMSes"
-msgstr ""
-
-msgid "Message"
-msgstr "ຂໍ້ຄວາມ"
-
-msgid "Phone number"
-msgstr "ໝາຍເລກໂທລະສັບ"
-
-msgid "Status"
-msgstr "ສະຖານະ"
-
-msgid "Sender"
-msgstr ""
-
-msgid "Unknown"
-msgstr "ບໍ່ຮູ້"
-
-msgid "All"
-msgstr "ທັງໝົດ"
-
-msgid "Failed"
-msgstr "Failed"
-
-msgid "Incoming"
-msgstr ""
-
-msgid "Processed"
-msgstr ""
-
-msgid "Processing"
-msgstr "​ກຳ​ລັງ​ດຳ​ເນີນ​ການ​ຢູ່"
-
-msgid "Sent"
-msgstr ""
-
-msgid "Unhandled"
-msgstr ""
-
-msgid "Something went wrong whilst loading sent SMSes"
-msgstr ""
-
-msgid "Recipients"
-msgstr "Recipients"
-
-msgid "Delivered"
-msgstr ""
-
-msgid "Error"
-msgstr "ເກີດການຜິດພາດ"
-
-msgid "Outbound"
-msgstr ""
-
-msgid "Pending"
-msgstr ""
-
-msgid "Scheduled"
-msgstr "ຕາມເວລາທີ່ກໍານົດ"
-
-msgid "Something went wrong whilst loading commands"
-msgstr ""
-
-msgid "Edit command"
-msgstr ""
-
-msgid "Unrecognised parser type"
-msgstr ""
-
-msgid "Could not find the requested parser type"
-msgstr ""
-
-msgid "Add command"
-msgstr ""
-
-msgid "Automatically selected by selecting a program"
-msgstr ""
-
-msgid "Commands"
-msgstr ""
-
-msgid ""
-"SMS commands process SMS messages received by a DHIS2 instance, taking "
-"certain actions depending on the command and message content. Multiple SMS "
-"commands can be set up to process and handle data in multiple ways. Add and "
-"configure SMS commands below. Read about SMS commands in the DHIS2 "
-"documentation."
-msgstr ""
-
-msgid "Sms command"
-msgstr ""
-
-msgid "No commands to display"
 msgstr ""
