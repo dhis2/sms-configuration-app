@@ -1,3 +1,13 @@
+## [1.2.4](https://github.com/dhis2/sms-configuration-app/compare/v1.2.3...v1.2.4) (2021-04-22)
+
+
+### Bug Fixes
+
+* **update j2me parser command:** pass correct id variable to update hook ([6fb0d71](https://github.com/dhis2/sms-configuration-app/commit/6fb0d7107d389445bb9ccdb29135c79d6560009f))
+* **update key value parser command:** pass correct id variable to update hook ([124278f](https://github.com/dhis2/sms-configuration-app/commit/124278f3d95d8d6b7ee6051dbd8516c43db06981))
+* **update tracked entitiy registration parser command:** spread params ([922c381](https://github.com/dhis2/sms-configuration-app/commit/922c381de102c6cc50a4fc4f63d38a445a8bb2d4))
+* **update unregistered parser command:** update partially ([a4bdda7](https://github.com/dhis2/sms-configuration-app/commit/a4bdda7b7f5f7c8c3a7f7e9a822f6b1062269ca2))
+
 ## [1.2.3](https://github.com/dhis2/sms-configuration-app/compare/v1.2.2...v1.2.3) (2021-04-20)
 
 
