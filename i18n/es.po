@@ -40,7 +40,7 @@ msgid "User group"
 msgstr "Grupo de usuario"
 
 msgid "Home"
-msgstr ""
+msgstr "Inicio"
 
 msgid "Gateway configuration"
 msgstr ""

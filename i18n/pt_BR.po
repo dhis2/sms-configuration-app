@@ -38,7 +38,7 @@ msgid "User group"
 msgstr ""
 
 msgid "Home"
-msgstr ""
+msgstr "Origem"
 
 msgid "Gateway configuration"
 msgstr ""

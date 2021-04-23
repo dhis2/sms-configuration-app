@@ -37,7 +37,7 @@ msgid "User group"
 msgstr "Фойдаланувчи гуруҳи"
 
 msgid "Home"
-msgstr ""
+msgstr "Бош саҳифа"
 
 msgid "Gateway configuration"
 msgstr ""

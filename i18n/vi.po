@@ -39,7 +39,7 @@ msgid "User group"
 msgstr "Nhóm Người Dùng"
 
 msgid "Home"
-msgstr ""
+msgstr "Trang chủ"
 
 msgid "Gateway configuration"
 msgstr ""
