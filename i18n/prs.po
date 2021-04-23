@@ -37,7 +37,7 @@ msgid "User group"
 msgstr "گروپ استفاده کننده"
 
 msgid "Home"
-msgstr ""
+msgstr "صفحه اصلی"
 
 msgid "Gateway configuration"
 msgstr ""
