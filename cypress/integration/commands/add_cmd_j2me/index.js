@@ -1,18 +1,14 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Before(() => {
-    cy.server()
-
-    cy.route({
-        url: /.*\/smsCommands/,
+    cy.intercept(/.*\/smsCommands/, {
         method: 'POST',
-        response: { commands: [] },
+        body: { commands: [] },
     }).as('createSmsCommandXhr')
 
-    cy.route({
-        url: /.*\/dataSets/,
+    cy.intercept(/.*\/dataSets/, {
         method: 'GET',
-        response: 'fixture:commands/add_cmd_j2me/dataSets',
+        fixture: 'commands/add_cmd_j2me/dataSets',
     })
 })
 
@@ -55,9 +51,10 @@ When('the user submits the form', () => {
 })
 
 Then('the data should be sent successfully', () => {
-    cy.wait('@createSmsCommandXhr').then(xhr => {
-        expect(xhr.status).to.equal(200)
-    })
+    cy.wait('@createSmsCommandXhr')
+        .its('response')
+        .its('statusCode')
+        .should('eql', 200)
 })
 
 Then('the form should not submit', () => {

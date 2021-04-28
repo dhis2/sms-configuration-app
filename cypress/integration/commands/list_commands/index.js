@@ -5,18 +5,16 @@ Before(() => {
 })
 
 Given('there are no commands', () => {
-    cy.route({
-        url: /\/smsCommands[?]/,
+    cy.intercept(/\/smsCommands[?]/, {
         method: 'GET',
-        response: 'fixture:commands/list_commands/no_commands',
+        fixture: 'commands/list_commands/no_commands',
     })
 })
 
 Given('some commands exist', () => {
-    cy.route({
-        url: /\/smsCommands[?]/,
+    cy.intercept(/\/smsCommands[?]/, {
         method: 'GET',
-        response: 'fixture:commands/list_commands/some_commands',
+        fixture: 'commands/list_commands/some_commands',
     })
 })
 

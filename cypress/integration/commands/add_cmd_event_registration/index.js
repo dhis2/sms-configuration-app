@@ -1,26 +1,19 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Before(() => {
-    cy.server()
-
-    cy.route({
-        url: /.*\/smsCommands/,
+    cy.intercept(/.*\/smsCommands/, {
         method: 'POST',
-        response: {
-            commands: [],
-        },
+        body: { commands: [] },
     }).as('createSmsCommandXhr')
 
-    cy.route({
-        url: /.*\/programs/,
+    cy.intercept(/.*\/programs/, {
         method: 'GET',
-        response: 'fixture:commands/add_cmd_event_registration/programs',
+        fixture: 'commands/add_cmd_event_registration/programs',
     }).as('programsXhr')
 
-    cy.route({
-        url: /.*\/programStages/,
+    cy.intercept(/.*\/programStages/, {
         method: 'GET',
-        response: 'fixture:commands/add_cmd_event_registration/programStages',
+        fixture: 'commands/add_cmd_event_registration/programStages',
     }).as('programStagesXhr')
 })
 
@@ -68,9 +61,10 @@ When('the user leaves the program field empty', () => {
 })
 
 Then('the data should be sent successfully', () => {
-    cy.wait('@createSmsCommandXhr').then(xhr => {
-        expect(xhr.status).to.equal(200)
-    })
+    cy.wait('@createSmsCommandXhr')
+        .its('response')
+        .its('statusCode')
+        .should('eql', 200)
 })
 
 Then('the form should not submit', () => {
@@ -89,13 +83,13 @@ Then('a program stage should be selected automatically', () => {
     cy.all(
         () => cy.get('@selectedProgram'),
         () => cy.wait('@programStagesXhr')
-    ).then(([selectedProgram, programStagesXhr]) => {
-        expect(programStagesXhr.url).to.match(
+    ).then(([selectedProgram, intercepted]) => {
+        expect(decodeURIComponent(intercepted.request.url)).to.match(
             new RegExp(`program.id:eq:${selectedProgram.id}`)
         )
 
         const attributedProgramStage =
-            programStagesXhr.response.body.programStages[0].displayName
+            intercepted.response.body.programStages[0].displayName
 
         cy.get(
             '{smscommand-fieldprogramstage} [data-test="dhis2-uicore-select-input"]'

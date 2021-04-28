@@ -1,100 +1,93 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
+const interceptCommandDetails = fixture => {
+    cy.get('@commandId').then(commandId => {
+        cy.intercept(new RegExp(`${commandId}[?].*fields=[*]`), {
+            method: 'GET',
+            fixture,
+        })
+    })
+}
+
 Before(() => {
-    cy.server()
+    cy.intercept(/[/]smsCommands[?]paging=false&fields=[*]/, {
+        method: 'GET',
+        fixture: 'commands/edit_cmd_j2me/commandsForListView',
+    })
 
     cy.fixture('commands/edit_cmd_j2me/commandsForListView').then(
         ({ smsCommands }) => {
             const [{ id: commandId }] = smsCommands
             cy.wrap(commandId).as('commandId')
+
+            cy.intercept(
+                new RegExp(`${commandId}[?]fields=parserType&paging=false`),
+                {
+                    method: 'GET',
+                    fixture: 'commands/edit_cmd_j2me/commandParserType',
+                }
+            )
+
+            cy.intercept(new RegExp(`smsCommands/${commandId}$`), {
+                method: 'PUT',
+                body: {},
+            }).as('updateSmsCommandXhr')
         }
     )
 
     cy.fixture('commands/edit_cmd_j2me/dataSets').then(dataSets => {
         // This is used by the formula modal,
         // which will display a dropdown with data elements
-        cy.route({
-            url: /dataSets[/][a-zA-Z0-9]+/,
+        cy.intercept(/dataSets[/][a-zA-Z0-9]+/, {
             method: 'GET',
-            response: 'fixture:commands/edit_cmd_j2me/dataSets',
+            fixture: 'commands/edit_cmd_j2me/dataSets',
         })
 
         // This is used by the formula button of the sms code field
         dataSets.dataSetElements.forEach(({ dataElement }) => {
-            cy.route({
-                url: new RegExp(`dataElements/${dataElement.id}`),
+            cy.intercept(new RegExp(`dataElements/${dataElement.id}`), {
                 method: 'GET',
-                response: { displayName: dataElement.displayName },
+                body: { displayName: dataElement.displayName },
             })
         })
     })
 })
 
 Given('a sms command with parser type J2ME exists', () => {
-    cy.get('@commandId').then(commandId => {
-        cy.route({
-            url: /[/]smsCommands[?]paging=false&fields=[*]/,
-            method: 'GET',
-            response: 'fx:commands/edit_cmd_j2me/commandsForListView',
-        })
-
-        cy.route({
-            url: new RegExp(`${commandId}[?]fields=parserType&paging=false`),
-            method: 'GET',
-            response: 'fixture:commands/edit_cmd_j2me/commandParserType',
-        })
-
-        cy.route({
-            url: new RegExp(`${commandId}[?].*fields=[*]`),
-            method: 'GET',
-            response: 'fixture:commands/edit_cmd_j2me/commandDetails',
-        })
-
-        cy.route({
-            url: new RegExp(`smsCommands/${commandId}`),
-            method: 'PUT',
-            response: {},
-        }).as('updateSmsCommandXhr')
-    })
+    interceptCommandDetails('commands/edit_cmd_j2me/commandDetails')
 })
 
-Given('the command has a short code field with a value', () => {
-    cy.get('@commandId').then(commandId => {
-        cy.route({
-            url: new RegExp(`${commandId}[?].*fields=[*]`),
-            method: 'GET',
-            response:
-                'fixture:commands/edit_cmd_j2me/commandDetailsWithCodeValue',
+Given(
+    'a sms command with parser type J2ME exists with a short code field with a value',
+    () => {
+        interceptCommandDetails(
+            'commands/edit_cmd_j2me/commandDetailsWithCodeValue'
+        )
+    }
+)
+
+Given(
+    'a sms command with parser type J2ME exists with a short code fields with a value and a formula',
+    () => {
+        const fixture =
+            'commands/edit_cmd_j2me/commandDetailsWithCodeValueAndFormula'
+        interceptCommandDetails(fixture)
+
+        // Extracting the data element of the formula for later use
+        cy.fixture(fixture).then(command => {
+            const code = command.smsCodes[0]
+            const codeDataElementId = code.dataElement.id
+            const dataElement = command.dataset.dataSetElements.find(
+                dataSetElement => {
+                    return dataSetElement.dataElement.id === codeDataElementId
+                }
+            ).dataElement
+
+            cy.wrap(code).as('code')
+            cy.wrap(dataElement).as('formulaDataElement')
         })
-    })
-})
-
-Given('the command has short code fields with a value and a formula', () => {
-    cy.get('@commandId').then(commandId => {
-        cy.route({
-            url: new RegExp(`${commandId}[?].*fields=[*]`),
-            method: 'GET',
-            response:
-                'fixture:commands/edit_cmd_j2me/commandDetailsWithCodeValueAndFormula',
-        })
-    })
-
-    // Extracting the data element of the formula for later use
-    cy.fixture(
-        'commands/edit_cmd_j2me/commandDetailsWithCodeValueAndFormula'
-    ).then(command => {
-        const code = command.smsCodes[0]
-        const codeDataElementId = code.dataElement.id
-        const dataElement = command.dataset.dataSetElements.find(
-            dataSetElement => {
-                return dataSetElement.dataElement.id === codeDataElementId
-            }
-        ).dataElement
-
-        cy.wrap(code).as('code')
-        cy.wrap(dataElement).as('formulaDataElement')
-    })
-})
+    }
+)
 
 Given('the user is editing an J2ME parser command', () => {
     cy.visitWhenStubbed('/')
@@ -274,9 +267,9 @@ When('the user removes the formula', () => {
 })
 
 Then('the form should submit successfully', () => {
-    cy.wait('@updateSmsCommandXhr').then(xhr => {
-        expect(xhr.status).to.equal(200)
-        cy.wrap(xhr.request.body).as('payload')
+    cy.wait('@updateSmsCommandXhr').then(result => {
+        expect(result.response.statusCode).to.equal(200)
+        cy.wrap(result.request.body).as('payload')
     })
 })
 
