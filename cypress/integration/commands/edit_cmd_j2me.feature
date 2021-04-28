@@ -35,8 +35,7 @@ Feature: J2Me can be edited
             | name |
 
     Scenario: The user edits an sms short code
-        Given a sms command with parser type J2ME exists
-        And the command has a short code field with a value
+        Given a sms command with parser type J2ME exists with a short code field with a value
         And the user is editing an J2ME parser command
         When the user changes the value of a short code
         And the user submits the form
@@ -44,8 +43,7 @@ Feature: J2Me can be edited
         And the value of the changed short code should be reflected in the payload
 
     Scenario: The user adds a formula to the first short code
-        Given a sms command with parser type J2ME exists
-        And the command has a short code field with a value
+        Given a sms command with parser type J2ME exists with a short code field with a value
         And the user is editing an J2ME parser command
         When the user adds a formula
         Then the formula should be reflected below the code
@@ -54,8 +52,7 @@ Feature: J2Me can be edited
         And the formula should be send alongside the short code
 
     Scenario: The user changes the formula of the first short code
-        Given a sms command with parser type J2ME exists
-        And the command has short code fields with a value and a formula
+        Given a sms command with parser type J2ME exists with a short code fields with a value and a formula
         And the user is editing an J2ME parser command
         When the user changes the formula
         Then the formula should be reflected below the code
@@ -64,8 +61,7 @@ Feature: J2Me can be edited
         And the formula should be send alongside the short code
 
     Scenario: The user removes the formula of the first short code
-        Given a sms command with parser type J2ME exists
-        And the command has short code fields with a value and a formula
+        Given a sms command with parser type J2ME exists with a short code fields with a value and a formula
         And the user is editing an J2ME parser command
         When the user removes the formula
         Then the formula should not be shown below the code

@@ -1,51 +1,50 @@
-import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
-Before(() => {
-    cy.server()
-})
+Given('no commands exist', () => {
+    const fixture = 'commands/delete_command/no_commands'
+    cy.intercept(/.*\/smsCommands[?]/, { method: 'GET', fixture })
 
-const prepareCommands = fixture => {
     cy.fixture(fixture).then(response => {
         const { smsCommands } = response
-
         cy.wrap(smsCommands).as('commands')
-        cy.route({
-            url: /.*\/smsCommands[?]/,
-            method: 'GET',
-            response,
-        })
+    })
+})
 
-        smsCommands.forEach(({ id }) => {
-            cy.route({
-                url: new RegExp(`.*/smsCommands/${id}$`),
+Given('some commands exist', () => {
+    const fixture = 'commands/delete_command/some_commands'
+    cy.intercept(/.*\/smsCommands[?]/, { method: 'GET', fixture })
+
+    cy.fixture(fixture).then(response => {
+        const { smsCommands } = response
+        cy.wrap(smsCommands).as('commands')
+    })
+})
+
+Given('the user can delete commands', () => {
+    cy.get('@commands').then(commands => {
+        commands.forEach(({ id }) => {
+            const url = new RegExp(`.*/smsCommands/${id}$`)
+
+            cy.intercept(url, {
                 method: 'DELETE',
-                response: {},
+                body: {},
             }).as(`delete${id}XHR`)
         })
     })
-}
+})
 
 Given("the user can't delete commands due to a request failure", () => {
     cy.get('@commands').then(commands => {
         commands.forEach(({ id }) => {
-            cy.route({
-                url: new RegExp(`.*/smsCommands/${id}$`),
+            const url = new RegExp(`.*/smsCommands/${id}$`)
+
+            cy.intercept(url, {
                 method: 'DELETE',
-                status: 503,
-                response: {
-                    error: 'Internal server error',
-                },
+                statusCode: 503,
+                body: { error: 'Internal server error' },
             }).as(`delete${id}XHR`)
         })
     })
-})
-
-Given('no commands exist', () => {
-    prepareCommands('commands/delete_command/no_commands')
-})
-
-Given('some commands exist', () => {
-    prepareCommands('commands/delete_command/some_commands')
 })
 
 Given('the user navigated to the sms commands list page', () => {
@@ -119,9 +118,10 @@ Then('a confirmation modal should pop up', () => {
 
 Then("a delete request with the first command's id should be sent", () => {
     cy.get('@commands').then(([firstCommand]) => {
-        cy.wait(`@delete${firstCommand.id}XHR`).then(xhr => {
-            expect(xhr.status).to.equal(200)
-        })
+        cy.wait(`@delete${firstCommand.id}XHR`)
+            .its('response')
+            .its('statusCode')
+            .should('eql', 200)
     })
 })
 

@@ -1,21 +1,10 @@
-import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
-
-Before(() => {
-    cy.server()
-})
+import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Given('the user is adding a new gateway with type Clickatell', () => {
-    cy.route({
-        url: /\/gateways.json$/,
-        method: 'GET',
-        response: { gateways: [] },
-    })
-
-    cy.route({
-        url: /gateways/,
-        method: 'POST',
-        response: {},
-    }).as('createGatewayConfigurationXHR')
+    cy.intercept('GET', /\/gateways.json$/, { body: { gateways: [] } })
+    cy.intercept('POST', /gateways/, { body: {} }).as(
+        'createGatewayConfigurationXHR'
+    )
 
     cy.visitWhenStubbed('/')
     cy.get('{shared-navigationitem}:nth-child(2)').click()
@@ -75,7 +64,7 @@ Then('the entered data should be sent to the endpoint', () => {
         () => cy.wait('@createGatewayConfigurationXHR'),
         () => cy.get('@gatewayData')
     ).then(([xhr, gatewayData]) => {
-        expect(xhr.status).to.equal(200)
+        expect(xhr.response.statusCode).to.equal(200)
         expect(xhr.request.body).to.eql(gatewayData)
     })
 })

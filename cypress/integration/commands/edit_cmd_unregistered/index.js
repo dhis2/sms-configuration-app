@@ -7,30 +7,24 @@ Before(() => {
         response => {
             const commandId = response.smsCommands[0].id
 
-            cy.route({
-                url: /\/smsCommands\?paging=false&fields=\*/,
+            cy.intercept(/\/smsCommands\?paging=false&fields=\*/, {
                 method: 'GET',
-                response: response,
+                body: response,
             })
 
-            cy.route({
-                url: new RegExp(`${commandId}[?].*=parserType&`),
+            cy.intercept(new RegExp(`${commandId}[?].*=parserType&`), {
                 method: 'GET',
-                response:
-                    'fixture:commands/edit_cmd_unregistered/commandParserType',
+                fixture: 'commands/edit_cmd_unregistered/commandParserType',
             })
 
-            cy.route({
-                url: new RegExp(`${commandId}?.*userGroup`),
+            cy.intercept(new RegExp(`${commandId}?.*userGroup`), {
                 method: 'GET',
-                response:
-                    'fixture:commands/edit_cmd_unregistered/commandDetails',
+                fixture: 'commands/edit_cmd_unregistered/commandDetails',
             })
 
-            cy.route({
-                url: new RegExp(`smsCommands/${commandId}`),
+            cy.intercept(new RegExp(`smsCommands/${commandId}`), {
                 method: 'PATCH',
-                response: {},
+                body: {},
             }).as('updateSmsCommandXhr')
         }
     )

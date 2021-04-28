@@ -1,8 +1,21 @@
-import { When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 import queryString from 'query-string'
-import '../common'
 
 const phoneNumber = '+555123'
+const endpointUrl = /[/]sms[/]inbound([?]|$)/
+
+Given('there are no received messages', () => {
+    cy.intercept('GET', endpointUrl, { fixture: 'received/noReceived' })
+})
+
+Given('some received messages exist', () => {
+    cy.intercept('GET', endpointUrl, { fixture: 'received/received' })
+})
+
+Given('the user navigated to the received messages page', () => {
+    cy.visit('/')
+    cy.get('{shared-navigationitem}:nth-child(5)').click()
+})
 
 When("the user clicks on the status filter and selects 'Failed'", () => {
     cy.get('{smsinbound-statusfilter}:eq(0)').click()

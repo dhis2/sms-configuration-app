@@ -1,39 +1,33 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Before(() => {
-    cy.server()
-
     cy.fixture('commands/edit_cmd_event_registration/commandsForListView').then(
         response => {
             const { smsCommands } = response
             const [{ id: commandId }] = smsCommands
 
-            cy.route({
-                url: /\/smsCommands\?paging=false&fields=\*/,
+            cy.intercept(/\/smsCommands\?paging=false&fields=\*/, {
                 method: 'GET',
-                response,
+                body: response,
             })
 
-            cy.route({
-                url: new RegExp(
-                    `${commandId}[?]fields=parserType&paging=false`
-                ),
+            cy.intercept(
+                new RegExp(`${commandId}[?]fields=parserType&paging=false`),
+                {
+                    method: 'GET',
+                    fixture:
+                        'commands/edit_cmd_event_registration/commandParserType',
+                }
+            )
+
+            cy.intercept(new RegExp(`${commandId}[?].*fields=[*]`), {
                 method: 'GET',
-                response:
-                    'fixture:commands/edit_cmd_event_registration/commandParserType',
+                fixture: 'commands/edit_cmd_event_registration/commandDetails',
             })
 
-            cy.route({
-                url: new RegExp(`${commandId}[?].*fields=[*]`),
-                method: 'GET',
-                response:
-                    'fixture:commands/edit_cmd_event_registration/commandDetails',
-            })
-
-            cy.route({
-                url: new RegExp(`smsCommands/${commandId}`),
+            cy.intercept(new RegExp(`smsCommands/${commandId}`), {
                 method: 'PUT',
-                response: {},
+                body: {},
             }).as('updateSmsCommandXhr')
         }
     )
@@ -137,9 +131,9 @@ When('the user submits the form', () => {
 })
 
 Then('the form should submit successfully', () => {
-    cy.wait('@updateSmsCommandXhr').then(xhr => {
-        expect(xhr.status).to.equal(200)
-        cy.wrap(xhr.request.body).as('payload')
+    cy.wait('@updateSmsCommandXhr').then(result => {
+        expect(result.response.statusCode).to.equal(200)
+        cy.wrap(result.request.body).as('payload')
     })
 })
 

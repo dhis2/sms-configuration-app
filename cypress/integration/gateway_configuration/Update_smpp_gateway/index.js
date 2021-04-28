@@ -1,8 +1,4 @@
-import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
-
-Before(() => {
-    cy.server()
-})
+import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const selectSelectValue = (selectSelector, optionValue) => {
     cy.get(selectSelector).click()
@@ -58,26 +54,18 @@ const gateways = [
 ]
 
 Given('the user navigated to the gateway configuration page', () => {
-    cy.route({
-        url: /.*\/gateways.json$/,
-        method: 'GET',
-        response: { gateways },
+    cy.intercept('GET', /.*\/gateways.json$/, {
+        body: { gateways },
     })
 
     gateways.forEach(gateway => {
         const { uid } = gateway
         const url = new RegExp(`.*/gateways/${uid}`)
 
-        cy.route({
-            url,
-            response: gateway,
-        })
-
-        cy.route({
-            url,
-            method: 'PUT',
-            response: {},
-        }).as(`updateGatewayConfiguration${uid}XHR`)
+        cy.intercept('GET', url, { body: gateway })
+        cy.intercept('PUT', url, { body: {} }).as(
+            `updateGatewayConfiguration${uid}XHR`
+        )
     })
 
     cy.visitWhenStubbed('/')
@@ -292,7 +280,7 @@ Then('the updates should be sent to the correct endpoint', () => {
             () => cy.wait(`@updateGatewayConfiguration${id}XHR`),
             () => cy.get('@finalGatewayConfiguration')
         ).then(([xhr, finalGatewayConfiguration]) => {
-            expect(xhr.status).to.equal(200)
+            expect(xhr.response.statusCode).to.equal(200)
 
             const sentData = xhr.request.body
             const {

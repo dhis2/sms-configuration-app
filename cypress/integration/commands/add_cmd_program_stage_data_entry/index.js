@@ -1,27 +1,19 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Before(() => {
-    cy.server()
-
-    cy.route({
-        url: /.*\/smsCommands/,
+    cy.intercept(/.*\/smsCommands/, {
         method: 'POST',
-        response: {
-            commands: [],
-        },
+        body: { commands: [] },
     }).as('createSmsCommandXhr')
 
-    cy.route({
-        url: /.*\/programs/,
+    cy.intercept(/.*\/programs/, {
         method: 'GET',
-        response: 'fixture:commands/add_cmd_program_stage_data_entry/programs',
+        fixture: 'commands/add_cmd_program_stage_data_entry/programs',
     }).as('programsXhr')
 
-    cy.route({
-        url: /.*\/programStages/,
+    cy.intercept(/.*\/programStages/, {
         method: 'GET',
-        response:
-            'fixture:commands/add_cmd_program_stage_data_entry/programStages',
+        fixture: 'commands/add_cmd_program_stage_data_entry/programStages',
     }).as('programStagesXhr')
 })
 
@@ -100,9 +92,10 @@ When('the user leaves the program stage field empty', () => {
 })
 
 Then('the data should be sent successfully', () => {
-    cy.wait('@createSmsCommandXhr').then(xhr => {
-        expect(xhr.status).to.equal(200)
-    })
+    cy.wait('@createSmsCommandXhr')
+        .its('response')
+        .its('statusCode')
+        .should('eql', 200)
 })
 
 Then('the form should not submit', () => {
@@ -136,7 +129,7 @@ Then(
             () => cy.get('@selectedProgram'),
             () => cy.wait('@programStagesXhr')
         ).then(([selectedProgram, programStagesXhr]) => {
-            expect(programStagesXhr.url).to.match(
+            expect(decodeURIComponent(programStagesXhr.request.url)).to.match(
                 new RegExp(`program.id:eq:${selectedProgram.id}`)
             )
 

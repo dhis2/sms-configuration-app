@@ -1,35 +1,29 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Before(() => {
-    cy.server()
-
     cy.fixture('commands/edit_cmd_alert/commandsForListView').then(
         ({ smsCommands }) => {
             const [command] = smsCommands
             const { id: commandId } = command
 
-            cy.route({
-                url: /\/smsCommands[?]/,
+            cy.intercept(/\/smsCommands[?]/, {
                 method: 'GET',
-                response: 'fixture:commands/edit_cmd_alert/commandsForListView',
+                fixture: 'commands/edit_cmd_alert/commandsForListView',
             })
 
-            cy.route({
-                url: new RegExp(`${commandId}[?].*=parserType&`),
+            cy.intercept(new RegExp(`${commandId}[?].*=parserType&`), {
                 method: 'GET',
-                response: 'fixture:commands/edit_cmd_alert/commandParserType',
+                fixture: 'commands/edit_cmd_alert/commandParserType',
             })
 
-            cy.route({
-                url: new RegExp(`${commandId}[?].*receivedMessage`),
+            cy.intercept(new RegExp(`${commandId}[?].*receivedMessage`), {
                 method: 'GET',
-                response: 'fixture:commands/edit_cmd_alert/commandDetails',
+                fixture: 'commands/edit_cmd_alert/commandDetails',
             })
 
-            cy.route({
-                url: new RegExp(`smsCommands/${commandId}`),
+            cy.intercept(new RegExp(`smsCommands/${commandId}`), {
                 method: 'PATCH',
-                response: {},
+                body: {},
             }).as('updateSmsCommandXhr')
         }
     )

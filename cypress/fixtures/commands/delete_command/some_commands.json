@@ -18,7 +18,7 @@
             "favorite": false,
             "favorites": [],
             "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/zYT407xRwIB",
-            "id": "FOOOO00000",
+            "id": "id-0",
             "lastUpdated": "2020-10-20T11:27:02.664",
             "moreThanOneOrgUnitMessage": "Found more than one org unit for this number. Please specify one organisation unit",
             "name": "asdf",
@@ -38,7 +38,7 @@
         },
         {
             "lastUpdated": "2020-11-09T10:39:24.067",
-            "id": "F0000OOOOO",
+            "id": "id-1",
             "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/u3tfuz8T6dJ",
             "created": "2020-11-09T10:39:24.067",
             "name": "J2Me",
@@ -84,7 +84,7 @@
         },
         {
             "lastUpdated": "2020-10-23T08:48:52.327",
-            "id": "F0000OOOOO",
+            "id": "id-2",
             "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/R4gqV7ffKwM",
             "created": "2020-10-23T08:48:52.327",
             "name": "J2ME - Emergency Response",
@@ -120,7 +120,7 @@
         },
         {
             "lastUpdated": "2020-11-09T15:32:13.423",
-            "id": "F0000OOOOO",
+            "id": "id-3",
             "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/Omise7rTMjI",
             "created": "2020-11-09T15:32:13.423",
             "name": "Unregistered parser - Administrators",
@@ -156,7 +156,7 @@
         },
         {
             "lastUpdated": "2020-11-09T15:02:37.775",
-            "id": "F0000OOOOO",
+            "id": "id-4",
             "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/ueBblO2S3QA",
             "created": "2020-11-09T15:02:37.775",
             "name": "TERP - Antenatal care visit",
@@ -192,7 +192,7 @@
         },
         {
             "lastUpdated": "2020-11-09T14:25:44.064",
-            "id": "F0000OOOOO",
+            "id": "id-5",
             "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/gqaGxMG34Qj",
             "created": "2020-11-09T14:25:44.064",
             "name": "PSDE - Child Programme - Baby Postnatal",
@@ -231,7 +231,7 @@
         },
         {
             "lastUpdated": "2020-10-22T08:05:10.917",
-            "id": "F0000OOOOO",
+            "id": "id-6",
             "href": "https://debug.dhis2.org/2.35dev/api/32/smsCommands/JcrPTBRAyRs",
             "created": "2020-10-22T08:05:10.917",
             "name": "Event Registration Parser - Antenatal care visit",

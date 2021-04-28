@@ -8,30 +8,26 @@ Before(() => {
     ).then(command => {
         const commandId = command.id
 
-        cy.route({
-            url: /\/smsCommands\?paging=false&fields=\*/,
+        cy.intercept(/\/smsCommands\?paging=false&fields=\*/, {
             method: 'GET',
-            response:
-                'fixture:commands/edit_cmd_program_stage_data_entry/commandsForListView',
+            fixture:
+                'commands/edit_cmd_program_stage_data_entry/commandsForListView',
         })
 
-        cy.route({
-            url: new RegExp(`${commandId}[?]fields=parserType`),
+        cy.intercept(new RegExp(`${commandId}[?]fields=parserType`), {
             method: 'GET',
-            response:
-                'fixture:commands/edit_cmd_program_stage_data_entry/commandParserType',
+            fixture:
+                'commands/edit_cmd_program_stage_data_entry/commandParserType',
         })
 
-        cy.route({
-            url: new RegExp(`${commandId}[?].*fields=[*]`),
+        cy.intercept(new RegExp(`${commandId}[?].*fields=[*]`), {
             method: 'GET',
-            response: command,
+            body: command,
         })
 
-        cy.route({
-            url: new RegExp(`smsCommands[/]${commandId}`),
+        cy.intercept(new RegExp(`smsCommands[/]${commandId}`), {
             method: 'PUT',
-            response: {},
+            body: {},
         }).as('updateSmsCommandXhr')
     })
 })
@@ -134,9 +130,9 @@ When('the user submits the form', () => {
 })
 
 Then('the form should submit successfully', () => {
-    cy.wait('@updateSmsCommandXhr').then(xhr => {
-        expect(xhr.status).to.equal(200)
-        cy.wrap(xhr.request.body).as('payload')
+    cy.wait('@updateSmsCommandXhr').then(result => {
+        expect(result.response.statusCode).to.equal(200)
+        cy.wrap(result.request.body).as('payload')
     })
 })
 
