@@ -1,6 +1,20 @@
-import { Then } from 'cypress-cucumber-preprocessor/steps'
+import { Given, Then } from 'cypress-cucumber-preprocessor/steps'
 import { translations } from '../../../../src/sms-inbound/translations'
-import '../common'
+
+const endpointUrl = /[/]sms[/]inbound([?]|$)/
+
+Given('there are no received messages', () => {
+    cy.intercept('GET', endpointUrl, { fixture: 'received/noReceived' })
+})
+
+Given('some received messages exist', () => {
+    cy.intercept('GET', endpointUrl, { fixture: 'received/received' })
+})
+
+Given('the user navigated to the received messages page', () => {
+    cy.visit('/')
+    cy.get('{shared-navigationitem}:nth-child(5)').click()
+})
 
 Then('the user should be notified that there are no messages', () => {
     cy.get('[data-test="dhis2-uicore-tablecell"]').should(
