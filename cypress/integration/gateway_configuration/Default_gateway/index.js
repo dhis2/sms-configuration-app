@@ -1,8 +1,4 @@
-import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
-
-Before(() => {
-    cy.server()
-})
+import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const gateways = [
     {
@@ -38,18 +34,13 @@ const gateways = [
 ]
 
 Given('some gateway configurations exist', () => {
-    cy.route({
-        url: /.*\/gateways.json$/,
-        method: 'GET',
-        response: { gateways },
-    })
+    cy.intercept('GET', /.*\/gateways.json$/, { body: { gateways } })
 
     gateways.forEach(({ uid }) => {
-        cy.route({
-            url: new RegExp(`.*/gateways/default/${uid}`),
-            method: 'PUT',
-            response: {},
-        }).as('defaultGatewayXHR')
+        const method = 'PUT'
+        const url = new RegExp(`.*/gateways/default/${uid}`)
+        const routeHandler = { body: {} }
+        cy.intercept(method, url, routeHandler).as(`defaultGatewayXHR${uid}`)
     })
 
     cy.visitWhenStubbed('/')
@@ -59,13 +50,10 @@ Given('some gateway configurations exist', () => {
 When(
     'the user clicks on the make default button of a non-default gateway configuration',
     () => {
-        cy.get('{smsgateway-table-makedefault}').first().as('makeDefaultButton')
-
-        cy.get('@makeDefaultButton')
-            .parents('tr')
+        cy.get('tbody {smsgateway-table-row}:nth-child(2)')
             .as('newDefaultGatewayConfiguration')
-
-        cy.get('@makeDefaultButton').click()
+            .find('{smsgateway-table-makedefault}')
+            .click()
     }
 )
 
@@ -76,16 +64,14 @@ Then('there should be exactly one default gateway configuration', () => {
 Then(
     'the endpoint for setting the default gateway should be called with the id of the clicked one',
     () => {
-        cy.all(
-            () => cy.wait('@defaultGatewayXHR'),
-            () =>
-                cy
-                    .get('@newDefaultGatewayConfiguration')
-                    .find('{smsgateway-table-id} input')
-                    .invoke('val')
-        ).then(([xhr, id]) => {
-            expect(xhr.status).to.equal(200)
-            expect(xhr.url).to.match(new RegExp(`/${id}$`))
-        })
+        cy.get('@newDefaultGatewayConfiguration')
+            .find('{smsgateway-table-id} input')
+            .invoke('val')
+            .then(id => {
+                cy.wait(`@defaultGatewayXHR${id}`).then(xhr => {
+                    expect(xhr.response.statusCode).to.equal(200)
+                    expect(xhr.request.url).to.match(new RegExp(`/${id}$`))
+                })
+            })
     }
 )

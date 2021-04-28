@@ -1,17 +1,8 @@
-import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
-
-Before(() => {
-    cy.server()
-})
+import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Given('there are no gateways', () => {
-    cy.route({
-        url: /.*\/gateways.json$/,
-        method: 'GET',
-        response: {
-            gateways: [],
-        },
-    })
+    const body = { gateways: [] }
+    cy.intercept('GET', /.*\/gateways.json$/, { body })
 })
 
 Given('some gateways exist', () => {
@@ -49,17 +40,11 @@ Given('some gateways exist', () => {
     ]
 
     cy.wrap(gateways).as('gateways')
-    cy.route({
-        url: /.*\/gateways.json$/,
-        method: 'GET',
-        response: { gateways },
-    })
+    cy.intercept('GET', /.*\/gateways.json$/, { body: { gateways } })
 
     gateways.forEach(gateway => {
-        cy.route({
-            url: new RegExp(`gateways/${gateway.uid}$`),
-            method: 'GET',
-            response: gateway,
+        cy.intercept('GET', new RegExp(`gateways/${gateway.uid}$`), {
+            body: gateway,
         })
     })
 })
@@ -79,19 +64,19 @@ When('the user makes the second gateway the default gateway', () => {
     cy.get('@gateways').then(gateways => {
         const secondGateway = gateways[1]
 
-        cy.route({
-            url: new RegExp(`.*/gateways/default/${secondGateway.uid}`),
-            method: 'PUT',
-            delay: 1000,
-            // stub the response as the mocked gateway data above
-            // most likely contains IDs that do not exist
-            response: {
-                httpStatus: 'OK',
-                httpStatusCode: 200,
-                status: 'OK',
-                message: 'Jan-Gerke Salomon is set to default',
-            },
-        }).as('makeDefaultGatewayXHR')
+        cy.intercept(
+            'PUT',
+            new RegExp(`.*/gateways/default/${secondGateway.uid}`),
+            {
+                delay: 1000,
+                body: {
+                    httpStatus: 'OK',
+                    httpStatusCode: 200,
+                    status: 'OK',
+                    message: 'Jan-Gerke Salomon is set to default',
+                },
+            }
+        ).as('makeDefaultGatewayXHR')
     })
 
     cy.get(
@@ -179,7 +164,7 @@ Then(
         // -> It's not testing whether the server works correctly,
         //    that's the responsibility of the backend test suite.
         cy.wait('@makeDefaultGatewayXHR').should(xhr => {
-            expect(xhr.status).to.equal(200)
+            expect(xhr.response.statusCode).to.equal(200)
         })
     }
 )

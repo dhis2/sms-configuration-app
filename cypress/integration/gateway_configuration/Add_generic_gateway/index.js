@@ -1,8 +1,4 @@
-import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
-
-Before(() => {
-    cy.server()
-})
+import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const gateways = [
     {
@@ -38,22 +34,17 @@ const gateways = [
 ]
 
 Given('the user navigated to the gateway configuration page', () => {
-    cy.route({
-        url: /.*\/gateways.json$/,
-        method: 'GET',
-        response: { gateways },
+    cy.intercept('GET', /.*\/gateways.json$/, {
+        body: { gateways },
     })
 
-    cy.route({
-        url: /.*\/gateways$/,
-        method: 'POST',
-        response: {},
+    cy.intercept('POST', /.*\/gateways$/, {
+        body: {},
     }).as('createGatewayConfigurationXHR')
 
     gateways.forEach(gateway => {
-        cy.route({
-            url: new RegExp(`.*/gateways/${gateway.uid}`),
-            response: gateway,
+        cy.intercept(new RegExp(`.*/gateways/${gateway.uid}`), {
+            body: gateway,
         })
     })
 
@@ -118,7 +109,7 @@ Then('the entered data should be sent to the endpoint', () => {
         () => cy.wait('@createGatewayConfigurationXHR'),
         () => cy.get('@gatewayData')
     ).then(([xhr, gatewayData]) => {
-        expect(xhr.status).to.equal(200)
+        expect(xhr.response.statusCode).to.equal(200)
         expect(xhr.request.body).to.eql(gatewayData)
     })
 })

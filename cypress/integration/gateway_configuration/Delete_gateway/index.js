@@ -1,8 +1,4 @@
-import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
-
-Before(() => {
-    cy.server()
-})
+import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const gateways = [
     {
@@ -39,32 +35,22 @@ const gateways = [
 
 const prepareGateways = gateways => {
     cy.wrap(gateways).as('gateways')
-    cy.route({
-        url: /.*\/gateways.json$/,
-        method: 'GET',
-        response: { gateways },
-    })
+    cy.intercept('GET', /.*\/gateways.json$/, { body: { gateways } })
 }
 
 Given('the user can delete configurations from the network perspective', () => {
     gateways.forEach(({ uid }) => {
-        cy.route({
-            url: new RegExp(`.*/gateways/${uid}$`),
-            method: 'DELETE',
-            response: {},
-        }).as(`delete${uid}XHR`)
+        const url = new RegExp(`.*/gateways/${uid}$`)
+        const body = {}
+        cy.intercept('DELETE', url, { body }).as(`delete${uid}XHR`)
     })
 })
 
 Given("the user can't delete configurations due to a request failure", () => {
     gateways.forEach(({ uid }) => {
-        cy.route({
-            url: new RegExp(`.*/gateways/${uid}$`),
-            method: 'DELETE',
-            status: 503,
-            response: {
-                error: 'Internal server error',
-            },
+        cy.intercept('DELETE', new RegExp(`.*/gateways/${uid}$`), {
+            statusCode: 503,
+            body: { error: 'Internal server error' },
         }).as(`delete${uid}XHR`)
     })
 })
@@ -135,7 +121,7 @@ Then(
     "a delete request with the first gateway configuration's id should be sent",
     () => {
         cy.wait(`@delete${gateways[0].uid}XHR`).then(xhr => {
-            expect(xhr.status).to.equal(200)
+            expect(xhr.response.statusCode).to.equal(200)
         })
     }
 )

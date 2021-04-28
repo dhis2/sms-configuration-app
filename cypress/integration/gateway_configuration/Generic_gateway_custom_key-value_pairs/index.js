@@ -1,8 +1,4 @@
-import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
-
-Before(() => {
-    cy.server()
-})
+import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const gateways = [
     {
@@ -49,24 +45,19 @@ const defaultParameter = {
 }
 
 Given('the user navigated to the gateway configuration page', () => {
-    cy.route({
-        url: /.*\/gateways.json$/,
-        method: 'GET',
-        response: { gateways },
+    cy.intercept('GET', /.*\/gateways.json$/, {
+        body: { gateways },
     })
 
-    cy.route({
-        url: /.*\/gateways$/,
-        method: 'POST',
-        response: {},
+    cy.intercept('POST', /.*\/gateways$/, {
+        body: {},
     }).as('createGatewayConfigurationXHR')
 
     gateways.forEach(({ uid }) => {
-        cy.route({
-            url: new RegExp(`.*/gateways/${uid}`),
-            method: 'PUT',
-            response: {},
-        }).as(`updateGatewayConfiguration${uid}XHR`)
+        const url = new RegExp(`.*/gateways/${uid}`)
+        const body = {}
+        const alias = `updateGatewayConfiguration${uid}XHR`
+        cy.intercept('PUT', url, { body }).as(alias)
     })
 
     cy.wrap(defaultParameter).as('newParameter')
@@ -79,11 +70,9 @@ Given('the user navigated to the gateway configuration page', () => {
 Given('the user is editing a generic gateway configuration', () => {
     cy.get('@gateways').then(gateways => {
         gateways.forEach(gateway => {
-            cy.route({
-                url: new RegExp(`.*/gateways/${gateway.uid}$`),
-                method: 'GET',
-                response: gateway,
-            })
+            const url = new RegExp(`.*/gateways/${gateway.uid}$`)
+            const body = gateway
+            cy.intercept('GET', url, { body })
         })
     })
 
