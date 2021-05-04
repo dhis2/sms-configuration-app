@@ -1,4 +1,4 @@
-import { enableAutoLogin } from '@dhis2/cypress-commands'
+import { enableAutoLogin, enableNetworkShim } from '@dhis2/cypress-commands'
 
 Cypress.Commands.add('visitWhenStubbed', (url, options = {}) => {
     return cy
@@ -17,3 +17,4 @@ Cypress.Commands.add('visitWhenStubbed', (url, options = {}) => {
 })
 
 enableAutoLogin()
+enableNetworkShim()
