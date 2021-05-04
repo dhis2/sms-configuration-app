@@ -1,7 +1,7 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const selectSelectValue = (selectSelector, optionValue) => {
-    cy.get(selectSelector).click()
+    cy.getWithDataTest(selectSelector).click()
     return cy.get(`[data-value="${optionValue}"]`).click()
 }
 
@@ -69,14 +69,14 @@ Given('the user navigated to the gateway configuration page', () => {
     })
 
     cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
 })
 
 When('the user clicks on the update button in the first SMPP gateway', () => {
-    cy.get('{smsgateway-table-type}:contains("smpp")')
+    cy.getWithDataTest('{smsgateway-table-type}:contains("smpp")')
         .first()
         .parents('tr')
-        .find('{smsgateway-table-edit}')
+        .findWithDataTest('{smsgateway-table-edit}')
         .click()
 
     cy.wrap(gateways[0])
@@ -107,7 +107,9 @@ When(
 
                 if (isInputField) {
                     newValue = field === 'port' ? '1337' : 'This is a new value'
-                    cy.get(`${dataTest} input`).clear().type(newValue)
+                    cy.getWithDataTest(`${dataTest} input`)
+                        .clear()
+                        .type(newValue)
                 } else if (field === 'numberPlanIndicator') {
                     newValue = 'INTERNET'
                     selectSelectValue(
@@ -128,7 +130,7 @@ When(
                     )
                 } else if (field === 'compressed') {
                     newValue = !prevValue
-                    cy.get(`${dataTest} label`).click()
+                    cy.getWithDataTest(`${dataTest} label`).click()
                 }
 
                 cy.get('@finalGatewayConfiguration').then(
@@ -145,7 +147,7 @@ When(
 )
 
 When('submits the form', () => {
-    cy.get('{forms-gatewaysmppform-submit}').click()
+    cy.getWithDataTest('{forms-gatewaysmppform-submit}').click()
 })
 
 When(
@@ -157,7 +159,7 @@ When(
                 : `{smsgateway-field${field.toLowerCase()}}`
 
         const newValue = field === 'port' ? '1337' : 'This is a new value'
-        cy.get(dataTest).as('invalidField').find('input').clear()
+        cy.getWithDataTest(dataTest).as('invalidField').find('input').clear()
 
         cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
             cy.wrap({
@@ -171,7 +173,7 @@ When(
 When(
     "the user changes the username field's value to another invalid value",
     () => {
-        cy.get('{smsgateway-fieldusername}')
+        cy.getWithDataTest('{smsgateway-fieldusername}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -181,7 +183,7 @@ When(
 When(
     "the user changes the authToken field's value to another invalid value",
     () => {
-        cy.get('{smsgateway-fieldauthtoken}')
+        cy.getWithDataTest('{smsgateway-fieldauthtoken}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -191,7 +193,7 @@ When(
 When(
     "the user changes the urlTemplate field's value to another invalid value",
     () => {
-        cy.get('{smsgateway-fieldurltemplate}')
+        cy.getWithDataTest('{smsgateway-fieldurltemplate}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -200,12 +202,14 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{smsgateway-fieldgatewayname} input').clear().type('A valid name')
+    cy.getWithDataTest('{smsgateway-fieldgatewayname} input')
+        .clear()
+        .type('A valid name')
 })
 
 Then('the app should navigate to the update form', () => {
-    cy.get('{smsgateway-viewsmsgatewayedit}').should('exist')
-    cy.get('{smsgateway-viewsmsgatewayedit-formcontainer}')
+    cy.getWithDataTest('{smsgateway-viewsmsgatewayedit}').should('exist')
+    cy.getWithDataTest('{smsgateway-viewsmsgatewayedit-formcontainer}')
         .invoke('attr', 'data-gateway-id')
         .as('gatewayId')
 })
@@ -215,24 +219,24 @@ Then(
     () => {
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
-            () => cy.get('{smsgateway-fieldgatewayname} input'),
-            () => cy.get('{smsgateway-fieldsystemid} input'),
-            () => cy.get('{smsgateway-fieldhost} input'),
+            () => cy.getWithDataTest('{smsgateway-fieldgatewayname} input'),
+            () => cy.getWithDataTest('{smsgateway-fieldsystemid} input'),
+            () => cy.getWithDataTest('{smsgateway-fieldhost} input'),
             () =>
-                cy.get(
+                cy.getWithDataTest(
                     '{smsgateway-fieldnumberplanindicator} [data-test="dhis2-uicore-select"]'
                 ),
             () =>
-                cy.get(
+                cy.getWithDataTest(
                     '{smsgateway-fieldtypeofnumber} [data-test="dhis2-uicore-select"]'
                 ),
             () =>
-                cy.get(
+                cy.getWithDataTest(
                     '{smsgateway-fieldbindtype} [data-test="dhis2-uicore-select"]'
                 ),
-            () => cy.get('{smsgateway-fieldsystemtype} input'),
-            () => cy.get('{smsgateway-fieldport} input'),
-            () => cy.get('{smsgateway-fieldpassword} input')
+            () => cy.getWithDataTest('{smsgateway-fieldsystemtype} input'),
+            () => cy.getWithDataTest('{smsgateway-fieldport} input'),
+            () => cy.getWithDataTest('{smsgateway-fieldpassword} input')
         ).then(
             ([
                 editedGatewayConfiguration,
@@ -311,7 +315,7 @@ Then('the updates should be sent to the correct endpoint', () => {
 })
 
 Then('the form does not submit', () => {
-    cy.get('{smsgateway-viewsmsgatewaylist}').should('not.exist')
+    cy.getWithDataTest('{smsgateway-viewsmsgatewaylist}').should('not.exist')
 })
 
 Then('an error message should be shown at the invalid field', () => {
@@ -321,6 +325,6 @@ Then('an error message should be shown at the invalid field', () => {
 Then(
     'the user should be redirected to the gateway configuration overview page',
     () => {
-        cy.get('{smsgateway-viewsmsgatewaylist}').should('exist')
+        cy.getWithDataTest('{smsgateway-viewsmsgatewaylist}').should('exist')
     }
 )

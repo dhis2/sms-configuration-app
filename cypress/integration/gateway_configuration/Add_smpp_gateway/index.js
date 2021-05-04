@@ -1,7 +1,7 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const selectSelectValue = (selectSelector, optionValue) => {
-    cy.get(selectSelector).click()
+    cy.getWithDataTest(selectSelector).click()
     return cy.get(`[data-value="${optionValue}"]`).click()
 }
 
@@ -12,8 +12,8 @@ Given('the user is adding a new gateway with type SMPP', () => {
     )
 
     cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(2)').click()
-    cy.get('{shared-listactions-add}').click()
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{shared-listactions-add}').click()
 
     selectSelectValue(
         '{smsgateway-viewsmsgatewayadd-gatewaytype} [data-test="dhis2-uicore-singleselect"]',
@@ -33,10 +33,10 @@ When('the user fills in complete form data', () => {
     const bindType = 'BIND_TX'
     const compressed = false
 
-    cy.get('{smsgateway-fieldgatewayname}').type(name)
-    cy.get('{smsgateway-fieldsystemid}').type(systemId)
-    cy.get('{smsgateway-fieldhost}').type(host)
-    cy.get('{smsgateway-fieldsystemtype}').type(systemType)
+    cy.getWithDataTest('{smsgateway-fieldgatewayname}').type(name)
+    cy.getWithDataTest('{smsgateway-fieldsystemid}').type(systemId)
+    cy.getWithDataTest('{smsgateway-fieldhost}').type(host)
+    cy.getWithDataTest('{smsgateway-fieldsystemtype}').type(systemType)
     selectSelectValue(
         '{smsgateway-fieldnumberplanindicator} [data-test="dhis2-uicore-singleselect"]',
         numberPlanIndicator
@@ -49,8 +49,8 @@ When('the user fills in complete form data', () => {
         '{smsgateway-fieldbindtype} [data-test="dhis2-uicore-singleselect"]',
         bindType
     )
-    cy.get('{smsgateway-fieldport}').type(port)
-    cy.get('{smsgateway-fieldpassword}').type(password)
+    cy.getWithDataTest('{smsgateway-fieldport}').type(port)
+    cy.getWithDataTest('{smsgateway-fieldpassword}').type(password)
 
     cy.wrap({
         type: 'smpp',
@@ -78,9 +78,9 @@ When('the user fills in incomplete form data', () => {
     const bindType = 'BIND_TX'
     const compressed = false
 
-    cy.get('{smsgateway-fieldsystemid}').type(systemId)
-    cy.get('{smsgateway-fieldhost}').type(host)
-    cy.get('{smsgateway-fieldsystemtype}').type(systemType)
+    cy.getWithDataTest('{smsgateway-fieldsystemid}').type(systemId)
+    cy.getWithDataTest('{smsgateway-fieldhost}').type(host)
+    cy.getWithDataTest('{smsgateway-fieldsystemtype}').type(systemType)
     selectSelectValue(
         '{smsgateway-fieldnumberplanindicator} [data-test="dhis2-uicore-singleselect"]',
         numberPlanIndicator
@@ -93,10 +93,10 @@ When('the user fills in incomplete form data', () => {
         '{smsgateway-fieldbindtype} [data-test="dhis2-uicore-singleselect"]',
         bindType
     )
-    cy.get('{smsgateway-fieldport}').type(port)
-    cy.get('{smsgateway-fieldpassword}').type(password)
+    cy.getWithDataTest('{smsgateway-fieldport}').type(port)
+    cy.getWithDataTest('{smsgateway-fieldpassword}').type(password)
 
-    cy.get('{smsgateway-fieldgatewayname}').as('missingFields')
+    cy.getWithDataTest('{smsgateway-fieldgatewayname}').as('missingFields')
     cy.wrap({
         type: 'smpp',
         name: '',
@@ -113,7 +113,7 @@ When('the user fills in incomplete form data', () => {
 })
 
 When('the user submits', () => {
-    cy.get('{forms-gatewaysmppform-submit}').click()
+    cy.getWithDataTest('{forms-gatewaysmppform-submit}').click()
 })
 
 Then('the entered data should be sent to the endpoint', () => {
