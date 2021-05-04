@@ -17,7 +17,7 @@ Before(() => {
 Given(
     'the user is adding a new tracked entity registration parser sms command',
     () => {
-        cy.visitWhenStubbed('/')
+        cy.visit('/')
 
         cy.getWithDataTest('{shared-navigationitem}:nth-child(3)').click()
         cy.getWithDataTest('{shared-listactions-add}').click()

@@ -48,7 +48,7 @@ Given('the user navigated to the gateway configuration page', () => {
         )
     })
 
-    cy.visitWhenStubbed('/')
+    cy.visit('/')
     cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
 })
 

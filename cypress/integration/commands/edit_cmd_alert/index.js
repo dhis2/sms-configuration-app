@@ -31,7 +31,7 @@ Before(() => {
 })
 
 Given('the user is editing an alert parser command', () => {
-    cy.visitWhenStubbed('/')
+    cy.visit('/')
     cy.getWithDataTest('{shared-navigationitem}:nth-child(3)').click()
     // There's only one command in the mocked api response
     cy.getWithDataTest('{views-smscommandlist-commandtable} button').click()
