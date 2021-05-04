@@ -83,7 +83,7 @@ Given(
 )
 
 Given('the user is editing an J2ME parser command', () => {
-    cy.visitWhenStubbed('/')
+    cy.visit('/')
     cy.getWithDataTest('{shared-navigationitem}:nth-child(3)').click()
 
     // There's only one command in the mocked api response

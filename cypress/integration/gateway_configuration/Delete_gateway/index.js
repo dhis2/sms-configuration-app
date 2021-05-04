@@ -64,12 +64,12 @@ Given('some gateways exist', () => {
 })
 
 Given('the user navigated to the gateway configuration page', () => {
-    cy.visitWhenStubbed('/')
+    cy.visit('/')
     cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
 })
 
 Given('the user wants to delete the first configuration', () => {
-    cy.visitWhenStubbed('/')
+    cy.visit('/')
     cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
     cy.getWithDataTest('{smsgateway-table-checkbox}')
         .first()

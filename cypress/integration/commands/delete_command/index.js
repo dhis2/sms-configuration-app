@@ -44,12 +44,12 @@ Given("the user can't delete commands due to a request failure", () => {
 })
 
 Given('the user navigated to the sms commands list page', () => {
-    cy.visitWhenStubbed('/')
+    cy.visit('/')
     cy.getWithDataTest('{shared-navigationitem}:nth-child(3)').click()
 })
 
 Given('the user wants to delete the first command', () => {
-    cy.visitWhenStubbed('/')
+    cy.visit('/')
     cy.getWithDataTest('{shared-navigationitem}:nth-child(3)').click()
     cy.getWithDataTest('{views-smscommandlist-commandtable} tbody tr')
         .first()

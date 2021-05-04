@@ -6,7 +6,7 @@ Given('the user is adding a new gateway with type Clickatell', () => {
         'createGatewayConfigurationXHR'
     )
 
-    cy.visitWhenStubbed('/')
+    cy.visit('/')
     cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
     cy.getWithDataTest('{shared-listactions-add}').click()
 
