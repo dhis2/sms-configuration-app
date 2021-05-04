@@ -22,7 +22,7 @@ Given('some received messages exist', () => {
 
 Given('the user navigated to the received messages page', () => {
     cy.visit('/')
-    cy.get('{shared-navigationitem}:nth-child(5)').click()
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(5)').click()
 })
 
 Then("the 'delete selected' button should be disabled", () => {
@@ -34,7 +34,7 @@ Then("the 'delete selected' button should be enabled", () => {
 })
 
 Then('the user should be asked to confirm his choice', () => {
-    cy.get('{shared-deleteconfirmationdialog}').should('exist')
+    cy.getWithDataTest('{shared-deleteconfirmationdialog}').should('exist')
 })
 
 When('the user selects a message', () => {
@@ -54,7 +54,7 @@ When("the user clicks on the 'delete selected' button", () => {
 })
 
 When('the user confirms the deletion', () => {
-    cy.get('{shared-deleteconfirmationdialog-confirm}').click()
+    cy.getWithDataTest('{shared-deleteconfirmationdialog-confirm}').click()
 })
 
 Then('the message should be deleted', () => {

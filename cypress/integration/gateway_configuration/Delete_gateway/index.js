@@ -65,56 +65,65 @@ Given('some gateways exist', () => {
 
 Given('the user navigated to the gateway configuration page', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
 })
 
 Given('the user wants to delete the first configuration', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(2)').click()
-    cy.get('{smsgateway-table-checkbox}').first().find('label').click()
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{smsgateway-table-checkbox}')
+        .first()
+        .find('label')
+        .click()
 })
 
 Given('the confirmation model is visible', () => {
-    cy.get('{shared-listactions-delete}').click()
-    cy.get('{shared-deleteconfirmationdialog}').should('exist')
+    cy.getWithDataTest('{shared-listactions-delete}').click()
+    cy.getWithDataTest('{shared-deleteconfirmationdialog}').should('exist')
 })
 
 Given('some gateway configurations have been selected', () => {
-    cy.get('{smsgateway-table-checkbox}').first().find('label').click()
+    cy.getWithDataTest('{smsgateway-table-checkbox}')
+        .first()
+        .find('label')
+        .click()
 })
 
 Given('all gateway configurations have been selected', () => {
-    cy.get('{smsgateway-table-checkall} label').click()
+    cy.getWithDataTest('{smsgateway-table-checkall} label').click()
 })
 
 Given('no gateway configuration has been selected', () => {
-    cy.get('{smsgateway-table-checkbox} input').each($checkbox => {
+    cy.getWithDataTest('{smsgateway-table-checkbox} input').each($checkbox => {
         expect($checkbox).to.not.be.checked
     })
 })
 
 When('the user user selects the first gateway configuration', () => {
-    cy.get('{smsgateway-table-checkbox}').first().find('label').click()
+    cy.getWithDataTest('{smsgateway-table-checkbox}')
+        .first()
+        .find('label')
+        .click()
 })
 
 When('the user cancels the deletion', () => {
-    cy.get('{shared-deleteconfirmationdialog-cancel}').click()
+    cy.getWithDataTest('{shared-deleteconfirmationdialog-cancel}').click()
 })
 
 When('the user confirms the deletion', () => {
-    cy.get('{shared-deleteconfirmationdialog-confirm}').click()
+    cy.getWithDataTest('{shared-deleteconfirmationdialog-confirm}').click()
 })
 
 When('clicks the delete button', () => {
-    cy.get('{shared-listactions-delete}').click()
+    cy.getWithDataTest('{shared-listactions-delete}').click()
 })
 
 When('the user clicks the checkbox to select all', () => {
-    cy.get('{smsgateway-table-checkall} label').click()
+    cy.getWithDataTest('{smsgateway-table-checkall} label').click()
 })
 
 Then('a confirmation model should pop up', () => {
-    cy.get('{shared-deleteconfirmationdialog}').should('exist')
+    cy.getWithDataTest('{shared-deleteconfirmationdialog}').should('exist')
 })
 
 Then(
@@ -127,29 +136,33 @@ Then(
 )
 
 Then('the confirmation modal should close', () => {
-    cy.get('{shared-deleteconfirmationdialog}').should('not.exist')
+    cy.getWithDataTest('{shared-deleteconfirmationdialog}').should('not.exist')
 })
 
 Then(
     "all individual gateway configurations' checkboxes should be selected",
     () => {
-        cy.get('{smsgateway-table-checkbox} input').each($checkbox => {
-            expect($checkbox).to.be.checked
-        })
+        cy.getWithDataTest('{smsgateway-table-checkbox} input').each(
+            $checkbox => {
+                expect($checkbox).to.be.checked
+            }
+        )
     }
 )
 
 Then(
     "all individual gateway configurations' checkboxes should not be selected",
     () => {
-        cy.get('{smsgateway-table-checkbox} input').each($checkbox => {
-            expect($checkbox).to.not.be.checked
-        })
+        cy.getWithDataTest('{smsgateway-table-checkbox} input').each(
+            $checkbox => {
+                expect($checkbox).to.not.be.checked
+            }
+        )
     }
 )
 
 Then('the delete button should be disabled', () => {
-    cy.get('{shared-listactions-delete}').should('be.disabled')
+    cy.getWithDataTest('{shared-listactions-delete}').should('be.disabled')
 })
 
 Then('an alert with an error message should be displayed', () => {

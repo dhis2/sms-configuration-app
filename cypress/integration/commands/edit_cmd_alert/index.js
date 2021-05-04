@@ -11,18 +11,19 @@ Before(() => {
                 fixture: 'commands/edit_cmd_alert/commandsForListView',
             })
 
-            cy.intercept(new RegExp(`${commandId}[?].*=parserType&`), {
-                method: 'GET',
+            cy.intercept('GET', new RegExp(`${commandId}[?].*=parserType&`), {
                 fixture: 'commands/edit_cmd_alert/commandParserType',
             })
 
-            cy.intercept(new RegExp(`${commandId}[?].*receivedMessage`), {
-                method: 'GET',
-                fixture: 'commands/edit_cmd_alert/commandDetails',
-            })
+            cy.intercept(
+                'GET',
+                new RegExp(`${commandId}[?].*receivedMessage`),
+                {
+                    fixture: 'commands/edit_cmd_alert/commandDetails',
+                }
+            )
 
-            cy.intercept(new RegExp(`smsCommands/${commandId}`), {
-                method: 'PATCH',
+            cy.intercept('PATCH', new RegExp(`smsCommands/${commandId}`), {
                 body: {},
             }).as('updateSmsCommandXhr')
         }
@@ -31,9 +32,9 @@ Before(() => {
 
 Given('the user is editing an alert parser command', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(3)').click()
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(3)').click()
     // There's only one command in the mocked api response
-    cy.get('{views-smscommandlist-commandtable} button').click()
+    cy.getWithDataTest('{views-smscommandlist-commandtable} button').click()
 })
 
 When('the user changes the name field', () => {
@@ -43,7 +44,9 @@ When('the user changes the name field', () => {
         name: newNameValue,
     }).as('newValues')
 
-    cy.get('{smscommand-fieldcommandname} input').clear().type(newNameValue)
+    cy.getWithDataTest('{smscommand-fieldcommandname} input')
+        .clear()
+        .type(newNameValue)
 })
 
 When('the user changes the confirmMessage field', () => {
@@ -53,17 +56,19 @@ When('the user changes the confirmMessage field', () => {
         receivedMessage: newConfirmMessageValue,
     }).as('newValues')
 
-    cy.get('{smscommand-fieldconfirmmessage} textarea')
+    cy.getWithDataTest('{smscommand-fieldconfirmmessage} textarea')
         .clear()
         .type(newConfirmMessageValue)
 })
 
 When('the user changes the name field to an invalid value', () => {
-    cy.get('{smscommand-fieldcommandname} input').clear()
+    cy.getWithDataTest('{smscommand-fieldcommandname} input').clear()
 })
 
 When('the user submits the form', () => {
-    cy.get('{smscommand-viewsmscommandedit} button[type="submit"]').click()
+    cy.getWithDataTest(
+        '{smscommand-viewsmscommandedit} button[type="submit"]'
+    ).click()
 })
 
 Then('the complete command should be sent to the endpoint', () => {
@@ -112,5 +117,5 @@ Then(
 )
 
 Then('the form should not submit successfully', () => {
-    cy.get('{smscommand-viewsmscommandlist}').should('not.exist')
+    cy.getWithDataTest('{smscommand-viewsmscommandlist}').should('not.exist')
 })

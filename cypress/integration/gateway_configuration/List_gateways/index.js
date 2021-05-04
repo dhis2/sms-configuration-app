@@ -50,14 +50,14 @@ Given('some gateways exist', () => {
 })
 
 Given('the first gateway is the default', () => {
-    cy.get(
+    cy.getWithDataTest(
         '{smsgateway-table-row}:first-child {smsgateway-table-isdefault}'
     ).should('exist')
 })
 
 Given('the user navigated to the gateway configuration page', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
 })
 
 When('the user makes the second gateway the default gateway', () => {
@@ -79,7 +79,7 @@ When('the user makes the second gateway the default gateway', () => {
         ).as('makeDefaultGatewayXHR')
     })
 
-    cy.get(
+    cy.getWithDataTest(
         '{smsgateway-table-row}:nth-child(2) {smsgateway-table-makedefault}'
     ).click()
 })
@@ -87,25 +87,25 @@ When('the user makes the second gateway the default gateway', () => {
 When(
     'the user clicks on the edit button of the first gateway configuration',
     () => {
-        cy.get(
+        cy.getWithDataTest(
             '{smsgateway-table-row}:first-child {smsgateway-table-edit}'
         ).click()
     }
 )
 
 Then('no table should be displayed', () => {
-    cy.get('{smsgateway-table-row}').should('not.exist')
+    cy.getWithDataTest('{smsgateway-table-row}').should('not.exist')
 })
 
 Then('the gateways are rendered as tabular data', () => {
     cy.all(
         () => cy.get('@gateways'),
-        () => cy.get('{smsgateway-table-row}')
+        () => cy.getWithDataTest('{smsgateway-table-row}')
     ).then(([gateways, $rows]) => {
         expect(gateways.length).to.equal($rows.length)
 
         gateways.forEach(gateway => {
-            cy.get(
+            cy.getWithDataTest(
                 `{smsgateway-table-name}:contains("${gateway.name}")`
             ).should('exist')
         })
@@ -115,19 +115,19 @@ Then('the gateways are rendered as tabular data', () => {
 Then("each row displays the gateway configuration's data", () => {
     cy.all(
         () => cy.get('@gateways'),
-        () => cy.get('{smsgateway-table-row}')
+        () => cy.getWithDataTest('{smsgateway-table-row}')
     ).then(([gateways, $rows]) => {
         $rows.each((index, $row) => {
             const gateway = gateways[index]
 
             cy.wrap($row)
-                .find('{smsgateway-table-name}')
+                .findWithDataTest('{smsgateway-table-name}')
                 .then($nameCell => {
                     expect($nameCell.text()).to.equal(gateway.name)
                 })
 
             cy.wrap($row)
-                .find('{smsgateway-table-type}')
+                .findWithDataTest('{smsgateway-table-type}')
                 .then($typeCell => {
                     const typeText =
                         gateway.type === 'http'
@@ -144,14 +144,14 @@ Then("each row displays the gateway configuration's data", () => {
                 })
 
             cy.wrap($row)
-                .find('{smsgateway-table-isdefault}')
+                .findWithDataTest('{smsgateway-table-isdefault}')
                 .should(gateway.isDefault ? 'exist' : 'not.exist')
         })
     })
 })
 
 Then('exactly one default gateway should be displayed', () => {
-    cy.get(
+    cy.getWithDataTest(
         '{smsgateway-table-row}:first-child {smsgateway-table-isdefault}'
     ).should('have.lengthOf', 1)
 })
@@ -170,5 +170,5 @@ Then(
 )
 
 Then('the edit form should be visible', () => {
-    cy.get('{smsgateway-viewsmsgatewayedit}').should('exist')
+    cy.getWithDataTest('{smsgateway-viewsmsgatewayedit}').should('exist')
 })

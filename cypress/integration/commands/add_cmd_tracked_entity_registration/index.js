@@ -1,18 +1,15 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Before(() => {
-    cy.intercept(/.*\/smsCommands/, {
-        method: 'POST',
+    cy.intercept('GET', /.*\/smsCommands/, {
         body: { commands: [] },
     }).as('createSmsCommandXhr')
 
-    cy.intercept(/.*\/programs/, {
-        method: 'GET',
+    cy.intercept('GET', /.*\/programs/, {
         fixture: 'commands/add_cmd_tracked_entity_registration/programs',
     }).as('programsXhr')
 
-    cy.intercept(/.*\/programStages/, {
-        method: 'GET',
+    cy.intercept('GET', /.*\/programStages/, {
         fixture: 'commands/add_cmd_tracked_entity_registration/programStages',
     }).as('programStagesXhr')
 })
@@ -22,12 +19,12 @@ Given(
     () => {
         cy.visitWhenStubbed('/')
 
-        cy.get('{shared-navigationitem}:nth-child(3)').click()
-        cy.get('{shared-listactions-add}').click()
-        cy.get('{smscommand-fieldparser-content}').click()
+        cy.getWithDataTest('{shared-navigationitem}:nth-child(3)').click()
+        cy.getWithDataTest('{shared-listactions-add}').click()
+        cy.getWithDataTest('{smscommand-fieldparser-content}').click()
         cy.get('[data-value="TRACKED_ENTITY_REGISTRATION_PARSER"]').click()
 
-        cy.get(
+        cy.getWithDataTest(
             '{smscommand-fieldparser} [data-test="dhis2-uicore-select-input"]'
         )
             .invoke('text')
@@ -36,7 +33,7 @@ Given(
 )
 
 When('the user enters the name', () => {
-    cy.get('{smscommand-fieldcommandname} input').type('User name')
+    cy.getWithDataTest('{smscommand-fieldcommandname} input').type('User name')
 })
 
 When('the user chooses a program', () => {
@@ -45,22 +42,27 @@ When('the user chooses a program', () => {
             const program = programs[0]
             cy.wrap(program).as('selectedProgram')
 
-            cy.get('{smscommand-fieldprogram}').click()
+            cy.getWithDataTest('{smscommand-fieldprogram}').click()
             cy.get(`[data-value="${program.id}"]`).click()
         }
     )
 })
 
 When('the user submits the form', () => {
-    cy.get('{shared-layoutcontainer} [type="submit"]').click()
+    cy.getWithDataTest('{shared-layoutcontainer} [type="submit"]').click()
 })
 
 When('the user leaves the name empty', () => {
-    cy.get('{smscommand-fieldcommandname} input').should('have.value', '')
+    cy.getWithDataTest('{smscommand-fieldcommandname} input').should(
+        'have.value',
+        ''
+    )
 })
 
 When('the user leaves the program field empty', () => {
-    cy.get('{smscommand-fieldprogram} [data-test="dhis2-uicore-select-input"]')
+    cy.getWithDataTest(
+        '{smscommand-fieldprogram} [data-test="dhis2-uicore-select-input"]'
+    )
         .invoke('text')
         .should('equal', '')
 })
@@ -73,13 +75,15 @@ Then('the data should be sent successfully', () => {
 })
 
 Then('the form should not submit', () => {
-    cy.get('{smscommand-viewsmscommandlist}').should('not.exist')
+    cy.getWithDataTest('{smscommand-viewsmscommandlist}').should('not.exist')
 })
 
 Then('display an error message on the name field', () => {
-    cy.get('{smscommand-fieldcommandname-validation}').should('exist')
+    cy.getWithDataTest('{smscommand-fieldcommandname-validation}').should(
+        'exist'
+    )
 })
 
 Then('display an error message on the program field', () => {
-    cy.get('{smscommand-fieldprogram-validation}').should('exist')
+    cy.getWithDataTest('{smscommand-fieldprogram-validation}').should('exist')
 })

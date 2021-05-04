@@ -6,27 +6,24 @@ Before(() => {
             const { smsCommands } = response
             const [{ id: commandId }] = smsCommands
 
-            cy.intercept(/\/smsCommands\?paging=false&fields=\*/, {
-                method: 'GET',
+            cy.intercept('GET', /\/smsCommands\?paging=false&fields=\*/, {
                 body: response,
             })
 
             cy.intercept(
+                'GET',
                 new RegExp(`${commandId}[?]fields=parserType&paging=false`),
                 {
-                    method: 'GET',
                     fixture:
                         'commands/edit_cmd_event_registration/commandParserType',
                 }
             )
 
-            cy.intercept(new RegExp(`${commandId}[?].*fields=[*]`), {
-                method: 'GET',
+            cy.intercept('GET', new RegExp(`${commandId}[?].*fields=[*]`), {
                 fixture: 'commands/edit_cmd_event_registration/commandDetails',
             })
 
-            cy.intercept(new RegExp(`smsCommands/${commandId}`), {
-                method: 'PUT',
+            cy.intercept('PUT', new RegExp(`smsCommands/${commandId}`), {
                 body: {},
             }).as('updateSmsCommandXhr')
         }
@@ -35,31 +32,33 @@ Before(() => {
 
 Given('the user is editing an event registration parser command', () => {
     cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(3)').click()
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(3)').click()
     // There's only one command in the mocked api response
-    cy.get('{views-smscommandlist-commandtable} button').click()
+    cy.getWithDataTest('{views-smscommandlist-commandtable} button').click()
 })
 
 Given('the command has short codes', () => {
-    cy.get('{smscommand-fieldsmscodedataelement}').should(
+    cy.getWithDataTest('{smscommand-fieldsmscodedataelement}').should(
         'have.length.of.at.least',
         1
     )
 })
 
 When('the user changes the name field', () => {
-    cy.get('{smscommand-fieldcommandname} input')
+    cy.getWithDataTest('{smscommand-fieldcommandname} input')
         .invoke('val')
         .then(currentName => {
             cy.wrap({ name: `${currentName}!` }).as('newValues')
-            cy.get('{smscommand-fieldcommandname} input').type('!')
+            cy.getWithDataTest('{smscommand-fieldcommandname} input').type('!')
         })
 })
 
 When('the user changes the fieldSeparator field', () => {
     const separator = 'New separator'
 
-    cy.get('{smscommand-fieldseparator} input').clear().type(separator)
+    cy.getWithDataTest('{smscommand-fieldseparator} input')
+        .clear()
+        .type(separator)
 
     cy.wrap({ separator }).as('newValues')
 })
@@ -67,7 +66,7 @@ When('the user changes the fieldSeparator field', () => {
 When('the user changes the replyMessage field', () => {
     const defaultMessage = 'New default message'
 
-    cy.get('{smscommand-fielddefaultmessage} textarea')
+    cy.getWithDataTest('{smscommand-fielddefaultmessage} textarea')
         .clear()
         .type(defaultMessage)
 
@@ -77,7 +76,7 @@ When('the user changes the replyMessage field', () => {
 When('the user changes the wrongFormatMessage field', () => {
     const wrongFormatMessage = 'New wrong format message'
 
-    cy.get('{smscommand-fieldwrongformatmessage} textarea')
+    cy.getWithDataTest('{smscommand-fieldwrongformatmessage} textarea')
         .clear()
         .type(wrongFormatMessage)
 
@@ -87,7 +86,7 @@ When('the user changes the wrongFormatMessage field', () => {
 When('the user changes the noUserMessage field', () => {
     const noUserMessage = 'New no user message'
 
-    cy.get('{smscommand-fieldnousermessage} textarea')
+    cy.getWithDataTest('{smscommand-fieldnousermessage} textarea')
         .clear()
         .type(noUserMessage)
 
@@ -97,7 +96,7 @@ When('the user changes the noUserMessage field', () => {
 When('the user changes the moreThanOneOrgUnitMessage field', () => {
     const moreThanOneOrgUnitMessage = 'New more than one org unit message'
 
-    cy.get('{smscommand-fieldmorethanoneorgunitmessage} textarea')
+    cy.getWithDataTest('{smscommand-fieldmorethanoneorgunitmessage} textarea')
         .clear()
         .type(moreThanOneOrgUnitMessage)
 
@@ -107,7 +106,7 @@ When('the user changes the moreThanOneOrgUnitMessage field', () => {
 When('the user changes the successMessage field', () => {
     const successMessage = 'New success message'
 
-    cy.get('{smscommand-fieldsuccessmessage} textarea')
+    cy.getWithDataTest('{smscommand-fieldsuccessmessage} textarea')
         .clear()
         .type(successMessage)
 
@@ -115,19 +114,21 @@ When('the user changes the successMessage field', () => {
 })
 
 When('the user changes the name field to an invalid value', () => {
-    cy.get('{smscommand-fieldcommandname} input').clear()
+    cy.getWithDataTest('{smscommand-fieldcommandname} input').clear()
 })
 
 When('the user changes the value of a sms short code', () => {
     const newSmsShortCodeValue = 'New sms short code value'
     cy.wrap(newSmsShortCodeValue).as('newSmsShortCodeValue')
-    cy.get('{smscommand-fieldsmscodedataelement}:first-child input')
+    cy.getWithDataTest('{smscommand-fieldsmscodedataelement}:first-child input')
         .clear()
         .type(newSmsShortCodeValue)
 })
 
 When('the user submits the form', () => {
-    cy.get('{smscommand-viewsmscommandedit} button[type="submit"]').click()
+    cy.getWithDataTest(
+        '{smscommand-viewsmscommandedit} button[type="submit"]'
+    ).click()
 })
 
 Then('the form should submit successfully', () => {
@@ -256,7 +257,7 @@ Then(
 )
 
 Then('the form should not submit successfully', () => {
-    cy.get('{smscommand-viewsmscommandedit} .error').should(
+    cy.getWithDataTest('{smscommand-viewsmscommandedit} .error').should(
         'have.length.of.at.least',
         1
     )

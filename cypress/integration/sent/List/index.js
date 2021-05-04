@@ -17,7 +17,7 @@ Given('some sent messages exist', () => {
 
 Given('the user navigated to the sent messages page', () => {
     cy.visit('/')
-    cy.get('{shared-navigationitem}:nth-child(4)').click()
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(4)').click()
 })
 
 Then('the user should be notified that there are no messages', () => {

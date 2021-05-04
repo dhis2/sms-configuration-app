@@ -14,11 +14,11 @@ Given('some received messages exist', () => {
 
 Given('the user navigated to the received messages page', () => {
     cy.visit('/')
-    cy.get('{shared-navigationitem}:nth-child(5)').click()
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(5)').click()
 })
 
 When("the user clicks on the status filter and selects 'Failed'", () => {
-    cy.get('{smsinbound-statusfilter}:eq(0)').click()
+    cy.getWithDataTest('{smsinbound-statusfilter}:eq(0)').click()
     cy.get('[data-value="FAILED"]').click()
 })
 
