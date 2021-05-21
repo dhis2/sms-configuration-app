@@ -3,5 +3,5 @@
     "baseUrl": "http://localhost:3000",
     "testFiles": "**/*.feature",
     "video": false,
-    "experimentalFetchPolyfill": true
+    "experimentalInteractiveRunEvents": true
 }
