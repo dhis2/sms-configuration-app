@@ -2673,6 +2673,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.12.1":
+  version "7.14.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
+  integrity sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.5.4":
   version "7.10.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.5.tgz#303d8bd440ecd5a491eae6117fd3367698674c5c"
@@ -3278,59 +3285,59 @@
   dependencies:
     prop-types "^15"
 
-"@dhis2/ui-constants@6.5.4":
-  version "6.5.4"
-  resolved "https://registry.yarnpkg.com/@dhis2/ui-constants/-/ui-constants-6.5.4.tgz#d97039be4496f3e1f60c188afdcad6cdc669cb64"
-  integrity sha512-3hTiXiNPJ/i84jrhP2bWFZXliMU+WRvoy79f2/RDY2Crzs6BTr+fmorCOhQxPvB9HdArB8iMPWQUKOUfBQU9nQ==
+"@dhis2/ui-constants@6.7.0":
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-constants/-/ui-constants-6.7.0.tgz#f2719c29fc989467eecc5a4b1f60402014b7d887"
+  integrity sha512-LGsLLhXUji1Ltbu+Ez/2fdCx63XfWuxVKmUeojvCCBA4paERPA6+ZyORe6pMJrUJnwf0gOoqHtZbEXX+7RVLvQ==
   dependencies:
     "@dhis2/prop-types" "^1.6.4"
 
-"@dhis2/ui-core@6.5.4":
-  version "6.5.4"
-  resolved "https://registry.yarnpkg.com/@dhis2/ui-core/-/ui-core-6.5.4.tgz#ac3c1b22be41fb86a364a46d591de22a13866e0c"
-  integrity sha512-iGQosnBkd9uYezI599oVfuYHAsd2xcL+mBoTvfa246IgseCMkQLZ7pb+PiBgXbZQ2OHvlcN6+5NPmPpJfP1gFQ==
+"@dhis2/ui-core@6.7.0":
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-core/-/ui-core-6.7.0.tgz#47eb59aef5efeb0dcc344bb44d7330f4e7532942"
+  integrity sha512-BLyyinW0sz020v9tJcVZLKiUXYE0/kutDzctTRiRkiPA9Rmc8uOcwgsQgUUYigLCwle4YWh3P11Rxev5Lj7CnA==
   dependencies:
     "@dhis2/prop-types" "^1.6.4"
-    "@popperjs/core" "^2.6.0"
-    classnames "^2.2.6"
-    react-popper "^2.2.3"
+    "@popperjs/core" "^2.9.2"
+    classnames "^2.3.1"
+    react-popper "^2.2.5"
     resize-observer-polyfill "^1.5.1"
 
-"@dhis2/ui-forms@6.5.4":
-  version "6.5.4"
-  resolved "https://registry.yarnpkg.com/@dhis2/ui-forms/-/ui-forms-6.5.4.tgz#843b6ecad7c04903bdb160894f19a1d3045aab2f"
-  integrity sha512-kWNE7fZmBES0OlwIFrhnCYU94Xi+3iogF/Tzr7o+fILDZfeCZToJ0QpQMdobXu9VZbt7w2eZJfuh+nqthVWH6g==
+"@dhis2/ui-forms@6.7.0":
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-forms/-/ui-forms-6.7.0.tgz#e410f63be1ec391c50f069a76feb167d7147c5a7"
+  integrity sha512-lwTip0aJNaapBAFeg0I7xvd9vDV21nmESIOgPY3b3x1Q7hqg+kPFdcZvpAW5O7N+L8+uDiPeFELRAqxNEMjXxg==
   dependencies:
     "@dhis2/prop-types" "^1.6.4"
-    classnames "^2.2.6"
-    final-form "^4.20.1"
-    react-final-form "^6.5.1"
+    classnames "^2.3.1"
+    final-form "^4.20.2"
+    react-final-form "^6.5.3"
 
-"@dhis2/ui-icons@6.5.4":
-  version "6.5.4"
-  resolved "https://registry.yarnpkg.com/@dhis2/ui-icons/-/ui-icons-6.5.4.tgz#8170ee0ac6e84b7200ccf5b8b9a9d3bf984a1012"
-  integrity sha512-ptLV70O+EVMcSXeTa4KEIJTONAa7wY9P9TQZWB/Nb2KZzRiVreKL1aB8YQQe4YOofzyM3nT2LNu3mgj8+lBVCg==
+"@dhis2/ui-icons@6.7.0":
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-icons/-/ui-icons-6.7.0.tgz#8d8cb4defc74031102dc9b1e0f1dae1d6df96f16"
+  integrity sha512-EuX9lDlYIdj2Alm1HBOgukExT+qa8xZJrfQjg6lLwoHbAJvJ9F2sb1iqB6Qf0ozvDD2f6ZtJohx45ko6x2EeQg==
   dependencies:
     "@dhis2/prop-types" "^1.6.4"
 
-"@dhis2/ui-widgets@6.5.4":
-  version "6.5.4"
-  resolved "https://registry.yarnpkg.com/@dhis2/ui-widgets/-/ui-widgets-6.5.4.tgz#aee2189d0bce9cd0a172ca7017a6eac1d930cd6f"
-  integrity sha512-a4Mbma/aLeYqvbJKCDJIDtIfy1FqYVPjfgDsdRGYQrP26fmGaryMGGGjN/K7or7xOx8CumuIl+xuvyyo3HKqzQ==
+"@dhis2/ui-widgets@6.7.0":
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui-widgets/-/ui-widgets-6.7.0.tgz#464a00579d3ca0b60afeea3c741a7bdc677ddf18"
+  integrity sha512-twCk9tzCmpONctKSgOXVOb2CSkxgFI3n8cE9/Dfknv0brdrVCnUiMKcxgUP+ob7sypB0+/PHwcRFU13VG0V1Ag==
   dependencies:
     "@dhis2/prop-types" "^1.6.4"
-    classnames "^2.2.6"
+    classnames "^2.3.1"
 
-"@dhis2/ui@^6.5.3", "@dhis2/ui@^6.5.4":
-  version "6.5.4"
-  resolved "https://registry.yarnpkg.com/@dhis2/ui/-/ui-6.5.4.tgz#7e693d53333c2bbb980e8f2a4c83959366a2ab01"
-  integrity sha512-/MF7vS0CH+hJ2+7BwFqj0Px6oQTiIkmAJiy0+SBcJJ+kNrLImh9MSoWrpj5DTbqwUfLDzk2K/qKIyhazXatshA==
+"@dhis2/ui@^6.5.3", "@dhis2/ui@^6.7.0":
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/@dhis2/ui/-/ui-6.7.0.tgz#ba4b7655ff3a45f764801d6c57624d408e742c22"
+  integrity sha512-PbYqohnPVj67Sx1kynA4sBHkix2gKg0rRcWLR2peRxaTcDjgxEPFWz7GflRKABF9NWtMhmXMDSnltDtIJuyNng==
   dependencies:
-    "@dhis2/ui-constants" "6.5.4"
-    "@dhis2/ui-core" "6.5.4"
-    "@dhis2/ui-forms" "6.5.4"
-    "@dhis2/ui-icons" "6.5.4"
-    "@dhis2/ui-widgets" "6.5.4"
+    "@dhis2/ui-constants" "6.7.0"
+    "@dhis2/ui-core" "6.7.0"
+    "@dhis2/ui-forms" "6.7.0"
+    "@dhis2/ui-icons" "6.7.0"
+    "@dhis2/ui-widgets" "6.7.0"
 
 "@eslint/eslintrc@^0.4.0":
   version "0.4.0"
@@ -3795,10 +3802,10 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@popperjs/core@^2.6.0":
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.1.tgz#7f554e7368c9ab679a11f4a042ca17149d70cf12"
-  integrity sha512-DvJbbn3dUgMxDnJLH+RZQPnXak1h4ZVYQ7CWiFWjQwBFkVajT4rfw2PdpHLTSTwxrYfnoEXkuBiwkDm6tPMQeA==
+"@popperjs/core@^2.9.2":
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.2.tgz#adea7b6953cbb34651766b0548468e743c6a2353"
+  integrity sha512-VZMYa7+fXHdwIq1TDhSXoVmSPEGM/aa+6Aiq3nVVJ9bXr24zScr+NlKFKC3iPljA7ho/GAZr+d2jOf5GIRC30Q==
 
 "@rollup/plugin-node-resolve@^7.1.1":
   version "7.1.3"
@@ -6314,6 +6321,11 @@ classnames@^2.2.6:
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
+classnames@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
+  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
+
 clean-css@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
@@ -8817,10 +8829,10 @@ fill-range@^7.0.1:
   dependencies:
     to-regex-range "^5.0.1"
 
-final-form@^4.20.1:
-  version "4.20.1"
-  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.20.1.tgz#525a7f7f27f55c28d8994b157b24d6104fc560e9"
-  integrity sha512-IIsOK3JRxJrN72OBj7vFWZxtGt3xc1bYwJVPchjVWmDol9DlzMSAOPB+vwe75TUYsw1JaH0fTQnIgwSQZQ9Acg==
+final-form@^4.20.2:
+  version "4.20.2"
+  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.20.2.tgz#c820b37d7ebb73d71169480256a36c7e6e6c9155"
+  integrity sha512-5i0IxqwjjPG1nUNCjWhqPCvQJJ2R+QwTwaAnjPmFnLbyjIHWuBPU8u+Ps4G3TcX2Sjno+O5xCZJzYcMJEzzfCQ==
   dependencies:
     "@babel/runtime" "^7.10.0"
 
@@ -14615,12 +14627,12 @@ react-fast-compare@^3.0.1:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
-react-final-form@^6.5.1:
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-6.5.1.tgz#baf798129d459c669cfda5ce60a77801ef52badc"
-  integrity sha512-+Hzd9PqYY1Cv3MnWzw64QOl5BjC5BtSDakx+N7Re49r0FASdFhgpXLFFCJ31fvegq2euP6hz6Ow9K6XM9BSqCA==
+react-final-form@^6.5.3:
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/react-final-form/-/react-final-form-6.5.3.tgz#b60955837fe9d777456ae9d9c48e3e2f21547d29"
+  integrity sha512-FCs6GC0AMWJl2p6YX7kM+a0AvuSLAZUgbVNtRBskOs4g984t/It0qGtx51O+9vgqnqk6JyoxmIzxKMq+7ch/vg==
   dependencies:
-    "@babel/runtime" "^7.10.0"
+    "@babel/runtime" "^7.12.1"
 
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   version "16.13.1"
@@ -14632,10 +14644,10 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-popper@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.2.3.tgz#33d425fa6975d4bd54d9acd64897a89d904b9d97"
-  integrity sha512-mOEiMNT1249js0jJvkrOjyHsGvqcJd3aGW/agkiMoZk3bZ1fXN1wQszIQSjHIai48fE67+zwF8Cs+C4fWqlfjw==
+react-popper@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.2.5.tgz#1214ef3cec86330a171671a4fbcbeeb65ee58e96"
+  integrity sha512-kxGkS80eQGtLl18+uig1UIf9MKixFSyPxglsgLBxlYnyDf65BiY9B3nZSc6C9XUNDgStROB0fMQlTEz1KxGddw==
   dependencies:
     react-fast-compare "^3.0.1"
     warning "^4.0.2"
