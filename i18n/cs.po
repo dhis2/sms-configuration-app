@@ -40,7 +40,7 @@ msgid "Home"
 msgstr "Domovská strana"
 
 msgid "Gateway configuration"
-msgstr ""
+msgstr "Konfigurace brány"
 
 msgid "Commands"
 msgstr "Příkazy"
@@ -76,7 +76,7 @@ msgid "Next"
 msgstr "Další"
 
 msgid "No error message was provided"
-msgstr ""
+msgstr "Nebyla poskytnuta žádná chybová zpráva"
 
 msgid "Add special character"
 msgstr "Přidat speciální znak"
@@ -459,7 +459,7 @@ msgid "Something went wrong whilst loading received SMSes"
 msgstr "Při načítání přijatých SMS se něco pokazilo"
 
 msgid "Are you sure you want to delete the selected sms?"
-msgstr ""
+msgstr "Opravdu chcete smazat vybranou SMS?"
 
 msgid "All"
 msgstr "Vše"
