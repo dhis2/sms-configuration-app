@@ -6,11 +6,11 @@ Given('the user is adding a new gateway with type Clickatell', () => {
         'createGatewayConfigurationXHR'
     )
 
-    cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(2)').click()
-    cy.get('{shared-listactions-add}').click()
+    cy.visit('/')
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{shared-listactions-add}').click()
 
-    cy.get(
+    cy.getWithDataTest(
         '{smsgateway-viewsmsgatewayadd-gatewaytype} [data-test="dhis2-uicore-singleselect"]'
     ).click()
     cy.get('[data-value="clickatell"]').click()
@@ -22,10 +22,10 @@ When('the user fills in complete form data', () => {
     const urlTemplate = 'http://domain.tld'
     const authToken = 'Auth token'
 
-    cy.get('{smsgateway-fieldgatewayname}').type(name)
-    cy.get('{smsgateway-fieldusername}').type(username)
-    cy.get('{smsgateway-fieldurltemplate}').type(urlTemplate)
-    cy.get('{smsgateway-fieldauthtoken}').type(authToken)
+    cy.getWithDataTest('{smsgateway-fieldgatewayname}').type(name)
+    cy.getWithDataTest('{smsgateway-fieldusername}').type(username)
+    cy.getWithDataTest('{smsgateway-fieldurltemplate}').type(urlTemplate)
+    cy.getWithDataTest('{smsgateway-fieldauthtoken}').type(authToken)
 
     cy.wrap({
         type: 'clickatell',
@@ -41,11 +41,11 @@ When('the user fills in incomplete form data', () => {
     const urlTemplate = 'http://domain.tld'
     const authToken = 'Auth token'
 
-    cy.get('{smsgateway-fieldgatewayname}').type(name)
-    cy.get('{smsgateway-fieldurltemplate}').type(urlTemplate)
-    cy.get('{smsgateway-fieldauthtoken}').type(authToken)
+    cy.getWithDataTest('{smsgateway-fieldgatewayname}').type(name)
+    cy.getWithDataTest('{smsgateway-fieldurltemplate}').type(urlTemplate)
+    cy.getWithDataTest('{smsgateway-fieldauthtoken}').type(authToken)
 
-    cy.get('{smsgateway-fieldusername}').as('missingFields')
+    cy.getWithDataTest('{smsgateway-fieldusername}').as('missingFields')
     cy.wrap({
         type: 'clickatell',
         username: '',
@@ -56,7 +56,7 @@ When('the user fills in incomplete form data', () => {
 })
 
 When('the user submits', () => {
-    cy.get('{forms-gatewayclickatellform-submit}').click()
+    cy.getWithDataTest('{forms-gatewayclickatellform-submit}').click()
 })
 
 Then('the entered data should be sent to the endpoint', () => {

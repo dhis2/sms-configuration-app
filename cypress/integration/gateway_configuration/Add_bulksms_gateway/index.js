@@ -7,11 +7,11 @@ Given('the user is adding a new gateway with type BulkSMS', () => {
         'createGatewayConfigurationXHR'
     )
 
-    cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(2)').click()
-    cy.get('{shared-listactions-add}').click()
+    cy.visit('/')
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
+    cy.getWithDataTest('{shared-listactions-add}').click()
 
-    cy.get(
+    cy.getWithDataTest(
         '{smsgateway-viewsmsgatewayadd-gatewaytype} [data-test="dhis2-uicore-singleselect"]'
     ).click()
     cy.get('[data-value="bulksms"]').click()
@@ -22,10 +22,10 @@ When('the user fills in complete form data', () => {
     const username = 'Username'
     const password = 'Password'
 
-    cy.get('{smsgateway-fieldgatewayname}').type(name)
-    cy.get('{smsgateway-fieldusername}').type(username)
-    cy.get('{smsgateway-fieldpassword}').type(password)
-    cy.get('{smsgateway-fieldpasswordconfirmation}').type(password)
+    cy.getWithDataTest('{smsgateway-fieldgatewayname}').type(name)
+    cy.getWithDataTest('{smsgateway-fieldusername}').type(username)
+    cy.getWithDataTest('{smsgateway-fieldpassword}').type(password)
+    cy.getWithDataTest('{smsgateway-fieldpasswordconfirmation}').type(password)
 
     cy.wrap({
         type: 'bulksms',
@@ -39,11 +39,11 @@ When('the user fills in incomplete form data', () => {
     const name = 'Name'
     const password = 'Password'
 
-    cy.get('{smsgateway-fieldgatewayname}').type(name)
-    cy.get('{smsgateway-fieldpassword}').type(password)
-    cy.get('{smsgateway-fieldpasswordconfirmation}').type(password)
+    cy.getWithDataTest('{smsgateway-fieldgatewayname}').type(name)
+    cy.getWithDataTest('{smsgateway-fieldpassword}').type(password)
+    cy.getWithDataTest('{smsgateway-fieldpasswordconfirmation}').type(password)
 
-    cy.get('{smsgateway-fieldusername}').as('missingFields')
+    cy.getWithDataTest('{smsgateway-fieldusername}').as('missingFields')
     cy.wrap({
         type: 'bulksms',
         username: '',
@@ -53,7 +53,7 @@ When('the user fills in incomplete form data', () => {
 })
 
 When('the user submits', () => {
-    cy.get('{forms-gatewaybulksmsform-submit}').click()
+    cy.getWithDataTest('{forms-gatewaybulksmsform-submit}').click()
 })
 
 Then('the entered data should be sent to the endpoint', () => {

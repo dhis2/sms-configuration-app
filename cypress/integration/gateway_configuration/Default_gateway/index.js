@@ -43,29 +43,32 @@ Given('some gateway configurations exist', () => {
         cy.intercept(method, url, routeHandler).as(`defaultGatewayXHR${uid}`)
     })
 
-    cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(2)').click()
+    cy.visit('/')
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
 })
 
 When(
     'the user clicks on the make default button of a non-default gateway configuration',
     () => {
-        cy.get('tbody {smsgateway-table-row}:nth-child(2)')
+        cy.getWithDataTest('tbody {smsgateway-table-row}:nth-child(2)')
             .as('newDefaultGatewayConfiguration')
-            .find('{smsgateway-table-makedefault}')
+            .findWithDataTest('{smsgateway-table-makedefault}')
             .click()
     }
 )
 
 Then('there should be exactly one default gateway configuration', () => {
-    cy.get('{smsgateway-table-isdefault}').should('have.lengthOf', 1)
+    cy.getWithDataTest('{smsgateway-table-isdefault}').should(
+        'have.lengthOf',
+        1
+    )
 })
 
 Then(
     'the endpoint for setting the default gateway should be called with the id of the clicked one',
     () => {
         cy.get('@newDefaultGatewayConfiguration')
-            .find('{smsgateway-table-id} input')
+            .findWithDataTest('{smsgateway-table-id} input')
             .invoke('val')
             .then(id => {
                 cy.wait(`@defaultGatewayXHR${id}`).then(xhr => {

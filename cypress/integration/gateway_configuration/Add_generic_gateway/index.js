@@ -48,12 +48,12 @@ Given('the user navigated to the gateway configuration page', () => {
         })
     })
 
-    cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(2)').click()
+    cy.visit('/')
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
 })
 
 When('the user clicks on the add gateway button', () => {
-    cy.get('{shared-listactions-add}').click()
+    cy.getWithDataTest('{shared-listactions-add}').click()
 })
 
 When('the user fills in complete form data', () => {
@@ -71,35 +71,35 @@ When('the user fills in complete form data', () => {
         parameters: [],
     }).as('gatewayData')
 
-    cy.get('{smsgateway-fieldgatewayname} input').type(name)
-    cy.get('{smsgateway-fieldurltemplate} input').type(urlTemplate)
-    cy.get('{smsgateway-fieldconfigurationtemplate} input').type(
+    cy.getWithDataTest('{smsgateway-fieldgatewayname} input').type(name)
+    cy.getWithDataTest('{smsgateway-fieldurltemplate} input').type(urlTemplate)
+    cy.getWithDataTest('{smsgateway-fieldconfigurationtemplate} input').type(
         configurationTemplate
     )
 
-    cy.get('{smsgateway-fieldcontenttype-content}').click()
+    cy.getWithDataTest('{smsgateway-fieldcontenttype-content}').click()
     cy.get(`[data-value="${contentType}"]`).click()
 })
 
 When('the user fills in incomplete form data', () => {
-    cy.get('{smsgateway-fieldgatewayname} input').type('Name')
-    cy.get('{smsgateway-fieldurltemplate}').as('missingFields')
+    cy.getWithDataTest('{smsgateway-fieldgatewayname} input').type('Name')
+    cy.getWithDataTest('{smsgateway-fieldurltemplate}').as('missingFields')
 })
 
 When('the user submits', () => {
-    cy.get('{forms-gatewaygenericform-submit}').click()
+    cy.getWithDataTest('{forms-gatewaygenericform-submit}').click()
 })
 
 Then('the add gateway form should be displayed', () => {
-    cy.get('{smsgateway-viewsmsgatewayadd}').should('exist')
+    cy.getWithDataTest('{smsgateway-viewsmsgatewayadd}').should('exist')
 })
 
 Then('the default gateway type is "generic"', () => {
-    cy.get(
+    cy.getWithDataTest(
         '{smsgateway-viewsmsgatewayadd-gatewaytype} {smsgateway-viewsmsgatewayadd-gatewaytype-content}'
     ).should('exist')
 
-    cy.get(
+    cy.getWithDataTest(
         '{smsgateway-viewsmsgatewayadd-gatewaytype} {smsgateway-viewsmsgatewayadd-gatewaytype-content}'
     ).should('contain', 'Generic')
 })

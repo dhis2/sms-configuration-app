@@ -46,17 +46,17 @@ Given('the user navigated to the gateway configuration page', () => {
         )
     })
 
-    cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(2)').click()
+    cy.visit('/')
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(2)').click()
 })
 
 When(
     'the user clicks on the update button in the first bulksms gateway',
     () => {
-        cy.get('{smsgateway-table-type}:contains("BulkSMS")')
+        cy.getWithDataTest('{smsgateway-table-type}:contains("BulkSMS")')
             .first()
             .parents('tr')
-            .find('{smsgateway-table-edit}')
+            .findWithDataTest('{smsgateway-table-edit}')
             .click()
 
         cy.wrap(gateways[1])
@@ -66,7 +66,9 @@ When(
 )
 
 When("the user changes the name field's value to another valid value", () => {
-    cy.get('{smsgateway-fieldgatewayname} input').clear().type('New name value')
+    cy.getWithDataTest('{smsgateway-fieldgatewayname} input')
+        .clear()
+        .type('New name value')
 
     cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
         cy.wrap({
@@ -79,7 +81,7 @@ When("the user changes the name field's value to another valid value", () => {
 When(
     "the user changes the username field's value to another valid value",
     () => {
-        cy.get('{smsgateway-fieldusername} input')
+        cy.getWithDataTest('{smsgateway-fieldusername} input')
             .clear()
             .type('New user name value')
 
@@ -95,11 +97,11 @@ When(
 When(
     "the user changes the password field's value to another valid value",
     () => {
-        cy.get('{smsgateway-fieldpassword} input')
+        cy.getWithDataTest('{smsgateway-fieldpassword} input')
             .clear()
             .type('New password value')
 
-        cy.get('{smsgateway-fieldpasswordconfirmation} input')
+        cy.getWithDataTest('{smsgateway-fieldpasswordconfirmation} input')
             .clear()
             .type('New password value')
 
@@ -114,11 +116,11 @@ When(
 )
 
 When('submits the form', () => {
-    cy.get('{forms-gatewaybulksmsform-submit}').click()
+    cy.getWithDataTest('{forms-gatewaybulksmsform-submit}').click()
 })
 
 When("the user changes the name field's value to another invalid value", () => {
-    cy.get('{smsgateway-fieldgatewayname}')
+    cy.getWithDataTest('{smsgateway-fieldgatewayname}')
         .as('invalidField')
         .find('input')
         .clear()
@@ -127,7 +129,7 @@ When("the user changes the name field's value to another invalid value", () => {
 When(
     "the user changes the username field's value to another invalid value",
     () => {
-        cy.get('{smsgateway-fieldusername}')
+        cy.getWithDataTest('{smsgateway-fieldusername}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -137,7 +139,7 @@ When(
 When(
     "the user changes the password field's value to another invalid value",
     () => {
-        cy.get('{smsgateway-fieldpassword}')
+        cy.getWithDataTest('{smsgateway-fieldpassword}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -147,13 +149,13 @@ When(
 When(
     "the user changes the passwordConfirmation field's value to another invalid value",
     () => {
-        cy.get('{smsgateway-fieldpassword}')
+        cy.getWithDataTest('{smsgateway-fieldpassword}')
             .as('invalidField')
             .find('input')
             .clear()
             .type('A password')
 
-        cy.get('{smsgateway-fieldpasswordconfirmation}')
+        cy.getWithDataTest('{smsgateway-fieldpasswordconfirmation}')
             .as('invalidField')
             .find('input')
             .clear()
@@ -162,12 +164,14 @@ When(
 )
 
 When('the user changes some fields to valid values', () => {
-    cy.get('{smsgateway-fieldgatewayname} input').clear().type('A valid name')
+    cy.getWithDataTest('{smsgateway-fieldgatewayname} input')
+        .clear()
+        .type('A valid name')
 })
 
 Then('the app should navigate to the update form', () => {
-    cy.get('{smsgateway-viewsmsgatewayedit}').should('exist')
-    cy.get('{smsgateway-viewsmsgatewayedit-formcontainer}')
+    cy.getWithDataTest('{smsgateway-viewsmsgatewayedit}').should('exist')
+    cy.getWithDataTest('{smsgateway-viewsmsgatewayedit-formcontainer}')
         .invoke('attr', 'data-gateway-id')
         .as('gatewayId')
 })
@@ -177,8 +181,8 @@ Then(
     () => {
         cy.all(
             () => cy.get('@editedGatewayConfiguration'),
-            () => cy.get('{smsgateway-fieldgatewayname} input'),
-            () => cy.get('{smsgateway-fieldusername} input')
+            () => cy.getWithDataTest('{smsgateway-fieldgatewayname} input'),
+            () => cy.getWithDataTest('{smsgateway-fieldusername} input')
         ).then(([editedGatewayConfiguration, $nameInput, $usernameInput]) => {
             const { name, username } = editedGatewayConfiguration
 
@@ -210,7 +214,7 @@ Then('the updates should be sent to the correct endpoint', () => {
 })
 
 Then('the form does not submit', () => {
-    cy.get('{smsgateway-viewsmsgatewaylist}').should('not.exist')
+    cy.getWithDataTest('{smsgateway-viewsmsgatewaylist}').should('not.exist')
 })
 
 Then('an error message should be shown at the invalid field', () => {
@@ -220,6 +224,6 @@ Then('an error message should be shown at the invalid field', () => {
 Then(
     'the user should be redirected to the gateway configuration overview page',
     () => {
-        cy.get('{smsgateway-viewsmsgatewaylist}').should('exist')
+        cy.getWithDataTest('{smsgateway-viewsmsgatewaylist}').should('exist')
     }
 )

@@ -2,8 +2,7 @@ import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 const interceptCommandDetails = fixture => {
     cy.get('@commandId').then(commandId => {
-        cy.intercept(new RegExp(`${commandId}[?].*fields=[*]`), {
-            method: 'GET',
+        cy.intercept('GET', new RegExp(`${commandId}[?].*fields=[*]`), {
             fixture,
         })
     })
@@ -15,21 +14,19 @@ Before(() => {
             const [{ id: commandId }] = smsCommands
             cy.wrap(commandId).as('commandId')
 
-            cy.intercept(/[/]smsCommands[?]paging=false&fields=[*]/, {
-                method: 'GET',
+            cy.intercept('GET', /[/]smsCommands[?]paging=false&fields=[*]/, {
                 fixture: 'commands/edit_cmd_key_value/commandsForListView',
             })
 
             cy.intercept(
+                'GET',
                 new RegExp(`${commandId}[?]fields=parserType&paging=false`),
                 {
-                    method: 'GET',
                     fixture: 'commands/edit_cmd_key_value/commandParserType',
                 }
             )
 
-            cy.intercept(new RegExp(`smsCommands/${commandId}$`), {
-                method: 'PUT',
+            cy.intercept('PUT', new RegExp(`smsCommands/${commandId}$`), {
                 body: {},
             }).as('updateSmsCommandXhr')
         }
@@ -38,15 +35,13 @@ Before(() => {
     cy.fixture('commands/edit_cmd_key_value/dataSets').then(dataSets => {
         // This is used by the formula modal,
         // which will display a dropdown with data elements
-        cy.intercept(/dataSets[/][a-zA-Z0-9]+/, {
-            method: 'GET',
+        cy.intercept('GET', /dataSets[/][a-zA-Z0-9]+/, {
             fixture: 'commands/edit_cmd_key_value/dataSets',
         })
 
         // This is used by the formula button of the sms code field
         dataSets.dataSetElements.forEach(({ dataElement }) => {
-            cy.intercept(new RegExp(`dataElements/${dataElement.id}`), {
-                method: 'GET',
+            cy.intercept('GET', new RegExp(`dataElements/${dataElement.id}`), {
                 body: { displayName: dataElement.displayName },
             })
         })
@@ -91,38 +86,42 @@ Given(
 )
 
 Given('the user is editing an Key Value parser command', () => {
-    cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(3)').click()
+    cy.visit('/')
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(3)').click()
 
     // There's only one command in the mocked api response
-    cy.get('{views-smscommandlist-commandtable} button').click()
+    cy.getWithDataTest('{views-smscommandlist-commandtable} button').click()
 })
 
 When('the user changes the name field', () => {
-    cy.get('{smscommand-fieldcommandname} input')
+    cy.getWithDataTest('{smscommand-fieldcommandname} input')
         .invoke('val')
         .then(currentName => {
             cy.wrap({ name: `${currentName}!` }).as('newValues')
-            cy.get('{smscommand-fieldcommandname} input').type('!')
+            cy.getWithDataTest('{smscommand-fieldcommandname} input').type('!')
         })
 })
 
 When('the user changes the completenessMethod field', () => {
     const completenessMethod = 'ALL_DATAVALUE'
-    cy.get('{smscommand-fieldcompletenessmethod-content}').click()
+    cy.getWithDataTest('{smscommand-fieldcompletenessmethod-content}').click()
     cy.get(`[data-value="${completenessMethod}"]`).click()
     cy.wrap({ completenessMethod }).as('newValues')
 })
 
 When('the user changes the currentPeriodUsedForReporting field', () => {
-    cy.get('{smscommand-fieldusecurrentperiodforreporting} label').click()
+    cy.getWithDataTest(
+        '{smscommand-fieldusecurrentperiodforreporting} label'
+    ).click()
     cy.wrap({ currentPeriodUsedForReporting: true }).as('newValues')
 })
 
 When('the user changes the fieldSeparator field', () => {
     const separator = 'New separator'
 
-    cy.get('{smscommand-fieldseparator} input').clear().type(separator)
+    cy.getWithDataTest('{smscommand-fieldseparator} input')
+        .clear()
+        .type(separator)
 
     cy.wrap({ separator }).as('newValues')
 })
@@ -130,7 +129,7 @@ When('the user changes the fieldSeparator field', () => {
 When('the user changes the replyMessage field', () => {
     const defaultMessage = 'New default message'
 
-    cy.get('{smscommand-fielddefaultmessage} textarea')
+    cy.getWithDataTest('{smscommand-fielddefaultmessage} textarea')
         .clear()
         .type(defaultMessage)
 
@@ -140,7 +139,7 @@ When('the user changes the replyMessage field', () => {
 When('the user changes the wrongFormatMessage field', () => {
     const wrongFormatMessage = 'New wrong format message'
 
-    cy.get('{smscommand-fieldwrongformatmessage} textarea')
+    cy.getWithDataTest('{smscommand-fieldwrongformatmessage} textarea')
         .clear()
         .type(wrongFormatMessage)
 
@@ -150,7 +149,7 @@ When('the user changes the wrongFormatMessage field', () => {
 When('the user changes the noUserMessage field', () => {
     const noUserMessage = 'New no user message'
 
-    cy.get('{smscommand-fieldnousermessage} textarea')
+    cy.getWithDataTest('{smscommand-fieldnousermessage} textarea')
         .clear()
         .type(noUserMessage)
 
@@ -160,7 +159,7 @@ When('the user changes the noUserMessage field', () => {
 When('the user changes the moreThanOneOrgUnitMessage field', () => {
     const moreThanOneOrgUnitMessage = 'New more than one org unit message'
 
-    cy.get('{smscommand-fieldmorethanoneorgunitmessage} textarea')
+    cy.getWithDataTest('{smscommand-fieldmorethanoneorgunitmessage} textarea')
         .clear()
         .type(moreThanOneOrgUnitMessage)
 
@@ -170,7 +169,7 @@ When('the user changes the moreThanOneOrgUnitMessage field', () => {
 When('the user changes the successMessage field', () => {
     const successMessage = 'New success message'
 
-    cy.get('{smscommand-fieldsuccessmessage} textarea')
+    cy.getWithDataTest('{smscommand-fieldsuccessmessage} textarea')
         .clear()
         .type(successMessage)
 
@@ -178,17 +177,21 @@ When('the user changes the successMessage field', () => {
 })
 
 When('the user changes the name field to an invalid value', () => {
-    cy.get('{smscommand-fieldcommandname} input').clear()
+    cy.getWithDataTest('{smscommand-fieldcommandname} input').clear()
 })
 
 When('the user submits the form', () => {
-    cy.get('{smscommand-viewsmscommandedit} button[type="submit"]').click()
+    cy.getWithDataTest(
+        '{smscommand-viewsmscommandedit} button[type="submit"]'
+    ).click()
 })
 
 When('the user changes the value of a short code', () => {
     const newSmsCodeValue = 'Foo bar baz'
 
-    cy.get('{smscommand-dataelementtimescategoryoptioncombos-rows} input')
+    cy.getWithDataTest(
+        '{smscommand-dataelementtimescategoryoptioncombos-rows} input'
+    )
         .invoke('filter', (_, input) => !!Cypress.$(input).val())
         .clear()
         .type(newSmsCodeValue)
@@ -223,7 +226,7 @@ When('the user adds a formula', () => {
 
     cy.get('@formulaDataElementOption').click()
 
-    cy.get(
+    cy.getWithDataTest(
         '{smscommand-fielddataelementwithcategoryoptioncomboformula-save}'
     ).click()
 })
@@ -413,7 +416,7 @@ Then(
 )
 
 Then('the form should not submit successfully', () => {
-    cy.get('{smscommand-viewsmscommandedit} .error').should(
+    cy.getWithDataTest('{smscommand-viewsmscommandedit} .error').should(
         'have.length.of.at.least',
         1
     )

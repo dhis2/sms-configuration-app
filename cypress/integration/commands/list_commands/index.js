@@ -5,40 +5,38 @@ Before(() => {
 })
 
 Given('there are no commands', () => {
-    cy.intercept(/\/smsCommands[?]/, {
-        method: 'GET',
+    cy.intercept('GET', /\/smsCommands[?]/, {
         fixture: 'commands/list_commands/no_commands',
     })
 })
 
 Given('some commands exist', () => {
-    cy.intercept(/\/smsCommands[?]/, {
-        method: 'GET',
+    cy.intercept('GET', /\/smsCommands[?]/, {
         fixture: 'commands/list_commands/some_commands',
     })
 })
 
 Given('the user navigated to the sms commands list page', () => {
-    cy.visitWhenStubbed('/')
-    cy.get('{shared-navigationitem}:nth-child(3)').click()
+    cy.visit('/')
+    cy.getWithDataTest('{shared-navigationitem}:nth-child(3)').click()
     cy.get('h1:contains("Commands")').should('exist')
 })
 
 Then('no table should be displayed', () => {
-    cy.get('{views-smscommandlist-commandtable} tbody tr').as('row')
+    cy.getWithDataTest('{views-smscommandlist-commandtable} tbody tr').as('row')
     cy.get('@row').should('have.length', 1)
     cy.get('@row').should('contain', 'No commands to display')
 })
 
 Then('the commands are rendered as tabular data', () => {
-    cy.get('{views-smscommandlist-commandtable}').should('exist')
+    cy.getWithDataTest('{views-smscommandlist-commandtable}').should('exist')
 })
 
 Then("each row displays the commands's data", () => {
     cy.fixture('commands/list_commands/some_commands').then(
         ({ smsCommands }) => {
             smsCommands.forEach((smsCommand, index) => {
-                cy.get(
+                cy.getWithDataTest(
                     `{views-smscommandlist-commandtable} tbody tr:nth-child(${
                         index + 1
                     })`
