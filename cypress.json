@@ -3,5 +3,9 @@
     "baseUrl": "http://localhost:3000",
     "testFiles": "**/*.feature",
     "video": false,
-    "experimentalInteractiveRunEvents": true
+    "experimentalInteractiveRunEvents": true,
+    "env": {
+        "dhis2DataTestPrefix": "dhis2-smsconfiguration",
+        "dhis2ApiVersion": 37
+    }
 }
