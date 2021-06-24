@@ -10,10 +10,10 @@ You will need a `cypress.env.json` file with the contents:
 
 ```json
 {
-    "dhis2_base_url": "",
-    "dhis2_username": "",
-    "dhis2_password": "",
-    "dhis2_datatest_prefix": "dhis2-smsconfiguration"
+    "dhis2BaseUrl": "http://localhost:8080",
+    "dhis2Username": "admin",
+    "dhis2Password": "district",
+    "dhis2DataTestPrefix": "dhis2-smsconfiguration"
 }
 ```
 
