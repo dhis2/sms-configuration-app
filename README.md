@@ -17,8 +17,7 @@ You will need a `cypress.env.json` file with the contents:
 }
 ```
 
-The value for the first three fields needs to be appropriate for the
-server you wish to test against. Check out [this](https://cli-utils-cypress.dhis2.nu/#/guides/add-login-credentials) documentation for more details
+The value for the first three fields needs to be appropriate for the server you wish to test against. Check out [this](https://cli-utils-cypress.dhis2.nu/#/guides/add-login-credentials) documentation for more details
 
 The `dhis2_datatest_prefix` needs to be correct for this app.
 
