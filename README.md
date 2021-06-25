@@ -10,16 +10,16 @@ You will need a `cypress.env.json` file with the contents:
 
 ```json
 {
-    "dhis2_base_url": "",
-    "dhis2_username": "",
-    "dhis2_password": "",
-    "dhis2_datatest_prefix": "dhis2-smsconfiguration"
+    "dhis2BaseUrl": "",
+    "dhis2Username": "",
+    "dhis2Password": "",
+    "dhis2DataTestPrefix": "dhis2-smsconfiguration"
 }
 ```
 
-The value for the first three fields needs to be appropriate for the
-server you wish to test against. The `dhis2_datatest_prefix` needs to
-be correct for this app.
+The values for the first three fields need to be appropriate for the server you wish to test against. Check out [this](https://cli-utils-cypress.dhis2.nu/#/guides/add-login-credentials) documentation for more details
+
+The `dhis2_datatest_prefix` needs to be correct for this app.
 
 Run the tests with `yarn cy:run`.
 
