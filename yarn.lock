@@ -3079,10 +3079,10 @@
     semver "^7.3.2"
     yargs "^16.1.0"
 
-"@dhis2/cypress-commands@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/cypress-commands/-/cypress-commands-8.0.0.tgz#e9304dbb06c1f8b20a471da7e2b93d5beb860ac2"
-  integrity sha512-nOhDcVfs/b1rZpdTmQYhfP8oxn2wzHiSduWVc2iGNCUopDGe3D0OK736DdJyMJcAZp69h4UtTiQJbyIVl1mZ5Q==
+"@dhis2/cypress-commands@^8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@dhis2/cypress-commands/-/cypress-commands-8.0.2.tgz#4a05379050fb76341e291d25b9eda7826deb6180"
+  integrity sha512-kSD/Z0fR5dLfgT61N3cd1mkCjlKC0oWWyF6n0ltdvQvdHRWimxxvq5nayU19TCiWnysGz25xugXiQUQpbdsfdA==
   dependencies:
     jscodeshift "^0.11.0"
 
