@@ -31,7 +31,7 @@
     "devDependencies": {
         "@dhis2/cli-app-scripts": "^8.0.1",
         "@dhis2/cli-style": "^7.3.0",
-        "@dhis2/cypress-commands": "^8.0.0",
+        "@dhis2/cypress-commands": "^8.0.3",
         "@dhis2/cypress-plugins": "^8.0.0",
         "@testing-library/react-hooks": "^3.3.0",
         "concurrently": "^6.2.0",
