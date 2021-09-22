@@ -2260,10 +2260,10 @@
   dependencies:
     jscodeshift "^0.11.0"
 
-"@dhis2/cypress-plugins@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/cypress-plugins/-/cypress-plugins-8.0.0.tgz#bf605f3bde47b7c4d89f11e078f9fc3029d26012"
-  integrity sha512-upRB5+UjNGE2FHx6xiI+L02I+6WChIBM13pNORMr2TKvctwYPhdUUt2RZ/9aDZqblRJivVgWnZsC+dmufA5Q/A==
+"@dhis2/cypress-plugins@^8.0.3":
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/@dhis2/cypress-plugins/-/cypress-plugins-8.0.3.tgz#259340205b3dda90e6997e158a65210fc09caac3"
+  integrity sha512-likOcS/TgIFrkOHGrXgHwnYzIW88/lpssvqQzq8sBqW+qX15hZZXVj1WEt4PHr7QSXIOXegu9mQQsE26tZ9Z4A==
 
 "@dhis2/d2-i18n@^1.1.0":
   version "1.1.0"
