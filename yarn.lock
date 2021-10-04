@@ -2253,10 +2253,10 @@
     semver "^7.3.2"
     yargs "^16.1.0"
 
-"@dhis2/cypress-commands@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/cypress-commands/-/cypress-commands-8.0.0.tgz#e9304dbb06c1f8b20a471da7e2b93d5beb860ac2"
-  integrity sha512-nOhDcVfs/b1rZpdTmQYhfP8oxn2wzHiSduWVc2iGNCUopDGe3D0OK736DdJyMJcAZp69h4UtTiQJbyIVl1mZ5Q==
+"@dhis2/cypress-commands@^8.0.4":
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/@dhis2/cypress-commands/-/cypress-commands-8.0.4.tgz#27c0da91bec78e4c9e470f2d867ac98b61b546eb"
+  integrity sha512-Pm0cjexhdR9kl4a75gVZRaJ42IXwgVgDgem/i93tLV1N2CNonIVM8yiwB8f+oX9rg4Nj2yLc2vILjTkgn1Rpaw==
   dependencies:
     jscodeshift "^0.11.0"
 
