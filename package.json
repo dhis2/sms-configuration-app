@@ -39,7 +39,7 @@
         "cypress-cucumber-preprocessor": "^4.1.2",
         "eslint-plugin-cypress": "^2.11.2",
         "react-test-renderer": "^16.13.1",
-        "wait-on": "^5.3.0"
+        "wait-on": "^6.0.0"
     },
     "dependencies": {
         "@dhis2/app-runtime": "^3.2.0",
