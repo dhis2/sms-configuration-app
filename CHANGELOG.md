@@ -1,3 +1,16 @@
+# [100.0.0](https://github.com/dhis2/sms-configuration-app/compare/v99.9.9...v100.0.0) (2021-11-22)
+
+
+### chore
+
+* **release:** migrate to new app version scheme ([b2e3a7e](https://github.com/dhis2/sms-configuration-app/commit/b2e3a7e626a1c9c4d172d04dbef044a8a740b438)), closes [dhis2/notes#293](https://github.com/dhis2/notes/issues/293)
+
+
+### BREAKING CHANGES
+
+* **release:** App version becomes decoupled from DHIS2 versions, see
+the d2.config.js or App Hub for DHIS2 version compatibility.
+
 ## [1.2.14](https://github.com/dhis2/sms-configuration-app/compare/v1.2.13...v1.2.14) (2021-10-20)
 
 
