@@ -16,7 +16,7 @@ const ALERT_DATA_QUERY = {
     },
 }
 
-export const useAlertDataQuery = commandId => {
+export const useAlertDataQuery = (commandId) => {
     const variables = { commandId }
     return useDataQuery(ALERT_DATA_QUERY, { variables })
 }

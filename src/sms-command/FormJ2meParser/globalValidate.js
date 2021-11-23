@@ -2,7 +2,7 @@ import i18n from '../../locales'
 import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
 import { getSmsCodeDuplicates } from '../getSmsCodeDuplicates'
 
-export const globalValidate = values => {
+export const globalValidate = (values) => {
     let hasErrors = false
     const errors = {}
 
@@ -18,7 +18,7 @@ export const globalValidate = values => {
 
             const duplicateErrors = {}
 
-            duplicates.forEach(duplicate => {
+            duplicates.forEach((duplicate) => {
                 duplicateErrors[duplicate] = {
                     code: i18n.t('Duplicate value!'),
                 }

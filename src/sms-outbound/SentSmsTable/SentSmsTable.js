@@ -23,7 +23,7 @@ export const SentSmsTable = ({
             i18n.t('Status'),
             i18n.t('Sent'),
         ]}
-        rowRenderFn={message => (
+        rowRenderFn={(message) => (
             <>
                 <TableCell>{message.message}</TableCell>
                 <TableCell>

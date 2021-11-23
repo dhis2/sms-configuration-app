@@ -31,7 +31,7 @@ import styles from './ViewSmsCommandList.module.css'
 export const SMS_COMMAND_LIST_LABEL = i18n.t('Commands')
 export const SMS_COMMAND_LIST_PATH = '/sms-config'
 
-const getLabelByParserTypes = parserType => {
+const getLabelByParserTypes = (parserType) => {
     const type = Object.values(parserTypes).find(
         ({ value }) => value === parserType
     )
@@ -43,10 +43,8 @@ export const ViewSmsCommandList = () => {
     const history = useHistory()
     const onAddCommandClick = () => history.push('sms-command/new')
     const [checkedSmsCommands, setCheckedSmsCommands] = useState([])
-    const [
-        showDeleteConfirmationDialog,
-        setShowDeleteConfirmationDialog,
-    ] = useState(false)
+    const [showDeleteConfirmationDialog, setShowDeleteConfirmationDialog] =
+        useState(false)
 
     const {
         loading: loadingReadSmsCommands,
@@ -55,10 +53,8 @@ export const ViewSmsCommandList = () => {
         refetch,
     } = useReadSmsCommandsQuery()
 
-    const [
-        deleteSmsCommands,
-        { loading: loadingDelete, error: errorDelete },
-    ] = useDeleteSmsCommandMutation()
+    const [deleteSmsCommands, { loading: loadingDelete, error: errorDelete }] =
+        useDeleteSmsCommandMutation()
 
     if (loadingReadSmsCommands) {
         return (
@@ -108,7 +104,7 @@ export const ViewSmsCommandList = () => {
         }
     }
 
-    const toggleSmsCommand = smsCommand => {
+    const toggleSmsCommand = (smsCommand) => {
         const { id } = smsCommand
 
         if (checkedSmsCommands.find(({ id: checkedId }) => id === checkedId)) {

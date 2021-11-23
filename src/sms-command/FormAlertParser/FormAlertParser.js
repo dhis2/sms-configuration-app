@@ -18,7 +18,9 @@ export const FormAlertParser = ({ commandId, onAfterChange, onCancel }) => {
         onAfterChange,
     })
 
-    if (loading) return <ContentLoading />
+    if (loading) {
+        return <ContentLoading />
+    }
     if (error) {
         return (
             <ContentLoadingError

@@ -34,7 +34,7 @@ const {
 
 const isParserType = (parserType, parser) => parserType === parser.value
 
-const getSmsCommandEditFormComponent = parserType => {
+const getSmsCommandEditFormComponent = (parserType) => {
     const isParser = isParserType.bind(null, parserType)
 
     if (!parserType) {
@@ -78,7 +78,7 @@ export const ViewSmsCommandEdit = () => {
     const { loading, error, data } = useReadSmsCommandParserTypeQuery(id)
     const [showCancelDialog, setShowCancelDialog] = useState(false)
     const onAfterChange = () => history.push('/sms-command')
-    const onCancel = pristine =>
+    const onCancel = (pristine) =>
         pristine ? history.goBack() : setShowCancelDialog(true)
 
     if (loading) {

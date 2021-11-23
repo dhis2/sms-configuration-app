@@ -71,7 +71,7 @@ export const Form = ({
 
             <PageSubHeadline>{i18n.t('SMS short codes')}</PageSubHeadline>
 
-            {dynamicFields.map(dynamicField => {
+            {dynamicFields.map((dynamicField) => {
                 // I assume this should switch field types based on `valueType`
                 // which can be 'TEXT', 'NUMBER', etc. Currently this renders
                 // a regular input for everything.

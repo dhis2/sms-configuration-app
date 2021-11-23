@@ -34,7 +34,7 @@ describe('', () => {
         const pending = jest.fn()
         mutate.mockImplementationOnce(
             () =>
-                new Promise(resolve =>
+                new Promise((resolve) =>
                     setTimeout(() => {
                         resolve()
                         pending()

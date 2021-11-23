@@ -11,7 +11,9 @@ export const CurrentFormula = ({
     loading,
     operator,
 }) => {
-    if (!code || !formula || !formulaDataElementName || !operator) return null
+    if (!code || !formula || !formulaDataElementName || !operator) {
+        return null
+    }
 
     return (
         <span

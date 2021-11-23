@@ -40,14 +40,12 @@ const query = {
 }
 
 export const ViewSentSmsList = () => {
-    const [
-        showDeleteConfirmationDialog,
-        setShowDeleteConfirmationDialog,
-    ] = useState(false)
+    const [showDeleteConfirmationDialog, setShowDeleteConfirmationDialog] =
+        useState(false)
     const [selectedIds, setSelectedIds] = useState([])
     const [queryParams, setQueryParams] = useQueryParams()
     const { page, pageSize, status } = queryParams
-    const setStatus = status => {
+    const setStatus = (status) => {
         setQueryParams({ status, page: 1 })
     }
     const { called, loading, error, data, refetch } = useDataQuery(query, {
@@ -65,7 +63,7 @@ export const ViewSentSmsList = () => {
             refetch()
             setSelectedIds([])
         },
-        onError: error =>
+        onError: (error) =>
             addAlert({
                 type: 'critical',
                 message: error.message,

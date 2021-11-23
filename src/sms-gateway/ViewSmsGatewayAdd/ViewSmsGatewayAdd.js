@@ -27,25 +27,17 @@ export const ViewSmsGatewayAdd = () => {
     const history = useHistory()
     const [visibleForm, setVisibleForm] = useState(GENERIC_FORM)
 
-    const [
-        saveGenericGateway,
-        { error: saveGenericGatewayError },
-    ] = useCreateGenericGatewayMutation()
+    const [saveGenericGateway, { error: saveGenericGatewayError }] =
+        useCreateGenericGatewayMutation()
 
-    const [
-        saveBulkSMSGateway,
-        { error: saveBulkSMSGatewayError },
-    ] = useCreateBulkSMSGatewayMutation()
+    const [saveBulkSMSGateway, { error: saveBulkSMSGatewayError }] =
+        useCreateBulkSMSGatewayMutation()
 
-    const [
-        saveClickatellGateway,
-        { error: saveClickatellGatewayError },
-    ] = useCreateClickatellGatewayMutation()
+    const [saveClickatellGateway, { error: saveClickatellGatewayError }] =
+        useCreateClickatellGatewayMutation()
 
-    const [
-        saveSMPPGateway,
-        { error: saveSMPPGatewayError },
-    ] = useCreateSMPPGatewayMutation()
+    const [saveSMPPGateway, { error: saveSMPPGatewayError }] =
+        useCreateSMPPGatewayMutation()
 
     const error =
         saveGenericGatewayError ||
@@ -68,7 +60,7 @@ export const ViewSmsGatewayAdd = () => {
         )
     }
 
-    const onSubmit = async values => {
+    const onSubmit = async (values) => {
         try {
             if (visibleForm === GENERIC_FORM) {
                 await saveGenericGateway(values)

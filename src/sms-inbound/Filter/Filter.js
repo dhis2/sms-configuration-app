@@ -20,7 +20,7 @@ const STATUS_FILTER_OPTIONS = [
     'PROCESSING',
     'SENT',
     'UNHANDLED',
-].map(status => ({ value: status, label: translations[status] }))
+].map((status) => ({ value: status, label: translations[status] }))
 
 export const Filter = ({
     status,

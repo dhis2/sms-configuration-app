@@ -15,7 +15,7 @@ const query = {
     },
 }
 
-export const useCommandData = commandId => {
+export const useCommandData = (commandId) => {
     const variables = { commandId }
     return useDataQuery(query, { variables })
 }

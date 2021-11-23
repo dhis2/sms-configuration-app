@@ -20,7 +20,7 @@ const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
 export const FieldKeyValuePair = ({ index }) => {
     const { change, getState } = useForm()
 
-    const removeKeyValueFromFormState = index => {
+    const removeKeyValueFromFormState = (index) => {
         const { parameters } = getState().values
 
         if (index === 0) {

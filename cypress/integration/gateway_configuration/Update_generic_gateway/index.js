@@ -39,7 +39,7 @@ const gateways = [
 Given('the user navigated to the gateway configuration page', () => {
     cy.intercept('GET', /.*\/gateways.json$/, { body: { gateways } })
 
-    gateways.forEach(gateway => {
+    gateways.forEach((gateway) => {
         const { uid } = gateway
         const url = new RegExp(`.*/gateways/${uid}`)
 
@@ -68,7 +68,7 @@ When("the user changes the name field's value to another valid value", () => {
         .clear()
         .type('New name value')
 
-    cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
+    cy.get('@finalGatewayConfiguration').then((finalGatewayConfiguration) => {
         cy.wrap({
             ...finalGatewayConfiguration,
             name: 'New name value',
@@ -83,12 +83,14 @@ When(
             .clear()
             .type('http://another-domain.tld')
 
-        cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
-            cy.wrap({
-                ...finalGatewayConfiguration,
-                urlTemplate: 'http://another-domain.tld',
-            }).as('finalGatewayConfiguration')
-        })
+        cy.get('@finalGatewayConfiguration').then(
+            (finalGatewayConfiguration) => {
+                cy.wrap({
+                    ...finalGatewayConfiguration,
+                    urlTemplate: 'http://another-domain.tld',
+                }).as('finalGatewayConfiguration')
+            }
+        )
     }
 )
 
@@ -119,7 +121,7 @@ When(
             },
         ]
 
-        keyValuePairs.forEach(keyValuePair => {
+        keyValuePairs.forEach((keyValuePair) => {
             const { key, value, header, confidential, encode } = keyValuePair
 
             cy.getWithDataTest('{smsgateway-actionaddkeyvaluepair}').click()
@@ -160,14 +162,16 @@ When(
             }
         })
 
-        cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
-            cy.wrap({
-                ...finalGatewayConfiguration,
-                parameters: gateways.parameters
-                    ? [...gateways.parameters, ...keyValuePairs]
-                    : keyValuePairs,
-            }).as('finalGatewayConfiguration')
-        })
+        cy.get('@finalGatewayConfiguration').then(
+            (finalGatewayConfiguration) => {
+                cy.wrap({
+                    ...finalGatewayConfiguration,
+                    parameters: gateways.parameters
+                        ? [...gateways.parameters, ...keyValuePairs]
+                        : keyValuePairs,
+                }).as('finalGatewayConfiguration')
+            }
+        )
     }
 )
 
@@ -237,7 +241,7 @@ Then(
 )
 
 Then('the updates should be sent to the correct endpoint', () => {
-    cy.get('@gatewayId').then(id => {
+    cy.get('@gatewayId').then((id) => {
         cy.all(
             () => cy.wait(`@updateGatewayConfiguration${id}XHR`),
             () => cy.get('@finalGatewayConfiguration')

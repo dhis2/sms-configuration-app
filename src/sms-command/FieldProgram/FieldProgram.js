@@ -27,8 +27,8 @@ export const FieldProgram = ({
         component={SingleSelectFieldFF}
         options={programs}
         validate={required && hasValue}
-        format={value => value?.id || null}
-        parse={id => ({ id })}
+        format={(value) => value?.id || null}
+        parse={(id) => ({ id })}
     />
 )
 

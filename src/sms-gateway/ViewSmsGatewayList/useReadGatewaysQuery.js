@@ -32,7 +32,7 @@ export const GATEWAYS_QUERY = {
  * @param {string[]} [ids]
  * @return {Object}
  */
-export const useReadGatewaysQuery = ids => {
+export const useReadGatewaysQuery = (ids) => {
     /*
      * @TODO(filtering): Currently the `id:in:[...]` doesn't work
      *   -> https://jira.dhis2.org/browse/DHIS2-9259

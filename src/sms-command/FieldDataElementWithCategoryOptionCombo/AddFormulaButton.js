@@ -37,7 +37,7 @@ export const AddFormulaButton = ({ baseName, onClick, disabled }) => {
                 .query(DATA_ELEMENTS_QUERY, {
                     variables: { id: dataElementId },
                 })
-                .then(response => {
+                .then((response) => {
                     const { displayName } = response.dataElement
                     setFormulaDataElementName(displayName)
                 })

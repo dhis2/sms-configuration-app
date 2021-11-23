@@ -38,7 +38,7 @@ Given('the user navigated to the gateway configuration page', () => {
         body: { gateways },
     })
 
-    gateways.forEach(gateway => {
+    gateways.forEach((gateway) => {
         const { uid } = gateway
         const url = new RegExp(`.*/gateways/${uid}`)
 
@@ -72,7 +72,7 @@ When("the user changes the name field's value to another valid value", () => {
         .clear()
         .type('New name value')
 
-    cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
+    cy.get('@finalGatewayConfiguration').then((finalGatewayConfiguration) => {
         cy.wrap({
             ...finalGatewayConfiguration,
             name: 'New name value',
@@ -87,12 +87,14 @@ When(
             .clear()
             .type('New user name value')
 
-        cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
-            cy.wrap({
-                ...finalGatewayConfiguration,
-                username: 'New user name value',
-            }).as('finalGatewayConfiguration')
-        })
+        cy.get('@finalGatewayConfiguration').then(
+            (finalGatewayConfiguration) => {
+                cy.wrap({
+                    ...finalGatewayConfiguration,
+                    username: 'New user name value',
+                }).as('finalGatewayConfiguration')
+            }
+        )
     }
 )
 
@@ -103,12 +105,14 @@ When(
             .clear()
             .type('http://another.domain.tld')
 
-        cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
-            cy.wrap({
-                ...finalGatewayConfiguration,
-                urlTemplate: 'http://another.domain.tld',
-            }).as('finalGatewayConfiguration')
-        })
+        cy.get('@finalGatewayConfiguration').then(
+            (finalGatewayConfiguration) => {
+                cy.wrap({
+                    ...finalGatewayConfiguration,
+                    urlTemplate: 'http://another.domain.tld',
+                }).as('finalGatewayConfiguration')
+            }
+        )
     }
 )
 
@@ -119,12 +123,14 @@ When(
             .clear()
             .type('New auth token value')
 
-        cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
-            cy.wrap({
-                ...finalGatewayConfiguration,
-                authToken: 'New auth token value',
-            }).as('finalGatewayConfiguration')
-        })
+        cy.get('@finalGatewayConfiguration').then(
+            (finalGatewayConfiguration) => {
+                cy.wrap({
+                    ...finalGatewayConfiguration,
+                    authToken: 'New auth token value',
+                }).as('finalGatewayConfiguration')
+            }
+        )
     }
 )
 
@@ -209,7 +215,7 @@ Then(
 )
 
 Then('the updates should be sent to the correct endpoint', () => {
-    cy.get('@gatewayId').then(id => {
+    cy.get('@gatewayId').then((id) => {
         cy.all(
             () => cy.wait(`@updateGatewayConfiguration${id}XHR`),
             () => cy.get('@finalGatewayConfiguration')
@@ -217,12 +223,8 @@ Then('the updates should be sent to the correct endpoint', () => {
             expect(xhr.response.statusCode).to.equal(200)
 
             const sentData = xhr.request.body
-            const {
-                name,
-                username,
-                urlTemplate,
-                authToken,
-            } = finalGatewayConfiguration
+            const { name, username, urlTemplate, authToken } =
+                finalGatewayConfiguration
 
             expect(sentData.name).to.equal(name)
             expect(sentData.username).to.equal(username)

@@ -20,7 +20,9 @@ export const FormTrackedEntityRegistrationParser = ({
         onAfterChange,
     })
 
-    if (loading) return <ContentLoading />
+    if (loading) {
+        return <ContentLoading />
+    }
     if (error) {
         return (
             <ContentLoadingError
@@ -81,7 +83,7 @@ export const FormTrackedEntityRegistrationParser = ({
 
     // Creating an array with only the data we need to render our dynamic form fields
     const dynamicFields = trackedEntityAttributes.map(
-        trackedEntityAttribute => {
+        (trackedEntityAttribute) => {
             const { id, displayName, valueType } = trackedEntityAttribute
             const merged = { id, displayName, valueType }
             const smsCode = smsCodes[id]

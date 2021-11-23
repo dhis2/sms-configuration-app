@@ -15,7 +15,7 @@ const READ_SMS_COMMAND_PROGRAM_STAGE_DATA_ENTRY_PARSER_QUERY = {
     },
 }
 
-export const useCommandData = programStageId =>
+export const useCommandData = (programStageId) =>
     useDataQuery(READ_SMS_COMMAND_PROGRAM_STAGE_DATA_ENTRY_PARSER_QUERY, {
         variables: {
             id: programStageId,

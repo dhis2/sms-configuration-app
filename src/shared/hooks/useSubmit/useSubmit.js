@@ -5,11 +5,11 @@ import { AlertContext } from '../../components'
 
 const { FORM_ERROR } = FinalForm
 
-export const useSubmit = onSubmit => {
+export const useSubmit = (onSubmit) => {
     const { addAlert } = useContext(AlertContext)
 
     return (...args) =>
-        onSubmit(...args).catch(e => {
+        onSubmit(...args).catch((e) => {
             const message = e.message || i18n.t('No error message was provided')
 
             // Notify on unexpected errors

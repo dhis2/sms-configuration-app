@@ -20,5 +20,5 @@ const PROGRAMS_QUERY = {
     },
 }
 
-export const useReadProgramsQuery = registration =>
+export const useReadProgramsQuery = (registration) =>
     useDataQuery(PROGRAMS_QUERY, { variables: { registration } })

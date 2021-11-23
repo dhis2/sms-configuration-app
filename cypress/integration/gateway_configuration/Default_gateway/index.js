@@ -70,8 +70,8 @@ Then(
         cy.get('@newDefaultGatewayConfiguration')
             .findWithDataTest('{smsgateway-table-id} input')
             .invoke('val')
-            .then(id => {
-                cy.wait(`@defaultGatewayXHR${id}`).then(xhr => {
+            .then((id) => {
+                cy.wait(`@defaultGatewayXHR${id}`).then((xhr) => {
                     expect(xhr.response.statusCode).to.equal(200)
                     expect(xhr.request.url).to.match(new RegExp(`/${id}$`))
                 })

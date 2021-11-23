@@ -1,7 +1,7 @@
 import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
-const interceptCommandDetails = fixture => {
-    cy.get('@commandId').then(commandId => {
+const interceptCommandDetails = (fixture) => {
+    cy.get('@commandId').then((commandId) => {
         cy.intercept('GET', new RegExp(`${commandId}[?].*fields=[*]`), {
             fixture,
         })
@@ -30,7 +30,7 @@ Before(() => {
         }
     )
 
-    cy.fixture('commands/edit_cmd_j2me/dataSets').then(dataSets => {
+    cy.fixture('commands/edit_cmd_j2me/dataSets').then((dataSets) => {
         // This is used by the formula modal,
         // which will display a dropdown with data elements
         cy.intercept('GET', /dataSets[/][a-zA-Z0-9]+/, {
@@ -67,11 +67,11 @@ Given(
         interceptCommandDetails(fixture)
 
         // Extracting the data element of the formula for later use
-        cy.fixture(fixture).then(command => {
+        cy.fixture(fixture).then((command) => {
             const code = command.smsCodes[0]
             const codeDataElementId = code.dataElement.id
             const dataElement = command.dataset.dataSetElements.find(
-                dataSetElement => {
+                (dataSetElement) => {
                     return dataSetElement.dataElement.id === codeDataElementId
                 }
             ).dataElement
@@ -93,7 +93,7 @@ Given('the user is editing an J2ME parser command', () => {
 When('the user changes the name field', () => {
     cy.getWithDataTest('{smscommand-fieldcommandname} input')
         .invoke('val')
-        .then(currentName => {
+        .then((currentName) => {
             cy.wrap({ name: `${currentName}!` }).as('newValues')
             cy.getWithDataTest('{smscommand-fieldcommandname} input').type('!')
         })
@@ -226,7 +226,7 @@ When('the user changes the formula', () => {
     cy.get('button:contains("Edit formula")').click()
     cy.fixture(
         'commands/edit_cmd_j2me/commandDetailsWithCodeValueAndFormula'
-    ).then(command => {
+    ).then((command) => {
         const dataElementId = command.smsCodes[0].formula.slice(1)
         const dataElementDisplayName = command.dataset.dataSetElements.find(
             ({ dataElement }) => {
@@ -242,7 +242,7 @@ When('the user changes the formula', () => {
 
         // select first non-active option
         cy.get('[data-test="dhis2-uicore-singleselectoption"]:not(.active)')
-            .then($options => {
+            .then(($options) => {
                 const $option = $options.eq(0)
                 const label = $option.text()
                 const dataElement = command.dataset.dataSetElements.find(
@@ -268,14 +268,14 @@ When('the user removes the formula', () => {
 })
 
 Then('the form should submit successfully', () => {
-    cy.wait('@updateSmsCommandXhr').then(result => {
+    cy.wait('@updateSmsCommandXhr').then((result) => {
         expect(result.response.statusCode).to.equal(200)
         cy.wrap(result.request.body).as('payload')
     })
 })
 
 Then('the complete command should be sent to the endpoint', () => {
-    cy.get('@payload').then(payload => {
+    cy.get('@payload').then((payload) => {
         assert.isBoolean(payload.currentPeriodUsedForReporting)
         assert.isString(payload.completenessMethod)
         assert.isString(payload.dataset.id)
@@ -463,7 +463,7 @@ Then('the formula should be send alongside the short code', () => {
         () => cy.get('@formulaDataElement')
     ).then(([payload, formulaDataElement]) => {
         const shortCode = payload.smsCodes.find(
-            smsCode => smsCode.dataElement.id === formulaDataElement.id
+            (smsCode) => smsCode.dataElement.id === formulaDataElement.id
         )
         expect(shortCode).to.not.equal(null)
         expect(shortCode.formula).to.equal(`+${formulaDataElement.id}`)
@@ -476,7 +476,7 @@ Then('the formula should not be send alongside the short code', () => {
         () => cy.get('@formulaDataElement')
     ).then(([payload, formulaDataElement]) => {
         const shortCode = payload.smsCodes.find(
-            smsCode => smsCode.dataElement.id === formulaDataElement.id
+            (smsCode) => smsCode.dataElement.id === formulaDataElement.id
         )
 
         expect(shortCode).to.not.be.null

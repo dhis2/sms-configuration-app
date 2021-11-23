@@ -21,13 +21,13 @@ export const FieldProgramStage = ({
         dataTest={dataTest('smscommand-fieldprogramstage')}
         disabled={disabled}
         error={!!errorText}
-        format={value => value?.id || null}
+        format={(value) => value?.id || null}
         iinitialValue={initialValue}
         label={i18n.t('Program stage')}
         loading={loading}
         name={FIELD_PROGRAM_STAGE_NAME}
         options={programStages}
-        parse={id => ({ id })}
+        parse={(id) => ({ id })}
         required={required}
         validate={required && hasValue}
         validationText={errorText}

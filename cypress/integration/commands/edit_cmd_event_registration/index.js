@@ -2,7 +2,7 @@ import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Before(() => {
     cy.fixture('commands/edit_cmd_event_registration/commandsForListView').then(
-        response => {
+        (response) => {
             const { smsCommands } = response
             const [{ id: commandId }] = smsCommands
 
@@ -47,7 +47,7 @@ Given('the command has short codes', () => {
 When('the user changes the name field', () => {
     cy.getWithDataTest('{smscommand-fieldcommandname} input')
         .invoke('val')
-        .then(currentName => {
+        .then((currentName) => {
             cy.wrap({ name: `${currentName}!` }).as('newValues')
             cy.getWithDataTest('{smscommand-fieldcommandname} input').type('!')
         })
@@ -132,14 +132,14 @@ When('the user submits the form', () => {
 })
 
 Then('the form should submit successfully', () => {
-    cy.wait('@updateSmsCommandXhr').then(result => {
+    cy.wait('@updateSmsCommandXhr').then((result) => {
         expect(result.response.statusCode).to.equal(200)
         cy.wrap(result.request.body).as('payload')
     })
 })
 
 Then('the complete command should be sent to the endpoint', () => {
-    cy.get('@payload').then(payload => {
+    cy.get('@payload').then((payload) => {
         assert.isString(payload.name)
         assert.isString(payload.parserType)
         assert.isString(payload.programStage.id)
@@ -249,7 +249,7 @@ Then(
         ).then(([payload, newSmsShortCodeValue]) => {
             expect(
                 payload.smsCodes.filter(
-                    code => (code.value = newSmsShortCodeValue)
+                    (code) => (code.value = newSmsShortCodeValue)
                 )
             ).to.have.length(1)
         })

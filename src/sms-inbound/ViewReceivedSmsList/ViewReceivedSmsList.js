@@ -57,17 +57,15 @@ const query = {
 }
 
 export const ViewReceivedSmsList = () => {
-    const [
-        showDeleteConfirmationDialog,
-        setShowDeleteConfirmationDialog,
-    ] = useState(false)
+    const [showDeleteConfirmationDialog, setShowDeleteConfirmationDialog] =
+        useState(false)
     const [selectedIds, setSelectedIds] = useState([])
     const [queryParams, setQueryParams] = useQueryParams()
     const { page, pageSize, phoneNumber, status } = queryParams
-    const setPhoneNumber = phoneNumber => {
+    const setPhoneNumber = (phoneNumber) => {
         setQueryParams({ phoneNumber, page: 1 }, 'replaceIn')
     }
-    const setStatus = status => {
+    const setStatus = (status) => {
         setQueryParams({ status, page: 1 })
     }
     const handleFilterReset = () => {
@@ -95,7 +93,7 @@ export const ViewReceivedSmsList = () => {
             refetch()
             setSelectedIds([])
         },
-        onError: error =>
+        onError: (error) =>
             addAlert({
                 type: 'critical',
                 message: error.message,

@@ -23,7 +23,7 @@ export const UPDATE_SMS_COMMAND_MUTATION = {
 
 export const useUpdateCommandMutation = ({ onAfterChange, commandId }) => {
     const engine = useDataEngine()
-    const onSubmit = values => {
+    const onSubmit = (values) => {
         const variables = { ...values, commandId }
         return engine
             .mutate(REPLACE_SMS_COMMAND_MUTATION, { variables })

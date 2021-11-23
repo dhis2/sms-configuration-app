@@ -16,7 +16,7 @@ const STATUS_FILTER_OPTIONS = [
     'PENDING',
     'SCHEDULED',
     'SENT',
-].map(status => ({ value: status, label: translations[status] }))
+].map((status) => ({ value: status, label: translations[status] }))
 
 export const StatusFilter = ({ status, setStatus }) => (
     <div className={styles.container}>

@@ -24,7 +24,7 @@ export const ReceivedSmsTable = ({
             i18n.t('Sender'),
             i18n.t('Received'),
         ]}
-        rowRenderFn={message => (
+        rowRenderFn={(message) => (
             <>
                 <TableCell>{message.text}</TableCell>
                 <TableCell>

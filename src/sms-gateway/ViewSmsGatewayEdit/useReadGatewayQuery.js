@@ -16,5 +16,5 @@ export const GATEWAY_QUERY = {
     },
 }
 
-export const useReadGatewayQuery = id =>
+export const useReadGatewayQuery = (id) =>
     useDataQuery(GATEWAY_QUERY, { variables: { id } })

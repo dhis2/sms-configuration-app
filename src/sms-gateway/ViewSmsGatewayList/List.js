@@ -14,9 +14,9 @@ export const List = ({
 }) => {
     const allGatewaysChecked = checkedGateways.length === gateways.length
 
-    const toggleGateway = id => {
+    const toggleGateway = (id) => {
         if (checkedGateways.includes(id)) {
-            const index = checkedGateways.findIndex(curId => curId === id)
+            const index = checkedGateways.findIndex((curId) => curId === id)
 
             const newCheckedGateways =
                 index === 0

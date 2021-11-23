@@ -18,7 +18,7 @@ import { FIELD_WRONG_FORMAT_MESSAGE_NAME } from '../FieldWrongFormatMessage'
 const { AT_LEAST_ONE_DATAVALUE } = completenessMethods
 const { KEY_VALUE_PARSER } = parserTypes
 
-export const getInitialFormState = command => {
+export const getInitialFormState = (command) => {
     const name = command[FIELD_COMMAND_NAME]
     const parserType = KEY_VALUE_PARSER.value
     const dataSetId = { id: command[FIELD_DATA_SET_NAME].id }
@@ -58,7 +58,8 @@ export const getInitialFormState = command => {
         [FIELD_DATA_SET_NAME]: dataSetId,
         [FIELD_SEPARATOR_NAME]: separator,
         [FIELD_COMPLETENESS_METHOD_NAME]: completenessMethod,
-        [FIELD_USE_CURRENT_PERIOD_FOR_REPORTING_NAME]: useCurrentPeriodForReporting,
+        [FIELD_USE_CURRENT_PERIOD_FOR_REPORTING_NAME]:
+            useCurrentPeriodForReporting,
         [FIELD_DEFAULT_MESSAGE_NAME]: defaultMessage,
         [FIELD_WRONG_FORMAT_MESSAGE_NAME]: wrongFormatMessage,
         [FIELD_NO_USER_MESSAGE_NAME]: noUserMessage,

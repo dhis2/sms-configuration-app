@@ -23,7 +23,7 @@ describe('gateways - useUpdateGenericGatewayMutation', () => {
         // which will cause the loading state to be false as the mutate function
         // resolves immediately.
         mutate: jest.fn(
-            () => new Promise(resolve => setTimeout(() => resolve, 1000))
+            () => new Promise((resolve) => setTimeout(() => resolve, 1000))
         ),
     }
 

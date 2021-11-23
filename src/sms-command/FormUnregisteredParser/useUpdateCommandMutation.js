@@ -16,7 +16,7 @@ export const UPDATE_COMMAND_MUTATION = {
 export const useUpdateCommandMutation = ({ onAfterChange, commandId }) => {
     const engine = useDataEngine()
 
-    const onSubmit = values => {
+    const onSubmit = (values) => {
         const variables = { ...values, commandId }
         return engine
             .mutate(UPDATE_COMMAND_MUTATION, { variables })

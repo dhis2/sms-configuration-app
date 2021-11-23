@@ -28,8 +28,8 @@ export const FieldSmsCode = ({ id, displayName, valueType }) => {
             name={`${FIELD_SMS_CODES_NAME}.${id}`}
             label={displayName}
             component={InputFieldFF}
-            format={code => code?.code || ''}
-            parse={nextCode =>
+            format={(code) => code?.code || ''}
+            parse={(nextCode) =>
                 !smsCode
                     ? {
                           code: nextCode,

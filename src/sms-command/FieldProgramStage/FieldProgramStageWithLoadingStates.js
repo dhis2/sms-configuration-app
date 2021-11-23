@@ -24,7 +24,9 @@ export const FieldProgramStageWithLoadingStates = ({
     const validate = required ? hasValue : undefined
 
     useEffect(() => {
-        if (programId) refetch({ programId })
+        if (programId) {
+            refetch({ programId })
+        }
     }, [programId])
 
     useEffect(() => {

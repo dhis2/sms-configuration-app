@@ -14,8 +14,8 @@ export const FieldSmsCodeDataElement = ({ dataElement, smsCodes }) => {
             name={`${FIELD_SMS_CODES_NAME}.${dataElement.id}`}
             label={dataElement.displayName}
             component={InputFieldFF}
-            format={value => value?.code || null}
-            parse={code => {
+            format={(value) => value?.code || null}
+            parse={(code) => {
                 const currentValue = smsCodes[dataElement.id]
 
                 const newValue = {

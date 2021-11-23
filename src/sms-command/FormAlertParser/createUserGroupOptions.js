@@ -1,4 +1,4 @@
-export const createUserGroupOptions = userGroup => [
+export const createUserGroupOptions = (userGroup) => [
     {
         value: userGroup.id,
         label: userGroup.name,

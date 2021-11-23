@@ -12,7 +12,9 @@ const subscription = {
 export const SubmitErrors = () => {
     const { submitError, hasSubmitErrors } = useFormState({ subscription })
 
-    if (!hasSubmitErrors) return null
+    if (!hasSubmitErrors) {
+        return null
+    }
 
     return (
         <FormRow>

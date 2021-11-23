@@ -32,8 +32,8 @@ export const FieldDataSet = ({
         component={SingleSelectFieldFF}
         options={dataSets}
         validate={hasValue}
-        format={value => value?.id || null}
-        parse={id => ({ id })}
+        format={(value) => value?.id || null}
+        parse={(id) => ({ id })}
     />
 )
 

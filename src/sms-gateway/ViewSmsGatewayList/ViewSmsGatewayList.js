@@ -48,7 +48,7 @@ export const ViewSmsGatewayList = () => {
         setShowDeleteDialog(false)
     }
 
-    const onMakeDefaultClick = id => {
+    const onMakeDefaultClick = (id) => {
         const variables = { id }
         makeGatewayDefault(variables).then(refetchReadGateways)
     }

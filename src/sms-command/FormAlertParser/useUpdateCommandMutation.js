@@ -16,7 +16,7 @@ const updateAlertParserMutation = {
 
 export const useUpdateCommandMutation = ({ id, onAfterChange }) => {
     const engine = useDataEngine()
-    const onSubmit = values => {
+    const onSubmit = (values) => {
         const variables = { ...values, id }
         return engine
             .mutate(updateAlertParserMutation, { variables })

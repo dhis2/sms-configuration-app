@@ -83,7 +83,7 @@ const useResetFormFields = () => {
 }
 
 // undefined = all, false = program.programType --> WITHOUT_REGISTRATION
-const shouldProgramsBeWithRegistration = parserType => {
+const shouldProgramsBeWithRegistration = (parserType) => {
     // EVENT_REGISTRATION uses event programs
     if (parserType === EVENT_REGISTRATION_PARSER.value) {
         return PROGRAMS_WITHOUT_REGISTRATION
@@ -210,7 +210,7 @@ export const ViewSmsCommandAdd = () => {
     const [createSmsCommand] = useCreateSmsCommandMutation({
         onComplete: () => history.push('/sms-command'),
     })
-    const onSubmit = values => createSmsCommand(values)
+    const onSubmit = (values) => createSmsCommand(values)
 
     return (
         <TemplateSidebarNavContent>

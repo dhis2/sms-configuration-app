@@ -48,7 +48,7 @@ export const GatewaysTable = ({
             </TableHead>
 
             <TableBody>
-                {gateways.map(gateway => (
+                {gateways.map((gateway) => (
                     <TableRow
                         key={gateway.uid}
                         dataTest={dataTest('smsgateway-table-row')}

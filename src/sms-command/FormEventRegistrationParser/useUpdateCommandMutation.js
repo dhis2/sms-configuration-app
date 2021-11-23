@@ -16,7 +16,7 @@ const updateEventRegistrationParserMutation = {
     resource: 'smsCommands',
     type: 'update',
     id: ({ id }) => id,
-    data: command => {
+    data: (command) => {
         const name = command[FIELD_COMMAND_NAME]
         const parserType = command[FIELD_PARSER_NAME]
         const program = command[FIELD_PROGRAM_NAME]
@@ -39,7 +39,8 @@ const updateEventRegistrationParserMutation = {
             [FIELD_DEFAULT_MESSAGE_NAME]: defaultMessage,
             [FIELD_WRONG_FORMAT_MESSAGE_NAME]: wrongFormatMessage,
             [FIELD_NO_USER_MESSAGE_NAME]: noUserMessage,
-            [FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME]: moreThanOneOrgUnitMessage,
+            [FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME]:
+                moreThanOneOrgUnitMessage,
             [FIELD_SUCCESS_MESSAGE_NAME]: successMessage,
             [FIELD_SMS_CODES_NAME]: smsCodes,
         }
@@ -48,7 +49,7 @@ const updateEventRegistrationParserMutation = {
 
 export const useUpdateCommandMutation = ({ id, onAfterChange }) => {
     const engine = useDataEngine()
-    const onSubmit = values => {
+    const onSubmit = (values) => {
         const variables = { ...values, id }
         return engine
             .mutate(updateEventRegistrationParserMutation, { variables })

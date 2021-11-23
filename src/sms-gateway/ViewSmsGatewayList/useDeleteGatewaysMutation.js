@@ -7,7 +7,7 @@ export const DELETE_GATEWAY_MUTATION = {
     id: ({ id }) => id,
 }
 
-const idToMutationRequestFactory = engine => id => {
+const idToMutationRequestFactory = (engine) => (id) => {
     const variables = { id }
     return engine.mutate(DELETE_GATEWAY_MUTATION, { variables })
 }
@@ -19,11 +19,11 @@ export const useDeleteGatewaysMutation = () => {
 
     const idToMutationRequest = idToMutationRequestFactory(engine)
     const onStart = () => setLoading(true)
-    const onDone = response => {
+    const onDone = (response) => {
         setLoading(false)
         return response
     }
-    const onError = error => {
+    const onError = (error) => {
         setError(error)
         setLoading(false)
     }

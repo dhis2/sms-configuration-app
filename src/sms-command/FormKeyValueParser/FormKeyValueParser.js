@@ -23,9 +23,8 @@ export const FormKeyValueParser = ({ commandId, onAfterChange, onCancel }) => {
         'smscommandkeyvalueparser-commandeditj2meparserform'
     )
 
-    const { error: loadingCommandError, data: commandData } = useCommandData(
-        commandId
-    )
+    const { error: loadingCommandError, data: commandData } =
+        useCommandData(commandId)
 
     const command = commandData?.smsCommand
 
@@ -70,7 +69,7 @@ export const FormKeyValueParser = ({ commandId, onAfterChange, onCancel }) => {
                 return [...curCombinations, { dataElement }]
             }
 
-            const combos = categoryOptionCombo.map(COC => ({
+            const combos = categoryOptionCombo.map((COC) => ({
                 dataElement,
                 categoryOptionCombo: COC,
             }))

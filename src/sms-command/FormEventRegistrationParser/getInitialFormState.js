@@ -12,7 +12,7 @@ import { FIELD_WRONG_FORMAT_MESSAGE_NAME } from '../FieldWrongFormatMessage'
 
 const { EVENT_REGISTRATION_PARSER } = parserTypes
 
-export const getInitialFormState = command => {
+export const getInitialFormState = (command) => {
     const name = command[FIELD_COMMAND_NAME]
     const program = command[FIELD_PROGRAM_NAME]
     const programStage = command[FIELD_PROGRAM_STAGE_NAME]

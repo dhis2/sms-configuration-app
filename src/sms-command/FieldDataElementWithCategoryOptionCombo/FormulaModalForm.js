@@ -36,9 +36,8 @@ export const FormulaModalForm = ({
         subscription: { value: true },
     }).input.value.id
 
-    const { loading, error, data } = useReadDataElementsOfDataSetQuery(
-        dataSetId
-    )
+    const { loading, error, data } =
+        useReadDataElementsOfDataSetQuery(dataSetId)
 
     // Using memo so changing the form does not change the "initialValues"
     // which would cause the form to update unnecessarily
@@ -69,7 +68,7 @@ export const FormulaModalForm = ({
         )
     }
 
-    const options = data.map(dataElement => {
+    const options = data.map((dataElement) => {
         const { id, displayName } = dataElement
 
         return {
@@ -78,7 +77,7 @@ export const FormulaModalForm = ({
         }
     })
 
-    const onSubmit = values => {
+    const onSubmit = (values) => {
         const newFormula = `${values.operator}${values.dataElementCode}`
         form.change(targetFieldName, newFormula)
         onClose()
@@ -94,7 +93,7 @@ export const FormulaModalForm = ({
             {({ handleSubmit }) => (
                 <Modal dataTest={modalDataTest}>
                     <form
-                        onSubmit={event => {
+                        onSubmit={(event) => {
                             event.stopPropagation()
                             handleSubmit(event)
                         }}

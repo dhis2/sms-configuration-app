@@ -13,7 +13,7 @@ import { dataTest } from '../../shared'
 const { Field, useFormState } = ReactFinalForm
 const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
 
-export const createFieldGatewayKeyValuePairValueName = index =>
+export const createFieldGatewayKeyValuePairValueName = (index) =>
     `parameters[${index}].value`
 
 export const ValueField = ({ index }) => {
