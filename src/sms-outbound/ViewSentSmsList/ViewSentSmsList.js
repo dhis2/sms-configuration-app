@@ -1,17 +1,17 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { Button, NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState, useEffect, useContext } from 'react'
-import i18n from '../../locales'
+import i18n from '../../locales/index.js'
 import {
     DeleteConfirmationDialog,
     PageHeadline,
     AlertContext,
     TemplateSidebarNavContent,
     useQueryParams,
-} from '../../shared'
-import { SentSmsTable } from '../SentSmsTable'
-import { StatusFilter } from '../StatusFilter'
-import { useDeleteMutation } from './useDeleteMutation'
+} from '../../shared/index.js'
+import { SentSmsTable } from '../SentSmsTable/index.js'
+import { StatusFilter } from '../StatusFilter/index.js'
+import { useDeleteMutation } from './useDeleteMutation.js'
 import styles from './ViewSentSmsList.module.css'
 
 export const SENT_SMS_LIST_LABEL = i18n.t('Sent')

@@ -1,5 +1,5 @@
 import { Given, Then } from 'cypress-cucumber-preprocessor/steps'
-import { translations } from '../../../../src/sms-outbound/translations'
+import { translations } from '../../../../src/sms-outbound/translations/index.js'
 
 const endpointUrl = /[/]sms[/]outbound([?]|$)/
 

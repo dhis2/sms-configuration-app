@@ -1,1 +1,1 @@
-export { ViewSmsCommandList } from './ViewSmsCommandList'
+export { ViewSmsCommandList } from './ViewSmsCommandList.js'

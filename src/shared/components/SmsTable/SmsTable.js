@@ -12,7 +12,7 @@ import {
     TableRowHead,
 } from '@dhis2/ui'
 import React from 'react'
-import { Pagination } from '../pagination/Pagination'
+import { Pagination } from '../pagination/Pagination.js'
 import styles from './SmsTable.module.css'
 
 export const SmsTable = ({

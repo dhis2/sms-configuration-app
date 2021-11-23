@@ -1,1 +1,1 @@
-export { FieldCompressed } from './FieldCompressed'
+export { FieldCompressed } from './FieldCompressed.js'

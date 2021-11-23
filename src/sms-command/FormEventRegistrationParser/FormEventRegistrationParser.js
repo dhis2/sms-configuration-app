@@ -6,11 +6,11 @@ import {
     ReactFinalForm,
 } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { Form as FormComponent } from './Form'
-import { getInitialFormState } from './getInitialFormState'
-import { useCommandQuery } from './useCommandQuery'
-import { useUpdateCommandMutation } from './useUpdateCommandMutation'
+import i18n from '../../locales/index.js'
+import { Form as FormComponent } from './Form.js'
+import { getInitialFormState } from './getInitialFormState.js'
+import { useCommandQuery } from './useCommandQuery.js'
+import { useUpdateCommandMutation } from './useUpdateCommandMutation.js'
 
 const { Form } = ReactFinalForm
 

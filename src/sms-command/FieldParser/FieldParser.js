@@ -1,9 +1,9 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { SingleSelectFieldFF, ReactFinalForm, hasValue } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { dataTest } from '../../shared'
-import { parserTypes } from './parserTypes'
+import i18n from '../../locales/index.js'
+import { dataTest } from '../../shared/index.js'
+import { parserTypes } from './parserTypes.js'
 
 const { Field } = ReactFinalForm
 const options = Object.values(parserTypes).sort((a, b) => {

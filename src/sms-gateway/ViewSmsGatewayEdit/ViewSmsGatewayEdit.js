@@ -1,25 +1,25 @@
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
-import i18n from '../../locales'
+import i18n from '../../locales/index.js'
 import {
     CancelDialog,
     PageHeadline,
     TemplateSidebarNavContent,
     dataTest,
-} from '../../shared'
-import { FIELD_PASSWORD_NAME } from '../FieldPassword'
-import { FIELD_PASSWORD_CONFIRMATION_NAME } from '../FieldPasswordConfirmation'
-import { FormBulkSMS } from '../FormBulkSMS'
-import { FormClickatell } from '../FormClickatell'
-import { FormGeneric } from '../FormGeneric'
-import { FormSMPP } from '../FormSMPP'
-import { gatewayTypes } from '../InputSingleSelectGatewayType'
-import { useReadGatewayQuery } from './useReadGatewayQuery'
-import { useUpdateBulkSMSGatewayMutation } from './useUpdateBulkSMSGatewayMutation'
-import { useUpdateClickatellGatewayMutation } from './useUpdateClickatellGatewayMutation'
-import { useUpdateGenericGatewayMutation } from './useUpdateGenericGatewayMutation'
-import { useUpdateSMPPGatewayMutation } from './useUpdateSMPPGatewayMutation'
+} from '../../shared/index.js'
+import { FIELD_PASSWORD_NAME } from '../FieldPassword/index.js'
+import { FIELD_PASSWORD_CONFIRMATION_NAME } from '../FieldPasswordConfirmation/index.js'
+import { FormBulkSMS } from '../FormBulkSMS/index.js'
+import { FormClickatell } from '../FormClickatell/index.js'
+import { FormGeneric } from '../FormGeneric/index.js'
+import { FormSMPP } from '../FormSMPP/index.js'
+import { gatewayTypes } from '../InputSingleSelectGatewayType/index.js'
+import { useReadGatewayQuery } from './useReadGatewayQuery.js'
+import { useUpdateBulkSMSGatewayMutation } from './useUpdateBulkSMSGatewayMutation.js'
+import { useUpdateClickatellGatewayMutation } from './useUpdateClickatellGatewayMutation.js'
+import { useUpdateGenericGatewayMutation } from './useUpdateGenericGatewayMutation.js'
+import { useUpdateSMPPGatewayMutation } from './useUpdateSMPPGatewayMutation.js'
 import styles from './ViewSmsGatewayEdit.module.css'
 
 const { GENERIC_FORM, BULK_SMS_FORM, CLICKATELL_FORM, SMPP_FORM } = gatewayTypes

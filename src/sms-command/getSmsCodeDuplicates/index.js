@@ -1,1 +1,1 @@
-export { getSmsCodeDuplicates } from './getSmsCodeDuplicates'
+export { getSmsCodeDuplicates } from './getSmsCodeDuplicates.js'

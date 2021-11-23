@@ -2,7 +2,7 @@ import { useDataMutation } from '@dhis2/app-runtime'
 import {
     CREATE_CLICKATELL_GATEWAY_MUTATION,
     useCreateClickatellGatewayMutation,
-} from '../useCreateClickatellGatewayMutation'
+} from '../useCreateClickatellGatewayMutation.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     useDataMutation: jest.fn(),

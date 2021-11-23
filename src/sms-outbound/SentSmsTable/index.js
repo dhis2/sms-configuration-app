@@ -1,1 +1,1 @@
-export { SentSmsTable } from './SentSmsTable'
+export { SentSmsTable } from './SentSmsTable.js'

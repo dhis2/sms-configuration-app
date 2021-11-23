@@ -1,1 +1,1 @@
-export { ViewOverview } from './ViewOverview'
+export { ViewOverview } from './ViewOverview/index.js'

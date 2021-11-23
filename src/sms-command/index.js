@@ -1,3 +1,3 @@
-export { ViewSmsCommandAdd } from './ViewSmsCommandAdd'
-export { ViewSmsCommandEdit } from './ViewSmsCommandEdit'
-export { ViewSmsCommandList } from './ViewSmsCommandList'
+export { ViewSmsCommandAdd } from './ViewSmsCommandAdd/index.js'
+export { ViewSmsCommandEdit } from './ViewSmsCommandEdit/index.js'
+export { ViewSmsCommandList } from './ViewSmsCommandList/index.js'

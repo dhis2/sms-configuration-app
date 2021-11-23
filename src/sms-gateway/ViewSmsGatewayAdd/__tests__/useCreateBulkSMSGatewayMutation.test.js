@@ -2,7 +2,7 @@ import { useDataMutation } from '@dhis2/app-runtime'
 import {
     CREATE_BULK_SMS_GATEWAY_MUTATION,
     useCreateBulkSMSGatewayMutation,
-} from '../useCreateBulkSMSGatewayMutation'
+} from '../useCreateBulkSMSGatewayMutation.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     useDataMutation: jest.fn(),

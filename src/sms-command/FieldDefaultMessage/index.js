@@ -1,4 +1,4 @@
 export {
     FIELD_DEFAULT_MESSAGE_NAME,
     FieldDefaultMessage,
-} from './FieldDefaultMessage'
+} from './FieldDefaultMessage.js'

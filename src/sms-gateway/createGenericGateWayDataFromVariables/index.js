@@ -1,1 +1,1 @@
-export { createGenericGateWayDataFromVariables } from './createGenericGateWayDataFromVariables'
+export { createGenericGateWayDataFromVariables } from './createGenericGateWayDataFromVariables.js'

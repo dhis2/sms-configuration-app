@@ -1,1 +1,1 @@
-export { FormGeneric } from './FormGeneric'
+export { FormGeneric } from './FormGeneric.js'

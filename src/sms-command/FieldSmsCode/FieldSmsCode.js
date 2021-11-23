@@ -1,7 +1,7 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../shared'
+import { dataTest } from '../../shared/index.js'
 
 const { Field, useFormState } = ReactFinalForm
 const subscription = {

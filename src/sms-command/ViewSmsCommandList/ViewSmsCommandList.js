@@ -14,7 +14,7 @@ import {
 } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import i18n from '../../locales'
+import i18n from '../../locales/index.js'
 import {
     ListActions,
     DeleteConfirmationDialog,
@@ -22,10 +22,10 @@ import {
     Paragraph,
     TemplateSidebarNavContent,
     dataTest,
-} from '../../shared'
-import { parserTypes } from '../FieldParser'
-import { useDeleteSmsCommandMutation } from './useDeleteSmsCommandMutation'
-import { useReadSmsCommandsQuery } from './useReadSmsCommandsQuery'
+} from '../../shared/index.js'
+import { parserTypes } from '../FieldParser/index.js'
+import { useDeleteSmsCommandMutation } from './useDeleteSmsCommandMutation.js'
+import { useReadSmsCommandsQuery } from './useReadSmsCommandsQuery.js'
 import styles from './ViewSmsCommandList.module.css'
 
 export const SMS_COMMAND_LIST_LABEL = i18n.t('Commands')

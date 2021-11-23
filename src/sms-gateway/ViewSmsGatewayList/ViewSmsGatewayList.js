@@ -1,7 +1,7 @@
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import i18n from '../../locales'
+import i18n from '../../locales/index.js'
 import {
     ListActions,
     PageHeadline,
@@ -9,11 +9,11 @@ import {
     Paragraph,
     TemplateSidebarNavContent,
     dataTest,
-} from '../../shared'
-import { List } from './List'
-import { useDeleteGatewaysMutation } from './useDeleteGatewaysMutation'
-import { useReadGatewaysQuery } from './useReadGatewaysQuery'
-import { useSetDefaultGatewayMutation } from './useSetDefaultGatewayMutation'
+} from '../../shared/index.js'
+import { List } from './List.js'
+import { useDeleteGatewaysMutation } from './useDeleteGatewaysMutation.js'
+import { useReadGatewaysQuery } from './useReadGatewaysQuery.js'
+import { useSetDefaultGatewayMutation } from './useSetDefaultGatewayMutation.js'
 import styles from './ViewSmsGatewayList.module.css'
 
 export const GATEWAY_CONFIG_LIST_PATH = '/sms-gateway'

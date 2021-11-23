@@ -1,2 +1,2 @@
-export * from './useQueryParam'
-export * from './useSubmit'
+export * from './useQueryParam/index.js'
+export * from './useSubmit/index.js'

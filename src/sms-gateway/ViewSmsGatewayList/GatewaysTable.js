@@ -13,10 +13,10 @@ import {
 } from '@dhis2/ui'
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import i18n from '../../locales'
-import { dataTest } from '../../shared'
+import i18n from '../../locales/index.js'
+import { dataTest } from '../../shared/index.js'
 import styles from './GatewaysTable.module.css'
-import { getTypeLabelByType } from './getTypeLabelByType'
+import { getTypeLabelByType } from './getTypeLabelByType.js'
 
 export const GatewaysTable = ({
     allGatewaysChecked,

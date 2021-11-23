@@ -1,10 +1,10 @@
-import './locales'
+import './locales/index.js'
 import { CssVariables } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { HashRouter, Route } from 'react-router-dom'
 import { QueryParamProvider } from 'use-query-params'
-import { AlertHandler } from './shared/components'
+import { AlertHandler } from './shared/components/index.js'
 
 export const AppWrapper = ({ children }) => (
     <AlertHandler>

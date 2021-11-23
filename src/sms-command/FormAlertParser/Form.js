@@ -1,11 +1,11 @@
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-import { FormRow, FieldUserGroup, dataTest } from '../../shared'
-import { FieldCommandName } from '../FieldCommandName'
-import { FieldConfirmMessage } from '../FieldConfirmMessage'
-import { FieldParser } from '../FieldParser'
-import { FormActions } from '../FormActions'
-import { SubmitErrors } from '../SubmitErrors'
+import { FormRow, FieldUserGroup, dataTest } from '../../shared/index.js'
+import { FieldCommandName } from '../FieldCommandName/index.js'
+import { FieldConfirmMessage } from '../FieldConfirmMessage/index.js'
+import { FieldParser } from '../FieldParser/index.js'
+import { FormActions } from '../FormActions/index.js'
+import { SubmitErrors } from '../SubmitErrors/index.js'
 
 export const Form = ({ userGroups, handleSubmit, pristine, onCancel }) => (
     <form

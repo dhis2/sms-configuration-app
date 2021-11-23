@@ -1,5 +1,5 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import { useSubmit } from '../../shared'
+import { useSubmit } from '../../shared/index.js'
 
 export const UPDATE_COMMAND_MUTATION = {
     resource: 'smsCommands',

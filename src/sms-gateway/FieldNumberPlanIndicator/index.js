@@ -1,1 +1,1 @@
-export { FieldNumberPlanIndicator } from './FieldNumberPlanIndicator'
+export { FieldNumberPlanIndicator } from './FieldNumberPlanIndicator.js'

@@ -1,8 +1,8 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { hasValue } from '@dhis2/ui'
 import React from 'react'
-import { FieldDataSet } from './FieldDataSet'
-import { useReadDataSetsQuery } from './useReadDataSetsQuery'
+import { FieldDataSet } from './FieldDataSet.js'
+import { useReadDataSetsQuery } from './useReadDataSetsQuery.js'
 
 export const FieldDataSetWithAutoLoad = ({ required }) => {
     const { loading, error, data } = useReadDataSetsQuery()

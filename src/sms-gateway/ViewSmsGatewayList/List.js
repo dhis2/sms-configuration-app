@@ -1,8 +1,8 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { CircularLoader } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../shared'
-import { GatewaysTable } from './GatewaysTable'
+import { dataTest } from '../../shared/index.js'
+import { GatewaysTable } from './GatewaysTable.js'
 import styles from './List.module.css'
 
 export const List = ({

@@ -1,4 +1,4 @@
-import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
+import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode/index.js'
 
 export const formatSmsCodes = (updates) => ({
     ...updates,

@@ -1,1 +1,1 @@
-export { ContentLoading } from './ContentLoading'
+export { ContentLoading } from './ContentLoading.js'

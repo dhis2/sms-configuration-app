@@ -1,4 +1,4 @@
-import { dataTest } from '../dataTest'
+import { dataTest } from '../dataTest.js'
 
 describe('dataTest', () => {
     it('should prepend the org and appname', () => {

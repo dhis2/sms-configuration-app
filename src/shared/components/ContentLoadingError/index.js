@@ -1,1 +1,1 @@
-export { ContentLoadingError } from './ContentLoadingError'
+export { ContentLoadingError } from './ContentLoadingError.js'

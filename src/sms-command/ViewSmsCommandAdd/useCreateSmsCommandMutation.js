@@ -1,5 +1,5 @@
 import { useDataMutation } from '@dhis2/app-runtime'
-import { parserTypes } from '../FieldParser'
+import { parserTypes } from '../FieldParser/index.js'
 
 const {
     ALERT_PARSER,

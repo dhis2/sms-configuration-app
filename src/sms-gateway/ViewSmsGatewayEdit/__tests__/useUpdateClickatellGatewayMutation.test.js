@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react-hooks'
 import {
     UPDATE_CLICKATELL_GATEWAY_MUTATION,
     useUpdateClickatellGatewayMutation,
-} from '../useUpdateClickatellGatewayMutation'
+} from '../useUpdateClickatellGatewayMutation.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     useDataEngine: jest.fn(),

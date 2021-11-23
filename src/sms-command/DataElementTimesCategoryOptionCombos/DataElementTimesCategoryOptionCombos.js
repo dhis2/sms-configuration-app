@@ -1,9 +1,9 @@
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-import i18n from '../../locales'
-import { FormRow, PageSubHeadline, dataTest } from '../../shared'
-import { FieldDataElementWithCategoryOptionCombo } from '../FieldDataElementWithCategoryOptionCombo'
-import { CompletenessMessage } from './CompletenessMessage'
+import i18n from '../../locales/index.js'
+import { FormRow, PageSubHeadline, dataTest } from '../../shared/index.js'
+import { FieldDataElementWithCategoryOptionCombo } from '../FieldDataElementWithCategoryOptionCombo/index.js'
+import { CompletenessMessage } from './CompletenessMessage.js'
 import styles from './DataElementTimesCategoryOptionCombos.module.css'
 
 export const DataElementTimesCategoryOptionCombos = ({

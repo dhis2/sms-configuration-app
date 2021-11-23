@@ -1,7 +1,7 @@
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-import i18n from '../../locales'
-import { dataTest } from '../../shared'
+import i18n from '../../locales/index.js'
+import { dataTest } from '../../shared/index.js'
 import styles from './CurrentFormula.module.css'
 
 export const CurrentFormula = ({

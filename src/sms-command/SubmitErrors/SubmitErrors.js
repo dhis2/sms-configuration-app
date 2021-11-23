@@ -1,7 +1,7 @@
 import { NoticeBox, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { FormRow } from '../../shared'
+import i18n from '../../locales/index.js'
+import { FormRow } from '../../shared/index.js'
 
 const { useFormState } = ReactFinalForm
 const subscription = {

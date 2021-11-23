@@ -2,7 +2,7 @@ import { useDataMutation } from '@dhis2/app-runtime'
 import {
     SET_DEFAULT_GATEWAY_MUTATION,
     useSetDefaultGatewayMutation,
-} from '../useSetDefaultGatewayMutation'
+} from '../useSetDefaultGatewayMutation.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     useDataMutation: jest.fn(),

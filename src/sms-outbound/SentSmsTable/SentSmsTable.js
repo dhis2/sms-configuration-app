@@ -1,9 +1,9 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { TableCell } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { SmsTable, Date, Time } from '../../shared'
-import { translations } from '../translations'
+import i18n from '../../locales/index.js'
+import { SmsTable, Date, Time } from '../../shared/index.js'
+import { translations } from '../translations/index.js'
 import styles from './SentSmsTable.module.css'
 
 export const SentSmsTable = ({

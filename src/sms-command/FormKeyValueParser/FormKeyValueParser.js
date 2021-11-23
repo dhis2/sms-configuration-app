@@ -6,15 +6,15 @@ import {
     ReactFinalForm,
 } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { dataTest as createDataTestValue } from '../../shared'
-import { FIELD_DATA_SET_NAME } from '../FieldDataSet'
-import { FIELD_SPECIAL_CHARS_NAME } from '../FieldSpecialCharacter'
-import { Form as FormComponent } from './Form'
-import { getInitialFormState } from './getInitialFormState'
-import { globalValidate } from './globalValidate'
-import { useCommandData } from './useCommandData'
-import { useUpdateCommandMutation } from './useUpdateCommandMutation'
+import i18n from '../../locales/index.js'
+import { dataTest as createDataTestValue } from '../../shared/index.js'
+import { FIELD_DATA_SET_NAME } from '../FieldDataSet/index.js'
+import { FIELD_SPECIAL_CHARS_NAME } from '../FieldSpecialCharacter/index.js'
+import { Form as FormComponent } from './Form.js'
+import { getInitialFormState } from './getInitialFormState.js'
+import { globalValidate } from './globalValidate.js'
+import { useCommandData } from './useCommandData.js'
+import { useUpdateCommandMutation } from './useUpdateCommandMutation.js'
 
 const { Form } = ReactFinalForm
 

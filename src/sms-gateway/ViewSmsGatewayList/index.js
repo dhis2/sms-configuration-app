@@ -1,1 +1,1 @@
-export { ViewSmsGatewayList } from './ViewSmsGatewayList'
+export { ViewSmsGatewayList } from './ViewSmsGatewayList.js'

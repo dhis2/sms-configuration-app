@@ -1,1 +1,1 @@
-export { ViewReceivedSmsList } from './ViewReceivedSmsList'
+export { ViewReceivedSmsList } from './ViewReceivedSmsList/index.js'

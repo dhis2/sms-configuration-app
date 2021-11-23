@@ -1,4 +1,4 @@
-import { getTypeLabelByType } from '../getTypeLabelByType'
+import { getTypeLabelByType } from '../getTypeLabelByType.js'
 
 describe('gateways - getTypeLabelByType', () => {
     it('should return the bulksms label when called with "bulksms"', () => {

@@ -1,8 +1,8 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { hasValue } from '@dhis2/ui'
 import React from 'react'
-import { FieldUserGroup } from './FieldUserGroup'
-import { useReadUserGroupsQuery } from './useReadUserGroupsQuery'
+import { FieldUserGroup } from './FieldUserGroup.js'
+import { useReadUserGroupsQuery } from './useReadUserGroupsQuery.js'
 
 export const FieldUserGroupWithAutoLoad = ({ required }) => {
     const { loading, error, data } = useReadUserGroupsQuery()

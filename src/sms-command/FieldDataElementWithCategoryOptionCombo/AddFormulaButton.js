@@ -2,9 +2,9 @@ import { useDataEngine } from '@dhis2/app-runtime'
 import { PropTypes } from '@dhis2/prop-types'
 import { Button, ReactFinalForm } from '@dhis2/ui'
 import React, { useEffect, useState } from 'react'
-import i18n from '../../locales'
-import { dataTest } from '../../shared'
-import { CurrentFormula } from './CurrentFormula'
+import i18n from '../../locales/index.js'
+import { dataTest } from '../../shared/index.js'
+import { CurrentFormula } from './CurrentFormula.js'
 
 const { useField } = ReactFinalForm
 

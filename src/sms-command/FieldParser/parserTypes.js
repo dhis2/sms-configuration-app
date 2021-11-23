@@ -1,4 +1,4 @@
-import i18n from '../../locales'
+import i18n from '../../locales/index.js'
 
 const KEY_VALUE_PARSER = {
     value: 'KEY_VALUE_PARSER',

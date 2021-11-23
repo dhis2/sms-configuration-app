@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react-hooks'
 import {
     UPDATE_GENERIC_GATEWAY_MUTATION,
     useUpdateGenericGatewayMutation,
-} from '../useUpdateGenericGatewayMutation'
+} from '../useUpdateGenericGatewayMutation.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     useDataEngine: jest.fn(),

@@ -1,6 +1,6 @@
 import { PropTypes } from '@dhis2/prop-types'
 import React from 'react'
-import { dataTest } from '../../utils'
+import { dataTest } from '../../utils/index.js'
 import styles from './PageHeadline.module.css'
 
 export const PageHeadline = ({ children }) => (

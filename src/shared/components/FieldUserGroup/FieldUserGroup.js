@@ -1,8 +1,8 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { SingleSelectFieldFF, ReactFinalForm, hasValue } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../../locales'
-import { dataTest } from '../../../shared/utils'
+import i18n from '../../../locales/index.js'
+import { dataTest } from '../../../shared/utils/index.js'
 
 const { Field } = ReactFinalForm
 

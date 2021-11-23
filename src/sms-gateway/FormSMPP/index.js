@@ -1,1 +1,1 @@
-export { FormSMPP } from './FromSMPP'
+export { FormSMPP } from './FromSMPP.js'

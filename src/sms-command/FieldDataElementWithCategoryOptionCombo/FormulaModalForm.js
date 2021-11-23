@@ -13,10 +13,10 @@ import {
     hasValue,
 } from '@dhis2/ui'
 import React, { useMemo } from 'react'
-import i18n from '../../locales'
-import { FormRow, dataTest } from '../../shared'
-import { FIELD_DATA_SET_NAME } from '../FieldDataSet'
-import { useReadDataElementsOfDataSetQuery } from './useReadDataElementsOfDataSetQuery'
+import i18n from '../../locales/index.js'
+import { FormRow, dataTest } from '../../shared/index.js'
+import { FIELD_DATA_SET_NAME } from '../FieldDataSet/index.js'
+import { useReadDataElementsOfDataSetQuery } from './useReadDataElementsOfDataSetQuery.js'
 
 const { Field, Form, useForm, useField } = ReactFinalForm
 

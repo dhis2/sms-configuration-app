@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react-hooks'
 import {
     UPDATE_BULK_SMS_GATEWAY_MUTATION,
     useUpdateBulkSMSGatewayMutation,
-} from '../useUpdateBulkSMSGatewayMutation'
+} from '../useUpdateBulkSMSGatewayMutation.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     useDataEngine: jest.fn(),

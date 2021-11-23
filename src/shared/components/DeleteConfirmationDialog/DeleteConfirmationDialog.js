@@ -8,8 +8,8 @@ import {
     ModalTitle,
 } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../../locales'
-import { dataTest } from '../../utils'
+import i18n from '../../../locales/index.js'
+import { dataTest } from '../../utils/index.js'
 
 export const DeleteConfirmationDialog = ({
     children,

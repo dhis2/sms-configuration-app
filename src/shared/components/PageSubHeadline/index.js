@@ -1,1 +1,1 @@
-export { PageSubHeadline } from './PageSubHeadline'
+export { PageSubHeadline } from './PageSubHeadline.js'

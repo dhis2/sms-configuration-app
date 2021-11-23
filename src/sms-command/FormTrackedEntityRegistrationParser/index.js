@@ -1,1 +1,1 @@
-export { FormTrackedEntityRegistrationParser } from './FormTrackedEntityRegistrationParser'
+export { FormTrackedEntityRegistrationParser } from './FormTrackedEntityRegistrationParser.js'

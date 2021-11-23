@@ -1,4 +1,4 @@
-import { useUpdateGatewayMutation } from './useUpdateGatewayMutation'
+import { useUpdateGatewayMutation } from './useUpdateGatewayMutation.js'
 
 export const UPDATE_SMPP_GATEWAY_MUTATION = {
     resource: 'gateways',

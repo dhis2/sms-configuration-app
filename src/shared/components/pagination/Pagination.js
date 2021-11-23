@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import { PropTypes } from '@dhis2/prop-types'
 import { Button, SingleSelect, SingleSelectOption } from '@dhis2/ui'
 import React from 'react'
-import { useQueryParams } from '../../hooks'
+import { useQueryParams } from '../../hooks/index.js'
 import styles from './Pagination.module.css'
 
 const PAGE_LENGTHS = ['1', '2', '10', '20', '30', '40', '50', '100']
