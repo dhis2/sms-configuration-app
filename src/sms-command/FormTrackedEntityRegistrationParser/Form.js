@@ -1,20 +1,20 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { FormRow, PageSubHeadline, dataTest } from '../../shared'
-import { FieldCommandName } from '../FieldCommandName'
-import { FieldDefaultMessage } from '../FieldDefaultMessage'
-import { FieldMoreThanOneOrgUnitMessage } from '../FieldMoreThanOneOrgUnitMessage'
-import { FieldNoUserMessage } from '../FieldNoUserMessage'
-import { FieldParser } from '../FieldParser'
-import { FieldProgram } from '../FieldProgram'
-import { FieldSeparator } from '../FieldSeparator'
-import { FieldSmsCode } from '../FieldSmsCode'
-import { FieldSuccessMessage } from '../FieldSuccessMessage'
-import { FieldWrongFormatMessage } from '../FieldWrongFormatMessage'
-import { FormActions } from '../FormActions'
-import { SubmitErrors } from '../SubmitErrors'
+import i18n from '../../locales/index.js'
+import { FormRow, PageSubHeadline, dataTest } from '../../shared/index.js'
+import { FieldCommandName } from '../FieldCommandName/index.js'
+import { FieldDefaultMessage } from '../FieldDefaultMessage/index.js'
+import { FieldMoreThanOneOrgUnitMessage } from '../FieldMoreThanOneOrgUnitMessage/index.js'
+import { FieldNoUserMessage } from '../FieldNoUserMessage/index.js'
+import { FieldParser } from '../FieldParser/index.js'
+import { FieldProgram } from '../FieldProgram/index.js'
+import { FieldSeparator } from '../FieldSeparator/index.js'
+import { FieldSmsCode } from '../FieldSmsCode/index.js'
+import { FieldSuccessMessage } from '../FieldSuccessMessage/index.js'
+import { FieldWrongFormatMessage } from '../FieldWrongFormatMessage/index.js'
+import { FormActions } from '../FormActions/index.js'
+import { SubmitErrors } from '../SubmitErrors/index.js'
 
 const { useFormState } = ReactFinalForm
 
@@ -71,7 +71,7 @@ export const Form = ({
 
             <PageSubHeadline>{i18n.t('SMS short codes')}</PageSubHeadline>
 
-            {dynamicFields.map(dynamicField => {
+            {dynamicFields.map((dynamicField) => {
                 // I assume this should switch field types based on `valueType`
                 // which can be 'TEXT', 'NUMBER', etc. Currently this renders
                 // a regular input for everything.

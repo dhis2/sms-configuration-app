@@ -1,25 +1,25 @@
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
-import i18n from '../../locales'
+import i18n from '../../locales/index.js'
 import {
     CancelDialog,
     PageHeadline,
     TemplateSidebarNavContent,
     dataTest,
-} from '../../shared'
-import { FIELD_PASSWORD_NAME } from '../FieldPassword'
-import { FIELD_PASSWORD_CONFIRMATION_NAME } from '../FieldPasswordConfirmation'
-import { FormBulkSMS } from '../FormBulkSMS'
-import { FormClickatell } from '../FormClickatell'
-import { FormGeneric } from '../FormGeneric'
-import { FormSMPP } from '../FormSMPP'
-import { gatewayTypes } from '../InputSingleSelectGatewayType'
-import { useReadGatewayQuery } from './useReadGatewayQuery'
-import { useUpdateBulkSMSGatewayMutation } from './useUpdateBulkSMSGatewayMutation'
-import { useUpdateClickatellGatewayMutation } from './useUpdateClickatellGatewayMutation'
-import { useUpdateGenericGatewayMutation } from './useUpdateGenericGatewayMutation'
-import { useUpdateSMPPGatewayMutation } from './useUpdateSMPPGatewayMutation'
+} from '../../shared/index.js'
+import { FIELD_PASSWORD_NAME } from '../FieldPassword/index.js'
+import { FIELD_PASSWORD_CONFIRMATION_NAME } from '../FieldPasswordConfirmation/index.js'
+import { FormBulkSMS } from '../FormBulkSMS/index.js'
+import { FormClickatell } from '../FormClickatell/index.js'
+import { FormGeneric } from '../FormGeneric/index.js'
+import { FormSMPP } from '../FormSMPP/index.js'
+import { gatewayTypes } from '../InputSingleSelectGatewayType/index.js'
+import { useReadGatewayQuery } from './useReadGatewayQuery.js'
+import { useUpdateBulkSMSGatewayMutation } from './useUpdateBulkSMSGatewayMutation.js'
+import { useUpdateClickatellGatewayMutation } from './useUpdateClickatellGatewayMutation.js'
+import { useUpdateGenericGatewayMutation } from './useUpdateGenericGatewayMutation.js'
+import { useUpdateSMPPGatewayMutation } from './useUpdateSMPPGatewayMutation.js'
 import styles from './ViewSmsGatewayEdit.module.css'
 
 const { GENERIC_FORM, BULK_SMS_FORM, CLICKATELL_FORM, SMPP_FORM } = gatewayTypes
@@ -27,7 +27,7 @@ const { GENERIC_FORM, BULK_SMS_FORM, CLICKATELL_FORM, SMPP_FORM } = gatewayTypes
 export const GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC = '/sms-gateway/edit'
 export const GATEWAY_CONFIG_FORM_EDIT_PATH = `${GATEWAY_CONFIG_FORM_EDIT_PATH_STATIC}/:id`
 
-const getFormComponent = gatewayType => {
+const getFormComponent = (gatewayType) => {
     if (gatewayType === GENERIC_FORM) {
         return FormGeneric
     }
@@ -47,7 +47,7 @@ const getFormComponent = gatewayType => {
     throw new Error(`The gateway type does not exist, got "${gatewayType}"`)
 }
 
-const getInitialValues = gateway => {
+const getInitialValues = (gateway) => {
     if (gateway.type === BULK_SMS_FORM) {
         return {
             ...gateway,
@@ -63,29 +63,23 @@ export const ViewSmsGatewayEdit = () => {
     const { id } = useParams()
     const [showCancelDialog, setShowCancelDialog] = useState(false)
 
-    const { loading, error: loadError, data: jsonData } = useReadGatewayQuery(
-        id
-    )
+    const {
+        loading,
+        error: loadError,
+        data: jsonData,
+    } = useReadGatewayQuery(id)
 
-    const [
-        saveGenericGateway,
-        { error: saveGenericGatewayError },
-    ] = useUpdateGenericGatewayMutation()
+    const [saveGenericGateway, { error: saveGenericGatewayError }] =
+        useUpdateGenericGatewayMutation()
 
-    const [
-        saveBulkSMSGateway,
-        { error: saveBulkSMSGatewayError },
-    ] = useUpdateBulkSMSGatewayMutation()
+    const [saveBulkSMSGateway, { error: saveBulkSMSGatewayError }] =
+        useUpdateBulkSMSGatewayMutation()
 
-    const [
-        saveClickatellGateway,
-        { error: saveClickatellGatewayError },
-    ] = useUpdateClickatellGatewayMutation()
+    const [saveClickatellGateway, { error: saveClickatellGatewayError }] =
+        useUpdateClickatellGatewayMutation()
 
-    const [
-        saveSMPPGateway,
-        { error: saveSMPPGatewayError },
-    ] = useUpdateSMPPGatewayMutation()
+    const [saveSMPPGateway, { error: saveSMPPGatewayError }] =
+        useUpdateSMPPGatewayMutation()
 
     const saveError =
         saveGenericGatewayError ||
@@ -128,7 +122,7 @@ export const ViewSmsGatewayEdit = () => {
             : jsonData
 
     const gatewayType = data?.gateway?.type
-    const onSubmit = async formValues => {
+    const onSubmit = async (formValues) => {
         const values = { ...formValues, id: data.gateway.uid }
 
         try {
@@ -186,7 +180,7 @@ export const ViewSmsGatewayEdit = () => {
                         <FormComponent
                             initialValues={initialValues}
                             onSubmit={onSubmit}
-                            onCancelClick={pristine =>
+                            onCancelClick={(pristine) =>
                                 pristine
                                     ? history.push('/sms-gateway')
                                     : setShowCancelDialog(true)

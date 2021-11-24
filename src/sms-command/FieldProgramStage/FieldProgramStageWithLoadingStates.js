@@ -1,12 +1,12 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { hasValue, ReactFinalForm } from '@dhis2/ui'
 import React, { useEffect } from 'react'
-import { parserTypes } from '../FieldParser'
+import { parserTypes } from '../FieldParser/index.js'
 import {
     FIELD_PROGRAM_STAGE_NAME,
     FieldProgramStage,
-} from './FieldProgramStage'
-import { useReadProgramStagesQuery } from './useReadProgramStagesQuery'
+} from './FieldProgramStage.js'
+import { useReadProgramStagesQuery } from './useReadProgramStagesQuery.js'
 
 const { useForm } = ReactFinalForm
 const { EVENT_REGISTRATION_PARSER } = parserTypes
@@ -24,7 +24,9 @@ export const FieldProgramStageWithLoadingStates = ({
     const validate = required ? hasValue : undefined
 
     useEffect(() => {
-        if (programId) refetch({ programId })
+        if (programId) {
+            refetch({ programId })
+        }
     }, [programId])
 
     useEffect(() => {

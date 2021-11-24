@@ -1,20 +1,20 @@
-import './locales'
+import './locales/index.js'
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
-import { AppWrapper } from './AppWrapper'
+import { AppWrapper } from './AppWrapper.js'
 import {
     ViewSmsCommandAdd,
     ViewSmsCommandList,
     ViewSmsCommandEdit,
-} from './sms-command'
+} from './sms-command/index.js'
 import {
     ViewSmsGatewayAdd,
     ViewSmsGatewayList,
     ViewSmsGatewayEdit,
-} from './sms-gateway'
-import { ViewReceivedSmsList } from './sms-inbound'
-import { ViewSentSmsList } from './sms-outbound'
-import { ViewOverview } from './sms-overview'
+} from './sms-gateway/index.js'
+import { ViewReceivedSmsList } from './sms-inbound/index.js'
+import { ViewSentSmsList } from './sms-outbound/index.js'
+import { ViewOverview } from './sms-overview/index.js'
 
 export const App = () => (
     <AppWrapper>

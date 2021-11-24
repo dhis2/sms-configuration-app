@@ -1,1 +1,1 @@
-export { FieldConfigurationTemplate } from './FieldConfigurationTemplate'
+export { FieldConfigurationTemplate } from './FieldConfigurationTemplate.js'

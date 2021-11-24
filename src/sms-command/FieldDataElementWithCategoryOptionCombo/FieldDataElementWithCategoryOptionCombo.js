@@ -1,12 +1,12 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React, { useState } from 'react'
-import i18n from '../../locales'
-import { dataTest } from '../../shared'
-import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
-import { AddFormulaButton } from './AddFormulaButton'
+import i18n from '../../locales/index.js'
+import { dataTest } from '../../shared/index.js'
+import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode/index.js'
+import { AddFormulaButton } from './AddFormulaButton.js'
 import styles from './FieldDataElementWithCategoryOptionCombo.module.css'
-import { FormulaModalForm } from './FormulaModalForm'
+import { FormulaModalForm } from './FormulaModalForm.js'
 
 const DE_COC_toFormName = (dataElement, categoryOptionCombo) => {
     const dataElementId = dataElement.id

@@ -1,1 +1,1 @@
-export { FieldSmsCodeDataElement } from './FieldSmsCodeDataElement'
+export { FieldSmsCodeDataElement } from './FieldSmsCodeDataElement.js'

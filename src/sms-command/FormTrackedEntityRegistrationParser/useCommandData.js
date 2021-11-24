@@ -37,10 +37,10 @@ const query = {
             ]
 
             return {
-                fields: fields.map(field => field.replace(/(\n|\s)/g, '')),
+                fields: fields.map((field) => field.replace(/(\n|\s)/g, '')),
             }
         },
     },
 }
 
-export const useCommandData = id => useDataQuery(query, { variables: { id } })
+export const useCommandData = (id) => useDataQuery(query, { variables: { id } })

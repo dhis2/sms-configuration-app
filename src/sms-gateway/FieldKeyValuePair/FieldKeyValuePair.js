@@ -9,10 +9,10 @@ import {
     string,
 } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { dataTest } from '../../shared'
+import i18n from '../../locales/index.js'
+import { dataTest } from '../../shared/index.js'
 import styles from './FieldKeyValuePair.module.css'
-import { ValueField } from './ValueField'
+import { ValueField } from './ValueField.js'
 
 const { Field, useForm } = ReactFinalForm
 const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
@@ -20,7 +20,7 @@ const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
 export const FieldKeyValuePair = ({ index }) => {
     const { change, getState } = useForm()
 
-    const removeKeyValueFromFormState = index => {
+    const removeKeyValueFromFormState = (index) => {
         const { parameters } = getState().values
 
         if (index === 0) {

@@ -1,22 +1,22 @@
 import { SingleSelectField, SingleSelectOption, NoticeBox } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import i18n from '../../locales'
+import i18n from '../../locales/index.js'
 import {
     FormRow,
     PageHeadline,
     TemplateSidebarNavContent,
     dataTest,
-} from '../../shared'
-import { FormBulkSMS } from '../FormBulkSMS'
-import { FormClickatell } from '../FormClickatell'
-import { FormGeneric } from '../FormGeneric'
-import { FormSMPP } from '../FormSMPP'
-import { gatewayTypes } from '../InputSingleSelectGatewayType'
-import { useCreateBulkSMSGatewayMutation } from './useCreateBulkSMSGatewayMutation'
-import { useCreateClickatellGatewayMutation } from './useCreateClickatellGatewayMutation'
-import { useCreateGenericGatewayMutation } from './useCreateGenericGatewayMutation'
-import { useCreateSMPPGatewayMutation } from './useCreateSMPPGatewayMutation'
+} from '../../shared/index.js'
+import { FormBulkSMS } from '../FormBulkSMS/index.js'
+import { FormClickatell } from '../FormClickatell/index.js'
+import { FormGeneric } from '../FormGeneric/index.js'
+import { FormSMPP } from '../FormSMPP/index.js'
+import { gatewayTypes } from '../InputSingleSelectGatewayType/index.js'
+import { useCreateBulkSMSGatewayMutation } from './useCreateBulkSMSGatewayMutation.js'
+import { useCreateClickatellGatewayMutation } from './useCreateClickatellGatewayMutation.js'
+import { useCreateGenericGatewayMutation } from './useCreateGenericGatewayMutation.js'
+import { useCreateSMPPGatewayMutation } from './useCreateSMPPGatewayMutation.js'
 import styles from './ViewSmsGatewayAdd.module.css'
 
 const { GENERIC_FORM, BULK_SMS_FORM, CLICKATELL_FORM, SMPP_FORM } = gatewayTypes
@@ -27,25 +27,17 @@ export const ViewSmsGatewayAdd = () => {
     const history = useHistory()
     const [visibleForm, setVisibleForm] = useState(GENERIC_FORM)
 
-    const [
-        saveGenericGateway,
-        { error: saveGenericGatewayError },
-    ] = useCreateGenericGatewayMutation()
+    const [saveGenericGateway, { error: saveGenericGatewayError }] =
+        useCreateGenericGatewayMutation()
 
-    const [
-        saveBulkSMSGateway,
-        { error: saveBulkSMSGatewayError },
-    ] = useCreateBulkSMSGatewayMutation()
+    const [saveBulkSMSGateway, { error: saveBulkSMSGatewayError }] =
+        useCreateBulkSMSGatewayMutation()
 
-    const [
-        saveClickatellGateway,
-        { error: saveClickatellGatewayError },
-    ] = useCreateClickatellGatewayMutation()
+    const [saveClickatellGateway, { error: saveClickatellGatewayError }] =
+        useCreateClickatellGatewayMutation()
 
-    const [
-        saveSMPPGateway,
-        { error: saveSMPPGatewayError },
-    ] = useCreateSMPPGatewayMutation()
+    const [saveSMPPGateway, { error: saveSMPPGatewayError }] =
+        useCreateSMPPGatewayMutation()
 
     const error =
         saveGenericGatewayError ||
@@ -68,7 +60,7 @@ export const ViewSmsGatewayAdd = () => {
         )
     }
 
-    const onSubmit = async values => {
+    const onSubmit = async (values) => {
         try {
             if (visibleForm === GENERIC_FORM) {
                 await saveGenericGateway(values)

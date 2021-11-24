@@ -1,8 +1,8 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { SingleSelectFieldFF, ReactFinalForm, hasValue } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { dataTest } from '../../shared'
+import i18n from '../../locales/index.js'
+import { dataTest } from '../../shared/index.js'
 
 const { Field } = ReactFinalForm
 
@@ -21,13 +21,13 @@ export const FieldProgramStage = ({
         dataTest={dataTest('smscommand-fieldprogramstage')}
         disabled={disabled}
         error={!!errorText}
-        format={value => value?.id || null}
+        format={(value) => value?.id || null}
         iinitialValue={initialValue}
         label={i18n.t('Program stage')}
         loading={loading}
         name={FIELD_PROGRAM_STAGE_NAME}
         options={programStages}
-        parse={id => ({ id })}
+        parse={(id) => ({ id })}
         required={required}
         validate={required && hasValue}
         validationText={errorText}

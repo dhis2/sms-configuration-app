@@ -2,27 +2,31 @@ import { PropTypes } from '@dhis2/prop-types'
 import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import i18n from '../../locales'
+import i18n from '../../locales/index.js'
 import {
     FormRow,
     PageHeadline,
     FieldUserGroupWithAutoLoad,
     TemplateSidebarNavContent,
     dataTest,
-} from '../../shared'
-import { FieldCommandName } from '../FieldCommandName'
-import { FieldDataSetWithAutoLoad } from '../FieldDataSet'
-import { FIELD_PARSER_NAME, FieldParser, parserTypes } from '../FieldParser'
+} from '../../shared/index.js'
+import { FieldCommandName } from '../FieldCommandName/index.js'
+import { FieldDataSetWithAutoLoad } from '../FieldDataSet/index.js'
+import {
+    FIELD_PARSER_NAME,
+    FieldParser,
+    parserTypes,
+} from '../FieldParser/index.js'
 import {
     FIELD_PROGRAM_NAME,
     FieldProgramWithAutoLoad,
     programTypes,
-} from '../FieldProgram'
+} from '../FieldProgram/index.js'
 import {
     FIELD_PROGRAM_STAGE_NAME,
     FieldProgramStageWithLoadingStates,
-} from '../FieldProgramStage'
-import { useCreateSmsCommandMutation } from './useCreateSmsCommandMutation'
+} from '../FieldProgramStage/index.js'
+import { useCreateSmsCommandMutation } from './useCreateSmsCommandMutation.js'
 import styles from './ViewSmsCommandAdd.module.css'
 
 const {
@@ -83,7 +87,7 @@ const useResetFormFields = () => {
 }
 
 // undefined = all, false = program.programType --> WITHOUT_REGISTRATION
-const shouldProgramsBeWithRegistration = parserType => {
+const shouldProgramsBeWithRegistration = (parserType) => {
     // EVENT_REGISTRATION uses event programs
     if (parserType === EVENT_REGISTRATION_PARSER.value) {
         return PROGRAMS_WITHOUT_REGISTRATION
@@ -210,7 +214,7 @@ export const ViewSmsCommandAdd = () => {
     const [createSmsCommand] = useCreateSmsCommandMutation({
         onComplete: () => history.push('/sms-command'),
     })
-    const onSubmit = values => createSmsCommand(values)
+    const onSubmit = (values) => createSmsCommand(values)
 
     return (
         <TemplateSidebarNavContent>

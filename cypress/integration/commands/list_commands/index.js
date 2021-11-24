@@ -49,7 +49,7 @@ Then("each row displays the commands's data", () => {
                 cy.get('@row')
                     .find('td:nth-child(3)')
                     .invoke('text')
-                    .then(text => {
+                    .then((text) => {
                         if (smsCommand.parserType === 'ALERT_PARSER') {
                             expect(text).to.equal('Alert parser')
                         } else if (smsCommand.parserType === 'J2ME_PARSER') {

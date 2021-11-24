@@ -1,2 +1,2 @@
-export * from './parserTypes'
-export { FIELD_PARSER_NAME, FieldParser } from './FieldParser'
+export * from './parserTypes.js'
+export { FIELD_PARSER_NAME, FieldParser } from './FieldParser.js'

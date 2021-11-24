@@ -1,3 +1,3 @@
-export { ViewSmsGatewayAdd } from './ViewSmsGatewayAdd'
-export { ViewSmsGatewayEdit } from './ViewSmsGatewayEdit'
-export { ViewSmsGatewayList } from './ViewSmsGatewayList'
+export { ViewSmsGatewayAdd } from './ViewSmsGatewayAdd/index.js'
+export { ViewSmsGatewayEdit } from './ViewSmsGatewayEdit/index.js'
+export { ViewSmsGatewayList } from './ViewSmsGatewayList/index.js'

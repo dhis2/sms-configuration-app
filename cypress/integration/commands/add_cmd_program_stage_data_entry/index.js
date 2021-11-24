@@ -150,7 +150,7 @@ Then(
 
             cy.getWithDataTest('{smscommand-fieldprogramstage-content}').click()
 
-            attributedProgramStages.forEach(programStage => {
+            attributedProgramStages.forEach((programStage) => {
                 cy.get(`[data-value="${programStage.id}"]`).should('exist')
             })
         })

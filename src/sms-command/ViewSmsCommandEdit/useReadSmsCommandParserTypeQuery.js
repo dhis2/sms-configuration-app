@@ -11,5 +11,5 @@ export const READ_SMS_COMMAND_PARSER_TYPE_QUERY = {
     },
 }
 
-export const useReadSmsCommandParserTypeQuery = id =>
+export const useReadSmsCommandParserTypeQuery = (id) =>
     useDataQuery(READ_SMS_COMMAND_PARSER_TYPE_QUERY, { variables: { id } })

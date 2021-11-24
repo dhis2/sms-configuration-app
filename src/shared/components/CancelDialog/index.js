@@ -1,1 +1,1 @@
-export { CancelDialog } from './CancelDialog'
+export { CancelDialog } from './CancelDialog.js'

@@ -1,12 +1,12 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { ContentLoading, ContentLoadingError } from '../../shared'
-import { FormComponent } from './FormComponent'
-import { getInitialFormState } from './getInitialFormState'
-import { useCommandData } from './useCommandData'
-import { useUpdateCommandMutation } from './useUpdateCommandMutation'
+import i18n from '../../locales/index.js'
+import { ContentLoading, ContentLoadingError } from '../../shared/index.js'
+import { FormComponent } from './FormComponent.js'
+import { getInitialFormState } from './getInitialFormState.js'
+import { useCommandData } from './useCommandData.js'
+import { useUpdateCommandMutation } from './useUpdateCommandMutation.js'
 
 const { Form } = ReactFinalForm
 
@@ -22,7 +22,9 @@ export const FormProgramStageDataEntryParser = ({
         onAfterChange,
     })
 
-    if (loading) return <ContentLoading />
+    if (loading) {
+        return <ContentLoading />
+    }
     if (error) {
         return (
             <ContentLoadingError

@@ -1,6 +1,6 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import { useSubmit } from '../../shared'
-import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
+import { useSubmit } from '../../shared/index.js'
+import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode/index.js'
 
 export const REPLACE_SMS_COMMAND_MUTATION = {
     resource: 'smsCommands',
@@ -23,7 +23,7 @@ export const UPDATE_SMS_COMMAND_MUTATION = {
 
 export const useUpdateCommandMutation = ({ onAfterChange, commandId }) => {
     const engine = useDataEngine()
-    const onSubmit = values => {
+    const onSubmit = (values) => {
         const variables = { ...values, commandId }
         return engine
             .mutate(REPLACE_SMS_COMMAND_MUTATION, { variables })

@@ -42,7 +42,7 @@ Given('the user navigated to the gateway configuration page', () => {
         body: {},
     }).as('createGatewayConfigurationXHR')
 
-    gateways.forEach(gateway => {
+    gateways.forEach((gateway) => {
         cy.intercept(new RegExp(`.*/gateways/${gateway.uid}`), {
             body: gateway,
         })
@@ -115,7 +115,7 @@ Then('the entered data should be sent to the endpoint', () => {
 })
 
 Then('an error message should be shown at the invalid field', () => {
-    cy.get('@missingFields').then($missingFields => {
+    cy.get('@missingFields').then(($missingFields) => {
         $missingFields.each((index, $missingField) => {
             cy.wrap($missingField).find('.error').should('exist')
         })

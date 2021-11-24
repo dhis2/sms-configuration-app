@@ -6,8 +6,8 @@ import {
     integer,
 } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { dataTest } from '../../shared'
+import i18n from '../../locales/index.js'
+import { dataTest } from '../../shared/index.js'
 
 const { Field } = ReactFinalForm
 

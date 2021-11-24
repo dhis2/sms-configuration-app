@@ -1,5 +1,5 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { programTypes } from './programTypes'
+import { programTypes } from './programTypes.js'
 
 const PROGRAMS_QUERY = {
     programs: {
@@ -20,5 +20,5 @@ const PROGRAMS_QUERY = {
     },
 }
 
-export const useReadProgramsQuery = registration =>
+export const useReadProgramsQuery = (registration) =>
     useDataQuery(PROGRAMS_QUERY, { variables: { registration } })

@@ -1,8 +1,8 @@
 import { SingleSelectFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { dataTest } from '../../shared/utils'
-import { completenessMethods } from './completenessMethods'
+import i18n from '../../locales/index.js'
+import { dataTest } from '../../shared/utils/index.js'
+import { completenessMethods } from './completenessMethods.js'
 
 const { Field } = ReactFinalForm
 const options = Object.values(completenessMethods)

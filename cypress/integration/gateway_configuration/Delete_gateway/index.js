@@ -33,7 +33,7 @@ const gateways = [
     },
 ]
 
-const prepareGateways = gateways => {
+const prepareGateways = (gateways) => {
     cy.wrap(gateways).as('gateways')
     cy.intercept('GET', /.*\/gateways.json$/, { body: { gateways } })
 }
@@ -94,9 +94,11 @@ Given('all gateway configurations have been selected', () => {
 })
 
 Given('no gateway configuration has been selected', () => {
-    cy.getWithDataTest('{smsgateway-table-checkbox} input').each($checkbox => {
-        expect($checkbox).to.not.be.checked
-    })
+    cy.getWithDataTest('{smsgateway-table-checkbox} input').each(
+        ($checkbox) => {
+            expect($checkbox).to.not.be.checked
+        }
+    )
 })
 
 When('the user user selects the first gateway configuration', () => {
@@ -129,7 +131,7 @@ Then('a confirmation model should pop up', () => {
 Then(
     "a delete request with the first gateway configuration's id should be sent",
     () => {
-        cy.wait(`@delete${gateways[0].uid}XHR`).then(xhr => {
+        cy.wait(`@delete${gateways[0].uid}XHR`).then((xhr) => {
             expect(xhr.response.statusCode).to.equal(200)
         })
     }
@@ -143,7 +145,7 @@ Then(
     "all individual gateway configurations' checkboxes should be selected",
     () => {
         cy.getWithDataTest('{smsgateway-table-checkbox} input').each(
-            $checkbox => {
+            ($checkbox) => {
                 expect($checkbox).to.be.checked
             }
         )
@@ -154,7 +156,7 @@ Then(
     "all individual gateway configurations' checkboxes should not be selected",
     () => {
         cy.getWithDataTest('{smsgateway-table-checkbox} input').each(
-            $checkbox => {
+            ($checkbox) => {
                 expect($checkbox).to.not.be.checked
             }
         )

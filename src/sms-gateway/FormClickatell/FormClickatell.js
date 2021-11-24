@@ -1,12 +1,12 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { FormRow, dataTest } from '../../shared'
-import { FieldAuthToken } from '../FieldAuthToken'
-import { FieldGatewayName } from '../FieldGatewayName'
-import { FieldUrlTemplate } from '../FieldUrlTemplate'
-import { FieldUsername } from '../FieldUsername'
+import i18n from '../../locales/index.js'
+import { FormRow, dataTest } from '../../shared/index.js'
+import { FieldAuthToken } from '../FieldAuthToken/index.js'
+import { FieldGatewayName } from '../FieldGatewayName/index.js'
+import { FieldUrlTemplate } from '../FieldUrlTemplate/index.js'
+import { FieldUsername } from '../FieldUsername/index.js'
 
 const { Form } = ReactFinalForm
 

@@ -1,4 +1,4 @@
-import { useUpdateGatewayMutation } from './useUpdateGatewayMutation'
+import { useUpdateGatewayMutation } from './useUpdateGatewayMutation.js'
 
 export const UPDATE_CLICKATELL_GATEWAY_MUTATION = {
     resource: 'gateways',

@@ -1,1 +1,1 @@
-export { FormKeyValueParser } from './FormKeyValueParser'
+export { FormKeyValueParser } from './FormKeyValueParser.js'

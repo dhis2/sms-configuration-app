@@ -68,8 +68,8 @@ Given('the user navigated to the gateway configuration page', () => {
 })
 
 Given('the user is editing a generic gateway configuration', () => {
-    cy.get('@gateways').then(gateways => {
-        gateways.forEach(gateway => {
+    cy.get('@gateways').then((gateways) => {
+        gateways.forEach((gateway) => {
             const url = new RegExp(`.*/gateways/${gateway.uid}$`)
             const body = gateway
             cy.intercept('GET', url, { body })
@@ -104,9 +104,10 @@ Given('the user is adding a generic gateway configuration', () => {
             delay: 0,
         }
     )
-    cy.getWithDataTest(
-        '{smsgateway-fieldconfigurationtemplate}'
-    ).type('Configuration template', { delay: 0 })
+    cy.getWithDataTest('{smsgateway-fieldconfigurationtemplate}').type(
+        'Configuration template',
+        { delay: 0 }
+    )
 })
 
 Given('the user has added multiple key value pairs', () => {
@@ -131,7 +132,7 @@ Given('the user has added multiple key value pairs', () => {
             .type(value)
     })
 
-    const newParameters = keyValuePairs.map(keyValuePair => ({
+    const newParameters = keyValuePairs.map((keyValuePair) => ({
         ...defaultParameter,
         ...keyValuePair,
     }))
@@ -149,7 +150,7 @@ When('the user enters values for the key and value', () => {
         'Value'
     )
 
-    cy.get('@newParameter').then(newParameter => {
+    cy.get('@newParameter').then((newParameter) => {
         const updated = {
             ...newParameter,
             key: 'Key',
@@ -165,7 +166,7 @@ When('checks the "confidential" checkbox', () => {
         '{smsgateway-fieldkeyvaluepair} {smsgateway-fieldkeyvaluepair-isconfidential} label'
     ).click()
 
-    cy.get('@newParameter').then(newParameter => {
+    cy.get('@newParameter').then((newParameter) => {
         const updated = {
             ...newParameter,
             confidential: true,
@@ -178,7 +179,7 @@ When('checks the "confidential" checkbox', () => {
 When('checks the "header" checkbox', () => {
     cy.getWithDataTest('{smsgateway-fieldkeyvaluepair-isheader} label').click()
 
-    cy.get('@newParameter').then(newParameter => {
+    cy.get('@newParameter').then((newParameter) => {
         const updated = {
             ...newParameter,
             header: true,
@@ -205,7 +206,7 @@ Then('the additional key-value pair should be sent to the endpoint', () => {
             if (operation === 'editing') {
                 return cy
                     .get('@gatewayId')
-                    .then(gatewayId => [operation, newParameter, gatewayId])
+                    .then((gatewayId) => [operation, newParameter, gatewayId])
             }
 
             return [operation, newParameter]
@@ -215,7 +216,7 @@ Then('the additional key-value pair should be sent to the endpoint', () => {
                 operation === 'editing'
                     ? `@updateGatewayConfiguration${gatewayId}XHR`
                     : '@createGatewayConfigurationXHR'
-            ).then(xhr => {
+            ).then((xhr) => {
                 const { parameters } = xhr.request.body
                 expect(parameters).to.have.lengthOf(1)
 
@@ -234,7 +235,7 @@ Then('all provided key value pairs should be sent to the endpoint', () => {
             if (operation === 'editing') {
                 return cy
                     .get('@gatewayId')
-                    .then(gatewayId => [operation, newParameters, gatewayId])
+                    .then((gatewayId) => [operation, newParameters, gatewayId])
             }
 
             return [operation, newParameters]
@@ -244,7 +245,7 @@ Then('all provided key value pairs should be sent to the endpoint', () => {
                 operation === 'editing'
                     ? `@updateGatewayConfiguration${gatewayId}XHR`
                     : '@createGatewayConfigurationXHR'
-            ).then(xhr => {
+            ).then((xhr) => {
                 const { parameters } = xhr.request.body
                 expect(parameters).to.have.lengthOf(newParameters.length)
                 expect(parameters).to.eql(newParameters)

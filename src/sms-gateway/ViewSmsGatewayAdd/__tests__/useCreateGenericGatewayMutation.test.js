@@ -2,7 +2,7 @@ import { useDataMutation } from '@dhis2/app-runtime'
 import {
     CREATE_GENERIC_GATEWAY_MUTATION,
     useCreateGenericGatewayMutation,
-} from '../useCreateGenericGatewayMutation'
+} from '../useCreateGenericGatewayMutation.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     useDataMutation: jest.fn(),

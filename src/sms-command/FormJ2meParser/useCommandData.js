@@ -34,26 +34,26 @@ export const READ_SMS_COMMAND_KEY_VALUE_PARSER_QUERY = {
             ]
 
             return {
-                fields: fields.map(field => field.replace(/(\n|\s)/g, '')),
+                fields: fields.map((field) => field.replace(/(\n|\s)/g, '')),
                 paging,
             }
         },
     },
 }
 
-export const useCommandData = id => {
+export const useCommandData = (id) => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [data, setData] = useState(null)
     const engine = useDataEngine()
 
-    const refetch = variables => {
+    const refetch = (variables) => {
         setLoading(true)
         setError(null)
 
         return engine
             .query(READ_SMS_COMMAND_KEY_VALUE_PARSER_QUERY, { variables })
-            .then(response => {
+            .then((response) => {
                 response.smsCommand.dataset.dataSetElements.sort(
                     (left, right) => {
                         const leftDisplayName = left.dataElement.displayName

@@ -1,1 +1,1 @@
-export { FieldUrlTemplate } from './FieldUrlTemplate'
+export { FieldUrlTemplate } from './FieldUrlTemplate.js'

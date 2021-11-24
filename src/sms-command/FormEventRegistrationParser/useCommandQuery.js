@@ -15,7 +15,7 @@ export const READ_SMS_COMMAND_EVENT_REGISTRATION_PARSER_QUERY = {
     },
 }
 
-export const useCommandQuery = id =>
+export const useCommandQuery = (id) =>
     useDataQuery(READ_SMS_COMMAND_EVENT_REGISTRATION_PARSER_QUERY, {
         variables: { id },
     })

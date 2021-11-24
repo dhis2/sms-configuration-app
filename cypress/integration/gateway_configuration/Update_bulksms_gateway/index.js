@@ -36,7 +36,7 @@ const gateways = [
 Given('the user navigated to the gateway configuration page', () => {
     cy.intercept('GET', /.*\/gateways.json$/, { body: { gateways } })
 
-    gateways.forEach(gateway => {
+    gateways.forEach((gateway) => {
         const { uid } = gateway
         const url = new RegExp(`.*/gateways/${uid}`)
 
@@ -70,7 +70,7 @@ When("the user changes the name field's value to another valid value", () => {
         .clear()
         .type('New name value')
 
-    cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
+    cy.get('@finalGatewayConfiguration').then((finalGatewayConfiguration) => {
         cy.wrap({
             ...finalGatewayConfiguration,
             name: 'New name value',
@@ -85,12 +85,14 @@ When(
             .clear()
             .type('New user name value')
 
-        cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
-            cy.wrap({
-                ...finalGatewayConfiguration,
-                username: 'New user name value',
-            }).as('finalGatewayConfiguration')
-        })
+        cy.get('@finalGatewayConfiguration').then(
+            (finalGatewayConfiguration) => {
+                cy.wrap({
+                    ...finalGatewayConfiguration,
+                    username: 'New user name value',
+                }).as('finalGatewayConfiguration')
+            }
+        )
     }
 )
 
@@ -105,13 +107,15 @@ When(
             .clear()
             .type('New password value')
 
-        cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
-            cy.wrap({
-                ...finalGatewayConfiguration,
-                password: 'New password value',
-                passwordConfirmation: 'New password value',
-            }).as('finalGatewayConfiguration')
-        })
+        cy.get('@finalGatewayConfiguration').then(
+            (finalGatewayConfiguration) => {
+                cy.wrap({
+                    ...finalGatewayConfiguration,
+                    password: 'New password value',
+                    passwordConfirmation: 'New password value',
+                }).as('finalGatewayConfiguration')
+            }
+        )
     }
 )
 
@@ -193,7 +197,7 @@ Then(
 )
 
 Then('the updates should be sent to the correct endpoint', () => {
-    cy.get('@gatewayId').then(id => {
+    cy.get('@gatewayId').then((id) => {
         cy.all(
             () => cy.wait(`@updateGatewayConfiguration${id}XHR`),
             () => cy.get('@finalGatewayConfiguration')

@@ -1,6 +1,6 @@
 import { useDataEngine } from '@dhis2/app-runtime'
 import { act, renderHook } from '@testing-library/react-hooks'
-import { useDeleteGatewaysMutation } from '../useDeleteGatewaysMutation'
+import { useDeleteGatewaysMutation } from '../useDeleteGatewaysMutation.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     useDataEngine: jest.fn(),
@@ -34,7 +34,7 @@ describe('', () => {
         const pending = jest.fn()
         mutate.mockImplementationOnce(
             () =>
-                new Promise(resolve =>
+                new Promise((resolve) =>
                     setTimeout(() => {
                         resolve()
                         pending()

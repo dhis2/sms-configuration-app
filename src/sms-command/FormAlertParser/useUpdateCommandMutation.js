@@ -1,5 +1,5 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import { useSubmit } from '../../shared'
+import { useSubmit } from '../../shared/index.js'
 
 const updateAlertParserMutation = {
     resource: 'smsCommands',
@@ -16,7 +16,7 @@ const updateAlertParserMutation = {
 
 export const useUpdateCommandMutation = ({ id, onAfterChange }) => {
     const engine = useDataEngine()
-    const onSubmit = values => {
+    const onSubmit = (values) => {
         const variables = { ...values, id }
         return engine
             .mutate(updateAlertParserMutation, { variables })

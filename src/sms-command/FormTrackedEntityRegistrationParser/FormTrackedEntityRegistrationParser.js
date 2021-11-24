@@ -1,11 +1,11 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { ContentLoading, ContentLoadingError } from '../../shared'
-import { Form as FormComponent } from './Form'
-import { useCommandData } from './useCommandData'
-import { useUpdateCommandMutation } from './useUpdateCommandMutation'
+import i18n from '../../locales/index.js'
+import { ContentLoading, ContentLoadingError } from '../../shared/index.js'
+import { Form as FormComponent } from './Form.js'
+import { useCommandData } from './useCommandData.js'
+import { useUpdateCommandMutation } from './useUpdateCommandMutation.js'
 
 const { Form } = ReactFinalForm
 
@@ -20,7 +20,9 @@ export const FormTrackedEntityRegistrationParser = ({
         onAfterChange,
     })
 
-    if (loading) return <ContentLoading />
+    if (loading) {
+        return <ContentLoading />
+    }
     if (error) {
         return (
             <ContentLoadingError
@@ -81,7 +83,7 @@ export const FormTrackedEntityRegistrationParser = ({
 
     // Creating an array with only the data we need to render our dynamic form fields
     const dynamicFields = trackedEntityAttributes.map(
-        trackedEntityAttribute => {
+        (trackedEntityAttribute) => {
             const { id, displayName, valueType } = trackedEntityAttribute
             const merged = { id, displayName, valueType }
             const smsCode = smsCodes[id]

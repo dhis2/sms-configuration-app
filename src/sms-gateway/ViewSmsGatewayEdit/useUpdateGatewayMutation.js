@@ -10,12 +10,12 @@ import { useState } from 'react'
  * @param {Object} query
  * @returns {Object}
  */
-export const useUpdateGatewayMutation = query => {
+export const useUpdateGatewayMutation = (query) => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
     const engine = useDataEngine()
 
-    const doFetch = variables => {
+    const doFetch = (variables) => {
         const updatedQuery = { ...query, id: variables.id }
 
         setLoading(true)
@@ -23,11 +23,11 @@ export const useUpdateGatewayMutation = query => {
 
         return engine
             .mutate(updatedQuery, { variables })
-            .then(data => {
+            .then((data) => {
                 setLoading(false)
                 return data
             })
-            .catch(error => {
+            .catch((error) => {
                 setLoading(false)
                 setError(error)
                 throw error

@@ -12,7 +12,7 @@ import {
     TableRowHead,
 } from '@dhis2/ui'
 import React from 'react'
-import { Pagination } from '../pagination/Pagination'
+import { Pagination } from '../pagination/Pagination.js'
 import styles from './SmsTable.module.css'
 
 export const SmsTable = ({
@@ -26,7 +26,7 @@ export const SmsTable = ({
     const selectedIdSet = new Set(selectedIds)
     const allSelected =
         messages.length > 0 && selectedIds.length === messages.length
-    const toggle = id => {
+    const toggle = (id) => {
         if (selectedIdSet.has(id)) {
             selectedIdSet.delete(id)
         } else {
@@ -54,7 +54,7 @@ export const SmsTable = ({
                             checked={allSelected}
                         />
                     </TableCellHead>
-                    {columns.map(column => (
+                    {columns.map((column) => (
                         <TableCellHead key={column}>{column}</TableCellHead>
                     ))}
                 </TableRowHead>
@@ -70,7 +70,7 @@ export const SmsTable = ({
                         </TableCell>
                     </TableRow>
                 ) : (
-                    messages.map(message => (
+                    messages.map((message) => (
                         <TableRow key={message.id}>
                             <TableCell>
                                 <Checkbox

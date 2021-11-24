@@ -1,7 +1,7 @@
 import { PropTypes } from '@dhis2/prop-types'
 import cx from 'classnames'
 import React from 'react'
-import { dataTest } from '../../utils'
+import { dataTest } from '../../utils/index.js'
 import styles from './FormRow.module.css'
 
 export const FormRow = ({ children, className }) => (

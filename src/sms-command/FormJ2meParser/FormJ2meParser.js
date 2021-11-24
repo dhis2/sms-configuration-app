@@ -6,21 +6,20 @@ import {
     ReactFinalForm,
 } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { FIELD_DATA_SET_NAME } from '../FieldDataSet'
-import { FIELD_SPECIAL_CHARS_NAME } from '../FieldSpecialCharacter'
-import { Form as FormComponent } from './Form'
-import { getInitialFormState } from './getInitialFormState'
-import { globalValidate } from './globalValidate'
-import { useCommandData } from './useCommandData'
-import { useUpdateCommandMutation } from './useUpdateCommandMutation'
+import i18n from '../../locales/index.js'
+import { FIELD_DATA_SET_NAME } from '../FieldDataSet/index.js'
+import { FIELD_SPECIAL_CHARS_NAME } from '../FieldSpecialCharacter/index.js'
+import { Form as FormComponent } from './Form.js'
+import { getInitialFormState } from './getInitialFormState.js'
+import { globalValidate } from './globalValidate.js'
+import { useCommandData } from './useCommandData.js'
+import { useUpdateCommandMutation } from './useUpdateCommandMutation.js'
 
 const { Form } = ReactFinalForm
 
 export const FormJ2meParser = ({ commandId, onAfterChange, onCancel }) => {
-    const { error: loadingCommandError, data: commandData } = useCommandData(
-        commandId
-    )
+    const { error: loadingCommandError, data: commandData } =
+        useCommandData(commandId)
 
     const command = commandData?.smsCommand
 
@@ -65,7 +64,7 @@ export const FormJ2meParser = ({ commandId, onAfterChange, onCancel }) => {
                 return [...curCombinations, { dataElement }]
             }
 
-            const combos = categoryOptionCombo.map(COC => ({
+            const combos = categoryOptionCombo.map((COC) => ({
                 dataElement,
                 categoryOptionCombo: COC,
             }))

@@ -7,7 +7,7 @@ export const DELETE_SMS_COMMAND_MUTATION = {
     id: ({ id }) => id,
 }
 
-const idToMutationRequestFactory = engine => id => {
+const idToMutationRequestFactory = (engine) => (id) => {
     const variables = { id }
     return engine.mutate(DELETE_SMS_COMMAND_MUTATION, { variables })
 }
@@ -19,11 +19,11 @@ export const useDeleteSmsCommandMutation = () => {
 
     const idToMutationRequest = idToMutationRequestFactory(engine)
     const onStart = () => setLoading(true)
-    const onDone = response => {
+    const onDone = (response) => {
         setLoading(false)
         return response
     }
-    const onError = error => {
+    const onError = (error) => {
         setError(error)
         setLoading(false)
     }

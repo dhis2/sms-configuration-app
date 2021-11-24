@@ -1,18 +1,18 @@
-import { FIELD_COMMAND_NAME } from '../FieldCommandName'
-import { FIELD_DEFAULT_MESSAGE_NAME } from '../FieldDefaultMessage'
-import { FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME } from '../FieldMoreThanOneOrgUnitMessage'
-import { FIELD_NO_USER_MESSAGE_NAME } from '../FieldNoUserMessage'
-import { FIELD_PARSER_NAME, parserTypes } from '../FieldParser'
-import { FIELD_PROGRAM_NAME } from '../FieldProgram'
-import { FIELD_PROGRAM_STAGE_NAME } from '../FieldProgramStage'
-import { FIELD_SEPARATOR_NAME } from '../FieldSeparator'
-import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
-import { FIELD_SUCCESS_MESSAGE_NAME } from '../FieldSuccessMessage'
-import { FIELD_WRONG_FORMAT_MESSAGE_NAME } from '../FieldWrongFormatMessage'
+import { FIELD_COMMAND_NAME } from '../FieldCommandName/index.js'
+import { FIELD_DEFAULT_MESSAGE_NAME } from '../FieldDefaultMessage/index.js'
+import { FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME } from '../FieldMoreThanOneOrgUnitMessage/index.js'
+import { FIELD_NO_USER_MESSAGE_NAME } from '../FieldNoUserMessage/index.js'
+import { FIELD_PARSER_NAME, parserTypes } from '../FieldParser/index.js'
+import { FIELD_PROGRAM_NAME } from '../FieldProgram/index.js'
+import { FIELD_PROGRAM_STAGE_NAME } from '../FieldProgramStage/index.js'
+import { FIELD_SEPARATOR_NAME } from '../FieldSeparator/index.js'
+import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode/index.js'
+import { FIELD_SUCCESS_MESSAGE_NAME } from '../FieldSuccessMessage/index.js'
+import { FIELD_WRONG_FORMAT_MESSAGE_NAME } from '../FieldWrongFormatMessage/index.js'
 
 const { PROGRAM_STAGE_DATAENTRY_PARSER } = parserTypes
 
-export const getInitialFormState = command => {
+export const getInitialFormState = (command) => {
     const name = command[FIELD_COMMAND_NAME]
     const program = command[FIELD_PROGRAM_NAME]
     const programStage = command[FIELD_PROGRAM_STAGE_NAME]

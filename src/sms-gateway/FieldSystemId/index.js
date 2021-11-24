@@ -1,1 +1,1 @@
-export { FieldSystemId } from './FieldSystemId'
+export { FieldSystemId } from './FieldSystemId.js'

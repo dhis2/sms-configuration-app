@@ -1,13 +1,13 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { ContentLoading, ContentLoadingError } from '../../shared'
-import { createInitialValues } from './createInitialValues'
-import { createUserGroupOptions } from './createUserGroupOptions'
-import { Form as FormComponent } from './Form'
-import { useAlertDataQuery } from './useAlertDataQuery'
-import { useUpdateCommandMutation } from './useUpdateCommandMutation'
+import i18n from '../../locales/index.js'
+import { ContentLoading, ContentLoadingError } from '../../shared/index.js'
+import { createInitialValues } from './createInitialValues.js'
+import { createUserGroupOptions } from './createUserGroupOptions.js'
+import { Form as FormComponent } from './Form.js'
+import { useAlertDataQuery } from './useAlertDataQuery.js'
+import { useUpdateCommandMutation } from './useUpdateCommandMutation.js'
 
 const { Form } = ReactFinalForm
 
@@ -18,7 +18,9 @@ export const FormAlertParser = ({ commandId, onAfterChange, onCancel }) => {
         onAfterChange,
     })
 
-    if (loading) return <ContentLoading />
+    if (loading) {
+        return <ContentLoading />
+    }
     if (error) {
         return (
             <ContentLoadingError

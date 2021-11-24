@@ -1,10 +1,10 @@
-import i18n from '../../locales'
+import i18n from '../../locales/index.js'
 
 /**
  * @param {string} type
  * @returns {string}
  */
-export const getTypeLabelByType = type => {
+export const getTypeLabelByType = (type) => {
     if (type === 'bulksms') {
         return i18n.t('BulkSMS')
     }

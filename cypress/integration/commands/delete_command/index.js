@@ -4,7 +4,7 @@ Given('no commands exist', () => {
     const fixture = 'commands/delete_command/no_commands'
     cy.intercept('GET', /.*\/smsCommands[?]/, { fixture })
 
-    cy.fixture(fixture).then(response => {
+    cy.fixture(fixture).then((response) => {
         const { smsCommands } = response
         cy.wrap(smsCommands).as('commands')
     })
@@ -14,14 +14,14 @@ Given('some commands exist', () => {
     const fixture = 'commands/delete_command/some_commands'
     cy.intercept('GET', /.*\/smsCommands[?]/, { fixture })
 
-    cy.fixture(fixture).then(response => {
+    cy.fixture(fixture).then((response) => {
         const { smsCommands } = response
         cy.wrap(smsCommands).as('commands')
     })
 })
 
 Given('the user can delete commands', () => {
-    cy.get('@commands').then(commands => {
+    cy.get('@commands').then((commands) => {
         commands.forEach(({ id }) => {
             const url = new RegExp(`.*/smsCommands/${id}$`)
 
@@ -31,7 +31,7 @@ Given('the user can delete commands', () => {
 })
 
 Given("the user can't delete commands due to a request failure", () => {
-    cy.get('@commands').then(commands => {
+    cy.get('@commands').then((commands) => {
         commands.forEach(({ id }) => {
             const url = new RegExp(`.*/smsCommands/${id}$`)
 
@@ -77,7 +77,7 @@ Given('all commands have been selected', () => {
 
 Given('no command has been selected', () => {
     cy.getWithDataTest('{views-smscommandlist-commandtable} tbody input').each(
-        $checkbox => {
+        ($checkbox) => {
             expect($checkbox).not.to.be.checked
         }
     )
@@ -127,7 +127,7 @@ Then('the confirmation modal should close', () => {
 
 Then("all individual commands' checkboxes should be selected", () => {
     cy.getWithDataTest('{views-smscommandlist-commandtable} tbody input').each(
-        $checkbox => {
+        ($checkbox) => {
             expect($checkbox).to.be.checked
         }
     )
@@ -135,7 +135,7 @@ Then("all individual commands' checkboxes should be selected", () => {
 
 Then("all individual commands' checkboxes should not be selected", () => {
     cy.getWithDataTest('{views-smscommandlist-commandtable} tbody input').each(
-        $checkbox => {
+        ($checkbox) => {
             expect($checkbox).not.to.be.checked
         }
     )

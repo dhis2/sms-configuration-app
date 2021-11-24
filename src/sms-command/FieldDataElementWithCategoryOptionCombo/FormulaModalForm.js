@@ -13,10 +13,10 @@ import {
     hasValue,
 } from '@dhis2/ui'
 import React, { useMemo } from 'react'
-import i18n from '../../locales'
-import { FormRow, dataTest } from '../../shared'
-import { FIELD_DATA_SET_NAME } from '../FieldDataSet'
-import { useReadDataElementsOfDataSetQuery } from './useReadDataElementsOfDataSetQuery'
+import i18n from '../../locales/index.js'
+import { FormRow, dataTest } from '../../shared/index.js'
+import { FIELD_DATA_SET_NAME } from '../FieldDataSet/index.js'
+import { useReadDataElementsOfDataSetQuery } from './useReadDataElementsOfDataSetQuery.js'
 
 const { Field, Form, useForm, useField } = ReactFinalForm
 
@@ -36,9 +36,8 @@ export const FormulaModalForm = ({
         subscription: { value: true },
     }).input.value.id
 
-    const { loading, error, data } = useReadDataElementsOfDataSetQuery(
-        dataSetId
-    )
+    const { loading, error, data } =
+        useReadDataElementsOfDataSetQuery(dataSetId)
 
     // Using memo so changing the form does not change the "initialValues"
     // which would cause the form to update unnecessarily
@@ -69,7 +68,7 @@ export const FormulaModalForm = ({
         )
     }
 
-    const options = data.map(dataElement => {
+    const options = data.map((dataElement) => {
         const { id, displayName } = dataElement
 
         return {
@@ -78,7 +77,7 @@ export const FormulaModalForm = ({
         }
     })
 
-    const onSubmit = values => {
+    const onSubmit = (values) => {
         const newFormula = `${values.operator}${values.dataElementCode}`
         form.change(targetFieldName, newFormula)
         onClose()
@@ -94,7 +93,7 @@ export const FormulaModalForm = ({
             {({ handleSubmit }) => (
                 <Modal dataTest={modalDataTest}>
                     <form
-                        onSubmit={event => {
+                        onSubmit={(event) => {
                             event.stopPropagation()
                             handleSubmit(event)
                         }}

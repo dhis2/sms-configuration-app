@@ -1,5 +1,5 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { GATEWAY_QUERY, useReadGatewayQuery } from '../useReadGatewayQuery'
+import { GATEWAY_QUERY, useReadGatewayQuery } from '../useReadGatewayQuery.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     useDataQuery: jest.fn(),

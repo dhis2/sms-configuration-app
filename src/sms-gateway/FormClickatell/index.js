@@ -1,1 +1,1 @@
-export { FormClickatell } from './FormClickatell'
+export { FormClickatell } from './FormClickatell.js'

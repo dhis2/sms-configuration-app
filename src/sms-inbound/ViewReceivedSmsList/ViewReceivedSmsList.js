@@ -2,7 +2,7 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import { Button, NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState, useEffect, useContext } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
-import i18n from '../../locales'
+import i18n from '../../locales/index.js'
 import {
     AlertContext,
     DeleteConfirmationDialog,
@@ -10,10 +10,10 @@ import {
     useQueryParams,
     TemplateSidebarNavContent,
     dataTest,
-} from '../../shared'
-import { Filter } from '../Filter'
-import { ReceivedSmsTable } from '../ReceivedSmsTable'
-import { useDeleteMutation } from './useDeleteMutation'
+} from '../../shared/index.js'
+import { Filter } from '../Filter/index.js'
+import { ReceivedSmsTable } from '../ReceivedSmsTable/index.js'
+import { useDeleteMutation } from './useDeleteMutation.js'
 import styles from './ViewReceivedSmsList.module.css'
 
 export const RECEIVED_SMS_LIST_LABEL = i18n.t('Received')
@@ -57,17 +57,15 @@ const query = {
 }
 
 export const ViewReceivedSmsList = () => {
-    const [
-        showDeleteConfirmationDialog,
-        setShowDeleteConfirmationDialog,
-    ] = useState(false)
+    const [showDeleteConfirmationDialog, setShowDeleteConfirmationDialog] =
+        useState(false)
     const [selectedIds, setSelectedIds] = useState([])
     const [queryParams, setQueryParams] = useQueryParams()
     const { page, pageSize, phoneNumber, status } = queryParams
-    const setPhoneNumber = phoneNumber => {
+    const setPhoneNumber = (phoneNumber) => {
         setQueryParams({ phoneNumber, page: 1 }, 'replaceIn')
     }
-    const setStatus = status => {
+    const setStatus = (status) => {
         setQueryParams({ status, page: 1 })
     }
     const handleFilterReset = () => {
@@ -95,7 +93,7 @@ export const ViewReceivedSmsList = () => {
             refetch()
             setSelectedIds([])
         },
-        onError: error =>
+        onError: (error) =>
             addAlert({
                 type: 'critical',
                 message: error.message,

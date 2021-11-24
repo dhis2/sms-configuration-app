@@ -42,7 +42,7 @@ Given('some gateways exist', () => {
     cy.wrap(gateways).as('gateways')
     cy.intercept('GET', /.*\/gateways.json$/, { body: { gateways } })
 
-    gateways.forEach(gateway => {
+    gateways.forEach((gateway) => {
         cy.intercept('GET', new RegExp(`gateways/${gateway.uid}$`), {
             body: gateway,
         })
@@ -61,7 +61,7 @@ Given('the user navigated to the gateway configuration page', () => {
 })
 
 When('the user makes the second gateway the default gateway', () => {
-    cy.get('@gateways').then(gateways => {
+    cy.get('@gateways').then((gateways) => {
         const secondGateway = gateways[1]
 
         cy.intercept(
@@ -104,7 +104,7 @@ Then('the gateways are rendered as tabular data', () => {
     ).then(([gateways, $rows]) => {
         expect(gateways.length).to.equal($rows.length)
 
-        gateways.forEach(gateway => {
+        gateways.forEach((gateway) => {
             cy.getWithDataTest(
                 `{smsgateway-table-name}:contains("${gateway.name}")`
             ).should('exist')
@@ -122,13 +122,13 @@ Then("each row displays the gateway configuration's data", () => {
 
             cy.wrap($row)
                 .findWithDataTest('{smsgateway-table-name}')
-                .then($nameCell => {
+                .then(($nameCell) => {
                     expect($nameCell.text()).to.equal(gateway.name)
                 })
 
             cy.wrap($row)
                 .findWithDataTest('{smsgateway-table-type}')
-                .then($typeCell => {
+                .then(($typeCell) => {
                     const typeText =
                         gateway.type === 'http'
                             ? 'Generic'
@@ -163,7 +163,7 @@ Then(
         // This should only make sure that the correct url has been called.
         // -> It's not testing whether the server works correctly,
         //    that's the responsibility of the backend test suite.
-        cy.wait('@makeDefaultGatewayXHR').should(xhr => {
+        cy.wait('@makeDefaultGatewayXHR').should((xhr) => {
             expect(xhr.response.statusCode).to.equal(200)
         })
     }

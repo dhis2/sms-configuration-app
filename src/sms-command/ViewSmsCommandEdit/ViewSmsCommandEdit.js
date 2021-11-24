@@ -1,22 +1,22 @@
 import { NoticeBox, CenteredContent, CircularLoader } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
-import i18n from '../../locales'
+import i18n from '../../locales/index.js'
 import {
     CancelDialog,
     PageHeadline,
     TemplateSidebarNavContent,
     dataTest,
-} from '../../shared'
-import { FIELD_PARSER_NAME, parserTypes } from '../FieldParser'
-import { FormAlertParser } from '../FormAlertParser'
-import { FormEventRegistrationParser } from '../FormEventRegistrationParser'
-import { FormJ2meParser } from '../FormJ2meParser'
-import { FormKeyValueParser } from '../FormKeyValueParser'
-import { FormProgramStageDataEntryParser } from '../FormProgramStageDataEntryParser'
-import { FormTrackedEntityRegistrationParser } from '../FormTrackedEntityRegistrationParser'
-import { FormUnregisteredParser } from '../FormUnregisteredParser'
-import { useReadSmsCommandParserTypeQuery } from './useReadSmsCommandParserTypeQuery'
+} from '../../shared/index.js'
+import { FIELD_PARSER_NAME, parserTypes } from '../FieldParser/index.js'
+import { FormAlertParser } from '../FormAlertParser/index.js'
+import { FormEventRegistrationParser } from '../FormEventRegistrationParser/index.js'
+import { FormJ2meParser } from '../FormJ2meParser/index.js'
+import { FormKeyValueParser } from '../FormKeyValueParser/index.js'
+import { FormProgramStageDataEntryParser } from '../FormProgramStageDataEntryParser/index.js'
+import { FormTrackedEntityRegistrationParser } from '../FormTrackedEntityRegistrationParser/index.js'
+import { FormUnregisteredParser } from '../FormUnregisteredParser/index.js'
+import { useReadSmsCommandParserTypeQuery } from './useReadSmsCommandParserTypeQuery.js'
 import styles from './ViewSmsCommandEdit.module.css'
 
 export const SMS_COMMAND_FORM_EDIT_PATH_STATIC = '/sms-config/edit'
@@ -34,7 +34,7 @@ const {
 
 const isParserType = (parserType, parser) => parserType === parser.value
 
-const getSmsCommandEditFormComponent = parserType => {
+const getSmsCommandEditFormComponent = (parserType) => {
     const isParser = isParserType.bind(null, parserType)
 
     if (!parserType) {
@@ -78,7 +78,7 @@ export const ViewSmsCommandEdit = () => {
     const { loading, error, data } = useReadSmsCommandParserTypeQuery(id)
     const [showCancelDialog, setShowCancelDialog] = useState(false)
     const onAfterChange = () => history.push('/sms-command')
-    const onCancel = pristine =>
+    const onCancel = (pristine) =>
         pristine ? history.goBack() : setShowCancelDialog(true)
 
     if (loading) {

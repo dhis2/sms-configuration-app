@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import { PropTypes } from '@dhis2/prop-types'
 import { Button, SingleSelect, SingleSelectOption } from '@dhis2/ui'
 import React from 'react'
-import { useQueryParams } from '../../hooks'
+import { useQueryParams } from '../../hooks/index.js'
 import styles from './Pagination.module.css'
 
 const PAGE_LENGTHS = ['1', '2', '10', '20', '30', '40', '50', '100']
@@ -14,10 +14,10 @@ export const Pagination = ({ page, pageCount, pageSize, total }) => {
         (i + 1).toString()
     )
     const [, setQueryParams] = useQueryParams()
-    const setPage = page => {
+    const setPage = (page) => {
         setQueryParams({ page })
     }
-    const setPageSize = pageSize => {
+    const setPageSize = (pageSize) => {
         setQueryParams({ pageSize, page: 1 })
     }
 
@@ -31,7 +31,7 @@ export const Pagination = ({ page, pageCount, pageSize, total }) => {
                     onChange={({ selected }) => setPageSize(selected)}
                     className={styles.select}
                 >
-                    {PAGE_LENGTHS.map(length => (
+                    {PAGE_LENGTHS.map((length) => (
                         <SingleSelectOption
                             key={length}
                             value={length}
@@ -66,7 +66,7 @@ export const Pagination = ({ page, pageCount, pageSize, total }) => {
                     onChange={({ selected }) => setPage(selected)}
                     className={styles.select}
                 >
-                    {availablePages.map(availablePage => (
+                    {availablePages.map((availablePage) => (
                         <SingleSelectOption
                             key={availablePage}
                             value={availablePage}

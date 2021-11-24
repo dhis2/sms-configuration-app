@@ -1,1 +1,1 @@
-export { FIELD_SMS_CODES_NAME, FieldSmsCode } from './FieldSmsCode'
+export { FIELD_SMS_CODES_NAME, FieldSmsCode } from './FieldSmsCode.js'

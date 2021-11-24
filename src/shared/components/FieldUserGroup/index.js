@@ -1,3 +1,3 @@
-export * from './FieldUserGroup'
-export * from './FieldUserGroupWithAutoLoad'
-export * from './useReadUserGroupsQuery'
+export * from './FieldUserGroup.js'
+export * from './FieldUserGroupWithAutoLoad.js'
+export * from './useReadUserGroupsQuery.js'

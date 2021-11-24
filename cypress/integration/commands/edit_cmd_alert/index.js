@@ -84,7 +84,7 @@ Then('the complete command should be sent to the endpoint', () => {
 
         expect(payloadKeys.length).to.equal(commandKeys.length)
 
-        commandKeys.forEach(commandKey => {
+        commandKeys.forEach((commandKey) => {
             expect(payloadKeys).to.include(commandKey)
         })
     })

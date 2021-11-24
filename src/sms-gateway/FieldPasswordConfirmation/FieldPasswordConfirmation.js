@@ -7,9 +7,12 @@ import {
     string,
 } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { dataTest } from '../../shared'
-import { FIELD_PASSWORD_LABEL, FIELD_PASSWORD_NAME } from '../FieldPassword'
+import i18n from '../../locales/index.js'
+import { dataTest } from '../../shared/index.js'
+import {
+    FIELD_PASSWORD_LABEL,
+    FIELD_PASSWORD_NAME,
+} from '../FieldPassword/index.js'
 
 const { Field } = ReactFinalForm
 

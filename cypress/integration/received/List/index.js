@@ -1,5 +1,5 @@
 import { Given, Then } from 'cypress-cucumber-preprocessor/steps'
-import { translations } from '../../../../src/sms-inbound/translations'
+import { translations } from '../../../../src/sms-inbound/translations/index.js'
 
 const endpointUrl = /[/]sms[/]inbound([?]|$)/
 
@@ -31,7 +31,7 @@ Then('each row displays the message contents and metadata', () => {
     cy.fixture('received/received').then(({ inboundsmss }) => {
         inboundsmss.forEach(({ text, originator, smsstatus }, index) => {
             cy.get(`[data-test="dhis2-uicore-tablerow"]:eq(${index})`).should(
-                $elem => {
+                ($elem) => {
                     expect($elem.text()).to.contain(text)
                     expect($elem.text()).to.contain(originator)
                     expect($elem.text()).to.contain(translations[smsstatus])

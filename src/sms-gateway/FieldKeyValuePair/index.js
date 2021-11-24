@@ -1,1 +1,1 @@
-export { FieldKeyValuePair } from './FieldKeyValuePair'
+export { FieldKeyValuePair } from './FieldKeyValuePair.js'

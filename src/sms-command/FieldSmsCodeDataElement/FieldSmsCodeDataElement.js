@@ -1,8 +1,8 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { InputFieldFF, ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
-import { dataTest } from '../../shared'
-import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
+import { dataTest } from '../../shared/index.js'
+import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode/index.js'
 
 const { Field } = ReactFinalForm
 
@@ -14,8 +14,8 @@ export const FieldSmsCodeDataElement = ({ dataElement, smsCodes }) => {
             name={`${FIELD_SMS_CODES_NAME}.${dataElement.id}`}
             label={dataElement.displayName}
             component={InputFieldFF}
-            format={value => value?.code || null}
-            parse={code => {
+            format={(value) => value?.code || null}
+            parse={(code) => {
                 const currentValue = smsCodes[dataElement.id]
 
                 const newValue = {

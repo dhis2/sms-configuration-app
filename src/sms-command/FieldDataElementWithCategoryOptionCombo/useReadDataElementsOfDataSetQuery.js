@@ -13,7 +13,7 @@ export const DATA_ELEMENTS_QUERY = {
 }
 
 export const queryDataElementsOfDataSet = (engine, variables) =>
-    engine.query(DATA_ELEMENTS_QUERY, { variables }).then(data => {
+    engine.query(DATA_ELEMENTS_QUERY, { variables }).then((data) => {
         const { dataSet } = data
         const { dataSetElements } = dataSet
         const formatted = dataSetElements.map(({ dataElement }) => dataElement)
@@ -42,7 +42,7 @@ export const useReadDataElementsOfDataSetQuery = (dataSetId, filter) => {
     const [data, setData] = useState(null)
     const engine = useDataEngine()
 
-    const refetch = variables => {
+    const refetch = (variables) => {
         setLoading(true)
         setError(null)
 

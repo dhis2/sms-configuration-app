@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react-hooks'
 import {
     UPDATE_BULK_SMS_GATEWAY_MUTATION,
     useUpdateBulkSMSGatewayMutation,
-} from '../useUpdateBulkSMSGatewayMutation'
+} from '../useUpdateBulkSMSGatewayMutation.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
     useDataEngine: jest.fn(),
@@ -23,7 +23,7 @@ describe('gateways - useUpdateBulkSMSGatewayMutation', () => {
         // which will cause the loading state to be false as the mutate function
         // resolves immediately.
         mutate: jest.fn(
-            () => new Promise(resolve => setTimeout(() => resolve, 1000))
+            () => new Promise((resolve) => setTimeout(() => resolve, 1000))
         ),
     }
 

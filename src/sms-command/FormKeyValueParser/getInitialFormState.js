@@ -1,24 +1,24 @@
-import { FIELD_COMMAND_NAME } from '../FieldCommandName'
+import { FIELD_COMMAND_NAME } from '../FieldCommandName/index.js'
 import {
     FIELD_COMPLETENESS_METHOD_NAME,
     completenessMethods,
-} from '../FieldCompletenessMethod'
-import { FIELD_DATA_SET_NAME } from '../FieldDataSet'
-import { FIELD_DEFAULT_MESSAGE_NAME } from '../FieldDefaultMessage'
-import { FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME } from '../FieldMoreThanOneOrgUnitMessage'
-import { FIELD_NO_USER_MESSAGE_NAME } from '../FieldNoUserMessage'
-import { FIELD_PARSER_NAME, parserTypes } from '../FieldParser'
-import { FIELD_SEPARATOR_NAME } from '../FieldSeparator'
-import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode'
-import { FIELD_SPECIAL_CHARS_NAME } from '../FieldSpecialCharacter'
-import { FIELD_SUCCESS_MESSAGE_NAME } from '../FieldSuccessMessage'
-import { FIELD_USE_CURRENT_PERIOD_FOR_REPORTING_NAME } from '../FieldUseCurrentPeriodForReporting'
-import { FIELD_WRONG_FORMAT_MESSAGE_NAME } from '../FieldWrongFormatMessage'
+} from '../FieldCompletenessMethod/index.js'
+import { FIELD_DATA_SET_NAME } from '../FieldDataSet/index.js'
+import { FIELD_DEFAULT_MESSAGE_NAME } from '../FieldDefaultMessage/index.js'
+import { FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME } from '../FieldMoreThanOneOrgUnitMessage/index.js'
+import { FIELD_NO_USER_MESSAGE_NAME } from '../FieldNoUserMessage/index.js'
+import { FIELD_PARSER_NAME, parserTypes } from '../FieldParser/index.js'
+import { FIELD_SEPARATOR_NAME } from '../FieldSeparator/index.js'
+import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode/index.js'
+import { FIELD_SPECIAL_CHARS_NAME } from '../FieldSpecialCharacter/index.js'
+import { FIELD_SUCCESS_MESSAGE_NAME } from '../FieldSuccessMessage/index.js'
+import { FIELD_USE_CURRENT_PERIOD_FOR_REPORTING_NAME } from '../FieldUseCurrentPeriodForReporting/index.js'
+import { FIELD_WRONG_FORMAT_MESSAGE_NAME } from '../FieldWrongFormatMessage/index.js'
 
 const { AT_LEAST_ONE_DATAVALUE } = completenessMethods
 const { KEY_VALUE_PARSER } = parserTypes
 
-export const getInitialFormState = command => {
+export const getInitialFormState = (command) => {
     const name = command[FIELD_COMMAND_NAME]
     const parserType = KEY_VALUE_PARSER.value
     const dataSetId = { id: command[FIELD_DATA_SET_NAME].id }
@@ -58,7 +58,8 @@ export const getInitialFormState = command => {
         [FIELD_DATA_SET_NAME]: dataSetId,
         [FIELD_SEPARATOR_NAME]: separator,
         [FIELD_COMPLETENESS_METHOD_NAME]: completenessMethod,
-        [FIELD_USE_CURRENT_PERIOD_FOR_REPORTING_NAME]: useCurrentPeriodForReporting,
+        [FIELD_USE_CURRENT_PERIOD_FOR_REPORTING_NAME]:
+            useCurrentPeriodForReporting,
         [FIELD_DEFAULT_MESSAGE_NAME]: defaultMessage,
         [FIELD_WRONG_FORMAT_MESSAGE_NAME]: wrongFormatMessage,
         [FIELD_NO_USER_MESSAGE_NAME]: noUserMessage,

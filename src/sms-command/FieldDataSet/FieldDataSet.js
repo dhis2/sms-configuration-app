@@ -1,8 +1,8 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { SingleSelectFieldFF, ReactFinalForm, hasValue } from '@dhis2/ui'
 import React from 'react'
-import i18n from '../../locales'
-import { dataTest } from '../../shared'
+import i18n from '../../locales/index.js'
+import { dataTest } from '../../shared/index.js'
 
 const { Field } = ReactFinalForm
 
@@ -32,8 +32,8 @@ export const FieldDataSet = ({
         component={SingleSelectFieldFF}
         options={dataSets}
         validate={hasValue}
-        format={value => value?.id || null}
-        parse={id => ({ id })}
+        format={(value) => value?.id || null}
+        parse={(id) => ({ id })}
     />
 )
 

@@ -1,1 +1,1 @@
-export { FormBulkSMS } from './FormBulkSMS'
+export { FormBulkSMS } from './FormBulkSMS.js'

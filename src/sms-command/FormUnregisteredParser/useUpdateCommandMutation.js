@@ -1,5 +1,5 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import { useSubmit } from '../../shared'
+import { useSubmit } from '../../shared/index.js'
 
 export const UPDATE_COMMAND_MUTATION = {
     resource: 'smsCommands',
@@ -16,7 +16,7 @@ export const UPDATE_COMMAND_MUTATION = {
 export const useUpdateCommandMutation = ({ onAfterChange, commandId }) => {
     const engine = useDataEngine()
 
-    const onSubmit = values => {
+    const onSubmit = (values) => {
         const variables = { ...values, commandId }
         return engine
             .mutate(UPDATE_COMMAND_MUTATION, { variables })

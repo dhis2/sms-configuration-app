@@ -1,1 +1,1 @@
-export { FormProgramStageDataEntryParser } from './FormProgramStageDataEntryParser'
+export { FormProgramStageDataEntryParser } from './FormProgramStageDataEntryParser.js'

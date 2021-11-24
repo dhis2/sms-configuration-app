@@ -1,4 +1,4 @@
-export const getSmsCodeDuplicates = smsCodes => {
+export const getSmsCodeDuplicates = (smsCodes) => {
     const duplicates = smsCodes.reduce((curDuplicates, smsCode, index) => {
         const [name, code] = smsCode
 

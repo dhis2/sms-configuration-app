@@ -1,1 +1,1 @@
-export { FieldSystemType } from './FieldSystemType'
+export { FieldSystemType } from './FieldSystemType.js'

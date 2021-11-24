@@ -1,2 +1,2 @@
-export { InputSingleSelectGatewayType } from './InputSingleSelectGatewayType'
-export { gatewayTypes } from './gatewayTypes'
+export { InputSingleSelectGatewayType } from './InputSingleSelectGatewayType.js'
+export { gatewayTypes } from './gatewayTypes.js'

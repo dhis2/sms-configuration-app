@@ -58,7 +58,7 @@ Given('the user navigated to the gateway configuration page', () => {
         body: { gateways },
     })
 
-    gateways.forEach(gateway => {
+    gateways.forEach((gateway) => {
         const { uid } = gateway
         const url = new RegExp(`.*/gateways/${uid}`)
 
@@ -86,9 +86,9 @@ When('the user clicks on the update button in the first SMPP gateway', () => {
 
 When(
     /the user changes the (.*) field's value to another valid value/,
-    field => {
+    (field) => {
         cy.get('@editedGatewayConfiguration').then(
-            editedGatewayConfiguration => {
+            (editedGatewayConfiguration) => {
                 let newValue
                 const prevValue = editedGatewayConfiguration[field]
                 const dataTest =
@@ -134,7 +134,7 @@ When(
                 }
 
                 cy.get('@finalGatewayConfiguration').then(
-                    finalGatewayConfiguration => {
+                    (finalGatewayConfiguration) => {
                         cy.wrap({
                             ...finalGatewayConfiguration,
                             [field]: newValue,
@@ -152,7 +152,7 @@ When('submits the form', () => {
 
 When(
     /the user changes the (.+) field's value to another invalid value/,
-    field => {
+    (field) => {
         const dataTest =
             field === 'name'
                 ? `{smsgateway-fieldgatewayname}`
@@ -161,12 +161,14 @@ When(
         const newValue = field === 'port' ? '1337' : 'This is a new value'
         cy.getWithDataTest(dataTest).as('invalidField').find('input').clear()
 
-        cy.get('@finalGatewayConfiguration').then(finalGatewayConfiguration => {
-            cy.wrap({
-                ...finalGatewayConfiguration,
-                [field]: newValue,
-            }).as('finalGatewayConfiguration')
-        })
+        cy.get('@finalGatewayConfiguration').then(
+            (finalGatewayConfiguration) => {
+                cy.wrap({
+                    ...finalGatewayConfiguration,
+                    [field]: newValue,
+                }).as('finalGatewayConfiguration')
+            }
+        )
     }
 )
 
@@ -279,7 +281,7 @@ Then(
 )
 
 Then('the updates should be sent to the correct endpoint', () => {
-    cy.get('@gatewayId').then(id => {
+    cy.get('@gatewayId').then((id) => {
         cy.all(
             () => cy.wait(`@updateGatewayConfiguration${id}XHR`),
             () => cy.get('@finalGatewayConfiguration')

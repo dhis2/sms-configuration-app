@@ -1,7 +1,11 @@
 import React from 'react'
-import i18n from '../../locales'
-import { PageHeadline, TemplateSidebarNavContent, dataTest } from '../../shared'
-import { HomeCard } from '../HomeCard'
+import i18n from '../../locales/index.js'
+import {
+    PageHeadline,
+    TemplateSidebarNavContent,
+    dataTest,
+} from '../../shared/index.js'
+import { HomeCard } from '../HomeCard/index.js'
 import s from './ViewOverview.module.css'
 
 export const ViewOverview = () => {

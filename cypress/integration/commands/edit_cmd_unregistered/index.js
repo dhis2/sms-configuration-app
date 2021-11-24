@@ -4,7 +4,7 @@ Before(() => {
     cy.server()
 
     cy.fixture('commands/edit_cmd_unregistered/commandsForListView').then(
-        response => {
+        (response) => {
             const commandId = response.smsCommands[0].id
 
             cy.intercept('GET', /\/smsCommands\?paging=false&fields=\*/, {
@@ -80,7 +80,7 @@ Then('the complete command should be sent to the endpoint', () => {
 
         expect(payloadKeys.length).to.equal(commandKeys.length)
 
-        commandKeys.forEach(commandKey => {
+        commandKeys.forEach((commandKey) => {
             expect(payloadKeys).to.include(commandKey)
         })
     })
