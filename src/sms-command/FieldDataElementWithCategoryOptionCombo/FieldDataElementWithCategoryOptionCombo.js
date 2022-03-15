@@ -10,7 +10,7 @@ import { FormulaModalForm } from './FormulaModalForm.js'
 
 const DE_COC_toFormName = (dataElement, categoryOptionCombo) => {
     const dataElementId = dataElement.id
-    const cocCode = categoryOptionCombo?.code
+    const cocCode = categoryOptionCombo?.id
     const isDefault = cocCode === 'default'
 
     if (!cocCode || isDefault) {
@@ -101,7 +101,6 @@ FieldDataElementWithCategoryOptionCombo.propTypes = {
         id: PropTypes.string.isRequired,
     }).isRequired,
     categoryOptionCombo: PropTypes.shape({
-        code: PropTypes.string.isRequired,
         displayName: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
     }),

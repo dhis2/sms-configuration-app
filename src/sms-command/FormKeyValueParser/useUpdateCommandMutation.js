@@ -33,13 +33,13 @@ const updateKeyValueParserMutation = {
             command[FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME]
         const successMessage = command[FIELD_SUCCESS_MESSAGE_NAME]
         const specialCharacters = command[FIELD_SPECIAL_CHARS_NAME] || []
-        const smsCodes = Object.entries(command[FIELD_SMS_CODES_NAME]).map(
-            ([id, { code, formula, compulsory, optionId }]) => {
-                const [dataElementId] = id.split('-')
+        const smsCodes = Object.values(command[FIELD_SMS_CODES_NAME]).map(
+            ({ code: codeWrapper, compulsory, optionId, dataElement }) => {
+                const { code, formula } = codeWrapper
                 const formattedSmsCode = {
                     code,
-                    compulsory,
-                    dataElement: { id: dataElementId },
+                    compulsory: !!compulsory,
+                    dataElement,
                 }
 
                 if (formula) {
@@ -77,7 +77,30 @@ const updateKeyValueParserMutation = {
 export const useUpdateCommandMutation = ({ id, onAfterChange }) => {
     const engine = useDataEngine()
     const onSubmit = (values) => {
-        const variables = { ...values, id }
+        const variables = {
+            ...values,
+            id,
+            smsCodes:
+                !values.smsCodes || !Object.values(values.smsCodes).length
+                    ? []
+                    : Object.entries(values.smsCodes).map(([key, value]) => {
+                          const [dataElementId, categoryOptionComboId] =
+                              key.split('-')
+
+                          return {
+                              ...(categoryOptionComboId
+                                  ? {
+                                        optionId: { id: categoryOptionComboId },
+                                    }
+                                  : {}),
+                              code: value,
+                              dataElement: {
+                                  id: dataElementId,
+                              },
+                          }
+                      }),
+        }
+
         return engine
             .mutate(updateKeyValueParserMutation, { variables })
             .then(onAfterChange)

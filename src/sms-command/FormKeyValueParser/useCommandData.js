@@ -10,34 +10,12 @@ export const READ_SMS_COMMAND_KEY_VALUE_PARSER_QUERY = {
     smsCommand: {
         resource: 'smsCommands',
         id: ({ id }) => id,
-        params: () => {
-            const paging = 'false'
-            const fields = [
+        params: () => ({
+            fields: [
                 '*',
-                `dataset [
-                    id,
-                    displayName,
-                    dataSetElements [
-                        dataElement [
-                            id,
-                            displayName,
-                            categoryCombo [
-                                categoryOptionCombos [
-                                    id,
-                                    displayName,
-                                    code
-                                ]
-                            ]
-                        ]
-                    ]
-                ]`,
-            ]
-
-            return {
-                fields: fields.map((field) => field.replace(/(\n|\s)/g, '')),
-                paging,
-            }
-        },
+                `dataset[id,displayName,dataSetElements[dataElement[id,displayName,categoryCombo[categoryOptionCombos[*,id,displayName]]]]]`,
+            ],
+        }),
     },
 }
 
