@@ -132,7 +132,6 @@ Form.propTypes = {
                 id: PropTypes.string.isRequired,
             }).isRequired,
             categoryOptionCombo: PropTypes.shape({
-                // code: PropTypes.string.isRequired,
                 displayName: PropTypes.string.isRequired,
                 id: PropTypes.string.isRequired,
             }),
