@@ -32,24 +32,29 @@ export const getInitialFormState = (command) => {
     const moreThanOneOrgUnitMessage =
         command[FIELD_MORE_THAN_ONE_ORG_UNIT_MESSAGE_NAME]
     const successMessage = command[FIELD_SUCCESS_MESSAGE_NAME]
-    const smsCodes = command[FIELD_SMS_CODES_NAME].reduce(
-        (acc, { code, compulsory, formula, optionId, dataElement }) => {
-            const key =
-                optionId < 10 ? dataElement.id : `${dataElement.id}-${optionId}`
+    const smsCodes = command[FIELD_SMS_CODES_NAME].reduce((acc, payload) => {
+        const {
+            code,
+            compulsory,
+            formula,
+            optionId: optionIdWrapper,
+            dataElement,
+        } = payload
+        const { id: optionId } = optionIdWrapper
+        const key =
+            optionId < 10 ? dataElement.id : `${dataElement.id}-${optionId}`
 
-            const smsCode = { code, compulsory, optionId }
+        const smsCode = { code, compulsory, optionId }
 
-            if (formula) {
-                smsCode.formula = formula
-            }
+        if (formula) {
+            smsCode.formula = formula
+        }
 
-            return {
-                ...acc,
-                [key]: smsCode,
-            }
-        },
-        {}
-    )
+        return {
+            ...acc,
+            [key]: smsCode,
+        }
+    }, {})
     const specialCharacters = command[FIELD_SPECIAL_CHARS_NAME] || []
 
     return {

@@ -58,7 +58,7 @@ export const FormJ2meParser = ({ commandId, onAfterChange, onCancel }) => {
     const DE_COC_combination_data = command.dataset.dataSetElements.reduce(
         (curCombinations, { dataElement }) => {
             const categoryOptionCombo =
-                dataElement.categoryCombo?.categoryOptionCombo
+                dataElement.categoryCombo?.categoryOptionCombos
 
             if (!categoryOptionCombo) {
                 return [...curCombinations, { dataElement }]

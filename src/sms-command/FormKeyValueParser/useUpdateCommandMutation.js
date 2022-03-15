@@ -54,7 +54,7 @@ const updateKeyValueParserMutation = {
             }
         )
 
-        const params = {
+        return {
             [FIELD_COMMAND_NAME]: name,
             [FIELD_PARSER_NAME]: parserType,
             [FIELD_DATA_SET_NAME]: dataSetId,
@@ -71,8 +71,6 @@ const updateKeyValueParserMutation = {
             [FIELD_SPECIAL_CHARS_NAME]: specialCharacters,
             [FIELD_SMS_CODES_NAME]: smsCodes,
         }
-
-        return params
     },
 }
 
