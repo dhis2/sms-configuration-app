@@ -1,3 +1,11 @@
+## [100.0.4](https://github.com/dhis2/sms-configuration-app/compare/v100.0.3...v100.0.4) (2022-03-15)
+
+
+### Bug Fixes
+
+* **sms j2me parser commands:** create short code input fields correclty ([ccd7a41](https://github.com/dhis2/sms-configuration-app/commit/ccd7a41a7c58f923c8e6780fa2829a2c619bd277))
+* **sms key value parser commands:** create short code input fields correclty ([faa4875](https://github.com/dhis2/sms-configuration-app/commit/faa487578b01d7517bcd861e0a9a13c45315ee65))
+
 ## [100.0.3](https://github.com/dhis2/sms-configuration-app/compare/v100.0.2...v100.0.3) (2022-03-14)
 
 
