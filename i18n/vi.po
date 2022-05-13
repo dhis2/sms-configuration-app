@@ -3,13 +3,14 @@
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2020
 # phil_dhis2, 2020
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,7 +49,7 @@ msgid "Commands"
 msgstr ""
 
 msgid "Sent"
-msgstr ""
+msgstr "Đã gửi"
 
 msgid "Received"
 msgstr ""

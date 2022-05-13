@@ -134,7 +134,7 @@ msgid "Something went wrong whilst saving"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Verwijderen"
 
 msgid "Save"
 msgstr "Sla op"
@@ -452,7 +452,7 @@ msgid "Are you sure you want to delete the selected sms?"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 msgid "Failed"
 msgstr "Mislukt"
