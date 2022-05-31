@@ -37,7 +37,7 @@ msgid "User group"
 msgstr ""
 
 msgid "Home"
-msgstr ""
+msgstr "Acasă"
 
 msgid "Gateway configuration"
 msgstr ""
@@ -73,7 +73,7 @@ msgid "of {{pageCount}}"
 msgstr ""
 
 msgid "Next"
-msgstr ""
+msgstr "Următorul"
 
 msgid "No error message was provided"
 msgstr ""
@@ -463,7 +463,7 @@ msgid "Processed"
 msgstr ""
 
 msgid "Processing"
-msgstr ""
+msgstr "Procesare"
 
 msgid "Unhandled"
 msgstr ""
