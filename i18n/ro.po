@@ -28,7 +28,7 @@ msgid "Confirm deletion"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Anulare"
 
 msgid "Delete"
 msgstr "Lichidare"
@@ -139,7 +139,7 @@ msgid "Save"
 msgstr "salva"
 
 msgid "Data set"
-msgstr ""
+msgstr "Set de date"
 
 msgid "Reply message if no codes are sent (only the command)"
 msgstr ""
@@ -175,7 +175,7 @@ msgid "Event registration parser"
 msgstr ""
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Program stage"
 msgstr ""
