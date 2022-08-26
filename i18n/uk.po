@@ -37,7 +37,7 @@ msgid "Delete"
 msgstr "Видалити"
 
 msgid "User group"
-msgstr ""
+msgstr "Група користувачів"
 
 msgid "Home"
 msgstr "Головна"
