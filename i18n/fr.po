@@ -434,7 +434,7 @@ msgid "Filter by phone number"
 msgstr ""
 
 msgid "Reset filter"
-msgstr ""
+msgstr "Réinitialiser le filtre"
 
 msgid "Message"
 msgstr "Message"
