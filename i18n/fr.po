@@ -47,7 +47,7 @@ msgid "Home"
 msgstr "Accueil"
 
 msgid "Gateway configuration"
-msgstr ""
+msgstr "Configuration de la passerelle"
 
 msgid "Commands"
 msgstr "Commande"
@@ -56,19 +56,19 @@ msgid "Sent"
 msgstr "Envoyé"
 
 msgid "Received"
-msgstr ""
+msgstr "Reçu"
 
 msgid "No SMSes to display"
-msgstr ""
+msgstr "Aucun SMS à afficher"
 
 msgid "Show"
 msgstr "Afficher"
 
 msgid "per page"
-msgstr ""
+msgstr "par page"
 
 msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr ""
+msgstr "Affichage de {{premierItem}}-{{dernierItem}} du {{total}}"
 
 msgid "Previous"
 msgstr "Précédent"
@@ -77,13 +77,13 @@ msgid "Page"
 msgstr "Page"
 
 msgid "of {{pageCount}}"
-msgstr ""
+msgstr "de {{nombre de pages}}"
 
 msgid "Next"
 msgstr "Suivant"
 
 msgid "No error message was provided"
-msgstr ""
+msgstr "Aucun message d'erreur n'a été fourni"
 
 msgid "Add special character"
 msgstr "Ajouter un caractère spécial"
@@ -101,7 +101,7 @@ msgid "Completeness method"
 msgstr "Méthode de complétude"
 
 msgid "Receive all data values"
-msgstr ""
+msgstr "Recevoir toutes les valeurs de données"
 
 msgid "Receive at least one data value"
 msgstr "Recevoir au moins une valeur de données"
@@ -110,7 +110,7 @@ msgid "Do not mark as complete"
 msgstr "Ne pas marquer comme terminé"
 
 msgid "Confirm message"
-msgstr ""
+msgstr "Confirmer le message"
 
 msgid "Edit formula"
 msgstr "Editer la formule"
@@ -137,7 +137,7 @@ msgid "formula operator"
 msgstr "opérateur de formule"
 
 msgid "Something went wrong whilst saving"
-msgstr ""
+msgstr "Un problème est survenu lors de la sauvegarde"
 
 msgid "Remove"
 msgstr "Supprimer"
@@ -152,7 +152,7 @@ msgid "Reply message if no codes are sent (only the command)"
 msgstr "Répondre au message si aucun code n'est envoyé (seule la commande)"
 
 msgid "More than one orgunit message"
-msgstr ""
+msgstr "Plus d'un message d'orgunit"
 
 msgid "No user message"
 msgstr "Aucun message utilisateur"
@@ -161,25 +161,25 @@ msgid "Parser"
 msgstr "Analyseur syntaxique"
 
 msgid "Key value parser"
-msgstr ""
+msgstr "Analyseur syntaxique de valeur de clé"
 
 msgid "J2ME parser"
-msgstr ""
+msgstr "Analyseur syntaxique J2ME"
 
 msgid "Alert parser"
-msgstr ""
+msgstr "Analyseur syntaxique d'alertes"
 
 msgid "Unregistered parser"
-msgstr ""
+msgstr "Analyseur non enregistré"
 
 msgid "Tracked entity registration parser"
 msgstr "Analyseur d'enregistrement d'entités suivies"
 
 msgid "Program stage data entry parser"
-msgstr ""
+msgstr "Analyseur de saisie de données par étapes de programme"
 
 msgid "Event registration parser"
-msgstr ""
+msgstr "Analyseur d'enregistrement d'événements"
 
 msgid "Program"
 msgstr "Programme"
@@ -197,10 +197,10 @@ msgid "Special character value"
 msgstr "Valeur du caractère spécial"
 
 msgid "Success message"
-msgstr ""
+msgstr "Message de confirmation"
 
 msgid "Use current period for reporting"
-msgstr ""
+msgstr "Utiliser la période en cours pour les rapports"
 
 msgid "Wrong format message"
 msgstr "Message de mauvais format"
@@ -212,13 +212,13 @@ msgid "Something went wrong whilst loading the sms command"
 msgstr "Une erreur s'est produite lors du chargement de la commande sms"
 
 msgid "Something went wrong whilst loading the command's details"
-msgstr ""
+msgstr "Un problème est survenu lors du chargement des détails de la commande"
 
 msgid "Special characters"
-msgstr ""
+msgstr "Caractères spéciaux"
 
 msgid "Duplicate value!"
-msgstr ""
+msgstr "Valeur dupliquée !"
 
 msgid "Something went wrong whilst submitting the form"
 msgstr "Une erreur s'est produite lors de l'envoi du formulaire"
@@ -227,7 +227,7 @@ msgid "Add command"
 msgstr "Ajouter commande"
 
 msgid "Automatically selected by selecting a program"
-msgstr ""
+msgstr "Sélection automatique lors de la sélection d'un programme"
 
 msgid "Something went wrong whilst loading commands"
 msgstr "Une erreur s'est produite lors du chargement des commandes"
@@ -242,7 +242,7 @@ msgid "Could not find the requested parser type"
 msgstr "Impossible de trouver le type de parseur demandé"
 
 msgid "Something went wrong whilst performing the requested operation"
-msgstr ""
+msgstr "Un problème est survenu lors de l'exécution de l'opération demandée"
 
 msgid ""
 "SMS commands process SMS messages received by a DHIS2 instance, taking "
@@ -251,6 +251,12 @@ msgid ""
 "configure SMS commands below. Read about SMS commands in the DHIS2 "
 "documentation."
 msgstr ""
+"Les commandes SMS traitent les messages SMS reçus par une instance du DHIS2,"
+" en effectuant certaines actions en fonction de la commande et du contenu du"
+" message. Plusieurs commandes SMS peuvent être configurées pour traiter et "
+"gérer les données de plusieurs manières. Ajoutez et configurez les commandes"
+" SMS ci-dessous. Vous trouverez des informations sur les commandes SMS dans "
+"la documentation DHIS2."
 
 msgid "Delete selected"
 msgstr "Supprimer la sélection"
@@ -271,37 +277,37 @@ msgid "Add key value pair"
 msgstr "Ajouter une paire clé valeur"
 
 msgid "Auth token"
-msgstr ""
+msgstr "Token d'authentification"
 
 msgid "Bind type"
-msgstr ""
+msgstr "Type de liaison (Bind)"
 
 msgid "Compressed"
-msgstr ""
+msgstr "Compressé"
 
 msgid "Configuration template"
-msgstr ""
+msgstr "Modèle de configuration"
 
 msgid "Please refer to the documentation for possible values"
-msgstr ""
+msgstr "Veuillez vous référer à la documentation pour les valeurs possibles"
 
 msgid "Application/json"
-msgstr ""
+msgstr "Application/json"
 
 msgid "Application/xml"
-msgstr ""
+msgstr "Application/xml"
 
 msgid "Form url encoded"
-msgstr ""
+msgstr "URL du formulaire encodée"
 
 msgid "Plain text"
-msgstr ""
+msgstr "Texte simple"
 
 msgid "Content type"
-msgstr ""
+msgstr "Type de contenu"
 
 msgid "Host"
-msgstr ""
+msgstr "Hébergeur"
 
 msgid "Key"
 msgstr "Clé"
@@ -310,7 +316,7 @@ msgid "Send as header"
 msgstr "Envoyer comme entête"
 
 msgid "Encode"
-msgstr ""
+msgstr "Encoder"
 
 msgid "Confidential"
 msgstr "Confidentiel"
@@ -322,7 +328,7 @@ msgid "Value"
 msgstr "Valeur"
 
 msgid "Number plan indicator"
-msgstr ""
+msgstr "Indicateur de plan de numérotation"
 
 msgid "Password"
 msgstr "Mot de passe"
@@ -334,25 +340,27 @@ msgid "Port"
 msgstr "Port"
 
 msgid "Send url parameters"
-msgstr ""
+msgstr "Envoyer les paramètres de l'URL"
 
 msgid "System id"
-msgstr ""
+msgstr "Identifiant du système"
 
 msgid "System type"
-msgstr ""
+msgstr "Type de système"
 
 msgid "Type of number"
-msgstr ""
+msgstr "Type de numéro"
 
 msgid "Url template"
-msgstr ""
+msgstr "Modèle d'URL"
 
 msgid "Use GET"
-msgstr ""
+msgstr "Utiliser GET"
 
 msgid "Use GET instead of POST to send data to gateway"
 msgstr ""
+"Utilisez GET (OBTENIR) au lieu de POST (POSTER) pour envoyer des données à "
+"la passerelle."
 
 msgid "User name"
 msgstr "Nom d'utilisateur"
@@ -373,37 +381,37 @@ msgid "Type"
 msgstr "Type"
 
 msgid "Generic"
-msgstr ""
+msgstr "Générique"
 
 msgid "BulkSMS"
-msgstr ""
+msgstr "BulkSMS"
 
 msgid "Clickatell"
-msgstr ""
+msgstr "Clickatell"
 
 msgid "SMPP"
-msgstr ""
+msgstr "SMPP"
 
 msgid "Something went wrong whilst saving the gateway"
-msgstr ""
+msgstr "Un problème est survenu lors de la sauvegarde de la passerelle"
 
 msgid "Something went wrong whilst loading gateways"
-msgstr ""
+msgstr "Un problème est survenu lors du chargement des passerelles"
 
 msgid "Edit gateway"
-msgstr ""
+msgstr "Modifier la passerelle"
 
 msgid "Something went wrong whilst saving gateways"
-msgstr ""
+msgstr "Un problème est survenu lors de la sauvegarde des passerelles"
 
 msgid "Gateway not found"
-msgstr ""
+msgstr "Passerelle introuvable"
 
 msgid "The requested gateway could not be loaded"
-msgstr ""
+msgstr "La passerelle demandée n'a pas pu être chargée"
 
 msgid "Make default"
-msgstr ""
+msgstr "Considérer comme défaut"
 
 msgid "Default gateway"
 msgstr "Passerelle par défaut"
@@ -415,23 +423,31 @@ msgid ""
 "all gateways if there are multiple available. Read about gateway "
 "configuration in the DHIS2 documentation."
 msgstr ""
+"Une passerelle SMS permet à une instance du DHIS2 d'envoyer et de recevoir "
+"des messages SMS. Différents types de passerelles peuvent être ajoutés et "
+"configurés ci-dessous. Au moins une passerelle est nécessaire pour envoyer "
+"et recevoir des messages SMS. L'équilibrage de charge utilisera toutes les "
+"passerelles si plusieurs sont disponibles. Vous trouverez des informations "
+"sur la configuration des passerelles dans la documentation DHIS2."
 
 msgid "No gateways found"
-msgstr ""
+msgstr "Aucune passerelle n'a été trouvée"
 
 msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
 msgstr ""
+"Il semblerait qu'il n'y ait pas de passerelles configurées, ou qu'elles "
+"n'aient pas pu être chargées."
 
 msgid "Are you sure you want to delete the selected gateways?"
 msgstr "Vous êtes sûre de vouloir supprimer la passerelle sélectionnée?"
 
 msgid "Filter by status"
-msgstr ""
+msgstr "Filtrer par statut"
 
 msgid "Filter by phone number"
-msgstr ""
+msgstr "Filtrer par numéro de téléphone"
 
 msgid "Reset filter"
 msgstr "Réinitialiser le filtre"
@@ -452,10 +468,10 @@ msgid "Unknown"
 msgstr "Inconnu"
 
 msgid "Something went wrong whilst loading received SMSes"
-msgstr ""
+msgstr "Un problème est survenu lors du chargement des SMS reçus"
 
 msgid "Are you sure you want to delete the selected sms?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir supprimer les sms sélectionnés ?"
 
 msgid "All"
 msgstr "Tout"
@@ -479,10 +495,10 @@ msgid "Recipients"
 msgstr "Destinataires"
 
 msgid "Something went wrong whilst loading sent SMSes"
-msgstr ""
+msgstr "Un problème est survenu lors du chargement des SMS envoyés"
 
 msgid "Delivered"
-msgstr ""
+msgstr "Délivré"
 
 msgid "Error"
 msgstr "Erreur"
@@ -497,12 +513,14 @@ msgid "Scheduled"
 msgstr "Programmé"
 
 msgid "Overview: SMS Configuration"
-msgstr ""
+msgstr "Aperçu : Configuration des SMS"
 
 msgid ""
 "Configure settings for SMS sending, receiving, data reporting, alerts, "
 "registration and more."
 msgstr ""
+"Configurer les paramètres pour l'envoi et la réception de SMS, les rapports "
+"de données, les alertes, l'enregistrement et bien plus encore."
 
 msgid "Gateway Configuration"
 msgstr "Configuration de la passerelle"
@@ -510,9 +528,11 @@ msgstr "Configuration de la passerelle"
 msgid ""
 "Add and manage gateways for sending and receiving SMS messages in DHIS2."
 msgstr ""
+"Ajouter et gérer des passerelles pour l'envoi et la réception de messages "
+"SMS dans le DHIS2."
 
 msgid "Set up gateways"
-msgstr ""
+msgstr "Configurer les passerelles"
 
 msgid "SMS Commands"
 msgstr "Commandes SMS"
@@ -521,24 +541,26 @@ msgid ""
 "Add and manage commands triggered by incoming SMS messages to register, "
 "alert and more."
 msgstr ""
+"Ajouter et gérer des commandes déclenchées par des SMS entrants pour "
+"enregistrer, alerter et bien plus encore."
 
 msgid "Set up SMS commands"
-msgstr ""
+msgstr "Configurer les commandes SMS"
 
 msgid "Sent SMS messages"
-msgstr ""
+msgstr "Messages SMS envoyés"
 
 msgid "Open logs of all SMS messages sent from DHIS2."
-msgstr ""
+msgstr "Ouvrir les logs de tous les messages SMS envoyés à partir du DHIS2."
 
 msgid "View all sent SMS"
-msgstr ""
+msgstr "Voir tous les SMS envoyés"
 
 msgid "Received SMS messages"
-msgstr ""
+msgstr "Messages SMS reçus"
 
 msgid "Open logs of all SMS messages received by DHIS2."
-msgstr ""
+msgstr "Ouvrir les logs de tous les messages SMS reçus par le DHIS2."
 
 msgid "View all received SMS"
-msgstr ""
+msgstr "Voir tous les SMS reçus"
