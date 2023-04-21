@@ -21,6 +21,10 @@ export const Pagination = ({ page, pageCount, pageSize, total }) => {
         setQueryParams({ pageSize, page: 1 })
     }
 
+    if (pageCount === 0) {
+        return null
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.verticalAlign}>
