@@ -1,3 +1,10 @@
+## [100.0.22](https://github.com/dhis2/sms-configuration-app/compare/v100.0.21...v100.0.22) (2023-04-24)
+
+
+### Bug Fixes
+
+* hide pagination when pageCount==0 ([85a8561](https://github.com/dhis2/sms-configuration-app/commit/85a8561e20e30da4e4723fe3d766cf24d20cde33))
+
 ## [100.0.21](https://github.com/dhis2/sms-configuration-app/compare/v100.0.20...v100.0.21) (2022-11-30)
 
 
