@@ -255,7 +255,7 @@ msgid "Sms command"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
+msgstr "වෙනස් කරන්න"
 
 msgid "No commands to display"
 msgstr ""
@@ -312,7 +312,7 @@ msgid "Remove key value pair"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "අගය"
 
 msgid "Number plan indicator"
 msgstr ""
@@ -451,7 +451,7 @@ msgid "Are you sure you want to delete the selected sms?"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "සියල්ල"
 
 msgid "Failed"
 msgstr ""
@@ -478,7 +478,7 @@ msgid "Delivered"
 msgstr ""
 
 msgid "Error"
-msgstr ""
+msgstr "දෝෂය"
 
 msgid "Outbound"
 msgstr ""
