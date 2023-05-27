@@ -88,7 +88,7 @@ msgid "SMS short codes"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "නම"
 
 msgid "Completeness method"
 msgstr ""
@@ -136,7 +136,7 @@ msgid "Remove"
 msgstr "ඉවත් කරන්"
 
 msgid "Save"
-msgstr ""
+msgstr "සුරකින්න"
 
 msgid "Data set"
 msgstr ""
@@ -430,7 +430,7 @@ msgid "Reset filter"
 msgstr ""
 
 msgid "Message"
-msgstr ""
+msgstr "පණිවිඩය"
 
 msgid "Phone number"
 msgstr ""
@@ -439,7 +439,7 @@ msgid "Status"
 msgstr ""
 
 msgid "Sender"
-msgstr ""
+msgstr "යවන්නා"
 
 msgid "Unknown"
 msgstr ""
@@ -454,7 +454,7 @@ msgid "All"
 msgstr "සියල්ල"
 
 msgid "Failed"
-msgstr ""
+msgstr "අසාර්ථකයි"
 
 msgid "Incoming"
 msgstr ""
