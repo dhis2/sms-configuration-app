@@ -133,7 +133,7 @@ msgid "Something went wrong whilst saving"
 msgstr ""
 
 msgid "Remove"
-msgstr "ඉවත් කරන්"
+msgstr "ඉවත් කරන්න"
 
 msgid "Save"
 msgstr "සුරකින්න"
@@ -318,7 +318,7 @@ msgid "Number plan indicator"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "රහස්‍ය පදය"
 
 msgid "Confirm password"
 msgstr ""
