@@ -57,7 +57,7 @@ msgid "No SMSes to display"
 msgstr ""
 
 msgid "Show"
-msgstr ""
+msgstr "Tonen"
 
 msgid "per page"
 msgstr ""
@@ -180,7 +180,7 @@ msgid "Program"
 msgstr "Programma"
 
 msgid "Program stage"
-msgstr ""
+msgstr "Programma fase"
 
 msgid "Field separator"
 msgstr ""
@@ -432,7 +432,7 @@ msgid "Reset filter"
 msgstr ""
 
 msgid "Message"
-msgstr ""
+msgstr "Bericht"
 
 msgid "Phone number"
 msgstr "Telefoonnummer"
