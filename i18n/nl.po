@@ -66,7 +66,7 @@ msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "Previous"
-msgstr ""
+msgstr "Vorige"
 
 msgid "Page"
 msgstr "Bladzijde"
