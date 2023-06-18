@@ -489,7 +489,7 @@ msgid "Pending"
 msgstr ""
 
 msgid "Scheduled"
-msgstr ""
+msgstr "Gepland"
 
 msgid "Overview: SMS Configuration"
 msgstr ""
