@@ -429,7 +429,7 @@ msgid "Filter by phone number"
 msgstr ""
 
 msgid "Reset filter"
-msgstr ""
+msgstr "Filter resetten"
 
 msgid "Message"
 msgstr "Bericht"
