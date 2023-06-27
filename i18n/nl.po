@@ -320,7 +320,7 @@ msgid "Number plan indicator"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 msgid "Confirm password"
 msgstr ""
