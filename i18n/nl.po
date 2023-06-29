@@ -48,7 +48,7 @@ msgid "Commands"
 msgstr ""
 
 msgid "Sent"
-msgstr ""
+msgstr "Verstuurd"
 
 msgid "Received"
 msgstr ""
@@ -114,7 +114,7 @@ msgid "Add formula"
 msgstr ""
 
 msgid "Formula"
-msgstr ""
+msgstr "Formule"
 
 msgid "Loading formula"
 msgstr ""
@@ -444,7 +444,7 @@ msgid "Sender"
 msgstr ""
 
 msgid "Unknown"
-msgstr ""
+msgstr "Onbekend"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr ""
