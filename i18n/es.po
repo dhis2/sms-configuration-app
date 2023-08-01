@@ -444,7 +444,7 @@ msgid "Status"
 msgstr "Estado"
 
 msgid "Sender"
-msgstr ""
+msgstr "Remitente"
 
 msgid "Unknown"
 msgstr "Desconocido"
@@ -489,7 +489,7 @@ msgid "Outbound"
 msgstr "Saliente"
 
 msgid "Pending"
-msgstr ""
+msgstr "Pendiente"
 
 msgid "Scheduled"
 msgstr "Planificado"
