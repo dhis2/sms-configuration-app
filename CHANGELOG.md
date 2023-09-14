@@ -1,3 +1,10 @@
+## [100.0.38](https://github.com/dhis2/sms-configuration-app/compare/v100.0.37...v100.0.38) (2023-09-14)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ffcc910](https://github.com/dhis2/sms-configuration-app/commit/ffcc9107d5a2bf24e244421259995f5285301d6d))
+
 ## [100.0.37](https://github.com/dhis2/sms-configuration-app/compare/v100.0.36...v100.0.37) (2023-08-01)
 
 
