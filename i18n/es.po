@@ -22,15 +22,16 @@ msgstr ""
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
+"¿Estas seguro que desea cancelar? Los cambios no guardados se perderán"
 
 msgid "No, stay on page"
-msgstr ""
+msgstr "No, permanecer en la página"
 
 msgid "Yes, cancel"
-msgstr ""
+msgstr "Sí, cancelar"
 
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Confirmar eliminación"
 
 msgid "Cancel"
 msgstr "Cancelar"
@@ -45,28 +46,28 @@ msgid "Home"
 msgstr "Inicio"
 
 msgid "Gateway configuration"
-msgstr ""
+msgstr "Configuración de pasarela"
 
 msgid "Commands"
-msgstr ""
+msgstr "Comandos"
 
 msgid "Sent"
 msgstr "Enviado"
 
 msgid "Received"
-msgstr ""
+msgstr "Recibido"
 
 msgid "No SMSes to display"
-msgstr ""
+msgstr "No hay SMS para mostrar"
 
 msgid "Show"
 msgstr "Mostrar"
 
 msgid "per page"
-msgstr ""
+msgstr "por página"
 
 msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr ""
+msgstr "Visualización {{firstItem}}-{{lastItem}} of {{total}}"
 
 msgid "Previous"
 msgstr "Anterior"
@@ -75,67 +76,67 @@ msgid "Page"
 msgstr "Página"
 
 msgid "of {{pageCount}}"
-msgstr ""
+msgstr "de {{pageCount}}"
 
 msgid "Next"
 msgstr "Siguiente"
 
 msgid "No error message was provided"
-msgstr ""
+msgstr "No se proporcionó ningún mensaje de error"
 
 msgid "Add special character"
-msgstr ""
+msgstr "Añadir carácter especial"
 
 msgid "Required values notice"
-msgstr ""
+msgstr "Notificación de valores requeridos"
 
 msgid "SMS short codes"
-msgstr ""
+msgstr "Código corto SMS"
 
 msgid "Name"
 msgstr "Nombre"
 
 msgid "Completeness method"
-msgstr ""
+msgstr "Método de completitud"
 
 msgid "Receive all data values"
-msgstr ""
+msgstr "Recibir todos los valores de datos"
 
 msgid "Receive at least one data value"
-msgstr ""
+msgstr "Recibir al menos un valor de datos"
 
 msgid "Do not mark as complete"
-msgstr ""
+msgstr "No marcar como completado"
 
 msgid "Confirm message"
-msgstr ""
+msgstr "Confirmar mensaje"
 
 msgid "Edit formula"
-msgstr ""
+msgstr "Editar fórmula"
 
 msgid "Add formula"
-msgstr ""
+msgstr "Añadir fórmula"
 
 msgid "Formula"
 msgstr "Fórmula"
 
 msgid "Loading formula"
-msgstr ""
+msgstr "Cargando fórmula"
 
 msgid "default"
-msgstr ""
+msgstr "Predeterminado"
 
 msgid "Formula for {{combo}}"
-msgstr ""
+msgstr "Fórmula para {{combo}}"
 
 msgid "Data element"
 msgstr "Elemento de datos"
 
 msgid "formula operator"
-msgstr ""
+msgstr "operador de fórmula"
 
 msgid "Something went wrong whilst saving"
-msgstr ""
+msgstr "Algo salió mal al momento de guardar"
 
 msgid "Remove"
 msgstr "Eliminar"
@@ -150,10 +151,10 @@ msgid "Reply message if no codes are sent (only the command)"
 msgstr "Mensaje de respuesta si no se envía ningún código (solo el comando)\\:"
 
 msgid "More than one orgunit message"
-msgstr ""
+msgstr "Más de un mensaje de la unidad organizativa"
 
 msgid "No user message"
-msgstr ""
+msgstr "Ningún mensaje de usuario"
 
 msgid "Parser"
 msgstr "Analizador"
@@ -186,61 +187,61 @@ msgid "Program stage"
 msgstr "Etapa de programa"
 
 msgid "Field separator"
-msgstr ""
+msgstr "Separador de campo"
 
 msgid "Special character name"
-msgstr ""
+msgstr "Nombre del carácter especial"
 
 msgid "Special character value"
-msgstr ""
+msgstr "Valor de carácter especial"
 
 msgid "Success message"
-msgstr ""
+msgstr "Mensaje de éxito"
 
 msgid "Use current period for reporting"
-msgstr ""
+msgstr "Utilizar el período actual para los informes"
 
 msgid "Wrong format message"
-msgstr ""
+msgstr "Mensaje con formato incorrecto"
 
 msgid "Save command"
-msgstr ""
+msgstr "Guardar comando"
 
 msgid "Something went wrong whilst loading the sms command"
-msgstr ""
+msgstr "Algo salió mal al cargar el comando SMS"
 
 msgid "Something went wrong whilst loading the command's details"
-msgstr ""
+msgstr "Algo salió mal al cargar los detalles del comando"
 
 msgid "Special characters"
-msgstr ""
+msgstr "Caracteres especiales"
 
 msgid "Duplicate value!"
-msgstr ""
+msgstr "¡Valor duplicado!"
 
 msgid "Something went wrong whilst submitting the form"
-msgstr ""
+msgstr "Algo salió mal al enviar el formulario"
 
 msgid "Add command"
 msgstr "Añadir comando"
 
 msgid "Automatically selected by selecting a program"
-msgstr ""
+msgstr "Selección automática al seleccionar un programa"
 
 msgid "Something went wrong whilst loading commands"
-msgstr ""
+msgstr "Algo salió mal al cargar los comandos"
 
 msgid "Edit command"
-msgstr ""
+msgstr "Editar comando"
 
 msgid "Unrecognised parser type"
-msgstr ""
+msgstr "Tipo de analizador no reconocido"
 
 msgid "Could not find the requested parser type"
-msgstr ""
+msgstr "No se pudo encontrar el tipo de analizador solicitado"
 
 msgid "Something went wrong whilst performing the requested operation"
-msgstr ""
+msgstr "Algo salió mal al realizar la operación solicitada"
 
 msgid ""
 "SMS commands process SMS messages received by a DHIS2 instance, taking "
@@ -249,21 +250,26 @@ msgid ""
 "configure SMS commands below. Read about SMS commands in the DHIS2 "
 "documentation."
 msgstr ""
+"Los comandos SMS procesan los mensajes SMS recibidos por una instancia "
+"DHIS2, realizando ciertas acciones según el comando y el contenido del "
+"mensaje. Se pueden configurar múltiples comandos SMS para procesar y manejar"
+" datos de múltiples maneras. Añada y configure comandos SMS a continuación. "
+"Lea acerca de los comandos SMS en la documentación de DHIS2."
 
 msgid "Delete selected"
 msgstr "Borrar seleccionado"
 
 msgid "Are you sure you want to delete the selected commands?"
-msgstr ""
+msgstr "¿Está seguro de que desea eliminar los comandos seleccionados?"
 
 msgid "Sms command"
-msgstr ""
+msgstr "Comando sms"
 
 msgid "Edit"
 msgstr "Editar"
 
 msgid "No commands to display"
-msgstr ""
+msgstr "No hay comandos para mostrar"
 
 msgid "Add key value pair"
 msgstr ""
@@ -275,7 +281,7 @@ msgid "Bind type"
 msgstr ""
 
 msgid "Compressed"
-msgstr ""
+msgstr "Comprimido"
 
 msgid "Configuration template"
 msgstr ""
