@@ -287,7 +287,7 @@ msgid "Configuration template"
 msgstr ""
 
 msgid "Please refer to the documentation for possible values"
-msgstr ""
+msgstr "Consultar la documentación para los valores posibles"
 
 msgid "Application/json"
 msgstr ""
@@ -299,10 +299,10 @@ msgid "Form url encoded"
 msgstr ""
 
 msgid "Plain text"
-msgstr ""
+msgstr "Texto plano"
 
 msgid "Content type"
-msgstr ""
+msgstr "Tipo de contenido"
 
 msgid "Host"
 msgstr ""
@@ -311,13 +311,13 @@ msgid "Key"
 msgstr "Clave"
 
 msgid "Send as header"
-msgstr ""
+msgstr "Enviar como cabecera"
 
 msgid "Encode"
-msgstr ""
+msgstr "Codificar"
 
 msgid "Confidential"
-msgstr ""
+msgstr "Confidencial"
 
 msgid "Remove key value pair"
 msgstr ""
@@ -344,40 +344,40 @@ msgid "System id"
 msgstr ""
 
 msgid "System type"
-msgstr ""
+msgstr "Tipo de sistema"
 
 msgid "Type of number"
-msgstr ""
+msgstr "Tipo de numero"
 
 msgid "Url template"
-msgstr ""
+msgstr "Plantilla URL"
 
 msgid "Use GET"
-msgstr ""
+msgstr "Utilice GET"
 
 msgid "Use GET instead of POST to send data to gateway"
-msgstr ""
+msgstr "Utilice GET en lugar de POST para enviar datos a la pasarela"
 
 msgid "User name"
 msgstr "Nombre de usuario"
 
 msgid "Save gateway"
-msgstr ""
+msgstr "Guardar pasarela"
 
 msgid "Add gateway"
 msgstr "Añadir pasarela"
 
 msgid "Gateway setup"
-msgstr ""
+msgstr "Configuración de pasarela"
 
 msgid "Key value pairs"
-msgstr ""
+msgstr "Pares clave valor"
 
 msgid "Type"
 msgstr "Tipo"
 
 msgid "Generic"
-msgstr ""
+msgstr "Genérico"
 
 msgid "BulkSMS"
 msgstr ""
@@ -386,31 +386,31 @@ msgid "Clickatell"
 msgstr ""
 
 msgid "SMPP"
-msgstr ""
+msgstr "SMPP"
 
 msgid "Something went wrong whilst saving the gateway"
-msgstr ""
+msgstr "Algo salió mal al guardar la pasarela"
 
 msgid "Something went wrong whilst loading gateways"
-msgstr ""
+msgstr "Algo salió mal al cargar las pasarelas"
 
 msgid "Edit gateway"
-msgstr ""
+msgstr "Editar pasarela"
 
 msgid "Something went wrong whilst saving gateways"
-msgstr ""
+msgstr "Algo salió mal al guardar las pasarelas"
 
 msgid "Gateway not found"
-msgstr ""
+msgstr "Pasarela no encontrada"
 
 msgid "The requested gateway could not be loaded"
-msgstr ""
+msgstr "No se pudo cargar la pasarela solicitada"
 
 msgid "Make default"
 msgstr ""
 
 msgid "Default gateway"
-msgstr ""
+msgstr "Pasarela predeterminada"
 
 msgid ""
 "An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
@@ -421,21 +421,21 @@ msgid ""
 msgstr ""
 
 msgid "No gateways found"
-msgstr ""
+msgstr "No se encontraron pasarelas"
 
 msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
-msgstr ""
+msgstr "Parece que no hay pasarelas configuradas o no se pudieron cargar."
 
 msgid "Are you sure you want to delete the selected gateways?"
-msgstr ""
+msgstr "¿Está seguro de que desea eliminar las pasarelas seleccionadas?"
 
 msgid "Filter by status"
-msgstr ""
+msgstr "Filtrar por estado"
 
 msgid "Filter by phone number"
-msgstr ""
+msgstr "Filtrar por número de teléfono"
 
 msgid "Reset filter"
 msgstr "Restablecer filtro"
@@ -456,10 +456,10 @@ msgid "Unknown"
 msgstr "Desconocido"
 
 msgid "Something went wrong whilst loading received SMSes"
-msgstr ""
+msgstr "Algo salió mal al cargar los SMS recibidos"
 
 msgid "Are you sure you want to delete the selected sms?"
-msgstr ""
+msgstr "¿Está seguro de que desea eliminar los sms seleccionados?"
 
 msgid "All"
 msgstr "Todos"
@@ -480,13 +480,13 @@ msgid "Unhandled"
 msgstr "No soportado"
 
 msgid "Recipients"
-msgstr ""
+msgstr "Destinatarios"
 
 msgid "Something went wrong whilst loading sent SMSes"
-msgstr ""
+msgstr "Algo salió mal al cargar los SMS enviados"
 
 msgid "Delivered"
-msgstr ""
+msgstr "Entregado"
 
 msgid "Error"
 msgstr "Error"
@@ -501,12 +501,14 @@ msgid "Scheduled"
 msgstr "Planificado"
 
 msgid "Overview: SMS Configuration"
-msgstr ""
+msgstr "Visión general: configuración de SMS"
 
 msgid ""
 "Configure settings for SMS sending, receiving, data reporting, alerts, "
 "registration and more."
 msgstr ""
+"Configurar parámetros de envío SMS,  recepción , informes de datos, alertas,"
+" registro y mucho más."
 
 msgid "Gateway Configuration"
 msgstr "Configuración de pasarela"
@@ -514,9 +516,10 @@ msgstr "Configuración de pasarela"
 msgid ""
 "Add and manage gateways for sending and receiving SMS messages in DHIS2."
 msgstr ""
+"Añadir y gestionar pasarelas para enviar y recibir mensajes SMS en DHIS2."
 
 msgid "Set up gateways"
-msgstr ""
+msgstr "Configurar pasarelas"
 
 msgid "SMS Commands"
 msgstr "Comandos SMS"
