@@ -160,16 +160,16 @@ msgid "Parser"
 msgstr "Analizador"
 
 msgid "Key value parser"
-msgstr ""
+msgstr "Analizador de valores clave"
 
 msgid "J2ME parser"
-msgstr ""
+msgstr "Analizador J2ME"
 
 msgid "Alert parser"
-msgstr ""
+msgstr "Analizador de alertas"
 
 msgid "Unregistered parser"
-msgstr ""
+msgstr "Analizador no registrado"
 
 msgid "Tracked entity registration parser"
 msgstr ""
@@ -290,10 +290,10 @@ msgid "Please refer to the documentation for possible values"
 msgstr "Consultar la documentación para los valores posibles"
 
 msgid "Application/json"
-msgstr ""
+msgstr "Aplicación/json"
 
 msgid "Application/xml"
-msgstr ""
+msgstr "Aplicación/xml"
 
 msgid "Form url encoded"
 msgstr ""
@@ -338,7 +338,7 @@ msgid "Port"
 msgstr "Puerto"
 
 msgid "Send url parameters"
-msgstr ""
+msgstr "Enviar parámetros de url"
 
 msgid "System id"
 msgstr ""
@@ -371,7 +371,7 @@ msgid "Gateway setup"
 msgstr "Configuración de pasarela"
 
 msgid "Key value pairs"
-msgstr "Pares clave valor"
+msgstr "Pares clave-valor"
 
 msgid "Type"
 msgstr "Tipo"
@@ -530,22 +530,22 @@ msgid ""
 msgstr ""
 
 msgid "Set up SMS commands"
-msgstr ""
+msgstr "Configuración de comandos SMS"
 
 msgid "Sent SMS messages"
-msgstr ""
+msgstr "Mensajes SMS enviados"
 
 msgid "Open logs of all SMS messages sent from DHIS2."
-msgstr ""
+msgstr "Abrir los logs de todos los mensajes SMS enviados desde DHIS2."
 
 msgid "View all sent SMS"
-msgstr ""
+msgstr "Ver todos los SMS enviados"
 
 msgid "Received SMS messages"
-msgstr ""
+msgstr "Mensajes SMS recibidos"
 
 msgid "Open logs of all SMS messages received by DHIS2."
-msgstr ""
+msgstr "Abrir los logs de todos los mensajes SMS recibidos por DHIS2."
 
 msgid "View all received SMS"
-msgstr ""
+msgstr "Ver todos los SMS recibidos"
