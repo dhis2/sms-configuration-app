@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2021
+# Ibatov <ibatovk@who.int>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
+"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
-msgstr "Ҳақиқатдан ҳам бекор қилмоқчимисиз? Сақланмаган ўзгаришлан ўчирилади."
+msgstr "Ҳақиқатдан ҳам бекор қилмоқчимисиз? Сақланмаган ўзгаришлар ўчирилади."
 
 msgid "No, stay on page"
 msgstr "Йўқ, саҳифада қолиш"
@@ -40,7 +40,7 @@ msgid "Home"
 msgstr "Бош саҳифа"
 
 msgid "Gateway configuration"
-msgstr ""
+msgstr "Шлюз конфигурацияси"
 
 msgid "Commands"
 msgstr "Буйруқлар"
@@ -76,7 +76,7 @@ msgid "Next"
 msgstr "Кейинги"
 
 msgid "No error message was provided"
-msgstr ""
+msgstr "Хатолик тўғрисидаги хабар мавжуд эмас"
 
 msgid "Add special character"
 msgstr "Махсус белгини қўшиш"
@@ -272,10 +272,10 @@ msgid "Auth token"
 msgstr "Калит аутентификацияси"
 
 msgid "Bind type"
-msgstr ""
+msgstr "Боғланиш тури"
 
 msgid "Compressed"
-msgstr ""
+msgstr "Сиқилган"
 
 msgid "Configuration template"
 msgstr "Конфигурация шаблони"
@@ -299,7 +299,7 @@ msgid "Content type"
 msgstr "Таркиб тури"
 
 msgid "Host"
-msgstr ""
+msgstr "Хост"
 
 msgid "Key"
 msgstr "Калит"
@@ -320,7 +320,7 @@ msgid "Value"
 msgstr "Қиймат"
 
 msgid "Number plan indicator"
-msgstr ""
+msgstr "Рақамлаштириш режаси индикатори"
 
 msgid "Password"
 msgstr "Пароль"
@@ -335,13 +335,13 @@ msgid "Send url parameters"
 msgstr "URL параметрларини юборинг"
 
 msgid "System id"
-msgstr ""
+msgstr "Тизим id"
 
 msgid "System type"
-msgstr ""
+msgstr "Тизим тури"
 
 msgid "Type of number"
-msgstr ""
+msgstr "Рақам тури"
 
 msgid "Url template"
 msgstr "URL шаблони"
@@ -380,7 +380,7 @@ msgid "Clickatell"
 msgstr "Clickatell"
 
 msgid "SMPP"
-msgstr ""
+msgstr "SMPP"
 
 msgid "Something went wrong whilst saving the gateway"
 msgstr "Шлюзни сақлаш пайтида хатолик юз берди"
@@ -437,7 +437,7 @@ msgid "Filter by phone number"
 msgstr "Телефон рақамига қараб фильтрлаш"
 
 msgid "Reset filter"
-msgstr ""
+msgstr "Фильтрни қайта созлаш"
 
 msgid "Message"
 msgstr "Хабар"
@@ -458,7 +458,7 @@ msgid "Something went wrong whilst loading received SMSes"
 msgstr "SMSлар юкланишида хатолик юз берди"
 
 msgid "Are you sure you want to delete the selected sms?"
-msgstr ""
+msgstr "Ҳақиқатдан ҳам танланган смс ларни ўчирмоқчимисиз?"
 
 msgid "All"
 msgstr "Барчаси"
