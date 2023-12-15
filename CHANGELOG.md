@@ -1,3 +1,11 @@
+## [100.0.43](https://github.com/dhis2/sms-configuration-app/compare/v100.0.42...v100.0.43) (2023-12-15)
+
+
+### Bug Fixes
+
+* add translation handling where missing [DHIS2-10931] ([1fc3ea7](https://github.com/dhis2/sms-configuration-app/commit/1fc3ea7b01e5eb8589781112cda3179e8cb0db12))
+* add translation handling where missing [DHIS2-10931] ([926059d](https://github.com/dhis2/sms-configuration-app/commit/926059d96dcec595bfd41382998babc19018165a))
+
 ## [100.0.42](https://github.com/dhis2/sms-configuration-app/compare/v100.0.41...v100.0.42) (2023-11-19)
 
 
