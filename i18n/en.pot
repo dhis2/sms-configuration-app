@@ -5,230 +5,239 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
-"PO-Revision-Date: 2021-04-22T07:07:22.554Z\n"
+"POT-Creation-Date: 2023-12-15T11:38:18.978Z\n"
+"PO-Revision-Date: 2023-12-15T11:38:18.978Z\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
-msgstr ""
+msgstr "Are you sure you want to cancel? Unsaved changes will be lost"
 
 msgid "No, stay on page"
-msgstr ""
+msgstr "No, stay on page"
 
 msgid "Yes, cancel"
-msgstr ""
+msgstr "Yes, cancel"
 
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Confirm deletion"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 msgid "Delete"
-msgstr ""
+msgstr "Delete"
 
 msgid "User group"
-msgstr ""
+msgstr "User group"
 
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 msgid "Gateway configuration"
-msgstr ""
+msgstr "Gateway configuration"
 
 msgid "Commands"
-msgstr ""
+msgstr "Commands"
 
 msgid "Sent"
-msgstr ""
+msgstr "Sent"
 
 msgid "Received"
-msgstr ""
+msgstr "Received"
 
 msgid "No SMSes to display"
-msgstr ""
+msgstr "No SMSes to display"
 
 msgid "Show"
-msgstr ""
+msgstr "Show"
 
 msgid "per page"
-msgstr ""
+msgstr "per page"
 
 msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr ""
+msgstr "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
 
 msgid "Previous"
-msgstr ""
+msgstr "Previous"
 
 msgid "Page"
-msgstr ""
+msgstr "Page"
 
 msgid "of {{pageCount}}"
-msgstr ""
+msgstr "of {{pageCount}}"
 
 msgid "Next"
-msgstr ""
+msgstr "Next"
 
 msgid "No error message was provided"
-msgstr ""
+msgstr "No error message was provided"
 
 msgid "Add special character"
-msgstr ""
+msgstr "Add special character"
 
 msgid "Required values notice"
+msgstr "Required values notice"
+
+msgid ""
+"Make sure at least one SMS short code is provided when completeness method "
+"\"{{atLeastOneDataValueLabel}}\" is chosen, otherwise received messages "
+"will not be processed."
 msgstr ""
+"Make sure at least one SMS short code is provided when completeness method "
+"\"{{atLeastOneDataValueLabel}}\" is chosen, otherwise received messages "
+"will not be processed."
 
 msgid "SMS short codes"
-msgstr ""
+msgstr "SMS short codes"
 
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 msgid "Completeness method"
-msgstr ""
+msgstr "Completeness method"
 
 msgid "Receive all data values"
-msgstr ""
+msgstr "Receive all data values"
 
 msgid "Receive at least one data value"
-msgstr ""
+msgstr "Receive at least one data value"
 
 msgid "Do not mark as complete"
-msgstr ""
+msgstr "Do not mark as complete"
 
 msgid "Confirm message"
-msgstr ""
+msgstr "Confirm message"
 
 msgid "Edit formula"
-msgstr ""
+msgstr "Edit formula"
 
 msgid "Add formula"
-msgstr ""
+msgstr "Add formula"
 
 msgid "Formula"
-msgstr ""
+msgstr "Formula"
 
 msgid "Loading formula"
-msgstr ""
+msgstr "Loading formula"
 
 msgid "default"
-msgstr ""
+msgstr "default"
 
 msgid "Formula for {{combo}}"
-msgstr ""
+msgstr "Formula for {{combo}}"
 
 msgid "Data element"
-msgstr ""
+msgstr "Data element"
 
 msgid "formula operator"
-msgstr ""
+msgstr "formula operator"
 
 msgid "Something went wrong whilst saving"
-msgstr ""
+msgstr "Something went wrong whilst saving"
 
 msgid "Remove"
-msgstr ""
+msgstr "Remove"
 
 msgid "Save"
-msgstr ""
+msgstr "Save"
 
 msgid "Data set"
-msgstr ""
+msgstr "Data set"
 
 msgid "Reply message if no codes are sent (only the command)"
-msgstr ""
+msgstr "Reply message if no codes are sent (only the command)"
 
 msgid "More than one orgunit message"
-msgstr ""
+msgstr "More than one orgunit message"
 
 msgid "No user message"
-msgstr ""
+msgstr "No user message"
 
 msgid "Parser"
-msgstr ""
+msgstr "Parser"
 
 msgid "Key value parser"
-msgstr ""
+msgstr "Key value parser"
 
 msgid "J2ME parser"
-msgstr ""
+msgstr "J2ME parser"
 
 msgid "Alert parser"
-msgstr ""
+msgstr "Alert parser"
 
 msgid "Unregistered parser"
-msgstr ""
+msgstr "Unregistered parser"
 
 msgid "Tracked entity registration parser"
-msgstr ""
+msgstr "Tracked entity registration parser"
 
 msgid "Program stage data entry parser"
-msgstr ""
+msgstr "Program stage data entry parser"
 
 msgid "Event registration parser"
-msgstr ""
+msgstr "Event registration parser"
 
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
 msgid "Program stage"
-msgstr ""
+msgstr "Program stage"
 
 msgid "Field separator"
-msgstr ""
+msgstr "Field separator"
 
 msgid "Special character name"
-msgstr ""
+msgstr "Special character name"
 
 msgid "Special character value"
-msgstr ""
+msgstr "Special character value"
 
 msgid "Success message"
-msgstr ""
+msgstr "Success message"
 
 msgid "Use current period for reporting"
-msgstr ""
+msgstr "Use current period for reporting"
 
 msgid "Wrong format message"
-msgstr ""
+msgstr "Wrong format message"
 
 msgid "Save command"
-msgstr ""
+msgstr "Save command"
 
 msgid "Something went wrong whilst loading the sms command"
-msgstr ""
+msgstr "Something went wrong whilst loading the sms command"
 
 msgid "Something went wrong whilst loading the command's details"
-msgstr ""
+msgstr "Something went wrong whilst loading the command's details"
 
 msgid "Special characters"
-msgstr ""
+msgstr "Special characters"
 
 msgid "Duplicate value!"
-msgstr ""
+msgstr "Duplicate value!"
 
 msgid "Something went wrong whilst submitting the form"
-msgstr ""
+msgstr "Something went wrong whilst submitting the form"
 
 msgid "Add command"
-msgstr ""
+msgstr "Add command"
 
 msgid "Automatically selected by selecting a program"
-msgstr ""
+msgstr "Automatically selected by selecting a program"
 
 msgid "Something went wrong whilst loading commands"
-msgstr ""
+msgstr "Something went wrong whilst loading commands"
 
 msgid "Edit command"
-msgstr ""
+msgstr "Edit command"
 
 msgid "Unrecognised parser type"
-msgstr ""
+msgstr "Unrecognised parser type"
 
 msgid "Could not find the requested parser type"
-msgstr ""
+msgstr "Could not find the requested parser type"
 
 msgid "Something went wrong whilst performing the requested operation"
-msgstr ""
+msgstr "Something went wrong whilst performing the requested operation"
 
 msgid ""
 "SMS commands process SMS messages received by a DHIS2 instance, taking "
@@ -237,162 +246,167 @@ msgid ""
 "configure SMS commands below. Read about SMS commands in the DHIS2 "
 "documentation."
 msgstr ""
+"SMS commands process SMS messages received by a DHIS2 instance, taking "
+"certain actions depending on the command and message content. Multiple SMS "
+"commands can be set up to process and handle data in multiple ways. Add and "
+"configure SMS commands below. Read about SMS commands in the DHIS2 "
+"documentation."
 
 msgid "Delete selected"
-msgstr ""
+msgstr "Delete selected"
 
 msgid "Are you sure you want to delete the selected commands?"
-msgstr ""
+msgstr "Are you sure you want to delete the selected commands?"
 
 msgid "Sms command"
-msgstr ""
+msgstr "Sms command"
 
 msgid "Edit"
-msgstr ""
+msgstr "Edit"
 
 msgid "No commands to display"
-msgstr ""
+msgstr "No commands to display"
 
 msgid "Add key value pair"
-msgstr ""
+msgstr "Add key value pair"
 
 msgid "Auth token"
-msgstr ""
+msgstr "Auth token"
 
 msgid "Bind type"
-msgstr ""
+msgstr "Bind type"
 
 msgid "Compressed"
-msgstr ""
+msgstr "Compressed"
 
 msgid "Configuration template"
-msgstr ""
+msgstr "Configuration template"
 
 msgid "Please refer to the documentation for possible values"
-msgstr ""
+msgstr "Please refer to the documentation for possible values"
 
 msgid "Application/json"
-msgstr ""
+msgstr "Application/json"
 
 msgid "Application/xml"
-msgstr ""
+msgstr "Application/xml"
 
 msgid "Form url encoded"
-msgstr ""
+msgstr "Form url encoded"
 
 msgid "Plain text"
-msgstr ""
+msgstr "Plain text"
 
 msgid "Content type"
-msgstr ""
+msgstr "Content type"
 
 msgid "Host"
-msgstr ""
+msgstr "Host"
 
 msgid "Key"
-msgstr ""
+msgstr "Key"
 
 msgid "Send as header"
-msgstr ""
+msgstr "Send as header"
 
 msgid "Encode"
-msgstr ""
+msgstr "Encode"
 
 msgid "Confidential"
-msgstr ""
+msgstr "Confidential"
 
 msgid "Remove key value pair"
-msgstr ""
+msgstr "Remove key value pair"
 
 msgid "Value"
-msgstr ""
+msgstr "Value"
 
 msgid "Number plan indicator"
-msgstr ""
+msgstr "Number plan indicator"
 
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 msgid "Confirm password"
-msgstr ""
+msgstr "Confirm password"
 
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 msgid "Send url parameters"
-msgstr ""
+msgstr "Send url parameters"
 
 msgid "System id"
-msgstr ""
+msgstr "System id"
 
 msgid "System type"
-msgstr ""
+msgstr "System type"
 
 msgid "Type of number"
-msgstr ""
+msgstr "Type of number"
 
 msgid "Url template"
-msgstr ""
+msgstr "Url template"
 
 msgid "Use GET"
-msgstr ""
+msgstr "Use GET"
 
 msgid "Use GET instead of POST to send data to gateway"
-msgstr ""
+msgstr "Use GET instead of POST to send data to gateway"
 
 msgid "User name"
-msgstr ""
+msgstr "User name"
 
 msgid "Save gateway"
-msgstr ""
+msgstr "Save gateway"
 
 msgid "Add gateway"
-msgstr ""
+msgstr "Add gateway"
 
 msgid "Gateway setup"
-msgstr ""
+msgstr "Gateway setup"
 
 msgid "Key value pairs"
-msgstr ""
+msgstr "Key value pairs"
 
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgid "Generic"
-msgstr ""
+msgstr "Generic"
 
 msgid "BulkSMS"
-msgstr ""
+msgstr "BulkSMS"
 
 msgid "Clickatell"
-msgstr ""
+msgstr "Clickatell"
 
 msgid "SMPP"
-msgstr ""
+msgstr "SMPP"
 
 msgid "Something went wrong whilst saving the gateway"
-msgstr ""
+msgstr "Something went wrong whilst saving the gateway"
 
 msgid "Something went wrong whilst loading gateways"
-msgstr ""
+msgstr "Something went wrong whilst loading gateways"
 
 msgid "Edit gateway"
-msgstr ""
+msgstr "Edit gateway"
 
 msgid "Something went wrong whilst saving gateways"
-msgstr ""
+msgstr "Something went wrong whilst saving gateways"
 
 msgid "Gateway not found"
-msgstr ""
+msgstr "Gateway not found"
 
 msgid "The requested gateway could not be loaded"
-msgstr ""
+msgstr "The requested gateway could not be loaded"
 
 msgid "Make default"
-msgstr ""
+msgstr "Make default"
 
 msgid "Default gateway"
-msgstr ""
+msgstr "Default gateway"
 
 msgid ""
 "An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
@@ -401,129 +415,140 @@ msgid ""
 "all gateways if there are multiple available. Read about gateway "
 "configuration in the DHIS2 documentation."
 msgstr ""
+"An SMS gateway lets a DHIS2 instance send and receive SMS messages. "
+"Different gateway types can be added and configured below. At least one "
+"gateway is needed to send and receive SMS messages. Load balancing will use "
+"all gateways if there are multiple available. Read about gateway "
+"configuration in the DHIS2 documentation."
 
 msgid "No gateways found"
-msgstr ""
+msgstr "No gateways found"
 
 msgid ""
 "It looks like there aren't any configured gateways, or they couldn't be "
 "loaded."
 msgstr ""
+"It looks like there aren't any configured gateways, or they couldn't be "
+"loaded."
 
 msgid "Are you sure you want to delete the selected gateways?"
-msgstr ""
+msgstr "Are you sure you want to delete the selected gateways?"
 
 msgid "Filter by status"
-msgstr ""
+msgstr "Filter by status"
 
 msgid "Filter by phone number"
-msgstr ""
+msgstr "Filter by phone number"
 
 msgid "Reset filter"
-msgstr ""
+msgstr "Reset filter"
 
 msgid "Message"
-msgstr ""
+msgstr "Message"
 
 msgid "Phone number"
-msgstr ""
+msgstr "Phone number"
 
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 msgid "Sender"
-msgstr ""
+msgstr "Sender"
 
 msgid "Unknown"
-msgstr ""
+msgstr "Unknown"
 
 msgid "Something went wrong whilst loading received SMSes"
-msgstr ""
+msgstr "Something went wrong whilst loading received SMSes"
 
 msgid "Are you sure you want to delete the selected sms?"
-msgstr ""
+msgstr "Are you sure you want to delete the selected sms?"
 
 msgid "All"
-msgstr ""
+msgstr "All"
 
 msgid "Failed"
-msgstr ""
+msgstr "Failed"
 
 msgid "Incoming"
-msgstr ""
+msgstr "Incoming"
 
 msgid "Processed"
-msgstr ""
+msgstr "Processed"
 
 msgid "Processing"
-msgstr ""
+msgstr "Processing"
 
 msgid "Unhandled"
-msgstr ""
+msgstr "Unhandled"
 
 msgid "Recipients"
-msgstr ""
+msgstr "Recipients"
 
 msgid "Something went wrong whilst loading sent SMSes"
-msgstr ""
+msgstr "Something went wrong whilst loading sent SMSes"
 
 msgid "Delivered"
-msgstr ""
+msgstr "Delivered"
 
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 msgid "Outbound"
-msgstr ""
+msgstr "Outbound"
 
 msgid "Pending"
-msgstr ""
+msgstr "Pending"
 
 msgid "Scheduled"
-msgstr ""
+msgstr "Scheduled"
 
 msgid "Overview: SMS Configuration"
-msgstr ""
+msgstr "Overview: SMS Configuration"
 
 msgid ""
 "Configure settings for SMS sending, receiving, data reporting, alerts, "
 "registration and more."
 msgstr ""
+"Configure settings for SMS sending, receiving, data reporting, alerts, "
+"registration and more."
 
 msgid "Gateway Configuration"
-msgstr ""
+msgstr "Gateway Configuration"
 
 msgid "Add and manage gateways for sending and receiving SMS messages in DHIS2."
-msgstr ""
+msgstr "Add and manage gateways for sending and receiving SMS messages in DHIS2."
 
 msgid "Set up gateways"
-msgstr ""
+msgstr "Set up gateways"
 
 msgid "SMS Commands"
-msgstr ""
+msgstr "SMS Commands"
 
 msgid ""
 "Add and manage commands triggered by incoming SMS messages to register, "
 "alert and more."
 msgstr ""
+"Add and manage commands triggered by incoming SMS messages to register, "
+"alert and more."
 
 msgid "Set up SMS commands"
-msgstr ""
+msgstr "Set up SMS commands"
 
 msgid "Sent SMS messages"
-msgstr ""
+msgstr "Sent SMS messages"
 
 msgid "Open logs of all SMS messages sent from DHIS2."
-msgstr ""
+msgstr "Open logs of all SMS messages sent from DHIS2."
 
 msgid "View all sent SMS"
-msgstr ""
+msgstr "View all sent SMS"
 
 msgid "Received SMS messages"
-msgstr ""
+msgstr "Received SMS messages"
 
 msgid "Open logs of all SMS messages received by DHIS2."
-msgstr ""
+msgstr "Open logs of all SMS messages received by DHIS2."
 
 msgid "View all received SMS"
-msgstr ""
+msgstr "View all received SMS"
