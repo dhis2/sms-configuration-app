@@ -564,3 +564,12 @@ msgstr "Ouvrir les logs de tous les messages SMS reçus par le DHIS2."
 
 msgid "View all received SMS"
 msgstr "Voir tous les SMS reçus"
+
+msgid ""
+"Make sure at least one SMS short code is provided when completeness method "
+"\"{{atLeastOneDataValueLabel}}\" is chosen, otherwise received messages "
+"will not be processed."
+msgstr ""
+"Assurez-vous qu'au moins un code court SMS est fourni quand la méthode "
+"de complétude \"{{atLeastOneDataValueLabel}}\" est choisie; sinon les "
+" messages reçus ne seront pas traités."

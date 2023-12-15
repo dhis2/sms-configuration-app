@@ -17,7 +17,7 @@ import { useSetDefaultGatewayMutation } from './useSetDefaultGatewayMutation.js'
 import styles from './ViewSmsGatewayList.module.css'
 
 export const GATEWAY_CONFIG_LIST_PATH = '/sms-gateway'
-export const GATEWAY_CONFIG_LIST_LABEL = 'Gateway configuration'
+export const GATEWAY_CONFIG_LIST_LABEL = i18n.t('Gateway configuration')
 
 export const ViewSmsGatewayList = () => {
     const history = useHistory()
