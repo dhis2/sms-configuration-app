@@ -21,9 +21,10 @@ const equalToPassword = createEqualTo(FIELD_PASSWORD_NAME, FIELD_PASSWORD_LABEL)
 
 export const FIELD_PASSWORD_CONFIRMATION_NAME = 'password-confirmation'
 
-export const FieldPasswordConfirmation = ({ editMode }) => (
+export const FieldPasswordConfirmation = ({ editMode, disabled }) => (
     <Field
         required={!editMode}
+        disabled={disabled}
         placeholder={editMode ? '•••••••••' : null}
         type="password"
         dataTest={dataTest('smsgateway-fieldpasswordconfirmation')}
@@ -31,13 +32,14 @@ export const FieldPasswordConfirmation = ({ editMode }) => (
         label={i18n.t('Confirm password')}
         component={InputFieldFF}
         validate={
-            editMode
-                ? equalToPassword
+            disabled
+                ? null
                 : composeValidators(string, hasValue, equalToPassword)
         }
     />
 )
 
 FieldPasswordConfirmation.propTypes = {
+    disabled: PropTypes.bool,
     editMode: PropTypes.bool,
 }

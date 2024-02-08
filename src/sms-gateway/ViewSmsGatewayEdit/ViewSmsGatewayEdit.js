@@ -47,16 +47,11 @@ const getFormComponent = (gatewayType) => {
     throw new Error(`The gateway type does not exist, got "${gatewayType}"`)
 }
 
-const getInitialValues = (gateway) => {
-    if (gateway.type === BULK_SMS_FORM) {
-        return {
-            ...gateway,
-            [FIELD_PASSWORD_CONFIRMATION_NAME]: gateway[FIELD_PASSWORD_NAME],
-        }
-    }
-
-    return gateway
-}
+const getInitialValues = (gateway) => ({
+    ...gateway,
+    password: null,
+    authToken: null,
+})
 
 export const ViewSmsGatewayEdit = () => {
     const history = useHistory()

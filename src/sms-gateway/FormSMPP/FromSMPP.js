@@ -1,10 +1,11 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
-import React from 'react'
+import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
 import { FormRow, dataTest } from '../../shared/index.js'
 import { FieldBindType } from '../FieldBindType/index.js'
 import { FieldCompressed } from '../FieldCompressed/index.js'
+import { FieldEditPassword } from '../FieldEditPassword/index.js'
 import { FieldGatewayName } from '../FieldGatewayName/index.js'
 import { FieldHost } from '../FieldHost/index.js'
 import { FieldNumberPlanIndicator } from '../FieldNumberPlanIndicator/index.js'
@@ -25,6 +26,7 @@ export const FormSMPP = ({
     const submitText = initialValues
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
+    const [allowPasswordEdit, setAllowPasswordEdit] = useState(!editMode)
 
     return (
         <Form
@@ -70,7 +72,19 @@ export const FormSMPP = ({
                     </FormRow>
 
                     <FormRow>
-                        <FieldPassword editMode={editMode} />
+                        <FieldEditPassword
+                            editMode={editMode}
+                            authTokenType={false}
+                            allowPasswordEdit={allowPasswordEdit}
+                            setAllowPasswordEdit={setAllowPasswordEdit}
+                        />
+                    </FormRow>
+
+                    <FormRow>
+                        <FieldPassword
+                            editMode={editMode}
+                            disabled={!allowPasswordEdit}
+                        />
                     </FormRow>
 
                     <FormRow>

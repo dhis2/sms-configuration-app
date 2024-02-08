@@ -1,8 +1,9 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
-import React from 'react'
+import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
 import { FormRow, dataTest } from '../../shared/index.js'
+import { FieldEditPassword } from '../FieldEditPassword/index.js'
 import { FieldGatewayName } from '../FieldGatewayName/index.js'
 import { FieldPassword } from '../FieldPassword/index.js'
 import { FieldPasswordConfirmation } from '../FieldPasswordConfirmation/index.js'
@@ -19,6 +20,8 @@ export const FormBulkSMS = ({
     const submitText = initialValues
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
+
+    const [allowPasswordEdit, setAllowPasswordEdit] = useState(!editMode)
 
     return (
         <Form
@@ -40,11 +43,26 @@ export const FormBulkSMS = ({
                     </FormRow>
 
                     <FormRow>
-                        <FieldPassword editMode={editMode} />
+                        <FieldEditPassword
+                            editMode={editMode}
+                            authTokenType={false}
+                            allowPasswordEdit={allowPasswordEdit}
+                            setAllowPasswordEdit={setAllowPasswordEdit}
+                        />
                     </FormRow>
 
                     <FormRow>
-                        <FieldPasswordConfirmation editMode={editMode} />
+                        <FieldPassword
+                            editMode={editMode}
+                            disabled={!allowPasswordEdit}
+                        />
+                    </FormRow>
+
+                    <FormRow>
+                        <FieldPasswordConfirmation
+                            editMode={editMode}
+                            disabled={!allowPasswordEdit}
+                        />
                     </FormRow>
 
                     <ButtonStrip>

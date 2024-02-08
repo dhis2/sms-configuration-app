@@ -1,9 +1,10 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
-import React from 'react'
+import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
 import { FormRow, dataTest } from '../../shared/index.js'
 import { FieldAuthToken } from '../FieldAuthToken/index.js'
+import { FieldEditPassword } from '../FieldEditPassword/index.js'
 import { FieldGatewayName } from '../FieldGatewayName/index.js'
 import { FieldUrlTemplate } from '../FieldUrlTemplate/index.js'
 import { FieldUsername } from '../FieldUsername/index.js'
@@ -19,6 +20,8 @@ export const FormClickatell = ({
     const submitText = initialValues
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
+
+    const [allowPasswordEdit, setAllowPasswordEdit] = useState(!editMode)
 
     return (
         <Form
@@ -40,7 +43,19 @@ export const FormClickatell = ({
                     </FormRow>
 
                     <FormRow>
-                        <FieldAuthToken editMode={editMode} />
+                        <FieldEditPassword
+                            editMode={editMode}
+                            authTokenType={true}
+                            allowPasswordEdit={allowPasswordEdit}
+                            setAllowPasswordEdit={setAllowPasswordEdit}
+                        />
+                    </FormRow>
+
+                    <FormRow>
+                        <FieldAuthToken
+                            editMode={editMode}
+                            disabled={!allowPasswordEdit}
+                        />
                     </FormRow>
 
                     <FormRow>

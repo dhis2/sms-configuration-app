@@ -12,9 +12,10 @@ import { dataTest } from '../../shared/index.js'
 
 const { Field } = ReactFinalForm
 
-export const FieldAuthToken = ({ editMode }) => (
+export const FieldAuthToken = ({ editMode, disabled }) => (
     <Field
         required={!editMode}
+        disabled={disabled}
         type="password"
         placeholder={editMode ? '••••••••••••••••••' : null}
         dataTest={dataTest('smsgateway-fieldauthtoken')}
@@ -26,5 +27,6 @@ export const FieldAuthToken = ({ editMode }) => (
 )
 
 FieldAuthToken.propTypes = {
+    disabled: PropTypes.bool,
     editMode: PropTypes.bool,
 }
