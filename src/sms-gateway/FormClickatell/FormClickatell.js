@@ -10,7 +10,12 @@ import { FieldUsername } from '../FieldUsername/index.js'
 
 const { Form } = ReactFinalForm
 
-export const FormClickatell = ({ onCancelClick, onSubmit, initialValues }) => {
+export const FormClickatell = ({
+    onCancelClick,
+    onSubmit,
+    initialValues,
+    editMode,
+}) => {
     const submitText = initialValues
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
@@ -35,7 +40,7 @@ export const FormClickatell = ({ onCancelClick, onSubmit, initialValues }) => {
                     </FormRow>
 
                     <FormRow>
-                        <FieldAuthToken />
+                        <FieldAuthToken editMode={editMode} />
                     </FormRow>
 
                     <FormRow>
@@ -72,5 +77,6 @@ FormClickatell.defaultProps = {
 FormClickatell.propTypes = {
     onCancelClick: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
+    editMode: PropTypes.bool,
     initialValues: PropTypes.object,
 }

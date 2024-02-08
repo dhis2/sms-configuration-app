@@ -4,12 +4,17 @@ export const UPDATE_BULK_SMS_GATEWAY_MUTATION = {
     resource: 'gateways',
     id: ({ id }) => id,
     type: 'update',
-    data: ({ name, username, password }) => ({
-        type: 'bulksms',
-        name,
-        username,
-        password,
-    }),
+    data: ({ name, username, password }) => {
+        const data = {
+            type: 'bulksms',
+            name,
+            username,
+        }
+        if (password) {
+            data.password = password
+        }
+        return data
+    },
 }
 
 export const useUpdateBulkSMSGatewayMutation = () =>

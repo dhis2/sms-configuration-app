@@ -15,19 +15,24 @@ export const UPDATE_SMPP_GATEWAY_MUTATION = {
         port,
         password,
         compressed,
-    }) => ({
-        type: 'smpp',
-        name,
-        systemId,
-        host,
-        systemType,
-        numberPlanIndicator,
-        typeOfNumber,
-        bindType,
-        port,
-        password,
-        compressed,
-    }),
+    }) => {
+        const data = {
+            type: 'smpp',
+            name,
+            systemId,
+            host,
+            systemType,
+            numberPlanIndicator,
+            typeOfNumber,
+            bindType,
+            port,
+            compressed,
+        }
+        if (password) {
+            data.password = password
+        }
+        return data
+    },
 }
 
 export const useUpdateSMPPGatewayMutation = () =>

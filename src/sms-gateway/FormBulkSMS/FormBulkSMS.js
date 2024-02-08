@@ -10,7 +10,12 @@ import { FieldUsername } from '../FieldUsername/index.js'
 
 const { Form } = ReactFinalForm
 
-export const FormBulkSMS = ({ onCancelClick, onSubmit, initialValues }) => {
+export const FormBulkSMS = ({
+    onCancelClick,
+    onSubmit,
+    initialValues,
+    editMode,
+}) => {
     const submitText = initialValues
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
@@ -35,11 +40,11 @@ export const FormBulkSMS = ({ onCancelClick, onSubmit, initialValues }) => {
                     </FormRow>
 
                     <FormRow>
-                        <FieldPassword />
+                        <FieldPassword editMode={editMode} />
                     </FormRow>
 
                     <FormRow>
-                        <FieldPasswordConfirmation />
+                        <FieldPasswordConfirmation editMode={editMode} />
                     </FormRow>
 
                     <ButtonStrip>
@@ -67,10 +72,12 @@ export const FormBulkSMS = ({ onCancelClick, onSubmit, initialValues }) => {
 
 FormBulkSMS.defaultProps = {
     initialValues: {},
+    editMode: false,
 }
 
 FormBulkSMS.propTypes = {
     onCancelClick: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
+    editMode: PropTypes.bool,
     initialValues: PropTypes.object,
 }

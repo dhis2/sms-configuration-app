@@ -16,7 +16,12 @@ import { FieldTypeOfNumber } from '../FieldTypeOfNumber/index.js'
 
 const { Form } = ReactFinalForm
 
-export const FormSMPP = ({ onCancelClick, onSubmit, initialValues }) => {
+export const FormSMPP = ({
+    onCancelClick,
+    onSubmit,
+    initialValues,
+    editMode,
+}) => {
     const submitText = initialValues
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
@@ -65,7 +70,7 @@ export const FormSMPP = ({ onCancelClick, onSubmit, initialValues }) => {
                     </FormRow>
 
                     <FormRow>
-                        <FieldPassword />
+                        <FieldPassword editMode={editMode} />
                     </FormRow>
 
                     <FormRow>
@@ -100,5 +105,6 @@ FormSMPP.defaultProps = {
 FormSMPP.propTypes = {
     onCancelClick: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
+    editMode: PropTypes.bool,
     initialValues: PropTypes.object,
 }
