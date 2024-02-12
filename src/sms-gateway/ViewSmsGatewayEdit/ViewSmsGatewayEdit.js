@@ -8,8 +8,6 @@ import {
     TemplateSidebarNavContent,
     dataTest,
 } from '../../shared/index.js'
-import { FIELD_PASSWORD_NAME } from '../FieldPassword/index.js'
-import { FIELD_PASSWORD_CONFIRMATION_NAME } from '../FieldPasswordConfirmation/index.js'
 import { FormBulkSMS } from '../FormBulkSMS/index.js'
 import { FormClickatell } from '../FormClickatell/index.js'
 import { FormGeneric } from '../FormGeneric/index.js'
