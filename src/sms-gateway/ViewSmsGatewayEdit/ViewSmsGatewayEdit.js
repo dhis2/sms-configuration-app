@@ -178,7 +178,7 @@ export const ViewSmsGatewayEdit = () => {
                                     ? history.push('/sms-gateway')
                                     : setShowCancelDialog(true)
                             }
-                            editMode={true}
+                            editMode
                         />
                     </div>
                 ) : (
