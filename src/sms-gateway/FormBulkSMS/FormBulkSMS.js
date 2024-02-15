@@ -3,7 +3,7 @@ import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
 import { FormRow, dataTest } from '../../shared/index.js'
-import { FieldEditPassword } from '../FieldEditPassword/index.js'
+import { FieldEditConfidential } from '../FieldEditConfidential/index.js'
 import { FieldGatewayName } from '../FieldGatewayName/index.js'
 import { FieldPassword } from '../FieldPassword/index.js'
 import { FieldPasswordConfirmation } from '../FieldPasswordConfirmation/index.js'
@@ -21,7 +21,8 @@ export const FormBulkSMS = ({
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
 
-    const [allowPasswordEdit, setAllowPasswordEdit] = useState(!editMode)
+    const [allowConfidentialFieldEdit, setAllowConfidentialFieldEdit] =
+        useState(!editMode)
 
     return (
         <Form
@@ -43,25 +44,29 @@ export const FormBulkSMS = ({
                     </FormRow>
 
                     <FormRow>
-                        <FieldEditPassword
+                        <FieldEditConfidential
                             editMode={editMode}
-                            authTokenType={false}
-                            allowPasswordEdit={allowPasswordEdit}
-                            setAllowPasswordEdit={setAllowPasswordEdit}
+                            fieldType={i18n.t('password')}
+                            allowConfidentialFieldEdit={
+                                allowConfidentialFieldEdit
+                            }
+                            setAllowConfidentialFieldEdit={
+                                setAllowConfidentialFieldEdit
+                            }
                         />
                     </FormRow>
 
                     <FormRow>
                         <FieldPassword
                             editMode={editMode}
-                            disabled={!allowPasswordEdit}
+                            disabled={!allowConfidentialFieldEdit}
                         />
                     </FormRow>
 
                     <FormRow>
                         <FieldPasswordConfirmation
                             editMode={editMode}
-                            disabled={!allowPasswordEdit}
+                            disabled={!allowConfidentialFieldEdit}
                         />
                     </FormRow>
 

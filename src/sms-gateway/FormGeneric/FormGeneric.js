@@ -14,7 +14,12 @@ import { FieldUseGet } from '../FieldUseGet/index.js'
 
 const { Form } = ReactFinalForm
 
-export const FormGeneric = ({ onCancelClick, onSubmit, initialValues }) => {
+export const FormGeneric = ({
+    onCancelClick,
+    onSubmit,
+    initialValues,
+    editMode,
+}) => {
     const submitText = initialValues
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
@@ -61,7 +66,11 @@ export const FormGeneric = ({ onCancelClick, onSubmit, initialValues }) => {
                     </PageSubHeadline>
 
                     {values.parameters.map((_, index) => (
-                        <FieldKeyValuePair index={index} key={index} />
+                        <FieldKeyValuePair
+                            index={index}
+                            key={index}
+                            editMode={editMode}
+                        />
                     ))}
 
                     <ActionAddKeyValuePair />
@@ -98,5 +107,6 @@ FormGeneric.defaultProps = {
 FormGeneric.propTypes = {
     onCancelClick: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
+    editMode: PropTypes.bool,
     initialValues: PropTypes.object,
 }

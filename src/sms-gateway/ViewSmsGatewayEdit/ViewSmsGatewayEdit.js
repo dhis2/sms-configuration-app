@@ -45,11 +45,19 @@ const getFormComponent = (gatewayType) => {
     throw new Error(`The gateway type does not exist, got "${gatewayType}"`)
 }
 
-const getInitialValues = (gateway) => ({
-    ...gateway,
-    password: null,
-    authToken: null,
-})
+const getInitialValues = (gateway) => {
+    const filteredParameters = gateway?.parameters
+        ? gateway.parameters.map((param) =>
+              param?.confidential ? { ...param, value: null } : param
+          )
+        : null
+    return {
+        ...gateway,
+        password: null,
+        authToken: null,
+        parameters: filteredParameters,
+    }
+}
 
 export const ViewSmsGatewayEdit = () => {
     const history = useHistory()

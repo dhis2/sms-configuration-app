@@ -5,7 +5,7 @@ import i18n from '../../locales/index.js'
 import { FormRow, dataTest } from '../../shared/index.js'
 import { FieldBindType } from '../FieldBindType/index.js'
 import { FieldCompressed } from '../FieldCompressed/index.js'
-import { FieldEditPassword } from '../FieldEditPassword/index.js'
+import { FieldEditConfidential } from '../FieldEditConfidential/index.js'
 import { FieldGatewayName } from '../FieldGatewayName/index.js'
 import { FieldHost } from '../FieldHost/index.js'
 import { FieldNumberPlanIndicator } from '../FieldNumberPlanIndicator/index.js'
@@ -26,7 +26,8 @@ export const FormSMPP = ({
     const submitText = initialValues
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
-    const [allowPasswordEdit, setAllowPasswordEdit] = useState(!editMode)
+    const [allowConfidentialFieldEdit, setAllowConfidentialFieldEdit] =
+        useState(!editMode)
 
     return (
         <Form
@@ -72,18 +73,22 @@ export const FormSMPP = ({
                     </FormRow>
 
                     <FormRow>
-                        <FieldEditPassword
+                        <FieldEditConfidential
                             editMode={editMode}
-                            authTokenType={false}
-                            allowPasswordEdit={allowPasswordEdit}
-                            setAllowPasswordEdit={setAllowPasswordEdit}
+                            fieldType={i18n.t('password')}
+                            allowConfidentialFieldEdit={
+                                allowConfidentialFieldEdit
+                            }
+                            setAllowConfidentialFieldEdit={
+                                setAllowConfidentialFieldEdit
+                            }
                         />
                     </FormRow>
 
                     <FormRow>
                         <FieldPassword
                             editMode={editMode}
-                            disabled={!allowPasswordEdit}
+                            disabled={!allowConfidentialFieldEdit}
                         />
                     </FormRow>
 

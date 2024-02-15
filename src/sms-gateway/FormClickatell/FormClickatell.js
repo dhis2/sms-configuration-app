@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
 import { FormRow, dataTest } from '../../shared/index.js'
 import { FieldAuthToken } from '../FieldAuthToken/index.js'
-import { FieldEditPassword } from '../FieldEditPassword/index.js'
+import { FieldEditConfidential } from '../FieldEditConfidential/index.js'
 import { FieldGatewayName } from '../FieldGatewayName/index.js'
 import { FieldUrlTemplate } from '../FieldUrlTemplate/index.js'
 import { FieldUsername } from '../FieldUsername/index.js'
@@ -21,7 +21,8 @@ export const FormClickatell = ({
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
 
-    const [allowPasswordEdit, setAllowPasswordEdit] = useState(!editMode)
+    const [allowConfidentialFieldEdit, setAllowConfidentialFieldEdit] =
+        useState(!editMode)
 
     return (
         <Form
@@ -43,18 +44,22 @@ export const FormClickatell = ({
                     </FormRow>
 
                     <FormRow>
-                        <FieldEditPassword
+                        <FieldEditConfidential
                             editMode={editMode}
-                            authTokenType={true}
-                            allowPasswordEdit={allowPasswordEdit}
-                            setAllowPasswordEdit={setAllowPasswordEdit}
+                            fieldType={i18n.t('auth token')}
+                            allowConfidentialFieldEdit={
+                                allowConfidentialFieldEdit
+                            }
+                            setAllowConfidentialFieldEdit={
+                                setAllowConfidentialFieldEdit
+                            }
                         />
                     </FormRow>
 
                     <FormRow>
                         <FieldAuthToken
                             editMode={editMode}
-                            disabled={!allowPasswordEdit}
+                            disabled={!allowConfidentialFieldEdit}
                         />
                     </FormRow>
 
