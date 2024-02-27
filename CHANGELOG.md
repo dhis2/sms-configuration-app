@@ -1,3 +1,15 @@
+## [100.0.45](https://github.com/dhis2/sms-configuration-app/compare/v100.0.44...v100.0.45) (2024-02-27)
+
+
+### Bug Fixes
+
+* edit password checkbox ([63b296c](https://github.com/dhis2/sms-configuration-app/commit/63b296c7a2186f60a64776799c98acf379b43b86))
+* filter out empty generic key value pairs ([be26bef](https://github.com/dhis2/sms-configuration-app/commit/be26bef56ae5277455d87a7ee28aa80e67edf312))
+* handle confidential key value pairs in generic form ([b19868d](https://github.com/dhis2/sms-configuration-app/commit/b19868d66581e32a329a3a5497dc312edd823112))
+* handle no password on edit ([2add85e](https://github.com/dhis2/sms-configuration-app/commit/2add85e6cc12f65fcccecd82a9070ddef8ec56bd))
+* remove unnecessary explicit prop true value ([eb986c3](https://github.com/dhis2/sms-configuration-app/commit/eb986c330ebd29a2a3d75dae01e31ec06c7b4e95))
+* remove unused constants ([3bc4874](https://github.com/dhis2/sms-configuration-app/commit/3bc487421ea439fb9cf0c84b896698ea5df95799))
+
 ## [100.0.44](https://github.com/dhis2/sms-configuration-app/compare/v100.0.43...v100.0.44) (2023-12-31)
 
 
