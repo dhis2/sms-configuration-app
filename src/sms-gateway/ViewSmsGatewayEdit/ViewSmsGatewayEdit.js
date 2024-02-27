@@ -8,8 +8,6 @@ import {
     TemplateSidebarNavContent,
     dataTest,
 } from '../../shared/index.js'
-import { FIELD_PASSWORD_NAME } from '../FieldPassword/index.js'
-import { FIELD_PASSWORD_CONFIRMATION_NAME } from '../FieldPasswordConfirmation/index.js'
 import { FormBulkSMS } from '../FormBulkSMS/index.js'
 import { FormClickatell } from '../FormClickatell/index.js'
 import { FormGeneric } from '../FormGeneric/index.js'
@@ -48,14 +46,17 @@ const getFormComponent = (gatewayType) => {
 }
 
 const getInitialValues = (gateway) => {
-    if (gateway.type === BULK_SMS_FORM) {
-        return {
-            ...gateway,
-            [FIELD_PASSWORD_CONFIRMATION_NAME]: gateway[FIELD_PASSWORD_NAME],
-        }
+    const filteredParameters = gateway?.parameters
+        ? gateway.parameters.map((param) =>
+              param?.confidential ? { ...param, value: null } : param
+          )
+        : null
+    return {
+        ...gateway,
+        password: null,
+        authToken: null,
+        parameters: filteredParameters,
     }
-
-    return gateway
 }
 
 export const ViewSmsGatewayEdit = () => {
@@ -185,6 +186,7 @@ export const ViewSmsGatewayEdit = () => {
                                     ? history.push('/sms-gateway')
                                     : setShowCancelDialog(true)
                             }
+                            editMode
                         />
                     </div>
                 ) : (

@@ -35,7 +35,7 @@ export const createGenericGateWayDataFromVariables = ({
     configurationTemplate,
     contentType,
     name,
-    parameters,
+    parameters: parameters.filter((p) => p.confidential || p.value?.length),
     sendUrlParameters,
     urlTemplate,
     useGet,

@@ -16,21 +16,25 @@ const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
 export const createFieldGatewayKeyValuePairValueName = (index) =>
     `parameters[${index}].value`
 
-export const ValueField = ({ index }) => {
+export const ValueField = ({ index, editMode, disabled }) => {
     const { confidential } = useFormState().values.parameters[index]
 
     return (
         <Field
             type={confidential ? 'password' : 'text'}
+            placeholder={editMode && confidential ? '•••••••••' : null}
             dataTest={dataTest('smsgateway-fieldkeyvaluepair-value')}
             name={createFieldGatewayKeyValuePairValueName(index)}
             label={i18n.t('Value')}
             component={InputFieldFF}
-            validate={isStringWithLengthAtLeastOne}
+            validate={editMode ? null : isStringWithLengthAtLeastOne}
+            disabled={disabled}
         />
     )
 }
 
 ValueField.propTypes = {
     index: PropTypes.number.isRequired,
+    disabled: PropTypes.bool,
+    editMode: PropTypes.bool,
 }
