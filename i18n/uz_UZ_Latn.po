@@ -1,13 +1,14 @@
 # 
 # Translators:
 # Yury Rogachev <yury@dhis2.org>, 2021
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
+"POT-Creation-Date: 2024-02-15T12:13:41.848Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -85,6 +86,12 @@ msgstr "Maxsus belgini qoʼshish"
 msgid "Required values notice"
 msgstr "Zaruriy qiymatlar haqida ogohlantirish"
 
+msgid ""
+"Make sure at least one SMS short code is provided when completeness method "
+"\"{{atLeastOneDataValueLabel}}\" is chosen, otherwise received messages will"
+" not be processed."
+msgstr ""
+
 msgid "SMS short codes"
 msgstr "SMS qisqa kodlari"
 
@@ -122,7 +129,7 @@ msgid "default"
 msgstr ""
 
 msgid "Formula for {{combo}}"
-msgstr "{{Kombinatsiyalar}} uchun formula"
+msgstr "{{combo}} uchun formula"
 
 msgid "Data element"
 msgstr "Maʼlumotlar elementi"
@@ -300,7 +307,13 @@ msgstr "Oddiy matn"
 msgid "Content type"
 msgstr "Tarkib turi"
 
+msgid "Edit {{fieldType}}"
+msgstr ""
+
 msgid "Host"
+msgstr ""
+
+msgid "key value pair"
 msgstr ""
 
 msgid "Key"
@@ -363,6 +376,12 @@ msgstr "Yoʼlakni saqlang"
 
 msgid "Add gateway"
 msgstr "Yoʼnalishni qoʼshish"
+
+msgid "password"
+msgstr ""
+
+msgid "auth token"
+msgstr ""
 
 msgid "Gateway setup"
 msgstr "Yoʼnalishni sozlash"
