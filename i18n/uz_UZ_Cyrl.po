@@ -1,13 +1,14 @@
 # 
 # Translators:
 # Ibatov <ibatovk@who.int>, 2023
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
+"POT-Creation-Date: 2024-02-15T12:13:41.848Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,6 +85,12 @@ msgstr "Махсус белгини қўшиш"
 msgid "Required values notice"
 msgstr "Зарурий қийматлар ҳақида огоҳлантириш"
 
+msgid ""
+"Make sure at least one SMS short code is provided when completeness method "
+"\"{{atLeastOneDataValueLabel}}\" is chosen, otherwise received messages will"
+" not be processed."
+msgstr ""
+
 msgid "SMS short codes"
 msgstr "SMS қисқа кодлари"
 
@@ -121,7 +128,7 @@ msgid "default"
 msgstr "Стандарт"
 
 msgid "Formula for {{combo}}"
-msgstr "{{Комбинациялар}} учун формула"
+msgstr "{{combo}} учун формула"
 
 msgid "Data element"
 msgstr "Маълумотлар элементи"
@@ -298,8 +305,14 @@ msgstr "Оддий матн"
 msgid "Content type"
 msgstr "Таркиб тури"
 
+msgid "Edit {{fieldType}}"
+msgstr ""
+
 msgid "Host"
 msgstr "Хост"
+
+msgid "key value pair"
+msgstr ""
 
 msgid "Key"
 msgstr "Калит"
@@ -360,6 +373,12 @@ msgstr "Йўлакни сақланг"
 
 msgid "Add gateway"
 msgstr "Йўлакни қўшинг"
+
+msgid "password"
+msgstr ""
+
+msgid "auth token"
+msgstr ""
 
 msgid "Gateway setup"
 msgstr "Йўналишни созлаш"
