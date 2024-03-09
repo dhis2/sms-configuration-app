@@ -3,14 +3,14 @@
 # Philip Larsen Donnelly, 2020
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 晓东 林 <13981924470@126.com>, 2021
-# easylin <lin_xd@126.com>, 2023
+# easylin <lin_xd@126.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-12-15T11:38:18.978Z\n"
+"POT-Creation-Date: 2024-02-15T12:13:41.848Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2024\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -303,8 +303,14 @@ msgstr "纯文本"
 msgid "Content type"
 msgstr "内容类型"
 
+msgid "Edit {{fieldType}}"
+msgstr "编辑{{fieldType}}"
+
 msgid "Host"
 msgstr "主持人"
+
+msgid "key value pair"
+msgstr "键值对"
 
 msgid "Key"
 msgstr "键值"
@@ -365,6 +371,12 @@ msgstr "保存网关"
 
 msgid "Add gateway"
 msgstr "添加网关"
+
+msgid "password"
+msgstr "密码"
+
+msgid "auth token"
+msgstr "授权令牌"
 
 msgid "Gateway setup"
 msgstr "网关设置"
