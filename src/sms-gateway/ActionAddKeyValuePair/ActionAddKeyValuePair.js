@@ -20,6 +20,7 @@ export const ActionAddKeyValuePair = () => {
                 key: '',
                 value: '',
                 confidential: false,
+                unsaved: true,
             },
         ])
     }
