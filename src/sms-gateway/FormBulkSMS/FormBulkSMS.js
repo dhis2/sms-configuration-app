@@ -2,7 +2,7 @@ import { PropTypes } from '@dhis2/prop-types'
 import { Button, ButtonStrip, ReactFinalForm, CircularLoader } from '@dhis2/ui'
 import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
-import { FormRow, dataTest } from '../../shared/index.js'
+import { FormRow, dataTest, useFeatureToggle } from '../../shared/index.js'
 import { FieldEditConfidential } from '../FieldEditConfidential/index.js'
 import { FieldGatewayName } from '../FieldGatewayName/index.js'
 import { FieldPassword } from '../FieldPassword/index.js'
@@ -21,8 +21,10 @@ export const FormBulkSMS = ({
         ? i18n.t('Save gateway')
         : i18n.t('Add gateway')
 
+    const { disableConfidentialEdit } = useFeatureToggle()
+
     const [allowConfidentialFieldEdit, setAllowConfidentialFieldEdit] =
-        useState(!editMode)
+        useState(disableConfidentialEdit ? !editMode : true)
 
     return (
         <Form
@@ -44,16 +46,18 @@ export const FormBulkSMS = ({
                     </FormRow>
 
                     <FormRow>
-                        <FieldEditConfidential
-                            editMode={editMode}
-                            fieldType={i18n.t('password')}
-                            allowConfidentialFieldEdit={
-                                allowConfidentialFieldEdit
-                            }
-                            setAllowConfidentialFieldEdit={
-                                setAllowConfidentialFieldEdit
-                            }
-                        />
+                        {disableConfidentialEdit && (
+                            <FieldEditConfidential
+                                editMode={editMode}
+                                fieldType={i18n.t('password')}
+                                allowConfidentialFieldEdit={
+                                    allowConfidentialFieldEdit
+                                }
+                                setAllowConfidentialFieldEdit={
+                                    setAllowConfidentialFieldEdit
+                                }
+                            />
+                        )}
                     </FormRow>
 
                     <FormRow>

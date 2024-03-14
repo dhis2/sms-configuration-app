@@ -10,7 +10,7 @@ import {
 } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales/index.js'
-import { dataTest } from '../../shared/index.js'
+import { dataTest, useFeatureToggle } from '../../shared/index.js'
 import styles from './FieldKeyValuePair.module.css'
 import { ValueField } from './ValueField.js'
 
@@ -22,7 +22,8 @@ export const FieldKeyValuePair = ({ index, editMode }) => {
     const currentParameter = getState().values?.parameters?.[index]
     const { confidential: isConfidential, unsaved: isUnsaved } =
         currentParameter ?? {}
-    const isDisabled = isConfidential && !isUnsaved
+    const { disableConfidentialEdit } = useFeatureToggle()
+    const isDisabled = disableConfidentialEdit && isConfidential && !isUnsaved
 
     const removeKeyValueFromFormState = (index) => {
         const { parameters } = getState().values

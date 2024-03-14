@@ -4,15 +4,17 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { HashRouter, Route } from 'react-router-dom'
 import { QueryParamProvider } from 'use-query-params'
-import { AlertHandler } from './shared/components/index.js'
+import { AlertHandler, FeatureToggleProvider } from './shared/index.js'
 
 export const AppWrapper = ({ children }) => (
     <AlertHandler>
         <CssVariables spacers colors />
         <HashRouter>
-            <QueryParamProvider ReactRouterRoute={Route}>
-                {children}
-            </QueryParamProvider>
+            <FeatureToggleProvider>
+                <QueryParamProvider ReactRouterRoute={Route}>
+                    {children}
+                </QueryParamProvider>
+            </FeatureToggleProvider>
         </HashRouter>
     </AlertHandler>
 )

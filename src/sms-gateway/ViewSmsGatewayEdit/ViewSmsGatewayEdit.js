@@ -7,7 +7,10 @@ import {
     PageHeadline,
     TemplateSidebarNavContent,
     dataTest,
+    useFeatureToggle,
 } from '../../shared/index.js'
+import { FIELD_PASSWORD_NAME } from '../FieldPassword/index.js'
+import { FIELD_PASSWORD_CONFIRMATION_NAME } from '../FieldPasswordConfirmation/index.js'
 import { FormBulkSMS } from '../FormBulkSMS/index.js'
 import { FormClickatell } from '../FormClickatell/index.js'
 import { FormGeneric } from '../FormGeneric/index.js'
@@ -45,18 +48,28 @@ const getFormComponent = (gatewayType) => {
     throw new Error(`The gateway type does not exist, got "${gatewayType}"`)
 }
 
-const getInitialValues = (gateway) => {
+const getInitialValues = (gateway, disableConfidentialEdit) => {
     const filteredParameters = gateway?.parameters
         ? gateway.parameters.map((param) =>
-              param?.confidential ? { ...param, value: null } : param
+              param?.confidential
+                  ? {
+                        ...param,
+                        value: disableConfidentialEdit ? null : param?.value,
+                    }
+                  : param
           )
         : null
-    return {
+    const initialValues = {
         ...gateway,
-        password: null,
-        authToken: null,
+        password: disableConfidentialEdit ? null : gateway?.password,
+        authToken: disableConfidentialEdit ? null : gateway?.authToken,
         parameters: filteredParameters,
     }
+    if (!disableConfidentialEdit && gateway.type === BULK_SMS_FORM) {
+        initialValues[FIELD_PASSWORD_CONFIRMATION_NAME] =
+            gateway[FIELD_PASSWORD_NAME]
+    }
+    return initialValues
 }
 
 export const ViewSmsGatewayEdit = () => {
@@ -81,6 +94,8 @@ export const ViewSmsGatewayEdit = () => {
 
     const [saveSMPPGateway, { error: saveSMPPGatewayError }] =
         useUpdateSMPPGatewayMutation()
+
+    const { disableConfidentialEdit } = useFeatureToggle()
 
     const saveError =
         saveGenericGatewayError ||
@@ -150,7 +165,8 @@ export const ViewSmsGatewayEdit = () => {
     }
 
     const FormComponent = getFormComponent(gatewayType)
-    const initialValues = gatewayType && getInitialValues(data.gateway)
+    const initialValues =
+        gatewayType && getInitialValues(data.gateway, disableConfidentialEdit)
 
     return (
         <TemplateSidebarNavContent>
