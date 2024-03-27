@@ -8,18 +8,22 @@ import {
     hasValue,
     string,
 } from '@dhis2/ui'
-import React, { useState } from 'react'
+import React from 'react'
 import i18n from '../../locales/index.js'
-import { dataTest } from '../../shared/index.js'
-import { FieldEditConfidential } from '../FieldEditConfidential/index.js'
+import { dataTest, useFeatureToggle } from '../../shared/index.js'
 import styles from './FieldKeyValuePair.module.css'
 import { ValueField } from './ValueField.js'
 
-const { Field, useField, useForm } = ReactFinalForm
+const { Field, useForm } = ReactFinalForm
 const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)
 
 export const FieldKeyValuePair = ({ index, editMode }) => {
     const { change, getState } = useForm()
+    const currentParameter = getState().values?.parameters?.[index]
+    const { confidential: isConfidential, unsaved: isUnsaved } =
+        currentParameter ?? {}
+    const { disableConfidentialEdit } = useFeatureToggle()
+    const isDisabled = disableConfidentialEdit && isConfidential && !isUnsaved
 
     const removeKeyValueFromFormState = (index) => {
         const { parameters } = getState().values
@@ -34,30 +38,18 @@ export const FieldKeyValuePair = ({ index, editMode }) => {
         }
     }
 
-    const isConfidential = useField(`parameters[${index}].confidential`, {
-        subscription: { value: true },
-    })?.input?.value
-
-    const [allowConfidentialFieldEdit, setAllowConfidentialFieldEdit] =
-        useState(!editMode)
-    const isDisabled = !allowConfidentialFieldEdit && isConfidential
-
     return (
         <div
             className={styles.container}
             data-test={dataTest('smsgateway-fieldkeyvaluepair')}
         >
-            {editMode && isConfidential && (
-                <FieldEditConfidential
-                    editMode={editMode}
-                    fieldType={i18n.t('key value pair')}
-                    allowConfidentialFieldEdit={allowConfidentialFieldEdit}
-                    setAllowConfidentialFieldEdit={
-                        setAllowConfidentialFieldEdit
-                    }
-                />
+            {isDisabled && (
+                <p>
+                    {i18n.t(
+                        'Saved confidential key value pairs can be deleted, but cannot be edited.'
+                    )}
+                </p>
             )}
-
             <div className={styles.textInputs}>
                 <Field
                     dataTest={dataTest('smsgateway-fieldkeyvaluepair-key')}
@@ -119,7 +111,6 @@ export const FieldKeyValuePair = ({ index, editMode }) => {
                 secondary
                 dataTest={dataTest('smsgateway-fieldkeyvaluepair-remove')}
                 onClick={() => removeKeyValueFromFormState(index)}
-                disabled={isDisabled}
             >
                 {i18n.t('Remove key value pair')}
             </Button>
