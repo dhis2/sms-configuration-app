@@ -1,3 +1,12 @@
+## [100.0.48](https://github.com/dhis2/sms-configuration-app/compare/v100.0.47...v100.0.48) (2024-03-27)
+
+
+### Bug Fixes
+
+* add version toggling ([1fec059](https://github.com/dhis2/sms-configuration-app/commit/1fec059a6f138c7b6667cde928a77fd190b7b5be))
+* confidential field issues [DHIS2-10938] ([a28262e](https://github.com/dhis2/sms-configuration-app/commit/a28262ef70d5aae2ff897c25272f4c6e6861046f))
+* missing changes ([3ccb532](https://github.com/dhis2/sms-configuration-app/commit/3ccb53272c112038ee5ac1387745f998e942affb))
+
 ## [100.0.47](https://github.com/dhis2/sms-configuration-app/compare/v100.0.46...v100.0.47) (2024-03-10)
 
 
