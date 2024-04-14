@@ -311,7 +311,7 @@ msgstr "主持人"
 
 msgid ""
 "Saved confidential key value pairs can be deleted, but cannot be edited."
-msgstr ""
+msgstr "已保存的机密键值对可以被删除，但不能被编辑。"
 
 msgid "Key"
 msgstr "键值"
