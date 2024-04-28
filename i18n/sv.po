@@ -1,15 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# Philip Larsen Donnelly, 2020
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Martin <martin@moid.se>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
+"POT-Creation-Date: 2024-03-14T12:02:04.283Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
-"Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
+"Last-Translator: Martin <martin@moid.se>, 2024\n"
+"Language-Team: Swedish (https://app.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,6 +84,12 @@ msgid "Add special character"
 msgstr ""
 
 msgid "Required values notice"
+msgstr ""
+
+msgid ""
+"Make sure at least one SMS short code is provided when completeness method "
+"\"{{atLeastOneDataValueLabel}}\" is chosen, otherwise received messages will"
+" not be processed."
 msgstr ""
 
 msgid "SMS short codes"
@@ -294,7 +301,14 @@ msgstr ""
 msgid "Content type"
 msgstr ""
 
+msgid "Edit {{fieldType}}"
+msgstr ""
+
 msgid "Host"
+msgstr ""
+
+msgid ""
+"Saved confidential key value pairs can be deleted, but cannot be edited."
 msgstr ""
 
 msgid "Key"
@@ -355,6 +369,12 @@ msgid "Save gateway"
 msgstr ""
 
 msgid "Add gateway"
+msgstr ""
+
+msgid "password"
+msgstr ""
+
+msgid "auth token"
 msgstr ""
 
 msgid "Gateway setup"
@@ -488,7 +508,7 @@ msgid "Pending"
 msgstr ""
 
 msgid "Scheduled"
-msgstr ""
+msgstr "Schemalagd"
 
 msgid "Overview: SMS Configuration"
 msgstr ""
