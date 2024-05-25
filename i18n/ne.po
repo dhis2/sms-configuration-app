@@ -1,21 +1,19 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Philip Larsen Donnelly, 2021
-# Yury Rogachev <yury@dhis2.org>, 2024
+# Saroj Dhakal <lotusnagarkot@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-03-14T12:02:04.283Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2024\n"
-"Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
+"Last-Translator: Saroj Dhakal <lotusnagarkot@gmail.com>, 2024\n"
+"Language-Team: Nepali (https://app.transifex.com/hisp-uio/teams/100509/ne/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: ne\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Are you sure you want to cancel? Unsaved changes will be lost"
 msgstr ""
@@ -27,19 +25,19 @@ msgid "Yes, cancel"
 msgstr ""
 
 msgid "Confirm deletion"
-msgstr "Подтвердить удаление"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Отмена"
+msgstr "रद्द गर्नुहोस्"
 
 msgid "Delete"
-msgstr "Удалить"
+msgstr ""
 
 msgid "User group"
-msgstr "Группа пользователей"
+msgstr ""
 
 msgid "Home"
-msgstr "Главная"
+msgstr ""
 
 msgid "Gateway configuration"
 msgstr ""
@@ -48,7 +46,7 @@ msgid "Commands"
 msgstr ""
 
 msgid "Sent"
-msgstr "Отправлено"
+msgstr ""
 
 msgid "Received"
 msgstr ""
@@ -57,7 +55,7 @@ msgid "No SMSes to display"
 msgstr ""
 
 msgid "Show"
-msgstr "Показать"
+msgstr ""
 
 msgid "per page"
 msgstr ""
@@ -66,16 +64,16 @@ msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "Previous"
-msgstr "Предыдущая"
+msgstr ""
 
 msgid "Page"
-msgstr "Страница"
+msgstr ""
 
 msgid "of {{pageCount}}"
 msgstr ""
 
 msgid "Next"
-msgstr "Следующая"
+msgstr ""
 
 msgid "No error message was provided"
 msgstr ""
@@ -96,19 +94,19 @@ msgid "SMS short codes"
 msgstr ""
 
 msgid "Name"
-msgstr "Название"
+msgstr ""
 
 msgid "Completeness method"
-msgstr "Метод проверки целостности"
+msgstr ""
 
 msgid "Receive all data values"
 msgstr ""
 
 msgid "Receive at least one data value"
-msgstr "Получить хотя бы одно значение данных"
+msgstr ""
 
 msgid "Do not mark as complete"
-msgstr "Не отмечать как завершенный"
+msgstr ""
 
 msgid "Confirm message"
 msgstr ""
@@ -120,7 +118,7 @@ msgid "Add formula"
 msgstr ""
 
 msgid "Formula"
-msgstr "Формула"
+msgstr ""
 
 msgid "Loading formula"
 msgstr ""
@@ -132,7 +130,7 @@ msgid "Formula for {{combo}}"
 msgstr ""
 
 msgid "Data element"
-msgstr "Элемент данных"
+msgstr ""
 
 msgid "formula operator"
 msgstr ""
@@ -141,25 +139,25 @@ msgid "Something went wrong whilst saving"
 msgstr ""
 
 msgid "Remove"
-msgstr "Убрать"
+msgstr ""
 
 msgid "Save"
-msgstr "Сохранить"
+msgstr ""
 
 msgid "Data set"
-msgstr "Набор данных"
+msgstr ""
 
 msgid "Reply message if no codes are sent (only the command)"
-msgstr "Ответить на сообщение если не отправлен код (только команда)\\:"
+msgstr ""
 
 msgid "More than one orgunit message"
 msgstr ""
 
 msgid "No user message"
-msgstr "Нет сообщения пользователя"
+msgstr ""
 
 msgid "Parser"
-msgstr "Персер/анализатор\\:"
+msgstr ""
 
 msgid "Key value parser"
 msgstr ""
@@ -174,7 +172,7 @@ msgid "Unregistered parser"
 msgstr ""
 
 msgid "Tracked entity registration parser"
-msgstr "Анализатор регистрации отслеживаемого объекта"
+msgstr ""
 
 msgid "Program stage data entry parser"
 msgstr ""
@@ -183,10 +181,10 @@ msgid "Event registration parser"
 msgstr ""
 
 msgid "Program"
-msgstr "Program"
+msgstr ""
 
 msgid "Program stage"
-msgstr "Этап программы"
+msgstr ""
 
 msgid "Field separator"
 msgstr ""
@@ -204,7 +202,7 @@ msgid "Use current period for reporting"
 msgstr ""
 
 msgid "Wrong format message"
-msgstr "Неправильный формат сообщения"
+msgstr ""
 
 msgid "Save command"
 msgstr ""
@@ -225,7 +223,7 @@ msgid "Something went wrong whilst submitting the form"
 msgstr ""
 
 msgid "Add command"
-msgstr "Добавить комманду"
+msgstr ""
 
 msgid "Automatically selected by selecting a program"
 msgstr ""
@@ -254,7 +252,7 @@ msgid ""
 msgstr ""
 
 msgid "Delete selected"
-msgstr ""
+msgstr "चयन गरिएको मेट्नुहोस्"
 
 msgid "Are you sure you want to delete the selected commands?"
 msgstr ""
@@ -263,7 +261,7 @@ msgid "Sms command"
 msgstr ""
 
 msgid "Edit"
-msgstr "Редактировать"
+msgstr ""
 
 msgid "No commands to display"
 msgstr ""
@@ -321,25 +319,25 @@ msgid "Encode"
 msgstr ""
 
 msgid "Confidential"
-msgstr "Конфиденциально"
+msgstr ""
 
 msgid "Remove key value pair"
 msgstr ""
 
 msgid "Value"
-msgstr "Значение"
+msgstr ""
 
 msgid "Number plan indicator"
 msgstr ""
 
 msgid "Password"
-msgstr "Пароль"
+msgstr ""
 
 msgid "Confirm password"
-msgstr "Подтвердить пароль"
+msgstr ""
 
 msgid "Port"
-msgstr "Порт"
+msgstr ""
 
 msgid "Send url parameters"
 msgstr ""
@@ -363,13 +361,13 @@ msgid "Use GET instead of POST to send data to gateway"
 msgstr ""
 
 msgid "User name"
-msgstr "Имя пользователя"
+msgstr ""
 
 msgid "Save gateway"
 msgstr ""
 
 msgid "Add gateway"
-msgstr "Добавить шлюз"
+msgstr ""
 
 msgid "password"
 msgstr ""
@@ -384,7 +382,7 @@ msgid "Key value pairs"
 msgstr ""
 
 msgid "Type"
-msgstr "Тип"
+msgstr ""
 
 msgid "Generic"
 msgstr ""
@@ -448,22 +446,22 @@ msgid "Filter by phone number"
 msgstr ""
 
 msgid "Reset filter"
-msgstr "Сбросить фильтр"
-
-msgid "Message"
-msgstr "Сообщение"
-
-msgid "Phone number"
-msgstr "Номер телефона"
-
-msgid "Status"
-msgstr "Статус"
-
-msgid "Sender"
 msgstr ""
 
+msgid "Message"
+msgstr "सन्देश"
+
+msgid "Phone number"
+msgstr ""
+
+msgid "Status"
+msgstr "स्थिती"
+
+msgid "Sender"
+msgstr "प्रेषक"
+
 msgid "Unknown"
-msgstr "Неизвестный"
+msgstr ""
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr ""
@@ -472,25 +470,25 @@ msgid "Are you sure you want to delete the selected sms?"
 msgstr ""
 
 msgid "All"
-msgstr "Все"
+msgstr ""
 
 msgid "Failed"
-msgstr "Сбой"
+msgstr ""
 
 msgid "Incoming"
-msgstr "Входящий"
+msgstr ""
 
 msgid "Processed"
-msgstr "Обработан"
+msgstr ""
 
 msgid "Processing"
-msgstr "Обработка"
+msgstr ""
 
 msgid "Unhandled"
-msgstr "Не обработан"
+msgstr ""
 
 msgid "Recipients"
-msgstr "Получатели"
+msgstr ""
 
 msgid "Something went wrong whilst loading sent SMSes"
 msgstr ""
@@ -499,16 +497,16 @@ msgid "Delivered"
 msgstr ""
 
 msgid "Error"
-msgstr "Ошибка"
-
-msgid "Outbound"
-msgstr "Исходящие"
-
-msgid "Pending"
 msgstr ""
 
+msgid "Outbound"
+msgstr ""
+
+msgid "Pending"
+msgstr "थाँती रहेको"
+
 msgid "Scheduled"
-msgstr "Запланировано"
+msgstr ""
 
 msgid "Overview: SMS Configuration"
 msgstr ""
@@ -519,7 +517,7 @@ msgid ""
 msgstr ""
 
 msgid "Gateway Configuration"
-msgstr "Конфигурация шлюза"
+msgstr ""
 
 msgid ""
 "Add and manage gateways for sending and receiving SMS messages in DHIS2."
@@ -529,7 +527,7 @@ msgid "Set up gateways"
 msgstr ""
 
 msgid "SMS Commands"
-msgstr "Команды СМС"
+msgstr ""
 
 msgid ""
 "Add and manage commands triggered by incoming SMS messages to register, "
