@@ -1,3 +1,10 @@
+## [100.0.54](https://github.com/dhis2/sms-configuration-app/compare/v100.0.53...v100.0.54) (2024-10-01)
+
+
+### Bug Fixes
+
+* bump ui version [DHIS2-18119] ([#463](https://github.com/dhis2/sms-configuration-app/issues/463)) ([65de542](https://github.com/dhis2/sms-configuration-app/commit/65de542d8b625e5fd82a29001c8a9374102fef6d))
+
 ## [100.0.53](https://github.com/dhis2/sms-configuration-app/compare/v100.0.52...v100.0.53) (2024-07-24)
 
 
