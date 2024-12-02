@@ -21,7 +21,6 @@ export const ReceivedSmsTable = ({
             i18n.t('Message'),
             i18n.t('Phone number'),
             i18n.t('Status'),
-            i18n.t('Sender'),
             i18n.t('Received'),
         ]}
         rowRenderFn={(message) => (
@@ -33,10 +32,6 @@ export const ReceivedSmsTable = ({
                     </span>
                 </TableCell>
                 <TableCell>{translations[message.smsstatus]}</TableCell>
-                <TableCell>
-                    {message.user?.userCredentials?.username ||
-                        i18n.t('Unknown')}
-                </TableCell>
                 <TableCell>
                     <Date date={message.receiveddate} />
                     {', '}

@@ -23,14 +23,7 @@ const parseParams = ({ page, pageSize, phoneNumber, status }) => {
     const params = {
         page,
         pageSize,
-        fields: [
-            'id',
-            'text',
-            'originator',
-            'smsstatus',
-            'user[userCredentials[username]]', // sender
-            'receiveddate',
-        ],
+        fields: ['id', 'text', 'originator', 'smsstatus', 'receiveddate'],
         order: 'receiveddate:desc',
     }
 
