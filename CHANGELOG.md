@@ -1,3 +1,10 @@
+## [100.0.56](https://github.com/dhis2/sms-configuration-app/compare/v100.0.55...v100.0.56) (2025-01-16)
+
+
+### Bug Fixes
+
+* remove user from smsInbound request [DHIS2-18261] ([#465](https://github.com/dhis2/sms-configuration-app/issues/465)) ([2f1d29f](https://github.com/dhis2/sms-configuration-app/commit/2f1d29f055d625df91336413db17feaa44ccfebb))
+
 ## [100.0.55](https://github.com/dhis2/sms-configuration-app/compare/v100.0.54...v100.0.55) (2024-12-08)
 
 
