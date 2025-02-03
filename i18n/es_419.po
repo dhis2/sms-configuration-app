@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-15T12:13:41.848Z\n"
+"POT-Creation-Date: 2024-12-02T14:06:12.331Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
 "Language-Team: Spanish (Latin America) (https://app.transifex.com/hisp-uio/teams/100509/es_419/)\n"
@@ -306,7 +306,8 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
-msgid "key value pair"
+msgid ""
+"Saved confidential key value pairs can be deleted, but cannot be edited."
 msgstr ""
 
 msgid "Key"
@@ -456,12 +457,6 @@ msgstr ""
 
 msgid "Status"
 msgstr "Estado"
-
-msgid "Sender"
-msgstr ""
-
-msgid "Unknown"
-msgstr "Desconocido"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr ""

@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-15T12:13:41.848Z\n"
+"POT-Creation-Date: 2024-12-02T14:06:12.331Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -318,7 +318,8 @@ msgstr ""
 msgid "Host"
 msgstr "Hébergeur"
 
-msgid "key value pair"
+msgid ""
+"Saved confidential key value pairs can be deleted, but cannot be edited."
 msgstr ""
 
 msgid "Key"
@@ -478,12 +479,6 @@ msgstr "Numéro de téléphone"
 
 msgid "Status"
 msgstr "Statut"
-
-msgid "Sender"
-msgstr "Expéditeur"
-
-msgid "Unknown"
-msgstr "Inconnu"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr "Un problème est survenu lors du chargement des SMS reçus"

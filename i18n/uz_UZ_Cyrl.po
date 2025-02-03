@@ -1,12 +1,12 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2023
+# Khurshid Ibatov <Khurshid.Ibatov@tibbiysugurta.uz>, 2023
 # Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-15T12:13:41.848Z\n"
+"POT-Creation-Date: 2024-12-02T14:06:12.331Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Uzbek (Cyrillic) (https://app.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -311,7 +311,8 @@ msgstr ""
 msgid "Host"
 msgstr "Хост"
 
-msgid "key value pair"
+msgid ""
+"Saved confidential key value pairs can be deleted, but cannot be edited."
 msgstr ""
 
 msgid "Key"
@@ -466,12 +467,6 @@ msgstr "Телефон рақами"
 
 msgid "Status"
 msgstr "Статус"
-
-msgid "Sender"
-msgstr "Юборувчи"
-
-msgid "Unknown"
-msgstr "Номаълум"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr "SMSлар юкланишида хатолик юз берди"
