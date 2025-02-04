@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
+"POT-Creation-Date: 2024-12-02T14:06:12.331Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -84,6 +84,12 @@ msgstr "添加特殊字符"
 
 msgid "Required values notice"
 msgstr "强制值通知"
+
+msgid ""
+"Make sure at least one SMS short code is provided when completeness method "
+"\"{{atLeastOneDataValueLabel}}\" is chosen, otherwise received messages will"
+" not be processed."
+msgstr ""
 
 msgid "SMS short codes"
 msgstr "短信短代码"
@@ -295,7 +301,14 @@ msgstr "纯文本"
 msgid "Content type"
 msgstr "内容类型"
 
+msgid "Edit {{fieldType}}"
+msgstr ""
+
 msgid "Host"
+msgstr ""
+
+msgid ""
+"Saved confidential key value pairs can be deleted, but cannot be edited."
 msgstr ""
 
 msgid "Key"
@@ -357,6 +370,12 @@ msgstr "保存网关"
 
 msgid "Add gateway"
 msgstr "添加网关"
+
+msgid "password"
+msgstr ""
+
+msgid "auth token"
+msgstr ""
 
 msgid "Gateway setup"
 msgstr "网关设置"
@@ -440,12 +459,6 @@ msgstr "电话号码"
 
 msgid "Status"
 msgstr "状态"
-
-msgid "Sender"
-msgstr "发送者"
-
-msgid "Unknown"
-msgstr "未知"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr "加载收到的SMS时出了点问题"

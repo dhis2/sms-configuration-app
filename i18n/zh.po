@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-14T12:02:04.283Z\n"
+"POT-Creation-Date: 2024-12-02T14:06:12.331Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2024\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -461,12 +461,6 @@ msgstr "电话号码"
 
 msgid "Status"
 msgstr "状态"
-
-msgid "Sender"
-msgstr "发送者"
-
-msgid "Unknown"
-msgstr "未知"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr "加载收到的SMS时出了点问题"

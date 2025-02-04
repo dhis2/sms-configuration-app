@@ -1,14 +1,14 @@
 # 
 # Translators:
-# trendspotter <jirka.p@volny.cz>, 2021
+# Jiří Podhorecký <jirka.p@volny.cz>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-04-22T07:07:22.554Z\n"
+"POT-Creation-Date: 2024-12-02T14:06:12.331Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: trendspotter <jirka.p@volny.cz>, 2021\n"
-"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2021\n"
+"Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,6 +83,12 @@ msgstr "Přidat speciální znak"
 
 msgid "Required values notice"
 msgstr "Upozornění na požadované hodnoty"
+
+msgid ""
+"Make sure at least one SMS short code is provided when completeness method "
+"\"{{atLeastOneDataValueLabel}}\" is chosen, otherwise received messages will"
+" not be processed."
+msgstr ""
 
 msgid "SMS short codes"
 msgstr "SMS krátké kódy"
@@ -298,8 +304,15 @@ msgstr "Prostý text"
 msgid "Content type"
 msgstr "Typ obsahu"
 
+msgid "Edit {{fieldType}}"
+msgstr ""
+
 msgid "Host"
 msgstr "Hostitel"
+
+msgid ""
+"Saved confidential key value pairs can be deleted, but cannot be edited."
+msgstr ""
 
 msgid "Key"
 msgstr "Klíč"
@@ -360,6 +373,12 @@ msgstr "Uložit bránu"
 
 msgid "Add gateway"
 msgstr "Přidat bránu"
+
+msgid "password"
+msgstr ""
+
+msgid "auth token"
+msgstr ""
 
 msgid "Gateway setup"
 msgstr "Nastavení brány"
@@ -448,12 +467,6 @@ msgstr "Telefonní číslo"
 
 msgid "Status"
 msgstr "Stav"
-
-msgid "Sender"
-msgstr "Odesílatel"
-
-msgid "Unknown"
-msgstr "Neznámý"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr "Při načítání přijatých SMS se něco pokazilo"

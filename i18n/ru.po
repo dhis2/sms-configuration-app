@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-03-14T12:02:04.283Z\n"
+"POT-Creation-Date: 2024-12-02T14:06:12.331Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/hisp-uio/teams/100509/ru/)\n"
@@ -458,12 +458,6 @@ msgstr "Номер телефона"
 
 msgid "Status"
 msgstr "Статус"
-
-msgid "Sender"
-msgstr ""
-
-msgid "Unknown"
-msgstr "Неизвестный"
 
 msgid "Something went wrong whilst loading received SMSes"
 msgstr ""
