@@ -3,22 +3,18 @@ import { ReactFinalForm } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales/index.js'
 import { ContentLoading, ContentLoadingError } from '../../shared/index.js'
-import { FormComponent } from './FormComponent.js'
-import { getInitialFormState } from './getInitialFormState.js'
-import { useCommandData } from './useCommandData.js'
+import { createInitialValues } from './createInitialValues.js'
+import { createUserGroupOptions } from './createUserGroupOptions.js'
+import { Form as FormComponent } from './Form.jsx'
+import { useAlertDataQuery } from './useAlertDataQuery.js'
 import { useUpdateCommandMutation } from './useUpdateCommandMutation.js'
 
 const { Form } = ReactFinalForm
 
-export const FormProgramStageDataEntryParser = ({
-    commandId,
-    onAfterChange,
-    onCancel,
-}) => {
-    const { loading, error, data } = useCommandData(commandId)
-
+export const FormAlertParser = ({ commandId, onAfterChange, onCancel }) => {
+    const { loading, error, data } = useAlertDataQuery(commandId)
     const updateCommand = useUpdateCommandMutation({
-        commandId,
+        id: commandId,
         onAfterChange,
     })
 
@@ -36,21 +32,8 @@ export const FormProgramStageDataEntryParser = ({
         )
     }
 
-    const command = data?.smsCommand
-    const programStageDataElements =
-        command?.programStage.programStageDataElements
-
-    const initialValues = getInitialFormState(command)
-
-    const selectedProgramOption = {
-        value: command.program.id,
-        label: command.program.displayName,
-    }
-
-    const selectedProgramStageOption = {
-        value: command.programStage.id,
-        label: command.programStage.displayName,
-    }
+    const initialValues = createInitialValues(data.smsCommand)
+    const userGroups = createUserGroupOptions(data.smsCommand.userGroup)
 
     return (
         <Form
@@ -58,12 +41,11 @@ export const FormProgramStageDataEntryParser = ({
             onSubmit={updateCommand}
             initialValues={initialValues}
         >
-            {({ handleSubmit }) => (
+            {({ handleSubmit, pristine }) => (
                 <FormComponent
+                    userGroups={userGroups}
                     handleSubmit={handleSubmit}
-                    selectedProgramOption={selectedProgramOption}
-                    programStageDataElements={programStageDataElements}
-                    selectedProgramStageOption={selectedProgramStageOption}
+                    pristine={pristine}
                     onCancel={onCancel}
                 />
             )}
@@ -71,7 +53,7 @@ export const FormProgramStageDataEntryParser = ({
     )
 }
 
-FormProgramStageDataEntryParser.propTypes = {
+FormAlertParser.propTypes = {
     commandId: PropTypes.string.isRequired,
     onAfterChange: PropTypes.func.isRequired,
     onCancel: PropTypes.func.isRequired,

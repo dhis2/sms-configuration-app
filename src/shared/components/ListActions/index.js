@@ -1,1 +1,1 @@
-export { ListActions } from './ListActions.js'
+export { ListActions } from './ListActions.jsx'

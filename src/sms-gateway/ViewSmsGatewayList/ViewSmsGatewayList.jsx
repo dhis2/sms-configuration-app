@@ -10,7 +10,7 @@ import {
     TemplateSidebarNavContent,
     dataTest,
 } from '../../shared/index.js'
-import { List } from './List.js'
+import { List } from './List.jsx'
 import { useDeleteGatewaysMutation } from './useDeleteGatewaysMutation.js'
 import { useReadGatewaysQuery } from './useReadGatewaysQuery.js'
 import { useSetDefaultGatewayMutation } from './useSetDefaultGatewayMutation.js'

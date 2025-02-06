@@ -4,9 +4,9 @@ import React, { useState } from 'react'
 import i18n from '../../locales/index.js'
 import { dataTest } from '../../shared/index.js'
 import { FIELD_SMS_CODES_NAME } from '../FieldSmsCode/index.js'
-import { AddFormulaButton } from './AddFormulaButton.js'
+import { AddFormulaButton } from './AddFormulaButton.jsx'
 import styles from './FieldDataElementWithCategoryOptionCombo.module.css'
-import { FormulaModalForm } from './FormulaModalForm.js'
+import { FormulaModalForm } from './FormulaModalForm.jsx'
 
 const DE_COC_toFormName = (dataElement, categoryOptionCombo) => {
     const dataElementId = dataElement.id

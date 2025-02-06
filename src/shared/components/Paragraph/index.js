@@ -1,1 +1,1 @@
-export * from './Paragraph.js'
+export * from './Paragraph.jsx'

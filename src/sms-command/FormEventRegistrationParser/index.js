@@ -1,1 +1,1 @@
-export { FormEventRegistrationParser } from './FormEventRegistrationParser.js'
+export { FormEventRegistrationParser } from './FormEventRegistrationParser.jsx'

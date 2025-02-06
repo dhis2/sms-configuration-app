@@ -1,4 +1,4 @@
 export {
     FIELD_CONFIRM_MESSAGE_NAME,
     FieldConfirmMessage,
-} from './FieldConfirmMessage.js'
+} from './FieldConfirmMessage.jsx'

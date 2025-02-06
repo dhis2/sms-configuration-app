@@ -1,4 +1,4 @@
 export {
     FIELD_SPECIAL_CHARS_NAME,
     FieldSpecialCharacter,
-} from './FieldSpecialCharacter.js'
+} from './FieldSpecialCharacter.jsx'

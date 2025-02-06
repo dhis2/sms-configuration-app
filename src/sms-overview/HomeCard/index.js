@@ -1,1 +1,1 @@
-export { HomeCard } from './HomeCard.js'
+export { HomeCard } from './HomeCard.jsx'

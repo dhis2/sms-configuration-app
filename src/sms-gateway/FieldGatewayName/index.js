@@ -1,1 +1,1 @@
-export { FieldGatewayName } from './FieldGatewayName.js'
+export { FieldGatewayName } from './FieldGatewayName.jsx'

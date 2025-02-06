@@ -1,1 +1,1 @@
-export { TemplateSidebarNavContent } from './TemplateSidebarNavContent.js'
+export { TemplateSidebarNavContent } from './TemplateSidebarNavContent.jsx'
