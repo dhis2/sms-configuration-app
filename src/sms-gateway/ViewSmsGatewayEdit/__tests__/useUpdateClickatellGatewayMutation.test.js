@@ -1,5 +1,5 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import { act, renderHook } from '@testing-library/react-hooks'
+import { act, renderHook, waitFor } from '@testing-library/react'
 import {
     UPDATE_CLICKATELL_GATEWAY_MUTATION,
     useUpdateClickatellGatewayMutation,
@@ -56,22 +56,20 @@ describe('gateways - useUpdateClickatellGatewayMutation', () => {
     })
 
     it('executing the mutate function should change loading to true', async () => {
-        const { result, wait } = renderHook(() =>
+        const { result } = renderHook(() =>
             useUpdateClickatellGatewayMutation()
         )
 
         await act(async () => {
             result.current[0](variables)
-
-            await wait(() => result.current[1].loading)
-            expect(result.current[1].loading).toBe(true)
         })
+        expect(result.current[1].loading).toBe(true)
     })
 
     it('executing the mutate function should reset the error', async () => {
         engine.mutate.mockImplementationOnce(() => Promise.reject('Error'))
 
-        const { result, wait } = renderHook(() =>
+        const { result } = renderHook(() =>
             useUpdateClickatellGatewayMutation()
         )
 
@@ -79,16 +77,14 @@ describe('gateways - useUpdateClickatellGatewayMutation', () => {
         await act(async () => {
             expect(result.current[1].error).toBe(null)
             result.current[0](variables).catch(() => Promise.resolve())
-            await wait(() => result.current[1].error)
-            expect(result.current[1].error).toBe('Error')
         })
+        await waitFor(() => expect(result.current[1].error).toBe('Error'))
 
         // Then call the mutate function
         await act(async () => {
             result.current[0](variables)
-            await wait(() => result.current[1].loading)
-            expect(result.current[1].error).toBe(null)
         })
+        expect(result.current[1].error).toBe(null)
     })
 
     it('should provide the correct parameters', () => {
