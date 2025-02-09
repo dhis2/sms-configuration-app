@@ -1,1 +1,1 @@
-export { AddSpecialCharacters } from './AddSpecialCharacters.js'
+export { AddSpecialCharacters } from './AddSpecialCharacters.jsx'

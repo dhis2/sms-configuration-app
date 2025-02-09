@@ -5,7 +5,7 @@ import { parserTypes } from '../FieldParser/index.js'
 import {
     FIELD_PROGRAM_STAGE_NAME,
     FieldProgramStage,
-} from './FieldProgramStage.js'
+} from './FieldProgramStage.jsx'
 import { useReadProgramStagesQuery } from './useReadProgramStagesQuery.js'
 
 const { useForm } = ReactFinalForm

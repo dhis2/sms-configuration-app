@@ -1,1 +1,1 @@
-export { FormRow } from './FormRow.js'
+export { FormRow } from './FormRow.jsx'

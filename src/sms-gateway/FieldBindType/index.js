@@ -1,1 +1,1 @@
-export { FieldBindType } from './FieldBindType.js'
+export { FieldBindType } from './FieldBindType.jsx'

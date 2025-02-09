@@ -1,1 +1,1 @@
-export { FieldTypeOfNumber } from './FieldTypeOfNumber.js'
+export { FieldTypeOfNumber } from './FieldTypeOfNumber.jsx'

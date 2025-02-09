@@ -1,1 +1,1 @@
-export { FIELD_SEPARATOR_NAME, FieldSeparator } from './FieldSeparator.js'
+export { FIELD_SEPARATOR_NAME, FieldSeparator } from './FieldSeparator.jsx'

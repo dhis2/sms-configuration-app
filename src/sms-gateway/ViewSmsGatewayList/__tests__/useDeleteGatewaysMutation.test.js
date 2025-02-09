@@ -1,5 +1,5 @@
 import { useDataEngine } from '@dhis2/app-runtime'
-import { act, renderHook } from '@testing-library/react-hooks'
+import { act, renderHook, waitFor } from '@testing-library/react'
 import { useDeleteGatewaysMutation } from '../useDeleteGatewaysMutation.js'
 
 jest.mock('@dhis2/app-runtime', () => ({
@@ -34,29 +34,28 @@ describe('', () => {
         const pending = jest.fn()
         mutate.mockImplementationOnce(
             () =>
-                new Promise((resolve) =>
-                    setTimeout(() => {
-                        resolve()
-                        pending()
-                    }, 1000)
+                new Promise(
+                    (resolve) =>
+                        setTimeout(() => {
+                            resolve()
+                            pending()
+                        }, 500) // less than the 1000ms timeout of waitFor()
                 )
         )
 
         const ids = ['id1', 'id2', 'id3']
-        const { result, wait, waitForNextUpdate } = renderHook(() =>
-            useDeleteGatewaysMutation()
-        )
+        const { result } = renderHook(() => useDeleteGatewaysMutation())
 
         await act(async () => {
             const doMutate = result.current[0]
             doMutate({ ids })
+        })
 
-            await wait(() => result.current[1].loading)
-            expect(result.current[1].loading).toBe(true)
-            expect(mutate).toHaveBeenCalledTimes(3)
-            expect(pending).not.toHaveBeenCalled()
+        expect(result.current[1].loading).toBe(true)
+        expect(mutate).toHaveBeenCalledTimes(3)
+        expect(pending).not.toHaveBeenCalled()
 
-            await waitForNextUpdate()
+        await waitFor(() => {
             expect(result.current[1].loading).toBe(false)
             expect(pending).toHaveBeenCalled()
         })

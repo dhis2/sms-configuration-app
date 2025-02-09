@@ -1,1 +1,1 @@
-export { FieldAuthToken } from './FieldAuthToken.js'
+export { FieldAuthToken } from './FieldAuthToken.jsx'

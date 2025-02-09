@@ -1,1 +1,1 @@
-export { FieldEditConfidential } from './FieldEditConfidential.js'
+export { FieldEditConfidential } from './FieldEditConfidential.jsx'

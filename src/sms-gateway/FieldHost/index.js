@@ -1,1 +1,1 @@
-export { FieldHost } from './FieldHost.js'
+export { FieldHost } from './FieldHost.jsx'

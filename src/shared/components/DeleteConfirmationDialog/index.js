@@ -1,1 +1,1 @@
-export { DeleteConfirmationDialog } from './DeleteConfirmationDialog.js'
+export { DeleteConfirmationDialog } from './DeleteConfirmationDialog.jsx'

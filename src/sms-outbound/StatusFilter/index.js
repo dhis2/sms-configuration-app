@@ -1,1 +1,1 @@
-export { StatusFilter } from './StatusFilter.js'
+export { StatusFilter } from './StatusFilter.jsx'

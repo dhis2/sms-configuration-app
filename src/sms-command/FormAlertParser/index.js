@@ -1,1 +1,1 @@
-export { FormAlertParser } from './FormAlertParser.js'
+export { FormAlertParser } from './FormAlertParser.jsx'

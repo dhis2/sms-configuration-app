@@ -1,1 +1,1 @@
-export { FIELD_COMMAND_NAME, FieldCommandName } from './FieldCommandName.js'
+export { FIELD_COMMAND_NAME, FieldCommandName } from './FieldCommandName.jsx'

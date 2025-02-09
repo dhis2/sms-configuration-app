@@ -1,1 +1,1 @@
-export { FieldDataElementWithCategoryOptionCombo } from './FieldDataElementWithCategoryOptionCombo.js'
+export { FieldDataElementWithCategoryOptionCombo } from './FieldDataElementWithCategoryOptionCombo.jsx'

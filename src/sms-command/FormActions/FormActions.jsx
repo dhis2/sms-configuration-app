@@ -3,7 +3,7 @@ import { Button, ButtonStrip } from '@dhis2/ui'
 import React from 'react'
 import i18n from '../../locales/index.js'
 import { FormRow } from '../../shared/index.js'
-import { SaveCommandButton } from './SaveCommandButton.js'
+import { SaveCommandButton } from './SaveCommandButton.jsx'
 
 export const FormActions = ({ enableSubmit, onCancel }) => (
     <FormRow>

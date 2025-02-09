@@ -1,1 +1,1 @@
-export { ActionAddKeyValuePair } from './ActionAddKeyValuePair.js'
+export { ActionAddKeyValuePair } from './ActionAddKeyValuePair.jsx'
