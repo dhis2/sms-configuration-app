@@ -1,3 +1,10 @@
+## [100.0.59](https://github.com/dhis2/sms-configuration-app/compare/v100.0.58...v100.0.59) (2025-03-18)
+
+
+### Bug Fixes
+
+* remove author field from package.json ([#470](https://github.com/dhis2/sms-configuration-app/issues/470)) ([11acc69](https://github.com/dhis2/sms-configuration-app/commit/11acc691fab2382e33177aad4f0155f8699d125a))
+
 ## [100.0.58](https://github.com/dhis2/sms-configuration-app/compare/v100.0.57...v100.0.58) (2025-02-09)
 
 
