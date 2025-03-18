@@ -3,7 +3,6 @@
     "version": "100.0.58",
     "description": "",
     "license": "BSD-3-Clause",
-    "author": "Jan-Gerke Salomon <jan-gerke@dhis2.org>",
     "private": true,
     "scripts": {
         "build": "d2-app-scripts build",
