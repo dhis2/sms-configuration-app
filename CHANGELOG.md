@@ -1,3 +1,10 @@
+## [100.0.60](https://github.com/dhis2/sms-configuration-app/compare/v100.0.59...v100.0.60) (2025-04-01)
+
+
+### Bug Fixes
+
+* **app-platform:** upgrade platform tools to use vite and react 18 ([59c819a](https://github.com/dhis2/sms-configuration-app/commit/59c819a8fcb0f3249cb8583d630d813994fc5e69))
+
 ## [100.0.59](https://github.com/dhis2/sms-configuration-app/compare/v100.0.58...v100.0.59) (2025-03-18)
 
 
