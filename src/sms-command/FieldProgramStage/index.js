@@ -1,6 +1,6 @@
 export {
     FIELD_PROGRAM_STAGE_NAME,
     FieldProgramStage,
-} from './FieldProgramStage.js'
-export { FieldProgramStageWithLoadingStates } from './FieldProgramStageWithLoadingStates.js'
+} from './FieldProgramStage.jsx'
+export { FieldProgramStageWithLoadingStates } from './FieldProgramStageWithLoadingStates.jsx'
 export { useReadProgramStagesQuery } from './useReadProgramStagesQuery.js'

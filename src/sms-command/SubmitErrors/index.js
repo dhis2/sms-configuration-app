@@ -1,1 +1,1 @@
-export { SubmitErrors } from './SubmitErrors.js'
+export { SubmitErrors } from './SubmitErrors.jsx'

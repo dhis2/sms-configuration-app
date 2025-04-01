@@ -1,7 +1,7 @@
 import './locales/index.js'
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
-import { AppWrapper } from './AppWrapper.js'
+import { AppWrapper } from './AppWrapper.jsx'
 import {
     ViewSmsCommandAdd,
     ViewSmsCommandList,

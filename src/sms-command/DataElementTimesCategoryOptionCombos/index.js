@@ -1,1 +1,1 @@
-export { DataElementTimesCategoryOptionCombos } from './DataElementTimesCategoryOptionCombos.js'
+export { DataElementTimesCategoryOptionCombos } from './DataElementTimesCategoryOptionCombos.jsx'

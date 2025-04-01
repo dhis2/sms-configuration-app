@@ -1,1 +1,1 @@
-export { FormUnregisteredParser } from './FormUnregisteredParser.js'
+export { FormUnregisteredParser } from './FormUnregisteredParser.jsx'

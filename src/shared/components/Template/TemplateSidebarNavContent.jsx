@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Navigation } from '../Navigation/index.js'
-import { LayoutContainer } from './LayoutContainer.js'
-import { LayoutContent } from './LayoutContent.js'
-import { LayoutSidebar } from './LayoutSidebar.js'
+import { LayoutContainer } from './LayoutContainer.jsx'
+import { LayoutContent } from './LayoutContent.jsx'
+import { LayoutSidebar } from './LayoutSidebar.jsx'
 
 export const TemplateSidebarNavContent = ({ children }) => (
     <LayoutContainer>

@@ -1,20 +1,20 @@
 import { PropTypes } from '@dhis2/prop-types'
 import { hasValue } from '@dhis2/ui'
 import React from 'react'
-import { FieldDataSet } from './FieldDataSet.js'
-import { useReadDataSetsQuery } from './useReadDataSetsQuery.js'
+import { FieldUserGroup } from './FieldUserGroup.jsx'
+import { useReadUserGroupsQuery } from './useReadUserGroupsQuery.js'
 
-export const FieldDataSetWithAutoLoad = ({ required }) => {
-    const { loading, error, data } = useReadDataSetsQuery()
+export const FieldUserGroupWithAutoLoad = ({ required }) => {
+    const { loading, error, data } = useReadUserGroupsQuery()
     const validate = required ? hasValue : undefined
 
     if (loading) {
         return (
-            <FieldDataSet
+            <FieldUserGroup
+                required={required}
                 loading
                 showLoadingStatus
-                required={required}
-                dataSets={[]}
+                userGroups={[]}
                 validate={validate}
             />
         )
@@ -22,35 +22,35 @@ export const FieldDataSetWithAutoLoad = ({ required }) => {
 
     if (error) {
         return (
-            <FieldDataSet
+            <FieldUserGroup
                 required={required}
                 disabled
-                programs={[]}
+                userGroups={[]}
                 errorText={error.message}
                 validate={validate}
             />
         )
     }
 
-    const { dataSets } = data.dataSets
-    const options = dataSets.map(({ id, displayName }) => ({
+    const { userGroups } = data.userGroups
+    const options = userGroups.map(({ id, displayName }) => ({
         label: displayName,
         value: id,
     }))
 
     return (
-        <FieldDataSet
+        <FieldUserGroup
             required={required}
-            dataSets={options}
+            userGroups={options}
             validate={validate}
         />
     )
 }
 
-FieldDataSetWithAutoLoad.defaultProps = {
+FieldUserGroupWithAutoLoad.defaultProps = {
     required: false,
 }
 
-FieldDataSetWithAutoLoad.propTypes = {
+FieldUserGroupWithAutoLoad.propTypes = {
     required: PropTypes.bool,
 }

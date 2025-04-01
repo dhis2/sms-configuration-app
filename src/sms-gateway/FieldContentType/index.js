@@ -1,1 +1,1 @@
-export { FieldContentType } from './FieldContentType.js'
+export { FieldContentType } from './FieldContentType.jsx'

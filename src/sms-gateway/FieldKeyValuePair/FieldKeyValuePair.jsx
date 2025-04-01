@@ -12,7 +12,7 @@ import React from 'react'
 import i18n from '../../locales/index.js'
 import { dataTest, useFeatureToggle } from '../../shared/index.js'
 import styles from './FieldKeyValuePair.module.css'
-import { ValueField } from './ValueField.js'
+import { ValueField } from './ValueField.jsx'
 
 const { Field, useForm } = ReactFinalForm
 const isStringWithLengthAtLeastOne = composeValidators(string, hasValue)

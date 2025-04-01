@@ -1,3 +1,5 @@
+![React 18](https://img.shields.io/badge/react-18-blue)
+
 # sms-configuration-app
 
 New DHIS2 SMS web app

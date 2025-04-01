@@ -3,7 +3,7 @@ import React from 'react'
 import i18n from '../../locales/index.js'
 import { FormRow, PageSubHeadline, dataTest } from '../../shared/index.js'
 import { FieldDataElementWithCategoryOptionCombo } from '../FieldDataElementWithCategoryOptionCombo/index.js'
-import { CompletenessMessage } from './CompletenessMessage.js'
+import { CompletenessMessage } from './CompletenessMessage.jsx'
 import styles from './DataElementTimesCategoryOptionCombos.module.css'
 
 export const DataElementTimesCategoryOptionCombos = ({
