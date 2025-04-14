@@ -46,7 +46,7 @@
         "moment": "^2.27.0",
         "query-string": "^6.13.8",
         "react-router-dom": "^5.2.0",
-        "use-debounce": "^5.2.1",
+        "use-debounce": "^9.0.3",
         "use-query-params": "^1.1.9"
     },
     "resolutions": {}
