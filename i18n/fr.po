@@ -7,13 +7,14 @@
 # Edem Kossi <ekossi@hispwca.org>, 2022
 # Philip Larsen Donnelly, 2024
 # Cyrille Kabrane, 2025
+# Esther Tokouli, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-12-02T14:06:12.331Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Cyrille Kabrane, 2025\n"
+"Last-Translator: Esther Tokouli, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,7 +70,7 @@ msgid "per page"
 msgstr "par page"
 
 msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
-msgstr "Affichage de {{firstItem}}-{{lastItem}} du {{total}}"
+msgstr "Visualisation {{firstItem}}-{{lastItem}} de {{total}}"
 
 msgid "Previous"
 msgstr "Précédent"
@@ -97,6 +98,9 @@ msgid ""
 "\"{{atLeastOneDataValueLabel}}\" is chosen, otherwise received messages will"
 " not be processed."
 msgstr ""
+"Assurez-vous au moins qu'un code court SMS est fourni lorsque la méthode de "
+"complétude \"{{atLeastOneDataValueLabel}}\" est choisie, sinon les messages "
+"reçus ne seront pas traités."
 
 msgid "SMS short codes"
 msgstr "Codes courts SMS"
@@ -192,7 +196,7 @@ msgid "Program"
 msgstr "Programme"
 
 msgid "Program stage"
-msgstr "Étape du programme"
+msgstr "Stade de programme"
 
 msgid "Field separator"
 msgstr "Séparateur de champs"
@@ -231,7 +235,7 @@ msgid "Something went wrong whilst submitting the form"
 msgstr "Une erreur s'est produite lors de l'envoi du formulaire"
 
 msgid "Add command"
-msgstr "Ajouter commande"
+msgstr "Ajouter une commande"
 
 msgid "Automatically selected by selecting a program"
 msgstr "Sélection automatique lors de la sélection d'un programme"
@@ -322,6 +326,8 @@ msgstr "Hébergeur"
 msgid ""
 "Saved confidential key value pairs can be deleted, but cannot be edited."
 msgstr ""
+"Les paires de valeurs clés confidentielles enregistrées peuvent être "
+"supprimées, mais ne peuvent pas être modifiées."
 
 msgid "Key"
 msgstr "Clé"
@@ -386,10 +392,10 @@ msgid "Add gateway"
 msgstr "Ajouter passerelle"
 
 msgid "password"
-msgstr ""
+msgstr "Mot de passe"
 
 msgid "auth token"
-msgstr ""
+msgstr "Token d'authentification"
 
 msgid "Gateway setup"
 msgstr "Configuration de passerelle"
@@ -503,7 +509,7 @@ msgid "Processing"
 msgstr "Traitement"
 
 msgid "Unhandled"
-msgstr "Non pris en charge"
+msgstr "Non traités"
 
 msgid "Recipients"
 msgstr "Destinataires"
