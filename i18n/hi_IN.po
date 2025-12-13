@@ -326,7 +326,7 @@ msgid "Remove key value pair"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "वैल्यू"
 
 msgid "Number plan indicator"
 msgstr ""
