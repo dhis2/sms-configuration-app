@@ -65,7 +65,7 @@ msgid "Viewing {{firstItem}}-{{lastItem}} of {{total}}"
 msgstr ""
 
 msgid "Previous"
-msgstr ""
+msgstr "पिछला"
 
 msgid "Page"
 msgstr ""
@@ -332,7 +332,7 @@ msgid "Number plan indicator"
 msgstr ""
 
 msgid "Password"
-msgstr ""
+msgstr "पासवर्ड"
 
 msgid "Confirm password"
 msgstr ""
@@ -465,7 +465,7 @@ msgid "Are you sure you want to delete the selected sms?"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "सभी"
 
 msgid "Failed"
 msgstr ""
