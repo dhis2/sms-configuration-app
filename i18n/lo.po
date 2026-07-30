@@ -1,19 +1,18 @@
-# 
 # Translators:
 # Philip Larsen Donnelly, 2020
 # Viktor Varland <viktor@dhis2.org>, 2021
-# Saysamone Sibounma, 2022
-# Namwan Chanthavisouk, 2024
+# Namwan Chanthavisouk, 2025
+# Saysamone Sibounma, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-12-02T14:06:12.331Z\n"
 "PO-Revision-Date: 2020-09-08 10:27+0000\n"
-"Last-Translator: Namwan Chanthavisouk, 2024\n"
+"Last-Translator: Saysamone Sibounma, 2026\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lo\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -28,7 +27,7 @@ msgid "Yes, cancel"
 msgstr ""
 
 msgid "Confirm deletion"
-msgstr ""
+msgstr "ຢືນຢັນການລຶບ"
 
 msgid "Cancel"
 msgstr "Cancel"
@@ -37,7 +36,7 @@ msgid "Delete"
 msgstr "ລົບ"
 
 msgid "User group"
-msgstr ""
+msgstr "ກຸ່ມຜູ້ໃຊ້"
 
 msgid "Home"
 msgstr "ໜ້າຫຼັກ"
@@ -100,16 +99,16 @@ msgid "Name"
 msgstr "ຊື່"
 
 msgid "Completeness method"
-msgstr ""
+msgstr "ວິທີການສໍາເລັດ"
 
 msgid "Receive all data values"
 msgstr ""
 
 msgid "Receive at least one data value"
-msgstr ""
+msgstr "ຮັບຂໍ້ມູນຢ່າງໜ້ອຍໜຶ່ງຄ່າ"
 
 msgid "Do not mark as complete"
-msgstr ""
+msgstr "ຢ່າໝາຍວ່າສຳເລັດ"
 
 msgid "Confirm message"
 msgstr ""
@@ -157,7 +156,7 @@ msgid "More than one orgunit message"
 msgstr ""
 
 msgid "No user message"
-msgstr ""
+msgstr "ບໍ່ມີຂໍ້ຄວາມຜູ້ໃຊ້"
 
 msgid "Parser"
 msgstr "Parser\\:"
@@ -175,7 +174,7 @@ msgid "Unregistered parser"
 msgstr ""
 
 msgid "Tracked entity registration parser"
-msgstr ""
+msgstr "ຕິດຕາມຕົວແຍກການລົງທະບຽນນິຕິບຸກຄົນ"
 
 msgid "Program stage data entry parser"
 msgstr ""
@@ -205,7 +204,7 @@ msgid "Use current period for reporting"
 msgstr ""
 
 msgid "Wrong format message"
-msgstr ""
+msgstr "ຂໍ້ຄວາມຜິດຮູບແບບ"
 
 msgid "Save command"
 msgstr ""
@@ -226,7 +225,7 @@ msgid "Something went wrong whilst submitting the form"
 msgstr ""
 
 msgid "Add command"
-msgstr ""
+msgstr "ເພີ່ມຄຳສັ່ງ"
 
 msgid "Automatically selected by selecting a program"
 msgstr ""
@@ -340,7 +339,7 @@ msgid "Confirm password"
 msgstr "ຢືນຢັນລະຫັດຜ່ານ"
 
 msgid "Port"
-msgstr ""
+msgstr "ການເຊື່ອມ"
 
 msgid "Send url parameters"
 msgstr ""
@@ -364,13 +363,13 @@ msgid "Use GET instead of POST to send data to gateway"
 msgstr ""
 
 msgid "User name"
-msgstr ""
+msgstr "ຊື່ຜູ້ໃຊ້"
 
 msgid "Save gateway"
 msgstr ""
 
 msgid "Add gateway"
-msgstr ""
+msgstr "ເພິ່ມທາງຜ່ານ"
 
 msgid "password"
 msgstr ""
@@ -473,16 +472,16 @@ msgid "Failed"
 msgstr "Failed"
 
 msgid "Incoming"
-msgstr ""
+msgstr "ຂາເຂົ້າ"
 
 msgid "Processed"
-msgstr ""
+msgstr "ປະມວນຜົນແລ້ວ"
 
 msgid "Processing"
 msgstr "​ກຳ​ລັງ​ດຳ​ເນີນ​ການ​ຢູ່"
 
 msgid "Unhandled"
-msgstr ""
+msgstr "ບໍ່ໄດ້ຈັດການ"
 
 msgid "Recipients"
 msgstr "Recipients"
@@ -497,7 +496,7 @@ msgid "Error"
 msgstr "ເກີດການຜິດພາດ"
 
 msgid "Outbound"
-msgstr ""
+msgstr "ຂາອອກ"
 
 msgid "Pending"
 msgstr ""
@@ -514,7 +513,7 @@ msgid ""
 msgstr ""
 
 msgid "Gateway Configuration"
-msgstr ""
+msgstr "ການຕັງຄ່າທາງຜ່ານ"
 
 msgid ""
 "Add and manage gateways for sending and receiving SMS messages in DHIS2."
@@ -524,7 +523,7 @@ msgid "Set up gateways"
 msgstr ""
 
 msgid "SMS Commands"
-msgstr ""
+msgstr "ຄໍາສັ່ງ SMS"
 
 msgid ""
 "Add and manage commands triggered by incoming SMS messages to register, "
