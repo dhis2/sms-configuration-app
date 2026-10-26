@@ -15,10 +15,10 @@ data from phones or J2ME apps, alerting users, or registering patients or users.
 To see all available commands, go to the **Commands** page. The page lists all
 commands in a table. On this page you can do the following:
 
-* Add commands (1)
-* Edit commands (2)
-* Delete commands (3)
-* Batch-delete commands (4)
+-   Add commands (1)
+-   Edit commands (2)
+-   Delete commands (3)
+-   Batch-delete commands (4)
 
 ![SMS Commands - List](resources/images/sms_configuration/commands-list.png)
 
@@ -44,15 +44,15 @@ A confirmation dialog opens to prevent accidental deletions.
 Click the **Add command** button on the **Commands** page. A dynamic form
 opens. The inputs that the form shows depend on the parser type:
 
-| **Parser type** | **User group** | **Program** | **Program stage** | **Data set** |
-|-|-|-|-|-|
-| **Alert parser** | &#10003; | &#10005; | &#10005; | &#10005; |
-| **Event registration parser** | &#10005; | &#10003; | &#10003; | &#10005; |
-| **J2ME parser** (v41 and earlier) | &#10005; | &#10005; | &#10005; | &#10003; |
-| **Key value parser** | &#10005; | &#10005; | &#10005; | &#10003; |
-| **Program stage data entry parser** | &#10005; | &#10003; | &#10003; | &#10005; |
-| **Tracked entity registration parser** | &#10005; | &#10003; | &#10005; | &#10005; |
-| **Unregistered parser** | &#10003; | &#10005; | &#10005; | &#10005; |
+| **Parser type**                        | **User group** | **Program** | **Program stage** | **Data set** |
+| -------------------------------------- | -------------- | ----------- | ----------------- | ------------ |
+| **Alert parser**                       | &#10003;       | &#10005;    | &#10005;          | &#10005;     |
+| **Event registration parser**          | &#10005;       | &#10003;    | &#10003;          | &#10005;     |
+| **J2ME parser** (v41 and earlier)      | &#10005;       | &#10005;    | &#10005;          | &#10003;     |
+| **Key value parser**                   | &#10005;       | &#10005;    | &#10005;          | &#10003;     |
+| **Program stage data entry parser**    | &#10005;       | &#10003;    | &#10003;          | &#10005;     |
+| **Tracked entity registration parser** | &#10005;       | &#10003;    | &#10005;          | &#10005;     |
+| **Unregistered parser**                | &#10003;       | &#10005;    | &#10005;          | &#10005;     |
 
 #### v41 and earlier { #sms-configuration-commands-add-v41-and-earlier }
 
@@ -92,14 +92,14 @@ Some parameters are common to all SMS command types. These parameters have
 default values in the system. If you do not provide a value for a parameter,
 DHIS2 uses the default value. The common fields are:
 
-| Parameter | Type | Description |
-|---|---|---|
-| **Field separator** | String | A custom field separator. Default is "&#124;" |
-| **Reply message if no codes are sent (only the command)** | String | The message that DHIS2 sends if the SMS text contains no code. Default is "Mandatory parameter is missing" |
-| **Wrong format message** | String | The message that DHIS2 sends if the command format is not correct. The command must follow the code value separator. Default is "Wrong command format" |
-| **No user message** | String | The message that DHIS2 sends if the sending phone number is not registered in DHIS2. Default is "No user associated with this phone number. Please contact your supervisor." |
-| **More than one orgunit message** | String | Certain SMS command types require the user (found from the sending phone number) to be linked to only one organisation unit. DHIS2 sends this message if that requirement is not met. Default is "Found more than one org unit for this number. Please specify one organisation unit" |
-| **Success message** | String | The message that DHIS2 sends after the command completes successfully. Default is "Command has been processed successfully" |
+| Parameter                                                 | Type   | Description                                                                                                                                                                                                                                                                           |
+| --------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Field separator**                                       | String | A custom field separator. Default is "&#124;"                                                                                                                                                                                                                                         |
+| **Reply message if no codes are sent (only the command)** | String | The message that DHIS2 sends if the SMS text contains no code. Default is "Mandatory parameter is missing"                                                                                                                                                                            |
+| **Wrong format message**                                  | String | The message that DHIS2 sends if the command format is not correct. The command must follow the code value separator. Default is "Wrong command format"                                                                                                                                |
+| **No user message**                                       | String | The message that DHIS2 sends if the sending phone number is not registered in DHIS2. Default is "No user associated with this phone number. Please contact your supervisor."                                                                                                          |
+| **More than one orgunit message**                         | String | Certain SMS command types require the user (found from the sending phone number) to be linked to only one organisation unit. DHIS2 sends this message if that requirement is not met. Default is "Found more than one org unit for this number. Please specify one organisation unit" |
+| **Success message**                                       | String | The message that DHIS2 sends after the command completes successfully. Default is "Command has been processed successfully"                                                                                                                                                           |
 
 Some commands let you add short codes. The sections for each parser type later
 on this page explain them.
@@ -109,8 +109,8 @@ on this page explain them.
 When you edit an alert parser command, you can edit only two fields. The fields
 that most other parser types share are not present:
 
-* **Name** (required)
-* **Confirm message**
+-   **Name** (required)
+-   **Confirm message**
 
 Both are text fields.
 
@@ -174,7 +174,7 @@ about J2ME parser commands.
 
 #### Editing program stage data entry parser commands { #sms-configuration-commands-edit-programstagedataentry }
 
-Commands of this parser type have all the shared fields.  You can also define
+Commands of this parser type have all the shared fields. You can also define
 short codes. You can add a short code for every data element that is connected
 to the program stage that you chose when you added the command:
 
@@ -182,11 +182,11 @@ to the program stage that you chose when you added the command:
 
 #### Editing tracked entity registration parser commands { #sms-configuration-commands-edit-trackedentityregistration }
 
-Commands of this parser type have all the shared fields.  You can also define
+Commands of this parser type have all the shared fields. You can also define
 short codes. You can add a short code for every tracked entity attribute that is
 connected to the program that you chose when you added the command.
 Short codes for tracked entity attributes are required. The app marks these
-fields with an asterisk (*).
+fields with an asterisk (\*).
 
 ![SMS Commands - Tracked entity registration parser short codes](resources/images/sms_configuration/commands-edit-trackedentityregistrationparser-shortcodes.png)
 
@@ -204,21 +204,21 @@ load balancing uses all of them.
 
 The SMS service supports four types of gateways:
 
-* **Generic** gateways
-* **BulkSMS** gateways
-* **Clickatell** gateways
-* **SMPP** gateways
+-   **Generic** gateways
+-   **BulkSMS** gateways
+-   **Clickatell** gateways
+-   **SMPP** gateways
 
 ### Listing gateways { #sms-configuration-gateways-listing }
 
 To see all available gateways, go to the **Gateway configuration** page.
 The page lists all gateways in a table. On this page you can do the following:
 
-* Add gateways (1)
-* Edit gateways (2)
-* Delete gateways (3)
-* Batch-delete gateways (4)
-* Set the default gateway (5)
+-   Add gateways (1)
+-   Edit gateways (2)
+-   Delete gateways (3)
+-   Batch-delete gateways (4)
+-   Set the default gateway (5)
 
 ![SMS Gateways - List](resources/images/sms_configuration/gateways-list.png)
 
@@ -243,9 +243,9 @@ more information about how to edit gateways, see the "Adding gateways" section.
 To see all inbound SMS, go to the **Received** page. The page lists all received
 SMS in a paginated table. On this page you can do the following:
 
-* Filter the inbound SMS (1)
-* Delete SMS (2)
-* Batch-delete SMS (3)
+-   Filter the inbound SMS (1)
+-   Delete SMS (2)
+-   Batch-delete SMS (3)
 
 ![SMS Inbound SMSes - Listing inbound SMSes](resources/images/sms_configuration/inboundsms-list.png)
 
@@ -261,13 +261,13 @@ To reset all filters, click the **Reset filter** button.
 
 You can filter the list of inbound SMS by these statuses:
 
-* **All**
-* **Failed**
-* **Incoming**
-* **Processed**
-* **Processing**
-* **Sent**
-* **Unhandled**
+-   **All**
+-   **Failed**
+-   **Incoming**
+-   **Processed**
+-   **Processing**
+-   **Sent**
+-   **Unhandled**
 
 ![SMS Inbound SMSes - Filter inbound SMSes by status](resources/images/sms_configuration/inboundsms-filterbystatus.png)
 
@@ -283,12 +283,12 @@ To filter the table by phone number, enter the phone number in the
 To see all outbound SMS, go to the **Sent** page. This section is similar to
 the "Inbound"/"Received" SMS section, with these differences:
 
-* The table shows the columns **Message**, **Recipients**, **Status** and
-  **Sent**.
-* You cannot filter the list by phone number, and there is no **Reset filter**
-  button.
-* You can filter the list by status only, with these statuses: **All**,
-  **Delivered**, **Error**, **Failed**, **Outbound**, **Pending**,
-  **Scheduled**, **Sent**.
+-   The table shows the columns **Message**, **Recipients**, **Status** and
+    **Sent**.
+-   You cannot filter the list by phone number, and there is no **Reset filter**
+    button.
+-   You can filter the list by status only, with these statuses: **All**,
+    **Delivered**, **Error**, **Failed**, **Outbound**, **Pending**,
+    **Scheduled**, **Sent**.
 
 See the ["View inbound SMS"](#sms-configuration-inbound) section.
